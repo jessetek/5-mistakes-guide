@@ -42,7 +42,8 @@ class handler(BaseHTTPRequestHandler):
             headers={
                 'Authorization': f'Bearer {api_key}',
                 'Content-Type': 'application/json',
-                'Version': '2021-04-15'
+                'Version': '2021-04-15',
+                'User-Agent': 'JesseTek-LeadMagnet/1.0'
             },
             method='POST'
         )
