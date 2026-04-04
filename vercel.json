@@ -1,6 +1,8 @@
 {
   "rewrites": [
     { "source": "/api/submit", "destination": "/api/submit" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/zoom", "destination": "/zoom.html" },
+    { "source": "/guide", "destination": "/index.html" },
+    { "source": "/", "destination": "/index.html" }
   ]
 }
