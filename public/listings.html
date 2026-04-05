@@ -82,66 +82,15 @@ body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:h
   <p>Search active listings in Downey, Whittier, Pico Rivera, La Habra, and surrounding cities in LA and Orange County.</p>
 </section>
 
-<!-- Custom Dark Search Bar -->
+<!-- Quick Action Bar -->
 <div class="search-bar">
   <div class="search-inner">
-    <div class="search-group">
-      <label class="search-label">City</label>
-      <select class="search-select" id="searchCity">
-        <option value="">All Cities</option>
-        <option>Downey</option>
-        <option>Whittier</option>
-        <option>Pico Rivera</option>
-        <option>La Habra</option>
-        <option>Norwalk</option>
-        <option>La Mirada</option>
-        <option>Buena Park</option>
-        <option>Anaheim</option>
-        <option>Fullerton</option>
-        <option>Bellflower</option>
-        <option>Cerritos</option>
-        <option>Lakewood</option>
-      </select>
+    <div class="search-group" style="flex:2">
+      <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:4px">Search the MLS below</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.4)">Filter by city, price, beds, baths, and more</div>
     </div>
-    <div class="search-group">
-      <label class="search-label">Min Price</label>
-      <select class="search-select" id="searchMin">
-        <option value="">No Min</option>
-        <option>$300,000</option>
-        <option>$400,000</option>
-        <option>$500,000</option>
-        <option>$600,000</option>
-        <option>$700,000</option>
-        <option>$800,000</option>
-        <option>$1,000,000</option>
-      </select>
-    </div>
-    <div class="search-group">
-      <label class="search-label">Max Price</label>
-      <select class="search-select" id="searchMax">
-        <option value="">No Max</option>
-        <option>$500,000</option>
-        <option>$600,000</option>
-        <option>$700,000</option>
-        <option>$800,000</option>
-        <option>$900,000</option>
-        <option>$1,000,000</option>
-        <option>$1,500,000</option>
-        <option>$2,000,000</option>
-      </select>
-    </div>
-    <div class="search-group">
-      <label class="search-label">Beds</label>
-      <select class="search-select" id="searchBeds">
-        <option value="">Any</option>
-        <option>1+</option>
-        <option>2+</option>
-        <option>3+</option>
-        <option>4+</option>
-        <option>5+</option>
-      </select>
-    </div>
-    <button class="search-btn" onclick="document.getElementById('idxSection').scrollIntoView({behavior:'smooth'})">Search</button>
+    <button class="search-btn" onclick="document.getElementById('idxSection').scrollIntoView({behavior:'smooth'})">Start Searching</button>
+    <a href="/zoom" class="search-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.15);text-decoration:none;text-align:center">Talk To Jesse</a>
   </div>
 </div>
 
