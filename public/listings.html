@@ -16,15 +16,36 @@ body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:h
 .nav-links a{color:rgba(255,255,255,0.5);font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-cta{background:#5928E5;color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600}
 
-.listings-hero{padding:160px 40px 60px;text-align:center;position:relative}
+.listings-hero{padding:160px 40px 40px;text-align:center;position:relative}
 .listings-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(89,40,229,0.06) 0%,transparent 60%)}
 .section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7B52FF;margin-bottom:20px;position:relative;z-index:1}
 .listings-hero h1{font-size:48px;font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1.1;margin-bottom:16px;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .3s forwards}
-.listings-hero p{font-size:16px;color:rgba(255,255,255,0.4);max-width:500px;margin:0 auto 40px;line-height:1.6;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .5s forwards}
+.listings-hero p{font-size:16px;color:rgba(255,255,255,0.4);max-width:500px;margin:0 auto 0;line-height:1.6;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .5s forwards}
 
-.idx-wrapper{max-width:1200px;margin:0 auto;padding:0 40px 60px}
-.idx-container{background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);opacity:0;animation:fadeUp .7s ease .7s forwards}
-.idx-container iframe{width:100%;min-height:800px;border:none;display:block}
+/* Custom Search Bar */
+.search-bar{max-width:1000px;margin:40px auto 0;padding:0 40px;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .7s forwards}
+.search-inner{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px 28px;display:flex;gap:16px;align-items:flex-end;backdrop-filter:blur(4px)}
+.search-group{flex:1}
+.search-label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);margin-bottom:8px}
+.search-select,.search-input{width:100%;padding:14px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#fff;font-family:inherit;font-size:14px;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;transition:border-color .2s}
+.search-select:focus,.search-input:focus{border-color:#5928E5}
+.search-select option{background:#1a1a2e;color:#fff}
+.search-btn{background:#5928E5;color:#fff;border:none;padding:14px 32px;border-radius:10px;font-family:inherit;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:background .2s;white-space:nowrap}
+.search-btn:hover{background:#4a1fd4}
+
+/* IDX Container - Dark themed */
+.idx-wrapper{max-width:1200px;margin:48px auto 0;padding:0 40px 60px}
+.idx-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.idx-header-text{font-size:13px;color:rgba(255,255,255,0.3)}
+.idx-toggle{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px 16px;color:rgba(255,255,255,0.5);font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;transition:all .2s}
+.idx-toggle:hover{border-color:#5928E5;color:#fff}
+.idx-toggle.active{background:#5928E5;border-color:#5928E5;color:#fff}
+.idx-container{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);position:relative;background:#0A0B14}
+.idx-container iframe{width:100%;min-height:800px;border:none;display:block;filter:invert(0.88) hue-rotate(180deg);-webkit-filter:invert(0.88) hue-rotate(180deg)}
+.idx-container.light iframe{filter:none;-webkit-filter:none}
+
+/* Powered by label */
+.idx-powered{text-align:center;margin-top:12px;font-size:11px;color:rgba(255,255,255,0.15)}
 
 .cta-bar{padding:60px 40px;text-align:center;background:#0A0B14}
 .cta-bar p{font-size:16px;color:rgba(255,255,255,0.5);margin-bottom:20px}
@@ -42,7 +63,14 @@ body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:h
 .footer-socials{display:flex;gap:16px}.footer-socials a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color .2s}.footer-socials a:hover{color:#7B52FF}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:900px){.listings-hero{padding:140px 20px 40px}.listings-hero h1{font-size:32px}.idx-wrapper{padding:0 20px 40px}.footer-inner{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+@media(max-width:900px){
+  .listings-hero{padding:140px 20px 40px}.listings-hero h1{font-size:32px}
+  .search-inner{flex-direction:column;gap:12px}
+  .search-btn{width:100%}
+  .idx-wrapper{padding:0 20px 40px}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
 </style>
 </head>
 <body>
@@ -54,10 +82,79 @@ body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:h
   <p>Search active listings in Downey, Whittier, Pico Rivera, La Habra, and surrounding cities in LA and Orange County.</p>
 </section>
 
-<div class="idx-wrapper">
-  <div class="idx-container">
+<!-- Custom Dark Search Bar -->
+<div class="search-bar">
+  <div class="search-inner">
+    <div class="search-group">
+      <label class="search-label">City</label>
+      <select class="search-select" id="searchCity">
+        <option value="">All Cities</option>
+        <option>Downey</option>
+        <option>Whittier</option>
+        <option>Pico Rivera</option>
+        <option>La Habra</option>
+        <option>Norwalk</option>
+        <option>La Mirada</option>
+        <option>Buena Park</option>
+        <option>Anaheim</option>
+        <option>Fullerton</option>
+        <option>Bellflower</option>
+        <option>Cerritos</option>
+        <option>Lakewood</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label class="search-label">Min Price</label>
+      <select class="search-select" id="searchMin">
+        <option value="">No Min</option>
+        <option>$300,000</option>
+        <option>$400,000</option>
+        <option>$500,000</option>
+        <option>$600,000</option>
+        <option>$700,000</option>
+        <option>$800,000</option>
+        <option>$1,000,000</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label class="search-label">Max Price</label>
+      <select class="search-select" id="searchMax">
+        <option value="">No Max</option>
+        <option>$500,000</option>
+        <option>$600,000</option>
+        <option>$700,000</option>
+        <option>$800,000</option>
+        <option>$900,000</option>
+        <option>$1,000,000</option>
+        <option>$1,500,000</option>
+        <option>$2,000,000</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label class="search-label">Beds</label>
+      <select class="search-select" id="searchBeds">
+        <option value="">Any</option>
+        <option>1+</option>
+        <option>2+</option>
+        <option>3+</option>
+        <option>4+</option>
+        <option>5+</option>
+      </select>
+    </div>
+    <button class="search-btn" onclick="document.getElementById('idxSection').scrollIntoView({behavior:'smooth'})">Search</button>
+  </div>
+</div>
+
+<!-- IDX Container with Dark Mode -->
+<div class="idx-wrapper" id="idxSection">
+  <div class="idx-header">
+    <span class="idx-header-text">Powered by CRMLS MLS</span>
+    <button class="idx-toggle" onclick="toggleTheme(this)">Light Mode</button>
+  </div>
+  <div class="idx-container" id="idxContainer">
     <iframe src="https://matrix.crmls.org/Matrix/public/IDX.aspx?idx=a92f378d" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0"></iframe>
   </div>
+  <p class="idx-powered">Use the MLS search below to filter by detailed criteria</p>
 </div>
 
 <section class="cta-bar">
@@ -66,5 +163,14 @@ body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:h
 </section>
 
 <footer class="footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><span>Jesse</span> Oñate.</div><p>Helping millennials buy and sell homes in Downey and surrounding cities.</p></div><div class="footer-col"><h4>Pages</h4><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a></div><div class="footer-col"><h4>Resources</h4><a href="/guide">Free Guide</a><a href="/zoom">Book a Call</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:5626094200">(562) 609-4200</a><a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a><a href="https://instagram.com/jessetek" target="_blank">@jessetek</a></div></div><div class="footer-bottom"><p>© 2026 Jesse Oñate. All rights reserved.</p><div class="footer-socials"><a href="https://instagram.com/jessetek" target="_blank">Instagram</a><a href="https://www.zillow.com/profile/JesseOnate" target="_blank">Zillow</a></div></div></footer>
+
+<script>
+function toggleTheme(btn) {
+  var container = document.getElementById('idxContainer');
+  container.classList.toggle('light');
+  btn.classList.toggle('active');
+  btn.textContent = container.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
+}
+</script>
 </body>
 </html>
