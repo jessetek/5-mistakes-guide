@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Book a Free Zoom Call | Jesse Oñate</title>
-<meta name="description" content="Book a free 30-minute Zoom call with Jesse Oñate, Realtor in Downey and surrounding cities.">
+<title>Browse Listings | Jesse Oñate Realtor</title>
+<meta name="description" content="Search homes for sale in Downey, Whittier, Pico Rivera, and surrounding cities in LA & Orange County.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -16,16 +16,22 @@ body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:h
 .nav-links a{color:rgba(255,255,255,0.5);font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-cta{background:#5928E5;color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600}
 
-.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:140px 24px 40px}
-.header{text-align:center;margin-bottom:48px;max-width:600px}
-.badge{display:inline-block;border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:8px 20px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:24px}
-h1{font-size:44px;font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
-h1 span{color:#7B52FF}
-.subtitle{font-size:16px;color:rgba(255,255,255,0.4);line-height:1.6}
-.calendar-wrap{width:100%;max-width:700px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;min-height:600px}
-.calendar-wrap iframe{width:100%;min-height:700px;border:none}
+.listings-hero{padding:160px 40px 60px;text-align:center;position:relative}
+.listings-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(89,40,229,0.06) 0%,transparent 60%)}
+.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7B52FF;margin-bottom:20px;position:relative;z-index:1}
+.listings-hero h1{font-size:48px;font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1.1;margin-bottom:16px;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .3s forwards}
+.listings-hero p{font-size:16px;color:rgba(255,255,255,0.4);max-width:500px;margin:0 auto 40px;line-height:1.6;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .5s forwards}
 
-.footer{padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.04);width:100%}
+.idx-wrapper{max-width:1200px;margin:0 auto;padding:0 40px 60px}
+.idx-container{background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);opacity:0;animation:fadeUp .7s ease .7s forwards}
+.idx-container iframe{width:100%;min-height:800px;border:none;display:block}
+
+.cta-bar{padding:60px 40px;text-align:center;background:#0A0B14}
+.cta-bar p{font-size:16px;color:rgba(255,255,255,0.5);margin-bottom:20px}
+.cta-bar p strong{color:#fff}
+.btn-primary{display:inline-block;background:#5928E5;color:#fff;padding:16px 36px;border-radius:10px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:background .2s}.btn-primary:hover{background:#4a1fd4}
+
+.footer{padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.04)}
 .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
 .footer-brand .footer-logo{font-size:18px;font-weight:800;text-transform:uppercase;margin-bottom:12px}.footer-brand .footer-logo span{color:#7B52FF}
 .footer-brand p{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.6;max-width:280px}
@@ -34,22 +40,30 @@ h1 span{color:#7B52FF}
 .footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between}
 .footer-bottom p{font-size:11px;color:rgba(255,255,255,0.2)}
 .footer-socials{display:flex;gap:16px}.footer-socials a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color .2s}.footer-socials a:hover{color:#7B52FF}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}.nav-links{display:none}h1{font-size:32px}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.listings-hero{padding:140px 20px 40px}.listings-hero h1{font-size:32px}.idx-wrapper{padding:0 20px 40px}.footer-inner{grid-template-columns:1fr 1fr}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<nav class="nav"><a href="/" class="nav-logo"><span>Jesse</span> Oñate.</a><div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a><a href="/guide">Free Guide</a><a href="/zoom" class="nav-cta active">Get Started</a></div></nav>
+<nav class="nav"><a href="/" class="nav-logo"><span>Jesse</span> Oñate.</a><div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/listings" class="active">Listings</a><a href="/sellers">Sellers</a><a href="/guide">Free Guide</a><a href="/zoom" class="nav-cta">Get Started</a></div></nav>
 
-<div class="page">
-  <div class="header">
-    <div class="badge">Free Consultation</div>
-    <h1>Book A Free <span>Zoom Call</span> With Jesse</h1>
-    <p class="subtitle">Whether you are buying or selling, this call is designed to give you an edge in today's market. No pressure, just real advice.</p>
-  </div>
-  <div class="calendar-wrap">
-    <iframe src="https://app.jtek.pro/widget/bookings/zoomwithjessetek" scrolling="yes"></iframe>
+<section class="listings-hero">
+  <div class="section-label" style="opacity:0;animation:fadeUp .7s ease .1s forwards">Browse Homes</div>
+  <h1>Find Your Next<br>Home</h1>
+  <p>Search active listings in Downey, Whittier, Pico Rivera, La Habra, and surrounding cities in LA and Orange County.</p>
+</section>
+
+<div class="idx-wrapper">
+  <div class="idx-container">
+    <iframe src="https://matrix.crmls.org/Matrix/public/IDX.aspx?idx=a92f378d" scrolling="yes"></iframe>
   </div>
 </div>
+
+<section class="cta-bar">
+  <p><strong>Can not find what you are looking for?</strong> I have access to listings before they hit the market.</p>
+  <a href="/zoom" class="btn-primary">Talk To Jesse</a>
+</section>
 
 <footer class="footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><span>Jesse</span> Oñate.</div><p>Helping millennials buy and sell homes in Downey and surrounding cities.</p></div><div class="footer-col"><h4>Pages</h4><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a></div><div class="footer-col"><h4>Resources</h4><a href="/guide">Free Guide</a><a href="/zoom">Book a Call</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:5626094200">(562) 609-4200</a><a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a><a href="https://instagram.com/jessetek" target="_blank">@jessetek</a></div></div><div class="footer-bottom"><p>© 2026 Jesse Oñate. All rights reserved.</p><div class="footer-socials"><a href="https://instagram.com/jessetek" target="_blank">Instagram</a><a href="https://www.zillow.com/profile/JesseOnate" target="_blank">Zillow</a></div></div></footer>
 </body>

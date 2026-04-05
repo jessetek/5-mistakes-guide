@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About Jesse Oñate | Realtor in Downey, CA</title>
+<meta name="description" content="Meet Jesse Oñate, a top-producing realtor helping millennials buy and sell homes in Downey and surrounding cities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:hidden}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,3,3,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04)}
+.nav-logo{font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;text-decoration:none}.nav-logo span{color:#7B52FF}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.5);font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{background:#5928E5;color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600}
+
+.about-hero{padding:160px 40px 100px;display:flex;align-items:center;gap:80px;max-width:1200px;margin:0 auto}
+.about-photo{width:400px;min-width:360px;border-radius:20px;overflow:hidden;opacity:0;animation:fadeUp .7s ease .3s forwards}
+.about-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 15%}
+.about-text{flex:1;opacity:0;animation:fadeUp .7s ease .5s forwards}
+.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7B52FF;margin-bottom:20px}
+.about-text h1{font-size:44px;font-weight:800;text-transform:uppercase;letter-spacing:-0.5px;line-height:1.1;margin-bottom:24px}
+.about-text h1 span{color:#7B52FF}
+.about-text p{font-size:16px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:20px}
+
+.values{padding:100px 40px;background:#0A0B14}
+.values-inner{max-width:1000px;margin:0 auto;text-align:center}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.value-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:36px 28px;transition:border-color .3s}
+.value-card:hover{border-color:rgba(123,82,255,0.2)}
+.value-num{font-size:32px;font-weight:800;color:#7B52FF;margin-bottom:12px}
+.value-title{font-size:16px;font-weight:700;text-transform:uppercase;margin-bottom:8px}
+.value-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6}
+
+.section-title{font-size:40px;font-weight:800;text-transform:uppercase;letter-spacing:-0.5px;line-height:1.1;margin-bottom:16px}
+.section-sub{font-size:16px;color:rgba(255,255,255,0.4);line-height:1.6}
+
+.cta-section{padding:120px 40px;text-align:center;position:relative}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(89,40,229,0.08) 0%,transparent 70%)}
+.cta-section h2{font-size:44px;font-weight:800;text-transform:uppercase;margin-bottom:16px;position:relative;z-index:1}
+.cta-section p{color:rgba(255,255,255,0.4);font-size:16px;max-width:460px;margin:0 auto 36px;line-height:1.6;position:relative;z-index:1}
+.btn-primary{background:#5928E5;color:#fff;padding:16px 36px;border-radius:10px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:background .2s;position:relative;z-index:1}.btn-primary:hover{background:#4a1fd4}
+
+.footer{padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.04)}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand .footer-logo{font-size:18px;font-weight:800;text-transform:uppercase;margin-bottom:12px}.footer-brand .footer-logo span{color:#7B52FF}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.6;max-width:280px}
+.footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.5);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;margin-bottom:10px;transition:color .2s}.footer-col a:hover{color:#7B52FF}
+.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.2)}
+.footer-socials{display:flex;gap:16px}.footer-socials a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color .2s}.footer-socials a:hover{color:#7B52FF}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.about-hero{flex-direction:column;padding:140px 20px 60px}.about-photo{width:100%;max-width:320px}.about-text h1{font-size:32px}.values-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="/" class="nav-logo"><span>Jesse</span> Oñate.</a><div class="nav-links"><a href="/">Home</a><a href="/about" class="active">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a><a href="/guide">Free Guide</a><a href="/zoom" class="nav-cta">Get Started</a></div></nav>
+
+<section class="about-hero">
+  <div class="about-photo"><img src="https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/698d2a6552c95285ad1eed28.jpg" alt="Jesse Oñate" /></div>
+  <div class="about-text">
+    <div class="section-label">About Jesse</div>
+    <h1>I Am Not Your <span>Typical Agent</span></h1>
+    <p>I got into real estate because I saw too many people, especially millennials like me, getting taken advantage of during the biggest purchase of their lives.</p>
+    <p>I specialize in helping first time homebuyers and sellers in Downey and the surrounding cities in LA and Orange County. My approach is simple: be honest, educate my clients, and fight for the best deal possible.</p>
+    <p>When I am not closing deals, you can find me creating educational content on Instagram where I break down the home buying process in a way that actually makes sense.</p>
+  </div>
+</section>
+
+<section class="values">
+  <div class="values-inner">
+    <div class="section-label">Why Work With Me</div>
+    <h2 class="section-title">What Sets Me Apart</h2>
+    <div class="values-grid">
+      <div class="value-card fade-in"><div class="value-num">01</div><div class="value-title">Education First</div><div class="value-desc">I make sure you understand every step of the process before making any decisions.</div></div>
+      <div class="value-card fade-in"><div class="value-num">02</div><div class="value-title">No Pressure</div><div class="value-desc">I will never push you into a deal that is not right for you. Your timeline is my timeline.</div></div>
+      <div class="value-card fade-in"><div class="value-num">03</div><div class="value-title">Always Available</div><div class="value-desc">I respond fast and I am always just a text or call away. You will never feel left in the dark.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label">Let's Connect</div>
+  <h2>Ready To Work<br>Together?</h2>
+  <p>Book a free Zoom call and let's talk about your goals. No strings attached.</p>
+  <a href="/zoom" class="btn-primary">Get Started</a>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><span>Jesse</span> Oñate.</div><p>Helping millennials buy and sell homes in Downey and surrounding cities.</p></div><div class="footer-col"><h4>Pages</h4><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a></div><div class="footer-col"><h4>Resources</h4><a href="/guide">Free Guide</a><a href="/zoom">Book a Call</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:5626094200">(562) 609-4200</a><a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a><a href="https://instagram.com/jessetek" target="_blank">@jessetek</a></div></div><div class="footer-bottom"><p>© 2026 Jesse Oñate. All rights reserved.</p><div class="footer-socials"><a href="https://instagram.com/jessetek" target="_blank">Instagram</a><a href="https://www.zillow.com/profile/JesseOnate" target="_blank">Zillow</a></div></div></footer>
+
+<script>var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});</script>
+</body>
+</html>
