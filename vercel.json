@@ -3,7 +3,7 @@
     { "source": "/api/submit", "destination": "/api/submit" },
     { "source": "/api/seller-submit", "destination": "/api/seller-submit" },
     { "source": "/zoom", "destination": "/zoom.html" },
-    { "source": "/guide", "destination": "/index.html" },
+    { "source": "/guide", "destination": "/guide.html" },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/listings", "destination": "/listings.html" },
     { "source": "/sellers", "destination": "/sellers.html" },
