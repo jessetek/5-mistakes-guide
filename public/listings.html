@@ -3,123 +3,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Browse Listings | Jesse Oñate Realtor</title>
-<meta name="description" content="Search homes for sale in Downey, Whittier, Pico Rivera, and surrounding cities in LA & Orange County.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:hidden}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,3,3,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04)}
-.nav-logo{font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;text-decoration:none}.nav-logo span{color:#7B52FF}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{color:rgba(255,255,255,0.5);font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-cta{background:#5928E5;color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600}
-
-.listings-hero{padding:160px 40px 40px;text-align:center;position:relative}
-.listings-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(89,40,229,0.06) 0%,transparent 60%)}
-.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7B52FF;margin-bottom:20px;position:relative;z-index:1}
-.listings-hero h1{font-size:48px;font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1.1;margin-bottom:16px;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .3s forwards}
-.listings-hero p{font-size:16px;color:rgba(255,255,255,0.4);max-width:500px;margin:0 auto 0;line-height:1.6;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .5s forwards}
-
-/* Custom Search Bar */
-.search-bar{max-width:1000px;margin:40px auto 0;padding:0 40px;position:relative;z-index:1;opacity:0;animation:fadeUp .7s ease .7s forwards}
-.search-inner{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px 28px;display:flex;gap:16px;align-items:flex-end;backdrop-filter:blur(4px)}
-.search-group{flex:1}
-.search-label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);margin-bottom:8px}
-.search-select,.search-input{width:100%;padding:14px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#fff;font-family:inherit;font-size:14px;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;transition:border-color .2s}
-.search-select:focus,.search-input:focus{border-color:#5928E5}
-.search-select option{background:#1a1a2e;color:#fff}
-.search-btn{background:#5928E5;color:#fff;border:none;padding:14px 32px;border-radius:10px;font-family:inherit;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:background .2s;white-space:nowrap}
-.search-btn:hover{background:#4a1fd4}
-
-/* IDX Container - Dark themed */
-.idx-wrapper{max-width:1200px;margin:48px auto 0;padding:0 40px 60px}
-.idx-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.idx-header-text{font-size:13px;color:rgba(255,255,255,0.3)}
-.idx-toggle{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px 16px;color:rgba(255,255,255,0.5);font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;transition:all .2s}
-.idx-toggle:hover{border-color:#5928E5;color:#fff}
-.idx-toggle.active{background:#5928E5;border-color:#5928E5;color:#fff}
-.idx-container{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);position:relative;background:#0A0B14}
-.idx-container iframe{width:100%;min-height:800px;border:none;display:block;filter:invert(0.88) hue-rotate(180deg);-webkit-filter:invert(0.88) hue-rotate(180deg)}
-.idx-container.light iframe{filter:none;-webkit-filter:none}
-
-/* Powered by label */
-.idx-powered{text-align:center;margin-top:12px;font-size:11px;color:rgba(255,255,255,0.15)}
-
-.cta-bar{padding:60px 40px;text-align:center;background:#0A0B14}
-.cta-bar p{font-size:16px;color:rgba(255,255,255,0.5);margin-bottom:20px}
-.cta-bar p strong{color:#fff}
-.btn-primary{display:inline-block;background:#5928E5;color:#fff;padding:16px 36px;border-radius:10px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:background .2s}.btn-primary:hover{background:#4a1fd4}
-
-.footer{padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.04)}
-.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
-.footer-brand .footer-logo{font-size:18px;font-weight:800;text-transform:uppercase;margin-bottom:12px}.footer-brand .footer-logo span{color:#7B52FF}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.6;max-width:280px}
-.footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.5);margin-bottom:16px}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;margin-bottom:10px;transition:color .2s}.footer-col a:hover{color:#7B52FF}
-.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between}
-.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.2)}
-.footer-socials{display:flex;gap:16px}.footer-socials a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color .2s}.footer-socials a:hover{color:#7B52FF}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:900px){
-  .listings-hero{padding:140px 20px 40px}.listings-hero h1{font-size:32px}
-  .search-inner{flex-direction:column;gap:12px}
-  .search-btn{width:100%}
-  .idx-wrapper{padding:0 20px 40px}
-  .footer-inner{grid-template-columns:1fr 1fr}
-  .nav-links{display:none}
-}
-</style>
+<title>Current Listings | Jesse Oñate Realtor</title>
+<meta name="description" content="Browse current homes for sale in Downey, Pico Rivera, Whittier, Long Beach. Get instant access to off-market and pre-listing properties.">
+<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<nav class="nav"><a href="/" class="nav-logo"><span>Jesse</span> Oñate.</a><div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/listings" class="active">Listings</a><a href="/sellers">Sellers</a><a href="/guide">Free Guide</a><a href="/zoom" class="nav-cta">Get Started</a></div></nav>
 
-<section class="listings-hero">
-  <div class="section-label" style="opacity:0;animation:fadeUp .7s ease .1s forwards">Direct MLS Access</div>
-  <h1>Search Like<br>A Realtor</h1>
-  <p>No Zillow. No Redfin. This is the same MLS tool I use every day as a licensed agent. No hidden listings, no outdated data. You get everything.</p>
-</section>
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/listings.html">Listings</a>
+  <a href="/valuation.html">Sellers</a>
+  <a href="/guide.html">Free Guide</a>
+  <a href="/zoom.html">Get Started</a>
+</div>
 
-<!-- Quick Action Bar -->
-<div class="search-bar">
-  <div class="search-inner">
-    <div class="search-group" style="flex:2">
-      <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:4px">Full MLS search powered by CRMLS</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.4)">The same tool agents use. Filter by city, price, beds, baths, and more.</div>
+<!-- NAV — PILL -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/listings.html">Listings</a>
+    <a href="/valuation.html">Sellers</a>
+    <a href="/guide.html">Free Guide</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>Live Inventory · Updated Daily</span>
     </div>
-    <button class="search-btn" onclick="document.getElementById('idxSection').scrollIntoView({behavior:'smooth'})">Start Searching</button>
-    <a href="/zoom" class="search-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.15);text-decoration:none;text-align:center">Talk To Jesse</a>
+    <h1>Homes for Sale<br><span class="g">in Downey & SoCal.</span></h1>
+    <p>Browse current listings or unlock off-market homes that aren't on Zillow yet. Tour any property — even if it's not on this page.</p>
+    <div class="hero-btns">
+      <a href="/zoom.html" class="btn-primary">Get Off-Market Access</a>
+      <a href="#listings" class="btn-ghost">Browse Listings ↓</a>
+    </div>
   </div>
-</div>
-
-<!-- IDX Container with Dark Mode -->
-<div class="idx-wrapper" id="idxSection">
-  <div class="idx-header">
-    <span class="idx-header-text">Powered by CRMLS MLS</span>
-    <button class="idx-toggle" onclick="toggleTheme(this)">Light Mode</button>
-  </div>
-  <div class="idx-container" id="idxContainer">
-    <iframe src="https://matrix.crmls.org/Matrix/public/IDX.aspx?idx=a92f378d" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0"></iframe>
-  </div>
-  <p class="idx-powered">Use the MLS search below to filter by detailed criteria</p>
-</div>
-
-<section class="cta-bar">
-  <p><strong>Can't find the home?</strong> I have access to listings before they hit market (if they even make it there).</p>
-  <a href="/zoom" class="btn-primary">Talk To Jesse</a>
 </section>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><span>Jesse</span> Oñate.</div><p>Helping millennials buy and sell homes in Downey and surrounding cities.</p></div><div class="footer-col"><h4>Pages</h4><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a></div><div class="footer-col"><h4>Resources</h4><a href="/guide">Free Guide</a><a href="/zoom">Book a Call</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:5626094200">(562) 609-4200</a><a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a><a href="https://instagram.com/jessetek" target="_blank">@jessetek</a></div></div><div class="footer-bottom"><p>© 2026 Jesse Oñate. All rights reserved.</p><div class="footer-socials"><a href="https://instagram.com/jessetek" target="_blank">Instagram</a><a href="https://www.zillow.com/profile/JesseOnate" target="_blank">Zillow</a></div></div></footer>
+<!-- ===================== FILTER BAR ===================== -->
+<a id="listings"></a>
+
+<!-- ===================== CRMLS IDX EMBED ===================== -->
+<section class="crmls-section">
+  <div class="crmls-wrap">
+    <div class="crmls-bar">
+      <div class="crmls-bar-brand">
+        <span class="crmls-bar-brand-dot"></span>
+        CRMLS · Live MLS Search
+      </div>
+      <div class="crmls-bar-meta">Powered by Matrix</div>
+    </div>
+    <div class="crmls-frame">
+      <iframe src="https://matrix.crmls.org/Matrix/public/IDX.aspx?idx=a92f378d" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0" title="CRMLS IDX Listings"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Below-widget CTA -->
+<section class="listings-section">
+  <div class="listings-inner">
+    <div class="listings-empty">
+      <h3>Don't see what you're looking for?</h3>
+      <p>I have access to the full MLS plus off-market and pre-listing inventory. Tell me what you want and I'll find it.</p>
+      <a href="/zoom.html" class="btn-primary">Tell Me What You Want</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta-section">
+  <div class="cta-blob cta-blob-1"></div>
+  <div class="cta-blob cta-blob-2"></div>
+  <div class="cta-card reveal">
+
+    <!-- Avatar with online indicator -->
+    <div class="cta-avatar">
+      <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
+      <div class="cta-online"></div>
+    </div>
+
+    <!-- Online status pill -->
+    <div class="cta-status">
+      <span class="cta-status-dot"></span>
+      Currently online · Replies in minutes
+    </div>
+
+    <!-- Cycling Google review pull-quotes -->
+    <div class="cta-quote-stack">
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</div>
+        <div class="cta-quote-name">— Maria G., Downey</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</div>
+        <div class="cta-quote-name">— David R., La Habra</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Responded within minutes, day or night. Truly client-first experience."</div>
+        <div class="cta-quote-name">— Araceli T., Pico Rivera</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Sold our home in 6 days above asking. Jesse knows exactly what buyers want."</div>
+        <div class="cta-quote-name">— The Garcia Family, Norwalk</div>
+      </div>
+    </div>
+
+    <!-- Warm headline -->
+    <h2 class="cta-headline">I'd love to hear<br>what you're looking for.</h2>
+    <p class="cta-sub">No pressure. No pitch. Just a real conversation about your next move.</p>
+
+    <!-- Two CTAs -->
+    <div class="cta-buttons">
+      <a href="/zoom.html" class="cta-btn cta-btn-primary">
+        Book a Strategy Call
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/guide.html" class="cta-btn cta-btn-secondary">
+        Get the Free Buyer Guide
+      </a>
+    </div>
+
+    <!-- Trust footer -->
+    <div class="cta-foot">
+      <span class="cta-foot-item">📍 Downey, CA</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🌐 Bilingual</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🔑 100+ closings</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">First-Time Buyer Guide</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/listings.html">Browse Listings</a>
+      <a href="/zoom.html">Get Pre-Approved</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">First-Time Seller Guide</a>
+      <a href="/valuation.html">Free Home Valuation</a>
+      <a href="/sellers.html">Sell with Jesse</a>
+    </div>
+    <div class="f-col">
+      <h4>Neighborhoods</h4>
+      <a href="/neighborhoods/downey.html">Downey</a>
+      <a href="/neighborhoods/pico-rivera.html">Pico Rivera</a>
+      <a href="/neighborhoods/whittier.html">Whittier</a>
+      <a href="/neighborhoods/long-beach.html">Long Beach</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:5626094200">(562) 609-4200</a>
+      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      <a href="https://instagram.com/jessetek" target="_blank">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
-function toggleTheme(btn) {
-  var container = document.getElementById('idxContainer');
-  container.classList.toggle('light');
-  btn.classList.toggle('active');
-  btn.textContent = container.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
-}
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
+
+// Filter chip toggle
+document.querySelectorAll('.lf-chip').forEach(function(c){
+  c.addEventListener('click', function(){
+    document.querySelectorAll('.lf-chip').forEach(function(x){x.classList.remove('active')});
+    c.classList.add('active');
+  });
+});
 </script>
 </body>
 </html>

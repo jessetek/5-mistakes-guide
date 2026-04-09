@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>First-Time Buyer Checklist | Jesse Oñate Realtor</title>
+<meta name="description" content="The complete first-time home buyer checklist. Track every step from pre-approval to keys. Free, interactive, no email required.">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/listings.html">Listings</a>
+  <a href="/valuation.html">Sellers</a>
+  <a href="/guide.html">Free Guide</a>
+  <a href="/zoom.html">Get Started</a>
+</div>
+
+<!-- NAV — PILL -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/listings.html">Listings</a>
+    <a href="/valuation.html">Sellers</a>
+    <a href="/guide.html">Free Guide</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>Free · Interactive · No Email Required</span>
+    </div>
+    <h1>The First-Time Buyer<br><span class="g">Checklist.</span></h1>
+    <p>Every box you need to check before getting your keys. Save your progress as you go — your checks stay even if you close the tab.</p>
+    <div class="hero-btns">
+      <a href="/zoom.html" class="btn-primary">Get Help with This</a>
+      <a href="#checklist" class="btn-ghost">Start the Checklist ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CHECKLIST ===================== -->
+<section class="checklist-section" id="checklist">
+  <div class="checklist-inner">
+
+    <!-- Progress bar -->
+    <div class="cl-progress-card">
+      <div class="cl-progress-head">
+        <div>
+          <div class="cl-progress-label">Your Progress</div>
+          <div class="cl-progress-num"><span id="clDone">0</span>/<span id="clTotal">28</span> checked</div>
+        </div>
+        <button class="cl-reset-btn" onclick="resetChecklist()">Reset All</button>
+      </div>
+      <div class="cl-progress-bar"><div class="cl-progress-fill" id="clFill"></div></div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="cl-phase">
+      <div class="cl-phase-head">
+        <div class="cl-phase-num">1</div>
+        <div>
+          <div class="cl-phase-tag">PHASE ONE</div>
+          <h2>Get Your Money Right</h2>
+        </div>
+      </div>
+      <div class="cl-items">
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Pull your credit report from all 3 bureaus</div>
+            <div class="cl-hint">Free at annualcreditreport.com — make sure there are no errors before applying for a loan.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Check your credit score</div>
+            <div class="cl-hint">Aim for 620+ for FHA, 740+ for the best conventional rates.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Pay down credit card debt below 30% utilization</div>
+            <div class="cl-hint">This alone can boost your score 20-40 points in a month.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Save your down payment + 3-5% for closing costs</div>
+            <div class="cl-hint">On a $650K home, that's $22-152K total saved up.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Don't open new credit cards or take new loans</div>
+            <div class="cl-hint">Even a Best Buy financing offer can hurt your mortgage approval.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Get pre-approved (not just pre-qualified) by a real lender</div>
+            <div class="cl-hint">Pre-approval is a hard credit pull and a real document. Pre-qualification is just an estimate.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Talk to Jesse about your loan options</div>
+            <div class="cl-hint">FHA, VA, conventional, jumbo — different loans for different situations. We figure out which is right for you.</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="cl-phase">
+      <div class="cl-phase-head">
+        <div class="cl-phase-num">2</div>
+        <div>
+          <div class="cl-phase-tag">PHASE TWO</div>
+          <h2>Find Your Home</h2>
+        </div>
+      </div>
+      <div class="cl-items">
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Define your must-haves vs nice-to-haves</div>
+            <div class="cl-hint">Bedrooms, bathrooms, square footage, garage, yard. Be honest about what's a must vs a wish.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Pick your target neighborhoods</div>
+            <div class="cl-hint">Within a 25-min commute? Near schools? Walking distance to coffee? List 3-5 areas.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Set up MLS alerts (I do this for you for free)</div>
+            <div class="cl-hint">You'll get new listings within minutes of them going live.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Tour at least 5-10 homes in person</div>
+            <div class="cl-hint">Photos lie. Walk the floors, check the storage, stand in the backyard.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Drive the neighborhood at different times of day</div>
+            <div class="cl-hint">Weekday morning, Friday night, Sunday afternoon. Get a real feel.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Check the local school ratings</div>
+            <div class="cl-hint">Even if you don't have kids, it affects resale value. Use greatschools.org.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Check the commute on Google Maps at rush hour</div>
+            <div class="cl-hint">Your dream home is a nightmare if it doubles your daily drive.</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="cl-phase">
+      <div class="cl-phase-head">
+        <div class="cl-phase-num">3</div>
+        <div>
+          <div class="cl-phase-tag">PHASE THREE</div>
+          <h2>Make the Offer</h2>
+        </div>
+      </div>
+      <div class="cl-items">
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Run comps with Jesse before offering</div>
+            <div class="cl-hint">We pull recent sales of similar homes — your offer should be data-backed, not guesswork.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Decide on your offer strategy</div>
+            <div class="cl-hint">Lowball? At list? Above asking? Cash-equivalent? Each market is different.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Calculate your max walk-away price</div>
+            <div class="cl-hint">The number you'd never pay above. Decide BEFORE you fall in love.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Submit a clean, professional offer letter</div>
+            <div class="cl-hint">Include pre-approval, earnest money, contingencies, and a personal note if it's competitive.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Be ready to negotiate or counter quickly</div>
+            <div class="cl-hint">In a hot market, every hour matters. Have your phone on you.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Don't get emotionally attached before contracts are signed</div>
+            <div class="cl-hint">10% of deals fall through. Stay calm until you have a signed contract in hand.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Know your contingencies (inspection, appraisal, loan)</div>
+            <div class="cl-hint">Standard in CA: 17 days inspection/appraisal, 21 days loan. These are your safety nets.</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="cl-phase">
+      <div class="cl-phase-head">
+        <div class="cl-phase-num">4</div>
+        <div>
+          <div class="cl-phase-tag">PHASE FOUR</div>
+          <h2>Close the Deal</h2>
+        </div>
+      </div>
+      <div class="cl-items">
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Schedule the home inspection within 17 days</div>
+            <div class="cl-hint">Hire an independent inspector. Don't use the seller's recommendation. $400-600 and worth every penny.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Negotiate any repairs or credits from inspection</div>
+            <div class="cl-hint">Big issues = ask for repairs or a credit. Small stuff = let it go.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Get the appraisal back from your lender</div>
+            <div class="cl-hint">If it appraises low, we negotiate. If it appraises high, you have instant equity.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Lock in your interest rate at the right time</div>
+            <div class="cl-hint">Too early = miss a drop. Too late = miss the lock window. Talk to Jesse about timing.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Final walkthrough 24 hours before closing</div>
+            <div class="cl-hint">Make sure the home is in the same condition. Make sure the seller's stuff is OUT.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Wire your down payment + closing costs (verify wire instructions twice)</div>
+            <div class="cl-hint">Wire fraud is real. Always call the title company to verify the wire info.</div>
+          </div>
+        </label>
+        <label class="cl-item">
+          <input type="checkbox" class="cl-checkbox">
+          <span class="cl-checkmark"></span>
+          <div class="cl-text">
+            <div class="cl-title">Sign your closing docs and get your keys 🎉</div>
+            <div class="cl-hint">You did it. Welcome home. Tag Jesse on Instagram so he can celebrate with you.</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta-section">
+  <div class="cta-blob cta-blob-1"></div>
+  <div class="cta-blob cta-blob-2"></div>
+  <div class="cta-card reveal">
+
+    <!-- Avatar with online indicator -->
+    <div class="cta-avatar">
+      <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
+      <div class="cta-online"></div>
+    </div>
+
+    <!-- Online status pill -->
+    <div class="cta-status">
+      <span class="cta-status-dot"></span>
+      Currently online · Replies in minutes
+    </div>
+
+    <!-- Cycling Google review pull-quotes -->
+    <div class="cta-quote-stack">
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</div>
+        <div class="cta-quote-name">— Maria G., Downey</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</div>
+        <div class="cta-quote-name">— David R., La Habra</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Responded within minutes, day or night. Truly client-first experience."</div>
+        <div class="cta-quote-name">— Araceli T., Pico Rivera</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Sold our home in 6 days above asking. Jesse knows exactly what buyers want."</div>
+        <div class="cta-quote-name">— The Garcia Family, Norwalk</div>
+      </div>
+    </div>
+
+    <!-- Warm headline -->
+    <h2 class="cta-headline">I'd love to hear<br>what you're looking for.</h2>
+    <p class="cta-sub">No pressure. No pitch. Just a real conversation about your next move.</p>
+
+    <!-- Two CTAs -->
+    <div class="cta-buttons">
+      <a href="/zoom.html" class="cta-btn cta-btn-primary">
+        Book a Strategy Call
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/guide.html" class="cta-btn cta-btn-secondary">
+        Get the Free Buyer Guide
+      </a>
+    </div>
+
+    <!-- Trust footer -->
+    <div class="cta-foot">
+      <span class="cta-foot-item">📍 Downey, CA</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🌐 Bilingual</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🔑 100+ closings</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">First-Time Buyer Guide</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/listings.html">Browse Listings</a>
+      <a href="/zoom.html">Get Pre-Approved</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">First-Time Seller Guide</a>
+      <a href="/valuation.html">Free Home Valuation</a>
+      <a href="/sellers.html">Sell with Jesse</a>
+    </div>
+    <div class="f-col">
+      <h4>Neighborhoods</h4>
+      <a href="/neighborhoods/downey.html">Downey</a>
+      <a href="/neighborhoods/pico-rivera.html">Pico Rivera</a>
+      <a href="/neighborhoods/whittier.html">Whittier</a>
+      <a href="/neighborhoods/long-beach.html">Long Beach</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:5626094200">(562) 609-4200</a>
+      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      <a href="https://instagram.com/jessetek" target="_blank">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
+
+// Checklist persistence
+(function(){
+  var storageKey = 'jesse-checklist-v1';
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch(e) {}
+
+  var checks = document.querySelectorAll('.cl-checkbox');
+  var fill = document.getElementById('clFill');
+  var done = document.getElementById('clDone');
+  var total = document.getElementById('clTotal');
+  total.textContent = checks.length;
+
+  function update() {
+    var n = 0;
+    checks.forEach(function(c){ if (c.checked) n++; });
+    done.textContent = n;
+    fill.style.width = (n / checks.length * 100) + '%';
+  }
+
+  checks.forEach(function(c, i){
+    var key = 'cl-' + i;
+    if (saved[key]) {
+      c.checked = true;
+      c.closest('.cl-item').classList.add('checked');
+    }
+    c.addEventListener('change', function(){
+      saved[key] = c.checked;
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+      c.closest('.cl-item').classList.toggle('checked', c.checked);
+      update();
+    });
+  });
+  update();
+})();
+
+function resetChecklist() {
+  if (!confirm('Reset all checks?')) return;
+  localStorage.removeItem('jesse-checklist-v1');
+  document.querySelectorAll('.cl-checkbox').forEach(function(c){
+    c.checked = false;
+    c.closest('.cl-item').classList.remove('checked');
+  });
+  document.getElementById('clDone').textContent = '0';
+  document.getElementById('clFill').style.width = '0%';
+}
+</script>
+</body>
+</html>

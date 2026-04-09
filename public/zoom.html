@@ -3,54 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Book a Free Zoom Call | Jesse Oñate</title>
-<meta name="description" content="Book a free 30-minute Zoom call with Jesse Oñate, Realtor in Downey and surrounding cities.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:hidden}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,3,3,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04)}
-.nav-logo{font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;text-decoration:none}.nav-logo span{color:#7B52FF}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{color:rgba(255,255,255,0.5);font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-cta{background:#5928E5;color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600}
-
-.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:140px 24px 40px}
-.header{text-align:center;margin-bottom:48px;max-width:600px}
-.badge{display:inline-block;border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:8px 20px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:24px}
-h1{font-size:44px;font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
-h1 span{color:#7B52FF}
-.subtitle{font-size:16px;color:rgba(255,255,255,0.4);line-height:1.6}
-.calendar-wrap{width:100%;max-width:700px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;min-height:600px}
-.calendar-wrap iframe{width:100%;min-height:700px;border:none}
-
-.footer{padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.04);width:100%}
-.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
-.footer-brand .footer-logo{font-size:18px;font-weight:800;text-transform:uppercase;margin-bottom:12px}.footer-brand .footer-logo span{color:#7B52FF}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.6;max-width:280px}
-.footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.5);margin-bottom:16px}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;margin-bottom:10px;transition:color .2s}.footer-col a:hover{color:#7B52FF}
-.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between}
-.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.2)}
-.footer-socials{display:flex;gap:16px}.footer-socials a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color .2s}.footer-socials a:hover{color:#7B52FF}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}.nav-links{display:none}h1{font-size:32px}}
-</style>
+<title>Book a Free Strategy Call | Jesse Oñate Realtor</title>
+<meta name="description" content="Book a free 15-minute strategy call with Jesse Oñate. No pressure. No pitch. Just real answers about your home buying or selling plans.">
+<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<nav class="nav"><a href="/" class="nav-logo"><span>Jesse</span> Oñate.</a><div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a><a href="/guide">Free Guide</a><a href="/zoom" class="nav-cta active">Get Started</a></div></nav>
 
-<div class="page">
-  <div class="header">
-    <div class="badge">Free Consultation</div>
-    <h1>Book A Free <span>Zoom Call</span> With Jesse</h1>
-    <p class="subtitle">Whether you are buying or selling, this call is designed to give you an edge in today's market. No pressure, just real advice.</p>
-  </div>
-  <div class="calendar-wrap">
-    <iframe src="https://app.jtek.pro/widget/bookings/zoomwithjessetek" scrolling="yes"></iframe>
-  </div>
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/listings.html">Listings</a>
+  <a href="/valuation.html">Sellers</a>
+  <a href="/guide.html">Free Guide</a>
+  <a href="/zoom.html">Get Started</a>
 </div>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><span>Jesse</span> Oñate.</div><p>Helping millennials buy and sell homes in Downey and surrounding cities.</p></div><div class="footer-col"><h4>Pages</h4><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a></div><div class="footer-col"><h4>Resources</h4><a href="/guide">Free Guide</a><a href="/zoom">Book a Call</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:5626094200">(562) 609-4200</a><a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a><a href="https://instagram.com/jessetek" target="_blank">@jessetek</a></div></div><div class="footer-bottom"><p>© 2026 Jesse Oñate. All rights reserved.</p><div class="footer-socials"><a href="https://instagram.com/jessetek" target="_blank">Instagram</a><a href="https://www.zillow.com/profile/JesseOnate" target="_blank">Zillow</a></div></div></footer>
+<!-- NAV — PILL -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/listings.html">Listings</a>
+    <a href="/valuation.html">Sellers</a>
+    <a href="/guide.html">Free Guide</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>15 minutes · Free · No commitment</span>
+    </div>
+    <h1>Let's Have an<br><span class="g">Honest Conversation.</span></h1>
+    <p>Pick a time that works. We'll hop on Zoom or a phone call. You tell me what you want, I tell you what's realistic. That's it.</p>
+  </div>
+</section>
+
+<!-- Booking + What to Expect -->
+<section class="zoom-section">
+  <div class="zoom-inner">
+    <!-- Left: Calendar embed area -->
+    <div class="zoom-calendar">
+      <div class="zoom-calendar-head">
+        <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate" class="zoom-avatar">
+        <div>
+          <div class="zoom-name">Jesse Oñate</div>
+          <div class="zoom-role">Realtor · Bilingual · Downey, CA</div>
+          <div class="zoom-online"><span class="zoom-online-dot"></span> Currently online</div>
+        </div>
+      </div>
+      <div class="zoom-calendar-embed">
+        <!-- Jtek / LeadConnector calendar embed -->
+        <iframe src="https://api.leadconnectorhq.com/widget/booking/wIcSd7usT5rJv5b1yEjs" style="width:100%;border:none;overflow:hidden;min-height:720px" scrolling="no" id="wIcSd7usT5rJv5b1yEjs_1775763687884" title="Book a Call with Jesse"></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+        <!-- Fallback quick-contact below the calendar -->
+        <div class="zoom-fallback">
+          <div class="zoom-fallback-label">Prefer to text or call?</div>
+          <div class="zoom-fallback-links">
+            <a href="sms:5626094200?body=Hi%20Jesse%2C%20I'd%20like%20to%20book%20a%20strategy%20call.">📱 Text (562) 609-4200</a>
+            <a href="tel:5626094200">📞 Call (562) 609-4200</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: What to expect -->
+    <div class="zoom-expect">
+      <div class="zoom-expect-head">
+        <span class="sec-label">What to Expect</span>
+        <h2>15 minutes is all I need.</h2>
+      </div>
+
+      <div class="zoom-step">
+        <div class="zoom-step-num">1</div>
+        <div>
+          <h4>You tell me where you're at</h4>
+          <p>Buying? Selling? Just thinking about it? We start with what's real for you right now — your timeline, your budget, your goals.</p>
+        </div>
+      </div>
+
+      <div class="zoom-step">
+        <div class="zoom-step-num">2</div>
+        <div>
+          <h4>I tell you what's realistic</h4>
+          <p>I'll be straight with you about what's possible in your price range and timeline. Even when it's not what you want to hear.</p>
+        </div>
+      </div>
+
+      <div class="zoom-step">
+        <div class="zoom-step-num">3</div>
+        <div>
+          <h4>We figure out the next step together</h4>
+          <p>Maybe it's getting pre-approved. Maybe it's a home valuation. Maybe it's "let's wait 6 months." Whatever it is, you'll leave the call knowing your next move.</p>
+        </div>
+      </div>
+
+      <!-- Trust badges row -->
+      <div class="zoom-trust">
+        <div class="zoom-trust-item">⭐ 5.0 Google Rating</div>
+        <div class="zoom-trust-item">🔑 100+ closings</div>
+        <div class="zoom-trust-item">🌐 Bilingual</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">First-Time Buyer Guide</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/listings.html">Browse Listings</a>
+      <a href="/zoom.html">Get Pre-Approved</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">First-Time Seller Guide</a>
+      <a href="/valuation.html">Free Home Valuation</a>
+      <a href="/sellers.html">Sell with Jesse</a>
+    </div>
+    <div class="f-col">
+      <h4>Neighborhoods</h4>
+      <a href="/neighborhoods/downey.html">Downey</a>
+      <a href="/neighborhoods/pico-rivera.html">Pico Rivera</a>
+      <a href="/neighborhoods/whittier.html">Whittier</a>
+      <a href="/neighborhoods/long-beach.html">Long Beach</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:5626094200">(562) 609-4200</a>
+      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      <a href="https://instagram.com/jessetek" target="_blank">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.08});
+  document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
+</script>
 </body>
 </html>

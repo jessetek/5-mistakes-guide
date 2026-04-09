@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Free Home Valuation | Jesse Oñate Real Estate</title>
+<meta name="description" content="Get an accurate free home valuation in Downey, Pico Rivera, and surrounding cities. No obligation. Real comps from a real local realtor.">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/listings.html">Listings</a>
+  <a href="/valuation.html">Sellers</a>
+  <a href="/guide.html">Free Guide</a>
+  <a href="/zoom.html">Get Started</a>
+</div>
+
+<!-- NAV — PILL -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/listings.html">Listings</a>
+    <a href="/valuation.html">Sellers</a>
+    <a href="/guide.html">Free Guide</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero valuation-hero">
+  <div class="page-hero-inner valuation-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>Free · No Obligation · 24-Hour Turnaround</span>
+    </div>
+    <h1>What's Your Home<br><span class="g">Actually Worth?</span></h1>
+    <p>Get an accurate market valuation from a local realtor — not a Zillow estimate. Real comps. Real strategy. Real numbers.</p>
+
+    <form class="valuation-form" action="/api/valuation" method="POST">
+      <div class="vf-row">
+        <label class="vf-field">
+          <span class="vf-label">Property Address</span>
+          <input type="text" name="address" placeholder="123 Main St, Downey, CA 90240" required>
+        </label>
+      </div>
+      <div class="vf-row vf-row-2">
+        <label class="vf-field">
+          <span class="vf-label">Your Name</span>
+          <input type="text" name="name" placeholder="Jesse Oñate" required>
+        </label>
+        <label class="vf-field">
+          <span class="vf-label">Phone or Email</span>
+          <input type="text" name="contact" placeholder="(562) 609-4200" required>
+        </label>
+      </div>
+      <div class="vf-row vf-row-2">
+        <label class="vf-field">
+          <span class="vf-label">Bedrooms</span>
+          <select name="bedrooms">
+            <option>1</option><option>2</option><option selected>3</option><option>4</option><option>5+</option>
+          </select>
+        </label>
+        <label class="vf-field">
+          <span class="vf-label">Timeline to Sell</span>
+          <select name="timeline">
+            <option>Just curious</option>
+            <option>3-6 months</option>
+            <option>1-3 months</option>
+            <option>ASAP</option>
+          </select>
+        </label>
+      </div>
+      <button type="submit" class="vf-submit">Get My Free Valuation →</button>
+      <div class="vf-trust">
+        🔒 Your info is safe — never shared. Just used to send you your CMA.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== BENEFITS ===================== -->
+<section class="val-benefits">
+  <div class="val-benefits-inner">
+    <div class="val-benefit reveal-s">
+      <div class="val-benefit-icon">📊</div>
+      <h3>Real Comps, Not Algorithms</h3>
+      <p>Zillow's Zestimate is off by an average of 7%. I pull actual recent sales of homes like yours, in your exact neighborhood.</p>
+    </div>
+    <div class="val-benefit reveal-s d1">
+      <div class="val-benefit-icon">⚡</div>
+      <h3>24-Hour Turnaround</h3>
+      <p>I'll send your full CMA report (with comps, market trends, and list price strategy) within 24 hours of your submission.</p>
+    </div>
+    <div class="val-benefit reveal-s d2">
+      <div class="val-benefit-icon">🤝</div>
+      <h3>Zero Pressure, Zero Cost</h3>
+      <p>Not ready to sell? That's fine. The valuation is yours. No calls unless you ask. No "drip campaigns." Just useful info.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ZESTIMATE VS REALITY ===================== -->
+<section class="val-comp">
+  <div class="val-comp-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">Zestimate vs Reality</span>
+      <h2 class="sec-title">Zillow Is Guessing.<br>I'm Not.</h2>
+      <p class="sec-sub">Zillow's Zestimate uses an algorithm and stale data. I use 6–10 recent sales from your exact neighborhood — and I've walked the homes.</p>
+    </div>
+
+    <div class="val-comp-grid">
+      <div class="val-comp-card bad">
+        <div class="val-comp-label">Zillow Zestimate</div>
+        <div class="val-comp-num">$675K</div>
+        <div class="val-comp-sub">Algorithm-generated · Often weeks out of date · No weight for condition or upgrades</div>
+      </div>
+
+      <div class="val-comp-arrow">→</div>
+
+      <div class="val-comp-card good">
+        <div class="val-comp-label">Jesse's Real CMA</div>
+        <div class="val-comp-num">$742K</div>
+        <div class="val-comp-sub">Real comps · Your condition + upgrades · Walked the neighborhood this week</div>
+      </div>
+    </div>
+
+    <div class="val-comp-stat">
+      <div class="val-comp-stat-big">7% average Zestimate error</div>
+      <div class="val-comp-stat-lbl">On a $700K home, that's ±$49,000 off. Don't leave money on the table.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT'S IN YOUR CMA ===================== -->
+<section class="val-cma">
+  <div class="val-cma-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">What You'll Get</span>
+      <h2 class="sec-title">Your Free CMA,<br>Broken Down.</h2>
+      <p class="sec-sub">Here's exactly what lands in your inbox 24 hours after you submit the form — no fluff, no pressure.</p>
+    </div>
+
+    <div class="val-cma-grid">
+
+      <div class="val-cma-card reveal-s">
+        <div class="val-cma-num">01</div>
+        <div class="val-cma-icon">📊</div>
+        <h3>Real Recent Comps</h3>
+        <p>6–10 homes like yours, sold in the last 90 days, in your exact neighborhood. Side by side with your home, with adjustments for size, condition, and lot.</p>
+      </div>
+
+      <div class="val-cma-card reveal-s d1">
+        <div class="val-cma-num">02</div>
+        <div class="val-cma-icon">✨</div>
+        <h3>Your Competitive Edge</h3>
+        <p>What makes YOUR home stand out — upgraded kitchen, corner lot, pool, walkable to schools. I pull every advantage and price it in.</p>
+      </div>
+
+      <div class="val-cma-card reveal-s d2">
+        <div class="val-cma-num">03</div>
+        <div class="val-cma-icon">🎯</div>
+        <h3>Strategic List Price</h3>
+        <p>The exact number I'd list your home at — designed to attract multiple offers and push the final price above asking. Not a guess. A strategy.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARKET STATS ===================== -->
+<section class="val-stats">
+  <div class="val-stats-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">Downey Market · Live Data</span>
+      <h2 class="sec-title">The Numbers<br>Say It All.</h2>
+      <p class="sec-sub">I live and work in this market. Here's what's actually happening in Downey and surrounding cities right now.</p>
+    </div>
+
+    <div class="val-stats-grid">
+
+      <div class="val-stat-card reveal-s">
+        <div class="val-stat-big">40%</div>
+        <div class="val-stat-lbl">Sold Above Asking</div>
+        <div class="val-stat-trend">↑ Competitive market</div>
+      </div>
+
+      <div class="val-stat-card reveal-s d1">
+        <div class="val-stat-big">45</div>
+        <div class="val-stat-lbl">Avg Days on Market</div>
+        <div class="val-stat-trend down">↓ trending faster</div>
+      </div>
+
+      <div class="val-stat-card reveal-s d2">
+        <div class="val-stat-big">$926K</div>
+        <div class="val-stat-lbl">Median Sale Price</div>
+        <div class="val-stat-trend">↑ +4.1% YoY</div>
+      </div>
+
+      <div class="val-stat-card reveal-s d3">
+        <div class="val-stat-big">99%</div>
+        <div class="val-stat-lbl">Sale-to-List Ratio</div>
+        <div class="val-stat-trend">↑ Strong pricing</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SELLER STORIES ===================== -->
+<section class="val-stories">
+  <div class="val-stories-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">Real Seller Stories</span>
+      <h2 class="sec-title">The Proof Is in<br>the Sale Price.</h2>
+      <p class="sec-sub">Every one of these sellers started exactly where you're standing — thinking "what's my home worth?"</p>
+    </div>
+
+    <div class="val-stories-grid">
+
+      <div class="val-story reveal-s">
+        <div class="val-story-stars">★★★★★</div>
+        <p class="val-story-quote">"Jesse sold our home in 6 days above asking. He knows exactly what buyers want. Best decision we ever made."</p>
+        <div class="val-story-meta">
+          <div class="val-story-avatar" style="background:#0E7490">G</div>
+          <div>
+            <div class="val-story-name">The Garcia Family</div>
+            <div class="val-story-loc">Norwalk, CA</div>
+          </div>
+          <div class="val-story-tag">+$40K</div>
+        </div>
+      </div>
+
+      <div class="val-story reveal-s d1">
+        <div class="val-story-stars">★★★★★</div>
+        <p class="val-story-quote">"Jesse sold our home in 9 days — above asking. He knows the market inside and out. The CMA was spot-on."</p>
+        <div class="val-story-meta">
+          <div class="val-story-avatar" style="background:#BE123C">V</div>
+          <div>
+            <div class="val-story-name">Vanessa L.</div>
+            <div class="val-story-loc">Pico Rivera, CA</div>
+          </div>
+          <div class="val-story-tag">+$25K</div>
+        </div>
+      </div>
+
+      <div class="val-story reveal-s d2">
+        <div class="val-story-stars">★★★★★</div>
+        <p class="val-story-quote">"He negotiated for us like it was his own money. Three offers over asking, waived contingencies, closed fast."</p>
+        <div class="val-story-meta">
+          <div class="val-story-avatar" style="background:#2563EB">A</div>
+          <div>
+            <div class="val-story-name">Anthony T.</div>
+            <div class="val-story-loc">Whittier, CA</div>
+          </div>
+          <div class="val-story-tag">+$35K</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE PROCESS ===================== -->
+<section class="val-process">
+  <div class="val-process-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">What Happens Next</span>
+      <h2 class="sec-title">Submit. Wait.<br>Read. That's It.</h2>
+      <p class="sec-sub">Here's exactly what happens after you hit "Get My Free Valuation." No calls unless you want one.</p>
+    </div>
+
+    <div class="val-process-steps">
+
+      <div class="val-process-step reveal-s">
+        <div class="val-process-num">1</div>
+        <div class="val-process-time">Within 1 hour</div>
+        <h3>I Pull Your Comps</h3>
+        <p>I run your address through the MLS, pull 6–10 recent sales in your exact neighborhood, and start analyzing condition and upgrades.</p>
+      </div>
+
+      <div class="val-process-step reveal-s d1">
+        <div class="val-process-num">2</div>
+        <div class="val-process-time">Within 24 hours</div>
+        <h3>You Get Your CMA</h3>
+        <p>Full report lands in your inbox: real comps, adjustments, market trends, strategic list price, and a quick personal note from me.</p>
+      </div>
+
+      <div class="val-process-step reveal-s d2">
+        <div class="val-process-num">3</div>
+        <div class="val-process-time">Only if you want</div>
+        <h3>We Talk (Or Don't)</h3>
+        <p>No obligation to meet or list with me. If you want to dig into the numbers or strategy, we hop on a 15-min call. If not, you keep the CMA.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VALUATION FAQ ===================== -->
+<section class="val-faq">
+  <div class="val-faq-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">Common Questions</span>
+      <h2 class="sec-title">What Sellers<br>Always Ask.</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is the valuation really free?</summary>
+        <p>Yes, 100% free. No credit card, no hidden fees, no "sign up to see your number" trick. I pull the comps, write up the CMA, and send it to you. Whether you ever list with me or not is your call.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I have to list with you to get the report?</summary>
+        <p>Nope. Not even a little. My hope is that you'll love the report enough to list with me eventually — but if you just want to know your number, that's fine too. I'd rather earn your trust first.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How fast will I hear back?</summary>
+        <p>Within 1 hour during business hours for the initial response (just to let you know I got it), and within 24 hours for the full CMA report. Night and weekend submissions still get next-morning turnaround.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How accurate is your valuation vs Zillow?</summary>
+        <p>Zillow's Zestimate has an average 7% error. Mine is typically within 2–3% of actual sale price because I walk the comps, see the condition, and know the micro-trends in your specific block. I'm not guessing — I'm pricing like I'm the one selling.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if my home has unique features (pool, ADU, view)?</summary>
+        <p>That's exactly why you need a real CMA and not a Zestimate. Pools, ADUs, views, and upgrades can swing your home's value by $50K–$200K. I find the right comps and adjust for every one of them.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you cover cities outside Downey?</summary>
+        <p>Yes — Pico Rivera, Whittier, La Habra, Norwalk, Long Beach, Lakewood, Anaheim, Santa Ana, Newport Beach, Huntington Beach, and most of SoCal. If your home is in LA or OC, I can probably value it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta-section">
+  <div class="cta-blob cta-blob-1"></div>
+  <div class="cta-blob cta-blob-2"></div>
+  <div class="cta-card reveal">
+
+    <!-- Avatar with online indicator -->
+    <div class="cta-avatar">
+      <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
+      <div class="cta-online"></div>
+    </div>
+
+    <!-- Online status pill -->
+    <div class="cta-status">
+      <span class="cta-status-dot"></span>
+      Currently online · Replies in minutes
+    </div>
+
+    <!-- Cycling Google review pull-quotes -->
+    <div class="cta-quote-stack">
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</div>
+        <div class="cta-quote-name">— Maria G., Downey</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</div>
+        <div class="cta-quote-name">— David R., La Habra</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Responded within minutes, day or night. Truly client-first experience."</div>
+        <div class="cta-quote-name">— Araceli T., Pico Rivera</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Sold our home in 6 days above asking. Jesse knows exactly what buyers want."</div>
+        <div class="cta-quote-name">— The Garcia Family, Norwalk</div>
+      </div>
+    </div>
+
+    <!-- Warm headline -->
+    <h2 class="cta-headline">I'd love to hear<br>what you're looking for.</h2>
+    <p class="cta-sub">No pressure. No pitch. Just a real conversation about your next move.</p>
+
+    <!-- Two CTAs -->
+    <div class="cta-buttons">
+      <a href="/zoom.html" class="cta-btn cta-btn-primary">
+        Book a Strategy Call
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/guide.html" class="cta-btn cta-btn-secondary">
+        Get the Free Buyer Guide
+      </a>
+    </div>
+
+    <!-- Trust footer -->
+    <div class="cta-foot">
+      <span class="cta-foot-item">📍 Downey, CA</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🌐 Bilingual</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🔑 100+ closings</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">First-Time Buyer Guide</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/listings.html">Browse Listings</a>
+      <a href="/zoom.html">Get Pre-Approved</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">First-Time Seller Guide</a>
+      <a href="/valuation.html">Free Home Valuation</a>
+      <a href="/sellers.html">Sell with Jesse</a>
+    </div>
+    <div class="f-col">
+      <h4>Neighborhoods</h4>
+      <a href="/neighborhoods/downey.html">Downey</a>
+      <a href="/neighborhoods/pico-rivera.html">Pico Rivera</a>
+      <a href="/neighborhoods/whittier.html">Whittier</a>
+      <a href="/neighborhoods/long-beach.html">Long Beach</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:5626094200">(562) 609-4200</a>
+      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      <a href="https://instagram.com/jessetek" target="_blank">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

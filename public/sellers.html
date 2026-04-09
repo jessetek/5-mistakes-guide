@@ -3,195 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Sell Your Home | Jesse Oñate Realtor</title>
-<meta name="description" content="Thinking of selling your home in Downey or surrounding cities? Get a free home valuation and learn how Jesse Oñate gets top dollar for his clients.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#030303;color:#fff;overflow-x:hidden}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,3,3,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04)}
-.nav-logo{font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;text-decoration:none}.nav-logo span{color:#7B52FF}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{color:rgba(255,255,255,0.5);font-size:12px;font-weight:500;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-cta{background:#5928E5;color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600}
-
-/* Hero */
-.seller-hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden}
-.seller-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(89,40,229,0.08) 0%,transparent 60%)}
-.seller-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;gap:80px;position:relative;z-index:1}
-.seller-left{flex:1}
-.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7B52FF;margin-bottom:20px}
-.seller-left h1{font-size:52px;font-weight:800;text-transform:uppercase;letter-spacing:-1.5px;line-height:1.05;margin-bottom:20px;opacity:0;animation:fadeUp .7s ease .3s forwards}
-.seller-left h1 span{color:#7B52FF}
-.seller-sub{font-size:17px;color:rgba(255,255,255,0.45);line-height:1.6;max-width:480px;margin-bottom:40px;opacity:0;animation:fadeUp .7s ease .5s forwards}
-
-.process{display:flex;flex-direction:column;gap:20px;opacity:0;animation:fadeUp .7s ease .7s forwards}
-.step{display:flex;align-items:flex-start;gap:16px}
-.step-num{width:36px;height:36px;min-width:36px;background:rgba(89,40,229,0.15);border:1px solid rgba(123,82,255,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#7B52FF}
-.step-text h4{font-size:14px;font-weight:700;margin-bottom:2px}
-.step-text p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.5}
-
-/* Form */
-.seller-right{width:420px;min-width:400px;opacity:0;animation:fadeUp .7s ease .4s forwards}
-.form-card{background:rgba(17,17,17,0.9);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:40px 32px;backdrop-filter:blur(4px)}
-.form-title{font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.form-desc{font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:28px;line-height:1.5}
-.input-group{margin-bottom:16px}
-.input-label{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);margin-bottom:7px;text-transform:uppercase;letter-spacing:.5px}
-.input{width:100%;padding:15px 18px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;font-size:15px;font-family:inherit;outline:none;background:rgba(255,255,255,0.03);color:#fff;transition:border-color .2s}
-.input:focus{border-color:#5928E5}
-.input::placeholder{color:rgba(255,255,255,0.2)}
-.submit-btn{width:100%;padding:17px;background:#5928E5;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;text-transform:uppercase;letter-spacing:1px;transition:background .2s;margin-top:8px}
-.submit-btn:hover{background:#4a1fd4}
-.submit-btn:disabled{opacity:.6;cursor:not-allowed}
-.privacy{text-align:center;font-size:11px;color:rgba(255,255,255,0.2);margin-top:14px}
-.success{text-align:center;padding:32px 0;display:none}
-.success h3{font-size:22px;font-weight:800;color:#7B52FF;margin-bottom:10px;text-transform:uppercase}
-.success p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6}
-
-/* Stats */
-.stats-section{padding:80px 40px;background:#0A0B14}
-.stats-inner{max-width:800px;margin:0 auto;display:flex;justify-content:space-around;text-align:center}
-.stat-value{font-size:40px;font-weight:800}
-.stat-label{font-size:12px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
-
-/* Testimonials */
-.section{padding:100px 40px}
-.section-center{text-align:center;max-width:1200px;margin:0 auto}
-.section-title{font-size:40px;font-weight:800;text-transform:uppercase;letter-spacing:-0.5px;line-height:1.1;margin-bottom:16px}
-.section-sub{font-size:16px;color:rgba(255,255,255,0.4);max-width:500px;margin:0 auto 48px}
-.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto}
-.test-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 28px;transition:border-color .3s}
-.test-card:hover{border-color:rgba(123,82,255,0.15)}
-.test-stars{color:#F7DB4A;font-size:16px;letter-spacing:2px;margin-bottom:16px}
-.test-quote{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:20px;font-style:italic}
-.test-name{font-size:13px;font-weight:700}
-.test-role{font-size:11px;color:rgba(255,255,255,0.35)}
-
-.cta-section{padding:120px 40px;text-align:center;position:relative}
-.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(89,40,229,0.08) 0%,transparent 70%)}
-.cta-section h2{font-size:44px;font-weight:800;text-transform:uppercase;margin-bottom:16px;position:relative;z-index:1}
-.cta-section p{color:rgba(255,255,255,0.4);font-size:16px;max-width:460px;margin:0 auto 36px;line-height:1.6;position:relative;z-index:1}
-.btn-primary{display:inline-block;background:#5928E5;color:#fff;padding:16px 36px;border-radius:10px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:background .2s;position:relative;z-index:1}.btn-primary:hover{background:#4a1fd4}
-
-.footer{padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.04)}
-.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
-.footer-brand .footer-logo{font-size:18px;font-weight:800;text-transform:uppercase;margin-bottom:12px}.footer-brand .footer-logo span{color:#7B52FF}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.6;max-width:280px}
-.footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.5);margin-bottom:16px}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;margin-bottom:10px;transition:color .2s}.footer-col a:hover{color:#7B52FF}
-.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between}
-.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.2)}
-.footer-socials{display:flex;gap:16px}.footer-socials a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:13px;transition:color .2s}.footer-socials a:hover{color:#7B52FF}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.seller-inner{flex-direction:column;gap:48px}.seller-right{width:100%;min-width:unset;max-width:460px}.seller-left h1{font-size:36px}.stats-inner{flex-wrap:wrap;gap:32px}.test-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}.nav-links{display:none}}
-@media(max-width:480px){.seller-hero{padding:100px 20px 60px}.seller-left h1{font-size:30px}}
-</style>
+<title>Sell with Jesse | Top-Producing Realtor in Downey</title>
+<meta name="description" content="Sell your home in Downey, Pico Rivera, Whittier, or Long Beach with Jesse Oñate. $40K+ over asking average. 6-day average days on market. Free valuation.">
+<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<nav class="nav"><a href="/" class="nav-logo"><span>Jesse</span> Oñate.</a><div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers" class="active">Sellers</a><a href="/guide">Free Guide</a><a href="/zoom" class="nav-cta">Get Started</a></div></nav>
 
-<!-- HERO + FORM -->
-<section class="seller-hero">
-  <div class="seller-inner">
-    <div class="seller-left">
-      <div class="section-label" style="opacity:0;animation:fadeUp .7s ease .1s forwards">For Sellers</div>
-      <h1>What Is Your Home <span>Worth?</span></h1>
-      <p class="seller-sub">Get a free home valuation and find out how much your property could sell for in today's market.</p>
-      <div class="process">
-        <div class="step"><div class="step-num">1</div><div class="step-text"><h4>Free Home Valuation</h4><p>I will run the numbers and give you an honest estimate of your home's value.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-text"><h4>Custom Selling Strategy</h4><p>We will build a plan to get you the highest price in the shortest time.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-text"><h4>Sell With Confidence</h4><p>I handle everything from staging advice to negotiations to closing.</p></div></div>
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/listings.html">Listings</a>
+  <a href="/valuation.html">Sellers</a>
+  <a href="/guide.html">Free Guide</a>
+  <a href="/zoom.html">Get Started</a>
+</div>
+
+<!-- NAV — PILL -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/listings.html">Listings</a>
+    <a href="/valuation.html">Sellers</a>
+    <a href="/guide.html">Free Guide</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>For Homeowners Ready to Sell</span>
+    </div>
+    <h1>Sell Smarter.<br><span class="g">Walk Away Richer.</span></h1>
+    <p>I don't just list homes — I run a system designed to put more money in your pocket. $40K+ over asking, 6-day average, and a whole lot less stress.</p>
+    <div class="hero-btns">
+      <a href="/valuation.html" class="btn-primary">Get Free Valuation</a>
+      <a href="/seller.html" class="btn-ghost">See My 11-Step Playbook</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULTS STATS ===================== -->
+<section class="sellers-stats">
+  <div class="sellers-stats-inner">
+    <div class="sellers-stat">
+      <div class="sellers-stat-num">$40K+</div>
+      <div class="sellers-stat-label">Avg Over Asking</div>
+    </div>
+    <div class="sellers-stat">
+      <div class="sellers-stat-num">6</div>
+      <div class="sellers-stat-label">Avg Days on Market</div>
+    </div>
+    <div class="sellers-stat">
+      <div class="sellers-stat-num">100+</div>
+      <div class="sellers-stat-label">Homes Sold</div>
+    </div>
+    <div class="sellers-stat">
+      <div class="sellers-stat-num">5.0★</div>
+      <div class="sellers-stat-label">Google Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY JESSE ===================== -->
+<section class="sellers-why">
+  <div class="sellers-why-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">Why Sellers Choose Me</span>
+      <h2 class="sec-title">Most Agents Hope.<br>I Execute.</h2>
+      <p class="sec-sub">Selling your home isn't luck — it's a system. Here's what mine looks like.</p>
+    </div>
+
+    <div class="sellers-why-grid">
+
+      <div class="sellers-why-card reveal-s">
+        <div class="sellers-why-icon">📊</div>
+        <h3>Real Pricing Strategy</h3>
+        <p>I pull 6-10 recent comps, analyze your home's condition and features, and price it to attract multiple offers — not to sit. Overpricing is the #1 reason homes go stale.</p>
+      </div>
+
+      <div class="sellers-why-card reveal-s">
+        <div class="sellers-why-icon">📸</div>
+        <h3>Pro Photos + Video</h3>
+        <p>Magazine-quality photography, drone footage, and a full walkthrough video. Staged homes sell for 5-10% more — I know the stagers who get it done right.</p>
+      </div>
+
+      <div class="sellers-why-card reveal-s">
+        <div class="sellers-why-icon">📣</div>
+        <h3>Real Marketing Reach</h3>
+        <p>MLS, Zillow, Realtor.com, plus my 18K Instagram followers and bilingual network. Your home hits every buyer segment — English and Spanish speakers.</p>
+      </div>
+
+      <div class="sellers-why-card reveal-s">
+        <div class="sellers-why-icon">🤝</div>
+        <h3>Multiple-Offer Negotiation</h3>
+        <p>When offers come in, I don't take the first one. I play them against each other — highest and best, waived contingencies, all-cash terms. I've pushed sellers $40K+ over asking.</p>
+      </div>
+
+      <div class="sellers-why-card reveal-s">
+        <div class="sellers-why-icon">📱</div>
+        <h3>Fast Communication</h3>
+        <p>Text me and you get ME — not a junior agent. Updates every step of the way. I'm responsive at 9am and 9pm.</p>
+      </div>
+
+      <div class="sellers-why-card reveal-s">
+        <div class="sellers-why-icon">🌐</div>
+        <h3>Bilingual Service</h3>
+        <p>Soy bilingüe. Todos los documentos, todas las llamadas, todo en inglés o español — como sea más cómodo para tu familia.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS STRIP ===================== -->
+<section class="sellers-process">
+  <div class="sellers-process-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">The Sales Process</span>
+      <h2 class="sec-title">From "Thinking About It"<br>to "SOLD" — in 4 Moves.</h2>
+    </div>
+
+    <div class="sellers-process-grid">
+      <div class="sellers-process-step">
+        <div class="sellers-process-num">01</div>
+        <h4>Free Valuation</h4>
+        <p>Real comps, real strategy. No obligation.</p>
+      </div>
+      <div class="sellers-process-step">
+        <div class="sellers-process-num">02</div>
+        <h4>Prep & List</h4>
+        <p>Photos, staging, copywriting. Your home at its best.</p>
+      </div>
+      <div class="sellers-process-step">
+        <div class="sellers-process-num">03</div>
+        <h4>Offers & Negotiation</h4>
+        <p>Multiple offers. I negotiate the best one.</p>
+      </div>
+      <div class="sellers-process-step">
+        <div class="sellers-process-num">04</div>
+        <h4>Close & Celebrate</h4>
+        <p>Escrow, inspections, keys, cash.</p>
       </div>
     </div>
-    <div class="seller-right">
-      <div class="form-card">
-        <div id="sellerFormContent">
-          <h2 class="form-title">Get Your Free Valuation</h2>
-          <p class="form-desc">Tell me about your property and I will send you a personalized estimate.</p>
-          <form id="sellerForm">
-            <div class="input-group"><label class="input-label">First Name</label><input class="input" type="text" name="firstName" placeholder="Your first name" required /></div>
-            <div class="input-group"><label class="input-label">Email</label><input class="input" type="email" name="email" placeholder="your@email.com" required /></div>
-            <div class="input-group"><label class="input-label">Phone</label><input class="input" type="tel" name="phone" placeholder="(555) 123-4567" required /></div>
-            <div class="input-group"><label class="input-label">Property Address</label><input class="input" type="text" name="address" placeholder="123 Main St, Downey, CA" required /></div>
-            <button class="submit-btn" type="submit">Get My Free Valuation</button>
-          </form>
-          <p class="privacy">No obligation. Your info is safe.</p>
+
+    <div class="sellers-process-cta">
+      <a href="/seller.html" class="btn-primary">See the Full 11-Step Playbook →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MINI TESTIMONIAL STRIP ===================== -->
+<section class="val-stories">
+  <div class="val-stories-inner">
+    <div class="sec-head reveal">
+      <span class="sec-label">Real Sellers · Real Results</span>
+      <h2 class="sec-title">Proof Is in<br>the Sale Price.</h2>
+    </div>
+    <div class="val-stories-grid">
+      <div class="val-story reveal-s">
+        <div class="val-story-stars">★★★★★</div>
+        <p class="val-story-quote">"Jesse sold our home in 6 days above asking. Best decision we ever made."</p>
+        <div class="val-story-meta">
+          <div class="val-story-avatar" style="background:#0E7490">G</div>
+          <div>
+            <div class="val-story-name">The Garcia Family</div>
+            <div class="val-story-loc">Norwalk, CA</div>
+          </div>
+          <div class="val-story-tag">+$40K</div>
         </div>
-        <div class="success" id="sellerSuccess">
-          <h3>Request Received</h3>
-          <p>I will review your property and send you a personalized valuation within 24 hours. Talk soon!</p>
+      </div>
+      <div class="val-story reveal-s d1">
+        <div class="val-story-stars">★★★★★</div>
+        <p class="val-story-quote">"Jesse sold our home in 9 days — above asking. He knows the market inside and out."</p>
+        <div class="val-story-meta">
+          <div class="val-story-avatar" style="background:#BE123C">V</div>
+          <div>
+            <div class="val-story-name">Vanessa L.</div>
+            <div class="val-story-loc">Pico Rivera, CA</div>
+          </div>
+          <div class="val-story-tag">+$25K</div>
+        </div>
+      </div>
+      <div class="val-story reveal-s d2">
+        <div class="val-story-stars">★★★★★</div>
+        <p class="val-story-quote">"He negotiated like it was his own money. Three offers over asking, waived contingencies."</p>
+        <div class="val-story-meta">
+          <div class="val-story-avatar" style="background:#2563EB">A</div>
+          <div>
+            <div class="val-story-name">Anthony T.</div>
+            <div class="val-story-loc">Whittier, CA</div>
+          </div>
+          <div class="val-story-tag">+$35K</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats-section">
-  <div class="stats-inner">
-    <div class="fade-in"><div class="stat-value">30</div><div class="stat-label">Avg Days On Market</div></div>
-    <div class="fade-in"><div class="stat-value">100%</div><div class="stat-label">List To Sale Ratio</div></div>
-    <div class="fade-in"><div class="stat-value">5.0</div><div class="stat-label">Google Rating</div></div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section">
-  <div class="section-center">
-    <div class="section-label">Seller Reviews</div>
-    <h2 class="section-title">What Sellers Say</h2>
-    <p class="section-sub">Real results from real clients.</p>
-    <div class="test-grid">
-      <div class="test-card fade-in">
-        <div class="test-stars">★★★★★</div>
-        <div class="test-quote">"Jesse sold our home in under 30 days and we got more than asking price. His strategy and communication were on point the entire time."</div>
-        <div class="test-name">Home Seller</div>
-        <div class="test-role">Downey, CA</div>
-      </div>
-      <div class="test-card fade-in">
-        <div class="test-stars">★★★★★</div>
-        <div class="test-quote">"Jesse is the best agent I have ever worked with. He really cares about his clients and goes above and beyond."</div>
-        <div class="test-name">Tiffany H.</div>
-        <div class="test-role">Verified Client</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
+<!-- ===================== CTA ===================== -->
 <section class="cta-section">
-  <div class="section-label">Prefer To Talk?</div>
-  <h2>Let's Discuss<br>Your Options</h2>
-  <p>Book a free Zoom call and I will walk you through the best strategy for selling your home.</p>
-  <a href="/zoom" class="btn-primary">Get Started</a>
+  <div class="cta-blob cta-blob-1"></div>
+  <div class="cta-blob cta-blob-2"></div>
+  <div class="cta-card reveal">
+
+    <!-- Avatar with online indicator -->
+    <div class="cta-avatar">
+      <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
+      <div class="cta-online"></div>
+    </div>
+
+    <!-- Online status pill -->
+    <div class="cta-status">
+      <span class="cta-status-dot"></span>
+      Currently online · Replies in minutes
+    </div>
+
+    <!-- Cycling Google review pull-quotes -->
+    <div class="cta-quote-stack">
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</div>
+        <div class="cta-quote-name">— Maria G., Downey</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</div>
+        <div class="cta-quote-name">— David R., La Habra</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Responded within minutes, day or night. Truly client-first experience."</div>
+        <div class="cta-quote-name">— Araceli T., Pico Rivera</div>
+      </div>
+      <div class="cta-quote">
+        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
+        <div class="cta-quote-stars">★★★★★</div>
+        <div class="cta-quote-text">"Sold our home in 6 days above asking. Jesse knows exactly what buyers want."</div>
+        <div class="cta-quote-name">— The Garcia Family, Norwalk</div>
+      </div>
+    </div>
+
+    <!-- Warm headline -->
+    <h2 class="cta-headline">I'd love to hear<br>what you're looking for.</h2>
+    <p class="cta-sub">No pressure. No pitch. Just a real conversation about your next move.</p>
+
+    <!-- Two CTAs -->
+    <div class="cta-buttons">
+      <a href="/zoom.html" class="cta-btn cta-btn-primary">
+        Book a Strategy Call
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/valuation.html" class="cta-btn cta-btn-secondary">
+        Get Free Valuation
+      </a>
+    </div>
+
+    <!-- Trust footer -->
+    <div class="cta-foot">
+      <span class="cta-foot-item">📍 Downey, CA</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🌐 Bilingual</span>
+      <span class="cta-foot-sep"></span>
+      <span class="cta-foot-item">🔑 100+ closings</span>
+    </div>
+
+  </div>
 </section>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><span>Jesse</span> Oñate.</div><p>Helping millennials buy and sell homes in Downey and surrounding cities.</p></div><div class="footer-col"><h4>Pages</h4><a href="/">Home</a><a href="/about">About</a><a href="/listings">Listings</a><a href="/sellers">Sellers</a></div><div class="footer-col"><h4>Resources</h4><a href="/guide">Free Guide</a><a href="/zoom">Book a Call</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:5626094200">(562) 609-4200</a><a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a><a href="https://instagram.com/jessetek" target="_blank">@jessetek</a></div></div><div class="footer-bottom"><p>© 2026 Jesse Oñate. All rights reserved.</p><div class="footer-socials"><a href="https://instagram.com/jessetek" target="_blank">Instagram</a><a href="https://www.zillow.com/profile/JesseOnate" target="_blank">Zillow</a></div></div></footer>
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">First-Time Buyer Guide</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/listings.html">Browse Listings</a>
+      <a href="/zoom.html">Get Pre-Approved</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">First-Time Seller Guide</a>
+      <a href="/valuation.html">Free Home Valuation</a>
+      <a href="/sellers.html">Sell with Jesse</a>
+    </div>
+    <div class="f-col">
+      <h4>Neighborhoods</h4>
+      <a href="/neighborhoods/downey.html">Downey</a>
+      <a href="/neighborhoods/pico-rivera.html">Pico Rivera</a>
+      <a href="/neighborhoods/whittier.html">Whittier</a>
+      <a href="/neighborhoods/long-beach.html">Long Beach</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:5626094200">(562) 609-4200</a>
+      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      <a href="https://instagram.com/jessetek" target="_blank">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
-var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
-document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
-
-document.getElementById('sellerForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var btn=this.querySelector('button');
-  btn.disabled=true;btn.textContent='Sending...';
-  fetch('/api/submit',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({firstName:this.firstName.value,email:this.email.value,phone:this.phone.value})
-  })
-  .then(function(r){return r.json()})
-  .then(function(d){
-    if(d.success){document.getElementById('sellerFormContent').style.display='none';document.getElementById('sellerSuccess').style.display='block'}
-    else throw new Error()
-  })
-  .catch(function(){btn.disabled=false;btn.textContent='Get My Free Valuation';alert('Something went wrong. Please try again.')});
-});
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
 </script>
 </body>
 </html>
