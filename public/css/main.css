@@ -3121,7 +3121,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 /* =====================================================
    GUIDE LANDING PAGE: minimal chrome (no nav, no footer)
 ===================================================== */
-body.lp-page{padding-top:0}
+body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:rgba(255,255,255,.6)}
 .lp-logo-bar{
   position:absolute;top:0;left:0;right:0;
   z-index:10;
