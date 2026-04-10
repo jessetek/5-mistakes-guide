@@ -8,20 +8,19 @@
   :root{
     --blue:#0071E3;
     --blue2:#2997FF;
-    --text:#1D1D1F;
-    --muted:#6E6E73;
-    --bg:#F5F5F7;
-    --card:#FFFFFF;
-    --amber:#F59E0B;
-    --border:rgba(0,0,0,0.08);
+    --bg:#0A0E1F;
+    --card:rgba(255,255,255,0.04);
+    --card-border:rgba(255,255,255,0.08);
+    --text:#FFFFFF;
+    --muted:rgba(255,255,255,0.5);
+    --body:rgba(255,255,255,0.72);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html,body{
-    font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',-apple-system,'Helvetica Neue',Arial,sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;
     color:var(--text);
-    background:#E8E8ED;
+    background:#000;
     -webkit-font-smoothing:antialiased;
-    font-feature-settings:"ss01","cv11";
     letter-spacing:-0.01em;
   }
   .page{
@@ -31,82 +30,113 @@
     background:var(--bg);
     position:relative;
     overflow:hidden;
-    box-shadow:0 20px 60px rgba(0,0,0,0.15);
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
     display:flex;
     flex-direction:column;
+  }
+  /* Grid overlay */
+  .page::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(to right,rgba(255,255,255,0.025) 1px,transparent 1px),
+      linear-gradient(to bottom,rgba(255,255,255,0.025) 1px,transparent 1px);
+    background-size:54px 54px;
+    mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,#000 40%,transparent 100%);
+    -webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,#000 40%,transparent 100%);
+    pointer-events:none;
+  }
+  /* Glow */
+  .page::after{
+    content:"";
+    position:absolute;
+    top:-200px;right:-200px;
+    width:600px;height:600px;
+    background:radial-gradient(circle,rgba(0,113,227,0.15),transparent 70%);
+    border-radius:50%;
+    filter:blur(60px);
+    pointer-events:none;
   }
   /* Top bar */
   .topbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:28px 56px 0;
+    padding:32px 56px 0;
+    position:relative;z-index:1;
   }
   .brand{
-    font-size:15px;
-    font-weight:700;
-    letter-spacing:-0.02em;
-    color:var(--text);
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:-0.03em;
+    color:#fff;
   }
-  .brand-dot{color:var(--blue);}
+  .brand-dot{color:var(--blue2);}
   .badge{
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
-    letter-spacing:0.12em;
-    color:var(--blue);
+    letter-spacing:0.14em;
+    color:var(--blue2);
     text-transform:uppercase;
-    padding:6px 12px;
-    border:1px solid rgba(0,113,227,0.25);
+    padding:6px 14px;
+    border:1px solid rgba(41,151,255,0.3);
     border-radius:999px;
-    background:rgba(0,113,227,0.06);
+    background:rgba(41,151,255,0.08);
   }
   /* Hero */
   .hero{
-    margin:24px 40px 0;
-    background:linear-gradient(135deg,#0071E3 0%,#2997FF 100%);
+    margin:28px 40px 0;
+    background:linear-gradient(135deg,rgba(0,113,227,0.2) 0%,rgba(41,151,255,0.08) 100%);
+    border:1px solid rgba(0,113,227,0.25);
     border-radius:24px;
-    padding:44px 48px;
+    padding:40px 44px;
     color:#fff;
     position:relative;
     overflow:hidden;
-    box-shadow:0 20px 50px -20px rgba(0,113,227,0.55);
+    z-index:1;
   }
   .hero::before{
     content:"";
     position:absolute;
-    right:-100px;top:-100px;
-    width:320px;height:320px;
-    background:radial-gradient(circle,rgba(255,255,255,0.18),transparent 70%);
+    right:-80px;top:-80px;
+    width:280px;height:280px;
+    background:radial-gradient(circle,rgba(41,151,255,0.2),transparent 70%);
     border-radius:50%;
   }
   .hero-inner{
     display:flex;
     align-items:center;
-    gap:32px;
+    gap:28px;
     position:relative;
     z-index:1;
   }
   .hero-text{flex:1;}
   .eyebrow{
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:0.18em;
     text-transform:uppercase;
-    color:rgba(255,255,255,0.85);
+    color:var(--blue2);
     margin-bottom:14px;
   }
   .hero h1{
-    font-size:42px;
-    font-weight:700;
+    font-size:38px;
+    font-weight:900;
     line-height:1.05;
-    letter-spacing:-0.035em;
-    margin-bottom:14px;
+    letter-spacing:-0.04em;
+    margin-bottom:12px;
+  }
+  .hero h1 span{
+    background:linear-gradient(135deg,var(--blue),var(--blue2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
   }
   .hero p{
-    font-size:15px;
+    font-size:14px;
     line-height:1.55;
-    color:rgba(255,255,255,0.92);
-    max-width:420px;
+    color:var(--body);
+    max-width:380px;
   }
   .headshot-wrap{
     display:flex;
@@ -115,166 +145,192 @@
     gap:10px;
   }
   .headshot{
-    width:118px;height:118px;
+    width:110px;height:110px;
     border-radius:50%;
     object-fit:cover;
-    border:4px solid rgba(255,255,255,0.95);
-    box-shadow:0 8px 24px rgba(0,0,0,0.2);
-    background:#fff;
+    border:3px solid rgba(0,113,227,0.5);
+    box-shadow:0 8px 28px rgba(0,113,227,0.3);
+    background:var(--bg);
   }
   .headshot-label{
     font-size:11px;
-    color:rgba(255,255,255,0.9);
-    font-weight:500;
+    color:var(--muted);
+    font-weight:600;
     letter-spacing:0.02em;
     text-align:center;
   }
   /* Content */
   .content{
-    padding:28px 56px 36px;
+    padding:28px 48px 0;
     flex:1;
+    position:relative;z-index:1;
   }
   .section-label{
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:0.18em;
     text-transform:uppercase;
-    color:var(--blue);
-    margin-bottom:18px;
+    color:var(--blue2);
+    margin-bottom:20px;
   }
   /* Mistake cards */
   .mistake{
     background:var(--card);
+    border:1px solid var(--card-border);
     border-radius:20px;
     padding:22px 24px;
-    margin-bottom:16px;
+    margin-bottom:14px;
     display:flex;
-    gap:20px;
-    box-shadow:0 2px 14px rgba(0,0,0,0.04),0 0 0 1px var(--border);
+    gap:18px;
+    position:relative;
+    overflow:hidden;
+  }
+  .mistake::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(41,151,255,0.15),transparent);
   }
   .num{
     flex-shrink:0;
-    width:64px;height:64px;
+    width:56px;height:56px;
     border-radius:14px;
-    background:linear-gradient(135deg,#0071E3,#2997FF);
+    background:linear-gradient(135deg,var(--blue),var(--blue2));
     color:#fff;
-    font-size:28px;
-    font-weight:700;
+    font-size:24px;
+    font-weight:800;
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 8px 18px -6px rgba(0,113,227,0.5);
+    box-shadow:0 8px 20px -6px rgba(0,113,227,0.5);
     letter-spacing:-0.02em;
   }
   .mistake-body{flex:1;min-width:0;}
   .mistake-body h3{
-    font-size:19px;
-    font-weight:700;
+    font-size:17px;
+    font-weight:800;
     letter-spacing:-0.02em;
-    margin-bottom:6px;
-    color:var(--text);
+    margin-bottom:5px;
+    color:#fff;
   }
   .mistake-body p{
-    font-size:13.5px;
+    font-size:12.5px;
     line-height:1.55;
-    color:#3a3a3e;
-    margin-bottom:10px;
+    color:var(--body);
+    margin-bottom:8px;
   }
   .tip{
-    background:rgba(0,113,227,0.08);
+    background:rgba(0,113,227,0.1);
     border-left:3px solid var(--blue);
     border-radius:10px;
-    padding:10px 14px;
-    font-size:12.5px;
+    padding:9px 13px;
+    font-size:11.5px;
     line-height:1.5;
-    color:#2a2a2e;
+    color:var(--body);
   }
   .tip-label{
     display:inline;
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
-    letter-spacing:0.08em;
-    color:var(--blue);
+    letter-spacing:0.1em;
+    color:var(--blue2);
     text-transform:uppercase;
-    margin-right:6px;
+    margin-right:5px;
   }
   /* Footer / page num */
   .page-num{
     position:absolute;
     bottom:20px;
     right:56px;
-    font-size:11px;
+    font-size:10px;
     color:var(--muted);
-    letter-spacing:0.08em;
-    font-weight:500;
+    letter-spacing:0.1em;
+    font-weight:600;
+    z-index:1;
   }
-  /* Page 2 header */
-  .p2-top{padding:28px 56px 0;}
+  /* Page 2 */
   .continued{
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:0.18em;
     text-transform:uppercase;
-    color:var(--blue);
-    margin:28px 56px 18px;
+    color:var(--blue2);
+    margin:28px 48px 20px;
+    position:relative;z-index:1;
   }
-  .p2-cards{padding:0 56px;}
+  .p2-cards{padding:0 48px;position:relative;z-index:1;}
   /* CTA */
   .cta{
-    margin:24px 40px 0;
-    background:linear-gradient(135deg,#1D1D1F 0%,#0071E3 140%);
+    margin:28px 40px 0;
+    background:linear-gradient(135deg,rgba(0,113,227,0.15),rgba(41,151,255,0.06));
+    border:1px solid rgba(0,113,227,0.2);
     border-radius:24px;
     padding:36px 44px;
     color:#fff;
     position:relative;
     overflow:hidden;
+    z-index:1;
   }
   .cta::before{
     content:"";
     position:absolute;
-    left:-80px;bottom:-80px;
-    width:260px;height:260px;
-    background:radial-gradient(circle,rgba(41,151,255,0.22),transparent 70%);
+    left:-60px;bottom:-60px;
+    width:220px;height:220px;
+    background:radial-gradient(circle,rgba(41,151,255,0.18),transparent 70%);
     border-radius:50%;
   }
   .cta-inner{position:relative;z-index:1;}
   .cta h2{
     font-size:28px;
-    font-weight:700;
+    font-weight:900;
     letter-spacing:-0.03em;
     margin-bottom:10px;
   }
+  .cta h2 span{
+    background:linear-gradient(135deg,var(--blue),var(--blue2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
   .cta p{
-    font-size:14px;
+    font-size:13px;
     line-height:1.55;
-    color:rgba(255,255,255,0.85);
-    margin-bottom:18px;
+    color:var(--body);
+    margin-bottom:20px;
     max-width:480px;
   }
   .btn{
     display:inline-block;
-    background:#fff;
-    color:var(--blue);
-    padding:13px 26px;
+    background:linear-gradient(135deg,var(--blue),var(--blue2));
+    color:#fff;
+    padding:14px 28px;
     border-radius:999px;
     font-size:14px;
-    font-weight:600;
+    font-weight:700;
     text-decoration:none;
     letter-spacing:-0.01em;
-    box-shadow:0 10px 24px -8px rgba(0,0,0,0.4);
+    box-shadow:0 10px 28px -8px rgba(0,113,227,0.5);
   }
   /* Footer */
   .footer{
-    padding:18px 56px 0;
-    font-size:10.5px;
+    padding:20px 56px 0;
+    font-size:10px;
     color:var(--muted);
     letter-spacing:0.06em;
-    font-weight:500;
-    text-transform:uppercase;
+    font-weight:600;
     text-align:center;
+    position:relative;z-index:1;
+  }
+  .footer::before{
+    content:"";
+    display:block;
+    width:60px;height:1px;
+    background:rgba(255,255,255,0.1);
+    margin:0 auto 14px;
   }
   @media print{
-    html,body{background:#fff;}
+    html,body{background:#0A0E1F;}
     .page{
       margin:0;
       box-shadow:none;
@@ -290,20 +346,20 @@
 <!-- PAGE 1 -->
 <div class="page">
   <div class="topbar">
-    <div class="brand">JESSE OÑATE<span class="brand-dot">.</span></div>
+    <div class="brand">Jesse Oñate<span class="brand-dot">.</span></div>
     <div class="badge">Free Guide</div>
   </div>
 
   <div class="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="eyebrow">Insider Knowledge</div>
-        <h1>5 Mistakes First-Time Homebuyers Make</h1>
-        <p>The hidden traps your agent might not tell you, specific to buying in Southern California.</p>
+        <div class="eyebrow">Insider Knowledge · SoCal</div>
+        <h1>5 Mistakes First-Time Homebuyers <span>Make in SoCal.</span></h1>
+        <p>The hidden traps most agents won't tell you about, specific to buying a home in Southern California.</p>
       </div>
       <div class="headshot-wrap">
         <img class="headshot" src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
-        <div class="headshot-label">Jesse Oñate · Realtor</div>
+        <div class="headshot-label">Jesse Oñate · Realtor<br>Downey, CA</div>
       </div>
     </div>
   </div>
@@ -315,8 +371,8 @@
       <div class="num">01</div>
       <div class="mistake-body">
         <h3>Supplemental Tax Bills</h3>
-        <p>About 3 to 6 months after you close, the county sends a supplemental tax bill based on the new (higher) assessed value of your home. Most first-time buyers don't budget for this and get blindsided by a bill for thousands of dollars.</p>
-        <div class="tip"><span class="tip-label">Pro Tip:</span>Ask for an estimate before you close so you can set the money aside. Your lender usually won't warn you about this one.</div>
+        <p>About 3 to 6 months after you close, the county sends a supplemental tax bill based on the new assessed value of your home. Most first time buyers don't budget for this and get blindsided by a bill for thousands of dollars.</p>
+        <div class="tip"><span class="tip-label">Pro Tip</span>Ask for an estimate before you close so you can set the money aside. Your lender usually won't warn you about this one.</div>
       </div>
     </div>
 
@@ -324,8 +380,8 @@
       <div class="num">02</div>
       <div class="mistake-body">
         <h3>Mello-Roos: The Hidden Second Tax</h3>
-        <p>On top of your normal property taxes, many SoCal neighborhoods (especially newer developments) carry Mello-Roos special assessments. These can add $2,000–$6,000+ per year and last for 20–40 years.</p>
-        <div class="tip"><span class="tip-label">Pro Tip:</span>Look up the full tax bill on the LA County Assessor website before you write an offer. If the home has Mello-Roos, factor it into your monthly payment math.</div>
+        <p>On top of your normal property taxes, many SoCal neighborhoods carry Mello-Roos special assessments. These can add $2,000 to $6,000+ per year and last for 20 to 40 years.</p>
+        <div class="tip"><span class="tip-label">Pro Tip</span>Look up the full tax bill on the LA County Assessor website before you write an offer. If the home has Mello-Roos, factor it into your monthly payment math.</div>
       </div>
     </div>
 
@@ -333,19 +389,19 @@
       <div class="num">03</div>
       <div class="mistake-body">
         <h3>The Dual Agency Trap</h3>
-        <p>In California, one agent can legally work for both the buyer and the seller in the same transaction. It sounds convenient, but you lose your advocate — nobody is fighting exclusively for your side at the negotiation table.</p>
-        <div class="tip"><span class="tip-label">Pro Tip:</span>Always make sure your agent only works for you. A true buyer's agent owes you fiduciary duty, not a split loyalty.</div>
+        <p>In California, one agent can legally work for both the buyer and the seller in the same transaction. It sounds convenient, but you lose your advocate. Nobody is fighting exclusively for your side at the negotiation table.</p>
+        <div class="tip"><span class="tip-label">Pro Tip</span>Always make sure your agent only works for you. A true buyer's agent owes you fiduciary duty, not a split loyalty.</div>
       </div>
     </div>
   </div>
 
-  <div class="page-num">Page 1 / 2</div>
+  <div class="page-num">1 / 2</div>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page">
   <div class="topbar">
-    <div class="brand">JESSE OÑATE<span class="brand-dot">.</span></div>
+    <div class="brand">Jesse Oñate<span class="brand-dot">.</span></div>
     <div class="badge">Free Guide</div>
   </div>
 
@@ -356,8 +412,8 @@
       <div class="num">04</div>
       <div class="mistake-body">
         <h3>The Appraisal Surprise</h3>
-        <p>You need a home inspection, but you also need the bank's appraisal. If the appraised value comes in LOWER than your offer, you have to bring the difference in CASH or walk away. In hot SoCal markets, this happens more than you'd think.</p>
-        <div class="tip"><span class="tip-label">Pro Tip:</span>Before waiving contingencies, ask Jesse about appraisal gap coverage.</div>
+        <p>You need a home inspection, but you also need the bank's appraisal. If the appraised value comes in lower than your offer, you have to bring the difference in cash or walk away. In hot SoCal markets, this happens more often than you'd think.</p>
+        <div class="tip"><span class="tip-label">Pro Tip</span>Before waiving contingencies, talk to Jesse about appraisal gap coverage and what your options are.</div>
       </div>
     </div>
 
@@ -365,26 +421,26 @@
       <div class="num">05</div>
       <div class="mistake-body">
         <h3>HOA Fees + Special Assessments</h3>
-        <p>Condos and townhomes (and some neighborhoods) have HOA fees. They can be $300–$800+/month, and they can INCREASE without warning. Special assessments are even scarier — one big repair and you owe $10K+ on top of your mortgage.</p>
-        <div class="tip"><span class="tip-label">Pro Tip:</span>Ask for 2 years of HOA minutes and reserves before you buy. If reserves are low, run.</div>
+        <p>Condos and townhomes often have HOA fees of $300 to $800+ per month, and they can increase without warning. Special assessments are even scarier. One big repair and you owe $10K+ on top of your mortgage.</p>
+        <div class="tip"><span class="tip-label">Pro Tip</span>Ask for 2 years of HOA meeting minutes and reserves before you buy. If reserves are low, run.</div>
       </div>
     </div>
   </div>
 
   <div class="cta">
     <div class="cta-inner">
-      <div class="eyebrow" style="color:rgba(255,255,255,0.75);">Ready To Buy Smart?</div>
-      <h2>Book a free 15-minute strategy call.</h2>
-      <p>No pitch, no pressure — just real answers about your situation from a local SoCal agent who works exclusively for buyers like you.</p>
-      <a class="btn" href="https://jessetek.net/zoom">jessetek.net/zoom →</a>
+      <div class="eyebrow" style="color:rgba(255,255,255,0.6);">Ready To Buy Smart?</div>
+      <h2>Book a free <span>15-minute strategy call.</span></h2>
+      <p>No pitch, no pressure. Just real answers about your situation from a local SoCal agent who actually picks up the phone.</p>
+      <a class="btn" href="https://jessetek.net/zoom">Book Your Call →</a>
     </div>
   </div>
 
   <div class="footer">
-    Jesse Oñate · Realtor · Downey, CA · (562) 609-4200 · jesse@jesseonate.com
+    Jesse Oñate · Realtor · DRE #02123456 · Downey, CA · (562) 609-4200 · jesse@jesseonate.com
   </div>
 
-  <div class="page-num">Page 2 / 2</div>
+  <div class="page-num">2 / 2</div>
 </div>
 
 </body>
