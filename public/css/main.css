@@ -3052,3 +3052,240 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .guide-mistakes{grid-template-columns:1fr;gap:14px}
   .guide-mistake{padding:28px 26px}
 }
+
+/* =====================================================
+   GUIDE PAGE: LOCKED/GATED CONTENT
+===================================================== */
+.gated{position:relative}
+.gated .gated-blur{
+  filter:blur(10px);
+  user-select:none;
+  pointer-events:none;
+  transition:filter .6s ease;
+}
+.gated::after{
+  content:'🔒';
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(10,14,31,.92);
+  backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+  box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 0 3px rgba(0,113,227,.3);
+  border:1px solid rgba(255,255,255,.15);
+  pointer-events:none;
+  transition:opacity .5s ease,transform .5s ease;
+  z-index:5;
+}
+.gated.unlocked::after{opacity:0;transform:translate(-50%,-50%) scale(1.4);pointer-events:none}
+.gated.unlocked .gated-blur{filter:blur(0)}
+
+/* Guide PDF mockup gate — keep the "FREE" badge but blur the thumbnail */
+.guide-pdf-mockup.gated::after{
+  width:64px;height:64px;font-size:26px;
+}
+
+/* Mistake card gate — smaller lock */
+.guide-mistake.gated{overflow:hidden}
+.guide-mistake.gated::after{
+  width:44px;height:44px;font-size:18px;
+}
+
+/* Unlock announcement banner (brief flash after form submit) */
+.guide-unlock-toast{
+  position:fixed;
+  top:90px;left:50%;
+  transform:translateX(-50%) translateY(-80px);
+  background:linear-gradient(135deg,#0071E3,#2997FF);
+  color:#fff;
+  padding:14px 26px;
+  border-radius:999px;
+  font-size:14px;font-weight:700;
+  box-shadow:0 14px 38px rgba(0,113,227,.45),0 4px 14px rgba(0,0,0,.25);
+  z-index:9999;
+  display:flex;align-items:center;gap:10px;
+  opacity:0;
+  transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .4s ease;
+  pointer-events:none;
+  letter-spacing:-.1px;
+  font-family:var(--font);
+}
+.guide-unlock-toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+.guide-unlock-toast svg{flex-shrink:0}
+
+/* =====================================================
+   GUIDE LANDING PAGE: minimal chrome (no nav, no footer)
+===================================================== */
+body.lp-page{padding-top:0}
+.lp-logo-bar{
+  position:absolute;top:0;left:0;right:0;
+  z-index:10;
+  padding:24px 40px;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+.lp-logo{
+  font-size:16px;font-weight:800;
+  color:#fff;
+  letter-spacing:-.3px;
+  font-family:var(--font);
+  opacity:.85;
+}
+.lp-copyright{
+  background:#0A0E1F;
+  color:rgba(255,255,255,.4);
+  font-size:11px;font-weight:600;
+  text-align:center;
+  padding:24px 20px;
+  letter-spacing:.2px;
+  font-family:var(--font);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.guide-hero-bottom{
+  border-top:1px solid rgba(255,255,255,.06);
+}
+@media(max-width:600px){
+  .lp-logo-bar{padding:18px 20px}
+  .lp-logo{font-size:14px}
+  .lp-copyright{padding:20px 16px;font-size:10px}
+}
+
+/* ========== GUIDE PAGE REFRESH (Option B) ========== */
+
+/* Hero icon tiles (replaces bullets) */
+.guide-tiles{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;margin:28px 0 8px;max-width:420px;
+}
+.guide-tile{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  padding:18px 10px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+  transition:transform .3s ease,border-color .3s ease,background .3s ease;
+}
+.guide-tile:hover{
+  transform:translateY(-3px);
+  border-color:rgba(0,113,227,.4);
+  background:rgba(0,113,227,.08);
+}
+.guide-tile-icon{font-size:26px;margin-bottom:8px;line-height:1}
+.guide-tile-label{
+  font-size:12px;font-weight:700;
+  color:#fff;line-height:1.25;
+  letter-spacing:.2px;
+}
+
+/* Author strip */
+.guide-author{background:#0A0E1F;padding:40px 20px;border-top:1px solid rgba(255,255,255,.06)}
+.guide-author-inner{
+  max-width:720px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;gap:18px;
+}
+.guide-author-photo{
+  width:64px;height:64px;border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(0,113,227,.5);
+  box-shadow:0 8px 24px rgba(0,113,227,.25);
+}
+.guide-author-name{
+  color:#fff;font-size:16px;font-weight:700;
+  letter-spacing:-.2px;
+}
+.guide-author-sub{
+  color:rgba(255,255,255,.55);font-size:13px;
+  font-weight:500;margin-top:2px;
+}
+
+/* Mistake cards — Option B (huge numbers + icons) */
+.guide-mistake{
+  position:relative;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:36px 28px 32px;
+  overflow:hidden;
+  transition:transform .35s ease,border-color .35s ease;
+}
+.guide-mistake:hover{
+  transform:translateY(-4px);
+  border-color:rgba(0,113,227,.35);
+}
+.guide-mistake-num{
+  position:absolute;
+  top:-18px;right:-6px;
+  font-size:120px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-.05em;
+  background:linear-gradient(180deg,rgba(0,113,227,.22),rgba(41,151,255,.04));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  pointer-events:none;
+  font-family:var(--font);
+}
+.guide-mistake-icon{
+  font-size:34px;
+  margin-bottom:14px;
+  line-height:1;
+  filter:drop-shadow(0 6px 16px rgba(0,113,227,.3));
+}
+.guide-mistake .gated-blur h3{
+  color:#fff;font-size:20px;font-weight:800;
+  letter-spacing:-.3px;margin:0 0 8px;
+  position:relative;z-index:2;
+}
+.guide-mistake .gated-blur p{
+  color:rgba(255,255,255,.65);
+  font-size:14px;line-height:1.5;
+  margin:0;position:relative;z-index:2;
+}
+
+/* Final CTA — form only */
+.guide-final{
+  background:radial-gradient(ellipse at top,rgba(0,113,227,.12),transparent 60%),#0A0E1F;
+  padding:80px 20px 100px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.guide-final-inner{
+  max-width:480px;margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;gap:28px;
+}
+.guide-final-inner .guide-pdf-mockup{
+  max-width:180px;margin:0;
+}
+.guide-final-headline{
+  color:#fff;
+  font-size:38px;
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:-.03em;
+  text-align:center;
+  font-family:var(--font);
+}
+.guide-final-headline .g{
+  background:linear-gradient(135deg,#0071E3,#2997FF);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.guide-final-inner .guide-form-card{width:100%}
+
+@media(max-width:700px){
+  .guide-tiles{max-width:100%;gap:8px}
+  .guide-tile{padding:14px 6px;border-radius:14px}
+  .guide-tile-icon{font-size:22px}
+  .guide-tile-label{font-size:11px}
+  .guide-mistake-num{font-size:88px;top:-12px}
+  .guide-mistake{padding:28px 22px 24px}
+  .guide-mistake-icon{font-size:28px}
+  .guide-final{padding:60px 18px 80px}
+  .guide-final-headline{font-size:30px}
+  .guide-author-inner{flex-direction:column;text-align:center;gap:12px}
+}

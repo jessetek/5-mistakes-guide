@@ -7,31 +7,12 @@
 <meta name="description" content="Free guide from Jesse Oñate — the hidden traps first-time homebuyers in Southern California need to know before they buy. Delivered instantly.">
 <link rel="stylesheet" href="/css/main.css">
 </head>
-<body>
+<body class="lp-page">
 
-<!-- MOBILE NAV -->
-<div class="mob-nav" id="mobNav">
-  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
-  <a href="/home.html">Home</a>
-  <a href="/about.html">About</a>
-  <a href="/listings.html">Listings</a>
-  <a href="/valuation.html">What's Your Home Worth?</a>
-  <a href="/guide.html">Free Guide</a>
-  <a href="/zoom.html">Get Started</a>
+<!-- Minimal logo bar -->
+<div class="lp-logo-bar">
+  <div class="lp-logo">Jesse Oñate.</div>
 </div>
-
-<!-- NAV — PILL -->
-<nav class="nav" id="nav">
-  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
-  <div class="nav-links">
-    <a href="/about.html">About</a>
-    <a href="/listings.html">Listings</a>
-    <a href="/valuation.html">Sellers</a>
-    <a href="/guide.html">Free Guide</a>
-    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
-  </div>
-  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
-</nav>
 
 <!-- ===================== GUIDE HERO + FORM ===================== -->
 <section class="guide-hero">
@@ -44,41 +25,31 @@
         <span>Free Download · Instant Delivery</span>
       </div>
       <h1>5 Mistakes<br>First-Time Homebuyers<br><span class="g">Make in SoCal.</span></h1>
-      <p class="guide-hero-sub">The hidden traps most agents won't tell you about — specific to buying a home in Southern California. Learn them now, save thousands later.</p>
+      <p class="guide-hero-sub">The hidden traps most agents won't tell you about.</p>
 
-      <div class="guide-bullets">
-        <div class="guide-bullet">
-          <span class="guide-bullet-check">✓</span>
-          <span>Supplemental tax bills — the $3K+ surprise most buyers don't see coming</span>
+      <div class="guide-tiles">
+        <div class="guide-tile">
+          <div class="guide-tile-icon">💰</div>
+          <div class="guide-tile-label">Save<br>$10K+</div>
         </div>
-        <div class="guide-bullet">
-          <span class="guide-bullet-check">✓</span>
-          <span>Mello-Roos — the hidden second tax that most mortgage calculators miss</span>
+        <div class="guide-tile">
+          <div class="guide-tile-icon">⚡</div>
+          <div class="guide-tile-label">60-sec<br>delivery</div>
         </div>
-        <div class="guide-bullet">
-          <span class="guide-bullet-check">✓</span>
-          <span>The dual agency trap — why one agent shouldn't work for both sides</span>
+        <div class="guide-tile">
+          <div class="guide-tile-icon">📍</div>
+          <div class="guide-tile-label">SoCal<br>specific</div>
         </div>
-        <div class="guide-bullet">
-          <span class="guide-bullet-check">✓</span>
-          <span>+ 2 more mistakes that cost buyers thousands</span>
-        </div>
-      </div>
-
-      <div class="guide-hero-trust">
-        <span class="guide-hero-trust-item">🔒 Your info is safe</span>
-        <span class="guide-hero-trust-sep"></span>
-        <span class="guide-hero-trust-item">⚡ Instant delivery</span>
-        <span class="guide-hero-trust-sep"></span>
-        <span class="guide-hero-trust-item">📍 Local expertise</span>
       </div>
     </div>
 
     <!-- RIGHT: PDF mockup floating above form -->
     <div class="guide-offer">
-      <div class="guide-pdf-mockup">
+      <div class="guide-pdf-mockup gated" id="pdfMockup">
         <div class="guide-pdf-badge">FREE</div>
-        <img src="/img/guide-cover.jpg" alt="5 Mistakes First-Time Homebuyers Make Guide">
+        <div class="gated-blur">
+          <img src="/img/guide-cover.jpg" alt="5 Mistakes First-Time Homebuyers Make Guide">
+        </div>
       </div>
 
       <div class="guide-form-card">
@@ -116,155 +87,128 @@
   </div>
 </section>
 
+<!-- ===================== AUTHOR STRIP ===================== -->
+<section class="guide-author">
+  <div class="guide-author-inner reveal">
+    <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate" class="guide-author-photo">
+    <div class="guide-author-text">
+      <div class="guide-author-name">Written by Jesse Oñate</div>
+      <div class="guide-author-sub">Local SoCal realtor · 100+ families served · 5.0★ Google</div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== WHAT'S INSIDE PREVIEW ===================== -->
 <section class="guide-preview">
   <div class="guide-preview-inner">
     <div class="sec-head reveal">
       <span class="sec-label">What's Inside</span>
-      <h2 class="sec-title">A Sneak Peek at<br>What You'll Learn.</h2>
-      <p class="sec-sub">Here are the first 3 mistakes. Grab the free guide to unlock all 5 — plus pro tips on each.</p>
+      <h2 class="sec-title">Unlock All 5 Mistakes.</h2>
     </div>
 
-    <div class="guide-mistakes">
+    <div class="guide-mistakes" id="guideMistakes">
 
-      <div class="guide-mistake reveal-s">
+      <div class="guide-mistake gated reveal-s">
         <div class="guide-mistake-num">01</div>
-        <h3>Supplemental Tax Bills</h3>
-        <p>3–6 months after you close, a surprise tax bill can hit for thousands. It's called a "supplemental tax" — it makes up the difference between what the last owner paid and what your home is now worth. Most buyers have no idea this is coming.</p>
+        <div class="gated-blur">
+          <div class="guide-mistake-icon">💸</div>
+          <h3>Supplemental Tax Bills</h3>
+          <p>A surprise tax bill hits 3–6 months after closing.</p>
+        </div>
       </div>
 
-      <div class="guide-mistake reveal-s d1">
+      <div class="guide-mistake gated reveal-s d1">
         <div class="guide-mistake-num">02</div>
-        <h3>Mello-Roos: The Hidden Tax</h3>
-        <p>On top of your normal property taxes, many areas in LA County have Mello-Roos — an extra tax that can add $3,000–$5,000+ per year to your bill. And it won't show up in most mortgage calculators.</p>
+        <div class="gated-blur">
+          <div class="guide-mistake-icon">📊</div>
+          <h3>Mello-Roos Hidden Tax</h3>
+          <p>An extra $3K–$5K/year most calculators won't show.</p>
+        </div>
       </div>
 
-      <div class="guide-mistake reveal-s d2">
+      <div class="guide-mistake gated reveal-s d2">
         <div class="guide-mistake-num">03</div>
-        <h3>The Dual Agency Trap</h3>
-        <p>In California, one agent can legally work for both you and the seller. When that happens, your agent can't tell you the seller would take a lower price — even if they know it. They get paid double, you lose out.</p>
+        <div class="gated-blur">
+          <div class="guide-mistake-icon">⚠️</div>
+          <h3>The Dual Agency Trap</h3>
+          <p>One agent works both sides — and you lose leverage.</p>
+        </div>
       </div>
 
-      <div class="guide-mistake guide-mistake-locked reveal-s d3">
+      <div class="guide-mistake gated reveal-s d3">
         <div class="guide-mistake-num">04</div>
-        <div class="guide-mistake-lock">🔒</div>
-        <h3>Mistake #4 + #5 Locked</h3>
-        <p>Get the free guide above to unlock the last two mistakes — the ones most likely to cost you the most money.</p>
+        <div class="gated-blur">
+          <div class="guide-mistake-icon">📉</div>
+          <h3>The Appraisal Gap</h3>
+          <p>If it comes in low, you bring the difference in cash.</p>
+        </div>
+      </div>
+
+      <div class="guide-mistake gated reveal-s d4">
+        <div class="guide-mistake-num">05</div>
+        <div class="gated-blur">
+          <div class="guide-mistake-icon">🏚️</div>
+          <h3>HOA Special Assessments</h3>
+          <p>One repair and you owe $10K+ on top of your mortgage.</p>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===================== CTA ===================== -->
-<section class="cta-section">
-  <div class="cta-blob cta-blob-1"></div>
-  <div class="cta-blob cta-blob-2"></div>
-  <div class="cta-card reveal">
+<!-- Unlock toast -->
+<div class="guide-unlock-toast" id="unlockToast">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 L7 12 L13 4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  All 5 mistakes unlocked!
+</div>
 
-    <div class="cta-avatar">
-      <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
-      <div class="cta-online"></div>
-    </div>
-
-    <div class="cta-status">
-      <span class="cta-status-dot"></span>
-      Currently online · Replies in minutes
-    </div>
-
-    <div class="cta-quote-stack">
-      <div class="cta-quote">
-        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
-        <div class="cta-quote-stars">★★★★★</div>
-        <div class="cta-quote-text">"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</div>
-        <div class="cta-quote-name">— Maria G., Downey</div>
-      </div>
-      <div class="cta-quote">
-        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
-        <div class="cta-quote-stars">★★★★★</div>
-        <div class="cta-quote-text">"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</div>
-        <div class="cta-quote-name">— David R., La Habra</div>
-      </div>
-      <div class="cta-quote">
-        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
-        <div class="cta-quote-stars">★★★★★</div>
-        <div class="cta-quote-text">"Responded within minutes, day or night. Truly client-first experience."</div>
-        <div class="cta-quote-name">— Araceli T., Pico Rivera</div>
-      </div>
-      <div class="cta-quote">
-        <div class="cta-quote-google"><span class="cta-quote-google-g">G</span> Google Review</div>
-        <div class="cta-quote-stars">★★★★★</div>
-        <div class="cta-quote-text">"If you are a first-time buyer in LA, stop scrolling and call Jesse."</div>
-        <div class="cta-quote-name">— David M., La Habra</div>
+<!-- ===================== BOTTOM CTA — FORM ONLY ===================== -->
+<section class="guide-final">
+  <div class="guide-final-inner reveal">
+    <div class="guide-pdf-mockup gated" id="pdfMockup2">
+      <div class="guide-pdf-badge">FREE</div>
+      <div class="gated-blur">
+        <img src="/img/guide-cover.jpg" alt="5 Mistakes Guide">
       </div>
     </div>
 
-    <h2 class="cta-headline">Want to talk through<br>the guide together?</h2>
-    <p class="cta-sub">Got questions about your specific situation? Let's hop on a 15-minute call — free, no pitch.</p>
+    <div class="guide-final-headline">Last step —<br><span class="g">where should I send it?</span></div>
 
-    <div class="cta-buttons">
-      <a href="/zoom.html" class="cta-btn cta-btn-primary">
-        Book a Strategy Call
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="/buyer.html" class="cta-btn cta-btn-secondary">
-        See the Full 11-Step Playbook
-      </a>
+    <div class="guide-form-card">
+      <form class="guide-form" id="guideForm2">
+        <div class="guide-form-field">
+          <label class="guide-form-label" for="gf2-name">Your First Name</label>
+          <input type="text" id="gf2-name" name="firstName" placeholder="Jesse" required>
+        </div>
+        <div class="guide-form-field">
+          <label class="guide-form-label" for="gf2-email">Email Address</label>
+          <input type="email" id="gf2-email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="guide-form-field">
+          <label class="guide-form-label" for="gf2-phone">Phone Number</label>
+          <input type="tel" id="gf2-phone" name="phone" placeholder="(562) 555-0123" required>
+        </div>
+        <button type="submit" class="guide-form-submit" id="gfSubmit2">Send Me the Guide →</button>
+        <div class="guide-form-trust">🔒 No spam. Unsubscribe anytime.</div>
+      </form>
+
+      <div class="guide-form-success" id="guideSuccess2">
+        <div class="guide-form-success-icon">✓</div>
+        <h3>Check Your Email!</h3>
+        <p>Your guide is on the way. While you wait, download it here:</p>
+        <a href="/img/5-mistakes-guide.pdf" download>📄 Download Now</a>
+      </div>
     </div>
-
-    <div class="cta-foot">
-      <span class="cta-foot-item">📍 Downey, CA</span>
-      <span class="cta-foot-sep"></span>
-      <span class="cta-foot-item">🌐 Bilingual</span>
-      <span class="cta-foot-sep"></span>
-      <span class="cta-foot-item">🔑 100+ closings</span>
-    </div>
-
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-  <div class="footer-grid">
-    <div class="f-brand">
-      <div class="f-logo"><span>Jesse</span> Oñate.</div>
-      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
-    </div>
-    <div class="f-col">
-      <h4>For Buyers</h4>
-      <a href="/buyer.html">First-Time Buyer Guide</a>
-      <a href="/calculator.html">Mortgage Calculator</a>
-      <a href="/listings.html">Browse Listings</a>
-      <a href="/zoom.html">Get Pre-Approved</a>
-    </div>
-    <div class="f-col">
-      <h4>For Sellers</h4>
-      <a href="/seller.html">First-Time Seller Guide</a>
-      <a href="/valuation.html">Free Home Valuation</a>
-      <a href="/sellers.html">Sell with Jesse</a>
-    </div>
-    <div class="f-col">
-      <h4>Neighborhoods</h4>
-      <a href="/neighborhoods/downey.html">Downey</a>
-      <a href="/neighborhoods/pico-rivera.html">Pico Rivera</a>
-      <a href="/neighborhoods/whittier.html">Whittier</a>
-      <a href="/neighborhoods/long-beach.html">Long Beach</a>
-    </div>
-    <div class="f-col">
-      <h4>Contact</h4>
-      <a href="tel:5626094200">(562) 609-4200</a>
-      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
-      <a href="https://instagram.com/jessetek" target="_blank">@jessetek</a>
-      <a href="/es/index.html">Español 🌐</a>
-    </div>
-  </div>
-  <div class="footer-bot">
-    <p>© 2026 Jesse Oñate. All rights reserved.</p>
-  </div>
-</footer>
+<!-- Minimal copyright bar -->
+<div class="lp-copyright">
+  © 2026 Jesse Oñate · Realtor · DRE #02123456 · Downey, CA
+</div>
 
 <script>
-// Reveal-on-scroll
 var io = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
     if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
@@ -272,39 +216,58 @@ var io = new IntersectionObserver(function(entries) {
 }, {threshold: 0.08});
 document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
 
-// Form submission handler
 (function(){
-  var form = document.getElementById('guideForm');
-  var success = document.getElementById('guideSuccess');
-  var submitBtn = document.getElementById('gfSubmit');
-  if (!form) return;
+  var toast = document.getElementById('unlockToast');
 
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    var data = {
-      firstName: document.getElementById('gf-name').value.trim(),
-      email: document.getElementById('gf-email').value.trim(),
-      phone: document.getElementById('gf-phone').value.trim()
-    };
-
-    try {
-      var res = await fetch('/api/submit', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-      });
-      // Show success regardless of API response (graceful degradation)
-      form.classList.add('hidden');
-      success.classList.add('active');
-    } catch (err) {
-      // Fallback: still show success and serve PDF
-      form.classList.add('hidden');
-      success.classList.add('active');
+  function unlockAll() {
+    document.querySelectorAll('#pdfMockup, #pdfMockup2').forEach(function(el){
+      el.classList.add('unlocked');
+    });
+    document.querySelectorAll('.guide-mistake.gated').forEach(function(el){
+      el.classList.add('unlocked');
+    });
+    if (toast) {
+      toast.classList.add('show');
+      setTimeout(function(){ toast.classList.remove('show'); }, 3500);
     }
-  });
+  }
+
+  function wireForm(formId, nameId, emailId, phoneId, successId, btnId) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    var submitBtn = document.getElementById(btnId);
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      var data = {
+        firstName: document.getElementById(nameId).value.trim(),
+        email: document.getElementById(emailId).value.trim(),
+        phone: document.getElementById(phoneId).value.trim()
+      };
+
+      try {
+        await fetch('/api/submit', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+      } catch (err) {}
+
+      document.querySelectorAll('.guide-form').forEach(function(f){ f.classList.add('hidden'); });
+      document.querySelectorAll('.guide-form-success').forEach(function(s){ s.classList.add('active'); });
+      unlockAll();
+
+      if (formId === 'guideForm2') {
+        setTimeout(function(){ window.scrollTo({top:0, behavior:'smooth'}); }, 800);
+      }
+    });
+  }
+
+  wireForm('guideForm',  'gf-name',  'gf-email',  'gf-phone',  'guideSuccess',  'gfSubmit');
+  wireForm('guideForm2', 'gf2-name', 'gf2-email', 'gf2-phone', 'guideSuccess2', 'gfSubmit2');
 })();
 </script>
 
