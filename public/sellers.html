@@ -328,5 +328,32 @@ var io = new IntersectionObserver(function(entries) {
 }, {threshold: 0.08});
 document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
 </script>
+
+<!-- Nav hide on scroll down, show on scroll up -->
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  if(!nav)return;
+  var lastY=0,ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        var y=window.scrollY;
+        if(y>80){
+          nav.classList.toggle('nav-hidden',y>lastY);
+          nav.classList.add('scrolled');
+        }else{
+          nav.classList.remove('nav-hidden');
+          nav.classList.remove('scrolled');
+        }
+        lastY=y;
+        ticking=false;
+      });
+      ticking=true;
+    }
+  },{passive:true});
+})();
+</script>
+
 </body>
 </html>

@@ -31,7 +31,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   -webkit-backdrop-filter:blur(28px) saturate(180%);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:980px;
-  transition:background .4s,border-color .4s,box-shadow .4s;
+  transition:background .4s,border-color .4s,box-shadow .4s,transform .35s ease,opacity .35s ease;
+}
+.nav.nav-hidden{
+  transform:translateX(-50%) translateY(-80px);
+  opacity:0;
+  pointer-events:none;
 }
 .nav.scrolled{
   background:rgba(8,8,8,0.88);
