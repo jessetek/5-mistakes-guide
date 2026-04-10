@@ -3,6 +3,6 @@
   "rewrites": [
     { "source": "/api/submit", "destination": "/api/submit" },
     { "source": "/api/seller-submit", "destination": "/api/seller-submit" },
-    { "source": "/", "destination": "/home.html" }
+    { "source": "/", "destination": "/home" }
   ]
 }
