@@ -352,7 +352,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 
 /* ---- HERO PHOTO (Jesse anchor) ---- */
 .bc-hero{position:relative;background:#000;overflow:hidden}
-.hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
 .hero-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.1) 45%,transparent 100%)}
 .hero-card-text{position:absolute;bottom:0;left:0;right:0;padding:20px 22px}
 .hero-card-name{font-size:18px;font-weight:700;color:#fff;letter-spacing:-.3px;line-height:1.15}
@@ -519,6 +519,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 .step-badge-wrap{
   grid-column:2;
   display:flex;align-items:center;justify-content:center;
+  align-self:start;margin-top:40px;
   position:relative;
   z-index:2;
 }
@@ -675,7 +676,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 .photo-strip-track{
   display:flex;gap:16px;
   width:max-content;
-  animation:stripLeft 90s linear infinite;
+  animation:stripLeft 40s linear infinite;
   padding:20px 16px;
 }
 .photo-strip-track:hover{animation-play-state:paused}
@@ -887,7 +888,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 /* =====================================================
    FOOTER
 ===================================================== */
-.footer{background:var(--bg);padding:60px 40px 32px;border-top:1px solid rgba(0,0,0,.06)}
+.footer{background:#EEF2F7;padding:60px 40px 32px}
 .footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px}
 .f-logo{font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.3px;margin-bottom:12px}
 .f-logo span{color:var(--blue)}
@@ -895,7 +896,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 .f-col h4{font-size:12px;font-weight:600;color:var(--text);margin-bottom:14px}
 .f-col a{display:block;font-size:13px;color:var(--text2);text-decoration:none;margin-bottom:10px;transition:color .2s}
 .f-col a:hover{color:var(--blue)}
-.footer-bot{max-width:1120px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;align-items:center}
+.footer-bot{max-width:1120px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(0,0,0,.04);display:flex;justify-content:space-between;align-items:center}
 .footer-bot p{font-size:12px;color:var(--text3)}
 .f-socials{display:flex;gap:20px}
 .f-socials a{font-size:12px;color:var(--text2);text-decoration:none;transition:color .2s}
@@ -940,7 +941,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .steps-grid::before{left:34px}
   .step-row{grid-template-columns:68px 1fr;gap:18px;margin-bottom:48px}
   .step-row.r-left .step-card,.step-row.r-right .step-card{grid-column:2;justify-self:start;max-width:100%}
-  .step-badge-wrap{grid-column:1}
+  .step-badge-wrap{grid-column:1;align-self:start;margin-top:24px}
+  .hero-card-img{object-position:center 25%}
   .step-card{height:300px;min-height:300px}
   .step-card.has-mockup{height:380px;min-height:380px}
   .step-card.has-mockup .step-card-overlay{background:linear-gradient(180deg,rgba(8,11,20,0) 0%,rgba(8,11,20,0) 38%,rgba(8,11,20,.96) 52%,rgba(8,11,20,1) 100%)}
@@ -961,32 +963,38 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 @media(max-width:600px){
   .hero-inner{padding:110px 20px 70px}
   .hero h1{font-size:36px;letter-spacing:-1.5px}
-  .bento-grid,.steps-grid{grid-template-columns:1fr;grid-template-rows:none;gap:14px}
-  .bc-families,.bc-reviews,.bc-comms,.bc-contacts,.bc-hero,.bc-instagram,.bc-offmarket,.bc-bilingual,.bc-docusign,.bc-socal{grid-column:1;grid-row:auto}
-  .bc-families,.bc-comms,.bc-offmarket,.bc-bilingual,.bc-docusign{min-height:140px}
-  .bc-socal{height:220px;min-height:220px}
-  /* Fix Google Reviews: needs fixed height for absolute scroll to clip properly */
-  .bc-reviews{height:300px;min-height:300px}
-  /* Fix Dream Team: keep column layout (was breaking as row), give it proper height */
-  .bc-contacts{height:auto;min-height:200px;flex-direction:column;padding:18px 20px 14px}
+  /* Section headings */
+  .sec-title{font-size:28px;letter-spacing:-1.2px}
+  .sec-sub{font-size:14px}
+  /* Bento: 2-column grid on mobile */
+  .bento-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px}
+  .bc-hero{grid-column:1/3;grid-row:auto;min-height:280px}
+  .bc-instagram{grid-column:1/3;grid-row:auto;min-height:140px;flex-direction:row;padding:14px 16px}
+  .bc-contacts{grid-column:1/3;grid-row:auto;height:auto;min-height:180px;flex-direction:column;padding:18px 20px 14px}
+  .bc-families{grid-column:1;grid-row:auto;min-height:130px}
+  .bc-reviews{grid-column:2;grid-row:auto;height:280px;min-height:280px}
+  .bc-comms{grid-column:1;grid-row:auto;min-height:130px}
+  .bc-offmarket{grid-column:1;grid-row:auto;min-height:200px}
+  .bc-bilingual{grid-column:2;grid-row:auto;min-height:180px}
+  .bc-docusign{grid-column:1;grid-row:auto;min-height:180px}
+  .bc-socal{grid-column:2;grid-row:auto;height:200px;min-height:200px}
+  .hero-card-img{object-position:center 25%}
   .dream-figures{min-height:80px}
   .dream-labels{padding-top:4px}
   .dream-lbl{font-size:8px}
-  .bc-hero{min-height:320px}
-  /* Fix Instagram: keep row layout but ensure tile grid is visible */
-  .bc-instagram{min-height:160px;flex-direction:row;padding:14px 16px}
   .ig-text{width:36%}
   .ig-grid{padding:6px 0}
-  /* Fix Multi-Offer: give it room for the conversation + result */
-  .bc-offmarket{min-height:240px}
-  /* Fix Digital First: needs vertical room for icon */
-  .bc-docusign{min-height:200px}
-  /* Fix Bilingual quote card: room for the quote */
-  .bc-bilingual{min-height:200px}
+  /* Steps: single column */
+  .steps-grid{grid-template-columns:1fr;grid-template-rows:none;gap:14px}
+  .step-badge-wrap{align-self:start;margin-top:24px}
+  /* Photo strip */
   .photo-strip-inner{grid-template-columns:repeat(2,1fr)}
   .strip-photo:nth-child(n+4){display:none}
+  /* Footer */
+  .footer{padding:40px 20px 24px}
   .footer-grid{grid-template-columns:1fr;gap:28px}
   .footer-bot{flex-direction:column;gap:12px;text-align:center}
+  /* General */
   .bento-section,.steps-section,.photo-strip{padding-left:20px;padding-right:20px}
   .hero-floats{gap:10px}
   .float-card{min-width:unset;padding:14px 18px}
