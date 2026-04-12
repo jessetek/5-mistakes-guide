@@ -712,10 +712,20 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
    CTA SECTION
 ===================================================== */
 .cta-section{
-  background:linear-gradient(180deg,var(--bg) 0%,#EEF2F7 100%);
+  background:var(--bg);
   padding:120px 40px 130px;
   text-align:center;
   position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:120px;
+  background:linear-gradient(180deg,var(--bg) 0%,transparent 100%);
+  z-index:1;pointer-events:none;
+}
+.cta-section::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
+  background:linear-gradient(0deg,#EEF2F7 0%,transparent 100%);
+  z-index:1;pointer-events:none;
 }
 .cta-blob{
   position:absolute;border-radius:50%;pointer-events:none;
@@ -889,7 +899,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 /* =====================================================
    FOOTER
 ===================================================== */
-.footer{background:#EEF2F7;padding:60px 40px 32px}
+.footer{background:linear-gradient(180deg,var(--bg) 0%,#EEF2F7 15%,#EEF2F7 100%);padding:60px 40px 32px}
 .footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px}
 .f-logo{font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.3px;margin-bottom:12px}
 .f-logo span{color:var(--blue)}
