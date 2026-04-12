@@ -1004,10 +1004,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .step-row.r-left .step-card,.step-row.r-right .step-card{grid-column:auto;justify-self:auto;max-width:100%;width:100%}
   .step-card{height:280px;min-height:280px}
   /* Photo strip */
-  .photo-strip-track{animation-duration:16s}
-  .photo-strip-inner{grid-template-columns:repeat(2,1fr)}
-  .strip-photo:nth-child(n+4){display:none}
-  .strip-photo{width:180px;height:240px}
+  .photo-strip-track{animation-duration:18s;gap:12px}
+  .strip-photo{width:200px;height:266px;border-radius:16px}
+  .strip-photo:nth-child(even){margin-top:18px}
   /* Footer */
   .footer{padding:40px 20px 24px}
   .footer-grid{grid-template-columns:1fr;gap:28px}
