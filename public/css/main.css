@@ -900,7 +900,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
    FOOTER
 ===================================================== */
 .footer{background:linear-gradient(180deg,var(--bg) 0%,#EEF2F7 15%,#EEF2F7 100%);padding:60px 40px 32px}
-.footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px}
+.footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px}
 .f-logo{font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.3px;margin-bottom:12px}
 .f-logo span{color:var(--blue)}
 .f-brand p{font-size:13px;color:var(--text3);line-height:1.6;max-width:260px}
