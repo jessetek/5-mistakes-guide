@@ -1375,6 +1375,58 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 /* =====================================================
    REVIEWS PAGE
 ===================================================== */
+
+/* ---- Happy Clients Marquee ---- */
+.clients-marquee-section{padding:60px 0 40px;background:var(--bg);overflow:hidden}
+.clients-marquee-head{
+  text-align:center;margin-bottom:36px;
+}
+.clients-marquee-count{
+  font-size:56px;font-weight:800;letter-spacing:-3px;
+  background:linear-gradient(135deg,#1D1D1F,rgba(29,29,31,.6));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:block;line-height:1;
+}
+.clients-marquee-label{
+  font-size:14px;font-weight:600;color:var(--text3);
+  letter-spacing:.5px;text-transform:uppercase;margin-top:6px;display:block;
+}
+.clients-marquee-wrap{display:flex;flex-direction:column;gap:12px}
+.clients-row{overflow:hidden;position:relative}
+.clients-row::before,.clients-row::after{
+  content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;
+}
+.clients-row::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.clients-row::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.clients-track{
+  display:flex;gap:12px;width:max-content;
+}
+.clients-row-left .clients-track{animation:clientsLeft 35s linear infinite}
+.clients-row-right .clients-track{animation:clientsRight 40s linear infinite}
+@keyframes clientsLeft{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+@keyframes clientsRight{
+  0%{transform:translateX(-50%)}
+  100%{transform:translateX(0)}
+}
+.client-thumb{
+  flex-shrink:0;width:160px;height:200px;
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  transition:transform .4s ease;
+}
+.client-thumb:hover{transform:scale(1.05)}
+.client-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:600px){
+  .clients-marquee-section{padding:40px 0 30px}
+  .clients-marquee-count{font-size:42px}
+  .client-thumb{width:120px;height:150px;border-radius:12px}
+  .clients-row-left .clients-track{animation-duration:22s}
+  .clients-row-right .clients-track{animation-duration:26s}
+}
+
 .reviews-wall{padding:80px 40px 120px;background:var(--bg)}
 .reviews-wall-inner{max-width:1180px;margin:0 auto}
 .reviews-grid{columns:3;column-gap:18px}
@@ -1582,6 +1634,59 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .videos-grid{gap:12px}
   .video-info{padding:12px 14px 14px}
 }
+
+/* ---- Instagram CTA Section ---- */
+.ig-cta-section{padding:80px 40px 100px;background:var(--bg);overflow:hidden}
+.ig-cta-inner{
+  max-width:680px;margin:0 auto;text-align:center;
+  background:linear-gradient(135deg,#1a1a1a 0%,#111 50%,#0a0a0a 100%);
+  border-radius:28px;padding:60px 48px;
+  position:relative;overflow:hidden;
+}
+.ig-cta-inner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 0%,rgba(131,58,180,.2) 0%,transparent 50%),
+    radial-gradient(ellipse at 70% 100%,rgba(253,29,29,.15) 0%,transparent 50%);
+  pointer-events:none;
+}
+.ig-cta-icon{margin-bottom:24px;position:relative}
+.ig-cta-title{
+  font-size:36px;font-weight:800;color:#fff;
+  letter-spacing:-1.5px;line-height:1.1;
+  margin-bottom:14px;position:relative;
+}
+.ig-cta-sub{
+  font-size:16px;color:rgba(255,255,255,.55);
+  line-height:1.6;max-width:480px;margin:0 auto 32px;
+  position:relative;
+}
+.ig-cta-stats{
+  display:flex;justify-content:center;gap:40px;
+  margin-bottom:36px;position:relative;
+}
+.ig-cta-stat{display:flex;flex-direction:column;align-items:center;gap:2px}
+.ig-cta-stat-num{font-size:24px;font-weight:800;color:#fff;letter-spacing:-1px}
+.ig-cta-stat-label{font-size:11px;color:rgba(255,255,255,.4);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.ig-cta-btn{
+  display:inline-flex;align-items:center;
+  background:linear-gradient(135deg,#833AB4,#FD1D1D,#F77737);
+  color:#fff;font-weight:700;font-size:15px;
+  padding:16px 32px;border-radius:980px;
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  position:relative;
+  box-shadow:0 8px 32px rgba(253,29,29,.3);
+}
+.ig-cta-btn:hover{transform:scale(1.04);box-shadow:0 12px 40px rgba(253,29,29,.4)}
+@media(max-width:600px){
+  .ig-cta-section{padding:60px 20px 80px}
+  .ig-cta-inner{padding:40px 28px;border-radius:22px}
+  .ig-cta-title{font-size:28px}
+  .ig-cta-stats{gap:24px}
+  .ig-cta-stat-num{font-size:20px}
+  .ig-cta-btn{font-size:14px;padding:14px 26px}
+}
+
 /* =====================================================
    SERVICES PAGE
 ===================================================== */
