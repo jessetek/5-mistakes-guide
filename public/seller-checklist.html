@@ -3,15 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>First-Time Buyer Checklist | Jesse Oñate Realtor</title>
-<meta name="description" content="The complete first-time home buyer checklist. Track every step from pre-approval to keys. Free, interactive, no email required.">
+<title>Home Seller Checklist | Jesse Oñate Realtor</title>
+<meta name="description" content="The complete home seller checklist. Track every step from listing prep to closing day. Free, interactive, no email required.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Home Seller Checklist | Jesse Oñate">
+<meta property="og:description" content="Track every step from listing prep to closing day. Free, interactive checklist.">
+<meta property="og:image" content="https://jessetek.net/img/og-sellers.png">
+<meta property="og:url" content="https://jessetek.net/seller-checklist">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Seller Checklist | Jesse Oñate">
+<meta name="twitter:description" content="Track every step from listing prep to closing day. Free, interactive checklist.">
+<meta name="twitter:image" content="https://jessetek.net/img/og-sellers.png">
 <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
-  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">&#10005;</span>
   <a href="/home.html">Home</a>
   <a href="/about.html">About</a>
   <a href="/listings.html">Listings</a>
@@ -40,8 +49,8 @@
       <span class="hero-badge-dot"></span>
       <span>Free · Interactive · No Email Required</span>
     </div>
-    <h1>The First-Time Buyer<br><span class="g">Checklist.</span></h1>
-    <p>Every box you need to check before getting your keys. Save your progress as you go — your checks stay even if you close the tab.</p>
+    <h1>The Home Seller<br><span class="g">Checklist.</span></h1>
+    <p>Every box you need to check from listing prep to closing day. Save your progress as you go — your checks stay even if you close the tab.</p>
     <div class="hero-btns">
       <a href="/zoom.html" class="btn-primary">Get Help with This</a>
       <a href="#checklist" class="btn-ghost">Start the Checklist ↓</a>
@@ -60,7 +69,7 @@
           <div class="cl-progress-label">Your Progress</div>
           <div class="cl-progress-num"><span id="clDone">0</span>/<span id="clTotal">28</span> checked</div>
         </div>
-        <button class="cl-reset-btn" onclick="resetChecklist()">Reset All</button>
+        <button class="cl-reset-btn" onclick="resetSellerChecklist()">Reset All</button>
       </div>
       <div class="cl-progress-bar"><div class="cl-progress-fill" id="clFill"></div></div>
     </div>
@@ -71,7 +80,7 @@
         <div class="cl-phase-num">1</div>
         <div>
           <div class="cl-phase-tag">PHASE ONE</div>
-          <h2>Get Your Money Right</h2>
+          <h2>Prep Your Home</h2>
         </div>
       </div>
       <div class="cl-items">
@@ -79,56 +88,56 @@
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Pull your credit report from all 3 bureaus</div>
-            <div class="cl-hint">Free at annualcreditreport.com — make sure there are no errors before applying for a loan.</div>
+            <div class="cl-title">Declutter and depersonalize every room</div>
+            <div class="cl-hint">Buyers need to picture their life there, not yours. Remove family photos and personal collections.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Check your credit score</div>
-            <div class="cl-hint">Aim for 620+ for FHA, 740+ for the best conventional rates.</div>
+            <div class="cl-title">Deep clean the entire house (or hire a pro)</div>
+            <div class="cl-hint">Windows, baseboards, grout, carpets. First impressions are everything.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Pay down credit card debt below 30% utilization</div>
-            <div class="cl-hint">This alone can boost your score 20-40 points in a month.</div>
+            <div class="cl-title">Handle minor repairs — leaky faucets, chipped paint, broken handles</div>
+            <div class="cl-hint">Every small issue screams 'deferred maintenance' to a buyer.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Save your down payment + 3-5% for closing costs</div>
-            <div class="cl-hint">On a $650K home, that's $22-152K total saved up.</div>
+            <div class="cl-title">Touch up or repaint walls in neutral tones</div>
+            <div class="cl-hint">Fresh white or greige makes every room look bigger and brighter.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Don't open new credit cards or take new loans</div>
-            <div class="cl-hint">Even a Best Buy financing offer can hurt your mortgage approval.</div>
+            <div class="cl-title">Boost curb appeal — landscaping, front door, house numbers</div>
+            <div class="cl-hint">You have 7 seconds to make a first impression from the curb.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Get pre-approved (not just pre-qualified) by a real lender</div>
-            <div class="cl-hint">Pre-approval is a hard credit pull and a real document. Pre-qualification is just an estimate.</div>
+            <div class="cl-title">Stage the home (or let Jesse arrange it)</div>
+            <div class="cl-hint">Staged homes sell 73% faster and for up to 10% more.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Talk to Jesse about your loan options</div>
-            <div class="cl-hint">FHA, VA, conventional, jumbo — different loans for different situations. We figure out which is right for you.</div>
+            <div class="cl-title">Get a pre-listing inspection to avoid surprises</div>
+            <div class="cl-hint">Find and fix problems before the buyer's inspector does.</div>
           </div>
         </label>
       </div>
@@ -140,7 +149,7 @@
         <div class="cl-phase-num">2</div>
         <div>
           <div class="cl-phase-tag">PHASE TWO</div>
-          <h2>Find Your Home</h2>
+          <h2>Price & List</h2>
         </div>
       </div>
       <div class="cl-items">
@@ -148,56 +157,56 @@
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Define your must-haves vs nice-to-haves</div>
-            <div class="cl-hint">Bedrooms, bathrooms, square footage, garage, yard. Be honest about what's a must vs a wish.</div>
+            <div class="cl-title">Talk to Jesse about your selling strategy</div>
+            <div class="cl-hint">Timing, pricing, marketing — we build a custom playbook for your home.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Pick your target neighborhoods</div>
-            <div class="cl-hint">Within a 25-min commute? Near schools? Walking distance to coffee? List 3-5 areas.</div>
+            <div class="cl-title">Review recent comps in your neighborhood</div>
+            <div class="cl-hint">What similar homes sold for in the last 90 days is your true market value.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Set up MLS alerts (I do this for you for free)</div>
-            <div class="cl-hint">You'll get new listings within minutes of them going live.</div>
+            <div class="cl-title">Set a competitive asking price (not emotional price)</div>
+            <div class="cl-hint">Overpricing costs you time and money. The market decides the value.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Tour at least 5-10 homes in person</div>
-            <div class="cl-hint">Photos lie. Walk the floors, check the storage, stand in the backyard.</div>
+            <div class="cl-title">Approve your listing photos and video</div>
+            <div class="cl-hint">Jesse's team shoots professional photos, drone, and video walkthroughs.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Drive the neighborhood at different times of day</div>
-            <div class="cl-hint">Weekday morning, Friday night, Sunday afternoon. Get a real feel.</div>
+            <div class="cl-title">Review and sign the listing agreement</div>
+            <div class="cl-hint">This outlines commission, timeline, and marketing plan. Read it carefully.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Check the local school ratings</div>
-            <div class="cl-hint">Even if you don't have kids, it affects resale value. Use greatschools.org.</div>
+            <div class="cl-title">Plan your showing schedule</div>
+            <div class="cl-hint">The more accessible your home, the faster it sells. Weekends are key.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Check the commute on Google Maps at rush hour</div>
-            <div class="cl-hint">Your dream home is a nightmare if it doubles your daily drive.</div>
+            <div class="cl-title">Prepare a seller disclosure statement</div>
+            <div class="cl-hint">California law requires you to disclose known issues. Be honest — it protects you.</div>
           </div>
         </label>
       </div>
@@ -209,7 +218,7 @@
         <div class="cl-phase-num">3</div>
         <div>
           <div class="cl-phase-tag">PHASE THREE</div>
-          <h2>Make the Offer</h2>
+          <h2>Showings & Offers</h2>
         </div>
       </div>
       <div class="cl-items">
@@ -217,56 +226,56 @@
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Run comps with Jesse before offering</div>
-            <div class="cl-hint">We pull recent sales of similar homes — your offer should be data-backed, not guesswork.</div>
+            <div class="cl-title">Keep the home show-ready at all times</div>
+            <div class="cl-hint">Beds made, dishes done, lights on. You never know when the right buyer walks in.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Decide on your offer strategy</div>
-            <div class="cl-hint">Lowball? At list? Above asking? Cash-equivalent? Each market is different.</div>
+            <div class="cl-title">Leave for all showings — buyers need to feel at home</div>
+            <div class="cl-hint">Sellers being present makes buyers uncomfortable and less likely to offer.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Calculate your max walk-away price</div>
-            <div class="cl-hint">The number you'd never pay above. Decide BEFORE you fall in love.</div>
+            <div class="cl-title">Review every offer within 24 hours</div>
+            <div class="cl-hint">In a competitive market, speed matters. Jesse walks you through every term.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Submit a clean, professional offer letter</div>
-            <div class="cl-hint">Include pre-approval, earnest money, contingencies, and a personal note if it's competitive.</div>
+            <div class="cl-title">Compare offers on more than just price</div>
+            <div class="cl-hint">Contingencies, closing timeline, earnest money, loan type — all matter.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Be ready to negotiate or counter quickly</div>
-            <div class="cl-hint">In a hot market, every hour matters. Have your phone on you.</div>
+            <div class="cl-title">Negotiate counteroffers strategically</div>
+            <div class="cl-hint">Jesse handles the negotiation. The goal: best price with fewest contingencies.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Don't get emotionally attached before contracts are signed</div>
-            <div class="cl-hint">10% of deals fall through. Stay calm until you have a signed contract in hand.</div>
+            <div class="cl-title">Accept the best offer and open escrow</div>
+            <div class="cl-hint">Signed! Now the 30-day countdown begins.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Know your contingencies (inspection, appraisal, loan)</div>
-            <div class="cl-hint">Standard in CA: 17 days inspection/appraisal, 21 days loan. These are your safety nets.</div>
+            <div class="cl-title">Respond to the buyer's inspection requests</div>
+            <div class="cl-hint">Negotiate repairs vs credits. Don't let small asks kill a good deal.</div>
           </div>
         </label>
       </div>
@@ -278,7 +287,7 @@
         <div class="cl-phase-num">4</div>
         <div>
           <div class="cl-phase-tag">PHASE FOUR</div>
-          <h2>Close the Deal</h2>
+          <h2>Close & Collect</h2>
         </div>
       </div>
       <div class="cl-items">
@@ -286,56 +295,56 @@
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Schedule the home inspection within 17 days</div>
-            <div class="cl-hint">Hire an independent inspector. Don't use the seller's recommendation. $400-600 and worth every penny.</div>
+            <div class="cl-title">Cooperate with the buyer's appraiser</div>
+            <div class="cl-hint">Make the home accessible and provide any records of improvements.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Negotiate any repairs or credits from inspection</div>
-            <div class="cl-hint">Big issues = ask for repairs or a credit. Small stuff = let it go.</div>
+            <div class="cl-title">Complete any agreed-upon repairs before closing</div>
+            <div class="cl-hint">Get receipts — the buyer may ask for proof.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Get the appraisal back from your lender</div>
-            <div class="cl-hint">If it appraises low, we negotiate. If it appraises high, you have instant equity.</div>
+            <div class="cl-title">Start packing and planning your move</div>
+            <div class="cl-hint">Don't wait until the last week. Start boxing up non-essentials now.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Lock in your interest rate at the right time</div>
-            <div class="cl-hint">Too early = miss a drop. Too late = miss the lock window. Talk to Jesse about timing.</div>
+            <div class="cl-title">Review the closing disclosure and seller net sheet</div>
+            <div class="cl-hint">This shows your exact proceeds after mortgage payoff, commissions, and fees.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Final walkthrough 24 hours before closing</div>
-            <div class="cl-hint">Make sure the home is in the same condition. Make sure the seller's stuff is OUT.</div>
+            <div class="cl-title">Cancel or transfer utilities and services</div>
+            <div class="cl-hint">Electric, gas, water, internet, trash, security system, lawn service.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Wire your down payment + closing costs (verify wire instructions twice)</div>
-            <div class="cl-hint">Wire fraud is real. Always call the title company to verify the wire info.</div>
+            <div class="cl-title">Do a final walkthrough with Jesse</div>
+            <div class="cl-hint">Make sure you haven't left anything behind and the home is broom-clean.</div>
           </div>
         </label>
         <label class="cl-item">
           <input type="checkbox" class="cl-checkbox">
           <span class="cl-checkmark"></span>
           <div class="cl-text">
-            <div class="cl-title">Sign your closing docs and get your keys 🎉</div>
-            <div class="cl-hint">You did it. Welcome home. Tag Jesse on Instagram so he can celebrate with you.</div>
+            <div class="cl-title">Sign closing docs and receive your proceeds 🎉</div>
+            <div class="cl-hint">Wire hits your bank same day. Your home is sold. On to the next chapter.</div>
           </div>
         </label>
       </div>
@@ -400,8 +409,8 @@
         Book a Strategy Call
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="/guide.html" class="cta-btn cta-btn-secondary">
-        Get the Free Buyer Guide
+      <a href="/seller.html" class="cta-btn cta-btn-secondary">
+        Get the Free Seller Guide
       </a>
     </div>
 
@@ -470,7 +479,7 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 
 // Checklist persistence
 (function(){
-  var storageKey = 'jesse-checklist-v1';
+  var storageKey = 'jesse-seller-checklist-v1';
   var saved = {};
   try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch(e) {}
 
@@ -503,9 +512,9 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
   update();
 })();
 
-function resetChecklist() {
+function resetSellerChecklist() {
   if (!confirm('Reset all checks?')) return;
-  localStorage.removeItem('jesse-checklist-v1');
+  localStorage.removeItem('jesse-seller-checklist-v1');
   document.querySelectorAll('.cl-checkbox').forEach(function(c){
     c.checked = false;
     c.closest('.cl-item').classList.remove('checked');
