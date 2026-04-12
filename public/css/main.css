@@ -266,11 +266,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 .btn-primary:hover{background:#e8e8e8;transform:scale(1.02)}
 .btn-ghost{
   display:inline-flex;align-items:center;
-  background:transparent;color:rgba(255,255,255,.7);
-  border:1px solid rgba(255,255,255,.18);padding:14px 28px;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);
+  border:1px solid rgba(255,255,255,.25);padding:14px 28px;
   border-radius:980px;font-size:14px;font-weight:500;
   text-decoration:none;
-  transition:border-color .2s,color .2s,transform .2s;
+  transition:border-color .2s,color .2s,background .2s,transform .2s;
+  backdrop-filter:blur(8px);
 }
 .btn-ghost:hover{border-color:rgba(255,255,255,.45);color:#fff;transform:scale(1.02)}
 
@@ -1006,6 +1007,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .hero-floats{gap:10px}
   .float-card{min-width:unset;padding:14px 18px}
   .fc-val{font-size:26px}
+  /* Disable hero parallax on mobile — too much dead scroll */
+  .hero-scroll-stage{height:auto}
+  .hero-scroll-stage .hero{position:relative;height:auto;min-height:100vh}
+  .hero-reveal{padding:50px 20px 40px}
+  .photo-strip{padding:40px 0 60px}
+  .bento-section{padding:60px 20px}
+  .steps-section{padding:60px 20px 80px}
 }
 
 /* =====================================================
@@ -2218,6 +2226,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   padding:5px 12px;border-radius:999px;
   font-size:10px;font-weight:900;letter-spacing:.4px;
   margin-top:10px;width:fit-content;text-transform:uppercase;
+  z-index:2;
 }
 
 /* ===== GFX 5: INSPECTION CLIPBOARD (paper with lines) ===== */
