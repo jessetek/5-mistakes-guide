@@ -68,6 +68,10 @@
         </div>
 
         <form class="guide-form" id="guideForm">
+          <div class="guide-form-hp" aria-hidden="true">
+            <label for="gf-website">Website (leave blank)</label>
+            <input type="text" id="gf-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <div class="guide-form-field">
             <label class="guide-form-label" for="gf-name">Your First Name</label>
             <input type="text" id="gf-name" name="firstName" placeholder="Jesse" required>
@@ -186,6 +190,10 @@
 
     <div class="guide-form-card">
       <form class="guide-form" id="guideForm2">
+        <div class="guide-form-hp" aria-hidden="true">
+          <label for="gf2-website">Website (leave blank)</label>
+          <input type="text" id="gf2-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="guide-form-field">
           <label class="guide-form-label" for="gf2-name">Your First Name</label>
           <input type="text" id="gf2-name" name="firstName" placeholder="Jesse" required>
@@ -245,6 +253,8 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     var form = document.getElementById(formId);
     if (!form) return;
     var submitBtn = document.getElementById(btnId);
+    var hpInput = form.querySelector('input[name="website"]');
+    var loadedAt = Date.now();
 
     form.addEventListener('submit', async function(e){
       e.preventDefault();
@@ -254,7 +264,9 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
       var data = {
         firstName: document.getElementById(nameId).value.trim(),
         email: document.getElementById(emailId).value.trim(),
-        phone: document.getElementById(phoneId).value.trim()
+        phone: document.getElementById(phoneId).value.trim(),
+        website: hpInput ? hpInput.value : '',
+        elapsed: Date.now() - loadedAt
       };
 
       try {

@@ -12,7 +12,14 @@ export default async function handler(req, res) {
 
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const { firstName, email, phone } = req.body;
+  const { firstName, email, phone, website, elapsed } = req.body;
+
+  // Honeypot: real users never see this field, so any value means a bot.
+  // Time-trap: humans take longer than 2s to fill the form.
+  // Silently return 200 so bots think they succeeded and stop retrying.
+  if (website || typeof elapsed !== 'number' || elapsed < 2000) {
+    return res.status(200).json({ success: true });
+  }
 
   if (!firstName || !email || !phone) {
     return res.status(400).json({ error: 'All fields are required' });
