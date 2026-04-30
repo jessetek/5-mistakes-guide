@@ -10,8 +10,9 @@
    ============================================================ */
 
 window.JESSE_CONFIG = window.JESSE_CONFIG || {
-  GA4_ID: null,           // e.g. "G-ABC1234XYZ"  — leave null until you have one
-  META_PIXEL_ID: null,    // e.g. "1234567890123456"
+  GA4_ID: "G-ZXSY9V9PXX",   // Live GA4 property for jessetek.net
+  META_PIXEL_ID: null,      // Add when running FB/IG ads (16-digit number)
+  VERCEL_ANALYTICS: true,   // Vercel Web Analytics enabled in dashboard 2026-04-30
 };
 
 (function () {
@@ -63,7 +64,14 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
     if (href.includes('/valuation')) trackEvent('click_valuation', { label: txt });
   }, { passive: true });
 
-  // ----- Vercel Analytics (loads from package — auto-injected by Vercel deploy) -----
-  // No code needed here. Enable in Vercel dashboard:
-  //   Project → Analytics → Enable Web Analytics
+  // ----- Vercel Web Analytics (static-site script tag) -----
+  // Vercel hosts the script at /_vercel/insights/script.js when the project
+  // has Web Analytics enabled in the dashboard.
+  if (cfg.VERCEL_ANALYTICS) {
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    var vaScript = document.createElement('script');
+    vaScript.defer = true;
+    vaScript.src = '/_vercel/insights/script.js';
+    document.head.appendChild(vaScript);
+  }
 })();
