@@ -5,7 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Videos & Reels | Jesse Oñate Realtor</title>
 <meta name="description" content="Jesse Oñate's video content — Instagram reels, market updates, home tours, buyer/seller tips. 18K followers strong.">
-<link rel="stylesheet" href="/css/main.css?v=2">
+<link rel="canonical" href="https://jessetek.net/videos">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Videos & Reels | Jesse Oñate">
+<meta property="og:description" content="SoCal real estate videos — market updates, home tours, buyer/seller tips. 18.8K Instagram followers strong.">
+<meta property="og:image" content="https://jessetek.net/img/og-videos.jpg">
+<meta property="og:image:alt" content="Jesse Oñate, bilingual SoCal realtor serving Downey, Whittier, Pico Rivera">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jessetek.net/videos">
+<meta property="og:site_name" content="Jesse Oñate Real Estate">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Videos & Reels | Jesse Oñate">
+<meta name="twitter:description" content="SoCal real estate videos — market updates, home tours, buyer/seller tips. 18.8K Instagram followers strong.">
+<meta name="twitter:image" content="https://jessetek.net/img/og-videos.jpg">
+<link rel="stylesheet" href="/css/main.css?v=3">
+<meta name="theme-color" content="#0E1014">
+<link rel="preconnect" href="https://assets.cdn.filesafe.space" crossorigin>
+<link rel="dns-prefetch" href="https://assets.cdn.filesafe.space">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
@@ -17,6 +41,7 @@
   <a href="/listings.html">Listings</a>
   <a href="/valuation.html">Sellers</a>
   <a href="/guide.html">Free Guide</a>
+  <a href="/rates.html">Rate Alerts</a>
   <a href="/zoom.html">Get Started</a>
 </div>
 
@@ -52,12 +77,10 @@
 <!-- ===================== FILTER TABS ===================== -->
 <section class="videos-filter" id="videos">
   <div class="videos-filter-inner">
-    <button class="vf-chip active">All</button>
-    <button class="vf-chip">Home Tours</button>
-    <button class="vf-chip">Market Updates</button>
-    <button class="vf-chip">Buyer Tips</button>
-    <button class="vf-chip">Seller Tips</button>
-    <button class="vf-chip">Closings</button>
+    <button class="vf-chip active" data-filter="all">All</button>
+    <button class="vf-chip" data-filter="buyer">Buyer Tips</button>
+    <button class="vf-chip" data-filter="seller">Seller Tips</button>
+    <button class="vf-chip" data-filter="listing">Listings</button>
   </div>
 </section>
 
@@ -68,67 +91,73 @@
       <span class="sec-label">Value Videos</span>
       <h2 class="sec-title">Tips, Market Updates & More.</h2>
     </div>
+    <!--
+      To wire a real video to a card:
+        - Instagram reel: data-video-type="instagram" data-video-url="https://www.instagram.com/reel/REEL_ID/"
+        - YouTube:        data-video-type="youtube"   data-video-url="https://www.youtube.com/watch?v=VIDEO_ID"
+        - Direct MP4:     data-video-type="mp4"       data-video-url="https://your-cdn.com/clip.mp4"
+    -->
     <div class="videos-grid">
 
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
+      <button type="button" class="video-card reveal-s" data-category="buyer" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c4984feef641818b51bfe.mp4">
         <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf935ea3cd026ad34a2.jpeg')">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <div class="video-tag">BUYER TIP</div>
+          <div class="video-title">What Lenders Won't Tell You About Interest Rates</div>
+        </div>
+      </button>
+
+      <button type="button" class="video-card reveal-s" data-category="buyer" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c4984feef6410a4b51bfc.mp4">
+        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf976f7c34fa8b0a732.jpeg')">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <div class="video-tag">BUYER TIP</div>
+          <div class="video-title">What To Do After Buying a Home</div>
+        </div>
+      </button>
+
+      <button type="button" class="video-card reveal-s" data-category="seller" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c498412775b20abd9c658.mp4">
+        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf935ea3c584dad34a1.jpeg')">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <div class="video-tag">SELLER TIP</div>
+          <div class="video-title">What Happens to Your Property When You Die</div>
+        </div>
+      </button>
+
+      <button type="button" class="video-card reveal-s" data-category="buyer" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c4984feef648bb6b51bfd.mp4">
+        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf9feef64600db51c69.jpeg')">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <div class="video-tag">BUYER TIP</div>
+          <div class="video-title">Seller Credit vs Lower Price</div>
+        </div>
+      </button>
+
+      <button type="button" class="video-card reveal-s" data-category="buyer" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c49843956654df6c81ac6.mov">
+        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf9395665bc78c81b4a.jpeg')">
           <div class="video-play">▶</div>
         </div>
         <div class="video-info">
           <div class="video-tag">BUYER TIP</div>
           <div class="video-title">How to Start With Real Estate Investing</div>
         </div>
-      </a>
+      </button>
 
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
-        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf976f7c34fa8b0a732.jpeg')">
-          <div class="video-play">▶</div>
-        </div>
-        <div class="video-info">
-          <div class="video-tag">MARKET UPDATE</div>
-          <div class="video-title">Best Time of Year to Buy a Home</div>
-        </div>
-      </a>
-
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
-        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf935ea3c584dad34a1.jpeg')">
-          <div class="video-play">▶</div>
-        </div>
-        <div class="video-info">
-          <div class="video-tag">HOME TOUR</div>
-          <div class="video-title">Pasadena, CA Home Tour</div>
-        </div>
-      </a>
-
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
-        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf9feef64600db51c69.jpeg')">
-          <div class="video-play">▶</div>
-        </div>
-        <div class="video-info">
-          <div class="video-tag">HOME TOUR</div>
-          <div class="video-title">Anaheim Hills Home Tour</div>
-        </div>
-      </a>
-
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
-        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf9395665bc78c81b4a.jpeg')">
-          <div class="video-play">▶</div>
-        </div>
-        <div class="video-info">
-          <div class="video-tag">SELLER TIP</div>
-          <div class="video-title">How to Get $40K Over Asking</div>
-        </div>
-      </a>
-
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
+      <button type="button" class="video-card reveal-s" data-category="buyer" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c498412775b159fd9c659.mp4">
         <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c4bf93956653e07c81b4b.jpeg')">
           <div class="video-play">▶</div>
         </div>
         <div class="video-info">
-          <div class="video-tag">HOME TOUR</div>
-          <div class="video-title">SoCal Luxury Home Tour</div>
+          <div class="video-tag">BUYER TIP</div>
+          <div class="video-title">Best Time of Year to Buy a Home</div>
         </div>
-      </a>
+      </button>
 
     </div>
   </div>
@@ -143,39 +172,52 @@
     </div>
     <div class="videos-grid">
 
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
-        <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c474776f7c309a5b0a31d.jpeg')">
+      <button type="button" class="video-card reveal-s" data-category="listing" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c442439566563d4c80e5d.mov">
+        <div class="video-thumb" style="background-image:url('https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c45933956654961c80eaa.jpeg')">
           <div class="video-play">▶</div>
         </div>
         <div class="video-info">
           <div class="video-tag">LISTING VIDEO</div>
-          <div class="video-title">Property Marketing Showcase</div>
+          <div class="video-title">Pasadena Listing Tour</div>
         </div>
-      </a>
+      </button>
 
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
+      <button type="button" class="video-card reveal-s" data-category="listing" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c442412775b7075d9b7b4.mov">
         <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c47d0feef645d73b51b77.jpeg')">
           <div class="video-play">▶</div>
         </div>
         <div class="video-info">
           <div class="video-tag">LISTING VIDEO</div>
-          <div class="video-title">Cinematic Listing Walkthrough</div>
+          <div class="video-title">Anaheim Hills Listing Tour</div>
         </div>
-      </a>
+      </button>
 
-      <a href="https://jesseonate.com/videos" target="_blank" class="video-card reveal-s">
+      <button type="button" class="video-card reveal-s" data-category="listing" data-video-type="mp4" data-video-url="https://storage.googleapis.com/msgsndr/4IKcbmtpx3ZLuYU0uJzw/media/674c442447629605e7f6f404.mov">
         <div class="video-thumb" style="background-image:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/674c47d035ea3c4827ad262f.jpeg')">
           <div class="video-play">▶</div>
         </div>
         <div class="video-info">
           <div class="video-tag">LISTING VIDEO</div>
-          <div class="video-title">Seller's Home Marketing Reel</div>
+          <div class="video-title">Montebello Listing Tour</div>
         </div>
-      </a>
+      </button>
 
     </div>
   </div>
 </section>
+
+<!-- ===================== VIDEO LIGHTBOX ===================== -->
+<div class="vid-modal" id="vidModal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+  <div class="vid-modal-backdrop" data-vid-close></div>
+  <div class="vid-modal-card">
+    <button type="button" class="vid-modal-close" data-vid-close aria-label="Close video">✕</button>
+    <div class="vid-modal-stage" id="vidModalStage"></div>
+    <div class="vid-modal-caption">
+      <div class="vid-modal-tag" id="vidModalTag"></div>
+      <div class="vid-modal-title" id="vidModalTitle"></div>
+    </div>
+  </div>
+</div>
 
 <!-- ===================== INSTAGRAM CTA ===================== -->
 <section class="ig-cta-section">
@@ -205,7 +247,7 @@
   <div class="cta-card reveal">
 
     <div class="cta-avatar">
-      <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
+      <picture><source srcset="/img/jesse-headshot.webp" type="image/webp"><img alt="Jesse Oñate, bilingual realtor in Downey, CA" loading="lazy" decoding="async" src="/img/jesse-headshot.jpeg" width="800" height="1200"></picture>
       <div class="cta-online"></div>
     </div>
 
@@ -278,6 +320,7 @@
       <a href="/guide.html">5 Mistakes Guide</a>
       <a href="/checklist.html">Buyer Checklist</a>
       <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/rates.html">Rate Alerts</a>
       <a href="/listings.html">Browse Listings</a>
     </div>
     <div class="f-col">
@@ -291,6 +334,7 @@
       <h4>Resources</h4>
       <a href="/about.html">About Jesse</a>
       <a href="/reviews.html">Reviews</a>
+      <a href="/insights/">Insights</a>
       <a href="/faq.html">FAQ</a>
       <a href="/videos.html">Videos</a>
       <a href="/zoom.html">Book a Call</a>
@@ -319,8 +363,90 @@ document.querySelectorAll('.vf-chip').forEach(function(c){
   c.addEventListener('click', function(){
     document.querySelectorAll('.vf-chip').forEach(function(x){x.classList.remove('active')});
     c.classList.add('active');
+    var filter = c.getAttribute('data-filter') || 'all';
+    document.querySelectorAll('.video-card').forEach(function(card){
+      var match = filter === 'all' || card.getAttribute('data-category') === filter;
+      card.style.display = match ? '' : 'none';
+    });
+    document.querySelectorAll('.videos-section').forEach(function(sec){
+      var hasVisible = Array.from(sec.querySelectorAll('.video-card')).some(function(card){
+        return card.style.display !== 'none';
+      });
+      sec.style.display = hasVisible ? '' : 'none';
+    });
   });
 });
+
+/* ----- Video lightbox ----- */
+(function(){
+  var modal = document.getElementById('vidModal');
+  var stage = document.getElementById('vidModalStage');
+  var tagEl = document.getElementById('vidModalTag');
+  var titleEl = document.getElementById('vidModalTitle');
+  if(!modal || !stage) return;
+
+  function ytId(url){
+    var m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{6,})/);
+    return m ? m[1] : null;
+  }
+  function igReelPath(url){
+    var m = url.match(/instagram\.com\/(?:reel|p|tv)\/([\w-]+)/);
+    return m ? m[1] : null;
+  }
+
+  function buildPlayer(type, url){
+    if(!url){
+      return '<div class="vid-modal-empty">'
+           + '<div class="vid-modal-empty-icon">▶</div>'
+           + '<div class="vid-modal-empty-h">Video link not added yet</div>'
+           + '<div class="vid-modal-empty-p">Drop the Instagram reel, YouTube, or MP4 URL into this card\'s <code>data-video-url</code> attribute and it\'ll play right here.</div>'
+           + '</div>';
+    }
+    if(type === 'youtube'){
+      var id = ytId(url);
+      if(!id) return '<div class="vid-modal-empty"><div class="vid-modal-empty-h">Invalid YouTube URL</div></div>';
+      return '<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe>';
+    }
+    if(type === 'mp4'){
+      return '<video src="'+url+'" controls autoplay playsinline></video>';
+    }
+    /* default: instagram */
+    var slug = igReelPath(url);
+    if(!slug) return '<div class="vid-modal-empty"><div class="vid-modal-empty-h">Invalid Instagram URL</div></div>';
+    return '<iframe src="https://www.instagram.com/reel/'+slug+'/embed/?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen frameborder="0" scrolling="no"></iframe>';
+  }
+
+  function open(card){
+    var type = card.getAttribute('data-video-type') || 'instagram';
+    var url = card.getAttribute('data-video-url') || '';
+    var tag = (card.querySelector('.video-tag')||{}).textContent || '';
+    var title = (card.querySelector('.video-title')||{}).textContent || '';
+    tagEl.textContent = tag;
+    titleEl.textContent = title;
+    stage.innerHTML = buildPlayer(type, url);
+    modal.hidden = false;
+    document.body.classList.add('vid-modal-open');
+    requestAnimationFrame(function(){ modal.classList.add('on'); });
+  }
+  function close(){
+    modal.classList.remove('on');
+    document.body.classList.remove('vid-modal-open');
+    setTimeout(function(){
+      stage.innerHTML = '';
+      modal.hidden = true;
+    }, 220);
+  }
+
+  document.querySelectorAll('.video-card').forEach(function(card){
+    card.addEventListener('click', function(){ open(card); });
+  });
+  modal.querySelectorAll('[data-vid-close]').forEach(function(el){
+    el.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !modal.hidden) close();
+  });
+})();
 </script>
 
 <!-- Nav hide on scroll down, show on scroll up -->
@@ -349,5 +475,102 @@ document.querySelectorAll('.vf-chip').forEach(function(c){
 })();
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Jesse O\u00f1ate",
+  "image": "https://jessetek.net/img/jesse-headshot.jpeg",
+  "telephone": "+1-562-609-4200",
+  "email": "jesse@jesseonate.com",
+  "url": "https://jessetek.net/",
+  "description": "Bilingual SoCal realtor helping millennials buy and sell homes in Downey, Whittier, Pico Rivera, and surrounding cities. 100+ families served. 5.0 star Google rating.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Downey",
+    "addressRegion": "CA",
+    "postalCode": "90240",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.9401,
+    "longitude": -118.1332
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Downey"
+    },
+    {
+      "@type": "City",
+      "name": "Whittier"
+    },
+    {
+      "@type": "City",
+      "name": "Pico Rivera"
+    },
+    {
+      "@type": "City",
+      "name": "Long Beach"
+    },
+    {
+      "@type": "City",
+      "name": "Cerritos"
+    },
+    {
+      "@type": "City",
+      "name": "Norwalk"
+    },
+    {
+      "@type": "City",
+      "name": "La Mirada"
+    },
+    {
+      "@type": "City",
+      "name": "Bellflower"
+    },
+            {
+              "@type": "City",
+              "name": "Montebello"
+            }
+  ],
+  "knowsLanguage": [
+    "en",
+    "es"
+  ],
+  "sameAs": [
+    "https://instagram.com/jessetek"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "100"
+  },
+  "identifier": "DRE #02133131",
+  "openingHours": "Mo-Su 08:00-20:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jessetek.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Videos",
+      "item": "https://jessetek.net/videos"
+    }
+  ]
+}
+</script>
+<script src="/js/analytics.js" defer></script>
 </body>
 </html>
