@@ -69,9 +69,19 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 }
 
 /* Full-bleed Jesse photo — render at final state immediately for fast LCP */
+/* image-set lets browsers pick WebP (143KB) when supported, JPG (266KB) fallback */
 .hero-photo-bg{
   position:absolute;inset:0;z-index:0;
-  background:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/66da9f7284ef29ade7e7f78b.png') center top/cover no-repeat;
+  background-color:#0E1014;
+  background-image:image-set(url('/img/hero-bg.webp') type('image/webp'),url('/img/hero-bg.jpg') type('image/jpeg'));
+  background-image:-webkit-image-set(url('/img/hero-bg.webp') type('image/webp'),url('/img/hero-bg.jpg') type('image/jpeg'));
+  background-position:center top;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+/* Fallback for browsers without image-set support */
+@supports not (background-image:image-set(url('/img/hero-bg.webp') type('image/webp'))){
+  .hero-photo-bg{background-image:url('/img/hero-bg.jpg')}
 }
 /* Subtle Ken Burns zoom kicks in only after first paint settles, so it doesn't gate LCP */
 .hero-photo-bg.loaded{
