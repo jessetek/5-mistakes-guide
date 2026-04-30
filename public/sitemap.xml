@@ -21,19 +21,19 @@
   <url><loc>https://jessetek.net/zoom</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- City pages -->
-  <url><loc>https://jessetek.net/neighborhoods/downey.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/whittier.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/pico-rivera.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/long-beach.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/cerritos.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/norwalk.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/la-mirada.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/bellflower.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/la-habra.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/neighborhoods/lakewood.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/downey</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/whittier</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/pico-rivera</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/long-beach</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/cerritos</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/norwalk</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/la-mirada</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/bellflower</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/la-habra</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/lakewood</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Insights / Blog -->
   <url><loc>https://jessetek.net/insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jessetek.net/insights/socal-rate-watch-april-2026.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jessetek.net/insights/socal-rate-watch-april-2026</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>
