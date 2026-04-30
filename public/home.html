@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Jesse Oñate | Realtor — Downey & Surrounding Cities</title>
 <meta name="description" content="Jesse Oñate is a top-producing realtor helping millennials buy and sell homes in Downey, Whittier, Pico Rivera, and surrounding cities in LA & Orange County. No pressure. Real results.">
+<link rel="canonical" href="https://jessetek.net/">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jesse Oñate | Realtor — Downey & SoCal">
 <meta property="og:description" content="Helping millennials buy and sell homes. No pressure, no games — just straight talk and real results.">
-<meta property="og:image" content="https://jessetek.net/img/og-home.png">
+<meta property="og:image" content="https://jessetek.net/img/og-home.jpg">
 <meta property="og:url" content="https://jessetek.net/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jesse Oñate | Realtor — Downey & SoCal">
 <meta name="twitter:description" content="Helping millennials buy and sell homes. No pressure, no games — just straight talk and real results.">
-<meta name="twitter:image" content="https://jessetek.net/img/og-home.png">
+<meta name="twitter:image" content="https://jessetek.net/img/og-home.jpg">
 <link rel="stylesheet" href="/css/main.css?v=6">
 </head>
 <body>
@@ -26,6 +28,7 @@
   <a href="/listings.html">Listings</a>
   <a href="/valuation.html">Sellers</a>
   <a href="/guide.html">Free Guide</a>
+  <a href="/rates.html">Rate Alerts</a>
   <a href="/zoom.html">Get Started</a>
 </div>
 
@@ -602,7 +605,7 @@
     <!-- COL 6 ROW 3: SoCal Map (Apple Maps screenshot) -->
     <div class="bc bc-socal reveal-s d1">
       <div class="map-svg-wrap">
-        <img class="map-img" src="/img/service-area-map.png" alt="Jesse's SoCal service area">
+        <picture><source srcset="/img/service-area-map.webp" type="image/webp"><img class="map-img"  alt="Jesse's SoCal service area" loading="lazy" decoding="async" src="/img/service-area-map.jpg"></picture>
         <div class="map-pin">
           <div class="map-pin-pulse"></div>
           <div class="map-pin-dot"></div>
@@ -848,7 +851,7 @@
     <!-- Step 03 — LEFT card -->
     <div class="step-row r-left reveal-s d2">
       <a href="#contact" class="step-card">
-        <img class="step-card-img" src="/img/move-in-celebration.jpg" alt="Closing day with Jesse and clients" loading="lazy" style="object-position:center 40%">
+        <picture><source srcset="/img/move-in-celebration.webp" type="image/webp"><img class="step-card-img"  alt="Closing day with Jesse and clients" loading="lazy" style="object-position:center 40%" decoding="async" src="/img/move-in-celebration.jpg"></picture>
         <div class="step-card-overlay"></div>
         <div class="step-card-content">
           <div class="step-card-num">Step 03</div>
@@ -879,7 +882,7 @@
 
     <!-- Avatar with online indicator -->
     <div class="cta-avatar">
-      <img src="/img/jesse-headshot.jpeg" alt="Jesse Oñate">
+      <picture><source srcset="/img/jesse-headshot.webp" type="image/webp"><img alt="Jesse Oñate" loading="lazy" decoding="async" src="/img/jesse-headshot.jpeg"></picture>
       <div class="cta-online"></div>
     </div>
 
@@ -957,6 +960,7 @@
       <a href="/guide.html">5 Mistakes Guide</a>
       <a href="/checklist.html">Buyer Checklist</a>
       <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/rates.html">Rate Alerts</a>
       <a href="/listings.html">Browse Listings</a>
     </div>
     <div class="f-col">
@@ -1113,5 +1117,41 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 })();
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Jesse Oñate",
+  "image": "https://jessetek.net/img/jesse-headshot.jpeg",
+  "telephone": "+1-562-609-4200",
+  "email": "jesse@jesseonate.com",
+  "url": "https://jessetek.net/",
+  "description": "Bilingual SoCal realtor helping millennials buy and sell homes in Downey, Whittier, Pico Rivera, and surrounding cities. 100+ families served. 5.0 star Google rating.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Downey",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type":"City","name":"Downey"},
+    {"@type":"City","name":"Whittier"},
+    {"@type":"City","name":"Pico Rivera"},
+    {"@type":"City","name":"Long Beach"},
+    {"@type":"City","name":"Cerritos"},
+    {"@type":"City","name":"Norwalk"}
+  ],
+  "knowsLanguage": ["en", "es"],
+  "sameAs": [
+    "https://instagram.com/jessetek"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "100"
+  },
+  "identifier": "DRE #02133131"
+}
+</script>
 </body>
 </html>
