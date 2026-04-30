@@ -1,0 +1,22 @@
+{
+  "name": "Jesse Oñate Real Estate",
+  "short_name": "Jesse Oñate",
+  "description": "Bilingual SoCal realtor helping millennials buy and sell homes in Downey, Whittier, Pico Rivera, and surrounding cities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E1014",
+  "theme_color": "#0E1014",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
