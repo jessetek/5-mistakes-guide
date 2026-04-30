@@ -68,14 +68,19 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   overflow:hidden;background:#000;
 }
 
-/* Full-bleed Jesse photo */
+/* Full-bleed Jesse photo — render at final state immediately for fast LCP */
 .hero-photo-bg{
   position:absolute;inset:0;z-index:0;
   background:url('https://assets.cdn.filesafe.space/4IKcbmtpx3ZLuYU0uJzw/media/66da9f7284ef29ade7e7f78b.png') center top/cover no-repeat;
-  transform:scale(1.04);
-  transition:transform 8s ease;
 }
-.hero-photo-bg.loaded{transform:scale(1)}
+/* Subtle Ken Burns zoom kicks in only after first paint settles, so it doesn't gate LCP */
+.hero-photo-bg.loaded{
+  animation:heroKenBurns 12s ease-out forwards;
+}
+@keyframes heroKenBurns{
+  from{transform:scale(1)}
+  to{transform:scale(1.03)}
+}
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
   /* Dark gradient — heavier at top (text area), lets Jesse show through lower portion */
