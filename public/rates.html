@@ -24,7 +24,7 @@
 <meta name="twitter:image" content="https://jessetek.net/img/og-rates.jpg">
 <link rel="preconnect" href="https://api.leadconnectorhq.com">
 <link rel="preconnect" href="https://link.msgsndr.com">
-<link rel="stylesheet" href="/css/main.css?v=12">
+<link rel="stylesheet" href="/css/main.css?v=13">
 <meta name="theme-color" content="#0E1014">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -61,6 +61,15 @@
 
 <!-- ===================== HERO + EMBED FORM ===================== -->
 <section class="rates-hero" id="top">
+
+  <!-- Floating decorative ticker chips behind hero -->
+  <div class="rates-hero-chips" aria-hidden="true">
+    <span class="rates-hero-chip">30-yr · 6.42% ↓</span>
+    <span class="rates-hero-chip down">15-yr · 5.89% ↑</span>
+    <span class="rates-hero-chip flat">Jumbo · 6.55% —</span>
+    <span class="rates-hero-chip">FHA · 6.18% ↓</span>
+  </div>
+
   <div class="rates-hero-inner">
 
     <div class="rates-hero-text">
@@ -84,6 +93,38 @@
           100% Free
         </div>
       </div>
+
+      <!-- Animated mini rate chart -->
+      <div class="rates-chart" aria-label="This week's 30-year fixed mortgage rate trend">
+        <div class="rates-chart-head">
+          <span>30-yr Fixed · This Week</span>
+          <span class="rates-chart-live">LIVE</span>
+        </div>
+        <div class="rates-chart-now">
+          <span class="rates-chart-num" id="rateNum">6.42%</span>
+          <span class="rates-chart-delta">↓ 0.08 vs last Thu</span>
+        </div>
+        <svg class="rates-chart-svg" viewBox="0 0 440 74" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="rcGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#0071E3"/>
+              <stop offset="100%" stop-color="#5856D6"/>
+            </linearGradient>
+            <linearGradient id="rcFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0071E3" stop-opacity=".25"/>
+              <stop offset="100%" stop-color="#0071E3" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path class="rates-chart-fill" d="M0 56 L40 50 L80 54 L120 42 L160 46 L200 38 L240 30 L280 36 L320 28 L360 32 L400 22 L440 14 L440 74 L0 74 Z"/>
+          <path class="rates-chart-line" d="M0 56 L40 50 L80 54 L120 42 L160 46 L200 38 L240 30 L280 36 L320 28 L360 32 L400 22 L440 14"/>
+          <circle class="rates-chart-pulse" cx="440" cy="14" r="5"/>
+          <circle class="rates-chart-dot" cx="440" cy="14" r="4.5"/>
+        </svg>
+        <div class="rates-chart-axis">
+          <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>This wk</span>
+        </div>
+      </div>
+
     </div>
 
     <div class="rates-form-card">
@@ -172,13 +213,16 @@
           <div class="rates-phone-status">SMS · Thursday 11:30 AM</div>
         </div>
         <div class="rates-phone-time">THU 11:30 AM</div>
-        <div class="rates-phone-bubble">
+        <div class="rates-phone-typing t1" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="rates-phone-bubble b1">
           📊 This week's 30-yr fixed: <strong>6.42%</strong> ↓ 0.08 from last Thursday.
         </div>
-        <div class="rates-phone-bubble">
+        <div class="rates-phone-typing t2" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="rates-phone-bubble b2">
           Translation: rates dropped a hair this week. If you're 60–90 days from buying, this is the kind of dip worth watching. Reply if you want to chat.
         </div>
-        <div class="rates-phone-bubble">
+        <div class="rates-phone-typing t3" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="rates-phone-bubble b3">
           — Jesse
         </div>
       </div>
@@ -198,15 +242,15 @@
 
     <div class="rates-why-stat reveal-s">
       <div>
-        <div class="rates-stat-num">$378</div>
+        <div class="rates-stat-num" data-count="378" data-prefix="$">$0</div>
         <div class="rates-stat-label">Monthly difference per 1% rate change on a $600K loan</div>
       </div>
       <div>
-        <div class="rates-stat-num">$136K</div>
+        <div class="rates-stat-num" data-count="136" data-prefix="$" data-suffix="K">$0K</div>
         <div class="rates-stat-label">Total interest difference over 30 years on that same loan</div>
       </div>
       <div>
-        <div class="rates-stat-num">52</div>
+        <div class="rates-stat-num" data-count="52">0</div>
         <div class="rates-stat-label">Weekly check-ins per year — without lifting a finger</div>
       </div>
     </div>
@@ -328,6 +372,44 @@
     });
   }, {threshold: 0.08});
   document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
+
+  // Stat count-up — runs on viewport, single shot per element
+  var countIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target;
+      var target = parseInt(el.getAttribute('data-count'),10);
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      var dur = 1400, start = performance.now();
+      function tick(t){
+        var p = Math.min(1,(t-start)/dur);
+        var eased = 1 - Math.pow(1-p,3);
+        el.textContent = prefix + Math.round(target*eased).toLocaleString() + suffix;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      countIo.unobserve(el);
+    });
+  },{threshold:.4});
+  document.querySelectorAll('[data-count]').forEach(function(el){ countIo.observe(el); });
+
+  // Phone mockup — replay SMS animation when scrolled back into view
+  var phoneIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var screen = e.target.querySelector('.rates-phone-screen');
+      if(!screen) return;
+      // Re-trigger CSS animations by toggling display
+      var els = screen.querySelectorAll('.rates-phone-bubble, .rates-phone-typing');
+      els.forEach(function(el){
+        el.style.animation = 'none';
+        el.offsetHeight; // reflow
+        el.style.animation = '';
+      });
+    });
+  },{threshold:.3});
+  document.querySelectorAll('.rates-phone').forEach(function(el){ phoneIo.observe(el); });
 </script>
 
 <!-- Nav hide on scroll down, show on scroll up -->

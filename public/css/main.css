@@ -3782,3 +3782,184 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 @media(max-width:780px){
   .rates-cta{padding:70px 22px}
 }
+
+/* ===================== RATES — animated chart + decor ===================== */
+
+/* Live mini rate chart — sits below the hero meta pills */
+.rates-chart{
+  margin-top:36px;
+  padding:18px 18px 14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  backdrop-filter:blur(6px);
+  position:relative;
+  max-width:480px;
+}
+.rates-chart-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:10px;font-size:12px;font-weight:600;
+  color:rgba(255,255,255,.55);letter-spacing:.4px;text-transform:uppercase;
+}
+.rates-chart-live{
+  display:inline-flex;align-items:center;gap:6px;
+  color:#34c759;font-weight:600;
+}
+.rates-chart-live::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:#34c759;
+  box-shadow:0 0 0 0 rgba(52,199,89,.5);
+  animation:liveDot 1.6s ease-out infinite;
+}
+@keyframes liveDot{
+  0%{box-shadow:0 0 0 0 rgba(52,199,89,.55)}
+  70%{box-shadow:0 0 0 10px rgba(52,199,89,0)}
+  100%{box-shadow:0 0 0 0 rgba(52,199,89,0)}
+}
+.rates-chart-now{
+  display:flex;align-items:baseline;gap:10px;margin-bottom:6px;
+}
+.rates-chart-num{
+  font-size:34px;font-weight:800;color:#fff;letter-spacing:-1.4px;line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.rates-chart-delta{
+  font-size:13px;font-weight:600;color:#34c759;
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 8px;border-radius:999px;background:rgba(52,199,89,.12);
+}
+.rates-chart-svg{
+  width:100%;height:74px;display:block;margin-top:6px;
+  overflow:visible;
+}
+.rates-chart-line{
+  fill:none;stroke:url(#rcGrad);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1000;stroke-dashoffset:1000;
+  animation:rcDraw 2.4s cubic-bezier(.4,0,.2,1) .4s forwards;
+  filter:drop-shadow(0 4px 12px rgba(0,113,227,.45));
+}
+.rates-chart-fill{
+  fill:url(#rcFill);opacity:0;
+  animation:rcFade 1.4s ease 1.6s forwards;
+}
+.rates-chart-dot{
+  fill:#fff;stroke:#0071E3;stroke-width:2;
+  opacity:0;
+  animation:rcDot 1s ease 2.4s forwards;
+  transform-origin:center;
+}
+.rates-chart-pulse{
+  fill:#0071E3;
+  animation:rcPulse 2.6s ease 2.6s infinite;
+  transform-origin:center;
+  transform-box:fill-box;
+}
+@keyframes rcDraw{to{stroke-dashoffset:0}}
+@keyframes rcFade{to{opacity:1}}
+@keyframes rcDot{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes rcPulse{
+  0%{opacity:.6;r:5}
+  70%{opacity:0;r:14}
+  100%{opacity:0;r:14}
+}
+.rates-chart-axis{
+  display:flex;justify-content:space-between;
+  font-size:10px;color:rgba(255,255,255,.35);
+  font-weight:500;letter-spacing:.4px;margin-top:6px;
+}
+
+/* Floating decorative rate chips — drift behind hero text */
+.rates-hero-chips{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  overflow:hidden;
+}
+.rates-hero-chip{
+  position:absolute;
+  padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.5);
+  font-size:12px;font-weight:600;letter-spacing:.3px;
+  white-space:nowrap;
+  display:inline-flex;align-items:center;gap:6px;
+  backdrop-filter:blur(6px);
+  animation:chipDrift 18s ease-in-out infinite;
+}
+.rates-hero-chip::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:#34c759;
+}
+.rates-hero-chip.down::before{background:#ff453a}
+.rates-hero-chip.flat::before{background:#ffd60a}
+.rates-hero-chip:nth-child(1){top:18px;right:5%;animation-delay:-2s}
+.rates-hero-chip:nth-child(2){top:38px;right:45%;animation-delay:-7s;animation-duration:22s}
+.rates-hero-chip:nth-child(3){bottom:14px;right:6%;animation-delay:-12s;animation-duration:20s}
+.rates-hero-chip:nth-child(4){bottom:32px;right:46%;animation-delay:-4s;animation-duration:24s}
+@keyframes chipDrift{
+  0%,100%{transform:translateY(0) translateX(0)}
+  25%{transform:translateY(-12px) translateX(6px)}
+  50%{transform:translateY(-6px) translateX(-8px)}
+  75%{transform:translateY(8px) translateX(4px)}
+}
+
+@media(max-width:900px){
+  .rates-chart{margin-top:28px;max-width:none}
+  .rates-chart-num{font-size:30px}
+  .rates-hero-chips{display:none}
+}
+
+/* ===================== RATES — phone mockup animation ===================== */
+
+.rates-phone-bubble{
+  opacity:0;transform:translateY(8px);
+  animation:bubbleIn .55s cubic-bezier(.34,1.45,.64,1) forwards;
+}
+.rates-phone-bubble.b1{animation-delay:1.2s}
+.rates-phone-bubble.b2{animation-delay:3.4s}
+.rates-phone-bubble.b3{animation-delay:5.6s}
+@keyframes bubbleIn{
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Typing indicator (3 dots) shown between bubbles */
+.rates-phone-typing{
+  display:inline-flex;align-items:center;gap:4px;
+  background:#1c1c1e;color:#fff;
+  padding:12px 14px;border-radius:18px 18px 18px 4px;
+  max-width:60px;align-self:flex-start;
+  margin-bottom:8px;
+  opacity:0;
+  overflow:hidden;
+}
+.rates-phone-typing.t1{animation:typingShowHide 1s ease .4s forwards}
+.rates-phone-typing.t2{animation:typingShowHide 1s ease 2.6s forwards}
+.rates-phone-typing.t3{animation:typingShowHide 1s ease 4.8s forwards}
+.rates-phone-typing span{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(255,255,255,.55);
+  animation:typingDot 1.2s ease-in-out infinite;
+}
+.rates-phone-typing span:nth-child(2){animation-delay:.18s}
+.rates-phone-typing span:nth-child(3){animation-delay:.36s}
+@keyframes typingDot{
+  0%,80%,100%{opacity:.35;transform:translateY(0)}
+  40%{opacity:1;transform:translateY(-3px)}
+}
+@keyframes typingShowHide{
+  0%{opacity:0;max-height:0;margin-bottom:0;padding-top:0;padding-bottom:0}
+  15%{opacity:1;max-height:40px;margin-bottom:8px;padding-top:12px;padding-bottom:12px}
+  85%{opacity:1;max-height:40px;margin-bottom:8px;padding-top:12px;padding-bottom:12px}
+  100%{opacity:0;max-height:0;margin-bottom:0;padding-top:0;padding-bottom:0}
+}
+
+/* Stat count-up underline accent on viewport */
+.rates-stat-num{
+  position:relative;
+}
+.rates-stat-num::after{
+  content:'';position:absolute;left:0;right:0;bottom:-10px;
+  height:2px;background:linear-gradient(90deg,transparent,rgba(0,113,227,.5),transparent);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform .8s ease .2s;
+}
+.rates-why-stat.on .rates-stat-num::after{transform:scaleX(1)}
