@@ -112,6 +112,17 @@
   </div>
 </section>
 
+<!-- ===================== LIVE RATE STRIP ===================== -->
+<section class="live-rate-strip">
+  <div class="live-rate-strip-inner">
+    <div class="live-rate-banner" id="liveRateBanner" hidden>
+      <span class="live-rate-banner-tag">Live</span>
+      <span class="live-rate-banner-text" id="liveRateBannerText">Fetching latest rate...</span>
+      <a href="/rates.html">Get weekly text →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== BENEFITS ===================== -->
 <section class="val-benefits">
   <div class="val-benefits-inner">
@@ -676,6 +687,24 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     }
   ]
 }
+</script>
+<script>
+(function(){
+  fetch('/api/rates', { cache: 'force-cache' })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(!d || typeof d.current !== 'number') return;
+      var banner = document.getElementById('liveRateBanner');
+      var text = document.getElementById('liveRateBannerText');
+      if(!banner || !text) return;
+      var asOf = d.asOf ? new Date(d.asOf).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : 'this week';
+      var arrow = d.delta > 0 ? '↑' : (d.delta < 0 ? '↓' : '—');
+      var deltaTxt = d.delta === 0 ? 'flat' : Math.abs(d.delta).toFixed(2);
+      text.innerHTML = 'Buyer rates as of ' + asOf + ': <strong>' + d.current.toFixed(2) + '%</strong> (' + arrow + ' ' + deltaTxt + ' from last week) — affects buyer demand for your home.';
+      banner.hidden = false;
+    })
+    .catch(function(){});
+})();
 </script>
 <script src="/js/analytics.js" defer></script>
 <script type="application/ld+json">
