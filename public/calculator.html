@@ -99,13 +99,14 @@
 
         <div class="calc-field">
           <div class="calc-field-head">
-            <label for="cRate" class="calc-label">Interest Rate</label>
+            <label for="cRate" class="calc-label">Interest Rate <span id="cRateLive" class="calc-live-badge" title="Auto-filled from Freddie Mac PMMS — Federal Reserve">LIVE</span></label>
             <div class="calc-value" id="cRateVal">6.75%</div>
           </div>
           <input type="range" id="cRate" min="3" max="12" step="0.125" value="6.75" class="calc-slider">
           <div class="calc-range">
             <span>3%</span><span>12%</span>
           </div>
+          <div class="calc-rate-note" id="cRateNote">Loading this week's average rate...</div>
         </div>
 
         <div class="calc-field">
@@ -308,6 +309,33 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     });
   });
   update();
+
+  // Auto-fill rate slider with this week's actual MORTGAGE30US value via /api/rates
+  fetch('/api/rates', { cache: 'force-cache' })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(!d || typeof d.current !== 'number') return;
+      // Snap to nearest 0.125 (slider step) so the slider visually aligns
+      var snapped = Math.round(d.current / 0.125) * 0.125;
+      // Clamp to slider min/max
+      snapped = Math.max(3, Math.min(12, snapped));
+      rate.value = snapped;
+      update();
+      var note = document.getElementById('cRateNote');
+      if(note){
+        var asOf = d.asOf ? new Date(d.asOf).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : 'this week';
+        var src = d.source === 'fred' ? 'Freddie Mac PMMS' : 'estimate';
+        note.innerHTML = '✓ Auto-filled with this week\'s 30-yr fixed average — ' +
+          '<strong>' + d.current.toFixed(2) + '%</strong> as of ' + asOf + ' (' + src + ').';
+        note.classList.add('on');
+      }
+      var badge = document.getElementById('cRateLive');
+      if(badge && d.source === 'fred') badge.classList.add('on');
+    })
+    .catch(function(){
+      var note = document.getElementById('cRateNote');
+      if(note) note.textContent = 'Adjust the slider to match your quoted rate.';
+    });
 })();
 </script>
 

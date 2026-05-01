@@ -3963,3 +3963,115 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   transition:transform .8s ease .2s;
 }
 .rates-why-stat.on .rates-stat-num::after{transform:scaleX(1)}
+
+/* ===================== Calculator — live rate badge ===================== */
+.calc-live-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:9.5px;font-weight:700;letter-spacing:.6px;
+  padding:3px 7px;border-radius:999px;
+  background:rgba(52,199,89,.12);color:#34c759;
+  margin-left:8px;vertical-align:middle;
+  opacity:.65;transition:opacity .3s ease;
+}
+.calc-live-badge::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:#34c759;
+}
+.calc-live-badge.on{
+  opacity:1;
+  animation:liveDot 1.6s ease-out infinite;
+  animation-delay:.2s;
+}
+.calc-rate-note{
+  margin-top:10px;font-size:12.5px;line-height:1.4;
+  color:var(--text3);font-weight:500;
+  opacity:0;transform:translateY(4px);
+  transition:opacity .4s ease .15s, transform .4s ease .15s;
+}
+.calc-rate-note.on{opacity:1;transform:translateY(0)}
+.calc-rate-note strong{color:var(--blue);font-weight:600}
+
+/* ===================== Insights — live rate banner ===================== */
+.live-rate-banner{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 18px;margin:0 0 28px;
+  background:linear-gradient(135deg,rgba(0,113,227,.06),rgba(88,86,214,.06));
+  border:1px solid rgba(0,113,227,.18);
+  border-radius:14px;
+  font-size:14px;line-height:1.4;
+  color:var(--text);
+  flex-wrap:wrap;
+}
+.live-rate-banner-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10.5px;font-weight:700;letter-spacing:.7px;
+  color:#34c759;text-transform:uppercase;
+  flex-shrink:0;
+}
+.live-rate-banner-tag::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:#34c759;
+  animation:liveDot 1.6s ease-out infinite;
+}
+.live-rate-banner-text{flex:1;min-width:200px;color:var(--text2)}
+.live-rate-banner-text strong{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums}
+.live-rate-banner a{
+  color:var(--blue);text-decoration:none;font-weight:600;white-space:nowrap;
+}
+.live-rate-banner a:hover{text-decoration:underline}
+
+/* ===================== Rates page — How It Works 3 steps ===================== */
+.rates-how{
+  padding:80px 40px;background:var(--bg);
+  position:relative;
+}
+.rates-how-inner{max-width:1080px;margin:0 auto}
+.rates-how-head{text-align:center;margin-bottom:48px}
+.rates-how-head .sec-label{margin-bottom:10px;display:inline-block}
+.rates-how-head h2{
+  font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-1.4px;
+  line-height:1.1;color:var(--text);margin-bottom:10px;
+}
+.rates-how-head p{font-size:16px;color:var(--text2);max-width:540px;margin:0 auto;line-height:1.55}
+.rates-how-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  position:relative;
+}
+.rates-how-grid::before{
+  content:'';position:absolute;
+  top:36px;left:8%;right:8%;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(0,113,227,.18),rgba(0,113,227,.18),transparent);
+  z-index:0;
+}
+.rates-how-step{
+  background:#fff;border-radius:20px;padding:32px 26px 26px;
+  box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04);
+  text-align:center;position:relative;z-index:1;
+}
+.rates-how-num{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#0071E3,#5856D6);
+  color:#fff;font-size:22px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  box-shadow:0 10px 24px rgba(0,113,227,.28);
+  position:relative;
+}
+.rates-how-step:nth-child(1) .rates-how-num{animation:howFloat 6s ease-in-out infinite}
+.rates-how-step:nth-child(2) .rates-how-num{animation:howFloat 6s ease-in-out -2s infinite}
+.rates-how-step:nth-child(3) .rates-how-num{animation:howFloat 6s ease-in-out -4s infinite}
+@keyframes howFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+.rates-how-step h3{
+  font-size:19px;font-weight:700;letter-spacing:-.3px;
+  color:var(--text);margin-bottom:8px;
+}
+.rates-how-step p{font-size:14.5px;color:var(--text2);line-height:1.55}
+
+@media(max-width:780px){
+  .rates-how{padding:60px 22px}
+  .rates-how-grid{grid-template-columns:1fr;gap:14px}
+  .rates-how-grid::before{display:none}
+}
