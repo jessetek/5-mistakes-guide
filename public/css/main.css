@@ -4152,3 +4152,132 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   .rates-how-grid{grid-template-columns:1fr;gap:14px}
   .rates-how-grid::before{display:none}
 }
+
+/* ===================== Nav dropdowns (desktop) ===================== */
+.nav-dropdown{position:relative;display:inline-flex;align-items:center}
+.nav-toggle{
+  background:transparent;border:0;padding:0;margin:0;cursor:pointer;
+  font-family:inherit;font-size:13px;font-weight:400;letter-spacing:-.1px;
+  color:rgba(255,255,255,.55);
+  display:inline-flex;align-items:center;gap:5px;
+  transition:color .2s;
+}
+.nav-toggle:hover,
+.nav-dropdown:hover .nav-toggle,
+.nav-dropdown.open .nav-toggle{color:#fff}
+.nav-chev{font-size:9px;transition:transform .25s ease;opacity:.55;display:inline-block;line-height:1}
+.nav-dropdown:hover .nav-chev,
+.nav-dropdown.open .nav-chev{transform:rotate(180deg);opacity:.85}
+
+.nav-menu{
+  position:absolute;top:calc(100% + 14px);left:-14px;
+  background:rgba(20,22,28,.92);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  backdrop-filter:blur(20px) saturate(180%);
+  border-radius:14px;padding:8px;
+  min-width:230px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(-4px);
+  transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 18px 50px rgba(0,0,0,.4),0 4px 12px rgba(0,0,0,.2);
+  z-index:100;
+}
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown:focus-within .nav-menu,
+.nav-dropdown.open .nav-menu{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transform:translateY(0);
+  transition:opacity .18s ease,transform .18s ease,visibility 0s linear 0s;
+}
+.nav-menu a{
+  display:block;padding:10px 14px;border-radius:10px;
+  color:rgba(255,255,255,.82);font-size:13.5px;font-weight:500;
+  text-decoration:none;line-height:1.3;
+  transition:background .15s ease,color .15s ease;
+}
+.nav-menu a:hover,
+.nav-menu a:focus-visible{background:rgba(255,255,255,.08);color:#fff;outline:none}
+
+/* Light variant: when nav has scrolled and is now over white content */
+.nav.scrolled .nav-menu{
+  background:rgba(255,255,255,.96);
+  border-color:rgba(0,0,0,.06);
+  box-shadow:0 18px 50px rgba(0,0,0,.12),0 4px 12px rgba(0,0,0,.06);
+}
+.nav.scrolled .nav-menu a{color:var(--text)}
+.nav.scrolled .nav-menu a:hover,
+.nav.scrolled .nav-menu a:focus-visible{background:rgba(0,113,227,.08);color:var(--blue)}
+
+/* Bridge the gap so the menu doesn't close when cursor crosses to it */
+.nav-dropdown::after{
+  content:'';position:absolute;top:100%;left:-14px;right:-14px;height:14px;
+}
+
+/* ===================== Mobile nav layout — overrides default centered .mob-nav ===================== */
+.mob-nav.open{
+  /* Reset the centered flex layout for our scrollable accordion */
+  align-items:stretch;
+  justify-content:flex-start;
+  padding:80px 28px 40px;
+  gap:0;
+  overflow-y:auto;
+}
+.mob-nav .mob-link{
+  display:block;
+  padding:16px 0;
+  font-size:22px;font-weight:600;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  text-align:left;letter-spacing:-.4px;
+}
+
+.mob-section{margin:0;padding:0;border:0;width:100%}
+.mob-section > summary{
+  list-style:none;cursor:pointer;user-select:none;
+  display:flex !important;justify-content:space-between;align-items:center;
+  padding:16px 0;font-size:22px;font-weight:600;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  letter-spacing:-.4px;
+}
+.mob-section > summary::-webkit-details-marker{display:none}
+.mob-section > summary::after{
+  content:'+';font-size:24px;font-weight:300;color:rgba(255,255,255,.5);
+  transition:transform .2s ease;line-height:1;
+}
+.mob-section[open] > summary::after{content:'−'}
+.mob-section .mob-sub{
+  display:block;padding:13px 0 13px 14px;
+  font-size:16px !important;font-weight:500 !important;color:rgba(255,255,255,.7) !important;
+  text-decoration:none;line-height:1.3;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  letter-spacing:-.2px;
+}
+.mob-section .mob-sub:last-child{border-bottom:0}
+.mob-section .mob-sub:hover{color:#fff !important}
+
+.mob-cta{
+  margin-top:24px !important;
+  background:linear-gradient(135deg,#0071E3,#5856D6) !important;
+  border-radius:999px !important;
+  text-align:center !important;
+  font-weight:600 !important;
+  font-size:18px !important;
+  padding:16px 24px !important;
+  border-bottom:0 !important;
+}
+.mob-cta:hover{opacity:.92}
+
+/* ===================== Footer — quick contact in brand col ===================== */
+.f-contact-quick{
+  display:flex;flex-direction:column;gap:6px;margin-top:16px;
+}
+.f-contact-quick a{
+  display:inline-block;font-size:13px;color:var(--text2);
+  text-decoration:none;font-weight:500;
+}
+.f-contact-quick a:hover{color:var(--text)}
+
+.f-dre{color:var(--text3);margin-left:8px;font-size:12px}
+@media(max-width:600px){
+  .f-dre{display:block;margin-left:0;margin-top:4px}
+}

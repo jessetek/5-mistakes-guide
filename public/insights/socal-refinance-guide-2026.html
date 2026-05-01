@@ -29,7 +29,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.css?v=14">
+<link rel="stylesheet" href="/css/main.css?v=15">
 <style>
   .post-hero{padding:140px 40px 60px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
   .post-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
@@ -57,25 +57,59 @@
 </head>
 <body>
 
+<!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
   <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
-  <a href="/home.html">Home</a>
-  <a href="/about.html">About</a>
-  <a href="/listings.html">Listings</a>
-  <a href="/valuation.html">Sellers</a>
-  <a href="/guide.html">Free Guide</a>
-  <a href="/rates.html">Rate Alerts</a>
-  <a href="/insights/">Insights</a>
-  <a href="/zoom.html">Get Started</a>
+  <a href="/home.html" class="mob-link">Home</a>
+  <details class="mob-section">
+    <summary>For Buyers</summary>
+    <a href="/buyer.html" class="mob-sub">Buyer Guide</a>
+    <a href="/buyer-quiz.html" class="mob-sub">Readiness Quiz</a>
+    <a href="/guide.html" class="mob-sub">Free 5-Mistakes Guide</a>
+    <a href="/calculator.html" class="mob-sub">Mortgage Calculator</a>
+    <a href="/rates.html" class="mob-sub">Rate Alerts</a>
+    <a href="/checklist.html" class="mob-sub">Buyer Checklist</a>
+    <a href="/listings.html" class="mob-sub">Browse Listings</a>
+  </details>
+  <details class="mob-section">
+    <summary>For Sellers</summary>
+    <a href="/seller.html" class="mob-sub">Seller Guide</a>
+    <a href="/valuation.html" class="mob-sub">Free Valuation</a>
+    <a href="/seller-net.html" class="mob-sub">Net Proceeds Calculator</a>
+    <a href="/seller-checklist.html" class="mob-sub">Seller Checklist</a>
+    <a href="/sellers.html" class="mob-sub">Why Sell with Jesse</a>
+  </details>
+  <a href="/insights/" class="mob-link">Insights</a>
+  <a href="/about.html" class="mob-link">About</a>
+  <a href="/reviews.html" class="mob-link">Reviews</a>
+  <a href="/zoom.html" class="mob-link mob-cta">Let's Talk →</a>
 </div>
 
+<!-- NAV — DESKTOP -->
 <nav class="nav" id="nav">
   <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
   <div class="nav-links">
-    <a href="/about.html">About</a>
-    <a href="/listings.html">Listings</a>
-    <a href="/insights/">Insights</a>
-    <a href="/guide.html">Free Guide</a>
+    <div class="nav-dropdown">
+      <button class="nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">For Buyers <span class="nav-chev" aria-hidden="true">▾</span></button>
+      <div class="nav-menu" role="menu">
+        <a href="/buyer.html" role="menuitem">Buyer Guide</a>
+        <a href="/buyer-quiz.html" role="menuitem">Readiness Quiz</a>
+        <a href="/guide.html" role="menuitem">Free 5-Mistakes Guide</a>
+        <a href="/calculator.html" role="menuitem">Mortgage Calculator</a>
+        <a href="/rates.html" role="menuitem">Rate Alerts</a>
+        <a href="/listings.html" role="menuitem">Browse Listings</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">For Sellers <span class="nav-chev" aria-hidden="true">▾</span></button>
+      <div class="nav-menu" role="menu">
+        <a href="/seller.html" role="menuitem">Seller Guide</a>
+        <a href="/valuation.html" role="menuitem">Free Valuation</a>
+        <a href="/seller-net.html" role="menuitem">Net Proceeds Calculator</a>
+        <a href="/seller-checklist.html" role="menuitem">Seller Checklist</a>
+      </div>
+    </div>
+    <a href="/insights/" class="nav-link">Insights</a>
     <a href="/zoom.html" class="nav-cta">Let's Talk</a>
   </div>
   <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
@@ -210,15 +244,54 @@
 
 </article>
 
+<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="footer-grid">
-    <div class="f-brand"><div class="f-logo"><span>Jesse</span> Oñate.</div><p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p></div>
-    <div class="f-col"><h4>For Buyers</h4><a href="/buyer.html">First-Time Buyer Guide</a><a href="/buyer-quiz.html">Buyer Readiness Quiz</a><a href="/guide.html">5 Mistakes Guide</a><a href="/calculator.html">Mortgage Calculator</a><a href="/rates.html">Rate Alerts</a></div>
-    <div class="f-col"><h4>For Sellers</h4><a href="/seller.html">First-Time Seller Guide</a><a href="/valuation.html">Free Home Valuation</a><a href="/seller-net.html">Net Proceeds Calculator</a><a href="/seller-checklist.html">Seller Checklist</a></div>
-    <div class="f-col"><h4>Resources</h4><a href="/about.html">About Jesse</a><a href="/reviews.html">Reviews</a><a href="/insights/">Insights</a><a href="/service-areas.html">Service Areas</a><a href="/faq.html">FAQ</a></div>
-    <div class="f-col"><h4>Contact</h4><a href="tel:5626094200">(562) 609-4200</a><a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a><a href="https://instagram.com/jessetek" target="_blank" rel="noopener">@jessetek</a><a href="/es/index.html">Español 🌐</a></div>
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+      <div class="f-contact-quick">
+        <a href="tel:5626094200">(562) 609-4200</a>
+        <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">Buyer Guide</a>
+      <a href="/buyer-quiz.html">Readiness Quiz</a>
+      <a href="/guide.html">Free 5-Mistakes Guide</a>
+      <a href="/checklist.html">Buyer Checklist</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/rates.html">Rate Alerts</a>
+      <a href="/listings.html">Browse Listings</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">Seller Guide</a>
+      <a href="/valuation.html">Free Valuation</a>
+      <a href="/seller-net.html">Net Proceeds Calculator</a>
+      <a href="/seller-checklist.html">Seller Checklist</a>
+      <a href="/sellers.html">Why Sell with Jesse</a>
+    </div>
+    <div class="f-col">
+      <h4>Resources</h4>
+      <a href="/about.html">About Jesse</a>
+      <a href="/reviews.html">Reviews</a>
+      <a href="/insights/">Insights</a>
+      <a href="/service-areas.html">Service Areas</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/videos.html">Videos</a>
+      <a href="/zoom.html">Book a Call</a>
+    </div>
+    <div class="f-col">
+      <h4>Connect</h4>
+      <a href="https://instagram.com/jessetek" target="_blank" rel="noopener">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
   </div>
-  <div class="footer-bot"><p>© 2026 Jesse Oñate. All rights reserved.</p></div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved. <span class="f-dre">DRE #02133131</span></p>
+  </div>
 </footer>
 
 <script>
