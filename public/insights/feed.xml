@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SoCal Real Estate Insights — Jesse Oñate</title>
+    <link>https://jessetek.net/insights/</link>
+    <description>Monthly market updates, buyer and seller deep-dives, and unfiltered takes on Southern California real estate from Downey-area realtor Jesse Oñate.</description>
+    <language>en-us</language>
+    <atom:link href="https://jessetek.net/insights/feed.xml" rel="self" type="application/rss+xml"/>
+    <copyright>© 2026 Jesse Oñate. All rights reserved.</copyright>
+    <managingEditor>jesse@jesseonate.com (Jesse Oñate)</managingEditor>
+    <webMaster>jesse@jesseonate.com (Jesse Oñate)</webMaster>
+    <image>
+      <url>https://jessetek.net/img/jesse-headshot.jpeg</url>
+      <title>SoCal Real Estate Insights — Jesse Oñate</title>
+      <link>https://jessetek.net/insights/</link>
+    </image>
+
+    <item>
+      <title>SoCal Spring Buying Season — Why May 2026 Is Different</title>
+      <link>https://jessetek.net/insights/socal-spring-buying-season-may-2026</link>
+      <guid isPermaLink="true">https://jessetek.net/insights/socal-spring-buying-season-may-2026</guid>
+      <pubDate>Wed, 30 Apr 2026 22:00:00 GMT</pubDate>
+      <dc:creator>Jesse Oñate</dc:creator>
+      <category>Market Update</category>
+      <description>Spring 2026 SoCal real estate is breaking the usual playbook. Lower rates, tight inventory, fewer showings — here's how Downey-area buyers and sellers should actually play it.</description>
+    </item>
+
+    <item>
+      <title>SoCal Mortgage Rate Watch — April 2026</title>
+      <link>https://jessetek.net/insights/socal-rate-watch-april-2026</link>
+      <guid isPermaLink="true">https://jessetek.net/insights/socal-rate-watch-april-2026</guid>
+      <pubDate>Thu, 30 Apr 2026 18:30:00 GMT</pubDate>
+      <dc:creator>Jesse Oñate</dc:creator>
+      <category>Market Update</category>
+      <description>April 2026 SoCal mortgage rate update: where rates landed, what's driving the move, and what it means for Downey-area buyers and sellers in May.</description>
+    </item>
+
+  </channel>
+</rss>
