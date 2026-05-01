@@ -32,6 +32,11 @@
   <url><loc>https://jessetek.net/neighborhoods/la-habra</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/lakewood</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/montebello</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/anaheim</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/cypress</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/buena-park</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/fullerton</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/brea</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Insights / Blog -->
   <url><loc>https://jessetek.net/insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -40,5 +45,8 @@
   <url><loc>https://jessetek.net/insights/socal-spring-buying-season-may-2026</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/insights/mello-roos-explained-socal-buyers</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jessetek.net/insights/bilingual-realtor-downey</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/insights/socal-rate-watch-june-2026</loc><lastmod>2026-06-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jessetek.net/insights/buyer-deep-dive-pre-approval-vs-pre-qual</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/insights/seller-pricing-strategy-socal</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>
