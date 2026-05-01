@@ -3991,6 +3991,20 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 .calc-rate-note.on{opacity:1;transform:translateY(0)}
 .calc-rate-note strong{color:var(--blue);font-weight:600}
 
+/* ===================== Live rate strip wrapper (buyer/seller/etc) ===================== */
+.live-rate-strip{
+  background:var(--bg);
+  padding:0 40px;
+}
+.live-rate-strip-inner{
+  max-width:1080px;margin:0 auto;
+  padding:24px 0 0;
+}
+@media(max-width:780px){
+  .live-rate-strip{padding:0 22px}
+  .live-rate-strip-inner{padding:18px 0 0}
+}
+
 /* ===================== Insights — live rate banner ===================== */
 .live-rate-banner{
   display:flex;align-items:center;gap:14px;
