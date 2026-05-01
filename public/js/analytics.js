@@ -13,6 +13,11 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
   GA4_ID: "G-ZXSY9V9PXX",   // Live GA4 property for jessetek.net
   META_PIXEL_ID: null,      // Add when running FB/IG ads (16-digit number)
   VERCEL_ANALYTICS: true,   // Vercel Web Analytics enabled in dashboard 2026-04-30
+  GOOGLE_PLACE_ID: null,    // Get from places API place ID finder (for /reviews)
+  GOOGLE_PLACES_API_KEY: null, // Restrict to jessetek.net referrer + Places API only
+  CLARITY_ID: null,         // Microsoft Clarity Project ID (heatmaps + recordings)
+                            // Get free at https://clarity.microsoft.com
+                            // 10-char string like "abc1234xyz"
 };
 
 (function () {
@@ -63,6 +68,16 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
     if (href.includes('/guide'))  trackEvent('click_guide',     { label: txt });
     if (href.includes('/valuation')) trackEvent('click_valuation', { label: txt });
   }, { passive: true });
+
+  // ----- Microsoft Clarity (heatmaps + session recordings + dead-click detection) -----
+  // Free, unlimited. Get Project ID at https://clarity.microsoft.com
+  if (cfg.CLARITY_ID) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", cfg.CLARITY_ID);
+  }
 
   // ----- Vercel Web Analytics (static-site script tag) -----
   // Vercel hosts the script at /_vercel/insights/script.js when the project

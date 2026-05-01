@@ -149,6 +149,7 @@
 <!-- ===================== REVIEWS WALL ===================== -->
 <section class="reviews-wall">
   <div class="reviews-wall-inner">
+    <div id="live-reviews" data-source="google-places-api" style="display:none"></div>
     <div class="reviews-grid">
 
       <div class="review-card reveal-s">
@@ -399,6 +400,7 @@
       <a href="/about.html">About Jesse</a>
       <a href="/reviews.html">Reviews</a>
       <a href="/insights/">Insights</a>
+      <a href="/service-areas.html">Service Areas</a>
       <a href="/faq.html">FAQ</a>
       <a href="/videos.html">Videos</a>
       <a href="/zoom.html">Book a Call</a>
@@ -732,5 +734,6 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 }
 </script>
 <script src="/js/analytics.js" defer></script>
+<script src="/js/reviews-api.js" defer></script>
 </body>
 </html>

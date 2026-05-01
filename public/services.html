@@ -258,6 +258,7 @@
       <a href="/about.html">About Jesse</a>
       <a href="/reviews.html">Reviews</a>
       <a href="/insights/">Insights</a>
+      <a href="/service-areas.html">Service Areas</a>
       <a href="/faq.html">FAQ</a>
       <a href="/videos.html">Videos</a>
       <a href="/zoom.html">Book a Call</a>
@@ -388,6 +389,26 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
             {
               "@type": "City",
               "name": "Brea"
+            },
+            {
+              "@type": "City",
+              "name": "La Puente"
+            },
+            {
+              "@type": "City",
+              "name": "West Covina"
+            },
+            {
+              "@type": "City",
+              "name": "Garden Grove"
+            },
+            {
+              "@type": "City",
+              "name": "Westminster"
+            },
+            {
+              "@type": "City",
+              "name": "El Monte"
             }
   ],
   "knowsLanguage": [
@@ -431,109 +452,143 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
-  "name": "Real Estate Services",
+  "name": "Jesse O\u00f1ate Real Estate Services",
+  "url": "https://jessetek.net/services",
+  "provider": {
+    "@id": "https://jessetek.net/about#jesse"
+  },
   "itemListElement": [
     {
       "@type": "Offer",
+      "position": 1,
       "itemOffered": {
         "@type": "Service",
-        "serviceType": "First-Time Home Buyers",
-        "description": "I walk you through every step from \"I'm not even sure if I can afford it\" to \"These are MY keys.\" Pre-approval, tours, offers, inspection, escrow, closing. You'll never wonder what's happening or why.",
+        "serviceType": "First-Time Buyer Representation",
+        "name": "First-Time Homebuyer Representation",
+        "description": "End-to-end first-time buyer service: pre-approval matching, neighborhood scouting, offer strategy, escrow coordination, and post-close support. Bilingual (English/Spanish).",
         "provider": {
           "@id": "https://jessetek.net/about#jesse"
         },
-        "areaServed": "Southern California",
         "audience": {
           "@type": "Audience",
-          "audienceType": "Real estate buyers and sellers"
+          "audienceType": "First-time homebuyers in Southern California"
         }
       },
-      "position": 1
+      "price": "0",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "description": "Buyer agent commission paid by seller per CA standard practice"
+      }
     },
     {
       "@type": "Offer",
+      "position": 2,
       "itemOffered": {
         "@type": "Service",
-        "serviceType": "First-Time Home Sellers",
-        "description": "From valuation to staging to \"SOLD\" sign. I run the numbers, prep your home, market it across every channel, negotiate multiple offers, and get you above asking. Most of my sellers close in under 30 days.",
+        "serviceType": "First-Time Seller Representation",
+        "name": "First-Time Home Seller Representation",
+        "description": "Full-service listing: pricing strategy with real comp analysis, professional photography, MLS listing, marketing across Zillow/Realtor.com/Redfin, showings management, offer negotiation, escrow.",
         "provider": {
           "@id": "https://jessetek.net/about#jesse"
         },
-        "areaServed": "Southern California",
         "audience": {
           "@type": "Audience",
-          "audienceType": "Real estate buyers and sellers"
+          "audienceType": "First-time home sellers in Southern California"
         }
-      },
-      "position": 2
+      }
     },
     {
       "@type": "Offer",
+      "position": 3,
       "itemOffered": {
         "@type": "Service",
-        "serviceType": "Move-Up Buyers",
-        "description": "Already own a home and looking to move up? I coordinate the sale of your current home with the purchase of your next one \u2014 so you don't end up homeless or paying two mortgages. The dance is tricky. I know the steps.",
+        "serviceType": "Move-Up Buyer Service",
+        "name": "Move-Up Buyer Coordination",
+        "description": "Coordinated buy/sell for clients moving up in the SoCal market. Bridge financing options, contingent offers, timeline management, escrow coordination on both sides.",
+        "provider": {
+          "@id": "https://jessetek.net/about#jesse"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "position": 4,
+      "itemOffered": {
+        "@type": "Service",
+        "serviceType": "Investment Property Sourcing",
+        "name": "Investor Property Sourcing",
+        "description": "Off-market and on-market investment opportunities \u2014 single-family rentals, multifamily, ADU-eligible properties. Cap rate analysis, neighborhood ROI projections.",
         "provider": {
           "@id": "https://jessetek.net/about#jesse"
         },
-        "areaServed": "Southern California",
         "audience": {
           "@type": "Audience",
-          "audienceType": "Real estate buyers and sellers"
+          "audienceType": "Real estate investors"
         }
-      },
-      "position": 3
+      }
     },
     {
       "@type": "Offer",
+      "position": 5,
       "itemOffered": {
         "@type": "Service",
-        "serviceType": "Investors",
-        "description": "Looking for cash-flow rentals, fix-and-flips, or long-term holds? I know which Downey, Pico Rivera, and Whittier zip codes are appreciating, where the cap rates are best, and which contractors won't burn you. I work with investors regularly.",
+        "serviceType": "Bilingual Real Estate Service",
+        "name": "Bilingual (Spanish/English) Real Estate Service",
+        "description": "Full disclosure walkthroughs in Spanish, multi-generational family decision support, bilingual lender + escrow officer coordination. Native fluency in both languages.",
         "provider": {
           "@id": "https://jessetek.net/about#jesse"
         },
-        "areaServed": "Southern California",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Real estate buyers and sellers"
-        }
-      },
-      "position": 4
+        "availableLanguage": [
+          "en",
+          "es"
+        ]
+      }
     },
     {
       "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "serviceType": "Bilingual Service",
-        "description": "S\u00ed, hablo espa\u00f1ol. The whole transaction \u2014 from first call to closing day \u2014 can be in English, Spanish, or both. Most of my clients code-switch, and I do too. Your family understands every document.",
-        "provider": {
-          "@id": "https://jessetek.net/about#jesse"
-        },
-        "areaServed": "Southern California",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Real estate buyers and sellers"
-        }
-      },
-      "position": 5
-    },
-    {
-      "@type": "Offer",
+      "position": 6,
       "itemOffered": {
         "@type": "Service",
         "serviceType": "Off-Market & Pre-Listing",
-        "description": "I have access to homes that aren't on Zillow yet \u2014 pocket listings, pre-MLS deals, and pre-foreclosures. If you want first crack at the best inventory, I'm the call.",
+        "name": "Off-Market and Pre-Listing Access",
+        "description": "Private network of off-market properties and pre-listing opportunities before homes hit the MLS. Clients see inventory other buyers don't.",
+        "provider": {
+          "@id": "https://jessetek.net/about#jesse"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "position": 7,
+      "itemOffered": {
+        "@type": "Service",
+        "serviceType": "Free Home Valuation",
+        "name": "Free SoCal Home Valuation",
+        "description": "Real comp-based valuation with 24-hour turnaround. No obligation. Covers Downey, Whittier, Pico Rivera, Montebello, and 15+ other SoCal cities.",
         "provider": {
           "@id": "https://jessetek.net/about#jesse"
         },
-        "areaServed": "Southern California",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Real estate buyers and sellers"
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         }
-      },
-      "position": 6
+      }
+    },
+    {
+      "@type": "Offer",
+      "position": 8,
+      "itemOffered": {
+        "@type": "Service",
+        "serviceType": "Mortgage Rate Alerts",
+        "name": "Free Weekly Mortgage Rate Text Alerts",
+        "description": "30-second mortgage rate update texted every Thursday at 11:30am PT. Covers SoCal market specifically. Free, opt-out anytime.",
+        "provider": {
+          "@id": "https://jessetek.net/about#jesse"
+        }
+      }
     }
   ]
 }
