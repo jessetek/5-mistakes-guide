@@ -4511,17 +4511,47 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   font-size:13px;color:var(--text2);line-height:1.4;margin-top:2px;font-weight:500;
 }
 
-/* Mobile: 2x2 grid + remove right borders */
+/* Tablet: 2x2 grid */
 @media(max-width:780px){
   .trust-strip-inner{
     grid-template-columns:repeat(2, 1fr);
-    padding:22px 20px;
-    gap:14px;
+    padding:24px 22px;
+    gap:20px 14px;
   }
-  .trust-item{border-right:0;border-bottom:1px solid rgba(0,0,0,.06);padding-bottom:14px}
+  .trust-item{border-right:1px solid rgba(0,0,0,.06);border-bottom:0;padding:8px 10px}
+  .trust-item:nth-child(2),
+  .trust-item:nth-child(4){border-right:0}
   .trust-item:nth-child(3),
-  .trust-item:nth-child(4){border-bottom:0;padding-bottom:0;padding-top:14px;border-top:0}
+  .trust-item:nth-child(4){border-top:1px solid rgba(0,0,0,.06);padding-top:22px}
   .trust-num{font-size:24px}
+}
+
+/* Small mobile: stack to 1 column so dense items breathe + don't wrap awkwardly */
+@media(max-width:520px){
+  .trust-strip{padding:0 16px}
+  .trust-strip-inner{
+    grid-template-columns:1fr;
+    padding:6px 20px;
+    gap:0;
+  }
+  .trust-item{
+    border-right:0 !important;
+    border-top:0 !important;
+    border-bottom:1px solid rgba(0,0,0,.06);
+    padding:18px 4px !important;
+    text-align:center;
+  }
+  .trust-item:last-child{border-bottom:0}
+  .trust-num{
+    font-size:26px !important;
+    margin-bottom:6px;
+  }
+  .trust-label{
+    margin:0;
+  }
+  .trust-sub{
+    margin-top:2px;
+  }
 }
 
 /* Reviews row (compact 3-up testimonial cards) */
