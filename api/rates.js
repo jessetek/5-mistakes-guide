@@ -40,8 +40,14 @@ export default async function handler(req, res) {
     source: 'fallback',
   };
 
+  // Window: how many weekly observations to return. Default 13 (one quarter).
+  // Cap at 60 weeks so the response stays small (~1.5KB).
+  const requestedWeeks = Math.min(60, Math.max(13, parseInt(req.query.weeks, 10) || 13));
+
   if (!apiKey) {
-    return res.status(200).json(fallback);
+    // Trim fallback to requested window to match shape
+    const slice = fallback.points.slice(-requestedWeeks);
+    return res.status(200).json({ ...fallback, points: slice });
   }
 
   try {
@@ -51,7 +57,7 @@ export default async function handler(req, res) {
       `&api_key=${apiKey}` +
       `&file_type=json` +
       `&sort_order=desc` +
-      `&limit=20`;
+      `&limit=${requestedWeeks + 5}`; // +5 buffer for missing values
 
     const r = await fetch(url, { headers: { Accept: 'application/json' } });
     if (!r.ok) return res.status(200).json(fallback);
@@ -67,7 +73,7 @@ export default async function handler(req, res) {
 
     if (cleaned.length < 2) return res.status(200).json(fallback);
 
-    const ascending = cleaned.slice(0, 13).reverse(); // last 13 weeks, ascending
+    const ascending = cleaned.slice(0, requestedWeeks).reverse();
     const last = ascending[ascending.length - 1];
     const prev = ascending[ascending.length - 2];
 

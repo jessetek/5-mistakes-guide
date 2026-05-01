@@ -100,6 +100,11 @@
           <span id="rcLabel">30-yr Fixed · Live</span>
           <span class="rates-chart-live">LIVE</span>
         </div>
+        <div class="rates-chart-toggle" role="tablist" aria-label="Chart timeframe">
+          <button type="button" class="rcTfBtn active" data-weeks="13" role="tab">13 wk</button>
+          <button type="button" class="rcTfBtn" data-weeks="26" role="tab">26 wk</button>
+          <button type="button" class="rcTfBtn" data-weeks="52" role="tab">1 year</button>
+        </div>
         <div class="rates-chart-now">
           <span class="rates-chart-num" id="rcNum">6.42%</span>
           <span class="rates-chart-delta" id="rcDelta">↓ 0.08 vs last week</span>
@@ -441,73 +446,110 @@
 
   // Live MORTGAGE30US chart — fetches /api/rates which proxies FRED.
   // Rebuilds the SVG path from real points and updates the headline + delta.
+  // Timeframe toggle (13/26/52 wk) refetches with ?weeks= param.
   (function liveChart(){
-    fetch('/api/rates', { cache: 'force-cache' })
-      .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(d){
-        if(!d || !d.points || !d.points.length) return;
-        var pts = d.points;
-        var values = pts.map(function(p){ return p.value; });
-        var min = Math.min.apply(null, values);
-        var max = Math.max.apply(null, values);
-        var range = (max - min) || 0.5;
-        // Pad the y-range slightly so the line doesn't kiss the top/bottom
-        var pad = range * 0.15;
-        var yMin = min - pad, yMax = max + pad, ySpan = yMax - yMin;
-        var W = 440, H = 74;
-        var topInset = 8, bottomInset = 12;
-        var coords = pts.map(function(p, i){
-          var x = (i / (pts.length - 1)) * W;
-          var y = topInset + (1 - (p.value - yMin) / ySpan) * (H - topInset - bottomInset);
-          return { x: Math.round(x*10)/10, y: Math.round(y*10)/10, v: p.value, date: p.date };
-        });
-        var line = 'M' + coords.map(function(c){ return c.x + ' ' + c.y; }).join(' L');
-        var fill = line + ' L' + W + ' ' + H + ' L0 ' + H + ' Z';
-        var lp = document.getElementById('rcLinePath');
-        var fp = document.getElementById('rcFillPath');
-        var dot = document.getElementById('rcDot');
-        var pulse = document.getElementById('rcPulse');
-        if(lp) lp.setAttribute('d', line);
-        if(fp) fp.setAttribute('d', fill);
-        var last = coords[coords.length - 1];
-        if(dot){ dot.setAttribute('cx', last.x); dot.setAttribute('cy', last.y); }
-        if(pulse){ pulse.setAttribute('cx', last.x); pulse.setAttribute('cy', last.y); }
-        // Headline number
-        var num = document.getElementById('rcNum');
-        if(num) num.textContent = d.current.toFixed(2) + '%';
-        // Delta pill
-        var delta = document.getElementById('rcDelta');
-        if(delta){
-          var arrow = d.delta > 0 ? '↑' : (d.delta < 0 ? '↓' : '—');
-          var sign = d.delta === 0 ? 'flat' : Math.abs(d.delta).toFixed(2);
-          delta.textContent = arrow + ' ' + sign + ' vs last week';
-          // green for down (good for buyers), red for up
-          if(d.delta > 0){
-            delta.style.color = '#ff453a';
-            delta.style.background = 'rgba(255,69,58,.12)';
-          } else if (d.delta < 0){
-            delta.style.color = '#34c759';
-            delta.style.background = 'rgba(52,199,89,.12)';
-          } else {
-            delta.style.color = '#ffd60a';
-            delta.style.background = 'rgba(255,214,10,.14)';
-          }
+    var lpEl = document.getElementById('rcLinePath');
+    var fpEl = document.getElementById('rcFillPath');
+    var dotEl = document.getElementById('rcDot');
+    var pulseEl = document.getElementById('rcPulse');
+    var numEl = document.getElementById('rcNum');
+    var deltaEl = document.getElementById('rcDelta');
+    var labelEl = document.getElementById('rcLabel');
+    var axisEl = document.getElementById('rcAxis');
+    var tfBtns = document.querySelectorAll('.rcTfBtn');
+
+    function loadAndRender(weeks){
+      fetch('/api/rates?weeks=' + weeks, { cache: 'force-cache' })
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(d){ render(d, weeks); })
+        .catch(function(){});
+    }
+
+    function render(d, weeks){
+      if(!d || !d.points || !d.points.length) return;
+      var pts = d.points;
+      var values = pts.map(function(p){ return p.value; });
+      var min = Math.min.apply(null, values);
+      var max = Math.max.apply(null, values);
+      var range = (max - min) || 0.5;
+      var pad = range * 0.15;
+      var yMin = min - pad, yMax = max + pad, ySpan = yMax - yMin;
+      var W = 440, H = 74;
+      var topInset = 8, bottomInset = 12;
+      var coords = pts.map(function(p, i){
+        var x = (i / (pts.length - 1)) * W;
+        var y = topInset + (1 - (p.value - yMin) / ySpan) * (H - topInset - bottomInset);
+        return { x: Math.round(x*10)/10, y: Math.round(y*10)/10, v: p.value, date: p.date };
+      });
+      var line = 'M' + coords.map(function(c){ return c.x + ' ' + c.y; }).join(' L');
+      var fill = line + ' L' + W + ' ' + H + ' L0 ' + H + ' Z';
+      if(lpEl) lpEl.setAttribute('d', line);
+      if(fpEl) fpEl.setAttribute('d', fill);
+      var last = coords[coords.length - 1];
+      if(dotEl){ dotEl.setAttribute('cx', last.x); dotEl.setAttribute('cy', last.y); }
+      if(pulseEl){ pulseEl.setAttribute('cx', last.x); pulseEl.setAttribute('cy', last.y); }
+
+      // Headline number is always the latest week (independent of timeframe)
+      if(numEl) numEl.textContent = d.current.toFixed(2) + '%';
+
+      // Delta pill: vs last week (13/26/52 wk views all use most recent week-over-week delta)
+      // For 26/52 wk views, additionally show period-over-period change
+      var firstVal = pts[0].value;
+      var lastVal = pts[pts.length - 1].value;
+      var periodDelta = Math.round((lastVal - firstVal) * 100) / 100;
+      if(deltaEl){
+        var deltaToShow, deltaLabel;
+        if (weeks > 13) {
+          deltaToShow = periodDelta;
+          deltaLabel = weeks === 52 ? 'vs 1 yr ago' : 'vs ' + weeks + ' wk ago';
+        } else {
+          deltaToShow = d.delta;
+          deltaLabel = 'vs last week';
         }
-        // Axis: first and last date labels
-        var axis = document.getElementById('rcAxis');
-        if(axis && coords.length){
-          var fmt = function(s){ var d2 = new Date(s); return d2.toLocaleDateString('en-US',{month:'short',day:'numeric'}); };
-          axis.innerHTML = '<span>' + fmt(coords[0].date) + '</span>' +
-            '<span></span><span></span><span></span>' +
-            '<span>' + fmt(last.date) + '</span>';
+        var arrow = deltaToShow > 0 ? '↑' : (deltaToShow < 0 ? '↓' : '—');
+        var sign = deltaToShow === 0 ? 'flat' : Math.abs(deltaToShow).toFixed(2);
+        deltaEl.textContent = arrow + ' ' + sign + ' ' + deltaLabel;
+        if(deltaToShow > 0){
+          deltaEl.style.color = '#ff453a';
+          deltaEl.style.background = 'rgba(255,69,58,.12)';
+        } else if (deltaToShow < 0){
+          deltaEl.style.color = '#34c759';
+          deltaEl.style.background = 'rgba(52,199,89,.12)';
+        } else {
+          deltaEl.style.color = '#ffd60a';
+          deltaEl.style.background = 'rgba(255,214,10,.14)';
         }
-        // Source label
-        var label = document.getElementById('rcLabel');
-        if(label && d.source === 'fred'){
-          label.textContent = '30-yr Fixed · Freddie Mac PMMS';
-        }
-      })
-      .catch(function(){ /* keep static fallback */ });
+      }
+
+      // Axis: first and last date labels
+      if(axisEl && coords.length){
+        var fmt = function(s){ var dd = new Date(s); return dd.toLocaleDateString('en-US',{month:'short',day:'numeric'}); };
+        axisEl.innerHTML = '<span>' + fmt(coords[0].date) + '</span>' +
+          '<span></span><span></span><span></span>' +
+          '<span>' + fmt(last.date) + '</span>';
+      }
+
+      // Source label
+      if(labelEl && d.source === 'fred'){
+        var labelTxt = '30-yr Fixed · Freddie Mac PMMS';
+        if (weeks === 52) labelTxt = '30-yr Fixed · 52-Week Trend (FRED)';
+        else if (weeks === 26) labelTxt = '30-yr Fixed · 26-Week Trend (FRED)';
+        labelEl.textContent = labelTxt;
+      }
+    }
+
+    // Wire toggle buttons
+    tfBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        tfBtns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var weeks = parseInt(btn.dataset.weeks, 10);
+        loadAndRender(weeks);
+      });
+    });
+
+    // Initial load
+    loadAndRender(13);
   })();
 </script>
 
