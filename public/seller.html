@@ -376,6 +376,42 @@
 </section>
 
 <!-- ===================== CTA ===================== -->
+
+<!-- ===================== FAQ ===================== -->
+<section class="about-faq">
+  <div style="max-width:780px;margin:0 auto">
+    <div class="sec-head reveal" style="text-align:center;margin-bottom:40px">
+      <span class="sec-label">Frequently Asked</span>
+      <h2 class="sec-title">Quick Answers for SoCal Sellers.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal-s">
+        <summary>What does it actually cost to sell my SoCal home?</summary>
+        <p>Plan on 5-7% of the sale price for total transaction costs. That covers agent commissions (typically 5-6% split between sides), title and escrow fees, transfer taxes, and any concessions to the buyer. On a $850K home, that's roughly $42,500-$59,500. We calculate your true net at the time we set the price, not at closing.</p>
+      </details>
+      <details class="faq-item reveal-s">
+        <summary>How long will it take to sell?</summary>
+        <p>In the current SoCal market, 30-60 days is typical for a well-priced home. The first 14 days are critical — that's when your home gets the most attention. Homes that sit past 30 days usually have a pricing or presentation issue we need to address fast.</p>
+      </details>
+      <details class="faq-item reveal-s">
+        <summary>Should I make repairs before listing?</summary>
+        <p>It depends. High-ROI fixes (paint, deep clean, light landscaping, minor cosmetic) almost always pay for themselves. Big-ticket items (roof, HVAC, kitchen remodel) usually don't return their cost in resale unless they're at end-of-life. We do a pre-listing walkthrough together and decide what's worth doing.</p>
+      </details>
+      <details class="faq-item reveal-s">
+        <summary>How do you determine my home's price?</summary>
+        <p>I pull recent sales of comparable homes (same beds/baths/square footage, similar condition, sold within the last 90 days, within a half mile). Then I adjust for differences. Then I look at active competing listings — those are your direct competition. The number we land on isn't a guess; it's a defensible position backed by data.</p>
+      </details>
+      <details class="faq-item reveal-s">
+        <summary>Should I be home for showings?</summary>
+        <p>No. Buyers can't be honest about what they like and don't like with you in the room. Plan to leave with the dog, the kids, and any food on the stove for the duration of any showing. The first 30 minutes of a buyer's reaction are the most honest.</p>
+      </details>
+      <details class="faq-item reveal-s">
+        <summary>What if I get multiple offers?</summary>
+        <p>We respond strategically — not just to the highest price. The strongest offer balances price, contingencies, financing, and timeline. A $20K-higher offer with shaky financing or a 60-day close can lose to a slightly lower offer with cash and a 14-day close. I evaluate every offer holistically and present the best option for your situation.</p>
+      </details>
+    </div>
+  </div>
+</section>
 <section class="cta-section">
   <div class="cta-blob cta-blob-1"></div>
   <div class="cta-blob cta-blob-2"></div>
@@ -637,13 +673,7 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
   "headline": "First-Time Home Seller Guide for SoCal",
   "description": "Selling a SoCal home for the first time? Pricing, timing, prep, showings, offers \u2014 everything you need to know.",
   "image": "https://jessetek.net/img/jesse-headshot.jpeg",
-  "author": {
-    "@type": "Person",
-    "name": "Jesse O\u00f1ate",
-    "url": "https://jessetek.net/about",
-    "jobTitle": "Realtor",
-    "telephone": "+1-562-609-4200"
-  },
+  "author": {"@id": "https://jessetek.net/about#jesse"},
   "publisher": {
     "@type": "Organization",
     "name": "Jesse O\u00f1ate Real Estate",
@@ -661,5 +691,61 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 }
 </script>
 <script src="/js/analytics.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does it actually cost to sell my SoCal home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plan on 5-7% of the sale price for total transaction costs. That covers agent commissions (typically 5-6% split between sides), title and escrow fees, transfer taxes, and any concessions to the buyer. On a $850K home, that's roughly $42,500-$59,500. We calculate your true net at the time we set the price, not at closing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long will it take to sell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the current SoCal market, 30-60 days is typical for a well-priced home. The first 14 days are critical \u2014 that's when your home gets the most attention. Homes that sit past 30 days usually have a pricing or presentation issue we need to address fast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I make repairs before listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends. High-ROI fixes (paint, deep clean, light landscaping, minor cosmetic) almost always pay for themselves. Big-ticket items (roof, HVAC, kitchen remodel) usually don't return their cost in resale unless they're at end-of-life. We do a pre-listing walkthrough together and decide what's worth doing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you determine my home's price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I pull recent sales of comparable homes (same beds/baths/square footage, similar condition, sold within the last 90 days, within a half mile). Then I adjust for differences. Then I look at active competing listings \u2014 those are your direct competition. The number we land on isn't a guess; it's a defensible position backed by data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I be home for showings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Buyers can't be honest about what they like and don't like with you in the room. Plan to leave with the dog, the kids, and any food on the stove for the duration of any showing. The first 30 minutes of a buyer's reaction are the most honest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I get multiple offers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We respond strategically \u2014 not just to the highest price. The strongest offer balances price, contingencies, financing, and timeline. A $20K-higher offer with shaky financing or a 60-day close can lose to a slightly lower offer with cash and a 14-day close. I evaluate every offer holistically and present the best option for your situation."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

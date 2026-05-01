@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#000; display:flex; flex-direction:column; align-items:center; gap:40px; padding:40px; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+.og-card {
+  width:1200px; height:630px;
+  display:flex; overflow:hidden;
+  border-radius:0;
+  position:relative;
+  background:#0a0a0a;
+}
+.og-photo {
+  width:480px; height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  flex-shrink:0;
+}
+.og-content {
+  flex:1; display:flex; flex-direction:column;
+  justify-content:center;
+  padding:60px 70px;
+  background:linear-gradient(135deg, #0a0a0a 0%, #111 50%, #1a1a1a 100%);
+  position:relative;
+}
+.og-content::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+}
+.og-label {
+  font-size:14px; font-weight:700;
+  color:#2997FF;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.og-title {
+  font-size:48px; font-weight:800;
+  color:#fff;
+  letter-spacing:-1.5px;
+  line-height:1.15;
+  margin-bottom:16px;
+}
+.og-sub {
+  font-size:18px;
+  color:rgba(255,255,255,.5);
+  line-height:1.5;
+  max-width:420px;
+}
+.og-brand {
+  position:absolute;
+  bottom:50px; left:70px;
+  font-size:16px; font-weight:700;
+  color:rgba(255,255,255,.35);
+  letter-spacing:-.3px;
+}
+.og-domain {
+  position:absolute;
+  bottom:50px; right:60px;
+  font-size:13px; font-weight:500;
+  color:rgba(255,255,255,.2);
+  letter-spacing:.5px;
+}
+.og-divider {
+  position:absolute;
+  left:480px; top:0; bottom:0;
+  width:3px;
+  background:linear-gradient(to bottom, transparent, #2997FF 30%, #2997FF 70%, transparent);
+}
+.page-label {
+  color:#666; font-size:14px; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase;
+  margin-bottom:-20px;
+}
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+<!-- HOME -->
+<div class="page-label">HOME — og-home.png</div>
+<div class="og-card" id="og-home">
+  <picture><source srcset="/img/clients/c-1eed41dca767.webp" type="image/webp"><img class="og-photo"  alt="" src="/img/clients/c-1eed41dca767.jpg"></picture>
+  <div class="og-divider"></div>
+  <div class="og-content">
+    <div class="og-label">Realtor · Downey & SoCal</div>
+    <div class="og-title">Helping Millennials Buy & Sell Homes.</div>
+    <div class="og-sub">No pressure, no games — just straight talk and real results.</div>
+    <div class="og-brand">Jesse Oñate.</div>
+    <div class="og-domain">jessetek.net</div>
+  </div>
+</div>
+
+<!-- GUIDE -->
+<div class="page-label">GUIDE — og-guide.png</div>
+<div class="og-card" id="og-guide">
+  <picture><source srcset="/img/clients/c-1eed41dca767.webp" type="image/webp"><img class="og-photo"  alt="" src="/img/clients/c-1eed41dca767.jpg"></picture>
+  <div class="og-divider"></div>
+  <div class="og-content">
+    <div class="og-label">Free Download · Instant Delivery</div>
+    <div class="og-title">5 Mistakes First-Time Buyers Make in SoCal.</div>
+    <div class="og-sub">The hidden traps most agents won't tell you about.</div>
+    <div class="og-brand">Jesse Oñate.</div>
+    <div class="og-domain">jessetek.net/guide</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="page-label">ABOUT — og-about.png</div>
+<div class="og-card" id="og-about">
+  <picture><source srcset="/img/clients/c-1eed41dca767.webp" type="image/webp"><img class="og-photo"  alt="" src="/img/clients/c-1eed41dca767.jpg"></picture>
+  <div class="og-divider"></div>
+  <div class="og-content">
+    <div class="og-label">About Jesse</div>
+    <div class="og-title">100+ Families Served. 5-Star Reviews.</div>
+    <div class="og-sub">Born and raised in Downey. Millennials-only realtor.</div>
+    <div class="og-brand">Jesse Oñate.</div>
+    <div class="og-domain">jessetek.net/about</div>
+  </div>
+</div>
+
+<!-- SELLERS -->
+<div class="page-label">SELLERS — og-sellers.png</div>
+<div class="og-card" id="og-sellers">
+  <picture><source srcset="/img/clients/c-1eed41dca767.webp" type="image/webp"><img class="og-photo"  alt="" src="/img/clients/c-1eed41dca767.jpg"></picture>
+  <div class="og-divider"></div>
+  <div class="og-content">
+    <div class="og-label">For Sellers</div>
+    <div class="og-title">Sell Your Home for Top Dollar.</div>
+    <div class="og-sub">My 11-step playbook gets you the highest price in the shortest time.</div>
+    <div class="og-brand">Jesse Oñate.</div>
+    <div class="og-domain">jessetek.net/sellers</div>
+  </div>
+</div>
+
+<!-- LISTINGS -->
+<div class="page-label">LISTINGS — og-listings.png</div>
+<div class="og-card" id="og-listings">
+  <picture><source srcset="/img/clients/c-1eed41dca767.webp" type="image/webp"><img class="og-photo"  alt="" src="/img/clients/c-1eed41dca767.jpg"></picture>
+  <div class="og-divider"></div>
+  <div class="og-content">
+    <div class="og-label">MLS Listings · Updated Daily</div>
+    <div class="og-title">Browse Homes in Downey & SoCal.</div>
+    <div class="og-sub">Search every listing on the market — updated in real time.</div>
+    <div class="og-brand">Jesse Oñate.</div>
+    <div class="og-domain">jessetek.net/listings</div>
+  </div>
+</div>
+
+<!-- ZOOM -->
+<div class="page-label">ZOOM — og-zoom.png</div>
+<div class="og-card" id="og-zoom">
+  <picture><source srcset="/img/clients/c-1eed41dca767.webp" type="image/webp"><img class="og-photo"  alt="" src="/img/clients/c-1eed41dca767.jpg"></picture>
+  <div class="og-divider"></div>
+  <div class="og-content">
+    <div class="og-label">Free · No Pressure · 15 Min</div>
+    <div class="og-title">Book a Call with Jesse.</div>
+    <div class="og-sub">One quick Zoom. Real answers about buying or selling. No pitch.</div>
+    <div class="og-brand">Jesse Oñate.</div>
+    <div class="og-domain">jessetek.net/zoom</div>
+  </div>
+</div>
+
+<script src="/js/analytics.js" defer></script>
+</body>
+</html>
