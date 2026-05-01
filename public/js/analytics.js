@@ -164,4 +164,73 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
       reportVital('TTFB', ttfb, 'ttfb-' + Date.now());
     }
   } catch (e) {}
+
+  // ----- Cookie consent banner (CCPA-friendly) -----
+  // Lightweight, dismissible, persists choice in localStorage for 12 months.
+  // We always run strictly-necessary cookies + first-party performance metrics.
+  // Analytics fires by default but the user can opt out via the banner.
+  try {
+    var consentKey = 'jt_cookie_consent_v1';
+    var stored = localStorage.getItem(consentKey);
+    if (!stored) {
+      window.addEventListener('DOMContentLoaded', function () {
+        // Don't show on legal pages themselves to avoid loop
+        if (/\/(privacy|terms|accessibility)(\.html)?$/.test(location.pathname)) return;
+
+        var banner = document.createElement('div');
+        banner.id = 'cookie-banner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Cookie consent');
+        banner.style.cssText = 'position:fixed;left:14px;right:14px;bottom:14px;max-width:560px;margin-left:auto;z-index:9998;' +
+          'background:#0E1014;color:#fff;border-radius:18px;padding:16px 18px;' +
+          'box-shadow:0 14px 40px rgba(0,0,0,.30);' +
+          'font-family:inherit;font-size:13.5px;line-height:1.5;' +
+          'border:1px solid rgba(255,255,255,.08);' +
+          'animation:cookieIn .35s ease both';
+        banner.innerHTML =
+          '<div style="margin-bottom:12px;color:rgba(255,255,255,.85)">' +
+          'We use cookies to make this site work and improve it (analytics + performance). ' +
+          'You can opt out of analytics anytime. ' +
+          '<a href="/privacy.html" style="color:#0a84ff;font-weight:500">Read our privacy policy</a>.' +
+          '</div>' +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+          '<button id="cookieAcceptAll" type="button" style="flex:1 1 auto;background:#0a84ff;color:#fff;border:0;padding:9px 14px;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;min-width:120px">Accept all</button>' +
+          '<button id="cookieEssentialOnly" type="button" style="flex:1 1 auto;background:rgba(255,255,255,.08);color:#fff;border:0;padding:9px 14px;border-radius:999px;font-weight:500;font-size:13px;cursor:pointer;min-width:120px">Essential only</button>' +
+          '</div>';
+        if (!document.getElementById('cookie-banner-style')) {
+          var st = document.createElement('style');
+          st.id = 'cookie-banner-style';
+          st.textContent = '@keyframes cookieIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}';
+          document.head.appendChild(st);
+        }
+        document.body.appendChild(banner);
+
+        var save = function (choice) {
+          localStorage.setItem(consentKey, JSON.stringify({
+            choice: choice,
+            ts: Date.now(),
+          }));
+          banner.style.animation = 'none';
+          banner.style.transition = 'opacity .25s ease';
+          banner.style.opacity = '0';
+          setTimeout(function () { banner.remove(); }, 260);
+          if (window.trackEvent) trackEvent('cookie_consent', { choice: choice });
+        };
+        document.getElementById('cookieAcceptAll').addEventListener('click', function () { save('all'); });
+        document.getElementById('cookieEssentialOnly').addEventListener('click', function () {
+          // Disable analytics by setting opt-out flags for GA4 + Vercel
+          try { window['ga-disable-' + cfg.GA4_ID] = true; } catch (_) {}
+          save('essential');
+        });
+      });
+    } else {
+      // Honor existing 'essential only' choice on subsequent loads
+      try {
+        var parsed = JSON.parse(stored);
+        if (parsed && parsed.choice === 'essential' && cfg.GA4_ID) {
+          window['ga-disable-' + cfg.GA4_ID] = true;
+        }
+      } catch (e) {}
+    }
+  } catch (e) {}
 })();

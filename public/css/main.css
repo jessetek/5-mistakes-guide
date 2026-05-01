@@ -4368,6 +4368,10 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 .f-contact-quick a:hover{color:var(--text)}
 
 .f-dre{color:var(--text3);margin-left:8px;font-size:12px}
+.f-eho{
+  display:inline-flex;align-items:center;gap:4px;
+  color:var(--text3);margin-left:8px;font-size:12px;font-weight:500;
+}
 @media(max-width:600px){
-  .f-dre{display:block;margin-left:0;margin-top:4px}
+  .f-dre,.f-eho{display:block;margin-left:0;margin-top:4px}
 }

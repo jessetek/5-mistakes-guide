@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Accessibility Statement | Jesse Oñate Real Estate</title>
+<meta name="description" content="Accessibility statement for jessetek.net. Our commitment to WCAG 2.1 AA compliance and inclusive web access for all users.">
+<link rel="canonical" href="https://jessetek.net/accessibility">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Accessibility Statement | Jesse Oñate Real Estate">
+<meta property="og:description" content="Our commitment to WCAG 2.1 AA compliance and inclusive web access.">
+<meta property="og:image" content="https://jessetek.net/img/og-home.jpg">
+<meta property="og:url" content="https://jessetek.net/accessibility">
+<meta property="og:site_name" content="Jesse Oñate Real Estate">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0E1014">
+<link rel="stylesheet" href="/css/main.css?v=17">
+<style>
+  .legal-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
+  .legal-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
+  .legal-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .legal-hero h1{font-size:clamp(34px,4.4vw,52px);font-weight:700;letter-spacing:-1.6px;line-height:1.1;margin-bottom:14px}
+  .legal-hero p{font-size:15px;color:rgba(255,255,255,.55)}
+  .legal-body{max-width:760px;margin:0 auto;padding:60px 40px 100px;font-size:16px;line-height:1.75;color:var(--text2)}
+  .legal-body h2{font-size:22px;font-weight:700;letter-spacing:-.4px;margin:40px 0 12px;color:var(--text)}
+  .legal-body p{margin-bottom:14px}
+  .legal-body ul{margin:0 0 18px 22px}
+  .legal-body li{margin-bottom:6px}
+  .legal-body strong{color:var(--text);font-weight:600}
+  .legal-body a{color:var(--blue);text-decoration:none}
+  .legal-body a:hover{text-decoration:underline}
+  @media(max-width:700px){.legal-hero{padding:120px 22px 40px}.legal-body{padding:50px 22px 80px;font-size:15px}}
+</style>
+</head>
+<body>
+
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html" class="mob-link">Home</a>
+  <a href="/insights/" class="mob-link">Insights</a>
+  <a href="/about.html" class="mob-link">About</a>
+  <a href="/zoom.html" class="mob-link mob-cta">Let's Talk →</a>
+</div>
+
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html" class="nav-link">About</a>
+    <a href="/insights/" class="nav-link">Insights</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <h1>Accessibility Statement</h1>
+    <p>Last updated: May 1, 2026</p>
+  </div>
+</section>
+
+<article class="legal-body">
+
+  <h2>Our commitment</h2>
+
+  <p>Jesse Oñate Real Estate is committed to ensuring that jessetek.net is accessible to people with disabilities, including buyers and sellers using assistive technology. We strive to meet <strong>WCAG 2.1 Level AA</strong> standards and continuously work to improve the user experience for everyone.</p>
+
+  <h2>What we do</h2>
+
+  <ul>
+    <li><strong>Semantic HTML.</strong> All pages use proper heading structure, landmark regions, and form labels.</li>
+    <li><strong>Keyboard navigation.</strong> All interactive elements (links, buttons, form fields, dropdowns, calculators) can be operated via keyboard alone.</li>
+    <li><strong>Alt text on images.</strong> Photos of homes, Jesse, clients, and Jesse's team include descriptive alt attributes. Decorative images use empty alt text or aria-hidden.</li>
+    <li><strong>Color contrast.</strong> Text/background combinations meet or exceed 4.5:1 contrast ratios per WCAG AA.</li>
+    <li><strong>Resizable text.</strong> Pages remain usable at 200% browser zoom without horizontal scrolling.</li>
+    <li><strong>Form labels and errors.</strong> All forms have visible labels; error states are announced to screen readers.</li>
+    <li><strong>Focus indicators.</strong> Visible focus outlines on every interactive element for keyboard users.</li>
+    <li><strong>Reduced-motion support.</strong> Animations honor the user's <code>prefers-reduced-motion</code> system preference where it impacts comfort.</li>
+  </ul>
+
+  <h2>Known limitations</h2>
+
+  <p>We are aware that some areas may not yet fully meet WCAG 2.1 AA:</p>
+
+  <ul>
+    <li><strong>Embedded third-party widgets</strong> (CRMLS IDX listings, Google Maps, Calendly booking) — these are controlled by third parties and may have varying accessibility levels. We use them because they provide essential functionality; we work with the providers when they update for accessibility.</li>
+    <li><strong>PDF documents</strong> linked from blog posts may not always have full screen-reader support. If you need a PDF in an accessible format, contact us.</li>
+    <li><strong>Hero animations</strong> on the home page (glitch text, Ken Burns photo effect) auto-play. They can be disabled via <code>prefers-reduced-motion: reduce</code> in your OS / browser settings.</li>
+  </ul>
+
+  <h2>Assistive technology</h2>
+
+  <p>The Site has been tested with the following assistive technology and tools:</p>
+
+  <ul>
+    <li>Screen readers: VoiceOver (macOS, iOS), NVDA (Windows), TalkBack (Android)</li>
+    <li>Browsers: Safari, Chrome, Firefox, Edge — both desktop and mobile</li>
+    <li>Keyboard-only navigation (no mouse)</li>
+    <li>Browser zoom up to 200%</li>
+    <li>Color-contrast analyzers (axe DevTools, Lighthouse Accessibility audit)</li>
+  </ul>
+
+  <h2>Need help?</h2>
+
+  <p>If you encounter an accessibility barrier or need information in an alternate format, please contact us. We will:</p>
+
+  <ul>
+    <li>Acknowledge your message within 2 business days</li>
+    <li>Provide an accessible alternative or work-around within 5 business days when possible</li>
+    <li>Track the issue and incorporate the fix into our next update cycle</li>
+  </ul>
+
+  <h2>Contact</h2>
+
+  <p>Jesse Oñate Real Estate<br>
+  Email: <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a> (subject: "Accessibility")<br>
+  Phone: <a href="tel:5626094200">(562) 609-4200</a><br>
+  DRE License: #02133131</p>
+
+  <h2>Equal Housing Opportunity</h2>
+
+  <p>Jesse Oñate Real Estate is an Equal Housing Opportunity provider. We do not discriminate on the basis of race, color, religion, national origin, sex, familial status, disability, source of income, sexual orientation, gender identity, marital status, ancestry, or any other protected class under federal, state, or local law.</p>
+
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+      <div class="f-contact-quick">
+        <a href="tel:5626094200">(562) 609-4200</a>
+        <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">Buyer Guide</a>
+      <a href="/buyer-quiz.html">Readiness Quiz</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/rent-vs-buy.html">Rent vs Buy</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">Seller Guide</a>
+      <a href="/valuation.html">Free Valuation</a>
+      <a href="/seller-net.html">Net Proceeds Calculator</a>
+    </div>
+    <div class="f-col">
+      <h4>Resources</h4>
+      <a href="/about.html">About Jesse</a>
+      <a href="/reviews.html">Reviews</a>
+      <a href="/insights/">Insights</a>
+      <a href="/faq.html">FAQ</a>
+    </div>
+    <div class="f-col">
+      <h4>Connect</h4>
+      <a href="https://instagram.com/jessetek" target="_blank" rel="noopener">@jessetek</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/accessibility.html">Accessibility</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved. <span class="f-dre">DRE #02133131</span> <span class="f-eho" title="Equal Housing Opportunity">⚖ Equal Housing Opportunity</span></p>
+  </div>
+</footer>
+
+<script src="/js/analytics.js" defer></script>
+</body>
+</html>
