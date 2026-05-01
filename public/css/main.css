@@ -4396,6 +4396,44 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   }
 }
 
+/* ===================== Live reviews embed strip (Jtek widget) ===================== */
+.reviews-strip-embed{
+  padding:60px 22px;
+  background:var(--bg);
+}
+.reviews-strip-embed-inner{
+  max-width:1080px;margin:0 auto;
+}
+.reviews-strip-embed .sec-head{
+  text-align:center;margin-bottom:28px;
+}
+.reviews-strip-embed .sec-head h2{
+  font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-1.2px;
+  line-height:1.1;color:var(--text);margin-bottom:6px;
+}
+.reviews-strip-embed .sec-head p{
+  font-size:15px;color:var(--text2);max-width:520px;margin:0 auto;line-height:1.55;
+}
+.reviews-strip-embed .jtek-reviews-wrap{
+  background:#fff;border-radius:22px;padding:8px;
+  box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04);
+}
+.reviews-strip-embed iframe{
+  width:100%;border:none;border-radius:18px;display:block;
+  min-height:520px;
+}
+.reviews-strip-embed-foot{
+  text-align:center;margin-top:18px;font-size:14px;color:var(--text2);
+}
+.reviews-strip-embed-foot a{
+  color:var(--blue);font-weight:600;text-decoration:none;
+}
+.reviews-strip-embed-foot a:hover{text-decoration:underline}
+@media(max-width:780px){
+  .reviews-strip-embed{padding:50px 22px}
+  .reviews-strip-embed iframe{min-height:600px}
+}
+
 /* ===================== Related Cities (city neighborhood pages) ===================== */
 .related-cities{
   padding:60px 22px 40px;
