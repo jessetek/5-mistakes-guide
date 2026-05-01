@@ -165,6 +165,19 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
     }
   } catch (e) {}
 
+  // ----- Service worker registration (PWA + offline fallback) -----
+  // Caches static assets stale-while-revalidate; HTML pages network-first
+  // with /offline.html fallback. Adds zero overhead on first load (SW only
+  // activates on second pageview), and shaves real time on repeat visits.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(function (err) {
+        // Silent — SW failures shouldn't break the page
+        if (window.console) console.warn('SW registration skipped:', err && err.message);
+      });
+    });
+  }
+
   // ----- Cookie consent banner (CCPA-friendly) -----
   // Lightweight, dismissible, persists choice in localStorage for 12 months.
   // We always run strictly-necessary cookies + first-party performance metrics.
