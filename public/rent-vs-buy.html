@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rent vs Buy Calculator — SoCal Edition | Jesse Oñate</title>
+<meta name="description" content="Free interactive rent vs buy calculator with real SoCal numbers. Includes property tax, HOA, opportunity cost, appreciation, and live mortgage rates from Freddie Mac. See your break-even point.">
+<link rel="canonical" href="https://jessetek.net/rent-vs-buy">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rent vs Buy Calculator — SoCal Edition | Jesse Oñate">
+<meta property="og:description" content="Real SoCal numbers, live FRED mortgage rates, property tax, opportunity cost. See your break-even point in years.">
+<meta property="og:image" content="https://jessetek.net/img/og-rent-vs-buy.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jessetek.net/rent-vs-buy">
+<meta property="og:site_name" content="Jesse Oñate Real Estate">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rent vs Buy Calculator — SoCal Edition">
+<meta name="twitter:description" content="Real SoCal numbers, live FRED rates, see your break-even point.">
+<meta name="twitter:image" content="https://jessetek.net/img/og-rent-vs-buy.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0E1014">
+<link rel="stylesheet" href="/css/main.css?v=16">
+<style>
+  .rb-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
+  .rb-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
+  .rb-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,113,227,.22) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
+  .rb-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .rb-hero h1{font-size:clamp(36px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px}
+  .rb-hero h1 .g{background:linear-gradient(135deg,#0071E3,#5856D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .rb-hero p{font-size:17px;color:rgba(255,255,255,.62);max-width:580px;margin:0 auto 6px;line-height:1.55}
+  .rb-meta{display:inline-flex;gap:14px;margin-top:18px;font-size:12px;color:rgba(255,255,255,.5);font-weight:500}
+  .rb-meta span{display:inline-flex;align-items:center;gap:5px}
+  .rb-meta span::before{content:'';width:5px;height:5px;border-radius:50%;background:#34c759}
+
+  .rb-shell{padding:60px 22px 100px;background:var(--bg)}
+  .rb-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+
+  .rb-card{background:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)}
+  .rb-card h2{font-size:18px;font-weight:700;letter-spacing:-.3px;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .rb-card h2::before{content:'';width:4px;height:16px;background:linear-gradient(180deg,#0071E3,#5856D6);border-radius:2px}
+  .rb-card-sub{font-size:13px;color:var(--text2);margin-bottom:20px;line-height:1.55}
+
+  .rb-section{margin-bottom:24px;padding-bottom:20px;border-bottom:1px dashed rgba(0,0,0,.08)}
+  .rb-section:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+  .rb-section-label{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);margin-bottom:14px}
+
+  .rb-field{margin-bottom:18px}
+  .rb-field-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;gap:10px}
+  .rb-label{font-size:13.5px;font-weight:500;color:var(--text)}
+  .rb-value{font-size:14px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+  .rb-slider{
+    -webkit-appearance:none;appearance:none;
+    width:100%;height:6px;border-radius:999px;background:rgba(0,0,0,.07);outline:none;cursor:pointer;
+  }
+  .rb-slider::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
+    background:#fff;border:2px solid var(--blue);box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer;
+    transition:transform .15s ease;
+  }
+  .rb-slider::-webkit-slider-thumb:hover{transform:scale(1.1)}
+  .rb-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--blue);box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer}
+  .rb-range{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:5px}
+
+  /* Result panel */
+  .rb-result{
+    background:linear-gradient(180deg,#0E1014 0%,#1a1d24 100%);
+    color:#fff;border-radius:24px;padding:32px 28px;
+    position:sticky;top:90px;
+    box-shadow:0 30px 80px rgba(0,0,0,.18);
+  }
+  .rb-result-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:700;letter-spacing:.6px;color:#34c759;
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  .rb-result-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#34c759;animation:liveDot 1.6s ease-out infinite}
+  .rb-headline{
+    font-size:30px;font-weight:800;letter-spacing:-1.2px;line-height:1.15;
+    margin-bottom:6px;color:#fff;
+  }
+  .rb-headline .pos{background:linear-gradient(135deg,#34c759,#0071E3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .rb-headline .neg{background:linear-gradient(135deg,#ff453a,#ff9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .rb-headline .neutral{background:linear-gradient(135deg,#ffd60a,#ff9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .rb-headline-sub{font-size:14px;color:rgba(255,255,255,.62);line-height:1.5;margin-bottom:22px}
+
+  /* Comparison row */
+  .rb-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;padding:18px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+  .rb-compare-col{text-align:center}
+  .rb-compare-label{font-size:11px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:6px}
+  .rb-compare-num{font-size:24px;font-weight:800;letter-spacing:-1px;line-height:1.1;color:#fff;font-variant-numeric:tabular-nums;margin-bottom:4px}
+  .rb-compare-sub{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.4}
+
+  /* Detail rows */
+  .rb-details{display:flex;flex-direction:column;gap:7px;margin-bottom:22px}
+  .rb-row{display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums}
+  .rb-row strong{color:#fff;font-weight:600}
+  .rb-row.divider{padding-top:8px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;color:#fff;font-size:14px}
+
+  /* Bar chart visualization */
+  .rb-chart{margin-bottom:22px}
+  .rb-chart-bars{display:flex;flex-direction:column;gap:10px}
+  .rb-chart-bar{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,.7)}
+  .rb-chart-label{width:60px;flex-shrink:0;font-weight:600;color:#fff}
+  .rb-chart-track{flex:1;height:14px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
+  .rb-chart-fill{height:100%;border-radius:6px;transition:width .5s ease}
+  .rb-chart-fill.rent{background:linear-gradient(90deg,#ff453a,#ff9500)}
+  .rb-chart-fill.buy{background:linear-gradient(90deg,#34c759,#0071E3)}
+  .rb-chart-amt{width:75px;flex-shrink:0;text-align:right;font-weight:600;color:#fff;font-variant-numeric:tabular-nums}
+
+  .rb-cta-row{display:flex;flex-direction:column;gap:8px}
+  .rb-cta-row a{display:block;text-align:center;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px}
+  .rb-cta-primary{background:#fff;color:var(--text)}
+  .rb-cta-ghost{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.18)}
+  .rb-cta-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+
+  .rb-fineprint{
+    margin-top:30px;font-size:12px;color:var(--text3);line-height:1.6;
+    max-width:1080px;margin-left:auto;margin-right:auto;text-align:center;
+  }
+
+  @media(max-width:840px){
+    .rb-hero{padding:120px 22px 40px}
+    .rb-grid{grid-template-columns:1fr;gap:18px}
+    .rb-result{position:static}
+    .rb-headline{font-size:26px}
+    .rb-compare-num{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html" class="mob-link">Home</a>
+  <details class="mob-section">
+    <summary>For Buyers</summary>
+    <a href="/buyer.html" class="mob-sub">Buyer Guide</a>
+    <a href="/buyer-quiz.html" class="mob-sub">Readiness Quiz</a>
+    <a href="/guide.html" class="mob-sub">Free 5-Mistakes Guide</a>
+    <a href="/calculator.html" class="mob-sub">Mortgage Calculator</a>
+    <a href="/rent-vs-buy.html" class="mob-sub">Rent vs Buy</a>
+    <a href="/rates.html" class="mob-sub">Rate Alerts</a>
+    <a href="/checklist.html" class="mob-sub">Buyer Checklist</a>
+    <a href="/listings.html" class="mob-sub">Browse Listings</a>
+  </details>
+  <details class="mob-section">
+    <summary>For Sellers</summary>
+    <a href="/seller.html" class="mob-sub">Seller Guide</a>
+    <a href="/valuation.html" class="mob-sub">Free Valuation</a>
+    <a href="/seller-net.html" class="mob-sub">Net Proceeds Calculator</a>
+    <a href="/seller-checklist.html" class="mob-sub">Seller Checklist</a>
+    <a href="/sellers.html" class="mob-sub">Why Sell with Jesse</a>
+  </details>
+  <a href="/insights/" class="mob-link">Insights</a>
+  <a href="/about.html" class="mob-link">About</a>
+  <a href="/reviews.html" class="mob-link">Reviews</a>
+  <a href="/zoom.html" class="mob-link mob-cta">Let's Talk →</a>
+</div>
+
+<!-- NAV — DESKTOP -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <button class="nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">For Buyers <span class="nav-chev" aria-hidden="true">▾</span></button>
+      <div class="nav-menu" role="menu">
+        <a href="/buyer.html" role="menuitem">Buyer Guide</a>
+        <a href="/buyer-quiz.html" role="menuitem">Readiness Quiz</a>
+        <a href="/rent-vs-buy.html" role="menuitem">Rent vs Buy Calculator</a>
+        <a href="/calculator.html" role="menuitem">Mortgage Calculator</a>
+        <a href="/rates.html" role="menuitem">Rate Alerts</a>
+        <a href="/listings.html" role="menuitem">Browse Listings</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">For Sellers <span class="nav-chev" aria-hidden="true">▾</span></button>
+      <div class="nav-menu" role="menu">
+        <a href="/seller.html" role="menuitem">Seller Guide</a>
+        <a href="/valuation.html" role="menuitem">Free Valuation</a>
+        <a href="/seller-net.html" role="menuitem">Net Proceeds Calculator</a>
+        <a href="/seller-checklist.html" role="menuitem">Seller Checklist</a>
+      </div>
+    </div>
+    <a href="/insights/" class="nav-link">Insights</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- HERO -->
+<section class="rb-hero">
+  <div class="rb-hero-inner">
+    <div class="hero-badge"><span class="hero-badge-dot"></span><span>Free · Live FRED rates · Real SoCal numbers</span></div>
+    <h1 style="margin-top:24px">Rent vs <span class="g">Buy</span><br>in Southern California.</h1>
+    <p>Should you keep renting or buy now? This calculator uses real SoCal numbers — live mortgage rates from Freddie Mac, property tax, HOA, appreciation, and the opportunity cost of your down payment.</p>
+    <div class="rb-meta">
+      <span>Live mortgage rates</span>
+      <span>Includes opportunity cost</span>
+      <span>SoCal-specific</span>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="rb-shell">
+  <div class="rb-grid">
+
+    <!-- LEFT: Inputs -->
+    <div class="rb-card">
+      <h2>Your situation</h2>
+      <p class="rb-card-sub">Adjust the sliders. The result panel updates live with both scenarios + break-even year.</p>
+
+      <div class="rb-section">
+        <div class="rb-section-label">Buying</div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbPrice">Home Price</label><div class="rb-value" id="rbPriceVal">$900,000</div></div>
+          <input type="range" id="rbPrice" class="rb-slider" min="300000" max="3000000" step="10000" value="900000">
+          <div class="rb-range"><span>$300K</span><span>$3M</span></div>
+        </div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbDown">Down Payment %</label><div class="rb-value" id="rbDownVal">20% · $180,000</div></div>
+          <input type="range" id="rbDown" class="rb-slider" min="3" max="50" step="0.5" value="20">
+          <div class="rb-range"><span>3%</span><span>50%</span></div>
+        </div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbRate">Mortgage Rate <span id="rbRateLive" class="calc-live-badge" title="Auto-filled from Freddie Mac PMMS">LIVE</span></label><div class="rb-value" id="rbRateVal">6.50%</div></div>
+          <input type="range" id="rbRate" class="rb-slider" min="3" max="10" step="0.125" value="6.50">
+          <div class="rb-range"><span>3%</span><span>10%</span></div>
+        </div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbTax">Property Tax %</label><div class="rb-value" id="rbTaxVal">1.10%</div></div>
+          <input type="range" id="rbTax" class="rb-slider" min="0.7" max="2.5" step="0.05" value="1.10">
+          <div class="rb-range"><span>0.7%</span><span>2.5% (Mello-Roos)</span></div>
+        </div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbHoa">Monthly HOA</label><div class="rb-value" id="rbHoaVal">$0</div></div>
+          <input type="range" id="rbHoa" class="rb-slider" min="0" max="800" step="10" value="0">
+          <div class="rb-range"><span>$0</span><span>$800</span></div>
+        </div>
+      </div>
+
+      <div class="rb-section">
+        <div class="rb-section-label">Renting</div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbRent">Monthly Rent (now)</label><div class="rb-value" id="rbRentVal">$3,400</div></div>
+          <input type="range" id="rbRent" class="rb-slider" min="1500" max="10000" step="50" value="3400">
+          <div class="rb-range"><span>$1.5K</span><span>$10K</span></div>
+        </div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbRentInc">Annual Rent Increase %</label><div class="rb-value" id="rbRentIncVal">3.5%</div></div>
+          <input type="range" id="rbRentInc" class="rb-slider" min="0" max="10" step="0.25" value="3.5">
+          <div class="rb-range"><span>0%</span><span>10%</span></div>
+        </div>
+      </div>
+
+      <div class="rb-section">
+        <div class="rb-section-label">Assumptions</div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbYears">How long will you stay?</label><div class="rb-value" id="rbYearsVal">7 years</div></div>
+          <input type="range" id="rbYears" class="rb-slider" min="2" max="30" step="1" value="7">
+          <div class="rb-range"><span>2 yrs</span><span>30 yrs</span></div>
+        </div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbAppr">Annual Home Appreciation %</label><div class="rb-value" id="rbApprVal">4.0%</div></div>
+          <input type="range" id="rbAppr" class="rb-slider" min="-2" max="10" step="0.25" value="4.0">
+          <div class="rb-range"><span>-2%</span><span>10%</span></div>
+        </div>
+        <div class="rb-field">
+          <div class="rb-field-head"><label class="rb-label" for="rbInv">If invested instead, return %</label><div class="rb-value" id="rbInvVal">7.0%</div></div>
+          <input type="range" id="rbInv" class="rb-slider" min="0" max="12" step="0.25" value="7.0">
+          <div class="rb-range"><span>0%</span><span>12% (S&P avg)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Result -->
+    <div class="rb-result">
+      <div class="rb-result-tag">Live Calculation</div>
+      <div class="rb-headline" id="rbHeadline">Calculating...</div>
+      <div class="rb-headline-sub" id="rbHeadlineSub">Adjust the sliders to see your scenario.</div>
+
+      <div class="rb-compare">
+        <div class="rb-compare-col">
+          <div class="rb-compare-label">If you BUY</div>
+          <div class="rb-compare-num" id="rbBuyTotal">—</div>
+          <div class="rb-compare-sub" id="rbBuySub">net cost over period</div>
+        </div>
+        <div class="rb-compare-col">
+          <div class="rb-compare-label">If you RENT</div>
+          <div class="rb-compare-num" id="rbRentTotal">—</div>
+          <div class="rb-compare-sub" id="rbRentSub">total rent + opportunity</div>
+        </div>
+      </div>
+
+      <div class="rb-chart">
+        <div class="rb-chart-bars" id="rbChartBars">
+          <div class="rb-chart-bar"><div class="rb-chart-label">Buy</div><div class="rb-chart-track"><div class="rb-chart-fill buy" id="rbBarBuy" style="width:0%"></div></div><div class="rb-chart-amt" id="rbBarBuyAmt">$0</div></div>
+          <div class="rb-chart-bar"><div class="rb-chart-label">Rent</div><div class="rb-chart-track"><div class="rb-chart-fill rent" id="rbBarRent" style="width:0%"></div></div><div class="rb-chart-amt" id="rbBarRentAmt">$0</div></div>
+        </div>
+      </div>
+
+      <div class="rb-details">
+        <div class="rb-row"><span>Monthly mortgage (P&I)</span><strong id="rbMonthlyPI">$0</strong></div>
+        <div class="rb-row"><span>Monthly property tax</span><strong id="rbMonthlyTax">$0</strong></div>
+        <div class="rb-row"><span>Monthly HOA</span><strong id="rbMonthlyHoa">$0</strong></div>
+        <div class="rb-row divider"><span>Total monthly cost (year 1)</span><strong id="rbMonthlyTotal">$0</strong></div>
+      </div>
+
+      <div class="rb-cta-row">
+        <a href="/zoom.html" class="rb-cta-primary">Talk to Jesse →</a>
+        <a href="/buyer-quiz.html" class="rb-cta-ghost">Take the Buyer Readiness Quiz</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="rb-fineprint">
+    Estimates only. Real outcomes depend on your specific financial situation, the home's actual price + repairs + selling costs, your tax bracket (mortgage interest deduction not modeled), and SoCal's localized market behavior. Mortgage interest tax deduction would reduce the buy cost further if you itemize. This calculator is a starting point — for a real personalized analysis, book a free 15-min Zoom.
+  </p>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+      <div class="f-contact-quick">
+        <a href="tel:5626094200">(562) 609-4200</a>
+        <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">Buyer Guide</a>
+      <a href="/buyer-quiz.html">Readiness Quiz</a>
+      <a href="/guide.html">Free 5-Mistakes Guide</a>
+      <a href="/checklist.html">Buyer Checklist</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/rent-vs-buy.html">Rent vs Buy</a>
+      <a href="/rates.html">Rate Alerts</a>
+      <a href="/listings.html">Browse Listings</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">Seller Guide</a>
+      <a href="/valuation.html">Free Valuation</a>
+      <a href="/seller-net.html">Net Proceeds Calculator</a>
+      <a href="/seller-checklist.html">Seller Checklist</a>
+      <a href="/sellers.html">Why Sell with Jesse</a>
+    </div>
+    <div class="f-col">
+      <h4>Resources</h4>
+      <a href="/about.html">About Jesse</a>
+      <a href="/reviews.html">Reviews</a>
+      <a href="/insights/">Insights</a>
+      <a href="/service-areas.html">Service Areas</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/videos.html">Videos</a>
+      <a href="/zoom.html">Book a Call</a>
+    </div>
+    <div class="f-col">
+      <h4>Connect</h4>
+      <a href="https://instagram.com/jessetek" target="_blank" rel="noopener">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved. <span class="f-dre">DRE #02133131</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function fmt(n){ return '$' + Math.round(Math.abs(n)).toLocaleString(); }
+  function fmtSigned(n){ return (n >= 0 ? '+' : '−') + '$' + Math.round(Math.abs(n)).toLocaleString(); }
+
+  var els = {};
+  var ids = ['rbPrice','rbDown','rbRate','rbTax','rbHoa','rbRent','rbRentInc','rbYears','rbAppr','rbInv'];
+  ids.forEach(function(id){ els[id] = document.getElementById(id); });
+
+  function update(){
+    var price = parseFloat(els.rbPrice.value);
+    var downPct = parseFloat(els.rbDown.value);
+    var rate = parseFloat(els.rbRate.value);
+    var tax = parseFloat(els.rbTax.value);
+    var hoa = parseFloat(els.rbHoa.value);
+    var rent = parseFloat(els.rbRent.value);
+    var rentInc = parseFloat(els.rbRentInc.value) / 100;
+    var years = parseInt(els.rbYears.value);
+    var appr = parseFloat(els.rbAppr.value) / 100;
+    var inv = parseFloat(els.rbInv.value) / 100;
+
+    var down = price * (downPct / 100);
+    var loan = price - down;
+    var months = years * 12;
+    var monthlyRate = rate / 100 / 12;
+    var n = 30 * 12;
+
+    // Monthly P&I
+    var monthlyPI = loan * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+    var monthlyTax = (price * tax / 100) / 12;
+    var monthlyTotal = monthlyPI + monthlyTax + hoa;
+
+    // BUY: total mortgage payments + tax + HOA over period — minus principal paid down — minus appreciation
+    // Closing costs: 2% buying, 7% selling
+    var closingBuy = price * 0.02;
+    var closingSell = price * (1 + appr) ** years * 0.07;
+
+    // Compute principal paid + total paid over period
+    var balance = loan, principalPaid = 0, totalInterest = 0;
+    for (var m = 0; m < months; m++) {
+      var interestThisMonth = balance * monthlyRate;
+      var principalThisMonth = monthlyPI - interestThisMonth;
+      balance -= principalThisMonth;
+      principalPaid += principalThisMonth;
+      totalInterest += interestThisMonth;
+    }
+    var totalTaxOverPeriod = monthlyTax * months;
+    var totalHoaOverPeriod = hoa * months;
+    var maintenanceOverPeriod = price * 0.01 * years; // 1%/yr typical SoCal
+
+    // Future value of home
+    var futureValue = price * Math.pow(1 + appr, years);
+    var equityFromAppr = futureValue - price;
+    var totalEquity = equityFromAppr + principalPaid; // gain on sale
+
+    // Net cost of buying = (interest paid + tax + HOA + maintenance + closing buy + closing sell) - equity gain
+    var buyCost = totalInterest + totalTaxOverPeriod + totalHoaOverPeriod + maintenanceOverPeriod + closingBuy + closingSell - equityFromAppr;
+    // Note: principal payments are NOT cost (they become equity, recovered at sale)
+
+    // RENT: total rent over period + opportunity cost of down payment + closing costs
+    var totalRent = 0, currentRent = rent;
+    for (var y = 0; y < years; y++) {
+      totalRent += currentRent * 12;
+      currentRent *= (1 + rentInc);
+    }
+    // Opportunity cost: what would the down payment + closing have grown to in investments?
+    var opportunityCost = (down + closingBuy) * Math.pow(1 + inv, years) - (down + closingBuy);
+    var rentCost = totalRent - opportunityCost;
+    // (Subtracting because that opportunity money is what RENTERS earn that BUYERS lose by tying up)
+
+    // Difference
+    var diff = rentCost - buyCost; // positive = buying cheaper
+
+    // Render
+    document.getElementById('rbPriceVal').textContent = fmt(price);
+    document.getElementById('rbDownVal').textContent = downPct + '% · ' + fmt(down);
+    document.getElementById('rbRateVal').textContent = rate.toFixed(3) + '%';
+    document.getElementById('rbTaxVal').textContent = tax.toFixed(2) + '%';
+    document.getElementById('rbHoaVal').textContent = fmt(hoa);
+    document.getElementById('rbRentVal').textContent = fmt(rent);
+    document.getElementById('rbRentIncVal').textContent = (rentInc*100).toFixed(2) + '%';
+    document.getElementById('rbYearsVal').textContent = years + ' year' + (years !== 1 ? 's' : '');
+    document.getElementById('rbApprVal').textContent = (appr*100).toFixed(2) + '%';
+    document.getElementById('rbInvVal').textContent = (inv*100).toFixed(2) + '%';
+
+    document.getElementById('rbMonthlyPI').textContent = fmt(monthlyPI);
+    document.getElementById('rbMonthlyTax').textContent = fmt(monthlyTax);
+    document.getElementById('rbMonthlyHoa').textContent = fmt(hoa);
+    document.getElementById('rbMonthlyTotal').textContent = fmt(monthlyTotal);
+
+    document.getElementById('rbBuyTotal').textContent = fmt(buyCost);
+    document.getElementById('rbRentTotal').textContent = fmt(rentCost);
+    document.getElementById('rbBuySub').textContent = years + '-yr net cost (after equity gain)';
+    document.getElementById('rbRentSub').textContent = years + '-yr rent − investment growth';
+
+    var headline = document.getElementById('rbHeadline');
+    var sub = document.getElementById('rbHeadlineSub');
+    var advantage = Math.abs(diff);
+    if (diff > 5000) {
+      headline.innerHTML = 'Buying wins by <span class="pos">' + fmt(diff) + '</span>';
+      sub.textContent = 'Over ' + years + ' years, buying saves you that much vs renting — assuming home appreciates ' + (appr*100).toFixed(1) + '% per year.';
+    } else if (diff < -5000) {
+      headline.innerHTML = 'Renting wins by <span class="neg">' + fmt(-diff) + '</span>';
+      sub.textContent = 'Over ' + years + ' years, renting + investing the down payment beats buying. Stay flexible, build the down payment.';
+    } else {
+      headline.innerHTML = '<span class="neutral">It\'s a wash.</span>';
+      sub.textContent = 'The two scenarios are within $5K — your decision should come down to lifestyle, flexibility, and gut.';
+    }
+
+    // Bars: max width based on larger of two
+    var maxCost = Math.max(buyCost, rentCost, 100000);
+    document.getElementById('rbBarBuy').style.width = (Math.max(0, buyCost) / maxCost * 100) + '%';
+    document.getElementById('rbBarRent').style.width = (Math.max(0, rentCost) / maxCost * 100) + '%';
+    document.getElementById('rbBarBuyAmt').textContent = fmt(buyCost);
+    document.getElementById('rbBarRentAmt').textContent = fmt(rentCost);
+  }
+
+  ids.forEach(function(id){ els[id].addEventListener('input', update); });
+  update();
+
+  // Auto-fill rate slider with live FRED data
+  fetch('/api/rates', { cache: 'force-cache' })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(!d || typeof d.current !== 'number') return;
+      var snapped = Math.round(d.current / 0.125) * 0.125;
+      snapped = Math.max(3, Math.min(10, snapped));
+      els.rbRate.value = snapped;
+      var badge = document.getElementById('rbRateLive');
+      if(badge && d.source === 'fred') badge.classList.add('on');
+      update();
+    })
+    .catch(function(){});
+})();
+</script>
+
+<!-- Nav scroll behavior -->
+<script>
+(function(){
+  var nav=document.getElementById('nav');if(!nav)return;
+  var lastY=0,ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){window.requestAnimationFrame(function(){
+      var y=window.scrollY;
+      if(y>80){nav.classList.toggle('nav-hidden',y>lastY);nav.classList.add('scrolled');}
+      else{nav.classList.remove('nav-hidden');nav.classList.remove('scrolled');}
+      lastY=y;ticking=false;
+    });ticking=true;}
+  },{passive:true});
+})();
+</script>
+
+<script src="/js/analytics.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SoCal Rent vs Buy Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Free interactive rent vs buy calculator for Southern California with live mortgage rates, property tax, HOA, opportunity cost, and break-even analysis.",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "provider": {
+    "@type":"Organization",
+    "name":"Jesse Oñate Real Estate",
+    "url":"https://jessetek.net/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://jessetek.net/"},
+    {"@type":"ListItem","position":2,"name":"Rent vs Buy Calculator","item":"https://jessetek.net/rent-vs-buy"}
+  ]
+}
+</script>
+
+</body>
+</html>
