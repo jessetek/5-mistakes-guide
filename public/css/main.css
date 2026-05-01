@@ -4473,7 +4473,7 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 /* ===================== Trust Strip — proof badges across pages ===================== */
 .trust-strip{
   background:var(--bg);
-  padding:0 22px;
+  padding:36px 22px;
 }
 .trust-strip-inner{
   max-width:1180px;margin:0 auto;
@@ -4528,7 +4528,7 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 
 /* Small mobile: stack to 1 column so dense items breathe + don't wrap awkwardly */
 @media(max-width:520px){
-  .trust-strip{padding:0 16px}
+  .trust-strip{padding:24px 16px}
   .trust-strip-inner{
     grid-template-columns:1fr;
     padding:6px 20px;
