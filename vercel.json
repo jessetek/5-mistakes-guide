@@ -5,6 +5,12 @@
     { "source": "/api/seller-submit", "destination": "/api/seller-submit" },
     { "source": "/", "destination": "/home" }
   ],
+  "crons": [
+    {
+      "path": "/api/rates",
+      "schedule": "0 16 * * *"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

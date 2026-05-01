@@ -3,6 +3,10 @@
 //
 // Vercel env var required: FRED_API_KEY
 // Set it in: Vercel dashboard → Project → Settings → Environment Variables
+//
+// Cron: /vercel.json fires this endpoint daily at 16:00 UTC (8am PT, 11am ET)
+// — well after FRED's Thursday ~10am ET publish — to keep the edge cache hot
+// even on days with zero organic traffic.
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -10,9 +14,18 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
-  // Edge cache: 6 hours fresh, 24 hours stale-while-revalidate.
-  // FRED only updates once a week (Thursdays ~10am ET), so this is plenty.
-  res.setHeader('Cache-Control', 'public, s-maxage=21600, stale-while-revalidate=86400');
+  // Edge cache: 12 hours fresh, 7 days stale-while-revalidate.
+  // - 12h fresh: cron fires daily at 16:00 UTC, so the cache is always fresh
+  //   for at least the next 12 hours after a cron run
+  // - 7d SWR: if FRED is unreachable, we keep serving the last good value
+  //   for up to a week while a background revalidation tries to recover
+  res.setHeader('Cache-Control', 'public, s-maxage=43200, stale-while-revalidate=604800');
+
+  // Cron requests come from Vercel with this header — log them so we can
+  // verify in Vercel logs that the daily warm-up actually ran
+  const isCron = req.headers['user-agent']?.includes('vercel-cron') === true ||
+                 req.headers['x-vercel-cron'] != null;
+  if (isCron) console.log('[rates.js] cron warm-up firing');
 
   const apiKey = process.env.FRED_API_KEY;
 
