@@ -4375,3 +4375,96 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 @media(max-width:600px){
   .f-dre,.f-eho{display:block;margin-left:0;margin-top:4px}
 }
+
+/* ===================== Trust Strip — proof badges across pages ===================== */
+.trust-strip{
+  background:var(--bg);
+  padding:0 22px;
+}
+.trust-strip-inner{
+  max-width:1180px;margin:0 auto;
+  padding:32px 28px;
+  background:#fff;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,.04);
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  align-items:center;
+}
+.trust-item{
+  text-align:center;
+  padding:6px 8px;
+  border-right:1px solid rgba(0,0,0,.06);
+}
+.trust-item:last-child{border-right:0}
+.trust-num{
+  font-size:28px;font-weight:800;letter-spacing:-1px;
+  background:linear-gradient(135deg,#0071E3,#5856D6);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;margin-bottom:4px;
+}
+.trust-num.gold{
+  background:linear-gradient(135deg,#f5b041,#f4d03f);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.trust-label{
+  font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+  color:var(--text3);line-height:1.3;
+}
+.trust-sub{
+  font-size:13px;color:var(--text2);line-height:1.4;margin-top:2px;font-weight:500;
+}
+
+/* Mobile: 2x2 grid + remove right borders */
+@media(max-width:780px){
+  .trust-strip-inner{
+    grid-template-columns:repeat(2, 1fr);
+    padding:22px 20px;
+    gap:14px;
+  }
+  .trust-item{border-right:0;border-bottom:1px solid rgba(0,0,0,.06);padding-bottom:14px}
+  .trust-item:nth-child(3),
+  .trust-item:nth-child(4){border-bottom:0;padding-bottom:0;padding-top:14px;border-top:0}
+  .trust-num{font-size:24px}
+}
+
+/* Reviews row (compact 3-up testimonial cards) */
+.reviews-strip{padding:60px 22px;background:var(--bg)}
+.reviews-strip-inner{max-width:1180px;margin:0 auto}
+.reviews-strip-head{text-align:center;margin-bottom:32px}
+.reviews-strip-head .sec-label{margin-bottom:10px;display:inline-block}
+.reviews-strip-head h2{
+  font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-1.2px;line-height:1.1;color:var(--text);margin-bottom:8px;
+}
+.reviews-strip-head p{font-size:15px;color:var(--text2);max-width:520px;margin:0 auto;line-height:1.55}
+.reviews-strip-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.reviews-strip-card{
+  background:#fff;border-radius:18px;padding:22px;
+  box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04);
+  display:flex;flex-direction:column;gap:10px;
+}
+.reviews-strip-card-head{display:flex;align-items:center;gap:10px}
+.reviews-strip-card-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,#0071E3,#5856D6);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;flex-shrink:0;
+}
+.reviews-strip-card-name{font-size:14px;font-weight:600;color:var(--text);line-height:1.3}
+.reviews-strip-card-meta{font-size:11.5px;color:var(--text3)}
+.reviews-strip-card-stars{color:#FFB800;font-size:14px;letter-spacing:1.5px}
+.reviews-strip-card-quote{
+  font-size:14.5px;color:var(--text);line-height:1.6;
+}
+.reviews-strip-foot{
+  text-align:center;margin-top:24px;font-size:13.5px;color:var(--text2);
+}
+.reviews-strip-foot a{color:var(--blue);font-weight:500;text-decoration:none}
+.reviews-strip-foot a:hover{text-decoration:underline}
+@media(max-width:780px){
+  .reviews-strip-grid{grid-template-columns:1fr;gap:12px}
+}

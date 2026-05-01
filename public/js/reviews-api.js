@@ -59,6 +59,7 @@
     });
     html += '</div>';
     container.innerHTML = html;
+    container.style.display = 'block';
   }
 
   function loadFromCache() {
