@@ -13,11 +13,13 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
   GA4_ID: "G-ZXSY9V9PXX",   // Live GA4 property for jessetek.net
   META_PIXEL_ID: null,      // Add when running FB/IG ads (16-digit number)
   VERCEL_ANALYTICS: true,   // Vercel Web Analytics enabled in dashboard 2026-04-30
-  GOOGLE_PLACE_ID: null,    // Get from places API place ID finder (for /reviews)
-  GOOGLE_PLACES_API_KEY: null, // Restrict to jessetek.net referrer + Places API only
+  GOOGLE_PLACE_ID: null,    // Replaced by Jtek reputation widget on /reviews
+  GOOGLE_PLACES_API_KEY: null,
   CLARITY_ID: "wke2elyrvc",  // Microsoft Clarity — heatmaps + session recordings
-                             // Project: jessetek.net (Real Estate)
                              // Dashboard: https://clarity.microsoft.com/projects/view/wke2elyrvc
+  SENTRY_DSN: "https://72dc78da895314acdc4f9ae4ca6e6d2f@o4511315722829824.ingest.us.sentry.io/4511315742359552",
+                             // Sentry — JS error tracking. Public DSN by design.
+                             // Project: jessetek-net (jesse-qw.sentry.io)
 };
 
 (function () {
@@ -164,6 +166,29 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
       reportVital('TTFB', ttfb, 'ttfb-' + Date.now());
     }
   } catch (e) {}
+
+  // ----- Sentry — JavaScript error tracking -----
+  // DSN is public by design (it ships in the browser bundle). Loads async,
+  // graceful no-op if the loader fails. We sample at 10% for traces and
+  // capture 100% on errors so the free 5K errors/month tier covers us forever
+  // at jessetek.net's traffic level.
+  if (cfg.SENTRY_DSN) {
+    window.sentryOnLoad = function () {
+      window.Sentry.init({
+        dsn: cfg.SENTRY_DSN,
+        tracesSampleRate: 0.1,        // 10% of normal page loads
+        replaysSessionSampleRate: 0.0, // Don't record sessions by default
+        replaysOnErrorSampleRate: 1.0, // But always record sessions that errored
+        environment: location.hostname === 'jessetek.net' ? 'production' : 'preview',
+      });
+    };
+    var sentryScript = document.createElement('script');
+    sentryScript.async = true;
+    // Loader Script ID derived from DSN public key
+    sentryScript.src = 'https://js.sentry-cdn.com/72dc78da895314acdc4f9ae4ca6e6d2f.min.js';
+    sentryScript.crossOrigin = 'anonymous';
+    document.head.appendChild(sentryScript);
+  }
 
   // ----- Service worker registration (PWA + offline fallback) -----
   // Caches static assets stale-while-revalidate; HTML pages network-first
