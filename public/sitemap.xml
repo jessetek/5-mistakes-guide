@@ -61,6 +61,12 @@
   <url><loc>https://jessetek.net/neighborhoods/santa-ana</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/lake-forest</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/yorba-linda</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/torrance</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/redondo-beach</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/manhattan-beach</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/hermosa-beach</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/santa-monica</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/culver-city</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
   <!-- Insights / Blog -->
   <url><loc>https://jessetek.net/insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
