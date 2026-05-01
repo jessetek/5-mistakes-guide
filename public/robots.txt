@@ -3,4 +3,31 @@ Allow: /
 Disallow: /api/
 Disallow: /img/og-generator.html
 
+# Block AI training crawlers (per CCPA-aligned data-rights stance).
+# Real search engines + tools indexing the content remain allowed.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
 Sitemap: https://jessetek.net/sitemap.xml
+Sitemap: https://jessetek.net/sitemap-images.xml

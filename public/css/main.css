@@ -4396,6 +4396,42 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   }
 }
 
+/* ===================== Related Cities (city neighborhood pages) ===================== */
+.related-cities{
+  padding:60px 22px 40px;
+  background:var(--bg);
+}
+.related-cities-inner{max-width:1080px;margin:0 auto}
+.related-cities-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin-top:32px;
+}
+.related-city-card{
+  background:#fff;border-radius:14px;padding:18px 20px;
+  box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04);
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;color:inherit;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.related-city-card:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-hover);
+}
+.related-city-arrow{
+  color:var(--blue);font-weight:700;font-size:16px;
+  flex-shrink:0;
+}
+.related-city-name{
+  font-size:15px;font-weight:600;letter-spacing:-.2px;color:var(--text);
+}
+@media(max-width:780px){
+  .related-cities{padding:40px 22px 30px}
+  .related-cities-grid{grid-template-columns:1fr 1fr;gap:10px}
+}
+@media(max-width:480px){
+  .related-cities-grid{grid-template-columns:1fr}
+}
+
 /* ===================== Trust Strip — proof badges across pages ===================== */
 .trust-strip{
   background:var(--bg);
