@@ -70,7 +70,7 @@
     <h1>What's Your Home<br><span class="g">Actually Worth?</span></h1>
     <p>Get an accurate market valuation from a local realtor — not a Zillow estimate. Real comps. Real strategy. Real numbers.</p>
 
-    <form class="valuation-form" action="/api/valuation" method="POST">
+    <form class="valuation-form" id="vfForm" action="/api/valuation" method="POST" novalidate>
       <div class="vf-row">
         <label class="vf-field">
           <span class="vf-label">Property Address</span>
@@ -104,11 +104,22 @@
           </select>
         </label>
       </div>
-      <button type="submit" class="vf-submit">Get My Free Valuation →</button>
+      <!-- Honeypot — hidden from real users, auto-filled by bots -->
+      <label style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden" aria-hidden="true">
+        Website (leave blank): <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </label>
+      <button type="submit" class="vf-submit" id="vfSubmit">Get My Free Valuation →</button>
+      <div class="vf-error" id="vfError" hidden style="margin-top:14px;color:#ff453a;font-size:14px;font-weight:500"></div>
       <div class="vf-trust">
         🔒 Your info is safe — never shared. Just used to send you your CMA.
       </div>
     </form>
+    <div class="vf-success" id="vfSuccess" hidden style="text-align:center;padding:40px 28px;background:#fff;border-radius:24px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)">
+      <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#34c759,#0071E3);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;margin:0 auto 18px">✓</div>
+      <h3 style="font-size:24px;font-weight:700;letter-spacing:-.5px;color:var(--text);margin-bottom:10px">Got it — your CMA is on the way.</h3>
+      <p style="font-size:15px;color:var(--text2);line-height:1.6;max-width:440px;margin:0 auto 14px">I'll text you within 24 hours with comps for your address and a real value range. No pressure, no follow-up sales calls.</p>
+      <p style="font-size:13.5px;color:var(--text3)">Want to chat live instead? <a href="/zoom.html" style="color:var(--blue);font-weight:600">Book a 15-min Zoom →</a></p>
+    </div>
   </div>
 </section>
 
@@ -704,6 +715,67 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
       banner.hidden = false;
     })
     .catch(function(){});
+})();
+</script>
+<script>
+// Valuation form submit — AJAX to /api/valuation, inline success state
+(function(){
+  var form = document.getElementById('vfForm');
+  var btn = document.getElementById('vfSubmit');
+  var err = document.getElementById('vfError');
+  var success = document.getElementById('vfSuccess');
+  if (!form) return;
+
+  var loadedAt = Date.now();
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.hidden = true;
+
+    var data = {};
+    new FormData(form).forEach(function(v, k){ data[k] = v; });
+    data.elapsed = Date.now() - loadedAt;
+
+    if (!data.address || !data.name || !data.contact) {
+      err.textContent = 'Address, name, and a phone or email are all required.';
+      err.hidden = false;
+      return;
+    }
+
+    btn.disabled = true;
+    var originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+
+    fetch('/api/valuation', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then(function(r){
+        return r.json().then(function(j){ return { ok: r.ok, body: j }; });
+      })
+      .then(function(res){
+        if (res.ok && res.body.success) {
+          form.style.display = 'none';
+          success.hidden = false;
+          // Track conversion to GA4 + Vercel Analytics
+          if (window.trackEvent) window.trackEvent('valuation_submit', {
+            timeline: data.timeline,
+            bedrooms: data.bedrooms,
+          });
+          // Smooth-scroll the success card into view
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error((res.body && res.body.error) || 'Submission failed');
+        }
+      })
+      .catch(function(e){
+        err.textContent = 'Something went wrong. Please call (562) 609-4200 or email jesse@jesseonate.com directly.';
+        err.hidden = false;
+        btn.disabled = false;
+        btn.textContent = originalText;
+      });
+  });
 })();
 </script>
 <script src="/js/analytics.js" defer></script>
