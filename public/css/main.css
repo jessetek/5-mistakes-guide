@@ -4068,34 +4068,124 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   .live-rate-strip-inner{padding:18px 0 0}
 }
 
-/* ===================== Insights — live rate banner ===================== */
+/* ===================== Live mortgage rate card ===================== */
 .live-rate-banner{
-  display:flex;align-items:center;gap:14px;
-  padding:14px 18px;margin:0 0 28px;
-  background:linear-gradient(135deg,rgba(0,113,227,.06),rgba(88,86,214,.06));
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:18px;align-items:center;
+  padding:18px 22px;margin:0 0 28px;
+  background:linear-gradient(135deg,rgba(0,113,227,.05),rgba(88,86,214,.05));
   border:1px solid rgba(0,113,227,.18);
-  border-radius:14px;
-  font-size:14px;line-height:1.4;
+  border-radius:18px;
   color:var(--text);
-  flex-wrap:wrap;
+  position:relative;overflow:hidden;
 }
-.live-rate-banner-tag{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:10.5px;font-weight:700;letter-spacing:.7px;
-  color:#34c759;text-transform:uppercase;
-  flex-shrink:0;
+.live-rate-banner::before{
+  /* Subtle grid backdrop for the techy data feel */
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(to right,rgba(0,113,227,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,113,227,.04) 1px,transparent 1px);
+  background-size:32px 32px;
+  -webkit-mask-image:linear-gradient(to right,#000,transparent 40%);
+  mask-image:linear-gradient(to right,#000,transparent 40%);
 }
-.live-rate-banner-tag::before{
-  content:'';width:7px;height:7px;border-radius:50%;
+
+.live-rate-banner > *{position:relative;z-index:2}
+
+/* Icon block on the left */
+.lrc-icon{
+  width:54px;height:54px;border-radius:14px;
+  background:linear-gradient(135deg,#0071E3,#5856D6);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 20px rgba(0,113,227,.28);
+  flex-shrink:0;color:#fff;
+}
+.lrc-icon svg{width:30px;height:30px;display:block}
+
+/* Body — label, big number, footer */
+.lrc-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.lrc-label{
+  display:flex;align-items:center;gap:8px;
+  font-size:11.5px;font-weight:700;letter-spacing:.5px;
+  color:var(--text3);text-transform:uppercase;
+}
+.lrc-live{
+  display:inline-flex;align-items:center;gap:5px;
+  color:#34c759;
+}
+.lrc-live::before{
+  content:'';width:6px;height:6px;border-radius:50%;
   background:#34c759;
   animation:liveDot 1.6s ease-out infinite;
 }
-.live-rate-banner-text{flex:1;min-width:200px;color:var(--text2)}
-.live-rate-banner-text strong{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums}
-.live-rate-banner a{
-  color:var(--blue);text-decoration:none;font-weight:600;white-space:nowrap;
+.lrc-main{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.lrc-num{
+  font-size:28px;font-weight:800;letter-spacing:-1.2px;line-height:1.05;
+  color:var(--text);font-variant-numeric:tabular-nums;
 }
-.live-rate-banner a:hover{text-decoration:underline}
+.lrc-delta{
+  display:inline-flex;align-items:center;gap:3px;
+  padding:3px 9px;border-radius:999px;
+  font-size:12px;font-weight:600;
+  background:rgba(52,199,89,.12);color:#34c759;
+  font-variant-numeric:tabular-nums;
+}
+.lrc-delta.up{background:rgba(255,69,58,.12);color:#ff453a}
+.lrc-delta.flat{background:rgba(255,214,10,.14);color:#c79900}
+.lrc-foot{
+  font-size:12px;color:var(--text3);font-weight:500;line-height:1.3;
+}
+
+/* CTA pill on the right */
+.lrc-cta{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;flex-shrink:0;
+  padding:10px 18px;border-radius:999px;
+  background:var(--text);color:#fff !important;
+  text-decoration:none !important;
+  font-size:13.5px;font-weight:600;
+  transition:transform .15s ease, opacity .15s ease;
+}
+.lrc-cta:hover{transform:translateY(-1px);opacity:.92}
+.lrc-cta-sub{
+  font-size:10px;font-weight:500;
+  color:rgba(255,255,255,.55);
+  letter-spacing:.3px;text-transform:uppercase;
+  margin-top:1px;
+}
+
+/* Loading skeleton */
+.live-rate-banner.loading .lrc-num,
+.live-rate-banner.loading .lrc-delta,
+.live-rate-banner.loading .lrc-foot{
+  display:inline-block;background:linear-gradient(90deg,rgba(0,0,0,.06),rgba(0,0,0,.12),rgba(0,0,0,.06));
+  background-size:200% 100%;
+  color:transparent !important;
+  border-radius:6px;
+  animation:lrcShimmer 1.4s ease-in-out infinite;
+}
+.live-rate-banner.loading .lrc-num{width:120px;height:30px}
+.live-rate-banner.loading .lrc-delta{width:96px;height:18px;background:rgba(0,0,0,.06) !important}
+.live-rate-banner.loading .lrc-foot{width:240px;height:14px}
+@keyframes lrcShimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+
+/* Mobile stack */
+@media(max-width:640px){
+  .live-rate-banner{
+    grid-template-columns:auto 1fr;
+    grid-template-rows:auto auto;
+    padding:16px;gap:14px;
+  }
+  .lrc-cta{
+    grid-column:1 / -1;
+    flex-direction:row;justify-content:center;gap:8px;
+    padding:11px 18px;
+  }
+  .lrc-cta-sub{margin-top:0;font-size:10.5px}
+  .lrc-num{font-size:26px}
+}
 
 /* ===================== Rates page — How It Works 3 steps ===================== */
 .rates-how{
