@@ -4376,6 +4376,26 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   .f-dre,.f-eho{display:block;margin-left:0;margin-top:4px}
 }
 
+/* ===================== Accessibility: reduced motion ===================== */
+/* Users with prefers-reduced-motion set in OS get reduced/disabled animations
+   per WCAG 2.3.3 and the accessibility statement. Affects hero glitch text,
+   client marquee, infinite-loop pulses, and any auto-rotating element. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Specifically disable auto-rotating decoratives that don't fade gracefully
+     with the universal selector approach */
+  .glitch-word, .clients-row, .rates-hero-chip,
+  .rates-chart-pulse, .lrc-live::before, .live-rate-banner-tag::before,
+  .nbhd-feature-icon, .quick-pay-tag::before {
+    animation: none !important;
+  }
+}
+
 /* ===================== Trust Strip — proof badges across pages ===================== */
 .trust-strip{
   background:var(--bg);
