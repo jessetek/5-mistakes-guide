@@ -26,6 +26,14 @@
   <url><loc>https://jessetek.net/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://jessetek.net/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
+  <!-- Spanish pages -->
+  <url><loc>https://jessetek.net/es/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/es/comprador</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://jessetek.net/es/vendedor</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://jessetek.net/es/valuacion</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://jessetek.net/es/listados</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/es/guia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- City pages -->
   <url><loc>https://jessetek.net/neighborhoods/downey</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/whittier</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
