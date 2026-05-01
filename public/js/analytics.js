@@ -180,6 +180,23 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
         replaysSessionSampleRate: 0.0, // Don't record sessions by default
         replaysOnErrorSampleRate: 1.0, // But always record sessions that errored
         environment: location.hostname === 'jessetek.net' ? 'production' : 'preview',
+        // Filter unactionable noise — these come from cross-origin scripts
+        // (browser extensions, third-party widgets without CORS) where Sentry
+        // cannot capture details. Industry-standard list per Sentry docs.
+        ignoreErrors: [
+          /^Script error\.?$/,
+          /ResizeObserver loop/,
+          /Non-Error promise rejection captured/,
+          /Failed to fetch dynamically imported module/,
+          /AbortError: The operation was aborted/,
+        ],
+        denyUrls: [
+          /extensions\//i,
+          /^chrome:\/\//i,
+          /^chrome-extension:\/\//i,
+          /^moz-extension:\/\//i,
+          /^safari-extension:\/\//i,
+        ],
       });
     };
     var sentryScript = document.createElement('script');
