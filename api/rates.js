@@ -1,0 +1,84 @@
+// Live MORTGAGE30US (Freddie Mac PMMS, weekly Thursday release) via FRED
+// Public API — https://fred.stlouisfed.org/series/MORTGAGE30US
+//
+// Vercel env var required: FRED_API_KEY
+// Set it in: Vercel dashboard → Project → Settings → Environment Variables
+
+export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
+
+  // Edge cache: 6 hours fresh, 24 hours stale-while-revalidate.
+  // FRED only updates once a week (Thursdays ~10am ET), so this is plenty.
+  res.setHeader('Cache-Control', 'public, s-maxage=21600, stale-while-revalidate=86400');
+
+  const apiKey = process.env.FRED_API_KEY;
+
+  // Static fallback — used if FRED is down or env var is missing.
+  // Keeps the page functional with sensible illustrative numbers.
+  const fallback = {
+    current: 6.42,
+    delta: -0.08,
+    asOf: null,
+    points: [
+      { date: '2026-01-30', value: 6.95 },
+      { date: '2026-02-06', value: 6.88 },
+      { date: '2026-02-13', value: 6.79 },
+      { date: '2026-02-20', value: 6.71 },
+      { date: '2026-02-27', value: 6.66 },
+      { date: '2026-03-06', value: 6.58 },
+      { date: '2026-03-13', value: 6.61 },
+      { date: '2026-03-20', value: 6.55 },
+      { date: '2026-03-27', value: 6.50 },
+      { date: '2026-04-03', value: 6.48 },
+      { date: '2026-04-10', value: 6.42 },
+      { date: '2026-04-17', value: 6.50 },
+      { date: '2026-04-24', value: 6.42 }
+    ],
+    source: 'fallback',
+  };
+
+  if (!apiKey) {
+    return res.status(200).json(fallback);
+  }
+
+  try {
+    const url =
+      `https://api.stlouisfed.org/fred/series/observations` +
+      `?series_id=MORTGAGE30US` +
+      `&api_key=${apiKey}` +
+      `&file_type=json` +
+      `&sort_order=desc` +
+      `&limit=20`;
+
+    const r = await fetch(url, { headers: { Accept: 'application/json' } });
+    if (!r.ok) return res.status(200).json(fallback);
+
+    const data = await r.json();
+    const obs = (data && data.observations) || [];
+
+    // FRED returns descending. Filter out missing values (".") and reverse to ascending.
+    const cleaned = obs
+      .filter((o) => o && o.value && o.value !== '.')
+      .map((o) => ({ date: o.date, value: parseFloat(o.value) }))
+      .filter((o) => Number.isFinite(o.value));
+
+    if (cleaned.length < 2) return res.status(200).json(fallback);
+
+    const ascending = cleaned.slice(0, 13).reverse(); // last 13 weeks, ascending
+    const last = ascending[ascending.length - 1];
+    const prev = ascending[ascending.length - 2];
+
+    return res.status(200).json({
+      current: last.value,
+      delta: Math.round((last.value - prev.value) * 100) / 100,
+      asOf: last.date,
+      points: ascending,
+      source: 'fred',
+    });
+  } catch (err) {
+    return res.status(200).json(fallback);
+  }
+}

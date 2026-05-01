@@ -94,15 +94,15 @@
         </div>
       </div>
 
-      <!-- Animated mini rate chart -->
+      <!-- Animated mini rate chart — live data from FRED (Federal Reserve) -->
       <div class="rates-chart" aria-label="This week's 30-year fixed mortgage rate trend">
         <div class="rates-chart-head">
-          <span>30-yr Fixed · This Week</span>
+          <span id="rcLabel">30-yr Fixed · Live</span>
           <span class="rates-chart-live">LIVE</span>
         </div>
         <div class="rates-chart-now">
-          <span class="rates-chart-num" id="rateNum">6.42%</span>
-          <span class="rates-chart-delta">↓ 0.08 vs last Thu</span>
+          <span class="rates-chart-num" id="rcNum">6.42%</span>
+          <span class="rates-chart-delta" id="rcDelta">↓ 0.08 vs last week</span>
         </div>
         <svg class="rates-chart-svg" viewBox="0 0 440 74" preserveAspectRatio="none" aria-hidden="true">
           <defs>
@@ -115,13 +115,13 @@
               <stop offset="100%" stop-color="#0071E3" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <path class="rates-chart-fill" d="M0 56 L40 50 L80 54 L120 42 L160 46 L200 38 L240 30 L280 36 L320 28 L360 32 L400 22 L440 14 L440 74 L0 74 Z"/>
-          <path class="rates-chart-line" d="M0 56 L40 50 L80 54 L120 42 L160 46 L200 38 L240 30 L280 36 L320 28 L360 32 L400 22 L440 14"/>
-          <circle class="rates-chart-pulse" cx="440" cy="14" r="5"/>
-          <circle class="rates-chart-dot" cx="440" cy="14" r="4.5"/>
+          <path id="rcFillPath" class="rates-chart-fill" d="M0 56 L40 50 L80 54 L120 42 L160 46 L200 38 L240 30 L280 36 L320 28 L360 32 L400 22 L440 14 L440 74 L0 74 Z"/>
+          <path id="rcLinePath" class="rates-chart-line" d="M0 56 L40 50 L80 54 L120 42 L160 46 L200 38 L240 30 L280 36 L320 28 L360 32 L400 22 L440 14"/>
+          <circle id="rcPulse" class="rates-chart-pulse" cx="440" cy="14" r="5"/>
+          <circle id="rcDot" class="rates-chart-dot" cx="440" cy="14" r="4.5"/>
         </svg>
-        <div class="rates-chart-axis">
-          <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>This wk</span>
+        <div class="rates-chart-axis" id="rcAxis">
+          <span>13 wks ago</span><span></span><span></span><span></span><span>This wk</span>
         </div>
       </div>
 
@@ -410,6 +410,77 @@
     });
   },{threshold:.3});
   document.querySelectorAll('.rates-phone').forEach(function(el){ phoneIo.observe(el); });
+
+  // Live MORTGAGE30US chart — fetches /api/rates which proxies FRED.
+  // Rebuilds the SVG path from real points and updates the headline + delta.
+  (function liveChart(){
+    fetch('/api/rates', { cache: 'force-cache' })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){
+        if(!d || !d.points || !d.points.length) return;
+        var pts = d.points;
+        var values = pts.map(function(p){ return p.value; });
+        var min = Math.min.apply(null, values);
+        var max = Math.max.apply(null, values);
+        var range = (max - min) || 0.5;
+        // Pad the y-range slightly so the line doesn't kiss the top/bottom
+        var pad = range * 0.15;
+        var yMin = min - pad, yMax = max + pad, ySpan = yMax - yMin;
+        var W = 440, H = 74;
+        var topInset = 8, bottomInset = 12;
+        var coords = pts.map(function(p, i){
+          var x = (i / (pts.length - 1)) * W;
+          var y = topInset + (1 - (p.value - yMin) / ySpan) * (H - topInset - bottomInset);
+          return { x: Math.round(x*10)/10, y: Math.round(y*10)/10, v: p.value, date: p.date };
+        });
+        var line = 'M' + coords.map(function(c){ return c.x + ' ' + c.y; }).join(' L');
+        var fill = line + ' L' + W + ' ' + H + ' L0 ' + H + ' Z';
+        var lp = document.getElementById('rcLinePath');
+        var fp = document.getElementById('rcFillPath');
+        var dot = document.getElementById('rcDot');
+        var pulse = document.getElementById('rcPulse');
+        if(lp) lp.setAttribute('d', line);
+        if(fp) fp.setAttribute('d', fill);
+        var last = coords[coords.length - 1];
+        if(dot){ dot.setAttribute('cx', last.x); dot.setAttribute('cy', last.y); }
+        if(pulse){ pulse.setAttribute('cx', last.x); pulse.setAttribute('cy', last.y); }
+        // Headline number
+        var num = document.getElementById('rcNum');
+        if(num) num.textContent = d.current.toFixed(2) + '%';
+        // Delta pill
+        var delta = document.getElementById('rcDelta');
+        if(delta){
+          var arrow = d.delta > 0 ? '↑' : (d.delta < 0 ? '↓' : '—');
+          var sign = d.delta === 0 ? 'flat' : Math.abs(d.delta).toFixed(2);
+          delta.textContent = arrow + ' ' + sign + ' vs last week';
+          // green for down (good for buyers), red for up
+          if(d.delta > 0){
+            delta.style.color = '#ff453a';
+            delta.style.background = 'rgba(255,69,58,.12)';
+          } else if (d.delta < 0){
+            delta.style.color = '#34c759';
+            delta.style.background = 'rgba(52,199,89,.12)';
+          } else {
+            delta.style.color = '#ffd60a';
+            delta.style.background = 'rgba(255,214,10,.14)';
+          }
+        }
+        // Axis: first and last date labels
+        var axis = document.getElementById('rcAxis');
+        if(axis && coords.length){
+          var fmt = function(s){ var d2 = new Date(s); return d2.toLocaleDateString('en-US',{month:'short',day:'numeric'}); };
+          axis.innerHTML = '<span>' + fmt(coords[0].date) + '</span>' +
+            '<span></span><span></span><span></span>' +
+            '<span>' + fmt(last.date) + '</span>';
+        }
+        // Source label
+        var label = document.getElementById('rcLabel');
+        if(label && d.source === 'fred'){
+          label.textContent = '30-yr Fixed · Freddie Mac PMMS';
+        }
+      })
+      .catch(function(){ /* keep static fallback */ });
+  })();
 </script>
 
 <!-- Nav hide on scroll down, show on scroll up -->
