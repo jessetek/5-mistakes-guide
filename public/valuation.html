@@ -74,8 +74,26 @@
       <div class="vf-row">
         <label class="vf-field">
           <span class="vf-label">Property Address</span>
-          <input type="text" name="address" placeholder="123 Main St, Downey, CA 90240" required>
+          <input type="text" name="address" id="vfAddress" placeholder="123 Main St, Downey, CA 90240" required autocomplete="street-address">
         </label>
+      </div>
+      <!-- Instant estimate preview — populated by /api/property-estimate after address blur -->
+      <div class="vf-estimate" id="vfEstimate" hidden>
+        <div class="vf-estimate-row">
+          <div>
+            <div class="vf-estimate-label">Auto-Estimate (Pre-CMA)</div>
+            <div class="vf-estimate-amount" id="vfEstimateAmount">—</div>
+            <div class="vf-estimate-range" id="vfEstimateRange"></div>
+          </div>
+          <div class="vf-estimate-meta" id="vfEstimateMeta"></div>
+        </div>
+        <div class="vf-estimate-fineprint">
+          AVM-based estimate from Freddie/Fannie comps. Real value range can shift ±10-15% based on condition, upgrades, and recent comps. Submit below to get Jesse's manual CMA within 24h.
+        </div>
+      </div>
+      <div class="vf-estimate-loading" id="vfEstimateLoading" hidden>
+        <div class="vf-estimate-spinner"></div>
+        <span>Pulling comps for this address...</span>
       </div>
       <div class="vf-row vf-row-2">
         <label class="vf-field">
@@ -117,6 +135,7 @@
     <div class="vf-success" id="vfSuccess" hidden style="text-align:center;padding:40px 28px;background:#fff;border-radius:24px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)">
       <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#34c759,#0071E3);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;margin:0 auto 18px">✓</div>
       <h3 style="font-size:24px;font-weight:700;letter-spacing:-.5px;color:var(--text);margin-bottom:10px">Got it — your CMA is on the way.</h3>
+      <p style="font-size:15px;color:var(--text2);line-height:1.6;max-width:480px;margin:0 auto 14px" id="vfSuccessEstimate" hidden></p>
       <p style="font-size:15px;color:var(--text2);line-height:1.6;max-width:440px;margin:0 auto 14px">I'll text you within 24 hours with comps for your address and a real value range. No pressure, no follow-up sales calls.</p>
       <p style="font-size:13.5px;color:var(--text3)">Want to chat live instead? <a href="/zoom.html" style="color:var(--blue);font-weight:600">Book a 15-min Zoom →</a></p>
     </div>
@@ -718,15 +737,88 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 })();
 </script>
 <script>
-// Valuation form submit — AJAX to /api/valuation, inline success state
+// Valuation form: instant estimate via RentCast + AJAX submit + inline success
 (function(){
   var form = document.getElementById('vfForm');
   var btn = document.getElementById('vfSubmit');
   var err = document.getElementById('vfError');
   var success = document.getElementById('vfSuccess');
+  var addressInput = document.getElementById('vfAddress');
+  var estCard = document.getElementById('vfEstimate');
+  var estLoading = document.getElementById('vfEstimateLoading');
+  var estAmount = document.getElementById('vfEstimateAmount');
+  var estRange = document.getElementById('vfEstimateRange');
+  var estMeta = document.getElementById('vfEstimateMeta');
   if (!form) return;
 
   var loadedAt = Date.now();
+  var lastEstimate = null;
+  var lastFetchedAddress = '';
+
+  function fmt(n){ return '$' + Math.round(n).toLocaleString(); }
+  function fmtShort(n){
+    if (n >= 1000000) return '$' + (n/1000000).toFixed(2).replace(/\.?0+$/,'') + 'M';
+    if (n >= 1000) return '$' + Math.round(n/1000) + 'K';
+    return '$' + n;
+  }
+
+  // Heuristic: address looks complete enough to query
+  // Need at least: number + street + city OR zip
+  function looksLikeFullAddress(s){
+    s = (s || '').trim();
+    if (s.length < 12) return false;
+    var hasNumber = /^\s*\d+/.test(s);
+    var hasComma = s.indexOf(',') !== -1;
+    var hasZip = /\b\d{5}\b/.test(s);
+    return hasNumber && (hasComma || hasZip);
+  }
+
+  function fetchEstimate(address){
+    if (address === lastFetchedAddress) return;
+    lastFetchedAddress = address;
+    estLoading.hidden = false;
+    estCard.hidden = true;
+
+    fetch('/api/property-estimate?address=' + encodeURIComponent(address), {
+      cache: 'force-cache',
+    })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){
+        estLoading.hidden = true;
+        if (!d || !d.found) {
+          // Quietly fail — don't show error to user, they can still submit
+          return;
+        }
+        lastEstimate = d;
+        estAmount.textContent = fmt(d.price);
+        estRange.textContent = 'Range: ' + fmtShort(d.priceRangeLow) + ' – ' + fmtShort(d.priceRangeHigh);
+        var metaLines = [];
+        if (d.compsCount) metaLines.push(d.compsCount + ' nearby comps');
+        if (d.zipCode) metaLines.push(d.zipCode);
+        estMeta.innerHTML = metaLines.join('<br>');
+        estCard.hidden = false;
+        if (window.trackEvent) window.trackEvent('valuation_auto_estimate', {
+          price: d.price,
+          zip: d.zipCode || '',
+        });
+      })
+      .catch(function(){
+        estLoading.hidden = true;
+      });
+  }
+
+  // Trigger estimate fetch on blur (when user moves to next field) or 1.5s after typing pause
+  var typingTimer = null;
+  addressInput.addEventListener('blur', function(){
+    var v = addressInput.value.trim();
+    if (looksLikeFullAddress(v)) fetchEstimate(v);
+  });
+  addressInput.addEventListener('input', function(){
+    clearTimeout(typingTimer);
+    var v = addressInput.value.trim();
+    if (!looksLikeFullAddress(v)) return;
+    typingTimer = setTimeout(function(){ fetchEstimate(v); }, 1500);
+  });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -735,6 +827,13 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     var data = {};
     new FormData(form).forEach(function(v, k){ data[k] = v; });
     data.elapsed = Date.now() - loadedAt;
+
+    // Attach the auto-estimate so LeadConnector has it as a custom field
+    if (lastEstimate && lastEstimate.found) {
+      data.autoEstimate = lastEstimate.price;
+      data.autoEstimateLow = lastEstimate.priceRangeLow;
+      data.autoEstimateHigh = lastEstimate.priceRangeHigh;
+    }
 
     if (!data.address || !data.name || !data.contact) {
       err.textContent = 'Address, name, and a phone or email are all required.';
@@ -756,14 +855,21 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
       })
       .then(function(res){
         if (res.ok && res.body.success) {
+          // Replace the success card copy if we have an estimate to show
+          if (lastEstimate && lastEstimate.found) {
+            var estLine = document.getElementById('vfSuccessEstimate');
+            if (estLine) {
+              estLine.innerHTML = 'Your auto-estimate: <strong style="color:var(--text)">' + fmt(lastEstimate.price) + '</strong> (range ' + fmtShort(lastEstimate.priceRangeLow) + '–' + fmtShort(lastEstimate.priceRangeHigh) + ').<br>Real comps + my analysis within 24h — typically within ±10% of this number.';
+              estLine.hidden = false;
+            }
+          }
           form.style.display = 'none';
           success.hidden = false;
-          // Track conversion to GA4 + Vercel Analytics
           if (window.trackEvent) window.trackEvent('valuation_submit', {
             timeline: data.timeline,
             bedrooms: data.bedrooms,
+            has_auto_estimate: !!(lastEstimate && lastEstimate.found),
           });
-          // Smooth-scroll the success card into view
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           throw new Error((res.body && res.body.error) || 'Submission failed');

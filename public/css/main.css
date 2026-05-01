@@ -3977,6 +3977,56 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 }
 .rates-why-stat.on .rates-stat-num::after{transform:scaleX(1)}
 
+/* ===================== Valuation — instant estimate preview ===================== */
+.vf-estimate{
+  margin:14px 0 18px;
+  padding:18px 20px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(52,199,89,.08),rgba(0,113,227,.08));
+  border:1px solid rgba(52,199,89,.25);
+  animation:estimateIn .45s cubic-bezier(.34,1.45,.64,1);
+}
+@keyframes estimateIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.vf-estimate-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:8px}
+.vf-estimate-label{
+  font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+  color:#34c759;margin-bottom:4px;display:inline-flex;align-items:center;gap:6px;
+}
+.vf-estimate-label::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:#34c759;animation:liveDot 1.6s ease-out infinite;
+}
+.vf-estimate-amount{
+  font-size:32px;font-weight:800;letter-spacing:-1.2px;line-height:1;
+  background:linear-gradient(135deg,#34c759,#0071E3);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-variant-numeric:tabular-nums;
+}
+.vf-estimate-range{
+  font-size:13px;color:var(--text2);margin-top:4px;font-weight:500;
+  font-variant-numeric:tabular-nums;
+}
+.vf-estimate-meta{
+  font-size:11.5px;color:var(--text3);text-align:right;line-height:1.4;font-weight:500;
+}
+.vf-estimate-fineprint{
+  font-size:11.5px;color:var(--text3);line-height:1.5;
+  border-top:1px solid rgba(0,0,0,.06);padding-top:10px;margin-top:8px;
+}
+.vf-estimate-loading{
+  margin:14px 0 18px;
+  padding:14px 18px;border-radius:14px;
+  background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.06);
+  display:flex;align-items:center;gap:12px;
+  font-size:13.5px;color:var(--text2);font-weight:500;
+}
+.vf-estimate-spinner{
+  width:16px;height:16px;border-radius:50%;
+  border:2px solid rgba(0,113,227,.25);border-top-color:var(--blue);
+  animation:vfSpin 1s linear infinite;flex-shrink:0;
+}
+@keyframes vfSpin{to{transform:rotate(360deg)}}
+
 /* ===================== Calculator — live rate badge ===================== */
 .calc-live-badge{
   display:inline-flex;align-items:center;gap:5px;

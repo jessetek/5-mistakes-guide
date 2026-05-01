@@ -20,7 +20,11 @@ export default async function handler(req, res) {
 
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const { address, name, contact, bedrooms, timeline, website, elapsed } = req.body || {};
+  const {
+    address, name, contact, bedrooms, timeline,
+    autoEstimate, autoEstimateLow, autoEstimateHigh,
+    website, elapsed,
+  } = req.body || {};
 
   // Honeypot + time-trap. Same as submit.js.
   // 'website' is hidden from real users — bots auto-fill it.
@@ -59,6 +63,21 @@ export default async function handler(req, res) {
   }
 
   // Custom field payload — these become visible inside the contact in LeadConnector.
+  const customField = {
+    property_address: address,
+    bedrooms: bedrooms || '',
+    sell_timeline: timeline || '',
+  };
+
+  // If we got an auto-estimate from RentCast, attach it to the contact so the CMA call
+  // can start from real numbers instead of asking the seller "what do you think it's worth?"
+  if (typeof autoEstimate === 'number' && autoEstimate > 0) {
+    customField.auto_estimate = String(Math.round(autoEstimate));
+    if (typeof autoEstimateLow === 'number') customField.auto_estimate_low = String(Math.round(autoEstimateLow));
+    if (typeof autoEstimateHigh === 'number') customField.auto_estimate_high = String(Math.round(autoEstimateHigh));
+    tags.push('has-auto-estimate');
+  }
+
   const contactData = {
     firstName,
     lastName,
@@ -68,11 +87,7 @@ export default async function handler(req, res) {
     source: 'Free Home Valuation Request',
     tags,
     address1: address,
-    customField: {
-      property_address: address,
-      bedrooms: bedrooms || '',
-      sell_timeline: timeline || '',
-    },
+    customField,
   };
 
   try {
