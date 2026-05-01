@@ -46,6 +46,11 @@
   <url><loc>https://jessetek.net/neighborhoods/garden-grove</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/westminster</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/el-monte</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/pasadena</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/glendale</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/burbank</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/tustin</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/orange</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Insights / Blog -->
   <url><loc>https://jessetek.net/insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -57,5 +62,7 @@
   <url><loc>https://jessetek.net/insights/socal-rate-watch-june-2026</loc><lastmod>2026-06-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://jessetek.net/insights/buyer-deep-dive-pre-approval-vs-pre-qual</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/insights/seller-pricing-strategy-socal</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/insights/socal-rate-watch-september-2026</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jessetek.net/insights/down-payment-assistance-california</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
 </urlset>
