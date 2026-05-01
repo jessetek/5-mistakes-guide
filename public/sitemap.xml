@@ -37,6 +37,9 @@
   <url><loc>https://jessetek.net/neighborhoods/buena-park</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/fullerton</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/neighborhoods/brea</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/diamond-bar</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/rowland-heights</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/neighborhoods/hacienda-heights</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Insights / Blog -->
   <url><loc>https://jessetek.net/insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>

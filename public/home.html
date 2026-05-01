@@ -10,7 +10,7 @@
 <link rel="alternate" hreflang="en" href="https://jessetek.net/">
 <link rel="alternate" hreflang="es" href="https://jessetek.net/es/index.html">
 <link rel="alternate" hreflang="x-default" href="https://jessetek.net/">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jesse Oñate | Realtor — Downey & SoCal">
 <meta property="og:description" content="Helping millennials buy and sell homes. No pressure, no games — just straight talk and real results.">
@@ -1251,5 +1251,30 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 }
 </script>
 <script src="/js/analytics.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Jesse O\u00f1ate Real Estate",
+  "alternateName": "Jesse O\u00f1ate Realtor",
+  "url": "https://jessetek.net/",
+  "description": "Bilingual SoCal realtor helping millennials buy and sell homes in Downey, Whittier, Pico Rivera, and surrounding LA & Orange County cities.",
+  "publisher": {
+    "@id": "https://jessetek.net/about#jesse"
+  },
+  "inLanguage": [
+    "en",
+    "es"
+  ],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://jessetek.net/listings?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </body>
 </html>
