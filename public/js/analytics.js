@@ -15,9 +15,9 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
   VERCEL_ANALYTICS: true,   // Vercel Web Analytics enabled in dashboard 2026-04-30
   GOOGLE_PLACE_ID: null,    // Get from places API place ID finder (for /reviews)
   GOOGLE_PLACES_API_KEY: null, // Restrict to jessetek.net referrer + Places API only
-  CLARITY_ID: null,         // Microsoft Clarity Project ID (heatmaps + recordings)
-                            // Get free at https://clarity.microsoft.com
-                            // 10-char string like "abc1234xyz"
+  CLARITY_ID: "wke2elyrvc",  // Microsoft Clarity — heatmaps + session recordings
+                             // Project: jessetek.net (Real Estate)
+                             // Dashboard: https://clarity.microsoft.com/projects/view/wke2elyrvc
 };
 
 (function () {
