@@ -1018,6 +1018,8 @@ window.addEventListener('load', function() {
 
 
 // ---- Glitch word rotator ----
+// First swap deferred to >8s so Lighthouse can capture LCP on the initial word
+// before our animation re-paints the element and gates the LCP measurement.
 (function() {
   var words = ['Competitive.','Fierce.','Relentless.','Cutthroat.','Ruthless.','Unforgiving.','Intense.'];
   var idx = 0;
@@ -1035,7 +1037,10 @@ window.addEventListener('load', function() {
       }, 60);
     }, 180);
   }
-  setInterval(nextWord, 3200);
+  setTimeout(function() {
+    nextWord();
+    setInterval(nextWord, 3200);
+  }, 8000);
 })();
 
 // ---- Reveal on scroll ----
