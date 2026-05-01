@@ -79,6 +79,54 @@
 <!-- ===================== FILTER BAR ===================== -->
 <a id="listings"></a>
 
+<!-- ===================== QUICK PAYMENT ESTIMATOR (live rate) ===================== -->
+<section class="quick-pay">
+  <div class="quick-pay-inner">
+    <div class="quick-pay-head">
+      <span class="quick-pay-tag" id="qpTag">LIVE · 6.30%</span>
+      <h3 class="quick-pay-title">Quick Payment Estimator</h3>
+      <p class="quick-pay-sub">Move the slider to any price below. The monthly payment uses today's actual 30-year fixed rate from Freddie Mac.</p>
+    </div>
+    <div class="quick-pay-grid">
+      <div class="quick-pay-input">
+        <div class="quick-pay-row"><span>Home Price</span><strong id="qpPriceVal">$900,000</strong></div>
+        <input type="range" id="qpPrice" min="300000" max="3000000" step="10000" value="900000" class="nx-slider">
+        <div class="quick-pay-row" style="margin-top:14px"><span>Down Payment</span><strong id="qpDownVal">20% · $180,000</strong></div>
+        <input type="range" id="qpDown" min="3" max="40" step="0.5" value="20" class="nx-slider">
+      </div>
+      <div class="quick-pay-out">
+        <div class="quick-pay-out-label">Estimated Monthly P&I</div>
+        <div class="quick-pay-out-amount" id="qpMonthly">$0</div>
+        <div class="quick-pay-out-rate" id="qpRateNote">at today's 30-yr fixed</div>
+        <a href="/calculator.html" class="quick-pay-link">Open full calculator →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .quick-pay{padding:40px 22px 0;background:var(--bg)}
+  .quick-pay-inner{max-width:1080px;margin:0 auto;background:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)}
+  .quick-pay-head{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:22px}
+  .quick-pay-tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:.6px;padding:4px 10px;border-radius:999px;background:rgba(52,199,89,.12);color:#34c759}
+  .quick-pay-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#34c759;animation:liveDot 1.6s ease-out infinite}
+  .quick-pay-title{font-size:22px;font-weight:700;letter-spacing:-.5px;color:var(--text);margin:0}
+  .quick-pay-sub{font-size:14px;color:var(--text2);line-height:1.55;margin:0;max-width:540px}
+  .quick-pay-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+  .quick-pay-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--text2);margin-bottom:8px}
+  .quick-pay-row strong{font-size:15px;color:var(--text);font-variant-numeric:tabular-nums}
+  .quick-pay-out{background:linear-gradient(135deg,#0E1014,#1a1d24);color:#fff;border-radius:18px;padding:24px;text-align:center}
+  .quick-pay-out-label{font-size:11px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px}
+  .quick-pay-out-amount{font-size:38px;font-weight:800;letter-spacing:-1.5px;background:linear-gradient(135deg,#0071E3,#5856D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-variant-numeric:tabular-nums;line-height:1;margin-bottom:6px}
+  .quick-pay-out-rate{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px}
+  .quick-pay-link{color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px}
+  .quick-pay-link:hover{border-color:rgba(255,255,255,.5)}
+  @media(max-width:780px){
+    .quick-pay-grid{grid-template-columns:1fr}
+    .quick-pay-out-amount{font-size:32px}
+  }
+</style>
+
 <!-- ===================== CRMLS IDX EMBED ===================== -->
 <section class="crmls-section">
   <div class="crmls-wrap">
@@ -423,6 +471,53 @@ document.querySelectorAll('.lf-chip').forEach(function(c){
     }
   ]
 }
+</script>
+<script>
+// Quick payment estimator — uses live FRED rate from /api/rates
+(function(){
+  var rate = 6.30; // fallback default (matches FRED Apr 30, 2026)
+  var rateSource = 'estimate';
+  var asOfDate = '';
+
+  function fmt(n){ return '$' + Math.round(Math.max(0,n)).toLocaleString(); }
+
+  var price = document.getElementById('qpPrice');
+  var down = document.getElementById('qpDown');
+  var priceVal = document.getElementById('qpPriceVal');
+  var downVal = document.getElementById('qpDownVal');
+  var monthlyOut = document.getElementById('qpMonthly');
+  var rateNote = document.getElementById('qpRateNote');
+  var rateTag = document.getElementById('qpTag');
+
+  function update(){
+    var P = parseFloat(price.value);
+    var dPct = parseFloat(down.value);
+    var dAmt = P * (dPct/100);
+    var loan = P - dAmt;
+    var r = rate / 100 / 12;
+    var n = 30 * 12;
+    var monthly = loan * (r * Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
+    priceVal.textContent = fmt(P);
+    downVal.textContent = dPct + '% · ' + fmt(dAmt);
+    monthlyOut.textContent = fmt(monthly);
+    rateNote.textContent = 'at ' + rate.toFixed(2) + '% · 30-yr fixed' + (asOfDate ? ' · ' + asOfDate : '');
+    rateTag.textContent = (rateSource === 'fred' ? 'LIVE' : '~') + ' · ' + rate.toFixed(2) + '%';
+  }
+
+  [price, down].forEach(function(el){ el.addEventListener('input', update); });
+  update();
+
+  fetch('/api/rates', { cache: 'force-cache' })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(!d || typeof d.current !== 'number') return;
+      rate = d.current;
+      rateSource = d.source;
+      asOfDate = d.asOf ? new Date(d.asOf).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '';
+      update();
+    })
+    .catch(function(){});
+})();
 </script>
 <script src="/js/analytics.js" defer></script>
 </body>

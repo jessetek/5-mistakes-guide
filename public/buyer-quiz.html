@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Are You Ready to Buy a SoCal Home? — 60-Second Quiz | Jesse Oñate</title>
+<meta name="description" content="Take a free 60-second quiz to see how ready you are to buy a SoCal home this year. Personalized score, gaps to close, and a custom action plan from a Downey realtor.">
+<link rel="canonical" href="https://jessetek.net/buyer-quiz">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Are You Ready to Buy a SoCal Home? Take the 60-Second Quiz">
+<meta property="og:description" content="Free interactive readiness check. Get a personalized score, action plan, and next moves for buying in Downey, Whittier, Pico Rivera, and surrounding cities.">
+<meta property="og:image" content="https://jessetek.net/img/og-buyer-quiz.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jessetek.net/buyer-quiz">
+<meta property="og:site_name" content="Jesse Oñate Real Estate">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SoCal Home Buyer Readiness Quiz — 60 Seconds">
+<meta name="twitter:description" content="Score your readiness to buy a SoCal home this year. Free, instant results, personalized.">
+<meta name="twitter:image" content="https://jessetek.net/img/og-buyer-quiz.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0E1014">
+<link rel="stylesheet" href="/css/main.css?v=14">
+<style>
+  /* Quiz-specific styles — kept inline because they're scoped to this page */
+  .qz-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
+  .qz-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
+  .qz-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,113,227,.22) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
+  .qz-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .qz-hero h1{font-size:clamp(36px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px}
+  .qz-hero h1 .g{background:linear-gradient(135deg,#0071E3,#5856D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .qz-hero p{font-size:17px;color:rgba(255,255,255,.62);max-width:560px;margin:0 auto 6px;line-height:1.55}
+  .qz-meta{display:inline-flex;gap:14px;margin-top:18px;font-size:12px;color:rgba(255,255,255,.5);font-weight:500}
+  .qz-meta span{display:inline-flex;align-items:center;gap:5px}
+  .qz-meta span::before{content:'';width:5px;height:5px;border-radius:50%;background:#34c759}
+
+  .qz-shell{padding:60px 22px 100px;background:var(--bg);min-height:60vh}
+  .qz-card{
+    max-width:680px;margin:0 auto;background:#fff;border-radius:24px;
+    padding:40px 36px 32px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04);
+  }
+
+  /* Progress bar */
+  .qz-progress-wrap{margin-bottom:30px}
+  .qz-progress-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--text3);font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:8px}
+  .qz-progress{height:6px;background:rgba(0,0,0,.06);border-radius:999px;overflow:hidden}
+  .qz-progress-bar{height:100%;background:linear-gradient(90deg,#0071E3,#5856D6);border-radius:999px;width:0%;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+  /* Question */
+  .qz-question{font-size:24px;font-weight:700;letter-spacing:-.6px;line-height:1.3;color:var(--text);margin-bottom:8px}
+  .qz-question-sub{font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.55}
+  .qz-options{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+  .qz-option{
+    display:flex;align-items:center;gap:14px;
+    padding:16px 18px;border-radius:14px;
+    background:#fafbfc;border:2px solid rgba(0,0,0,.06);
+    cursor:pointer;transition:border-color .2s ease,background .2s ease,transform .15s ease;
+    font-size:15.5px;font-weight:500;color:var(--text);line-height:1.4;
+    user-select:none;
+  }
+  .qz-option:hover{border-color:rgba(0,113,227,.4);background:#fff}
+  .qz-option.selected{border-color:var(--blue);background:rgba(0,113,227,.06)}
+  .qz-option-radio{
+    width:22px;height:22px;border-radius:50%;border:2px solid rgba(0,0,0,.18);
+    flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s ease;
+  }
+  .qz-option.selected .qz-option-radio{border-color:var(--blue)}
+  .qz-option-radio::after{
+    content:'';width:10px;height:10px;border-radius:50%;
+    background:var(--blue);transform:scale(0);transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+  }
+  .qz-option.selected .qz-option-radio::after{transform:scale(1)}
+  .qz-option-text{flex:1}
+  .qz-option-pts{font-size:11px;color:var(--text3);font-weight:600;letter-spacing:.3px;display:none}
+
+  /* Nav */
+  .qz-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid rgba(0,0,0,.06);padding-top:22px}
+  .qz-back{background:transparent;border:0;color:var(--text2);font-size:14px;font-weight:500;cursor:pointer;padding:8px 4px}
+  .qz-back:hover{color:var(--text)}
+  .qz-back:disabled{opacity:.3;cursor:not-allowed}
+  .qz-next{
+    background:var(--text);color:#fff;border:0;
+    padding:13px 26px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer;
+    transition:opacity .2s ease, transform .15s ease;
+  }
+  .qz-next:hover{transform:translateY(-1px)}
+  .qz-next:disabled{opacity:.3;cursor:not-allowed;transform:none}
+
+  /* Result */
+  .qz-result{display:none}
+  .qz-result.on{display:block;animation:resultIn .6s cubic-bezier(.34,1.56,.64,1)}
+  @keyframes resultIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .qz-score-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:32px;text-align:center}
+  .qz-score-circle{
+    position:relative;width:160px;height:160px;margin-bottom:16px;
+  }
+  .qz-score-svg{width:100%;height:100%;transform:rotate(-90deg)}
+  .qz-score-track{fill:none;stroke:rgba(0,0,0,.07);stroke-width:14}
+  .qz-score-fill{
+    fill:none;stroke:url(#qzGrad);stroke-width:14;stroke-linecap:round;
+    stroke-dasharray:440;stroke-dashoffset:440;
+    transition:stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1) .3s;
+  }
+  .qz-score-text{
+    position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+  }
+  .qz-score-num{
+    font-size:48px;font-weight:800;letter-spacing:-2px;
+    background:linear-gradient(135deg,#0071E3,#5856D6);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    line-height:1;
+  }
+  .qz-score-label{font-size:11px;color:var(--text3);font-weight:600;letter-spacing:.6px;text-transform:uppercase;margin-top:4px}
+  .qz-band{
+    font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    padding:6px 14px;border-radius:999px;
+    background:rgba(0,113,227,.1);color:var(--blue);
+    margin-bottom:8px;
+  }
+  .qz-headline{font-size:26px;font-weight:700;letter-spacing:-.7px;line-height:1.25;color:var(--text);margin-bottom:8px;max-width:520px}
+  .qz-summary{font-size:15px;color:var(--text2);line-height:1.6;max-width:520px}
+
+  .qz-result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
+  .qz-result-block{
+    padding:22px 20px;border-radius:18px;
+    background:#fafbfc;border:1px solid rgba(0,0,0,.06);
+  }
+  .qz-result-block h4{
+    font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    margin-bottom:12px;display:flex;align-items:center;gap:6px;
+  }
+  .qz-result-block.good h4{color:#28a745}
+  .qz-result-block.gap h4{color:#ff9500}
+  .qz-result-block ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  .qz-result-block li{font-size:14px;color:var(--text);line-height:1.5;display:flex;gap:8px;align-items:flex-start}
+  .qz-result-block li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--text3);margin-top:8px;flex-shrink:0}
+  .qz-result-block.good li::before{background:#28a745}
+  .qz-result-block.gap li::before{background:#ff9500}
+
+  .qz-next-move{
+    padding:24px 22px;border-radius:18px;
+    background:linear-gradient(135deg,rgba(0,113,227,.08),rgba(88,86,214,.08));
+    border:1px solid rgba(0,113,227,.18);
+    margin-bottom:24px;
+  }
+  .qz-next-move h4{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+  .qz-next-move p{font-size:15px;color:var(--text);line-height:1.55;margin:0}
+
+  .qz-cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .qz-cta-row .btn-primary,
+  .qz-cta-row .btn-ghost{padding:14px 24px;font-size:14.5px}
+  .qz-restart{
+    background:transparent;border:0;color:var(--text3);font-size:13px;
+    cursor:pointer;text-decoration:underline;padding:18px 0 0;display:block;margin:0 auto;
+  }
+
+  @media(max-width:680px){
+    .qz-hero{padding:120px 22px 40px}
+    .qz-card{padding:30px 22px 24px}
+    .qz-question{font-size:21px}
+    .qz-result-grid{grid-template-columns:1fr}
+    .qz-score-circle{width:140px;height:140px}
+    .qz-score-num{font-size:42px}
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/listings.html">Listings</a>
+  <a href="/buyer.html">Buyer Guide</a>
+  <a href="/guide.html">Free Guide</a>
+  <a href="/rates.html">Rate Alerts</a>
+  <a href="/zoom.html">Get Started</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/buyer.html">For Buyers</a>
+    <a href="/insights/">Insights</a>
+    <a href="/guide.html">Free Guide</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- HERO -->
+<section class="qz-hero">
+  <div class="qz-hero-inner">
+    <div class="hero-badge"><span class="hero-badge-dot"></span><span>60 seconds · Personalized result · 100% free</span></div>
+    <h1 style="margin-top:24px">Are You <span class="g">Ready</span> to Buy<br>a SoCal Home This Year?</h1>
+    <p>Eight quick questions, one personalized score, and a custom action plan from a SoCal realtor who's closed 100+ deals.</p>
+    <div class="qz-meta">
+      <span>No email required</span>
+      <span>Instant result</span>
+      <span>No spam, ever</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="qz-shell">
+  <div class="qz-card">
+
+    <!-- Quiz body — replaces between question / result -->
+    <div id="qzQuiz">
+      <div class="qz-progress-wrap">
+        <div class="qz-progress-meta">
+          <span id="qzStepLabel">Question 1 of 8</span>
+          <span id="qzStepPct">0%</span>
+        </div>
+        <div class="qz-progress">
+          <div class="qz-progress-bar" id="qzProgressBar"></div>
+        </div>
+      </div>
+
+      <div class="qz-question" id="qzQuestion"></div>
+      <div class="qz-question-sub" id="qzQuestionSub"></div>
+      <div class="qz-options" id="qzOptions"></div>
+
+      <div class="qz-nav">
+        <button type="button" class="qz-back" id="qzBack" disabled>← Back</button>
+        <button type="button" class="qz-next" id="qzNext" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Result panel -->
+    <div id="qzResult" class="qz-result">
+      <div class="qz-score-wrap">
+        <div class="qz-score-circle">
+          <svg class="qz-score-svg" viewBox="0 0 160 160">
+            <defs>
+              <linearGradient id="qzGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#0071E3"/>
+                <stop offset="100%" stop-color="#5856D6"/>
+              </linearGradient>
+            </defs>
+            <circle class="qz-score-track" cx="80" cy="80" r="70"/>
+            <circle class="qz-score-fill" id="qzScoreFill" cx="80" cy="80" r="70"/>
+          </svg>
+          <div class="qz-score-text">
+            <div class="qz-score-num" id="qzScoreNum">0</div>
+            <div class="qz-score-label">Out of 100</div>
+          </div>
+        </div>
+        <div class="qz-band" id="qzBand">Calculating...</div>
+        <div class="qz-headline" id="qzHeadline"></div>
+        <div class="qz-summary" id="qzSummary"></div>
+      </div>
+
+      <div class="qz-result-grid">
+        <div class="qz-result-block good">
+          <h4>✓ What You've Got Going</h4>
+          <ul id="qzGood"></ul>
+        </div>
+        <div class="qz-result-block gap">
+          <h4>⚠ What Needs Work</h4>
+          <ul id="qzGap"></ul>
+        </div>
+      </div>
+
+      <div class="qz-next-move">
+        <h4>Your Next Move</h4>
+        <p id="qzNextMove"></p>
+      </div>
+
+      <div class="qz-cta-row">
+        <a href="/zoom.html" class="btn-primary" id="qzCta1">Talk to Jesse →</a>
+        <a href="/guide.html" class="btn-ghost" id="qzCta2">Read the Free Buyer Guide</a>
+      </div>
+
+      <button type="button" class="qz-restart" id="qzRestart">Retake the quiz</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">First-Time Buyer Guide</a>
+      <a href="/buyer-quiz.html">Buyer Readiness Quiz</a>
+      <a href="/guide.html">5 Mistakes Guide</a>
+      <a href="/checklist.html">Buyer Checklist</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/rates.html">Rate Alerts</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">First-Time Seller Guide</a>
+      <a href="/valuation.html">Free Home Valuation</a>
+      <a href="/seller-net.html">Net Proceeds Calculator</a>
+      <a href="/seller-checklist.html">Seller Checklist</a>
+    </div>
+    <div class="f-col">
+      <h4>Resources</h4>
+      <a href="/about.html">About Jesse</a>
+      <a href="/reviews.html">Reviews</a>
+      <a href="/insights/">Insights</a>
+      <a href="/service-areas.html">Service Areas</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/zoom.html">Book a Call</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:5626094200">(562) 609-4200</a>
+      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      <a href="https://instagram.com/jessetek" target="_blank" rel="noopener">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot"><p>© 2026 Jesse Oñate. All rights reserved.</p></div>
+</footer>
+
+<script>
+(function(){
+  // Quiz definition. Each question has id, prompt, optional sub, and options [{label, points, good?, gap?}]
+  // Max points designed to total 100 across 8 questions
+  var QUIZ = [
+    {
+      id: 'timeline',
+      q: "What's your timeline to buy?",
+      sub: 'Honest answer beats aspirational. Timing drives every other decision.',
+      opts: [
+        { label: 'Within 3 months — I want to move now', pts: 14, good: 'You\'re acting on a clear timeline', gap: null },
+        { label: '3 to 6 months', pts: 12, good: 'Strong timeline — perfect runway for prep', gap: null },
+        { label: '6 to 12 months', pts: 9, good: null, gap: null },
+        { label: 'A year or more out', pts: 5, good: null, gap: 'Timeline is far — focus on saving + credit' },
+        { label: 'Just curious', pts: 2, good: null, gap: 'No active timeline yet' },
+      ]
+    },
+    {
+      id: 'preapproval',
+      q: 'Where are you with pre-approval?',
+      sub: 'Pre-approval (not pre-qual) is what makes offers credible in SoCal.',
+      opts: [
+        { label: 'I have a current verified pre-approval letter', pts: 14, good: 'You\'re offer-ready', gap: null },
+        { label: 'I started the process but haven\'t finished', pts: 9, good: null, gap: 'Finish pre-approval — sellers ignore weak letters' },
+        { label: 'I have pre-qualification (not approval)', pts: 6, good: null, gap: 'Upgrade to a verified pre-approval' },
+        { label: 'I haven\'t started yet but I will', pts: 4, good: null, gap: 'No pre-approval = no real offers' },
+        { label: 'Haven\'t thought about it', pts: 1, good: null, gap: 'Start with pre-approval — everything else follows' },
+      ]
+    },
+    {
+      id: 'down',
+      q: 'How much do you have saved for down payment + closing?',
+      sub: 'In SoCal, even FHA buyers need 3.5% down + ~2% in closing costs.',
+      opts: [
+        { label: '20%+ saved, plus reserves', pts: 14, good: 'Strong cash position — competitive offers possible', gap: null },
+        { label: '10–20% saved', pts: 11, good: 'Solid down payment — multiple loan options open', gap: null },
+        { label: '5–10% saved', pts: 8, good: null, gap: null },
+        { label: '3–5% (FHA territory)', pts: 5, good: null, gap: 'Tight — explore DPA programs to stack assistance' },
+        { label: 'Less than 3% saved', pts: 2, good: null, gap: 'Need to save more or qualify for DPA programs' },
+      ]
+    },
+    {
+      id: 'credit',
+      q: "What's your credit score?",
+      sub: '740+ unlocks the best rates. Below 620 makes financing very hard.',
+      opts: [
+        { label: '740+', pts: 12, good: 'Top-tier credit — best rates available', gap: null },
+        { label: '700–739', pts: 10, good: 'Strong credit — competitive rates', gap: null },
+        { label: '680–699', pts: 7, good: null, gap: null },
+        { label: '620–679', pts: 4, good: null, gap: 'Credit could lift rate — worth a 60-day cleanup' },
+        { label: 'Below 620 (or unknown)', pts: 1, good: null, gap: 'Pull your free credit report — fix errors first' },
+      ]
+    },
+    {
+      id: 'dti',
+      q: 'Your monthly debt vs gross monthly income (DTI)?',
+      sub: 'Lenders cap most loans at 43–50% DTI including the new mortgage payment.',
+      opts: [
+        { label: 'Under 30% — plenty of headroom', pts: 12, good: 'Low DTI — lenders love this', gap: null },
+        { label: '30–43%', pts: 9, good: 'DTI is in conforming range', gap: null },
+        { label: '43–50%', pts: 5, good: null, gap: 'High DTI — pay down a card before you apply' },
+        { label: 'Over 50%', pts: 1, good: null, gap: 'DTI too high — must reduce debt first' },
+        { label: 'Not sure', pts: 4, good: null, gap: 'Calculate it — DTI is a hard lender ceiling' },
+      ]
+    },
+    {
+      id: 'area',
+      q: 'How clear are you on where you want to buy?',
+      sub: 'Specific knowledge wins offers. Vague targets cost time.',
+      opts: [
+        { label: 'I know exact neighborhoods + streets', pts: 12, good: 'Tight target = fast moves when right home appears', gap: null },
+        { label: '2–3 specific cities I\'ve narrowed to', pts: 10, good: 'Focused target — comp analysis is sharper', gap: null },
+        { label: 'A general region (e.g. southeast LA)', pts: 6, good: null, gap: null },
+        { label: 'I\'m exploring lots of options', pts: 3, good: null, gap: 'Too broad — narrow to 2–3 cities' },
+        { label: 'I haven\'t started looking yet', pts: 1, good: null, gap: 'Start with 5 open houses to calibrate' },
+      ]
+    },
+    {
+      id: 'reserves',
+      q: 'Do you have 3+ months of mortgage reserves after closing?',
+      sub: 'Mortgage + taxes + insurance × 3 months. Lenders ask, life demands.',
+      opts: [
+        { label: 'Yes — 6+ months of reserves', pts: 12, good: 'Excellent buffer — life-proof', gap: null },
+        { label: 'Yes — 3–6 months', pts: 9, good: 'Good buffer for surprise expenses', gap: null },
+        { label: '1–3 months', pts: 5, good: null, gap: 'Build to 3 months before closing' },
+        { label: 'Less than 1 month', pts: 2, good: null, gap: 'Reserves too thin — risky if anything breaks' },
+        { label: 'I haven\'t budgeted for that yet', pts: 1, good: null, gap: 'Plan for reserves — closing isn\'t the end' },
+      ]
+    },
+    {
+      id: 'tour',
+      q: "How many homes have you toured (not just scrolled)?",
+      sub: 'Calibration matters. Photos lie. In-person reveals everything.',
+      opts: [
+        { label: '10+ in person', pts: 10, good: 'Strong calibration — you\'ll spot value', gap: null },
+        { label: '3–10 in person', pts: 7, good: null, gap: null },
+        { label: '1–2 in person', pts: 3, good: null, gap: 'Tour 5+ before writing offers' },
+        { label: 'Only online (Zillow, Redfin)', pts: 1, good: null, gap: 'Online only = blind spots — get to open houses' },
+      ]
+    },
+  ];
+
+  var state = { idx: 0, answers: {} };
+
+  var qEl = document.getElementById('qzQuestion');
+  var subEl = document.getElementById('qzQuestionSub');
+  var optsEl = document.getElementById('qzOptions');
+  var stepLabel = document.getElementById('qzStepLabel');
+  var stepPct = document.getElementById('qzStepPct');
+  var bar = document.getElementById('qzProgressBar');
+  var nextBtn = document.getElementById('qzNext');
+  var backBtn = document.getElementById('qzBack');
+  var quizPanel = document.getElementById('qzQuiz');
+  var resultPanel = document.getElementById('qzResult');
+
+  function render(){
+    var q = QUIZ[state.idx];
+    qEl.textContent = q.q;
+    subEl.textContent = q.sub || '';
+    optsEl.innerHTML = '';
+    var current = state.answers[q.id];
+    q.opts.forEach(function(opt, i){
+      var div = document.createElement('div');
+      div.className = 'qz-option' + (current && current.idx === i ? ' selected' : '');
+      div.innerHTML = '<div class="qz-option-radio"></div><div class="qz-option-text">' + opt.label + '</div>';
+      div.addEventListener('click', function(){
+        state.answers[q.id] = { idx: i, pts: opt.pts, label: opt.label, good: opt.good, gap: opt.gap };
+        render();
+        nextBtn.disabled = false;
+      });
+      optsEl.appendChild(div);
+    });
+    var total = QUIZ.length;
+    stepLabel.textContent = 'Question ' + (state.idx + 1) + ' of ' + total;
+    stepPct.textContent = Math.round(((state.idx) / total) * 100) + '%';
+    bar.style.width = (((state.idx) / total) * 100) + '%';
+    nextBtn.textContent = state.idx === total - 1 ? 'See My Result →' : 'Next →';
+    nextBtn.disabled = !state.answers[q.id];
+    backBtn.disabled = state.idx === 0;
+  }
+
+  nextBtn.addEventListener('click', function(){
+    if (state.idx < QUIZ.length - 1) {
+      state.idx++;
+      render();
+    } else {
+      showResult();
+    }
+  });
+  backBtn.addEventListener('click', function(){
+    if (state.idx > 0){ state.idx--; render(); }
+  });
+
+  function showResult(){
+    bar.style.width = '100%';
+    stepPct.textContent = '100%';
+
+    var score = 0;
+    var goods = [], gaps = [];
+    QUIZ.forEach(function(q){
+      var a = state.answers[q.id];
+      if (a) {
+        score += a.pts;
+        if (a.good) goods.push(a.good);
+        if (a.gap) gaps.push(a.gap);
+      }
+    });
+
+    var band, headline, summary, nextMove, cta1, cta2;
+    if (score >= 80) {
+      band = 'READY · 80+';
+      headline = 'You\'re ready to buy. Let\'s find your home.';
+      summary = 'Your foundation is strong. With pre-approval, savings, and a clear target, the only thing missing is the right SoCal home — and the right realtor to win the offer.';
+      nextMove = 'Book a 15-minute Zoom with me. We\'ll lock your strategy, line up showings, and have you writing offers within 2 weeks.';
+      cta1 = { text: 'Book a Strategy Call →', href: '/zoom.html' };
+      cta2 = { text: 'See Active Listings', href: '/listings.html' };
+    } else if (score >= 60) {
+      band = 'STRONG START · 60–79';
+      headline = 'Strong foundation — a few gaps to close.';
+      summary = 'You\'re close. The fundamentals are there, but a couple of items below need attention before you write your first offer. Let\'s tighten them up.';
+      nextMove = 'Read the free Buyer\'s Guide for the full pre-approval + savings playbook, then jump on a quick call to map your 90-day plan.';
+      cta1 = { text: 'Get the Free Buyer Guide →', href: '/guide.html' };
+      cta2 = { text: 'Talk to Jesse', href: '/zoom.html' };
+    } else if (score >= 40) {
+      band = 'BUILDING · 40–59';
+      headline = "Solid base — here's what to focus on first.";
+      summary = "You're in the right mindset. Now it's about closing the specific gaps below in the next 60–90 days. The work isn't complicated — it's sequencing.";
+      nextMove = 'Start with the Free Buyer Guide (covers pre-approval, DPA programs, and credit prep), then get the 11-step Buyer Roadmap. Most clients in your range close within 4–6 months.';
+      cta1 = { text: 'Get the Free Buyer Guide →', href: '/guide.html' };
+      cta2 = { text: 'See the Buyer Roadmap', href: '/buyer.html' };
+    } else if (score >= 20) {
+      band = 'EARLY · 20–39';
+      headline = "Plenty of runway — this is the smart time to learn.";
+      summary = 'You\'re early — and that\'s actually the strongest position. Most buyers wait until they\'re desperate. You have time to fix what needs fixing without urgency-pricing your decisions.';
+      nextMove = 'Subscribe to the weekly rate text so you stay calibrated, then read the Buyer Guide. Revisit this quiz in 60 days — you\'ll see the score climb.';
+      cta1 = { text: 'Get Weekly Rate Texts →', href: '/rates.html' };
+      cta2 = { text: 'Read the Buyer Guide', href: '/guide.html' };
+    } else {
+      band = 'EXPLORING · UNDER 20';
+      headline = "You're in research mode — no pressure, no problem.";
+      summary = 'You\'re in the earliest stage and that\'s totally fine. Most great SoCal buyers spent 6–18 months learning before they bought. The fact that you\'re asking the right questions now is the move.';
+      nextMove = 'Start with the Free Buyer Guide — it covers everything from pre-approval to closing. Subscribe to the rate texts. Come back to this quiz in 90 days.';
+      cta1 = { text: 'Get the Free Guide →', href: '/guide.html' };
+      cta2 = { text: 'Get Weekly Rate Texts', href: '/rates.html' };
+    }
+
+    document.getElementById('qzBand').textContent = band;
+    document.getElementById('qzHeadline').textContent = headline;
+    document.getElementById('qzSummary').textContent = summary;
+    document.getElementById('qzNextMove').textContent = nextMove;
+    var c1 = document.getElementById('qzCta1');
+    c1.textContent = cta1.text; c1.href = cta1.href;
+    var c2 = document.getElementById('qzCta2');
+    c2.textContent = cta2.text; c2.href = cta2.href;
+
+    // Default fallback if all answers were positive (no gaps) or all negative
+    if (!goods.length) goods.push("You're being honest with yourself — that's step one");
+    if (!gaps.length) gaps.push("You're tight across the board — execute the next move");
+
+    document.getElementById('qzGood').innerHTML = goods.map(function(g){ return '<li>' + g + '</li>'; }).join('');
+    document.getElementById('qzGap').innerHTML = gaps.map(function(g){ return '<li>' + g + '</li>'; }).join('');
+
+    quizPanel.style.display = 'none';
+    resultPanel.classList.add('on');
+
+    // Animate score circle and number
+    requestAnimationFrame(function(){
+      var fill = document.getElementById('qzScoreFill');
+      var circ = 2 * Math.PI * 70;
+      fill.style.strokeDasharray = circ;
+      fill.style.strokeDashoffset = circ - (circ * (score / 100));
+      var numEl = document.getElementById('qzScoreNum');
+      var dur = 1400, t0 = performance.now();
+      function tick(t){
+        var p = Math.min(1,(t-t0)/dur);
+        numEl.textContent = Math.round(score * (1 - Math.pow(1-p,3)));
+        if (p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+
+    // Track the quiz completion to GA4 + Vercel
+    if (window.trackEvent) window.trackEvent('quiz_complete', { quiz: 'buyer_readiness', score: score, band: band });
+
+    // Scroll to top of card
+    document.querySelector('.qz-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.getElementById('qzRestart').addEventListener('click', function(){
+    state = { idx: 0, answers: {} };
+    quizPanel.style.display = '';
+    resultPanel.classList.remove('on');
+    render();
+  });
+
+  render();
+})();
+</script>
+
+<!-- Nav scroll behavior -->
+<script>
+(function(){
+  var nav=document.getElementById('nav');if(!nav)return;
+  var lastY=0,ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){window.requestAnimationFrame(function(){
+      var y=window.scrollY;
+      if(y>80){nav.classList.toggle('nav-hidden',y>lastY);nav.classList.add('scrolled');}
+      else{nav.classList.remove('nav-hidden');nav.classList.remove('scrolled');}
+      lastY=y;ticking=false;
+    });ticking=true;}
+  },{passive:true});
+})();
+</script>
+
+<script src="/js/analytics.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "SoCal Home Buyer Readiness Quiz",
+  "description": "Free 60-second interactive quiz scoring how ready you are to buy a home in Southern California.",
+  "about": "Home buying readiness assessment",
+  "educationalLevel": "Beginner",
+  "learningResourceType": "Self Assessment",
+  "provider": {
+    "@type": "Organization",
+    "name": "Jesse Oñate Real Estate",
+    "url": "https://jessetek.net/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://jessetek.net/"},
+    {"@type":"ListItem","position":2,"name":"Buyer Readiness Quiz","item":"https://jessetek.net/buyer-quiz"}
+  ]
+}
+</script>
+
+</body>
+</html>

@@ -13,6 +13,8 @@
   <url><loc>https://jessetek.net/checklist</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://jessetek.net/guide</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jessetek.net/calculator</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jessetek.net/buyer-quiz</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jessetek.net/seller-net</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jessetek.net/rates</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jessetek.net/reviews</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://jessetek.net/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>How Much Will You Net? — SoCal Home Sale Calculator | Jesse Oñate</title>
+<meta name="description" content="Free interactive calculator estimating exactly what you'll walk away with after selling your SoCal home. Mortgage payoff, commissions, closing costs, transfer tax, capital gains — full breakdown.">
+<link rel="canonical" href="https://jessetek.net/seller-net">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How Much Will You Net Selling Your SoCal Home?">
+<meta property="og:description" content="Interactive calculator with full breakdown — commissions, closing costs, transfer tax, capital gains. See your real net before you list.">
+<meta property="og:image" content="https://jessetek.net/img/og-seller-net.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jessetek.net/seller-net">
+<meta property="og:site_name" content="Jesse Oñate Real Estate">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SoCal Seller Net Proceeds Calculator">
+<meta name="twitter:description" content="See your real net after selling your home — full breakdown with capital gains exposure.">
+<meta name="twitter:image" content="https://jessetek.net/img/og-seller-net.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0E1014">
+<link rel="stylesheet" href="/css/main.css?v=14">
+<style>
+  .nx-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
+  .nx-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
+  .nx-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(52,199,89,.18) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
+  .nx-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .nx-hero h1{font-size:clamp(36px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px}
+  .nx-hero h1 .g{background:linear-gradient(135deg,#34c759,#0071E3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .nx-hero p{font-size:17px;color:rgba(255,255,255,.62);max-width:580px;margin:0 auto 6px;line-height:1.55}
+  .nx-meta{display:inline-flex;gap:14px;margin-top:18px;font-size:12px;color:rgba(255,255,255,.5);font-weight:500}
+  .nx-meta span{display:inline-flex;align-items:center;gap:5px}
+  .nx-meta span::before{content:'';width:5px;height:5px;border-radius:50%;background:#34c759}
+
+  .nx-shell{padding:60px 22px 100px;background:var(--bg)}
+  .nx-grid{
+    max-width:1080px;margin:0 auto;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start;
+  }
+
+  /* Inputs card */
+  .nx-card{background:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)}
+  .nx-card h2{font-size:20px;font-weight:700;letter-spacing:-.4px;color:var(--text);margin-bottom:6px}
+  .nx-card-sub{font-size:13.5px;color:var(--text2);margin-bottom:24px;line-height:1.55}
+
+  .nx-field{margin-bottom:22px}
+  .nx-field-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:10px}
+  .nx-label{font-size:13px;font-weight:600;color:var(--text);letter-spacing:.2px}
+  .nx-value{font-size:15px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+  .nx-slider{
+    -webkit-appearance:none;appearance:none;
+    width:100%;height:6px;border-radius:999px;
+    background:rgba(0,0,0,.07);outline:none;cursor:pointer;
+  }
+  .nx-slider::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;
+    width:22px;height:22px;border-radius:50%;
+    background:#fff;border:2px solid var(--blue);
+    box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer;
+    transition:transform .15s ease;
+  }
+  .nx-slider::-webkit-slider-thumb:hover{transform:scale(1.1)}
+  .nx-slider::-moz-range-thumb{
+    width:22px;height:22px;border-radius:50%;
+    background:#fff;border:2px solid var(--blue);
+    box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer;
+  }
+  .nx-range-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:6px}
+
+  .nx-pill-group{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .nx-pill{
+    background:#fafbfc;border:2px solid rgba(0,0,0,.06);
+    padding:8px 14px;border-radius:999px;font-size:13px;font-weight:500;color:var(--text);
+    cursor:pointer;transition:border-color .2s ease, background .2s ease;
+  }
+  .nx-pill:hover{border-color:rgba(0,113,227,.4)}
+  .nx-pill.active{border-color:var(--blue);background:rgba(0,113,227,.06);color:var(--blue);font-weight:600}
+
+  .nx-toggle{
+    display:inline-flex;background:rgba(0,0,0,.05);border-radius:999px;padding:3px;
+  }
+  .nx-toggle button{
+    background:transparent;border:0;padding:8px 16px;border-radius:999px;
+    font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;transition:all .2s ease;
+  }
+  .nx-toggle button.active{background:#fff;color:var(--text);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+
+  /* Result card */
+  .nx-result-card{
+    background:linear-gradient(180deg,#0E1014 0%,#1a1d24 100%);
+    color:#fff;border-radius:24px;padding:32px 28px;
+    position:sticky;top:90px;
+    box-shadow:0 30px 80px rgba(0,0,0,.18);
+  }
+  .nx-result-label{font-size:11px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px}
+  .nx-result-amount{
+    font-size:48px;font-weight:800;letter-spacing:-2px;line-height:1;
+    background:linear-gradient(135deg,#34c759,#0071E3);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    font-variant-numeric:tabular-nums;
+    margin-bottom:6px;
+  }
+  .nx-result-sub{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:22px}
+
+  /* Donut chart */
+  .nx-donut-wrap{display:flex;align-items:center;gap:18px;margin-bottom:22px;padding:18px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nx-donut{width:120px;height:120px;flex-shrink:0;position:relative}
+  .nx-donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+  .nx-donut-center{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-size:11px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+    line-height:1.2;text-align:center;
+  }
+  .nx-donut-center strong{font-size:22px;color:#fff;letter-spacing:-.6px;font-weight:800;display:block;font-variant-numeric:tabular-nums}
+  .nx-donut-legend{flex:1;font-size:12px}
+  .nx-legend-row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .nx-legend-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+  .nx-legend-row span:nth-child(2){flex:1;color:rgba(255,255,255,.7)}
+  .nx-legend-row span:last-child{color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
+
+  .nx-breakdown{display:flex;flex-direction:column;gap:6px;margin-bottom:22px}
+  .nx-row{display:flex;justify-content:space-between;font-size:13.5px;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums}
+  .nx-row strong{color:#fff;font-weight:600}
+  .nx-row.deduct strong{color:#ff6b6b}
+  .nx-row.gross strong{color:#fff}
+  .nx-row.divider{padding-top:8px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;color:#fff}
+  .nx-row.divider strong{color:#34c759;font-size:18px}
+
+  .nx-cta-row{display:flex;flex-direction:column;gap:8px}
+  .nx-cta-row a{display:block;text-align:center;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px}
+  .nx-cta-primary{background:#fff;color:var(--text)}
+  .nx-cta-ghost{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.18)}
+  .nx-cta-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+
+  .nx-fineprint{
+    margin-top:30px;font-size:12px;color:var(--text3);line-height:1.55;
+    max-width:1080px;margin-left:auto;margin-right:auto;text-align:center;
+  }
+
+  @media(max-width:840px){
+    .nx-hero{padding:120px 22px 40px}
+    .nx-grid{grid-template-columns:1fr;gap:18px}
+    .nx-result-card{position:static}
+    .nx-donut{width:100px;height:100px}
+    .nx-donut-center strong{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/home.html">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/listings.html">Listings</a>
+  <a href="/seller.html">Seller Guide</a>
+  <a href="/valuation.html">Free Valuation</a>
+  <a href="/insights/">Insights</a>
+  <a href="/zoom.html">Get Started</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/home.html" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/seller.html">For Sellers</a>
+    <a href="/valuation.html">Free Valuation</a>
+    <a href="/insights/">Insights</a>
+    <a href="/zoom.html" class="nav-cta">Let's Talk</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<!-- HERO -->
+<section class="nx-hero">
+  <div class="nx-hero-inner">
+    <div class="hero-badge"><span class="hero-badge-dot"></span><span>Free · Live calculation · No email required</span></div>
+    <h1 style="margin-top:24px">How Much Will You<br><span class="g">Walk Away With?</span></h1>
+    <p>Adjust the sliders. Watch your real net update live — including capital gains exposure, transfer tax, commissions, and every line item most calculators leave out.</p>
+    <div class="nx-meta">
+      <span>SoCal-specific</span>
+      <span>Capital gains aware</span>
+      <span>Updates as you type</span>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="nx-shell">
+  <div class="nx-grid">
+
+    <!-- LEFT: Inputs -->
+    <div class="nx-card">
+      <h2>Tell us about your sale</h2>
+      <p class="nx-card-sub">All values are estimates. Drag sliders or use the buttons. Real numbers come from your CMA + lender payoff.</p>
+
+      <div class="nx-field">
+        <div class="nx-field-head">
+          <label class="nx-label" for="nxPrice">Estimated Sale Price</label>
+          <div class="nx-value" id="nxPriceVal">$900,000</div>
+        </div>
+        <input type="range" id="nxPrice" class="nx-slider" min="300000" max="3000000" step="10000" value="900000">
+        <div class="nx-range-meta"><span>$300K</span><span>$3M</span></div>
+      </div>
+
+      <div class="nx-field">
+        <div class="nx-field-head">
+          <label class="nx-label" for="nxBalance">Mortgage Balance Owed</label>
+          <div class="nx-value" id="nxBalanceVal">$420,000</div>
+        </div>
+        <input type="range" id="nxBalance" class="nx-slider" min="0" max="2500000" step="5000" value="420000">
+        <div class="nx-range-meta"><span>$0 (free + clear)</span><span>$2.5M</span></div>
+      </div>
+
+      <div class="nx-field">
+        <div class="nx-field-head">
+          <label class="nx-label">City / Transfer Tax Region</label>
+        </div>
+        <div class="nx-pill-group" id="nxCityGroup" role="radiogroup" aria-label="City">
+          <button type="button" class="nx-pill active" data-city="la-county" data-tt="0.0011">LA County</button>
+          <button type="button" class="nx-pill" data-city="los-angeles" data-tt="0.0056">Los Angeles (Mansion Tax)</button>
+          <button type="button" class="nx-pill" data-city="santa-monica" data-tt="0.006">Santa Monica</button>
+          <button type="button" class="nx-pill" data-city="culver-city" data-tt="0.0045">Culver City</button>
+          <button type="button" class="nx-pill" data-city="oc" data-tt="0.0011">Orange County</button>
+        </div>
+      </div>
+
+      <div class="nx-field">
+        <div class="nx-field-head">
+          <label class="nx-label">Filing Status</label>
+        </div>
+        <div class="nx-pill-group" id="nxFilingGroup" role="radiogroup" aria-label="Filing status">
+          <button type="button" class="nx-pill active" data-filing="married" data-exclusion="500000">Married Filing Jointly ($500K exclusion)</button>
+          <button type="button" class="nx-pill" data-filing="single" data-exclusion="250000">Single ($250K exclusion)</button>
+        </div>
+      </div>
+
+      <div class="nx-field">
+        <div class="nx-field-head">
+          <label class="nx-label">Have You Lived There 2+ of Last 5 Years?</label>
+        </div>
+        <div class="nx-toggle" id="nxResidenceToggle">
+          <button type="button" class="active" data-residence="yes">Yes — primary home</button>
+          <button type="button" data-residence="no">No — investment / second home</button>
+        </div>
+      </div>
+
+      <div class="nx-field">
+        <div class="nx-field-head">
+          <label class="nx-label" for="nxBasis">Original Purchase Price + Improvements</label>
+          <div class="nx-value" id="nxBasisVal">$580,000</div>
+        </div>
+        <input type="range" id="nxBasis" class="nx-slider" min="100000" max="3000000" step="10000" value="580000">
+        <div class="nx-range-meta"><span>$100K</span><span>$3M</span></div>
+      </div>
+
+      <div class="nx-field">
+        <div class="nx-field-head">
+          <label class="nx-label" for="nxCommission">Total Commission %</label>
+          <div class="nx-value" id="nxCommissionVal">5.0%</div>
+        </div>
+        <input type="range" id="nxCommission" class="nx-slider" min="3" max="6" step="0.25" value="5">
+        <div class="nx-range-meta"><span>3% (lean)</span><span>6% (premium)</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Result -->
+    <div class="nx-result-card">
+      <div class="nx-result-label">Estimated Net to You</div>
+      <div class="nx-result-amount" id="nxNet">$0</div>
+      <div class="nx-result-sub" id="nxNetSub">After all costs and taxes</div>
+
+      <div class="nx-donut-wrap">
+        <div class="nx-donut">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="14"/>
+            <circle id="nxArcNet" cx="60" cy="60" r="50" fill="none" stroke="#34c759" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" stroke-dashoffset="0" style="transition:stroke-dasharray .4s ease"/>
+            <circle id="nxArcMortgage" cx="60" cy="60" r="50" fill="none" stroke="#0071E3" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" style="transition:stroke-dasharray .4s ease"/>
+            <circle id="nxArcCommission" cx="60" cy="60" r="50" fill="none" stroke="#ff9500" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" style="transition:stroke-dasharray .4s ease"/>
+            <circle id="nxArcOther" cx="60" cy="60" r="50" fill="none" stroke="#ff6b6b" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" style="transition:stroke-dasharray .4s ease"/>
+          </svg>
+          <div class="nx-donut-center">
+            <strong id="nxDonutPct">0%</strong>
+            Net of gross
+          </div>
+        </div>
+        <div class="nx-donut-legend">
+          <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#34c759"></span><span>You keep</span><span id="nxLegNet">$0</span></div>
+          <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#0071E3"></span><span>Mortgage payoff</span><span id="nxLegMortgage">$0</span></div>
+          <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#ff9500"></span><span>Commissions</span><span id="nxLegCommission">$0</span></div>
+          <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#ff6b6b"></span><span>Closing + taxes</span><span id="nxLegOther">$0</span></div>
+        </div>
+      </div>
+
+      <div class="nx-breakdown">
+        <div class="nx-row gross"><span>Gross Sale Price</span><strong id="nxGross">$0</strong></div>
+        <div class="nx-row deduct"><span>Mortgage payoff</span><strong id="nxMortgage">$0</strong></div>
+        <div class="nx-row deduct"><span>Real estate commission</span><strong id="nxCommissionAmt">$0</strong></div>
+        <div class="nx-row deduct"><span>Title + escrow (~0.4%)</span><strong id="nxTitle">$0</strong></div>
+        <div class="nx-row deduct"><span>Transfer tax</span><strong id="nxTransfer">$0</strong></div>
+        <div class="nx-row deduct"><span>Repairs / concessions (~1%)</span><strong id="nxRepairs">$0</strong></div>
+        <div class="nx-row deduct" id="nxCapGainsRow"><span>Capital gains tax (est. 20%)</span><strong id="nxCapGains">$0</strong></div>
+        <div class="nx-row divider"><span>Net to you</span><strong id="nxNetSmall">$0</strong></div>
+      </div>
+
+      <div class="nx-cta-row">
+        <a href="/valuation.html" class="nx-cta-primary">Get a Free Pro CMA →</a>
+        <a href="/zoom.html" class="nx-cta-ghost">Talk to Jesse</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="nx-fineprint">
+    Estimates only. Real numbers depend on your lender payoff statement, your CMA, your tax basis, and CA state cap gains.
+    Capital gains shown is a federal estimate at 20% (long-term, top bracket) only on the amount over your exclusion — most homeowners owe less.
+    For California state cap gains (treated as ordinary income), add 9.3–13.3% depending on your bracket. Talk to a CPA for tax planning.
+  </p>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+    </div>
+    <div class="f-col">
+      <h4>For Buyers</h4>
+      <a href="/buyer.html">First-Time Buyer Guide</a>
+      <a href="/buyer-quiz.html">Buyer Readiness Quiz</a>
+      <a href="/guide.html">5 Mistakes Guide</a>
+      <a href="/calculator.html">Mortgage Calculator</a>
+      <a href="/rates.html">Rate Alerts</a>
+    </div>
+    <div class="f-col">
+      <h4>For Sellers</h4>
+      <a href="/seller.html">First-Time Seller Guide</a>
+      <a href="/valuation.html">Free Home Valuation</a>
+      <a href="/seller-net.html">Net Proceeds Calculator</a>
+      <a href="/seller-checklist.html">Seller Checklist</a>
+    </div>
+    <div class="f-col">
+      <h4>Resources</h4>
+      <a href="/about.html">About Jesse</a>
+      <a href="/reviews.html">Reviews</a>
+      <a href="/insights/">Insights</a>
+      <a href="/service-areas.html">Service Areas</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/zoom.html">Book a Call</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:5626094200">(562) 609-4200</a>
+      <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      <a href="https://instagram.com/jessetek" target="_blank" rel="noopener">@jessetek</a>
+      <a href="/es/index.html">Español 🌐</a>
+    </div>
+  </div>
+  <div class="footer-bot"><p>© 2026 Jesse Oñate. All rights reserved.</p></div>
+</footer>
+
+<script>
+(function(){
+  function fmt(n){ return '$' + Math.round(Math.max(0,n)).toLocaleString(); }
+  function fmtPct(n){ return Math.round(n*1000)/10 + '%'; }
+
+  var els = {
+    price: document.getElementById('nxPrice'),
+    balance: document.getElementById('nxBalance'),
+    basis: document.getElementById('nxBasis'),
+    commission: document.getElementById('nxCommission'),
+    priceVal: document.getElementById('nxPriceVal'),
+    balanceVal: document.getElementById('nxBalanceVal'),
+    basisVal: document.getElementById('nxBasisVal'),
+    commissionVal: document.getElementById('nxCommissionVal'),
+    cityGroup: document.getElementById('nxCityGroup'),
+    filingGroup: document.getElementById('nxFilingGroup'),
+    residenceToggle: document.getElementById('nxResidenceToggle'),
+  };
+
+  var state = {
+    transferRate: 0.0011,
+    exclusion: 500000,
+    primary: true,
+  };
+
+  function selectPill(group, key, attr){
+    var btns = group.querySelectorAll('button');
+    btns.forEach(function(b){ b.classList.remove('active'); });
+    var picked;
+    btns.forEach(function(b){ if (b.dataset[attr] === key) { b.classList.add('active'); picked = b; } });
+    return picked;
+  }
+
+  els.cityGroup.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      els.cityGroup.querySelectorAll('button').forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      state.transferRate = parseFloat(b.dataset.tt);
+      update();
+    });
+  });
+  els.filingGroup.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      els.filingGroup.querySelectorAll('button').forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      state.exclusion = parseInt(b.dataset.exclusion);
+      update();
+    });
+  });
+  els.residenceToggle.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      els.residenceToggle.querySelectorAll('button').forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      state.primary = b.dataset.residence === 'yes';
+      update();
+    });
+  });
+
+  function update(){
+    var price = parseFloat(els.price.value);
+    var balance = parseFloat(els.balance.value);
+    var basis = parseFloat(els.basis.value);
+    var commissionPct = parseFloat(els.commission.value);
+
+    // Bound: balance can't exceed price (cap visually)
+    if (balance > price) balance = price;
+
+    var commission = price * (commissionPct / 100);
+    var titleEscrow = price * 0.004;
+    var transferTax = price * state.transferRate;
+    var repairs = price * 0.01;
+
+    // Capital gains: only if NOT primary residence OR if gain > exclusion
+    var gain = price - basis;
+    var taxableGain = 0;
+    if (state.primary) {
+      taxableGain = Math.max(0, gain - state.exclusion);
+    } else {
+      taxableGain = Math.max(0, gain); // investment property — full gain taxable
+    }
+    var capGainsTax = taxableGain * 0.20; // federal LTCG estimate
+
+    var totalDeductions = balance + commission + titleEscrow + transferTax + repairs + capGainsTax;
+    var net = price - totalDeductions;
+
+    // Render
+    els.priceVal.textContent = fmt(price);
+    els.balanceVal.textContent = fmt(balance);
+    els.basisVal.textContent = fmt(basis);
+    els.commissionVal.textContent = commissionPct.toFixed(2) + '%';
+
+    document.getElementById('nxNet').textContent = fmt(net);
+    document.getElementById('nxNetSmall').textContent = fmt(net);
+    document.getElementById('nxNetSub').textContent = (net > 0 ? 'After ' : 'Loss after ') + 'all costs and taxes';
+    document.getElementById('nxGross').textContent = fmt(price);
+    document.getElementById('nxMortgage').textContent = '−' + fmt(balance);
+    document.getElementById('nxCommissionAmt').textContent = '−' + fmt(commission);
+    document.getElementById('nxTitle').textContent = '−' + fmt(titleEscrow);
+    document.getElementById('nxTransfer').textContent = '−' + fmt(transferTax);
+    document.getElementById('nxRepairs').textContent = '−' + fmt(repairs);
+    document.getElementById('nxCapGains').textContent = capGainsTax > 0 ? ('−' + fmt(capGainsTax)) : '$0 (under exclusion)';
+
+    // Donut: net / mortgage / commissions / other deductions (titleEscrow + transferTax + repairs + capGains)
+    // Each segment is a fraction of the gross price
+    var other = titleEscrow + transferTax + repairs + capGainsTax;
+    var circ = 2 * Math.PI * 50;
+
+    function arc(elId, value){
+      var el = document.getElementById(elId);
+      var pct = Math.max(0, value) / price;
+      el.setAttribute('stroke-dasharray', (pct * circ) + ' ' + circ);
+    }
+
+    // Stack segments by setting different rotations using stroke-dashoffset
+    // We use offset to position each subsequent arc after the previous.
+    var arcs = document.querySelectorAll('#nxArcNet, #nxArcMortgage, #nxArcCommission, #nxArcOther');
+    var values = [Math.max(0,net), balance, commission, other];
+    var ids = ['nxArcNet','nxArcMortgage','nxArcCommission','nxArcOther'];
+    var cumulative = 0;
+    ids.forEach(function(id, i){
+      var el = document.getElementById(id);
+      var pct = values[i] / price;
+      el.setAttribute('stroke-dasharray', (pct * circ) + ' ' + circ);
+      el.setAttribute('stroke-dashoffset', -cumulative * circ);
+      cumulative += pct;
+    });
+
+    document.getElementById('nxDonutPct').textContent = price > 0 ? Math.round(Math.max(0,net) / price * 100) + '%' : '0%';
+    document.getElementById('nxLegNet').textContent = fmt(Math.max(0,net));
+    document.getElementById('nxLegMortgage').textContent = fmt(balance);
+    document.getElementById('nxLegCommission').textContent = fmt(commission);
+    document.getElementById('nxLegOther').textContent = fmt(other);
+  }
+
+  ['price','balance','basis','commission'].forEach(function(k){
+    els[k].addEventListener('input', update);
+  });
+
+  update();
+})();
+</script>
+
+<!-- Nav scroll behavior -->
+<script>
+(function(){
+  var nav=document.getElementById('nav');if(!nav)return;
+  var lastY=0,ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){window.requestAnimationFrame(function(){
+      var y=window.scrollY;
+      if(y>80){nav.classList.toggle('nav-hidden',y>lastY);nav.classList.add('scrolled');}
+      else{nav.classList.remove('nav-hidden');nav.classList.remove('scrolled');}
+      lastY=y;ticking=false;
+    });ticking=true;}
+  },{passive:true});
+})();
+</script>
+
+<script src="/js/analytics.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SoCal Seller Net Proceeds Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Free interactive calculator estimating your net proceeds from selling a Southern California home. Includes commissions, transfer tax, capital gains exposure.",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "provider": {
+    "@type":"Organization",
+    "name":"Jesse Oñate Real Estate",
+    "url":"https://jessetek.net/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://jessetek.net/"},
+    {"@type":"ListItem","position":2,"name":"Net Proceeds Calculator","item":"https://jessetek.net/seller-net"}
+  ]
+}
+</script>
+
+</body>
+</html>
