@@ -215,7 +215,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 .hero h1{
   font-size:clamp(42px,5.5vw,82px);font-weight:700;line-height:1.02;
   letter-spacing:-3px;color:#fff;margin-bottom:22px;
-  opacity:0;animation:fadeUp .8s ease .4s forwards;
+  /* No fade-in — H1 is the LCP candidate; render immediately for fast LCP */
 }
 /* Glitch word */
 .glitch-wrap{display:inline-block;position:relative;white-space:nowrap}
