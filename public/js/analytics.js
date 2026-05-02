@@ -11,7 +11,7 @@
 
 window.JESSE_CONFIG = window.JESSE_CONFIG || {
   GA4_ID: "G-ZXSY9V9PXX",   // Live GA4 property for jessetek.net
-  META_PIXEL_ID: null,      // Add when running FB/IG ads (16-digit number)
+  META_PIXEL_ID: "269951940252971",  // Jesse Onate's Pixel (web) — fires PageView + click events
   VERCEL_ANALYTICS: true,   // Vercel Web Analytics enabled in dashboard 2026-04-30
   GOOGLE_PLACE_ID: null,    // Replaced by Jtek reputation widget on /reviews
   GOOGLE_PLACES_API_KEY: null,
