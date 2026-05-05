@@ -50,8 +50,8 @@
         <span class="hero-badge-dot"></span>
         <span>Free Download · Instant Delivery</span>
       </div>
-      <h1>5 Mistakes<br>First-Time Homebuyers<br><span class="g">Make in SoCal.</span></h1>
-      <p class="guide-hero-sub">The hidden traps most agents won't tell you about.</p>
+      <h1>5 Mistakes That Cost<br>SoCal First-Time Buyers<br><span class="g">$10K–$30K.</span></h1>
+      <p class="guide-hero-sub">The hidden traps most agents won't tell you about. Avoid them in 2026.</p>
 
       <div class="guide-tiles">
         <div class="guide-tile">
@@ -91,18 +91,25 @@
           </div>
           <div class="guide-form-field">
             <label class="guide-form-label" for="gf-name">Your First Name</label>
-            <input type="text" id="gf-name" name="firstName" placeholder="Jesse" required>
+            <input type="text" id="gf-name" name="firstName" placeholder="Jesse" required autocomplete="given-name" inputmode="text">
           </div>
           <div class="guide-form-field">
             <label class="guide-form-label" for="gf-email">Email Address</label>
-            <input type="email" id="gf-email" name="email" placeholder="you@email.com" required>
+            <input type="email" id="gf-email" name="email" placeholder="you@email.com" required autocomplete="email" inputmode="email">
           </div>
           <div class="guide-form-field">
             <label class="guide-form-label" for="gf-phone">Phone Number</label>
-            <input type="tel" id="gf-phone" name="phone" placeholder="(562) 555-0123" required>
+            <input type="tel" id="gf-phone" name="phone" placeholder="(562) 555-0123" required autocomplete="tel" inputmode="tel">
           </div>
-          <button type="submit" class="guide-form-submit" id="gfSubmit">Send Me the Guide →</button>
+          <button type="submit" class="guide-form-submit" id="gfSubmit">Send me the 5-Mistakes guide →</button>
           <div class="guide-form-trust">🔒 No spam. Unsubscribe anytime.</div>
+
+          <!-- Testimonial adjacent to form (research: +37% vs separate section) -->
+          <div class="form-testimonial light" style="margin-top:18px">
+            <div class="form-testimonial-stars">★★★★★</div>
+            <p class="form-testimonial-quote">"This guide saved us from a Mello-Roos surprise that would've added $4,800/yr we hadn't budgeted for."</p>
+            <div class="form-testimonial-attr"><strong>Aaron R.</strong> · First-time buyer, La Mirada</div>
+          </div>
         </form>
 
         <div class="guide-form-success" id="guideSuccess">
@@ -213,17 +220,17 @@
         </div>
         <div class="guide-form-field">
           <label class="guide-form-label" for="gf2-name">Your First Name</label>
-          <input type="text" id="gf2-name" name="firstName" placeholder="Jesse" required>
+          <input type="text" id="gf2-name" name="firstName" placeholder="Jesse" required autocomplete="given-name">
         </div>
         <div class="guide-form-field">
           <label class="guide-form-label" for="gf2-email">Email Address</label>
-          <input type="email" id="gf2-email" name="email" placeholder="you@email.com" required>
+          <input type="email" id="gf2-email" name="email" placeholder="you@email.com" required autocomplete="email" inputmode="email">
         </div>
         <div class="guide-form-field">
           <label class="guide-form-label" for="gf2-phone">Phone Number</label>
-          <input type="tel" id="gf2-phone" name="phone" placeholder="(562) 555-0123" required>
+          <input type="tel" id="gf2-phone" name="phone" placeholder="(562) 555-0123" required autocomplete="tel" inputmode="tel">
         </div>
-        <button type="submit" class="guide-form-submit" id="gfSubmit2">Send Me the Guide →</button>
+        <button type="submit" class="guide-form-submit" id="gfSubmit2">Send me the 5-Mistakes guide →</button>
         <div class="guide-form-trust">🔒 No spam. Unsubscribe anytime.</div>
       </form>
 

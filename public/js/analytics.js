@@ -232,30 +232,48 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
         // Don't show on legal pages themselves to avoid loop
         if (/\/(privacy|terms|accessibility)(\.html)?$/.test(location.pathname)) return;
 
+        // Detect Spanish pages — translate banner copy when on /es/* or html lang=es
+        var isSpanish = /^\/es(\/|$)/.test(location.pathname) ||
+                        (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
+        var copy = isSpanish ? {
+          msg: 'Usamos cookies para análisis y rendimiento.',
+          link: 'Política de privacidad',
+          accept: 'Aceptar',
+          essential: 'Solo esenciales',
+        } : {
+          msg: 'We use cookies for analytics and performance.',
+          link: 'Privacy policy',
+          accept: 'Accept',
+          essential: 'Essential only',
+        };
+
         var banner = document.createElement('div');
         banner.id = 'cookie-banner';
         banner.setAttribute('role', 'dialog');
         banner.setAttribute('aria-label', 'Cookie consent');
-        banner.style.cssText = 'position:fixed;left:14px;right:14px;bottom:14px;max-width:560px;margin-left:auto;z-index:9998;' +
-          'background:#0E1014;color:#fff;border-radius:18px;padding:16px 18px;' +
-          'box-shadow:0 14px 40px rgba(0,0,0,.30);' +
-          'font-family:inherit;font-size:13.5px;line-height:1.5;' +
-          'border:1px solid rgba(255,255,255,.08);' +
+        // Single-line bottom bar — minimal footprint, full-width on mobile
+        banner.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:9998;' +
+          'background:rgba(14,16,20,.96);backdrop-filter:saturate(180%) blur(20px);' +
+          '-webkit-backdrop-filter:saturate(180%) blur(20px);' +
+          'color:#fff;padding:10px 14px;' +
+          'box-shadow:0 -6px 24px rgba(0,0,0,.20);' +
+          'font-family:inherit;font-size:12.5px;line-height:1.4;' +
+          'border-top:1px solid rgba(255,255,255,.06);' +
           'animation:cookieIn .35s ease both';
         banner.innerHTML =
-          '<div style="margin-bottom:12px;color:rgba(255,255,255,.85)">' +
-          'We use cookies to make this site work and improve it (analytics + performance). ' +
-          'You can opt out of analytics anytime. ' +
-          '<a href="/privacy" style="color:#0a84ff;font-weight:500">Read our privacy policy</a>.' +
+          '<div style="display:flex;align-items:center;gap:10px;max-width:1240px;margin:0 auto;flex-wrap:wrap;justify-content:center">' +
+          '<span style="color:rgba(255,255,255,.8);flex:1 1 auto;min-width:200px;text-align:center">' +
+          copy.msg + ' <a href="/privacy" style="color:#0a84ff;font-weight:500;white-space:nowrap">' + copy.link + '</a>' +
+          '</span>' +
+          '<div style="display:flex;gap:6px;flex:0 0 auto">' +
+          '<button id="cookieAcceptAll" type="button" style="background:#0a84ff;color:#fff;border:0;padding:7px 14px;border-radius:999px;font-weight:600;font-size:12.5px;cursor:pointer;min-height:34px">' + copy.accept + '</button>' +
+          '<button id="cookieEssentialOnly" type="button" style="background:rgba(255,255,255,.08);color:#fff;border:0;padding:7px 14px;border-radius:999px;font-weight:500;font-size:12.5px;cursor:pointer;min-height:34px">' + copy.essential + '</button>' +
           '</div>' +
-          '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
-          '<button id="cookieAcceptAll" type="button" style="flex:1 1 auto;background:#0a84ff;color:#fff;border:0;padding:9px 14px;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;min-width:120px">Accept all</button>' +
-          '<button id="cookieEssentialOnly" type="button" style="flex:1 1 auto;background:rgba(255,255,255,.08);color:#fff;border:0;padding:9px 14px;border-radius:999px;font-weight:500;font-size:13px;cursor:pointer;min-width:120px">Essential only</button>' +
           '</div>';
         if (!document.getElementById('cookie-banner-style')) {
           var st = document.createElement('style');
           st.id = 'cookie-banner-style';
-          st.textContent = '@keyframes cookieIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}';
+          st.textContent = '@keyframes cookieIn{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}';
           document.head.appendChild(st);
         }
         document.body.appendChild(banner);

@@ -4592,3 +4592,173 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 @media(max-width:780px){
   .reviews-strip-grid{grid-template-columns:1fr;gap:12px}
 }
+
+/* ============================================================
+   CRO COMPONENTS — added 2026-05-05
+   Sticky mobile CTA, form-adjacent testimonial, scarcity banner,
+   exit-intent modal, mobile hero photo
+   ============================================================ */
+
+/* Sticky mobile CTA — appears at bottom on mobile, hidden on desktop.
+   Hides on scroll-down, reveals on scroll-up via .sticky-cta-hidden class. */
+.sticky-mobile-cta{
+  display:none;
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:9990;
+  background:rgba(14,16,20,.96);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  padding:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  transition:transform .25s ease, opacity .25s ease;
+}
+.sticky-mobile-cta-row{
+  display:flex;align-items:center;gap:8px;
+}
+.sticky-mobile-cta-text{
+  flex:1;min-width:0;padding:0 8px 0 14px;
+  color:#fff;font-size:13px;line-height:1.2;
+}
+.sticky-mobile-cta-text strong{display:block;font-weight:700;font-size:13.5px}
+.sticky-mobile-cta-text span{color:rgba(255,255,255,.65);font-size:11.5px}
+.sticky-mobile-cta-btn{
+  flex:0 0 auto;
+  background:#0a84ff;color:#fff;text-decoration:none;
+  font-weight:600;font-size:13.5px;
+  padding:11px 18px;border-radius:999px;
+  white-space:nowrap;
+  min-height:44px;display:inline-flex;align-items:center;justify-content:center;
+}
+.sticky-mobile-cta-btn:hover{background:#0066cc}
+.sticky-mobile-cta.sticky-cta-hidden{transform:translateY(120%);opacity:0;pointer-events:none}
+@media(max-width:780px){
+  .sticky-mobile-cta{display:block}
+  /* Add bottom padding to body so sticky CTA doesn't cover footer content */
+  body.has-sticky-cta{padding-bottom:80px}
+}
+
+/* Form-adjacent testimonial card (place next to or below a form) */
+.form-testimonial{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:18px 20px;
+  margin-top:16px;
+}
+.form-testimonial-stars{color:#FFB800;font-size:13px;letter-spacing:1px;margin-bottom:8px}
+.form-testimonial-quote{
+  font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.92);
+  margin:0 0 10px;font-style:italic;
+}
+.form-testimonial-attr{
+  font-size:12.5px;color:rgba(255,255,255,.6);
+  display:flex;align-items:center;gap:8px;
+}
+.form-testimonial-attr strong{color:rgba(255,255,255,.85);font-weight:600;font-style:normal}
+/* Light-background variant for forms on light pages */
+.form-testimonial.light{
+  background:rgba(0,0,0,.025);
+  border-color:rgba(0,0,0,.08);
+}
+.form-testimonial.light .form-testimonial-quote{color:#1d1d1f}
+.form-testimonial.light .form-testimonial-attr{color:rgba(29,29,31,.55)}
+.form-testimonial.light .form-testimonial-attr strong{color:#1d1d1f}
+
+/* Scarcity banner — used near form/calendar */
+.scarcity-banner{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,149,0,.1);
+  border:1px solid rgba(255,149,0,.25);
+  color:#ff9500;
+  padding:7px 14px;border-radius:999px;
+  font-size:12.5px;font-weight:600;
+  margin-bottom:14px;
+}
+.scarcity-banner::before{
+  content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:#ff9500;
+  animation:scarcityPulse 1.6s ease-in-out infinite;
+}
+@keyframes scarcityPulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(.85)}
+}
+
+/* Exit-intent modal — overlay + card */
+.exit-intent-overlay{
+  position:fixed;inset:0;z-index:9995;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+  animation:exitIn .25s ease both;
+}
+.exit-intent-overlay.on{display:flex}
+@keyframes exitIn{from{opacity:0}to{opacity:1}}
+.exit-intent-card{
+  background:#fff;border-radius:24px;
+  max-width:460px;width:100%;
+  padding:28px 26px 22px;
+  box-shadow:0 24px 60px rgba(0,0,0,.4);
+  position:relative;
+  text-align:center;
+  animation:exitCardIn .35s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes exitCardIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.exit-intent-close{
+  position:absolute;top:12px;right:12px;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(0,0,0,.06);border:0;cursor:pointer;
+  font-size:16px;line-height:32px;color:#1d1d1f;
+}
+.exit-intent-card h3{
+  font-size:22px;font-weight:700;margin:0 0 8px;color:#1d1d1f;
+  letter-spacing:-.01em;
+}
+.exit-intent-card p{
+  font-size:14.5px;line-height:1.55;color:#474749;margin:0 0 18px;
+}
+.exit-intent-btn{
+  display:inline-block;background:#0a84ff;color:#fff;
+  text-decoration:none;font-weight:600;font-size:14px;
+  padding:12px 22px;border-radius:999px;
+  min-height:44px;
+}
+.exit-intent-btn:hover{background:#0066cc}
+.exit-intent-skip{
+  display:block;background:none;border:0;cursor:pointer;
+  margin-top:14px;font-size:12.5px;color:rgba(0,0,0,.45);
+}
+.exit-intent-skip:hover{color:rgba(0,0,0,.7)}
+
+/* Nav phone icon (replaces "Let's Talk" CTA on desktop nav) */
+.nav-phone{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(0,0,0,.06);
+  color:#1d1d1f;text-decoration:none;
+  transition:background .15s ease;
+}
+.nav-phone:hover{background:rgba(0,0,0,.12)}
+.nav.scrolled .nav-phone{background:rgba(255,255,255,.08);color:#fff}
+.nav.scrolled .nav-phone:hover{background:rgba(255,255,255,.16)}
+.nav-phone svg{width:18px;height:18px}
+
+/* Show hero background photo on mobile (was desktop-only previously) */
+@media(max-width:780px){
+  .hero-photo-bg{display:block}
+  .hero-overlay{
+    background:linear-gradient(180deg,rgba(14,16,20,.55) 0%,rgba(14,16,20,.78) 60%,rgba(14,16,20,.92) 100%);
+  }
+}
+
+/* Hero secondary link (replaces secondary button to keep one primary CTA) */
+.hero-secondary-link{margin-top:14px;text-align:center}
+.hero-secondary-link a{
+  color:rgba(255,255,255,.7);font-size:14px;font-weight:500;
+  text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.25);
+  padding-bottom:2px;
+  transition:color .2s ease,border-color .2s ease;
+}
+.hero-secondary-link a:hover{color:#fff;border-bottom-color:#fff}

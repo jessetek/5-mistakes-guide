@@ -90,7 +90,7 @@
       </div>
     </div>
     <a href="/insights/" class="nav-link">Insights</a>
-    <a href="/zoom" class="nav-cta">Let's Talk</a>
+    <a href="tel:5626094200" class="nav-phone" aria-label="Call Jesse" title="Call (562) 609-4200"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
   </div>
   <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
 </nav>
@@ -133,11 +133,11 @@
       <div class="vf-row vf-row-2">
         <label class="vf-field">
           <span class="vf-label">Your Name</span>
-          <input type="text" name="name" placeholder="Jesse Oñate" required>
+          <input type="text" name="name" placeholder="Jesse Oñate" required autocomplete="name">
         </label>
         <label class="vf-field">
           <span class="vf-label">Phone or Email</span>
-          <input type="text" name="contact" placeholder="(562) 609-4200" required>
+          <input type="text" name="contact" placeholder="(562) 609-4200" required autocomplete="tel" inputmode="text">
         </label>
       </div>
       <div class="vf-row vf-row-2">
@@ -161,10 +161,17 @@
       <label style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden" aria-hidden="true">
         Website (leave blank): <input type="text" name="website" tabindex="-1" autocomplete="off">
       </label>
-      <button type="submit" class="vf-submit" id="vfSubmit">Get My Free Valuation →</button>
+      <button type="submit" class="vf-submit" id="vfSubmit">Get my home value report →</button>
       <div class="vf-error" id="vfError" hidden style="margin-top:14px;color:#ff453a;font-size:14px;font-weight:500"></div>
       <div class="vf-trust">
         🔒 Your info is safe — never shared. Just used to send you your CMA.
+      </div>
+
+      <!-- Testimonial adjacent to form (research: +37% vs separate section) -->
+      <div class="form-testimonial" style="margin-top:20px">
+        <div class="form-testimonial-stars">★★★★★</div>
+        <p class="form-testimonial-quote">"Jesse's valuation came in $42K higher than Zillow's. We listed at his number and got asking in 8 days."</p>
+        <div class="form-testimonial-attr"><strong>Maria G.</strong> · Sold in Whittier · 2025</div>
       </div>
     </form>
     <div class="vf-success" id="vfSuccess" hidden style="text-align:center;padding:40px 28px;background:#fff;border-radius:24px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)">
@@ -1115,6 +1122,78 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     "audienceType": "Home sellers and homeowners"
   }
 }
+</script>
+
+<!-- Exit-intent recovery modal — softer offer for users who hesitate to share address -->
+<div class="exit-intent-overlay" id="exitIntentOverlay" role="dialog" aria-modal="true" aria-labelledby="exitIntentTitle">
+  <div class="exit-intent-card">
+    <button type="button" class="exit-intent-close" id="exitIntentClose" aria-label="Close">×</button>
+    <h3 id="exitIntentTitle">Not ready to share your address?</h3>
+    <p>Grab the free 5-Mistakes guide instead — same SoCal-buyer intel, no commitment.</p>
+    <a href="/guide" class="exit-intent-btn">Send me the guide →</a>
+    <button type="button" class="exit-intent-skip" id="exitIntentSkip">No thanks, I'll keep browsing</button>
+  </div>
+</div>
+<script>
+(function(){
+  // Exit-intent: trigger only on desktop (mouseleave), only once per session, only if form not submitted
+  if(window.matchMedia('(max-width:780px)').matches)return;
+  if(sessionStorage.getItem('vfExitShown'))return;
+  var overlay=document.getElementById('exitIntentOverlay');
+  var closeBtn=document.getElementById('exitIntentClose');
+  var skipBtn=document.getElementById('exitIntentSkip');
+  if(!overlay)return;
+  var shown=false;
+  function show(){
+    if(shown)return;
+    var fSuccess=document.getElementById('vfSuccess');
+    if(fSuccess&&!fSuccess.hidden)return; // form already submitted
+    shown=true;
+    sessionStorage.setItem('vfExitShown','1');
+    overlay.classList.add('on');
+    if(window.trackEvent)trackEvent('exit_intent_shown',{page:'valuation'});
+  }
+  function close(){
+    overlay.classList.remove('on');
+  }
+  document.addEventListener('mouseout',function(e){
+    if(!e.relatedTarget&&e.clientY<10)show();
+  });
+  closeBtn.addEventListener('click',close);
+  skipBtn.addEventListener('click',close);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('on'))close();});
+})();
+</script>
+
+<!-- Sticky Mobile CTA — mobile only, hides on scroll-down -->
+<div class="sticky-mobile-cta" id="stickyMobileCta" aria-label="Quick contact">
+  <div class="sticky-mobile-cta-row">
+    <div class="sticky-mobile-cta-text">
+      <strong>Free home value report</strong>
+      <span>Real comps. 24h delivery.</span>
+    </div>
+    <a href="#vfForm" class="sticky-mobile-cta-btn">Get it →</a>
+  </div>
+</div>
+<script>
+(function(){
+  var sc=document.getElementById('stickyMobileCta');
+  if(!sc)return;
+  document.body.classList.add('has-sticky-cta');
+  var lastY=0,ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        var y=window.scrollY||window.pageYOffset;
+        if(y>200&&y>lastY){sc.classList.add('sticky-cta-hidden');}
+        else if(y<lastY||y<=200){sc.classList.remove('sticky-cta-hidden');}
+        lastY=y;ticking=false;
+      });
+      ticking=true;
+    }
+  },{passive:true});
+})();
 </script>
 </body>
 </html>

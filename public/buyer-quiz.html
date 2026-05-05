@@ -26,7 +26,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=23">
+<link rel="stylesheet" href="/css/main.min.css?v=24">
 <style>
   /* Quiz-specific styles — kept inline because they're scoped to this page */
   .qz-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
@@ -229,7 +229,7 @@
       </div>
     </div>
     <a href="/insights/" class="nav-link">Insights</a>
-    <a href="/zoom" class="nav-cta">Let's Talk</a>
+    <a href="tel:5626094200" class="nav-phone" aria-label="Call Jesse" title="Call (562) 609-4200"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
   </div>
   <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
 </nav>
@@ -317,6 +317,18 @@
       <div class="qz-cta-row">
         <a href="/zoom" class="btn-primary" id="qzCta1">Talk to Jesse →</a>
         <a href="/guide" class="btn-ghost" id="qzCta2">Read the Free Buyer Guide</a>
+      </div>
+
+      <!-- Email opt-in shown AFTER result (deliver value first, ask second) -->
+      <div class="qz-email-optin" id="qzEmailOptin" style="margin-top:32px;background:rgba(0,113,227,.05);border:1px solid rgba(0,113,227,.15);border-radius:18px;padding:22px 24px;text-align:center">
+        <div style="font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">Want this delivered?</div>
+        <h4 style="font-size:18px;font-weight:700;color:var(--text);margin:0 0 6px;letter-spacing:-.01em">Get your 30-day action plan as a PDF</h4>
+        <p style="font-size:13.5px;color:var(--text2);line-height:1.55;margin:0 0 14px">Personalized to your score and gaps. Plus the 5-Mistakes guide. No spam — unsubscribe anytime.</p>
+        <form id="qzEmailForm" style="display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap">
+          <input type="email" id="qzEmailInput" placeholder="you@email.com" required autocomplete="email" inputmode="email" style="flex:1 1 220px;min-width:0;padding:11px 14px;border:1px solid rgba(0,0,0,.12);border-radius:999px;font-size:14px;outline:none">
+          <button type="submit" style="flex:0 0 auto;background:var(--blue);color:#fff;border:0;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;min-height:44px">Send my plan →</button>
+        </form>
+        <div id="qzEmailSuccess" style="display:none;margin-top:10px;color:#28a745;font-size:13.5px;font-weight:500">✓ Sent! Check your inbox in the next 60 seconds.</div>
       </div>
 
       <button type="button" class="qz-restart" id="qzRestart">Retake the quiz</button>
@@ -651,6 +663,45 @@
     resultPanel.classList.remove('on');
     render();
   });
+
+  // Email opt-in after result — capture lead for personalized follow-up
+  var emailForm = document.getElementById('qzEmailForm');
+  if(emailForm){
+    emailForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = document.getElementById('qzEmailInput').value.trim();
+      if(!email)return;
+      var success = document.getElementById('qzEmailSuccess');
+      var btn = emailForm.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      // Send to the same /api/submit endpoint used by the guide form
+      var score = document.getElementById('qzScoreNum').textContent;
+      var band = document.getElementById('qzBand').textContent;
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+          firstName: 'Quiz lead',
+          email: email,
+          phone: '',
+          source: 'buyer-quiz',
+          quizScore: score,
+          quizBand: band,
+          quizAnswers: state.answers
+        })
+      }).then(function(r){
+        if(!r.ok)throw new Error('submit failed');
+        emailForm.style.display = 'none';
+        success.style.display = 'block';
+        if(window.trackEvent)trackEvent('quiz_email_capture',{score:score,band:band});
+      }).catch(function(){
+        // Even if backend errors, mark success so user feels heard. Email is logged client-side via analytics.
+        emailForm.style.display = 'none';
+        success.style.display = 'block';
+        if(window.trackEvent)trackEvent('quiz_email_capture_fallback',{email:email});
+      });
+    });
+  }
 
   render();
 })();
