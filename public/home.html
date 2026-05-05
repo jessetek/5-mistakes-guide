@@ -25,7 +25,7 @@
 <meta name="twitter:title" content="Jesse Oñate | Realtor — Downey & SoCal">
 <meta name="twitter:description" content="Helping millennials buy and sell homes. No pressure, no games — just straight talk and real results.">
 <meta name="twitter:image" content="https://jessetek.net/img/og-home.jpg">
-<link rel="stylesheet" href="/css/main.min.css?v=26">
+<link rel="stylesheet" href="/css/main.min.css?v=27">
 <link rel="preload" as="image" fetchpriority="high" type="image/webp" href="/img/hero-bg.webp">
 
 <meta name="theme-color" content="#0E1014">
@@ -1547,36 +1547,6 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
   }
 }
 </script>
-
-<!-- Sticky Mobile CTA — mobile only, hides on scroll-down -->
-<div class="sticky-mobile-cta" id="stickyMobileCta" aria-label="Quick contact">
-  <div class="sticky-mobile-cta-row">
-    <div class="sticky-mobile-cta-text">
-      <strong>Free 15-min strategy call</strong>
-      <span>No pressure. No pitch.</span>
-    </div>
-    <a href="/zoom" class="sticky-mobile-cta-btn">Book →</a>
-  </div>
-</div>
-<script>
-(function(){
-  var sc=document.getElementById('stickyMobileCta');
-  if(!sc)return;
-  document.body.classList.add('has-sticky-cta');
-  var lastY=0,ticking=false;
-  window.addEventListener('scroll',function(){
-    if(!ticking){
-      window.requestAnimationFrame(function(){
-        var y=window.scrollY||window.pageYOffset;
-        // Hide when scrolling down past 200px, show when scrolling up
-        if(y>200&&y>lastY){sc.classList.add('sticky-cta-hidden');}
-        else if(y<lastY||y<=200){sc.classList.remove('sticky-cta-hidden');}
-        lastY=y;ticking=false;
-      });
-      ticking=true;
-    }
-  },{passive:true});
-})();
-</script>
+<!-- Sticky mobile CTA now auto-attached by /js/cro.js -->
 </body>
 </html>

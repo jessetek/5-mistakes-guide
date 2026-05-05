@@ -129,6 +129,104 @@
     document.querySelectorAll('form[data-autosave]').forEach(autoSaveForm);
   }
 
+  /* ---------- Sticky mobile CTA — auto-attach per page ----------
+     If a page doesn't already have a hand-rolled .sticky-mobile-cta
+     (some pages have customized ones), inject a sensible default.
+     The CTA target is chosen by URL pattern so each page funnels to
+     its highest-intent next action.
+  ----------------------------------------------------------------- */
+  function initStickyMobileCta() {
+    if (document.querySelector('.sticky-mobile-cta')) return; // hand-rolled exists
+    if (/\/(privacy|terms|accessibility|404|offline)(\.html)?$/.test(location.pathname)) return;
+
+    var path = location.pathname;
+    var isSpanish = /^\/es(\/|$)/.test(path);
+
+    // Decide CTA per page intent
+    var ctaTitle, ctaSub, ctaText, ctaHref;
+    if (isSpanish) {
+      ctaTitle = 'Llamada gratis · 15 min';
+      ctaSub = 'Sin presión, sin pitch.';
+      ctaText = 'Reservar →';
+      ctaHref = '/zoom';
+    } else if (/\/valuation/.test(path)) {
+      ctaTitle = 'Free home value report';
+      ctaSub = 'Real comps · 24h delivery.';
+      ctaText = 'Get it →';
+      ctaHref = '#vfForm';
+    } else if (/\/guide/.test(path)) {
+      ctaTitle = 'Free 5-Mistakes guide';
+      ctaSub = 'Sent in under 60 seconds.';
+      ctaText = 'Send it →';
+      ctaHref = '#guideForm';
+    } else if (/\/buyer-quiz/.test(path)) {
+      ctaTitle = '60-sec readiness quiz';
+      ctaSub = 'No email required.';
+      ctaText = 'Start →';
+      ctaHref = '#qzShell';
+    } else if (/\/seller-net/.test(path)) {
+      ctaTitle = 'Net proceeds calculator';
+      ctaSub = 'Live · No email needed.';
+      ctaText = 'Try it →';
+      ctaHref = '#nx-tool';
+    } else if (/\/rates/.test(path)) {
+      // /rates already has form-first layout — skip sticky to avoid CTA conflict
+      return;
+    } else if (/\/zoom/.test(path)) {
+      ctaTitle = 'Prefer to text or call?';
+      ctaSub = '(562) 609-4200';
+      ctaText = 'Call →';
+      ctaHref = 'tel:5626094200';
+    } else if (/\/seller|\/sellers/.test(path)) {
+      ctaTitle = "What's your home worth?";
+      ctaSub = 'Free CMA · 24h.';
+      ctaText = 'Find out →';
+      ctaHref = '/valuation';
+    } else if (/\/buyer|\/checklist|\/calculator|\/rent-vs-buy|\/listings/.test(path)) {
+      ctaTitle = 'Free 15-min strategy call';
+      ctaSub = 'No pressure. No pitch.';
+      ctaText = 'Book →';
+      ctaHref = '/zoom';
+    } else {
+      // Default — homepage, about, neighborhoods, insights, etc.
+      ctaTitle = 'Free 15-min strategy call';
+      ctaSub = 'No pressure. No pitch.';
+      ctaText = 'Book →';
+      ctaHref = '/zoom';
+    }
+
+    var sc = document.createElement('div');
+    sc.className = 'sticky-mobile-cta';
+    sc.id = 'stickyMobileCta';
+    sc.setAttribute('aria-label', 'Quick contact');
+    sc.innerHTML =
+      '<div class="sticky-mobile-cta-row">' +
+        '<div class="sticky-mobile-cta-text">' +
+          '<strong>' + ctaTitle + '</strong>' +
+          '<span>' + ctaSub + '</span>' +
+        '</div>' +
+        '<a href="' + ctaHref + '" class="sticky-mobile-cta-btn">' + ctaText + '</a>' +
+      '</div>';
+    document.body.appendChild(sc);
+    document.body.classList.add('has-sticky-cta');
+
+    var lastY = 0, ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      window.requestAnimationFrame(function () {
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 200 && y > lastY) sc.classList.add('sticky-cta-hidden');
+        else if (y < lastY || y <= 200) sc.classList.remove('sticky-cta-hidden');
+        lastY = y; ticking = false;
+      });
+      ticking = true;
+    }, { passive: true });
+
+    sc.querySelector('.sticky-mobile-cta-btn').addEventListener('click', function () {
+      if (window.trackEvent) window.trackEvent('sticky_cta_click', { page: path, target: ctaHref });
+    });
+  }
+
   /* ---------- Text Jesse floating widget ----------
      Bottom-right circular button that opens SMS to Jesse. Hidden if
      a sticky-mobile-cta is already present (avoid double-CTA stacking).
@@ -200,15 +298,15 @@
   }
 
   // Boot
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      initAutoSave();
-      initTextWidget();
-      initLiveTicker();
-    });
-  } else {
+  function boot() {
+    initStickyMobileCta();
     initAutoSave();
     initTextWidget();
     initLiveTicker();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
   }
 })();
