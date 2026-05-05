@@ -246,7 +246,7 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
           '<div style="margin-bottom:12px;color:rgba(255,255,255,.85)">' +
           'We use cookies to make this site work and improve it (analytics + performance). ' +
           'You can opt out of analytics anytime. ' +
-          '<a href="/privacy.html" style="color:#0a84ff;font-weight:500">Read our privacy policy</a>.' +
+          '<a href="/privacy" style="color:#0a84ff;font-weight:500">Read our privacy policy</a>.' +
           '</div>' +
           '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
           '<button id="cookieAcceptAll" type="button" style="flex:1 1 auto;background:#0a84ff;color:#fff;border:0;padding:9px 14px;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;min-width:120px">Accept all</button>' +
