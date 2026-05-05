@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Jesse Onate Real Estate//Rate Text Reminder//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rate-text-reminder@jessetek.net
+DTSTAMP:20260101T193000Z
+DTSTART;TZID=America/Los_Angeles:20260101T112500
+DTEND;TZID=America/Los_Angeles:20260101T113500
+SUMMARY:Jesse's weekly mortgage rate text
+DESCRIPTION:Heads up — Jesse's weekly SoCal mortgage rate update lands at 11:30am PT. Quick 30-second read with this week's 30-yr fixed\, FHA\, and Jumbo rates plus what's driving the move.\n\nLearn more: https://jessetek.net/rates
+LOCATION:Your phone (SMS)
+URL:https://jessetek.net/rates
+RRULE:FREQ=WEEKLY;BYDAY=TH
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:Jesse's rate text drops in 5 min
+END:VALARM
+END:VEVENT
+END:VCALENDAR

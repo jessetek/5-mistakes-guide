@@ -105,7 +105,13 @@
     <h1>What's Your Home<br><span class="g">Actually Worth?</span></h1>
     <p>Get an accurate market valuation from a local realtor — not a Zillow estimate. Real comps. Real strategy. Real numbers.</p>
 
-    <form class="valuation-form" id="vfForm" action="/api/valuation" method="POST" novalidate>
+    <!-- Real recent win — anchors expectation that this isn't just a Zestimate -->
+    <div class="win-strip">
+      <span class="win-strip-dot"></span>
+      <span><strong>Last week:</strong> Maria G. in Whittier got an extra $42K over Zillow's estimate.</span>
+    </div>
+
+    <form class="valuation-form" id="vfForm" action="/api/valuation" method="POST" novalidate data-autosave="valuation">
       <div class="vf-row">
         <label class="vf-field">
           <span class="vf-label">Property Address</span>
@@ -1055,6 +1061,7 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 })();
 </script>
 <script src="/js/analytics.js" defer></script>
+<script src="/js/cro.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

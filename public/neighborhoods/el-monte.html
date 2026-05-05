@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=24">
+<link rel="stylesheet" href="/css/main.min.css?v=25">
 </head>
 <body>
 
@@ -288,6 +288,7 @@
 <script>var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:0.08});document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){io.observe(el);});</script>
 <script>(function(){var nav=document.getElementById('nav');if(!nav)return;var lastY=0,ticking=false;window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){var y=window.scrollY;if(y>80){nav.classList.toggle('nav-hidden',y>lastY);nav.classList.add('scrolled');}else{nav.classList.remove('nav-hidden');nav.classList.remove('scrolled');}lastY=y;ticking=false;});ticking=true;}},{passive:true});})();</script>
 <script src="/js/analytics.js" defer></script>
+<script src="/js/cro.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

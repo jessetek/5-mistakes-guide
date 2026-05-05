@@ -22,6 +22,9 @@
   <url><loc>https://jessetek.net/videos</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jessetek.net/services</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jessetek.net/zoom</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/jesse-vs-typical-realtor</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://jessetek.net/case-studies/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/case-studies/maria-whittier-42k-over-zillow</loc><lastmod>2025-12-10</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://jessetek.net/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://jessetek.net/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://jessetek.net/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -33,6 +36,7 @@
   <url><loc>https://jessetek.net/es/valuacion</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://jessetek.net/es/listados</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jessetek.net/es/guia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jessetek.net/es/comprador-primerizo</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- City pages -->
   <url><loc>https://jessetek.net/neighborhoods/downey</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>

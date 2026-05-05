@@ -4762,3 +4762,204 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
   transition:color .2s ease,border-color .2s ease;
 }
 .hero-secondary-link a:hover{color:#fff;border-bottom-color:#fff}
+
+/* ============================================================
+   PHASE 2 CRO — added 2026-05-05 (later same day)
+   Win ticker, comparison page, 5-min response promise,
+   multi-step valuation form, calendar opt-in
+   ============================================================ */
+
+/* Recent wins ticker — rotating real sale outcomes */
+.wins-ticker{
+  background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);
+  color:#fff;padding:36px 24px 40px;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.wins-ticker-inner{max-width:1100px;margin:0 auto}
+.wins-ticker-head{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:11.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin-bottom:18px;
+}
+.wins-ticker-head::before{
+  content:'';display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:#34c759;animation:winsPulse 2s ease-in-out infinite;
+}
+@keyframes winsPulse{0%,100%{opacity:1}50%{opacity:.45}}
+.wins-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.wins-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;padding:18px 20px;
+}
+.wins-card-amt{
+  font-size:28px;font-weight:800;letter-spacing:-.6px;line-height:1;margin-bottom:6px;
+  background:linear-gradient(135deg,#0071E3,#5856D6);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.wins-card-amt.green{
+  background:linear-gradient(135deg,#34c759,#00d4aa);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.wins-card-meta{font-size:13px;color:rgba(255,255,255,.65);line-height:1.45}
+.wins-card-meta strong{color:rgba(255,255,255,.92);font-weight:600}
+.wins-card-tag{
+  display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-top:8px;
+}
+@media(max-width:780px){
+  .wins-grid{grid-template-columns:1fr;gap:10px}
+  .wins-ticker{padding:28px 18px 32px}
+}
+
+/* Win strip above /valuation form */
+.win-strip{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(52,199,89,.08);border:1px solid rgba(52,199,89,.18);
+  border-radius:14px;padding:11px 16px;margin:0 0 18px;
+  font-size:13px;color:#fff;line-height:1.4;
+}
+.win-strip-dot{
+  flex-shrink:0;width:8px;height:8px;border-radius:50%;background:#34c759;
+  animation:winsPulse 2s ease-in-out infinite;
+}
+.win-strip strong{color:#34c759;font-weight:600}
+
+/* 5-minute response promise badge (used on /zoom + /valuation) */
+.response-promise{
+  background:rgba(255,193,7,.08);border:1px solid rgba(255,193,7,.22);
+  border-radius:18px;padding:18px 22px;margin:18px 0;
+  display:flex;align-items:center;gap:14px;
+}
+.response-promise-icon{
+  flex-shrink:0;width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,#ffc107,#ff9500);
+  color:#1d1d1f;font-size:22px;
+  display:flex;align-items:center;justify-content:center;
+}
+.response-promise-text{flex:1;min-width:0}
+.response-promise-title{
+  font-size:14.5px;font-weight:700;color:#fff;letter-spacing:-.01em;line-height:1.3;margin-bottom:2px;
+}
+.response-promise-sub{
+  font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.4;
+}
+.response-promise.light{background:rgba(255,193,7,.06);border-color:rgba(255,193,7,.25)}
+.response-promise.light .response-promise-title{color:#1d1d1f}
+.response-promise.light .response-promise-sub{color:rgba(29,29,31,.6)}
+
+/* Live booking ticker (small inline strip on /zoom) */
+.live-ticker{
+  display:inline-flex;align-items:center;
+  background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.06);
+  border-radius:999px;padding:7px 14px;
+  font-size:12px;color:#474749;line-height:1.3;
+  margin-top:14px;font-weight:500;
+}
+.live-ticker.dark{
+  background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.75);
+}
+
+/* Calendar opt-in button (used on /rates banner) */
+.cal-add{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.08);color:#fff;
+  border:1px solid rgba(255,255,255,.15);border-radius:999px;
+  padding:6px 12px;font-size:11.5px;font-weight:500;text-decoration:none;
+  margin-left:10px;transition:background .15s ease;
+}
+.cal-add:hover{background:rgba(255,255,255,.14)}
+
+/* Multi-step form progress (for /valuation v2) */
+.mstep-progress{
+  display:flex;align-items:center;gap:8px;margin-bottom:24px;
+}
+.mstep-dot{
+  flex:1;height:4px;border-radius:999px;background:rgba(255,255,255,.1);
+  overflow:hidden;position:relative;
+}
+.mstep-dot.done{background:#0a84ff}
+.mstep-dot.current::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,#0a84ff 0%,#0a84ff var(--prog,50%),rgba(255,255,255,.1) var(--prog,50%));
+}
+.mstep-meta{
+  font-size:11.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);text-align:center;margin-bottom:14px;
+}
+.mstep-step{display:none}
+.mstep-step.on{display:block;animation:mstepIn .3s ease both}
+@keyframes mstepIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+.mstep-back{
+  background:transparent;border:0;color:rgba(255,255,255,.55);
+  font-size:13px;font-weight:500;cursor:pointer;padding:8px 0;
+}
+.mstep-back:hover{color:#fff}
+.mstep-back:disabled{opacity:.3;cursor:not-allowed}
+.mstep-nav{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:18px;
+}
+
+/* Comparison page */
+.compare-hero{
+  padding:140px 22px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);
+  text-align:center;color:#fff;position:relative;overflow:hidden;
+}
+.compare-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),
+                   linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:54px 54px;
+  -webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);
+          mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);
+}
+.compare-hero-inner{position:relative;z-index:2;max-width:780px;margin:0 auto}
+.compare-hero h1{
+  font-size:clamp(38px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px;
+}
+.compare-hero h1 .g{
+  background:linear-gradient(135deg,#0071E3,#5856D6);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.compare-hero p{font-size:17px;color:rgba(255,255,255,.65);max-width:600px;margin:0 auto 0;line-height:1.55}
+.compare-table-wrap{padding:60px 22px;background:var(--bg)}
+.compare-table{
+  max-width:920px;margin:0 auto;background:#fff;border-radius:24px;
+  box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04);overflow:hidden;
+}
+.compare-row{
+  display:grid;grid-template-columns:1.1fr 1fr 1fr;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.compare-row:last-child{border-bottom:0}
+.compare-cell{padding:18px 20px;font-size:14.5px;line-height:1.5;color:var(--text);min-height:60px;display:flex;align-items:center}
+.compare-cell.label{font-weight:600;color:var(--text);background:rgba(0,0,0,.02)}
+.compare-cell.them{color:rgba(0,0,0,.5)}
+.compare-cell.us{color:var(--text);font-weight:500;background:rgba(52,199,89,.04)}
+.compare-cell .check{color:#34c759;font-weight:700;margin-right:6px}
+.compare-cell .x{color:#ff453a;font-weight:700;margin-right:6px}
+.compare-head{
+  display:grid;grid-template-columns:1.1fr 1fr 1fr;
+  background:#1d1d1f;color:#fff;
+}
+.compare-head .compare-cell{
+  font-size:13px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+  color:rgba(255,255,255,.7);padding:16px 20px;min-height:auto;
+}
+.compare-head .compare-cell.us{
+  background:linear-gradient(135deg,#0071E3,#5856D6);color:#fff;
+}
+@media(max-width:780px){
+  .compare-row,.compare-head{grid-template-columns:1fr 1fr;}
+  .compare-cell.label{display:none}
+  .compare-row::before{
+    content:attr(data-label);
+    grid-column:1/-1;
+    padding:14px 20px 4px;
+    font-size:11.5px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+    color:var(--text2);background:rgba(0,0,0,.02);
+  }
+}

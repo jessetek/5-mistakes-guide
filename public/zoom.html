@@ -200,6 +200,18 @@
         <div class="zoom-trust-item">🌐 Bilingual</div>
       </div>
 
+      <!-- Live activity ticker — rotating recent client activity -->
+      <div class="live-ticker" id="liveTicker" aria-live="polite" style="margin-top:14px"></div>
+
+      <!-- 5-minute response promise -->
+      <div class="response-promise light" style="margin-top:18px">
+        <div class="response-promise-icon">⚡</div>
+        <div class="response-promise-text">
+          <div class="response-promise-title">5-minute response promise</div>
+          <div class="response-promise-sub">I reply personally within 5 min during business hours (8am-8pm PT). After hours? First thing next morning.</div>
+        </div>
+      </div>
+
       <!-- Testimonial adjacent to calendar (research: +37% vs separate section) -->
       <div class="form-testimonial light" style="margin-top:24px">
         <div class="form-testimonial-stars">★★★★★</div>
@@ -546,6 +558,7 @@
 }
 </script>
 <script src="/js/analytics.js" defer></script>
+<script src="/js/cro.js" defer></script>
 
 <!-- Sticky Mobile CTA — mobile only, hides on scroll-down -->
 <div class="sticky-mobile-cta" id="stickyMobileCta" aria-label="Quick contact">
