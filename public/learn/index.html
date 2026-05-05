@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Learn — SoCal Real Estate Education Hub | Jesse Oñate</title>
+<meta name="description" content="Free education on buying, selling, mortgages, and SoCal markets. Real numbers, no fluff. Curated tools, guides, and case studies from a bilingual realtor in Downey.">
+<link rel="canonical" href="https://jessetek.net/learn/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Learn — SoCal Real Estate Education Hub | Jesse Oñate">
+<meta property="og:description" content="Free education on buying, selling, mortgages, and SoCal markets. Real numbers, no fluff.">
+<meta property="og:image" content="https://jessetek.net/img/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jessetek.net/learn/">
+<meta property="og:site_name" content="Jesse Oñate Real Estate">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn — SoCal Real Estate Education Hub">
+<meta name="twitter:description" content="Free education. Real numbers. No fluff.">
+<meta name="twitter:image" content="https://jessetek.net/img/og-home.jpg">
+<link rel="stylesheet" href="/css/main.min.css?v=27">
+<meta name="theme-color" content="#0E1014">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<style>
+  .lh-hero{padding:140px 22px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+  .lh-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
+  .lh-hero-inner{position:relative;z-index:2;max-width:780px;margin:0 auto}
+  .lh-hero h1{font-size:clamp(38px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px}
+  .lh-hero h1 .g{background:linear-gradient(135deg,#0071E3,#5856D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .lh-hero p{font-size:17px;color:rgba(255,255,255,.65);max-width:600px;margin:0 auto;line-height:1.55}
+  .lh-search{margin:30px auto 0;max-width:520px;position:relative}
+  .lh-search input{width:100%;padding:14px 18px 14px 46px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:inherit;outline:none;transition:border-color .2s}
+  .lh-search input:focus{border-color:rgba(0,113,227,.6);background:rgba(255,255,255,.09)}
+  .lh-search input::placeholder{color:rgba(255,255,255,.45)}
+  .lh-search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5)}
+
+  .lh-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:32px 22px 0;max-width:920px;margin:0 auto}
+  .lh-pill{padding:9px 18px;border-radius:999px;background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.06);color:var(--text);font-size:13.5px;font-weight:500;cursor:pointer;transition:background .15s ease,border-color .15s ease;text-decoration:none}
+  .lh-pill:hover{background:rgba(0,113,227,.06);border-color:rgba(0,113,227,.2)}
+  .lh-pill.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+  .lh-vertical{padding:60px 22px;max-width:1100px;margin:0 auto}
+  .lh-vertical-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;gap:14px;flex-wrap:wrap}
+  .lh-vertical-head h2{font-size:28px;font-weight:700;letter-spacing:-.6px;color:var(--text);margin:0}
+  .lh-vertical-head .lh-eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:4px}
+  .lh-vertical-head p{font-size:14.5px;color:var(--text2);max-width:520px;margin:0;line-height:1.55}
+
+  .lh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .lh-card{display:block;background:#fff;border:1px solid rgba(0,0,0,.04);border-radius:16px;padding:22px 22px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+  .lh-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.08);border-color:rgba(0,113,227,.15)}
+  .lh-card-tag{font-size:10.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .lh-card-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .lh-card-title{font-size:17px;font-weight:700;letter-spacing:-.3px;line-height:1.35;color:var(--text);margin-bottom:8px}
+  .lh-card p{font-size:13.5px;color:var(--text2);line-height:1.55;margin:0 0 12px}
+  .lh-card-cta{font-size:12.5px;color:var(--blue);font-weight:600}
+
+  .lh-card[data-type="tool"] .lh-card-tag{color:#34c759}
+  .lh-card[data-type="tool"] .lh-card-tag::before{background:#34c759}
+  .lh-card[data-type="case-study"] .lh-card-tag{color:#ff9500}
+  .lh-card[data-type="case-study"] .lh-card-tag::before{background:#ff9500}
+  .lh-card[data-type="article"] .lh-card-tag{color:var(--blue)}
+
+  /* Filtering */
+  .lh-card.hidden{display:none}
+  .lh-vertical.hidden{display:none}
+  .lh-no-results{padding:40px 22px;text-align:center;color:var(--text2);font-size:14.5px}
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <span class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')">✕</span>
+  <a href="/" class="mob-link">Home</a>
+  <details class="mob-section"><summary>For Buyers</summary>
+    <a href="/buyer" class="mob-sub">Buyer Guide</a>
+    <a href="/buyer-quiz" class="mob-sub">Readiness Quiz</a>
+    <a href="/guide" class="mob-sub">Free 5-Mistakes Guide</a>
+    <a href="/pre-approval" class="mob-sub">Pre-Approval Guide</a>
+    <a href="/calculator" class="mob-sub">Mortgage Calculator</a>
+    <a href="/rates" class="mob-sub">Rate Alerts</a>
+    <a href="/listings" class="mob-sub">Browse Listings</a>
+  </details>
+  <details class="mob-section"><summary>For Sellers</summary>
+    <a href="/seller" class="mob-sub">Seller Guide</a>
+    <a href="/valuation" class="mob-sub">Free Valuation</a>
+    <a href="/seller-net" class="mob-sub">Net Proceeds Calculator</a>
+  </details>
+  <a href="/learn/" class="mob-link">Learn</a>
+  <a href="/case-studies/" class="mob-link">Case Studies</a>
+  <a href="/insights/" class="mob-link">Insights</a>
+  <a href="/zoom" class="mob-link mob-cta">Let's Talk →</a>
+</div>
+
+<!-- NAV — DESKTOP -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">Jesse Oñate.</a>
+  <div class="nav-links">
+    <div class="nav-dropdown"><button class="nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">For Buyers <span class="nav-chev" aria-hidden="true">▾</span></button>
+      <div class="nav-menu" role="menu">
+        <a href="/buyer" role="menuitem">Buyer Guide</a>
+        <a href="/buyer-quiz" role="menuitem">Readiness Quiz</a>
+        <a href="/guide" role="menuitem">Free 5-Mistakes Guide</a>
+        <a href="/pre-approval" role="menuitem">Pre-Approval Guide</a>
+        <a href="/calculator" role="menuitem">Mortgage Calculator</a>
+        <a href="/rates" role="menuitem">Rate Alerts</a>
+        <a href="/listings" role="menuitem">Browse Listings</a>
+      </div>
+    </div>
+    <div class="nav-dropdown"><button class="nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">For Sellers <span class="nav-chev" aria-hidden="true">▾</span></button>
+      <div class="nav-menu" role="menu">
+        <a href="/seller" role="menuitem">Seller Guide</a>
+        <a href="/valuation" role="menuitem">Free Valuation</a>
+        <a href="/seller-net" role="menuitem">Net Proceeds Calculator</a>
+      </div>
+    </div>
+    <a href="/learn/" class="nav-link">Learn</a>
+    <a href="/case-studies/" class="nav-link">Case Studies</a>
+    <a href="/insights/" class="nav-link">Insights</a>
+    <a href="/zoom" class="nav-phone" aria-label="Book a call with Jesse" title="Book a 15-min call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
+</nav>
+
+<section class="lh-hero">
+  <div class="lh-hero-inner">
+    <h1>Learn before<br><span class="g">you spend.</span></h1>
+    <p>Everything I'd tell you over coffee — buying, selling, mortgages, and SoCal markets. Free, organized, no fluff.</p>
+    <div class="lh-search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="lhSearch" placeholder="Search guides, tools, case studies…" autocomplete="off">
+    </div>
+  </div>
+</section>
+
+<!-- Filter pills -->
+<div class="lh-pills" role="tablist">
+  <a href="#" class="lh-pill active" data-filter="all">All</a>
+  <a href="#" class="lh-pill" data-filter="buying">Buying</a>
+  <a href="#" class="lh-pill" data-filter="selling">Selling</a>
+  <a href="#" class="lh-pill" data-filter="mortgages">Mortgages & Rates</a>
+  <a href="#" class="lh-pill" data-filter="markets">SoCal Markets</a>
+</div>
+
+<!-- VERTICAL: BUYING -->
+<section class="lh-vertical" data-vertical="buying">
+  <div class="lh-vertical-head">
+    <div>
+      <span class="lh-eyebrow">Vertical 01</span>
+      <h2>Buying a SoCal home</h2>
+    </div>
+    <p>From "should I buy?" to "we got the keys" — every step, with real numbers.</p>
+  </div>
+  <div class="lh-grid">
+    <a href="/buyer-quiz" class="lh-card" data-type="tool" data-keywords="quiz readiness ready buying buyer first-time">
+      <div class="lh-card-tag">Tool · 60 sec</div>
+      <div class="lh-card-title">Buyer Readiness Quiz</div>
+      <p>Honest 60-second readiness score. No email required. Tells you exactly where you stand and what to do next.</p>
+      <div class="lh-card-cta">Take the quiz →</div>
+    </a>
+    <a href="/guide" class="lh-card" data-type="tool" data-keywords="guide pdf 5 mistakes first-time buyer mello-roos supplemental">
+      <div class="lh-card-tag">Lead magnet · PDF</div>
+      <div class="lh-card-title">5 Mistakes First-Time Buyers Make ($10K-$30K)</div>
+      <p>The hidden traps most agents won't tell you about. Mello-Roos, supplemental tax, dual agency, and more.</p>
+      <div class="lh-card-cta">Get the guide →</div>
+    </a>
+    <a href="/buyer" class="lh-card" data-type="article" data-keywords="buyer guide first-time buying step-by-step">
+      <div class="lh-card-tag">Article · Read</div>
+      <div class="lh-card-title">First-Time Buyer Guide — 7-Step Roadmap</div>
+      <p>The complete roadmap from pre-approval to keys, with timeline expectations and SoCal-specific gotchas.</p>
+      <div class="lh-card-cta">Read the guide →</div>
+    </a>
+    <a href="/pre-approval" class="lh-card" data-type="article" data-keywords="pre-approval mortgage lender documents itin">
+      <div class="lh-card-tag">Article · Step 1</div>
+      <div class="lh-card-title">Pre-Approval — Documents & What to Expect</div>
+      <p>Pre-qual vs pre-approval, document checklist, lender-match logic, and bilingual lender intros.</p>
+      <div class="lh-card-cta">Read the guide →</div>
+    </a>
+    <a href="/calculator" class="lh-card" data-type="tool" data-keywords="mortgage calculator monthly payment principal interest tax">
+      <div class="lh-card-tag">Tool · Live</div>
+      <div class="lh-card-title">Mortgage Calculator</div>
+      <p>Adjust home price, down payment, interest rate, and term. See your real monthly payment, including tax and HOA.</p>
+      <div class="lh-card-cta">Run the numbers →</div>
+    </a>
+    <a href="/rent-vs-buy" class="lh-card" data-type="tool" data-keywords="rent vs buy break-even appreciation calculator">
+      <div class="lh-card-tag">Tool · Live</div>
+      <div class="lh-card-title">Rent vs Buy Calculator</div>
+      <p>Real SoCal numbers. Property tax, HOA, opportunity cost, appreciation, live mortgage rates. See your break-even point.</p>
+      <div class="lh-card-cta">Compare →</div>
+    </a>
+    <a href="/checklist" class="lh-card" data-type="tool" data-keywords="checklist buyer step-by-step closing">
+      <div class="lh-card-tag">Tool · Interactive</div>
+      <div class="lh-card-title">Buyer Checklist</div>
+      <p>Track every step from pre-approval to keys. Free, interactive, no email required.</p>
+      <div class="lh-card-cta">Open the checklist →</div>
+    </a>
+    <a href="/case-studies/aaron-la-mirada-bidding-war" class="lh-card" data-type="case-study" data-keywords="bidding war first-time buyer fha la mirada offers">
+      <div class="lh-card-tag">Case study · La Mirada</div>
+      <div class="lh-card-title">Aaron Won a 5-Offer Bidding War (at $18K UNDER List)</div>
+      <p>The contrarian playbook for first-time buyers losing bidding wars: target homes nobody else wants.</p>
+      <div class="lh-card-cta">Read the case study →</div>
+    </a>
+    <a href="/case-studies/carlos-pico-rivera-itin-loan" class="lh-card" data-type="case-study" data-keywords="itin loan bilingual hispanic immigrant carlos pico rivera">
+      <div class="lh-card-tag">Case study · ITIN buyer</div>
+      <div class="lh-card-title">Carlos's First Home: ITIN Loan, $635K, 28 Days</div>
+      <p>Three lenders said no. The right bilingual lender said yes. The path most agents don't know exists.</p>
+      <div class="lh-card-cta">Read the case study →</div>
+    </a>
+  </div>
+</section>
+
+<!-- VERTICAL: SELLING -->
+<section class="lh-vertical" data-vertical="selling">
+  <div class="lh-vertical-head">
+    <div>
+      <span class="lh-eyebrow">Vertical 02</span>
+      <h2>Selling your SoCal home</h2>
+    </div>
+    <p>Pricing, prep, timing — the strategy that gets $32K avg over asking.</p>
+  </div>
+  <div class="lh-grid">
+    <a href="/valuation" class="lh-card" data-type="tool" data-keywords="valuation cma free home value zillow comp">
+      <div class="lh-card-tag">Tool · Free 24h</div>
+      <div class="lh-card-title">Free Home Valuation (Real CMA)</div>
+      <p>Real comps, not a Zestimate. Manual analysis from a local realtor in 24 hours. No spammy follow-up.</p>
+      <div class="lh-card-cta">Get my report →</div>
+    </a>
+    <a href="/seller-net" class="lh-card" data-type="tool" data-keywords="seller net proceeds calculator capital gains commissions">
+      <div class="lh-card-tag">Tool · Live</div>
+      <div class="lh-card-title">Net Proceeds Calculator</div>
+      <p>How much will you actually walk away with? Mortgage payoff, commissions, capital gains, every line item.</p>
+      <div class="lh-card-cta">Calculate net →</div>
+    </a>
+    <a href="/seller" class="lh-card" data-type="article" data-keywords="seller guide listing strategy pricing">
+      <div class="lh-card-tag">Article · Read</div>
+      <div class="lh-card-title">First-Time Seller Guide — 7-Step Roadmap</div>
+      <p>From valuation to closing — what to expect, what to prep, and how to maximize what you net.</p>
+      <div class="lh-card-cta">Read the guide →</div>
+    </a>
+    <a href="/seller-checklist" class="lh-card" data-type="tool" data-keywords="seller checklist listing prep">
+      <div class="lh-card-tag">Tool · Interactive</div>
+      <div class="lh-card-title">Seller Checklist</div>
+      <p>Track every step from listing prep to closing day. Free, interactive, no email required.</p>
+      <div class="lh-card-cta">Open the checklist →</div>
+    </a>
+    <a href="/case-studies/maria-whittier-42k-over-zillow" class="lh-card" data-type="case-study" data-keywords="seller whittier zillow zestimate over asking maria">
+      <div class="lh-card-tag">Case study · Whittier</div>
+      <div class="lh-card-title">Maria G. Got $42K Over Zillow's Estimate</div>
+      <p>The hyperlocal comp story Zillow couldn't see. Listed at $52K above 3 other agents' suggestions and won.</p>
+      <div class="lh-card-cta">Read the case study →</div>
+    </a>
+    <a href="/case-studies/garcia-downey-32k-over-asking" class="lh-card" data-type="case-study" data-keywords="seller downey garcia 32k over asking 14 days strategy">
+      <div class="lh-card-tag">Case study · Downey</div>
+      <div class="lh-card-title">Garcia Family: $32K Over Asking in 14 Days</div>
+      <p>21-day prep sprint + pre-marketed buyer list = 6 offers, 3.7× faster than Downey median.</p>
+      <div class="lh-card-cta">Read the case study →</div>
+    </a>
+    <a href="/insights/seller-pricing-strategy-socal" class="lh-card" data-type="article" data-keywords="pricing strategy listing first 14 days price drop">
+      <div class="lh-card-tag">Insights · Article</div>
+      <div class="lh-card-title">How to Price Your SoCal Home — The First 14 Days</div>
+      <p>The first 14 days decide everything. Here's how to price so you maximize buyer interest and avoid the dreaded reduce.</p>
+      <div class="lh-card-cta">Read the article →</div>
+    </a>
+  </div>
+</section>
+
+<!-- VERTICAL: MORTGAGES -->
+<section class="lh-vertical" data-vertical="mortgages">
+  <div class="lh-vertical-head">
+    <div>
+      <span class="lh-eyebrow">Vertical 03</span>
+      <h2>Mortgages & rates</h2>
+    </div>
+    <p>What's actually moving the market — and how to time your move.</p>
+  </div>
+  <div class="lh-grid">
+    <a href="/rates" class="lh-card" data-type="tool" data-keywords="rates mortgage weekly text alerts thursday">
+      <div class="lh-card-tag">Tool · SMS</div>
+      <div class="lh-card-title">Weekly Rate Text Alerts</div>
+      <p>30-second mortgage rate update, texted every Thursday at 11:30am. Free, cancel anytime.</p>
+      <div class="lh-card-cta">Subscribe →</div>
+    </a>
+    <a href="/calculator" class="lh-card" data-type="tool" data-keywords="mortgage calculator monthly payment">
+      <div class="lh-card-tag">Tool · Live</div>
+      <div class="lh-card-title">Mortgage Payment Calculator</div>
+      <p>Live rates from FRED. Adjust price, down payment, term. See real monthly numbers.</p>
+      <div class="lh-card-cta">Run the math →</div>
+    </a>
+    <a href="/pre-approval" class="lh-card" data-type="article" data-keywords="pre-approval lender documents itin first-time">
+      <div class="lh-card-tag">Article · Step 1</div>
+      <div class="lh-card-title">Pre-Approval Guide</div>
+      <p>Document checklist, pre-qual vs pre-approval, lender-match logic. Bilingual lenders included.</p>
+      <div class="lh-card-cta">Read the guide →</div>
+    </a>
+    <a href="/insights/socal-rate-watch-october-2026" class="lh-card" data-type="article" data-keywords="rate watch fed cut october 2026 mortgage">
+      <div class="lh-card-tag">Insights · Latest</div>
+      <div class="lh-card-title">SoCal Rate Watch — October 2026</div>
+      <p>Post-Fed-cut market read. Where rates landed, what's driving the move, and what it means for buyers and sellers.</p>
+      <div class="lh-card-cta">Read the article →</div>
+    </a>
+    <a href="/insights/socal-refinance-guide-2026" class="lh-card" data-type="article" data-keywords="refinance refi 2026 closing costs lock socal">
+      <div class="lh-card-tag">Insights · Article</div>
+      <div class="lh-card-title">Should I Refinance My SoCal Home in 2026?</div>
+      <p>Plain-English math for SoCal homeowners who closed at higher rates. When to lock, when to wait.</p>
+      <div class="lh-card-cta">Read the article →</div>
+    </a>
+    <a href="/insights/down-payment-assistance-california" class="lh-card" data-type="article" data-keywords="down payment assistance calhfa myhome california first-time">
+      <div class="lh-card-tag">Insights · CalHFA</div>
+      <div class="lh-card-title">Down Payment Assistance in California</div>
+      <p>3-20% of your purchase covered. CalHFA, MyHome, and city-level programs. What you actually qualify for.</p>
+      <div class="lh-card-cta">Read the article →</div>
+    </a>
+    <a href="/case-studies/carlos-pico-rivera-itin-loan" class="lh-card" data-type="case-study" data-keywords="itin loan bilingual carlos pico rivera lender">
+      <div class="lh-card-tag">Case study · ITIN buyer</div>
+      <div class="lh-card-title">ITIN Loan Walkthrough — $635K Pico Rivera Close</div>
+      <p>Real numbers on a real ITIN loan: 15% down, 7.45% rate, 28 days to keys. Bilingual lender process.</p>
+      <div class="lh-card-cta">Read the case study →</div>
+    </a>
+  </div>
+</section>
+
+<!-- VERTICAL: SOCAL MARKETS -->
+<section class="lh-vertical" data-vertical="markets">
+  <div class="lh-vertical-head">
+    <div>
+      <span class="lh-eyebrow">Vertical 04</span>
+      <h2>SoCal market intel</h2>
+    </div>
+    <p>City-by-city deep-dives, market reports, and local guides for 47+ SoCal cities.</p>
+  </div>
+  <div class="lh-grid">
+    <a href="/insights/best-socal-cities-to-buy-2026" class="lh-card" data-type="article" data-keywords="best cities buy 2026 socal value schools coastal luxury">
+      <div class="lh-card-tag">Pillar · 42 cities</div>
+      <div class="lh-card-title">Best SoCal Cities to Buy a Home in 2026</div>
+      <p>Ranked by buyer profile: best value, best schools, best coastal, best master-planned, best luxury.</p>
+      <div class="lh-card-cta">See the rankings →</div>
+    </a>
+    <a href="/service-areas" class="lh-card" data-type="article" data-keywords="service areas cities socal coverage">
+      <div class="lh-card-tag">Index · 47 cities</div>
+      <div class="lh-card-title">All SoCal Service Areas</div>
+      <p>Every city I cover, from Downey to Beverly Hills. Median price, sub-areas, schools, and full guides.</p>
+      <div class="lh-card-cta">Browse cities →</div>
+    </a>
+    <a href="/neighborhoods/downey" class="lh-card" data-type="article" data-keywords="downey neighborhood guide median price subareas">
+      <div class="lh-card-tag">Guide · Home base</div>
+      <div class="lh-card-title">Downey Real Estate Guide</div>
+      <p>The city I know best. Sub-areas, schools, market dynamics, and what's actually realistic for buyers and sellers.</p>
+      <div class="lh-card-cta">Read the guide →</div>
+    </a>
+    <a href="/insights/socal-spring-buying-season-may-2026" class="lh-card" data-type="article" data-keywords="spring buying season may 2026 socal inventory rates">
+      <div class="lh-card-tag">Insights · Seasonal</div>
+      <div class="lh-card-title">SoCal Spring Buying Season — May 2026</div>
+      <p>Why this spring is different. Lower rates, tight inventory, fewer showings — and how to play it.</p>
+      <div class="lh-card-cta">Read the article →</div>
+    </a>
+    <a href="/insights/mello-roos-explained-socal-buyers" class="lh-card" data-type="article" data-keywords="mello-roos hidden tax property new construction">
+      <div class="lh-card-tag">Insights · Hidden cost</div>
+      <div class="lh-card-title">Mello-Roos Explained — What SoCal Buyers Need to Know</div>
+      <p>$3K-$8K/year that most calculators don't show. Where it hits, how to find out, and how to avoid surprises.</p>
+      <div class="lh-card-cta">Read the article →</div>
+    </a>
+    <a href="/insights/bilingual-realtor-downey" class="lh-card" data-type="article" data-keywords="bilingual realtor downey hispanic latino spanish">
+      <div class="lh-card-tag">Insights · Bilingual</div>
+      <div class="lh-card-title">Why a Bilingual Realtor Actually Matters</div>
+      <p>If Spanish is your first language, a real bilingual realtor doesn't translate — they negotiate. Here's the difference.</p>
+      <div class="lh-card-cta">Read the article →</div>
+    </a>
+    <a href="/insights/" class="lh-card" data-type="article" data-keywords="insights blog all articles archive">
+      <div class="lh-card-tag">Browse · All articles</div>
+      <div class="lh-card-title">All Insights Articles</div>
+      <p>Every market report, deep-dive, and analysis I've published. Updated monthly.</p>
+      <div class="lh-card-cta">Browse all →</div>
+    </a>
+  </div>
+</section>
+
+<div class="lh-no-results" id="lhNoResults" style="display:none">
+  No matches. Try a broader search — or <a href="/zoom" style="color:var(--blue);font-weight:500">just talk to me directly</a>.
+</div>
+
+<!-- CTA -->
+<section class="cta-section" style="padding:60px 22px 100px">
+  <div class="cta-card reveal" style="text-align:center">
+    <h2 style="font-size:32px;font-weight:700;letter-spacing:-1px;margin-bottom:12px">Have a question I haven't answered?</h2>
+    <p style="font-size:16px;color:var(--text2);max-width:540px;margin:0 auto 24px;line-height:1.55">15-min call, sin presión, sin pitch. If I can't help, I'll point you to who can.</p>
+    <div class="cta-btns" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="/zoom" class="btn-primary">Book my free 15-min call</a>
+      <a href="/buyer-quiz" class="btn-ghost">Or take the readiness quiz first →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo"><span>Jesse</span> Oñate.</div>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+      <div class="f-contact-quick">
+        <a href="tel:5626094200">(562) 609-4200</a>
+        <a href="mailto:jesse@jesseonate.com">jesse@jesseonate.com</a>
+      </div>
+    </div>
+    <div class="f-col"><h4>For Buyers</h4>
+      <a href="/buyer">Buyer Guide</a><a href="/buyer-quiz">Readiness Quiz</a><a href="/guide">Free 5-Mistakes Guide</a><a href="/pre-approval">Pre-Approval Guide</a><a href="/calculator">Mortgage Calculator</a><a href="/rates">Rate Alerts</a><a href="/listings">Browse Listings</a>
+    </div>
+    <div class="f-col"><h4>For Sellers</h4>
+      <a href="/seller">Seller Guide</a><a href="/valuation">Free Valuation</a><a href="/seller-net">Net Proceeds Calculator</a>
+    </div>
+    <div class="f-col"><h4>Resources</h4>
+      <a href="/learn/">Learn Hub</a><a href="/case-studies/">Case Studies</a><a href="/insights/">Insights</a><a href="/about">About Jesse</a><a href="/zoom">Book a Call</a>
+    </div>
+    <div class="f-col"><h4>Connect</h4>
+      <a href="https://instagram.com/jessetek" target="_blank" rel="noopener">@jessetek</a><a href="/es/">Español 🌐</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/accessibility">Accessibility</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Jesse Oñate. All rights reserved. <span class="f-dre">DRE #02133131</span> <span class="f-eho" title="Equal Housing Opportunity">⚖ Equal Housing Opportunity</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){var nav=document.getElementById('nav');if(!nav)return;var lastY=0,ticking=false;window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){var y=window.scrollY;if(y>80){nav.classList.toggle('nav-hidden',y>lastY);nav.classList.add('scrolled');}else{nav.classList.remove('nav-hidden');nav.classList.remove('scrolled');}lastY=y;ticking=false;});ticking=true;}},{passive:true});})();
+</script>
+
+<!-- Search + filter logic -->
+<script>
+(function(){
+  var search = document.getElementById('lhSearch');
+  var pills = document.querySelectorAll('.lh-pill');
+  var verticals = document.querySelectorAll('.lh-vertical');
+  var noResults = document.getElementById('lhNoResults');
+  var currentFilter = 'all';
+  var currentQuery = '';
+
+  function applyFilters(){
+    var totalVisible = 0;
+    verticals.forEach(function(v){
+      var verticalSlug = v.getAttribute('data-vertical');
+      var verticalShouldShow = (currentFilter === 'all' || currentFilter === verticalSlug);
+      var anyCardVisible = false;
+      v.querySelectorAll('.lh-card').forEach(function(card){
+        var keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+        var title = (card.querySelector('.lh-card-title') || {}).textContent || '';
+        var matchesQuery = !currentQuery || keywords.indexOf(currentQuery) !== -1 || title.toLowerCase().indexOf(currentQuery) !== -1;
+        var visible = verticalShouldShow && matchesQuery;
+        card.classList.toggle('hidden', !visible);
+        if(visible) anyCardVisible = true;
+      });
+      v.classList.toggle('hidden', !anyCardVisible);
+      if(anyCardVisible) totalVisible++;
+    });
+    noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+  }
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(e){
+      e.preventDefault();
+      pills.forEach(function(p){ p.classList.remove('active'); });
+      pill.classList.add('active');
+      currentFilter = pill.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  search.addEventListener('input', function(){
+    currentQuery = search.value.trim().toLowerCase();
+    applyFilters();
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Learn — SoCal Real Estate Education Hub","url":"https://jessetek.net/learn/","description":"Free education on buying, selling, mortgages, and SoCal markets from a bilingual realtor in Downey."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jessetek.net/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://jessetek.net/learn/"}]}
+</script>
+
+<script src="/js/analytics.js" defer></script>
+<script src="/js/cro.js" defer></script>
+</body>
+</html>
