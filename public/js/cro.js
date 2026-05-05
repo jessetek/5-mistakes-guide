@@ -268,33 +268,73 @@
   }
 
   /* ---------- Live booking ticker (rotating recent activity) ----------
-     Drop into any element with id="liveTicker" — pulls from a static
-     pool of recent activity (replace with CRM feed later via an
-     /api/recent-activity endpoint).
+     Each item gets a stable "minutes ago" assigned at boot — rotation
+     just changes which item is visible, not the timestamp. Times spread
+     across 8min - 4h range so it reads as believable recent activity,
+     not a refresh-every-6s loop. Smooth fade transition between items.
   --------------------------------------------------------------------- */
   function initLiveTicker() {
     var el = document.getElementById('liveTicker');
     if (!el) return;
-    var items = [
-      'Maria G. just asked about Whittier comps',
+
+    // Pool of activity templates
+    var pool = [
+      'Maria G. asked about Whittier comps',
       'Jose M. booked a 15-min call (Downey)',
       'Aaron R. requested a CMA in La Mirada',
       'Sandra T. downloaded the 5-Mistakes guide',
       'Carlos V. asked about Pico Rivera schools',
       'Lupe & David booked a strategy call',
       'Erika M. requested a valuation in Cerritos',
+      'Tony H. took the buyer-readiness quiz',
+      'Diana R. signed up for weekly rate texts',
+      'Marco S. asked about Long Beach listings',
     ];
-    var minutes = [3, 7, 12, 18, 24, 31, 47, 62];
-    var idx = Math.floor(Math.random() * items.length);
-    function tick() {
+
+    // Realistic time offsets in minutes (spread out, not clumped)
+    // Mix of "minutes ago" and "hours ago" for believability
+    function fmtTime(min) {
+      if (min < 60) return min + ' min ago';
+      var h = Math.floor(min / 60);
+      var m = min % 60;
+      if (m === 0) return h + 'h ago';
+      return h + 'h ' + m + 'm ago';
+    }
+    var timeOffsets = [11, 23, 38, 47, 62, 83, 104, 127, 156, 192, 234];
+
+    // Pick 5 items at random (no duplicates) and assign each a stable time
+    var shuffled = pool.slice().sort(function () { return Math.random() - 0.5; }).slice(0, 5);
+    var items = shuffled.map(function (text, i) {
+      var base = timeOffsets[Math.floor(Math.random() * timeOffsets.length)];
+      // Small jitter so two views never see identical times
+      base += Math.floor(Math.random() * 7);
+      return { text: text, minAtBoot: base, bootMs: Date.now() };
+    });
+    // Sort by recency (smallest "minutes ago" first reads more naturally)
+    items.sort(function (a, b) { return a.minAtBoot - b.minAtBoot; });
+
+    var idx = 0;
+    function render(initial) {
       var item = items[idx % items.length];
-      var min = minutes[Math.floor(Math.random() * minutes.length)];
-      el.innerHTML = '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#34c759;margin-right:8px;vertical-align:middle"></span>' +
-        '<span style="vertical-align:middle">' + item + ' · ' + min + ' min ago</span>';
+      var minutesNow = item.minAtBoot + Math.floor((Date.now() - item.bootMs) / 60000);
+      var html = '<span class="lt-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#34c759;margin-right:8px;vertical-align:middle"></span>' +
+        '<span class="lt-text" style="vertical-align:middle">' + item.text + ' · ' + fmtTime(minutesNow) + '</span>';
+      if (initial) {
+        el.innerHTML = html;
+        el.style.transition = 'opacity .35s ease';
+        el.style.opacity = '1';
+      } else {
+        el.style.opacity = '0';
+        setTimeout(function () {
+          el.innerHTML = html;
+          el.style.opacity = '1';
+        }, 350);
+      }
       idx++;
     }
-    tick();
-    setInterval(tick, 6500);
+    render(true);
+    // Rotate every 14 seconds — slow enough to read, not feel like a slot machine
+    setInterval(render, 14000);
   }
 
   // Boot
