@@ -90,7 +90,7 @@
       </div>
     </div>
     <a href="/insights/" class="nav-link">Insights</a>
-    <a href="tel:5626094200" class="nav-phone" aria-label="Call Jesse" title="Call (562) 609-4200"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+    <a href="/zoom" class="nav-phone" aria-label="Book a call with Jesse" title="Book a 15-min call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
   </div>
   <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
 </nav>
@@ -112,66 +112,106 @@
     </div>
 
     <form class="valuation-form" id="vfForm" action="/api/valuation" method="POST" novalidate data-autosave="valuation">
-      <div class="vf-row">
-        <label class="vf-field">
-          <span class="vf-label">Property Address</span>
-          <input type="text" name="address" id="vfAddress" placeholder="123 Main St, Downey, CA 90240" required autocomplete="street-address">
-        </label>
+
+      <!-- Multi-step progress bar -->
+      <div class="mstep-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" aria-label="Step 1 of 3">
+        <div class="mstep-dot done" data-step="1"></div>
+        <div class="mstep-dot" data-step="2"></div>
+        <div class="mstep-dot" data-step="3"></div>
       </div>
-      <!-- Instant estimate preview — populated by /api/property-estimate after address blur -->
-      <div class="vf-estimate" id="vfEstimate" hidden>
-        <div class="vf-estimate-row">
-          <div>
-            <div class="vf-estimate-label">Auto-Estimate (Pre-CMA)</div>
-            <div class="vf-estimate-amount" id="vfEstimateAmount">—</div>
-            <div class="vf-estimate-range" id="vfEstimateRange"></div>
+      <div class="mstep-meta" id="mstepMeta">Step 1 of 3 · Address</div>
+
+      <!-- STEP 1 — Address (foot-in-the-door, no contact info yet) -->
+      <div class="mstep-step on" data-step="1">
+        <div class="vf-row">
+          <label class="vf-field">
+            <span class="vf-label">Property Address</span>
+            <input type="text" name="address" id="vfAddress" placeholder="123 Main St, Downey, CA 90240" required autocomplete="street-address">
+          </label>
+        </div>
+        <!-- Instant estimate preview — populated by /api/property-estimate after address blur -->
+        <div class="vf-estimate" id="vfEstimate" hidden>
+          <div class="vf-estimate-row">
+            <div>
+              <div class="vf-estimate-label">Auto-Estimate (Pre-CMA)</div>
+              <div class="vf-estimate-amount" id="vfEstimateAmount">—</div>
+              <div class="vf-estimate-range" id="vfEstimateRange"></div>
+            </div>
+            <div class="vf-estimate-meta" id="vfEstimateMeta"></div>
           </div>
-          <div class="vf-estimate-meta" id="vfEstimateMeta"></div>
+          <div class="vf-estimate-fineprint">
+            AVM-based pre-CMA. Real value can shift ±10-15% based on condition. Continue below for Jesse's manual CMA.
+          </div>
         </div>
-        <div class="vf-estimate-fineprint">
-          AVM-based estimate from Freddie/Fannie comps. Real value range can shift ±10-15% based on condition, upgrades, and recent comps. Submit below to get Jesse's manual CMA within 24h.
+        <div class="vf-estimate-loading" id="vfEstimateLoading" hidden>
+          <div class="vf-estimate-spinner"></div>
+          <span>Pulling comps for this address...</span>
+        </div>
+        <div class="mstep-nav">
+          <span></span>
+          <button type="button" class="vf-submit" data-mstep-next="1" style="margin:0;width:auto;padding:14px 24px">Continue →</button>
         </div>
       </div>
-      <div class="vf-estimate-loading" id="vfEstimateLoading" hidden>
-        <div class="vf-estimate-spinner"></div>
-        <span>Pulling comps for this address...</span>
+
+      <!-- STEP 2 — Property details -->
+      <div class="mstep-step" data-step="2">
+        <div class="vf-row vf-row-2">
+          <label class="vf-field">
+            <span class="vf-label">Bedrooms</span>
+            <select name="bedrooms">
+              <option>1</option><option>2</option><option selected>3</option><option>4</option><option>5+</option>
+            </select>
+          </label>
+          <label class="vf-field">
+            <span class="vf-label">Bathrooms</span>
+            <select name="bathrooms">
+              <option>1</option><option>1.5</option><option selected>2</option><option>2.5</option><option>3</option><option>3+</option>
+            </select>
+          </label>
+        </div>
+        <div class="vf-row">
+          <label class="vf-field">
+            <span class="vf-label">Timeline to Sell</span>
+            <select name="timeline">
+              <option>Just curious</option>
+              <option>3-6 months</option>
+              <option>1-3 months</option>
+              <option>ASAP</option>
+            </select>
+          </label>
+        </div>
+        <div class="mstep-nav">
+          <button type="button" class="mstep-back" data-mstep-back="2">← Back</button>
+          <button type="button" class="vf-submit" data-mstep-next="2" style="margin:0;width:auto;padding:14px 24px">Continue →</button>
+        </div>
       </div>
-      <div class="vf-row vf-row-2">
-        <label class="vf-field">
-          <span class="vf-label">Your Name</span>
-          <input type="text" name="name" placeholder="Jesse Oñate" required autocomplete="name">
-        </label>
-        <label class="vf-field">
-          <span class="vf-label">Phone or Email</span>
-          <input type="text" name="contact" placeholder="(562) 609-4200" required autocomplete="tel" inputmode="text">
-        </label>
+
+      <!-- STEP 3 — Contact info + final submit -->
+      <div class="mstep-step" data-step="3">
+        <div class="vf-row vf-row-2">
+          <label class="vf-field">
+            <span class="vf-label">Your Name</span>
+            <input type="text" name="name" placeholder="Jesse Oñate" required autocomplete="name">
+          </label>
+          <label class="vf-field">
+            <span class="vf-label">Phone or Email</span>
+            <input type="text" name="contact" placeholder="(562) 609-4200" required autocomplete="tel" inputmode="text">
+          </label>
+        </div>
+        <div class="mstep-nav">
+          <button type="button" class="mstep-back" data-mstep-back="3">← Back</button>
+          <button type="submit" class="vf-submit" id="vfSubmit" style="margin:0;width:auto;padding:14px 24px">Get my home value report →</button>
+        </div>
+        <div class="vf-trust" style="margin-top:14px">
+          🔒 Your info is safe — never shared. Just used to send you your CMA within 24h.
+        </div>
       </div>
-      <div class="vf-row vf-row-2">
-        <label class="vf-field">
-          <span class="vf-label">Bedrooms</span>
-          <select name="bedrooms">
-            <option>1</option><option>2</option><option selected>3</option><option>4</option><option>5+</option>
-          </select>
-        </label>
-        <label class="vf-field">
-          <span class="vf-label">Timeline to Sell</span>
-          <select name="timeline">
-            <option>Just curious</option>
-            <option>3-6 months</option>
-            <option>1-3 months</option>
-            <option>ASAP</option>
-          </select>
-        </label>
-      </div>
+
       <!-- Honeypot — hidden from real users, auto-filled by bots -->
       <label style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden" aria-hidden="true">
         Website (leave blank): <input type="text" name="website" tabindex="-1" autocomplete="off">
       </label>
-      <button type="submit" class="vf-submit" id="vfSubmit">Get my home value report →</button>
       <div class="vf-error" id="vfError" hidden style="margin-top:14px;color:#ff453a;font-size:14px;font-weight:500"></div>
-      <div class="vf-trust">
-        🔒 Your info is safe — never shared. Just used to send you your CMA.
-      </div>
 
       <!-- Testimonial adjacent to form (research: +37% vs separate section) -->
       <div class="form-testimonial" style="margin-top:20px">
@@ -180,6 +220,77 @@
         <div class="form-testimonial-attr"><strong>Maria G.</strong> · Sold in Whittier · 2025</div>
       </div>
     </form>
+
+    <!-- Multi-step navigation logic — additive, doesn't disrupt existing /api/valuation submit -->
+    <script>
+    (function(){
+      var form = document.getElementById('vfForm');
+      if(!form) return;
+      var steps = form.querySelectorAll('.mstep-step');
+      var dots = form.querySelectorAll('.mstep-dot');
+      var meta = document.getElementById('mstepMeta');
+      var labels = ['Step 1 of 3 · Address','Step 2 of 3 · Property details','Step 3 of 3 · Get your report'];
+
+      function show(stepNum){
+        steps.forEach(function(s){ s.classList.toggle('on', +s.dataset.step === stepNum); });
+        dots.forEach(function(d,i){
+          d.classList.remove('done','current');
+          if(i+1 < stepNum) d.classList.add('done');
+          else if(i+1 === stepNum) d.classList.add('done','current');
+        });
+        if(meta) meta.textContent = labels[stepNum-1] || '';
+        var pb = form.querySelector('.mstep-progress');
+        if(pb){ pb.setAttribute('aria-valuenow', stepNum); pb.setAttribute('aria-label', labels[stepNum-1]); }
+        // Track step view in GA4
+        if(window.trackEvent) window.trackEvent('valuation_step_view', { step: stepNum });
+        // Scroll the form into view if needed
+        var formTop = form.getBoundingClientRect().top + window.scrollY;
+        if(window.scrollY > formTop) window.scrollTo({ top: formTop - 80, behavior: 'smooth' });
+      }
+
+      function validateStep(stepNum){
+        var step = form.querySelector('.mstep-step[data-step="' + stepNum + '"]');
+        var requiredFields = step.querySelectorAll('input[required],select[required]');
+        var ok = true;
+        requiredFields.forEach(function(el){
+          if(!el.value || !el.value.trim()){
+            el.style.borderColor = '#ff453a';
+            ok = false;
+          } else {
+            el.style.borderColor = '';
+          }
+        });
+        return ok;
+      }
+
+      form.querySelectorAll('[data-mstep-next]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var current = +btn.dataset.mstepNext;
+          if(!validateStep(current)) return;
+          show(current + 1);
+        });
+      });
+      form.querySelectorAll('[data-mstep-back]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var current = +btn.dataset.mstepBack;
+          show(current - 1);
+        });
+      });
+
+      // Press Enter to advance from step 1/2 (instead of submitting prematurely)
+      form.addEventListener('keydown', function(e){
+        if(e.key !== 'Enter') return;
+        var activeStep = form.querySelector('.mstep-step.on');
+        if(!activeStep) return;
+        var stepNum = +activeStep.dataset.step;
+        if(stepNum < 3){
+          e.preventDefault();
+          var nextBtn = activeStep.querySelector('[data-mstep-next]');
+          if(nextBtn) nextBtn.click();
+        }
+      });
+    })();
+    </script>
     <div class="vf-success" id="vfSuccess" hidden style="text-align:center;padding:40px 28px;background:#fff;border-radius:24px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)">
       <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#34c759,#0071E3);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;margin:0 auto 18px">✓</div>
       <h3 style="font-size:24px;font-weight:700;letter-spacing:-.5px;color:var(--text);margin-bottom:10px">Got it — your CMA is on the way.</h3>
