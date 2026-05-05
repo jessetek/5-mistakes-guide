@@ -5,6 +5,29 @@
     { "source": "/api/seller-submit", "destination": "/api/seller-submit" },
     { "source": "/", "destination": "/home" }
   ],
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/home12", "destination": "/", "permanent": true },
+    { "source": "/oldhome", "destination": "/", "permanent": true },
+    { "source": "/ig", "destination": "/", "permanent": true },
+    { "source": "/sellerguide", "destination": "/seller", "permanent": true },
+    { "source": "/buyerguide", "destination": "/buyer", "permanent": true },
+    { "source": "/equityreport", "destination": "/valuation", "permanent": true },
+    { "source": "/helpmemove", "destination": "/zoom", "permanent": true },
+    { "source": "/contact", "destination": "/zoom", "permanent": true },
+    { "source": "/contact2", "destination": "/zoom", "permanent": true },
+    { "source": "/connect", "destination": "/zoom", "permanent": true },
+    { "source": "/gallery", "destination": "/listings", "permanent": true },
+    { "source": "/property", "destination": "/listings", "permanent": true },
+    { "source": "/resume", "destination": "/about", "permanent": true },
+    { "source": "/es/index.html", "destination": "/es/", "permanent": true },
+    { "source": "/es/index", "destination": "/es/", "permanent": true },
+    { "source": "/es/comprador.html", "destination": "/es/comprador", "permanent": true },
+    { "source": "/es/vendedor.html", "destination": "/es/vendedor", "permanent": true },
+    { "source": "/es/valuacion.html", "destination": "/es/valuacion", "permanent": true },
+    { "source": "/es/listados.html", "destination": "/es/listados", "permanent": true },
+    { "source": "/es/guia.html", "destination": "/es/guia", "permanent": true }
+  ],
   "crons": [
     {
       "path": "/api/rates",

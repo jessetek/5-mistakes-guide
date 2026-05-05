@@ -4,14 +4,13 @@
 // - Network-first for HTML (always get freshest content if online)
 // - No background sync, no push (out of scope for a real-estate site)
 
-const CACHE_VERSION = 'jt-v1-2026-05-01';
+const CACHE_VERSION = 'jt-v1-2026-05-05';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
 // Pages worth pre-caching for instant repeat visits + offline fallback
 const PRECACHE = [
   '/',
-  '/home.html',
   '/offline.html',
   '/css/main.min.css?v=19',
   '/img/jesse-headshot.webp',
