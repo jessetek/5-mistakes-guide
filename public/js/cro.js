@@ -337,8 +337,64 @@
     setInterval(render, 14000);
   }
 
+  /* ---------- UTM tracking — persist source/medium/campaign across the funnel ----------
+     Captures incoming UTM parameters into a 30-day cookie so attribution
+     survives the form-fill journey. When a form submits, the latest values
+     are auto-injected as hidden fields if not already present. Also fires
+     a GA4 `utm_capture` event on first hit so you can build acquisition
+     audiences without waiting for the conversion event.
+  ---------------------------------------------------------------------------------- */
+  function initUtmCapture() {
+    var params = new URLSearchParams(location.search);
+    var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+    var captured = {};
+    var hasNew = false;
+    keys.forEach(function (k) {
+      var v = params.get(k);
+      if (v) {
+        captured[k] = v;
+        hasNew = true;
+      }
+    });
+    if (hasNew) {
+      try {
+        var existing = JSON.parse(getCookie('utm') || '{}');
+        // Merge — new values overwrite, but unset keys persist
+        var merged = Object.assign(existing, captured, { ts: Date.now(), landing: location.pathname });
+        setCookie('utm', JSON.stringify(merged), 30);
+        if (window.trackEvent) window.trackEvent('utm_capture', captured);
+      } catch (e) {}
+    }
+    // Auto-inject UTM as hidden fields on form submit (so they POST with form data)
+    var stored;
+    try { stored = JSON.parse(getCookie('utm') || 'null'); } catch (e) {}
+    if (!stored) return;
+    document.querySelectorAll('form').forEach(function (form) {
+      // Skip iframe-embedded forms — they won't see our DOM injection
+      if (form.querySelector('iframe')) return;
+      keys.forEach(function (k) {
+        if (!stored[k]) return;
+        if (form.querySelector('input[name="' + k + '"]')) return; // already has it
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = k;
+        input.value = stored[k];
+        form.appendChild(input);
+      });
+      // Also include the landing page
+      if (stored.landing && !form.querySelector('input[name="utm_landing"]')) {
+        var inp = document.createElement('input');
+        inp.type = 'hidden';
+        inp.name = 'utm_landing';
+        inp.value = stored.landing;
+        form.appendChild(inp);
+      }
+    });
+  }
+
   // Boot
   function boot() {
+    initUtmCapture();
     initStickyMobileCta();
     initAutoSave();
     initTextWidget();
