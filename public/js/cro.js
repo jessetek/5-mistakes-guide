@@ -395,7 +395,6 @@
   // Boot
   function boot() {
     initUtmCapture();
-    initStickyMobileCta();
     initAutoSave();
     initTextWidget();
     initLiveTicker();
