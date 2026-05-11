@@ -1135,7 +1135,8 @@
 <script>
 // ---- Hero photo load ----
 window.addEventListener('load', function() {
-  document.getElementById('heroBg').classList.add('loaded');
+  var heroBg = document.getElementById('heroBg');
+  if (heroBg) heroBg.classList.add('loaded');
 });
 
 
