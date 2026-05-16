@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const { firstName, email, phone, website, elapsed } = req.body;
+  const { firstName, email, phone, website, elapsed, source, quizScore, quizBand, quizAnswers } = req.body;
 
   // Honeypot: real users never see this field, so any value means a bot.
   // Time-trap: humans take longer than 2s to fill the form.
@@ -21,8 +21,26 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true });
   }
 
-  if (!firstName || !email || !phone) {
-    return res.status(400).json({ error: 'All fields are required' });
+  // firstName + email are always required. Phone is required for the guide form
+  // (sent as a non-empty string) but optional for the buyer quiz (email-only capture).
+  if (!firstName || !email) {
+    return res.status(400).json({ error: 'firstName and email are required' });
+  }
+
+  const isBuyerQuiz = source === 'buyer-quiz';
+  if (!isBuyerQuiz && !phone) {
+    return res.status(400).json({ error: 'phone is required' });
+  }
+
+  // Quiz bands look like "READY · 80+" — slugify cleanly so GHL workflows can
+  // filter by tag name (ready, strong-start, building, early, exploring).
+  function slugifyBand(band) {
+    if (!band) return 'unknown';
+    return String(band)
+      .split(/[·•|–\-]/)[0]      // drop the score range after the divider
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-') // anything non-alphanumeric → dash
+      .replace(/^-+|-+$/g, '');    // trim leading/trailing dashes
   }
 
   const apiKey = process.env.JTEK_API_KEY || '';
@@ -31,26 +49,59 @@ export default async function handler(req, res) {
   const contactData = {
     firstName,
     email,
-    phone,
+    phone: phone || undefined,
     locationId,
-    source: '5 Mistakes Guide Lead Magnet',
-    tags: ['lead-magnet', '5-mistakes-guide'],
+    source: isBuyerQuiz ? 'Buyer Readiness Quiz' : '5 Mistakes Guide Lead Magnet',
+    tags: isBuyerQuiz
+      ? ['buyer-quiz', `quiz-band-${slugifyBand(quizBand)}`]
+      : ['lead-magnet', '5-mistakes-guide'],
   };
+
+  const ghlHeaders = {
+    Authorization: `Bearer ${apiKey}`,
+    'Content-Type': 'application/json',
+    Version: '2021-04-15',
+  };
+
+  // Buyer-quiz contacts get a note with their score and answers so Jesse can
+  // see context inside the contact (and workflows can email the right plan).
+  let notes = '';
+  if (isBuyerQuiz) {
+    const lines = [`Buyer Readiness Quiz result`];
+    if (quizScore !== undefined && quizScore !== null) lines.push(`Score: ${quizScore}`);
+    if (quizBand) lines.push(`Band: ${quizBand}`);
+    if (quizAnswers && typeof quizAnswers === 'object') {
+      lines.push('Answers:');
+      Object.entries(quizAnswers).forEach(([q, a]) => lines.push(`  ${q}: ${a}`));
+    }
+    notes = lines.join('\n');
+  }
+
+  async function attachNote(contactId) {
+    if (!contactId || !notes) return;
+    try {
+      await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/notes`, {
+        method: 'POST',
+        headers: ghlHeaders,
+        body: JSON.stringify({ body: notes }),
+      });
+    } catch (_) {
+      // Best-effort — contact already exists, workflows still fire on tags.
+    }
+  }
 
   try {
     const response = await fetch('https://services.leadconnectorhq.com/contacts/', {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        Version: '2021-04-15',
-      },
+      headers: ghlHeaders,
       body: JSON.stringify(contactData),
     });
 
     if (response.ok) {
       const result = await response.json();
-      return res.status(200).json({ success: true, contactId: result?.contact?.id || '' });
+      const contactId = result?.contact?.id || '';
+      await attachNote(contactId);
+      return res.status(200).json({ success: true, contactId });
     }
 
     const errorBody = await response.text();
@@ -60,15 +111,13 @@ export default async function handler(req, res) {
       // Upsert existing contact
       const upsertResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
         method: 'POST',
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-          Version: '2021-04-15',
-        },
+        headers: ghlHeaders,
         body: JSON.stringify(contactData),
       });
       const upsertResult = await upsertResponse.json();
-      return res.status(200).json({ success: true, contactId: upsertResult?.contact?.id || '' });
+      const contactId = upsertResult?.contact?.id || '';
+      await attachNote(contactId);
+      return res.status(200).json({ success: true, contactId });
     }
 
     return res.status(500).json({ error: 'Failed to create contact', details: errorBody });

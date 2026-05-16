@@ -62,21 +62,22 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server not configured' });
   }
 
-  // Custom field payload — these become visible inside the contact in LeadConnector.
-  const customField = {
-    property_address: address,
-    bedrooms: bedrooms || '',
-    sell_timeline: timeline || '',
-  };
-
-  // If we got an auto-estimate from RentCast, attach it to the contact so the CMA call
-  // can start from real numbers instead of asking the seller "what do you think it's worth?"
+  // Build a notes payload — GHL's `customField` key isn't accepted by their v2021-04-15
+  // contacts API, so we stuff property details into the notes field (always supported)
+  // and let workflows branch on the tags above.
+  const notesLines = [
+    `Property: ${address}`,
+    bedrooms ? `Bedrooms: ${bedrooms}` : null,
+    timeline ? `Timeline: ${timeline}` : null,
+  ];
   if (typeof autoEstimate === 'number' && autoEstimate > 0) {
-    customField.auto_estimate = String(Math.round(autoEstimate));
-    if (typeof autoEstimateLow === 'number') customField.auto_estimate_low = String(Math.round(autoEstimateLow));
-    if (typeof autoEstimateHigh === 'number') customField.auto_estimate_high = String(Math.round(autoEstimateHigh));
+    notesLines.push(`Auto-estimate: $${Math.round(autoEstimate).toLocaleString()}`);
+    if (typeof autoEstimateLow === 'number' && typeof autoEstimateHigh === 'number') {
+      notesLines.push(`Range: $${Math.round(autoEstimateLow).toLocaleString()}–$${Math.round(autoEstimateHigh).toLocaleString()}`);
+    }
     tags.push('has-auto-estimate');
   }
+  const notes = notesLines.filter(Boolean).join('\n');
 
   const contactData = {
     firstName,
@@ -87,23 +88,39 @@ export default async function handler(req, res) {
     source: 'Free Home Valuation Request',
     tags,
     address1: address,
-    customField,
   };
+
+  const ghlHeaders = {
+    Authorization: `Bearer ${apiKey}`,
+    'Content-Type': 'application/json',
+    Version: '2021-04-15',
+  };
+
+  async function attachNote(contactId) {
+    if (!contactId || !notes) return;
+    try {
+      await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/notes`, {
+        method: 'POST',
+        headers: ghlHeaders,
+        body: JSON.stringify({ body: notes }),
+      });
+    } catch (_) {
+      // Notes are best-effort — contact already exists, workflows still fire on tags.
+    }
+  }
 
   try {
     const response = await fetch('https://services.leadconnectorhq.com/contacts/', {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        Version: '2021-04-15',
-      },
+      headers: ghlHeaders,
       body: JSON.stringify(contactData),
     });
 
     if (response.ok) {
       const result = await response.json();
-      return res.status(200).json({ success: true, contactId: result?.contact?.id || '' });
+      const contactId = result?.contact?.id || '';
+      await attachNote(contactId);
+      return res.status(200).json({ success: true, contactId });
     }
 
     const errorBody = await response.text();
@@ -112,18 +129,16 @@ export default async function handler(req, res) {
       errorBody.toLowerCase().includes('duplicated');
 
     if (isDuplicate) {
-      // Upsert — preserves existing contact, adds new tags + custom fields.
+      // Upsert — preserves existing contact, adds new tags.
       const upsertResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
         method: 'POST',
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-          Version: '2021-04-15',
-        },
+        headers: ghlHeaders,
         body: JSON.stringify(contactData),
       });
       const upsertResult = await upsertResponse.json();
-      return res.status(200).json({ success: true, contactId: upsertResult?.contact?.id || '' });
+      const contactId = upsertResult?.contact?.id || '';
+      await attachNote(contactId);
+      return res.status(200).json({ success: true, contactId });
     }
 
     return res.status(500).json({ error: 'Failed to create contact', details: errorBody });
