@@ -41,7 +41,6 @@ public/                       # Static + HTML site root (Vercel publishes this)
 api/                          # Vercel serverless functions (Node 20)
 ├── submit.js                 # 5-mistakes guide form → LeadConnector
 ├── valuation.js              # Valuation form → LeadConnector
-├── property-estimate.js      # RentCast AVM proxy
 └── rates.js                  # FRED MORTGAGE30US proxy + cron warm
 
 vercel.json                   # cleanUrls, rewrites, headers, daily cron
@@ -63,7 +62,6 @@ Cache busting via query string on stylesheet (`?v=N`). Bump on every CSS change.
 | `JTEK_API_KEY` | `submit.js`, `valuation.js` | LeadConnector API token |
 | `JTEK_LOCATION_ID` | `submit.js`, `valuation.js` | LeadConnector location |
 | `FRED_API_KEY` | `rates.js` | Federal Reserve API key |
-| `RENTCAST_API_KEY` | `property-estimate.js` | RentCast AVM key |
 
 All set in Vercel → Project → Settings → Environment Variables. Production + Development scopes.
 
@@ -75,7 +73,6 @@ All set in Vercel → Project → Settings → Environment Variables. Production
 | CSS | 30 days | `public, max-age=2592000` (cache-bust via `?v=N`) |
 | HTML | Default Vercel | Revalidates per ETag |
 | `/api/rates` | 12h fresh + 7d SWR | Edge cached + daily cron warm |
-| `/api/property-estimate` | 1h fresh + 24h SWR | Per-address cached |
 | `/sitemap*.xml`, `/robots.txt` | 1 day | `public, max-age=86400` |
 | Service worker runtime | Stale-while-revalidate | Browser-side |
 

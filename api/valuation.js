@@ -22,7 +22,6 @@ export default async function handler(req, res) {
 
   const {
     address, name, contact, bedrooms, timeline,
-    autoEstimate, autoEstimateLow, autoEstimateHigh,
     website, elapsed,
   } = req.body || {};
 
@@ -70,13 +69,6 @@ export default async function handler(req, res) {
     bedrooms ? `Bedrooms: ${bedrooms}` : null,
     timeline ? `Timeline: ${timeline}` : null,
   ];
-  if (typeof autoEstimate === 'number' && autoEstimate > 0) {
-    notesLines.push(`Auto-estimate: $${Math.round(autoEstimate).toLocaleString()}`);
-    if (typeof autoEstimateLow === 'number' && typeof autoEstimateHigh === 'number') {
-      notesLines.push(`Range: $${Math.round(autoEstimateLow).toLocaleString()}–$${Math.round(autoEstimateHigh).toLocaleString()}`);
-    }
-    tags.push('has-auto-estimate');
-  }
   const notes = notesLines.filter(Boolean).join('\n');
 
   const contactData = {
