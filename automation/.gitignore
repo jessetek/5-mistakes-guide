@@ -1,0 +1,10 @@
+# Per-machine config (paths, API keys, model overrides) — never commit
+config.local.sh
+
+# Run artifacts
+logs/
+.locks/
+.state/
+
+# Generated launchd plists with absolute paths baked in
+launchd/generated/

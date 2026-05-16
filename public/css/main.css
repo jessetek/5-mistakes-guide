@@ -4893,6 +4893,7 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 }
 .mstep-step{display:none}
 .mstep-step.on{display:block;animation:mstepIn .3s ease both}
+.mstep-step .vf-row + .vf-row{margin-top:14px}
 @keyframes mstepIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
 .mstep-back{
   background:transparent;border:0;color:rgba(255,255,255,.55);

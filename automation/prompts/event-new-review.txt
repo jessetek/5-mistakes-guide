@@ -1,0 +1,34 @@
+A new client review came in on Google. Update the static-fallback testimonials.
+
+Project root: __PROJECT_ROOT__
+
+Reviewer name: __NAME__
+City: __CITY__
+Time: __TIME_AGO__
+Stars: __STARS__
+Quote: "__QUOTE__"
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+Tasks:
+
+1. Read public/reviews.html — find the .reviews-grid section.
+
+2. Add a new <div class="review-card reveal-s"> for this client at the TOP
+   of the grid, matching the existing pattern.
+
+3. Use a unique avatar background color from the existing palette (don't reuse
+   the same color as the next card down).
+
+4. Trim the quote to 1-2 sentences max — pull the strongest line.
+
+5. Mark it as `Google Review` source (existing pattern).
+
+6. git add -A, commit with "Add review from __NAME__", git push.
+
+Live widget on /reviews via Jtek pulls reviews automatically — this is
+just the static-fallback in case the widget fails. Match the visual style.
+
+End your reply with exactly one line:
+RESULT: ADDED __NAME__
+RESULT: BLOCKED (one-line reason)

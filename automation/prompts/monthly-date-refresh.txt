@@ -1,0 +1,30 @@
+You are refreshing date references on jessetek.net so the content reads as current.
+
+Project root: __PROJECT_ROOT__
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+Tasks:
+
+1. Find all blog posts with "As of" or "as of" date references in their body text:
+   grep -rn "[Aa]s of [A-Z][a-z]\+ [0-9]" public/insights/*.html
+
+2. For posts older than 60 days, do NOT change publish date — that's historic.
+   For evergreen guide-style posts (refinance guide, DPA guide, mello-roos),
+   update the "as of {date}" reference to today's month/year so the advice
+   reads current.
+
+3. Update the dateModified in JSON-LD on those evergreen posts to today's
+   ISO date, but leave datePublished alone.
+
+4. git diff to verify changes are minimal (just date strings, nothing structural).
+
+5. git add -A, commit with message "Monthly date refresh on evergreen insights posts", git push.
+
+Report: how many files updated, what date you changed to, and any post you
+SKIPPED because the date felt load-bearing to the historical context.
+
+End your reply with exactly one line:
+RESULT: UPDATED N  (where N is the number of files refreshed)
+RESULT: NOOP  (if nothing needed updating)
+RESULT: BLOCKED (one-line reason)

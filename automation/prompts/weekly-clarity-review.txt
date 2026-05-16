@@ -1,0 +1,39 @@
+You are reviewing Microsoft Clarity heatmap data for jessetek.net.
+
+Project root: __PROJECT_ROOT__
+
+Note: Clarity is at https://clarity.microsoft.com/projects/view/wke2elyrvc.
+You can't directly browse it without auth, but you can pull insights from
+the GA4 funnel data + the Web Vitals analytics that flow into GA4 from
+analytics.js.
+
+Tasks:
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+1. Identify the top 5 pages by traffic (from GA4 if accessible, or guess
+   based on /home, /buyer, /seller, /valuation, /rates).
+
+2. For each, read the current page in public/{slug}.html.
+
+3. List any UX friction points YOU notice from a code/design review:
+   - Forms with too many fields?
+   - CTAs below the fold without anchor?
+   - Long pages without subheadings?
+   - Missing hover/active states?
+   - Slow-loading images above the fold?
+
+4. Save findings at UX-AUDIT-{YYYY-MM-DD}.md at project root with:
+   - Page name
+   - 1-3 friction points
+   - Specific fix proposal
+   - Confidence level (high/medium/low — was this from data or hunch?)
+
+5. git add the markdown, commit with message "UX audit {YYYY-MM-DD}", push.
+
+Do NOT change any HTML/CSS/JS. This is a propose-only audit.
+
+End your reply with exactly one line:
+RESULT: AUDITED <pages>  (e.g. "AUDITED 5")
+RESULT: NOOP  (if nothing notable was found)
+RESULT: BLOCKED (one-line reason)

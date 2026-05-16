@@ -1,0 +1,43 @@
+You are publishing the monthly SoCal Mortgage Rate Watch insights post on jessetek.net.
+
+Project root: __PROJECT_ROOT__
+
+Today is the 1st of the month. Steps:
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+1. Read public/insights/socal-rate-watch-october-2026.html as a template — match its tone, length (6 min read), structure, and CTA pattern. If a more recent month exists in public/insights/, use the most recent socal-rate-watch-*.html as the template instead.
+
+2. Pull current FRED data: curl -s "https://jessetek.net/api/rates?weeks=13"
+   Use the 'current' value as this month's rate.
+   Compare to last month's rate (last point in the array vs first).
+
+3. Write a new post for THIS MONTH:
+   - File: public/insights/socal-rate-watch-{month}-{year}.html  (lowercase month name, e.g. "may-2026")
+   - Title: "SoCal Mortgage Rate Watch — {Month} {Year}"
+   - Use the previous month's post as a structural template
+   - Update: where rates landed, what's driving the move, buyer + seller takeaways, the play heading into next month
+   - Keep it ~6 min read, real-talk voice, no fluff
+   - Include the live-rate-banner snippet (id="liveRateBanner") at top
+   - Include the standardized nav, footer (with EHO + DRE), schema markup
+
+4. Generate OG image: public/img/og-rate-watch-{month}.jpg (and .webp).
+   Use the same Python+PIL pattern from previous OG generation in OG image scripts (1200x630, gradient, "Jesse Oñate" header, "MARKET UPDATE · {MONTH} {YEAR}" badge).
+
+5. Update:
+   - public/insights/index.html (add new card at top)
+   - public/sitemap.xml (add new URL with priority 0.7)
+   - public/insights/feed.xml (add new <item>)
+
+6. Run the QC sweep (the Python pass from the weekly QC prompt) — must come back clean.
+
+7. git add -A, commit with a message describing the post (e.g. "Insights: SoCal Rate Watch — {Month} {Year}"), git push.
+
+8. Verify live in production: curl -sI https://jessetek.net/insights/socal-rate-watch-{month}-{year} should return 200 within 90 seconds.
+
+Don't fabricate market data — use only what the FRED API returns. Where commentary requires interpretation (Fed signaling, seasonal trends), keep it general and grounded in the rate movement itself.
+
+End your reply with exactly one line:
+RESULT: PUBLISHED <slug>
+or
+RESULT: BLOCKED (one-line reason)

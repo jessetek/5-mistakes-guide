@@ -1,0 +1,105 @@
+You are running the weekly rank watcher for jessetek.net. Goal: track Jesse's
+Google ranking on 10 SoCal realtor queries and ping him via Telegram only when
+something interesting moves.
+
+Project root: __PROJECT_ROOT__
+
+Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+DATA SOURCE
+The rank source is Google Search Console (not Google scraping — that's blocked
+by Google's bot protection). Use the helper script:
+
+  node "__PROJECT_ROOT__/automation/scripts/get-gsc-rank.mjs" "<query>"
+
+It outputs one line of JSON per query and always exits 0. Important fields:
+  rank          → integer (rounded average position) or null
+  page          → URL on jessetek.net that ranked, or null
+  impressions   → 0 means GSC reported no data for this query in the window
+  error         → present if creds missing or API failed
+If error is present or impressions is 0, treat rank as null for this query.
+
+QUERIES (exact strings — feed each verbatim to the helper)
+  "downey realtor"
+  "whittier realtor"
+  "long beach realtor bilingual"
+  "bilingual realtor downey"
+  "best realtor downey ca"
+  "socal mortgage rate watch"
+  "mello roos guide"
+  "first time buyer downey"
+  "homes for sale downey"
+  "realtor jesse onate"
+
+STATE FILE
+  __PROJECT_ROOT__/automation/.state/rank-history.json
+
+Format:
+  { "queries": { "<query>": [ {"date":"YYYY-MM-DD","rank":<int|null>,"page_ranking":"<url|null>","source":"gsc","impressions":<int>}, ... ], ... } }
+Oldest entries first. Trim each query's array to the last 26 entries (~6 months
+of weekly snapshots). Keep the whole file under 200KB.
+
+If the state file is missing or empty (`{ "queries": {} }`), this is the first
+real run — record today's snapshot under each query but do NOT alert (no prior
+baseline = nothing to compare).
+
+STEPS
+1. Read the state file. If it doesn't exist, create it with `{"queries": {}}`.
+
+2. For each of the 10 queries: invoke the helper script and parse the JSON.
+   Build today's snapshot row:
+     {"date":"<today YYYY-MM-DD>", "rank":<int|null>, "page_ranking":<url|null>, "source":"gsc", "impressions":<int>}
+   Look at the previous (last) entry for that query in the state file (if any)
+   and classify movement:
+     • new_entry   — prev rank was null/absent; current rank is in 1..20
+     • dropped_out — prev rank was 1..20; current rank is null or > 20
+     • movement    — both have ranks and |current - prev| ≥ 3
+     • hold        — anything else, including first-ever observation when state
+                     file was empty (no prior baseline → skip alert)
+
+3. Append today's snapshot to each query's array in the state file. Trim to
+   last 26 entries. Pretty-print (2-space indent) when writing back.
+
+4. If at least one query is new_entry / dropped_out / movement (and we have a
+   prior baseline), compose a 6-12 line Telegram message. Format:
+
+     Rank watch · week of <Mon DD>
+
+     ↑ "downey realtor" 7 → 4 (3 up)
+     ↑ "mello roos guide" 14 → 9 (5 up)
+     ↓ "whittier realtor" 8 → 12 (4 down)
+     NEW "first time buyer downey" → entered at 18
+     OUT "homes for sale downey" — fell out of top 20
+
+     <N> others held.
+
+   Send via the local Telegram script:
+
+     printf %s "<message>" | "__PROJECT_ROOT__/automation/scripts/send-telegram-text.sh"
+
+   The Telegram script gracefully no-ops if creds aren't configured yet — it
+   exits 0 and writes the would-be message to stderr. That is fine; do not
+   treat that as a failure.
+
+5. If ALL queries held (or this is the bootstrap run with empty prior state),
+   stay silent. No Telegram message.
+
+6. If the Telegram script exits non-zero (HTTP error from Telegram API), fall
+   back to iMessage:
+     osascript -e 'tell application "Messages" to send "<one-line summary>" to buddy "+15626885214"'
+   Do this only on actual Telegram failure, not on graceful no-op (exit 0).
+
+CONSTRAINTS
+- Do not fabricate ranks. If get-gsc-rank.mjs returns an error or zero
+  impressions, record rank=null — never guess from another source.
+- Movement alert only — silent weeks are expected and correct.
+- No Gmail drafts.
+- Total runtime under 3 minutes.
+- Do not commit anything. The state file is gitignored (see automation/.gitignore).
+
+End your reply with exactly one line, in this priority order:
+  RESULT: ALERTED <N> queries  (sent a Telegram alert about N moving queries)
+  RESULT: SILENT <N> queries scanned, all held
+  RESULT: BOOTSTRAP <N> queries scanned, baseline laid (no prior state)
+  RESULT: NO_CREDS — GSC creds missing, recorded all rank=null
+  RESULT: BLOCKED <one-line reason>

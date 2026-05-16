@@ -1,0 +1,50 @@
+You are adding a new SoCal city page to jessetek.net.
+
+Project root: __PROJECT_ROOT__
+
+City: __CITY__
+County: __COUNTY__
+ZIP codes: __ZIPS__
+Median: __MEDIAN__
+DOM: __DOM__
+Population: __POPULATION__
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+Tasks:
+
+1. Use public/neighborhoods/irvine.html or downey.html as a template
+   (whichever county matches __COUNTY__). Match the structure exactly.
+
+2. Write 4 unique "Why this city" features (research from Wikipedia or
+   the city's own .gov site if needed — facts only, no fluff).
+
+3. Pick 4 sub-areas with 1-sentence real-talk descriptions.
+
+4. List 3 top schools with GreatSchools-style ratings (use rough public
+   data — better to under-rate than over-rate).
+
+5. Generate OG image at public/img/og-{slug}.jpg using the existing PIL
+   script pattern (1200x630, gradient, county badge, city name).
+
+6. Update:
+   - public/sitemap.xml (priority 0.85)
+   - public/sitemap-images.xml
+   - public/service-areas.html (new tile in the grid + counter +1)
+   - areaServed schema across all pages (the bulk-replace Python pattern
+     from previous commits)
+
+7. Run the QC sweep (the Python pass from the weekly QC prompt) — 0 issues required.
+
+8. git add -A, commit with message "Add neighborhood page: __CITY__", git push.
+
+9. Verify https://jessetek.net/neighborhoods/{slug} returns 200 within 90 seconds.
+
+Standards:
+- Don't fabricate stats. If you can't verify, mark "stat est." in the page.
+- Don't claim school ratings without basis — use under-promise framing.
+- Match the structural template exactly so QC stays clean.
+
+End your reply with exactly one line:
+RESULT: PUBLISHED <slug>
+RESULT: BLOCKED (one-line reason)

@@ -1,0 +1,20 @@
+You are running a daily health check on jessetek.net.
+
+Project root: __PROJECT_ROOT__
+
+Run these checks and produce a one-page report. Don't change any files.
+
+1. curl https://jessetek.net/api/rates → confirm source=fred and asOf is within last 7 days
+2. curl -sI https://jessetek.net/home → confirm 200 status
+3. cd to project, run `git log -3 --oneline` and report
+4. cd to project, run `git status` and report
+5. If any anomaly, propose specific fix steps but DO NOT execute them
+
+Report under 200 words.
+
+When you are done, end your reply with exactly one line:
+RESULT: OK
+or
+RESULT: ANOMALY (one-line summary)
+
+Do NOT modify, commit, or push any files. This is a read-only health check.

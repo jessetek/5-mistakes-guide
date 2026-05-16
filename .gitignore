@@ -2,3 +2,7 @@
 .DS_Store
 node_modules/
 .vercel
+# Local-only Apple SF Pro fonts (77MB, not referenced via @font-face — system fonts only)
+_fonts/
+# Local automation logs (untracked output)
+automation/logs/

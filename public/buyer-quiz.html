@@ -325,8 +325,9 @@
         <div style="font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">Want this delivered?</div>
         <h4 style="font-size:18px;font-weight:700;color:var(--text);margin:0 0 6px;letter-spacing:-.01em">Get your 30-day action plan as a PDF</h4>
         <p style="font-size:13.5px;color:var(--text2);line-height:1.55;margin:0 0 14px">Personalized to your score and gaps. Plus the 5-Mistakes guide. No spam — unsubscribe anytime.</p>
-        <form id="qzEmailForm" style="display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap">
-          <input type="email" id="qzEmailInput" placeholder="you@email.com" required autocomplete="email" inputmode="email" style="flex:1 1 220px;min-width:0;padding:11px 14px;border:1px solid rgba(0,0,0,.12);border-radius:999px;font-size:14px;outline:none">
+        <form id="qzEmailForm" style="display:flex;gap:8px;max-width:480px;margin:0 auto;flex-wrap:wrap">
+          <input type="text" id="qzNameInput" placeholder="First name" required autocomplete="given-name" style="flex:1 1 120px;min-width:0;padding:11px 14px;border:1px solid rgba(0,0,0,.12);border-radius:999px;font-size:14px;outline:none">
+          <input type="email" id="qzEmailInput" placeholder="you@email.com" required autocomplete="email" inputmode="email" style="flex:1 1 200px;min-width:0;padding:11px 14px;border:1px solid rgba(0,0,0,.12);border-radius:999px;font-size:14px;outline:none">
           <button type="submit" style="flex:0 0 auto;background:var(--blue);color:#fff;border:0;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;min-height:44px">Send my plan →</button>
         </form>
         <div id="qzEmailSuccess" style="display:none;margin-top:10px;color:#28a745;font-size:13.5px;font-weight:500">✓ Sent! Check your inbox in the next 60 seconds.</div>
@@ -412,6 +413,8 @@
 
 <script>
 (function(){
+  // Track quiz load time so the /api/submit honeypot/time-trap passes on email opt-in.
+  window.__qzLoadedAt = Date.now();
   // Quiz definition. Each question has id, prompt, optional sub, and options [{label, points, good?, gap?}]
   // Max points designed to total 100 across 8 questions
   var QUIZ = [
@@ -671,7 +674,8 @@
     emailForm.addEventListener('submit', function(e){
       e.preventDefault();
       var email = document.getElementById('qzEmailInput').value.trim();
-      if(!email)return;
+      var firstName = document.getElementById('qzNameInput').value.trim();
+      if(!email || !firstName)return;
       var success = document.getElementById('qzEmailSuccess');
       var btn = emailForm.querySelector('button[type="submit"]');
       btn.disabled = true; btn.textContent = 'Sending...';
@@ -682,13 +686,13 @@
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
-          firstName: 'Quiz lead',
+          firstName: firstName,
           email: email,
-          phone: '',
           source: 'buyer-quiz',
           quizScore: score,
           quizBand: band,
-          quizAnswers: state.answers
+          quizAnswers: state.answers,
+          elapsed: Date.now() - (window.__qzLoadedAt || 0)
         })
       }).then(function(r){
         if(!r.ok)throw new Error('submit failed');
@@ -696,10 +700,13 @@
         success.style.display = 'block';
         if(window.trackEvent)trackEvent('quiz_email_capture',{score:score,band:band});
       }).catch(function(){
-        // Even if backend errors, mark success so user feels heard. Email is logged client-side via analytics.
-        emailForm.style.display = 'none';
+        // Real error — tell the user instead of faking success. They deserve to know.
+        btn.disabled = false;
+        btn.textContent = 'Send my plan →';
         success.style.display = 'block';
-        if(window.trackEvent)trackEvent('quiz_email_capture_fallback',{email:email});
+        success.style.color = '#ff453a';
+        success.textContent = '✗ Couldn’t send the plan. Text Jesse at (562) 609-4200 — he’ll send it directly.';
+        if(window.trackEvent)trackEvent('quiz_email_capture_failed',{email:email});
       });
     });
   }

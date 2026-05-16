@@ -1,0 +1,57 @@
+You are running a weekly quality control sweep on jessetek.net.
+
+Project root: __PROJECT_ROOT__
+
+Before doing anything else, run `git pull --rebase --autostash` from the project root so you are working on the latest main.
+
+Run this Python QC pass on all pages:
+
+cd "__PROJECT_ROOT__" && python3 << 'EOF'
+import os, re, json, glob
+PUB = "public"
+files = sorted(glob.glob(f'{PUB}/**/*.html', recursive=True))
+files = [f for f in files if 'og-generator' not in f]
+issues = []
+local = set()
+for f in files:
+    rel = os.path.relpath(f, PUB).replace(os.sep, '/')
+    local.add('/' + rel); local.add('/' + rel.replace('.html', ''))
+    if rel.endswith('/index.html'):
+        local.add('/' + rel.replace('/index.html', '/'))
+        local.add('/' + rel.replace('/index.html', ''))
+LM = ('guide.html', 'guide-pdf.html', 'offline.html', '404.html')
+for path in files:
+    rel = os.path.relpath(path, PUB)
+    with open(path) as fh: t = fh.read()
+    for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', t, re.DOTALL):
+        try: json.loads(m.group(1))
+        except: issues.append((rel, "BAD JSON-LD"))
+    if rel not in LM and 'rel="canonical"' not in t:
+        issues.append((rel, "no canonical"))
+    for m in re.finditer(r'(?:src|href)="(/img/[^"]+\.(?:jpg|webp|png|svg))"', t):
+        if not os.path.exists(PUB + m.group(1)):
+            issues.append((rel, f"missing img: {m.group(1)}"))
+    for m in re.finditer(r'href="(/[^"#?]*)"', t):
+        url = m.group(1)
+        if url.startswith(('/api/','/css/','/js/','/img/','/icons/','/favicon','/_vercel','/sw.js')): continue
+        if url.endswith(('.xml','.ico','.json','.pdf')): continue
+        if url not in local and url + '.html' not in local and url + '/index.html' not in local:
+            for c in [PUB+url, PUB+url+'.html', PUB+url+'/index.html']:
+                if os.path.exists(c): break
+            else: issues.append((rel, f'broken: {url}'))
+print(f'{len(files)} files, {len(set(issues))} issues')
+for f,i in sorted(set(issues)): print(f'  {f}: {i}')
+EOF
+
+If issues found:
+1. Fix each one (broken links → find correct path; missing images → check if it should be removed or fix the path; JSON-LD errors → fix the syntax)
+2. Run the sweep again — must come back 0 issues
+3. git add -A, commit with message "Weekly QC: fixed N broken links + M missing images"
+4. git push
+
+If 0 issues: just report "QC clean, no changes needed."
+
+End your reply with exactly one line:
+RESULT: CLEAN  (if no fixes needed)
+RESULT: FIXED N  (where N is the number of issues you fixed and pushed)
+RESULT: BLOCKED (one-line reason)  (if you couldn't get to 0 issues)

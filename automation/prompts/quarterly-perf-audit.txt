@@ -1,0 +1,37 @@
+You are running a quarterly performance audit on jessetek.net.
+
+Project root: __PROJECT_ROOT__
+
+Tasks:
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+1. Hit https://pagespeed.web.dev/ via the PSI API:
+   curl "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://jessetek.net/home&strategy=mobile&category=performance"
+
+   Extract LCP, CLS, INP, FCP, TTFB, overall score.
+
+2. Repeat for /rates, /buyer-quiz, /seller-net, /valuation.
+
+3. Identify the bottom 2 metrics (worst LCP or CLS).
+
+4. Read the relevant page's source. Identify likely causes:
+   - Hero image too large?
+   - Too many synchronous scripts?
+   - Layout shifts from late-loading content?
+   - Custom font swap?
+
+5. Propose specific fixes — do NOT deploy them. Write a report:
+   - Current state per page (table of metrics)
+   - Top 3 issues
+   - Specific fixes with estimated impact
+
+6. Save the report at PERF-AUDIT-{YYYY-MM}.md at project root.
+   git add it, git commit with message "Quarterly perf audit {YYYY-MM}", git push.
+
+7. Do NOT change any HTML/CSS/JS. Audit only — the human operator reviews
+   before any code changes ship.
+
+End your reply with exactly one line:
+RESULT: AUDITED <pages>
+RESULT: BLOCKED (one-line reason)

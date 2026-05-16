@@ -1,0 +1,40 @@
+Sentry alerted on a new JS error from jessetek.net production.
+
+Project root: __PROJECT_ROOT__
+
+----- BEGIN SENTRY PAYLOAD -----
+__SENTRY_PAYLOAD__
+----- END SENTRY PAYLOAD -----
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+Tasks:
+
+1. Identify the file in /public/ that triggered the error from the stack
+   trace in the payload above.
+
+2. Diagnose the root cause:
+   - Is it our code? (script in /js/ or inline)
+   - Is it a third-party? (LeadConnector, Google Maps, Clarity, Sentry itself)
+   - Is it a browser-specific edge case?
+
+3. If it's our code:
+   a. Propose a specific patch
+   b. Apply the patch
+   c. Run the QC sweep (the Python pass from weekly-qc-sweep.txt)
+   d. git add -A, commit with message "Fix: <error summary>", git push
+   e. Verify the fix is live within 90 seconds
+
+4. If it's third-party:
+   - Append the error to SENTRY-LOG.md at project root with date + summary
+     (create it if missing)
+   - git add -A, commit with message "Sentry log: <error summary>", git push
+   - Do NOT modify our code unless the error is breaking us
+
+5. If it's a one-off (script extension, weird browser): just log it. Don't act.
+
+End your reply with exactly one line:
+RESULT: PATCHED <file>     (if you fixed our code)
+RESULT: LOGGED 3P          (if it was third-party)
+RESULT: NOOP               (one-off, no action needed)
+RESULT: BLOCKED (one-line reason)

@@ -1,0 +1,34 @@
+You are scanning Google Search Console for content gap opportunities on jessetek.net.
+
+Project root: __PROJECT_ROOT__
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+Note: GSC API requires auth that you don't have. Instead, do a content audit:
+
+1. List top 10 pages on the site by sitemap priority.
+
+2. For each, identify the primary keyword target:
+   - Read the <title> and <h1>
+   - Note what query that page is optimized for
+
+3. Check if there are gaps:
+   - Are there obvious related queries we don't have a page for?
+   - Are there {YYYY}-specific updates we're missing?
+
+4. Suggest 3 new posts for the /insights/ blog with:
+   - Title (SEO-optimized, 50-65 chars)
+   - Target query
+   - 5-bullet outline
+   - Internal links it should hit
+
+5. Save at SEO-OPPORTUNITIES-{YYYY-MM}.md at project root.
+
+6. git add the markdown, commit with message "Quarterly SEO scan {YYYY-MM}", git push.
+
+Do NOT write the new posts themselves — that's a separate task with the
+operator's input on positioning. Just identify opportunities + outlines.
+
+End your reply with exactly one line:
+RESULT: SUGGESTED 3
+RESULT: BLOCKED (one-line reason)

@@ -1,0 +1,37 @@
+You are refreshing the median home prices and days-on-market stats on
+jessetek.net's neighborhood pages.
+
+Project root: __PROJECT_ROOT__
+
+0. Before doing anything else, run `git pull --rebase --autostash` from the project root.
+
+For each city page in public/neighborhoods/*.html:
+
+1. Read the current stats:
+   - Median Home Price (e.g. "$1.45M")
+   - Avg Days on Market
+   - Residents (don't change — population doesn't move quarterly)
+
+2. The stats live in <div class="nbhd-stat-num">VALUE</div> blocks.
+
+3. For prices: do NOT scrape Zillow or Redfin (TOS issues).
+   Instead, look at https://www.car.org/marketdata for the latest published
+   CAR median by region. Use the closest match. If unsure, leave the price
+   alone and add a comment in the file noting "stat last verified {date}".
+
+4. For days-on-market: same source, same caution.
+
+5. Update only when CAR data clearly differs from current page by >5%.
+
+6. Update the JSON-LD schema datePublished/dateModified accordingly.
+
+7. git add -A, commit with a message listing which cities updated
+   (e.g. "Quarterly city stats: Irvine, Downey, Long Beach"), git push.
+
+If you can't access fresh data, skip the update and report that the stats
+appear current vs CAR Q{N} data — no commit needed.
+
+End your reply with exactly one line:
+RESULT: UPDATED <cities>  (e.g. "UPDATED 7")
+RESULT: NOOP  (if nothing needed updating)
+RESULT: BLOCKED (one-line reason)
