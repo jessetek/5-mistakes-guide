@@ -1113,8 +1113,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 }
 @media(max-width:600px){
   .vf-row-2{flex-direction:column}
-  .valuation-form{padding:20px}
+  .valuation-form{padding:20px 20px 60px}
 }
+
+/* Hide floating SMS widget when mobile nav menu is open */
+body:has(#mobNav.open) #textJesseWidget{display:none !important}
 
 /* =====================================================
    MORTGAGE CALCULATOR
@@ -1358,7 +1361,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   font-size:16px;font-weight:700;
   color:var(--text);
   letter-spacing:-.2px;
-  list-style:none;
+  list-style:none;gap:16px;
   display:flex;justify-content:space-between;align-items:center;
 }
 .faq-item summary::-webkit-details-marker{display:none}
@@ -1366,6 +1369,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   content:'+';
   font-size:24px;font-weight:400;color:var(--text3);
   transition:transform .25s ease;
+  flex:0 0 auto;line-height:1;
 }
 .faq-item[open] summary::after{transform:rotate(45deg)}
 .faq-item p{padding:0 28px 22px;font-size:15px;color:var(--text2);line-height:1.65;margin:0}
@@ -4902,8 +4906,14 @@ body.lp-page{padding-top:0;background:#0A0E1F;--bg:#0A0E1F;--text:#fff;--text2:r
 .mstep-back:hover{color:#fff}
 .mstep-back:disabled{opacity:.3;cursor:not-allowed}
 .mstep-nav{
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
   margin-top:18px;
+}
+.mstep-nav:not(:has(.mstep-back)){justify-content:center}
+@media(max-width:600px){
+  .mstep-nav{flex-direction:column-reverse;align-items:stretch;gap:10px}
+  .mstep-nav .vf-submit{width:100% !important;padding:14px 18px !important;white-space:normal}
+  .mstep-back{text-align:center;padding:10px 0}
 }
 
 /* Comparison page */
