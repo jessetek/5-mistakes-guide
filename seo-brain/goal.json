@@ -1,0 +1,66 @@
+{
+  "mission": "Get jessetek.net onto Google page 1 for 'real estate agent' in and around Downey, CA",
+  "owner": "Jesse Onate",
+  "created": "2026-06-11",
+  "last_run": "2026-06-11",
+  "run_count": 1,
+  "status": "active",
+  "shipped_2026-06-11": [
+    "Stripped fabricated aggregateRating (5.0/100) from 105 files — FTC/Google compliance (commit e7f4443)",
+    "Opened robots.txt to AI search crawlers",
+    "Built the SEO Brain + ran the 2026 research playbook"
+  ],
+  "gbp_inspected_2026-06-11": "Live GBP: 20 Google reviews @ 5.0; primary category 'Real estate agent' = correct; address 830 N Wilcox Ave, Montebello CA 90640 (Montebello pin — favors Montebello/Pico/Bell Gardens proximity MORE than Downey itself, a structural limiter for the literal Downey goal); profile NOT 100% complete (first gap: storefront photo); /reviews shows a LIVE Jtek review-widget iframe pulling real Google reviews. Resolved the review-count blocker → corrected inflated '100+ reviews' to '20+' on 50 files (commit 77ad604).",
+  "reframe_status": "CONFIRMED by 2026 research: head term is a map-pack/directory SERP; pursue the 3 winnable surfaces below",
+
+  "honest_reframe": "Page-1 ORGANIC for the bare term 'real estate agent' (competing against Zillow/Realtor.com/Redfin) is structurally not winnable for a solo agent's website. The winnable, lead-driving version of this goal has three surfaces, in priority order: (1) the Google LOCAL MAP PACK for 'real estate agent in Downey' / 'real estate agent near me' — driven by Google Business Profile, NOT the website; (2) QUALIFIED ORGANIC long-tail — 'Downey real estate agent', 'bilingual real estate agent Downey', 'first time home buyer agent Downey'; (3) BRANDED — 'Jesse Onate realtor' (already ranking ~2.5). GSC proves rank is NOT the blocker — visibility/authority is.",
+
+  "baseline_kpis_2026-06-01": {
+    "window": "28 days ending 2026-06-01 (Google Search Console)",
+    "total_impressions": 169,
+    "total_clicks": 4,
+    "real_estate_agent_avg_position": 3.9,
+    "real_estate_agent_impressions": 7,
+    "realtor_avg_position": 4.6,
+    "branded_avg_position": 2.5,
+    "interpretation": "Excellent rank, near-zero reach. Fix reach, not rank."
+  },
+
+  "winnable_targets": [
+    {
+      "id": "local-pack-downey",
+      "surface": "Google local map 3-pack",
+      "target": "Appear in the map pack for 'real estate agent Downey' / 'realtor near me' within Downey",
+      "primary_lever": "Google Business Profile (claim, verify, optimize, reviews, posts)",
+      "owner": "jesse",
+      "definition_of_done": "GBP appears in the 3-pack for at least 2 of: 'real estate agent downey', 'realtor downey', 'bilingual realtor downey' for a searcher located in Downey",
+      "status": "blocked-needs-gbp-confirmation"
+    },
+    {
+      "id": "qualified-organic-downey",
+      "surface": "Organic SERP",
+      "target": "Page 1 for 'downey real estate agent', 'real estate agent in downey ca', 'bilingual real estate agent downey'",
+      "primary_lever": "Dedicated optimized page + internal links + authority",
+      "owner": "either",
+      "definition_of_done": "jessetek.net page ranks top 10 (GSC avg position <= 10 with real impressions) for >= 2 qualified Downey agent queries",
+      "status": "in-progress"
+    },
+    {
+      "id": "branded-dominance",
+      "surface": "Organic SERP + Knowledge panel",
+      "target": "Own page 1 for 'jesse onate realtor' with site + GBP + Zillow + Realtor.com",
+      "primary_lever": "Citations + consistent NAP + schema sameAs",
+      "owner": "either",
+      "definition_of_done": "jessetek.net is #1 and >= 3 owned/profile properties on page 1 for the branded query",
+      "status": "partially-done"
+    }
+  ],
+
+  "definition_of_done_overall": "Either (a) GBP shows in the Downey local pack for core 'real estate agent' queries, OR (b) a jessetek.net page holds top-10 average position with > 200 monthly impressions for qualified Downey agent terms — sustained for 2 consecutive GSC reporting weeks.",
+
+  "constraints": {
+    "production_site": "Live lead-gen site on Vercel, auto-deploys from git main. Do not push without explicit go-ahead.",
+    "usage_budget": "Jesse hits plan limits; keep loop cadence weekly, not continuous. See feedback memory.",
+    "no_black_hat": "No bought links, no review gating, no NAP spam. Google penalizes all three."
+  }
+}

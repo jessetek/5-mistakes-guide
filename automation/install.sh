@@ -23,6 +23,7 @@ LABELS=(
   "net.jessetek.quarterly-perf-audit"
   "net.jessetek.quarterly-city-stats"
   "net.jessetek.quarterly-seo-scan"
+  "net.jessetek.hourly-seo-brain"
 )
 
 # Map label → script. Keep aligned with LABELS above.
@@ -36,6 +37,7 @@ declare -a SCRIPTS=(
   "$SCRIPTS_DIR/run-quarterly-perf-audit.sh"
   "$SCRIPTS_DIR/run-quarterly-city-stats.sh"
   "$SCRIPTS_DIR/run-quarterly-seo-scan.sh"
+  "$SCRIPTS_DIR/run-hourly-seo-brain.sh"
 )
 
 # Event-driven wrapper scripts (no plist — invoked manually with argv).
