@@ -1,102 +1,225 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-06-11",
+  "updated": "2026-06-11 (run 02)",
   "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
   "actions": [
     {
-      "id": "S1-strip-fake-rating", "title": "Strip fabricated aggregateRating (5.0/100) from 105 files",
-      "surface": "compliance + rich-results", "impact": "high", "effort": "low", "owner": "claude",
-      "status": "done-live", "shipped": "2026-06-11 commit e7f4443",
+      "id": "S1-strip-fake-rating",
+      "title": "Strip fabricated aggregateRating (5.0/100) from 105 files",
+      "surface": "compliance + rich-results",
+      "impact": "high",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-live",
+      "shipped": "2026-06-11 commit e7f4443",
       "why": "FTC fake-review + Google manual-action liability; zero star upside since 2019."
     },
     {
-      "id": "S2-robots-ai", "title": "Open robots.txt to AI search crawlers",
-      "surface": "ai-search", "impact": "medium", "effort": "low", "owner": "claude",
-      "status": "done-live", "shipped": "2026-06-11 commit e7f4443",
+      "id": "S2-robots-ai",
+      "title": "Open robots.txt to AI search crawlers",
+      "surface": "ai-search",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-live",
+      "shipped": "2026-06-11 commit e7f4443",
       "why": "AI Overview / Perplexity / Copilot visibility. Does not affect classic rank."
     },
     {
-      "id": "J1-gbp-optimize", "title": "Optimize the (claimed-but-basic) GBP to 100%: primary category 'Real Estate Agent', visible Downey-area address + service areas, Latino-owned/bilingual attributes, jessetek.net URL, 20+ geotagged photos",
-      "surface": "local-pack", "impact": "high", "effort": "medium", "owner": "jesse",
-      "status": "in-progress", "priority": 1,
+      "id": "J1-gbp-optimize",
+      "title": "Optimize the (claimed-but-basic) GBP to 100%: primary category 'Real Estate Agent', visible Downey-area address + service areas, Latino-owned/bilingual attributes, jessetek.net URL, 20+ geotagged photos",
+      "surface": "local-pack",
+      "impact": "high",
+      "effort": "medium",
+      "owner": "jesse",
+      "status": "in-progress",
+      "priority": 1,
       "why": "Map pack is GBP-fed (~32% weight) and is the #1 winnable surface. 2026-06-11 (Claude, in-browser): added secondary category 'Real estate consultant'; confirmed Latino-owned attribute set, keyword-led description present, primary category correct, opening date Dec 2020. REMAINING (Jesse only): 20+ geotagged photos, Services list, weekly Google Posts, keep growing reviews past 20."
     },
     {
-      "id": "J2-review-sprint", "title": "Sprint to 10 real Google reviews in 30-45 days (text recent closed clients the GBP review link)",
-      "surface": "local-pack", "impact": "high", "effort": "medium", "owner": "jesse",
-      "status": "awaiting-jesse", "priority": 2,
+      "id": "J2-review-sprint",
+      "title": "Sprint to 10 real Google reviews in 30-45 days (text recent closed clients the GBP review link)",
+      "surface": "local-pack",
+      "impact": "high",
+      "effort": "medium",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "priority": 2,
       "why": "Reviews = #2 factor, currently ZERO. Crossing 9->10 gives a visible pack bump."
     },
     {
-      "id": "E1-jtek-review-workflow", "title": "Build Jtek (GHL) 'Closed/Funded' 4-touch SMS+email review-request workflow + bilingual templates (compliant: no gating/incentives/naming)",
-      "surface": "local-pack", "impact": "high", "effort": "medium", "owner": "either",
+      "id": "E1-jtek-review-workflow",
+      "title": "Build Jtek (GHL) 'Closed/Funded' 4-touch SMS+email review-request workflow + bilingual templates (compliant: no gating/incentives/naming)",
+      "surface": "local-pack",
+      "impact": "high",
+      "effort": "medium",
+      "owner": "either",
       "status": "queued",
       "why": "Sustains 4+ fresh reviews/month. Claude builds workflow+copy; Jesse wires trigger & sends. Ties into existing rate-SMS automation."
     },
     {
-      "id": "C1-visible-review-claims", "title": "Fix visible '100+ verified reviews' / '5.0 Google rating' text on ~50 pages to match REAL review data",
-      "surface": "compliance", "impact": "high", "effort": "low", "owner": "claude",
-      "status": "done-live", "shipped": "2026-06-11 commit 77ad604 — live GBP shows 20 reviews @ 5.0; corrected '100+ verified reviews' -> '20+ Google reviews' on 50 files; '100+ closings' (defensible) left intact",
+      "id": "C1-visible-review-claims",
+      "title": "Fix visible '100+ verified reviews' / '5.0 Google rating' text on ~50 pages to match REAL review data",
+      "surface": "compliance",
+      "impact": "high",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-live",
+      "shipped": "2026-06-11 commit 77ad604 — live GBP shows 20 reviews @ 5.0; corrected '100+ verified reviews' -> '20+ Google reviews' on 50 files; '100+ closings' (defensible) left intact",
       "why": "Site claimed 100+ reviews but GBP has 20 — false-advertising exposure now removed."
     },
     {
-      "id": "C2-dedupe-doorways", "title": "Kill doorway duplication: rebuild 4-6 core city pages (Downey, Montebello, Norwalk, Pico Rivera, Whittier) at 1,000-3,000 unique words; 301 distant clones into a Service-Areas hub",
-      "surface": "qualified-organic + whole-domain", "impact": "high", "effort": "high", "owner": "either",
+      "id": "C2-dedupe-doorways",
+      "title": "Kill doorway duplication: rebuild 4-6 core city pages (Downey, Montebello, Norwalk, Pico Rivera, Whittier) at 1,000-3,000 unique words; 301 distant clones into a Service-Areas hub",
+      "surface": "qualified-organic + whole-domain",
+      "impact": "high",
+      "effort": "high",
+      "owner": "either",
       "status": "queued",
       "why": "~97% identical 476-word city clones = the templated-doorway pattern Google suppresses; likely the structural cause of the 169-impression ceiling. Needs Jesse's real local facts/anecdotes."
     },
     {
-      "id": "C3-eeat-author", "title": "Add a real first-person E-E-A-T author block (photo, name, DRE #02133131, bilingual-native, years/closings) to every money page + Person schema",
-      "surface": "e-e-a-t / all money pages", "impact": "high", "effort": "low", "owner": "either",
+      "id": "C3-eeat-author",
+      "title": "Add a real first-person E-E-A-T author block (photo, name, DRE #02133131, bilingual-native, years/closings) to every money page + Person schema",
+      "surface": "e-e-a-t / all money pages",
+      "impact": "high",
+      "effort": "low",
+      "owner": "either",
       "status": "queued",
       "why": "YMYL pages currently show no human author. Cheapest credibility lift. Needs Jesse's bio facts (years active, closings #)."
     },
     {
-      "id": "C4-spanish-lane", "title": "Build the Spanish lane: 'Agente Bilingue' page + authentic Spanish neighborhood guides ('agente de bienes raices Downey', 'casas en venta Montebello')",
-      "surface": "spanish-organic", "impact": "high", "effort": "medium", "owner": "either",
+      "id": "C4-spanish-lane",
+      "title": "Build the Spanish lane: 'Agente Bilingue' page + authentic Spanish neighborhood guides ('agente de bienes raices Downey', 'casas en venta Montebello')",
+      "surface": "spanish-organic",
+      "impact": "high",
+      "effort": "medium",
+      "owner": "either",
       "status": "queued",
       "why": "Clearest white-space win — portals barely compete in Spanish; demographics ideal. Authentic Spanish only (Jesse validates)."
     },
     {
-      "id": "C5-downey-agent-page", "title": "Ship one cleanly-targeted 'Downey Real Estate Agent' page (title city-first, single H1, exact phrase in slug/first 100 words, FAQ)",
-      "surface": "qualified-organic", "impact": "high", "effort": "low", "owner": "claude",
-      "status": "done-live", "shipped": "2026-06-11 commit 06f7423 — /real-estate-agent-downey: deep+unique, front-loaded E-E-A-T, FAQPage+RealEstateAgent+Breadcrumb schema (no aggregateRating), wired into sitemap + neighborhoods/downey internal link",
+      "id": "C5-downey-agent-page",
+      "title": "Ship one cleanly-targeted 'Downey Real Estate Agent' page (title city-first, single H1, exact phrase in slug/first 100 words, FAQ)",
+      "surface": "qualified-organic",
+      "impact": "high",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-live",
+      "shipped": "2026-06-11 commit 06f7423 — /real-estate-agent-downey: deep+unique, front-loaded E-E-A-T, FAQPage+RealEstateAgent+Breadcrumb schema (no aggregateRating), wired into sitemap + neighborhoods/downey internal link",
       "why": "Directly targets the stated head term in its winnable qualified form; don't cannibalize the bilingual page."
     },
     {
-      "id": "C6-ai-faq-blocks", "title": "Add front-loaded 134-167-word Q&A blocks (answer + a concrete stat first) to core city pages for AI Overview citations; wrap in FAQPage",
-      "surface": "ai-overview", "impact": "medium", "effort": "medium", "owner": "either",
-      "status": "queued", "why": "44.2% of AI citations come from the first 30% of text; a stat lifts odds ~40%. Jesse validates local numbers."
+      "id": "C6-ai-faq-blocks",
+      "title": "Add front-loaded 134-167-word Q&A blocks (answer + a concrete stat first) to core city pages for AI Overview citations; wrap in FAQPage",
+      "surface": "ai-overview",
+      "impact": "medium",
+      "effort": "medium",
+      "owner": "either",
+      "status": "queued",
+      "why": "44.2% of AI citations come from the first 30% of text; a stat lifts odds ~40%. Jesse validates local numbers."
     },
     {
-      "id": "C7-schema-entity", "title": "Expand sameAs to VERIFIED profiles only; areaServed -> City+ZIP (90240/90241/90242); fix phantom breadcrumbs; build hub->city->neighborhood internal links",
-      "surface": "entity + internal-authority", "impact": "medium", "effort": "medium", "owner": "either",
-      "status": "queued", "why": "Consolidates the Jesse Onate entity for Google + AI; routes crawl to deep pages. Needs list of which profiles actually exist."
+      "id": "C7-schema-entity",
+      "title": "Expand sameAs to VERIFIED profiles only; areaServed -> City+ZIP (90240/90241/90242); fix phantom breadcrumbs; build hub->city->neighborhood internal links",
+      "surface": "entity + internal-authority",
+      "impact": "medium",
+      "effort": "medium",
+      "owner": "either",
+      "status": "queued",
+      "why": "Consolidates the Jesse Onate entity for Google + AI; routes crawl to deep pages. Needs list of which profiles actually exist."
     },
     {
-      "id": "J3-citations-nap", "title": "Lock ONE canonical NAP vs LIVE GBP, then claim Zillow/Realtor.com/Homes.com/Redfin + Apple/Bing/Yelp/FB/LinkedIn/Nextdoor (all -> jessetek.net)",
-      "surface": "local-pack + branded", "impact": "high", "effort": "medium", "owner": "jesse",
-      "status": "awaiting-jesse", "why": "Citations greenfield. 15+ consistent platforms ~= +23% pack likelihood. Don't trust old LOCAL-CITATIONS address."
+      "id": "J3-citations-nap",
+      "title": "Lock ONE canonical NAP vs LIVE GBP, then claim Zillow/Realtor.com/Homes.com/Redfin + Apple/Bing/Yelp/FB/LinkedIn/Nextdoor (all -> jessetek.net)",
+      "surface": "local-pack + branded",
+      "impact": "high",
+      "effort": "medium",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "Citations greenfield. 15+ consistent platforms ~= +23% pack likelihood. Don't trust old LOCAL-CITATIONS address."
     },
     {
-      "id": "J4-local-links", "title": "Earn 5 genuinely-local links: Downey + Montebello Chamber, Board of Realtors/NAHREP, partner vendor pages (lender/title/escrow/inspector)",
-      "surface": "authority", "impact": "high", "effort": "high", "owner": "jesse",
-      "status": "awaiting-jesse", "why": "Real needle-mover behind the impression ceiling. Brain will draft outreach templates."
+      "id": "J4-local-links",
+      "title": "Earn 5 genuinely-local links: Downey + Montebello Chamber, Board of Realtors/NAHREP, partner vendor pages (lender/title/escrow/inspector)",
+      "surface": "authority",
+      "impact": "high",
+      "effort": "high",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "Real needle-mover behind the impression ceiling. Brain will draft outreach templates."
     },
     {
-      "id": "J5-www-gsc", "title": "FIX host mismatch: Vercel currently 307-redirects apex->www, but ALL canonicals/sitemap/OG/schema say non-www jessetek.net. Set jessetek.net as PRIMARY domain in Vercel (so www->apex 301). Then confirm sitemap in GSC + Bing + request indexing.",
-      "surface": "all", "impact": "high", "effort": "low", "owner": "jesse",
-      "status": "awaiting-jesse", "why": "DISCOVERED 2026-06-11 via curl: jessetek.net 307-redirects to www, contradicting every on-page canonical -> confuses host authority. Fix is a ~2-min Vercel Domains 'set primary' action; low risk since all on-page signals already point non-www."
+      "id": "J5-www-gsc",
+      "title": "FIX host mismatch: Vercel currently 307-redirects apex->www, but ALL canonicals/sitemap/OG/schema say non-www jessetek.net. Set jessetek.net as PRIMARY domain in Vercel (so www->apex 301). Then confirm sitemap in GSC + Bing + request indexing.",
+      "surface": "all",
+      "impact": "high",
+      "effort": "low",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "DISCOVERED 2026-06-11 via curl: jessetek.net 307-redirects to www, contradicting every on-page canonical -> confuses host authority. Fix is a ~2-min Vercel Domains 'set primary' action; low risk since all on-page signals already point non-www. RE-CONFIRMED STILL LIVE 2026-06-11 run02 via curl (apex 307->www)."
     },
     {
-      "id": "E2-geo-grid", "title": "Set up geo-grid rank tracking (Local Falcon/BrightLocal) centered on Downey; stop trusting GSC average position for local",
-      "surface": "measurement", "impact": "medium", "effort": "low", "owner": "either",
-      "status": "queued", "why": "Map-pack rank varies block-by-block; GSC '3.9 on 7 impressions' is misleading for local. Closes the Brain's map-pack blind spot."
+      "id": "E2-geo-grid",
+      "title": "Set up geo-grid rank tracking (Local Falcon/BrightLocal) centered on Downey; stop trusting GSC average position for local",
+      "surface": "measurement",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "either",
+      "status": "queued",
+      "why": "Map-pack rank varies block-by-block; GSC '3.9 on 7 impressions' is misleading for local. Closes the Brain's map-pack blind spot."
     },
     {
-      "id": "J6-ig-flywheel", "title": "Instagram->search flywheel: keyword phrases + geotags in reel captions; GBP review link + jessetek.net in bio; pinned 'review/book' highlight",
-      "surface": "branded + gbp-signals", "impact": "medium", "effort": "medium", "owner": "jesse",
-      "status": "awaiting-jesse", "why": "Reels drive branded search (a ranking signal, already ~2.5) and are Google-indexable since 2025-07-10."
+      "id": "J6-ig-flywheel",
+      "title": "Instagram->search flywheel: keyword phrases + geotags in reel captions; GBP review link + jessetek.net in bio; pinned 'review/book' highlight",
+      "surface": "branded + gbp-signals",
+      "impact": "medium",
+      "effort": "medium",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "Reels drive branded search (a ranking signal, already ~2.5) and are Google-indexable since 2025-07-10."
+    },
+    {
+      "id": "C8-og-image-qc",
+      "title": "Fix 30 broken OG images on core-market city pages (Downey/Montebello/Pico Rivera/Norwalk/Whittier/Bellflower/Cerritos/Lakewood/La Mirada/Long Beach x3 templates) -> repoint og:image+twitter:image to valid og-home.jpg",
+      "surface": "social-share QC",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-staged-local",
+      "shipped": "2026-06-11 run02 commit 3eab696 (LOCAL main, ahead 1 — NOT pushed; cloud sandbox has no GitHub creds; needs git push from Mac/hourly loop)",
+      "why": "Broken social-share previews on his actual-market pages. Reversible. Proper per-city OGs later via og-gen.py on the Mac."
+    },
+    {
+      "id": "T1-competitor-watch-2026-06-11",
+      "title": "Thursday competitor pack watch: Downey/Montebello bilingual incumbents",
+      "surface": "intel/local-pack",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "either",
+      "status": "drafted",
+      "shipped": "2026-06-11 run02 -> seo-brain/drafts/2026-06-11-thu-competitor-watch.md",
+      "why": "Headline competitor Jesse Garcia (Realty World, DRE 01260007, bilingual, 25+yr, same Montebello 90640 ZIP) owns Montebello/East-LA but barely targets Downey + has a visible negative review. Gap = own Downey via Downey-named reviews + the new Downey page; press spotless 5.0. Needs Jesse's 5-min incognito-Maps verify for live counts."
+    },
+    {
+      "id": "E3-cloud-push-creds",
+      "title": "Cloud daily task cannot git push (no GitHub SSH key/token in sandbox) — wire an HTTPS PAT/deploy token OR treat cloud commits as 'staged on main, Mac hourly loop pushes'",
+      "surface": "loop-mechanics",
+      "impact": "high",
+      "effort": "low",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "Discovered run02: cloud-shipped whitelisted fixes (e.g. 3eab696) sit unpushed until the Mac pushes. Blocks true unattended auto-deploy from the always-on cloud engine."
+    },
+    {
+      "id": "E4-jtek-reputation-scope",
+      "title": "Add Reputation scope to the Jtek/GHL API key so the daily loop can read new Google reviews + draft replies",
+      "surface": "loop-mechanics/reviews",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "Discovered run02: current key returns 401 'not authorized for this scope' on /reputation/reviews. Prerequisite for the daily review-reply automation (step 5)."
     }
   ]
 }

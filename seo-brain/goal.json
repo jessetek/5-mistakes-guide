@@ -3,7 +3,7 @@
   "owner": "Jesse Onate",
   "created": "2026-06-11",
   "last_run": "2026-06-11",
-  "run_count": 1,
+  "run_count": 2,
   "status": "active",
   "shipped_2026-06-11": [
     "Stripped fabricated aggregateRating (5.0/100) from 105 files — FTC/Google compliance (commit e7f4443)",
@@ -12,9 +12,7 @@
   ],
   "gbp_inspected_2026-06-11": "Live GBP: 20 Google reviews @ 5.0; primary category 'Real estate agent' = correct; address 830 N Wilcox Ave, Montebello CA 90640 (Montebello pin — favors Montebello/Pico/Bell Gardens proximity MORE than Downey itself, a structural limiter for the literal Downey goal); profile NOT 100% complete (first gap: storefront photo); /reviews shows a LIVE Jtek review-widget iframe pulling real Google reviews. Resolved the review-count blocker → corrected inflated '100+ reviews' to '20+' on 50 files (commit 77ad604).",
   "reframe_status": "CONFIRMED by 2026 research: head term is a map-pack/directory SERP; pursue the 3 winnable surfaces below",
-
   "honest_reframe": "Page-1 ORGANIC for the bare term 'real estate agent' (competing against Zillow/Realtor.com/Redfin) is structurally not winnable for a solo agent's website. The winnable, lead-driving version of this goal has three surfaces, in priority order: (1) the Google LOCAL MAP PACK for 'real estate agent in Downey' / 'real estate agent near me' — driven by Google Business Profile, NOT the website; (2) QUALIFIED ORGANIC long-tail — 'Downey real estate agent', 'bilingual real estate agent Downey', 'first time home buyer agent Downey'; (3) BRANDED — 'Jesse Onate realtor' (already ranking ~2.5). GSC proves rank is NOT the blocker — visibility/authority is.",
-
   "baseline_kpis_2026-06-01": {
     "window": "28 days ending 2026-06-01 (Google Search Console)",
     "total_impressions": 169,
@@ -25,7 +23,6 @@
     "branded_avg_position": 2.5,
     "interpretation": "Excellent rank, near-zero reach. Fix reach, not rank."
   },
-
   "winnable_targets": [
     {
       "id": "local-pack-downey",
@@ -55,9 +52,7 @@
       "status": "partially-done"
     }
   ],
-
   "definition_of_done_overall": "Either (a) GBP shows in the Downey local pack for core 'real estate agent' queries, OR (b) a jessetek.net page holds top-10 average position with > 200 monthly impressions for qualified Downey agent terms — sustained for 2 consecutive GSC reporting weeks.",
-
   "constraints": {
     "production_site": "Live lead-gen site on Vercel, auto-deploys from git main. Jesse authorized push-when-verified (2026-06-11). The hourly loop auto-deploys ONLY whitelisted safe fixes (QC/schema/OG/internal-links) + drafts anything bigger.",
     "usage_budget": "Jesse chose HOURLY + Opus (max) for the autonomous loop on 2026-06-11 with full cost disclosure — overrides the default weekly/Sonnet cost stance for THIS loop. Loop self-throttles (idle runs near-free). Cut cost anytime via HOURLY_SEO_MODEL=sonnet in automation/config.local.sh.",
