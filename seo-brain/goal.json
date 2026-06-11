@@ -59,8 +59,8 @@
   "definition_of_done_overall": "Either (a) GBP shows in the Downey local pack for core 'real estate agent' queries, OR (b) a jessetek.net page holds top-10 average position with > 200 monthly impressions for qualified Downey agent terms — sustained for 2 consecutive GSC reporting weeks.",
 
   "constraints": {
-    "production_site": "Live lead-gen site on Vercel, auto-deploys from git main. Do not push without explicit go-ahead.",
-    "usage_budget": "Jesse hits plan limits; keep loop cadence weekly, not continuous. See feedback memory.",
+    "production_site": "Live lead-gen site on Vercel, auto-deploys from git main. Jesse authorized push-when-verified (2026-06-11). The hourly loop auto-deploys ONLY whitelisted safe fixes (QC/schema/OG/internal-links) + drafts anything bigger.",
+    "usage_budget": "Jesse chose HOURLY + Opus (max) for the autonomous loop on 2026-06-11 with full cost disclosure — overrides the default weekly/Sonnet cost stance for THIS loop. Loop self-throttles (idle runs near-free). Cut cost anytime via HOURLY_SEO_MODEL=sonnet in automation/config.local.sh.",
     "no_black_hat": "No bought links, no review gating, no NAP spam. Google penalizes all three."
   }
 }

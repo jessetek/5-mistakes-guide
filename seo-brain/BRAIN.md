@@ -77,10 +77,16 @@ real work and leave a clean trail, not boil the ocean.
 
 ## How to run it
 
-**Self-paced loop (what Jesse invoked):** `/loop` with no interval → the model runs a
-cycle, then schedules the next wake-up. Recommended cadence: **weekly**, aligned to the
-Monday GSC harvest (fresh data is the only thing that makes a new cycle worthwhile).
-Running more often mostly burns usage without new signal — see `goal.json.constraints`.
+**Hourly autonomous job (ACTIVE — chosen 2026-06-11, Opus/max):**
+`automation/scripts/run-hourly-seo-brain.sh` runs this loop unattended every hour on the
+**Mac mini** (the automation host — NOT every machine has the `claude` CLI). It auto-deploys
+only whitelisted safe fixes and drafts anything bigger to `seo-brain/drafts/`.
+- Activate (on the mini): `git pull && bash automation/install.sh`
+- Force a run now: `launchctl kickstart -k "gui/$(id -u)/net.jessetek.hourly-seo-brain"`
+- Kill switch: `launchctl bootout "gui/$(id -u)/net.jessetek.hourly-seo-brain"`
+- Cheaper: set `HOURLY_SEO_MODEL=sonnet` in `automation/config.local.sh`
+> Note: hourly is for **execution velocity**. Rank **measurement** still only matters weekly
+> (GSC refresh) — the loop skips MEASURE when there's no new data, so most hours are cheap no-ops.
 
 **Manual single cycle:** "Run the SEO brain" → execute skills 1→6 once, stop.
 
