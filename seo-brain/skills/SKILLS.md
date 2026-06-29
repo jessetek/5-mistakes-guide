@@ -54,11 +54,25 @@ data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for
 2. Make ONE concrete improvement: tighten a skill above, add a guard, retire a dead tactic,
    sharpen the research workflow prompt, or improve the ledger schema.
 3. Append a dated line to `BRAIN.md` Changelog AND the version notes below.
-**Rule:** every run must leave at least one self-edit here. That is the "gets better every run" contract.
+**Rule:** every run must leave the Brain at least as sharp as it found it — but a *verified frozen-IDLE*
+run (public/ hash == `last-qc.json`, harvester dark, knowledge <30d) has nothing genuine left to sharpen,
+and manufacturing a self-edit anyway is churn, not improvement (v6→v10 burned five version bumps doing
+exactly this). On such runs the contract is satisfied by appending ONE LINE to the rolling idle-streak
+tally in `runs/<date>.md` — no new verbose run section, no forced SKILLS version bump, no public/ commit.
+Only spend a real EVOLVE (and a version bump) when something actually changed or broke. "Gets better
+every run" means *compounding*, which on a frozen clean site means staying quiet and cheap.
 
 ---
 
 ## Version notes
+- **v11 (2026-06-29):** Run 11 (6th run today, 5th consecutive frozen IDLE). **Retired the forced-self-edit
+  tactic.** v6→v10 each bumped a SKILLS version on a frozen, clean, harvester-dark site — five increasingly
+  marginal tweaks to the same fast-path, which is the "churn, don't compound" anti-pattern the Brain is
+  supposed to avoid (BRAIN.md principle 6). The fast-path is now mature and anchored in `last-qc.json`;
+  there is nothing left to genuinely sharpen until the site changes or GSC wakes up. **Fix: relaxed SKILL 6's
+  "every run must self-edit" rule** so a verified frozen-IDLE collapses to a one-line tally — no new verbose
+  run section, no version bump, no commit-for-bookkeeping's-sake. This is the last structural change the
+  frozen state warrants; subsequent idle hours should just tick the tally and exit near-free.
 - **v10 (2026-06-29):** Run 10 (5th run today). 4th consecutive frozen IDLE. **Persisted the fast-path
   anchor out of prose and into state.** v9 keyed the fast-path off the `public/` subtree hash but the
   "validated-clean" value (`09a40ce`) lived only inside run-log/SKILLS prose — every future full-QC run

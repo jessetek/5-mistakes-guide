@@ -150,6 +150,13 @@ seo-brain/
 
 ## Changelog (EVOLVE writes here)
 
+- **2026-06-29 — run 11 (stop the churn):** 5th consecutive frozen IDLE (public/ `09a40ce` == `last-qc.json`,
+  harvester still dark). Noticed v6→v10 each manufactured a SKILLS version bump on a frozen clean site — the
+  "churn, don't compound" anti-pattern. **EVOLVE: SKILLS v11 relaxes SKILL 6's forced-self-edit rule** so a
+  verified frozen IDLE collapses to a one-line tally (see runs/2026-06-29.md "Idle streak"), no version bump,
+  no commit-for-bookkeeping. Last structural change the frozen state warrants. RESULT: IDLE.
+- **2026-06-29 — run 10 (persist the anchor):** 4th frozen IDLE. SKILLS v10 moved the fast-path's
+  validated-clean `public/` hash out of run-log prose into `state/last-qc.json` (was one-typo-from-skipping-QC).
 - **2026-06-29 — run 09 (fast-path bugfix):** 3rd consecutive frozen IDLE. Found v8's fast-path keyed off
   whole-`HEAD`, which the Brain's own `seo-brain/` bookkeeping commits advance every idle run — so "HEAD
   unchanged" self-broke after run 1, forcing a needless full QC each hour. **EVOLVE: SKILLS v9** re-keys the
