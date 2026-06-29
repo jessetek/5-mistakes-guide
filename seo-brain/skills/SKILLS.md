@@ -12,6 +12,10 @@ learn faster/cheaper ways to do each step. Version notes at the bottom.
 3. Flag "near-miss" queries (position 8–20 with impressions) — cheapest wins live here.
 4. Write `state/rank-snapshot.json` with the deltas + a 5-line summary.
 **Cost rule:** read-only. Never re-harvest GSC here — the launchd job already does.
+**Pipeline-liveness guard (v5):** if MEASURE has been FLAT for ≥2 consecutive runs, do NOT just report
+FLAT again — first confirm the harvester is actually alive: check the newest `gsc-harvest-*.json` date
+(stale if older than ~8 days) AND `launchctl list | grep net.jessetek.weekly-rank-watch`. A stalled
+data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for 27 days — see E5.)
 
 ## SKILL 2 — RESEARCH (the research brain)
 **Goal:** keep `knowledge/best-practices-2026.md` current; don't repeat stale advice.
@@ -80,3 +84,11 @@ learn faster/cheaper ways to do each step. Version notes at the bottom.
   missing files/links, spot-check 2-3 with `ls`/`git ls-files` before acting — never ship a
   "fix broken X" change off an unverified script count. (Negative result is also a win: anchors,
   images, internal links, breadcrumb URLs, and aggregateRating are all CLEAN site-wide as of run 04.)
+- **v5 (2026-06-28):** Run 05. Friction: 3 prior runs reported MEASURE "FLAT (harvester stalled,
+  non-blocking)" without ever diagnosing it — the brain's core metric had been dead 27 days.
+  Root cause: the Mac-mini→MacBook host migration only re-installed `seo-brain` + `hourly-autopush`;
+  the GSC harvester + QC launchd jobs were left pointing at the dead `/Users/jtek` iCloud path and
+  never re-loaded (E5, owner=jesse). **Guard added to SKILL 1:** treat ≥2 FLAT runs as a pipeline-
+  liveness check, not a rank report. Also verified this run: sitemap, vercel.json routing/canonical,
+  and the Person/RealEstateAgent schema are all clean — so a clean-QC run should DIAGNOSE the loop's
+  own machinery (crons, creds, data freshness) rather than manufacture a low-value on-page edit.

@@ -153,6 +153,15 @@ seo-brain/
 - **2026-06-11 — run 01 (genesis):** Brain created. Diagnosis: reach, not rank, is the blocker
   (169 impressions/28d). Reframed the goal into 3 winnable surfaces. Seeded knowledge + ledger.
   Launched the `jessetek-seo-research` workflow for the 2026 best-practices knowledge base.
+- **2026-06-28 — run 05 (measure-pipeline root-cause):** QC surfaces all verified CLEAN this run
+  (sitemap: no phantoms/orphans, flagship Downey page present; vercel.json valid + homepage canonical
+  consistent; Person/RealEstateAgent schema well-formed). No whitelisted SAFE FIX genuinely pending →
+  instead of manufacturing a low-value edit, diagnosed the elephant 3 runs ignored: **MEASURE has been
+  dark for 27 days because the GSC harvester + QC launchd jobs were never re-installed after the
+  Mac-mini→MacBook host migration** (their generated plists still point at the dead `/Users/jtek`
+  iCloud path; only `seo-brain` + `hourly-autopush` were migrated). Logged **E5 (awaiting-jesse,
+  priority 0)** with a one-command fix. EVOLVE: SKILL 1 pipeline-liveness guard (≥2 FLAT runs ⇒ verify
+  the harvester is alive, don't just re-report FLAT). RESULT: DRAFTED (no on-page commit — nothing broken).
 - **2026-06-28 — run 04 (compliance):** Site-wide QC sweep: anchors, images, internal links,
   breadcrumb URLs, and `aggregateRating` all CLEAN. But found 12 fabricated `Review` JSON-LD nodes on
   `reviews.html`, each falsely tagged `publisher: "Google"` — the S1 aggregateRating strip missed
