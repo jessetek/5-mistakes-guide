@@ -153,6 +153,14 @@ seo-brain/
 - **2026-06-11 — run 01 (genesis):** Brain created. Diagnosis: reach, not rank, is the blocker
   (169 impressions/28d). Reframed the goal into 3 winnable surfaces. Seeded knowledge + ledger.
   Launched the `jessetek-seo-research` workflow for the 2026 best-practices knowledge base.
+- **2026-06-29 — run 06 (NAP-consistency):** Used the two preceding NAP commits (`ebe2343`/`62e6676`,
+  which reverted phone to (562) 609-4200 and standardized email to jessetek.net) as a QC trigger and
+  swept phone + email across the whole site. Phone fully consistent (old 688-5214 = 0 files); the only
+  stragglers were 2 RSS contact fields in `insights/feed.xml` still on the OLD `jesse@jesseonate.com`.
+  **Shipped C12: repointed both to canonical `jesse@jessetek.net`** (2-line diff, feed.xml still valid
+  XML, 0 `jesseonate.com` refs remain in public/), pushed live. MEASURE re-confirmed DARK via the v5
+  guard (harvester still absent from `launchctl list`, harvest 28d stale — E5 still owner=jesse).
+  EVOLVE: SKILL 4 v6 NAP-straggler sweep across non-HTML surfaces after any NAP commit. RESULT: SHIPPED.
 - **2026-06-28 — run 05 (measure-pipeline root-cause):** QC surfaces all verified CLEAN this run
   (sitemap: no phantoms/orphans, flagship Downey page present; vercel.json valid + homepage canonical
   consistent; Person/RealEstateAgent schema well-formed). No whitelisted SAFE FIX genuinely pending →

@@ -1,6 +1,6 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-06-28 (run 05 — root-caused the 27-day MEASURE blackout: GSC harvester + QC jobs never re-installed after host migration; logged E5 awaiting-jesse)",
+  "updated": "2026-06-29 (run 06 — NAP-consistency fix: feed.xml RSS contact email still on old jesse@jesseonate.com after the NAP standardization; repointed to canonical jesse@jessetek.net, C12 done-live)",
   "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
   "actions": [
     {
@@ -232,6 +232,17 @@
       "status": "done-live",
       "shipped": "2026-06-28 run04 — S1 (the Jun-11 aggregateRating strip) only targeted aggregateRating and MISSED these per-Review nodes. Same FTC fake-review / Google manual-action liability: machine-readable claim that these hardcoded testimonials were published by Google. Surgical JSON-LD-only removal (206 deletions, 1 file); ZERO visible content changed (the 16 visible testimonial cards stay — they don't claim Google authorship); site-wide 380/380 JSON-LD blocks valid post-edit. Pushed to origin/main.",
       "why": "Self-serving Review markup falsely attributed to Google = the exact compliance class S1 fixed. Self-hosted reviews about yourself are ineligible for review rich results since 2019 anyway, so zero ranking downside to removal."
+    },
+    {
+      "id": "C12-nap-email-feed",
+      "title": "NAP-consistency: insights/feed.xml RSS managingEditor/webMaster still used the old jesse@jesseonate.com after the site-wide NAP email standardization to jesse@jessetek.net (commit 62e6676)",
+      "surface": "NAP-consistency + branded/citations",
+      "impact": "low",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-live",
+      "shipped": "2026-06-29 run06 — repointed both RSS contact fields to canonical jesse@jessetek.net. Verified: 372 site-wide uses of jesse@jessetek.net vs only these 2 stragglers; 0 jesseonate.com refs remain in public/ after the edit; feed.xml still well-formed XML; 2-line diff, 1 file. The (562) 555-0123 / you@email.com hits in guide.html + buyer-quiz.html are intentional <input placeholder> UX hints (reserved fictional number), NOT NAP claims — left intact.",
+      "why": "Inconsistent contact email across owned properties dilutes the NAP/entity signal Google uses for local + branded. Jesse's own commit 62e6676 standardized email to jessetek.net; the RSS feed was the lone leftover. Low impact (RSS is a minor surface) but zero-risk and finishes the standardization Jesse started."
     },
     {
       "id": "C10-testimonial-authenticity",

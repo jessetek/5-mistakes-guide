@@ -84,6 +84,14 @@ data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for
   missing files/links, spot-check 2-3 with `ls`/`git ls-files` before acting — never ship a
   "fix broken X" change off an unverified script count. (Negative result is also a win: anchors,
   images, internal links, breadcrumb URLs, and aggregateRating are all CLEAN site-wide as of run 04.)
+- **v6 (2026-06-29):** Run 06. A NAP commit is a QC trigger. Jesse's commits `ebe2343`/`62e6676` had
+  just changed the site phone + email; sweeping for stragglers found the RSS feed (`insights/feed.xml`)
+  still carried the OLD `jesse@jesseonate.com` in `<managingEditor>`/`<webMaster>` — a bulk
+  find-replace had missed the non-HTML surface. **Guard added to SKILL 4:** after any NAP-touching
+  commit (phone/email/address), grep the canonical value across ALL file types — `*.html` AND
+  `*.xml` / `*.json` / `*.webmanifest` / `feed.*` — and reconcile stragglers to the canonical. Ignore
+  reserved-fictional placeholders (`555-0123`, `you@email.com`) — those are intentional `<input>` hints,
+  not NAP claims. Shipped C12 (2-line feed.xml fix, 0 old-domain refs remain, valid XML).
 - **v5 (2026-06-28):** Run 05. Friction: 3 prior runs reported MEASURE "FLAT (harvester stalled,
   non-blocking)" without ever diagnosing it — the brain's core metric had been dead 27 days.
   Root cause: the Mac-mini→MacBook host migration only re-installed `seo-brain` + `hourly-autopush`;
