@@ -9,7 +9,10 @@ set -euo pipefail
 # SCRIPT_DIR = .../landing-page/automation/scripts
 # AUTOMATION_DIR = .../landing-page/automation
 # PROJECT_ROOT = .../landing-page
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Resolve this file's dir under bash (BASH_SOURCE) OR zsh ($0). The launchd jobs run
+# via /bin/zsh because /bin/bash is TCC-blocked from ~/Documents on this Mac.
+if [ -n "${BASH_SOURCE:-}" ]; then _common_self="${BASH_SOURCE[0]}"; else _common_self="$0"; fi
+SCRIPT_DIR="$(cd "$(dirname "$_common_self")" && pwd)"
 AUTOMATION_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 PROJECT_ROOT="$(cd "$AUTOMATION_DIR/.." && pwd)"
 
