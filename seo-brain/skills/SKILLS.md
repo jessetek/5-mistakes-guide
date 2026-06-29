@@ -59,6 +59,17 @@ data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for
 ---
 
 ## Version notes
+- **v7 (2026-06-29):** Run 07 (2nd run today, laptop re-woke). Full QC swept CLEAN — 380/380 JSON-LD
+  valid, 0 broken img/og, 0 NAP stragglers (post-C12), vercel.json valid (2 rewrites / 21 redirects).
+  IDLE was correct. **Guard added to SKILL 4 (sitemap QC) — two standing FALSE POSITIVES to ignore so
+  future runs stop re-investigating them:** (1) a naive `*.html`-glob sitemap-drift check flags
+  `/insights/feed.xml` as a "phantom" — it's the real RSS file, never an HTML page, intentionally not a
+  sitemap `<loc>`. (2) The site has **NO `index.html`**; the homepage is `public/home.html`, served at
+  `/` via the vercel.json rewrite `{"/" → "/home"}` and 301'd back with the redirect `{"/home" → "/"}`,
+  and home.html canonicals to `https://jessetek.net/`. So `/home` will ALWAYS look like an "orphan
+  not in sitemap" to a file-glob check — it is correct as-is; do NOT add `/home` to the sitemap (would
+  create a duplicate of `/`). Net: treat feed.xml + home.html as known-good; only act on sitemap drift
+  that is neither of these.
 - **v1 (2026-06-11):** Genesis. Six skills defined. Open improvement targets for next run:
   (a) auto-pull GBP insights once Jesse grants access (would make SKILL 1 measure the #1 surface,
   which is currently a blind spot — we only see website GSC, not map-pack performance);
