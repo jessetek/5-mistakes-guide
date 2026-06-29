@@ -1,0 +1,8 @@
+{
+  "_note": "Machine-readable anchor for the SKILL 1/4 frozen-state fast-path. Records the public/ subtree hash that last PASSED the full QC battery. Each run: compare `git rev-parse HEAD:public` to public_tree_hash below. If EQUAL + tree clean + knowledge <30d, the prior full-QC verdict still holds → skip the QC battery. If DIFFERENT, run the full QC sweep and (when it passes clean) UPDATE this file to the new hash. This replaces the old practice of burying the validated hash in run-log prose, which had to be re-typed by hand every full-QC run.",
+  "public_tree_hash": "09a40cea3281e72e76c23f60b4064d6720f69ddd",
+  "last_full_qc_run": "run07 (2026-06-29)",
+  "last_full_qc_result": "CLEAN — 380/380 JSON-LD blocks valid, 0 broken img/og refs, 0 NAP stragglers, vercel.json valid, no real sitemap drift",
+  "last_touched_by_commit": "d74c8dd (run06 feed.xml NAP fix)",
+  "updated": "2026-06-29 (run10 — created marker; hash unchanged, fast-path IDLE confirmed)"
+}

@@ -59,6 +59,15 @@ data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for
 ---
 
 ## Version notes
+- **v10 (2026-06-29):** Run 10 (5th run today). 4th consecutive frozen IDLE. **Persisted the fast-path
+  anchor out of prose and into state.** v9 keyed the fast-path off the `public/` subtree hash but the
+  "validated-clean" value (`09a40ce`) lived only inside run-log/SKILLS prose — every future full-QC run
+  would have had to remember to re-type the new hash in narrative text, and a fast-path that trusts a
+  hand-copied string is one typo from skipping QC on a tree that actually changed. **Fix: write
+  `seo-brain/state/last-qc.json`** recording `public_tree_hash` + which run/result last passed full QC.
+  Protocol now: compare `git rev-parse HEAD:public` to `last-qc.json:public_tree_hash`; EQUAL + clean +
+  knowledge <30d → trust the stored verdict, IDLE without re-QC; DIFFERENT → run the full QC battery and,
+  when it passes, rewrite `last-qc.json` to the new hash. This run: `09a40ce` == stored hash → IDLE.
 - **v9 (2026-06-29):** Run 09 (4th run today). 3rd consecutive frozen IDLE. **Fixed a latent bug in the
   v8 fast-path:** it keyed off whole-`HEAD` equality, but the Brain commits its own `seo-brain/`
   bookkeeping every idle run — so HEAD advances each hour while `public/` is byte-identical. After the
