@@ -59,3 +59,8 @@ learn faster/cheaper ways to do each step. Version notes at the bottom.
   (a) auto-pull GBP insights once Jesse grants access (would make SKILL 1 measure the #1 surface,
   which is currently a blind spot — we only see website GSC, not map-pack performance);
   (b) add a "near-miss harvester" that auto-drafts on-page tweaks for position 8–20 queries.
+- **v3 (2026-06-28):** Run 03. Friction: nearly went to RESEARCH/IDLE before noticing the two
+  `UX-AUDIT-*.md` files held a pre-vetted High-confidence broken-link finding. **Guard added to
+  SKILL 2 (DIAGNOSE/ACT):** before declaring IDLE, mine `UX-AUDIT-*.md` and `seo-brain/drafts/` for
+  High-confidence broken-link/markup items, re-verify each against LIVE code (audits go stale), then
+  ship the whitelisted ones. Did exactly this → fixed 28 dead `#contact` anchors (C9, commit 559ef36).

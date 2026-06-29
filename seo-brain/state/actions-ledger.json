@@ -1,6 +1,6 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-06-11 (run 02 + deploy + autopush install)",
+  "updated": "2026-06-28 (run 03 — C9 #contact anchor QC shipped live)",
   "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
   "actions": [
     {
@@ -189,6 +189,17 @@
       "status": "done-live",
       "shipped": "2026-06-11 run02 commit 3eab696 — PUSHED to origin/main (e69abbf) from Mac via Finder-run script; Vercel auto-deployed; verified live (og-home.jpg serving on Downey/Montebello/Whittier pages, img 200).",
       "why": "Broken social-share previews on his actual-market pages. Reversible. Proper per-city OGs later via og-gen.py on the Mac."
+    },
+    {
+      "id": "C9-contact-anchor-qc",
+      "title": "Fix 28 broken #contact anchors site-wide: step-card links pointed to #contact with no matching target -> added id=contact to each page's booking cta-section (home/buyer/seller/es-index)",
+      "surface": "on-page QC + CRO",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-live",
+      "shipped": "2026-06-28 run03 commit 559ef36 — PUSHED to origin/main from cloud sandbox (git creds worked this run); Vercel auto-build. Sourced from UX-AUDIT-2026-05-29.md High finding, re-verified live: 28 dead anchors (3+11+11+3), 0 existing id=contact; all now resolve to the 'Book a Strategy Call' card; pure id-only diff; 11/11 JSON-LD valid.",
+      "why": "Highest-intent UI element (How-It-Works cards -> booking) was a dead anchor on 4 money pages. Cheap CRO + crawl-hygiene win, reversible."
     },
     {
       "id": "T1-competitor-watch-2026-06-11",
