@@ -36,8 +36,8 @@
     "note": "Mirrors the live tracked set in automation/.state/rank-history.json (downey realtor, whittier realtor, bilingual realtor downey, best realtor downey ca, first time buyer downey, homes for sale downey, realtor jesse onate, ...). Surrounding cities = the LA/OC cities Jesse actually serves per the office NAP, NOT arbitrary expansion."
   },
   "created": "2026-06-11",
-  "last_run": "2026-06-28",
-  "run_count": 5,
+  "last_run": "2026-06-29",
+  "run_count": 9,
   "status": "active",
   "measure_blocker_2026-06-28": "run05 root-caused why MEASURE has reported FLAT since 2026-06-01: the GSC weekly harvester (net.jessetek.weekly-rank-watch) + daily-health-check/weekly-qc-sweep/weekly-clarity-review launchd jobs were NEVER re-installed after the Mac-mini->MacBook host migration; their generated plists still point at the dead /Users/jtek iCloud path. Only seo-brain + hourly-autopush were migrated. Fix is owner=jesse, 1 command (ledger E5, priority 0). Until fixed, the brain is blind on its core metric — treat all FLAT MEASURE reports as 'pipeline dead', not 'rank stable'.",
   "shipped_2026-06-28": [

@@ -59,6 +59,16 @@ data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for
 ---
 
 ## Version notes
+- **v9 (2026-06-29):** Run 09 (4th run today). 3rd consecutive frozen IDLE. **Fixed a latent bug in the
+  v8 fast-path:** it keyed off whole-`HEAD` equality, but the Brain commits its own `seo-brain/`
+  bookkeeping every idle run — so HEAD advances each hour while `public/` is byte-identical. After the
+  first idle, "HEAD unchanged since last run" is therefore always FALSE, which would force a needless full
+  QC battery every run (defeating the whole near-free goal). **Fix: key the fast-path off the `public/`
+  subtree hash, not whole-HEAD — `git rev-parse HEAD:public`.** If that hash equals the value the last
+  full-QC run recorded (run 07 validated tree `09a40ce` CLEAN) AND the tree is clean AND knowledge <30d,
+  the QC verdict still holds regardless of how many bookkeeping commits landed on top. This run: public/
+  tree `09a40ce` (last touched by `d74c8dd`, run06's feed.xml fix) == run07's validated-clean state →
+  IDLE without re-running QC.
 - **v8 (2026-06-29):** Run 08 (3rd run today). 2nd consecutive IDLE on a frozen HEAD. **Frozen-state
   fast-path added to SKILL 1 + SKILL 4:** the only state that changes hour-to-hour *without a new commit*
   is the data pipeline. So at the top of each run, do the 3 cheap checks first — `git status` (clean?),

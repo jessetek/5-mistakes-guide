@@ -150,6 +150,12 @@ seo-brain/
 
 ## Changelog (EVOLVE writes here)
 
+- **2026-06-29 — run 09 (fast-path bugfix):** 3rd consecutive frozen IDLE. Found v8's fast-path keyed off
+  whole-`HEAD`, which the Brain's own `seo-brain/` bookkeeping commits advance every idle run — so "HEAD
+  unchanged" self-broke after run 1, forcing a needless full QC each hour. **EVOLVE: SKILLS v9** re-keys the
+  fast-path off the `public/` subtree hash (`git rev-parse HEAD:public` = `09a40ce`, last touched by run06's
+  `d74c8dd` = run07's validated-clean QC state), immune to bookkeeping churn. Harvester still absent, harvest
+  28d stale (E5). RESULT: IDLE.
 - **2026-06-29 — run 08 (frozen-state fast-path):** 2nd consecutive IDLE. HEAD byte-identical to run 07
   (`da9f3f4`), tree clean, harvester still absent (`launchctl` shows only `seo-brain` + `hourly-autopush`),
   newest harvest still `2026-06-01` (28d stale). Since public/ couldn't have changed, run 07's full QC
