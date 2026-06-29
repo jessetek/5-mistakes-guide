@@ -59,6 +59,16 @@ data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for
 ---
 
 ## Version notes
+- **v8 (2026-06-29):** Run 08 (3rd run today). 2nd consecutive IDLE on a frozen HEAD. **Frozen-state
+  fast-path added to SKILL 1 + SKILL 4:** the only state that changes hour-to-hour *without a new commit*
+  is the data pipeline. So at the top of each run, do the 3 cheap checks first — `git status` (clean?),
+  `git rev-parse HEAD` vs the HEAD the previous run logged, and the harvester liveness (newest
+  `gsc-harvest-*.json` date + `launchctl list | grep weekly-rank-watch`). **If the tree is clean AND HEAD
+  is unchanged since the last run AND knowledge <30d, the previous run's full QC verdict still holds
+  (public/ is byte-identical) — skip re-running the expensive QC battery and decide IDLE/MEASURE off the
+  liveness checks alone.** Only re-run the full QC sweep when HEAD has moved (a new commit could have
+  introduced a regression) or knowledge has gone stale. Keeps idle runs genuinely near-free, which is the
+  stated cost goal.
 - **v7 (2026-06-29):** Run 07 (2nd run today, laptop re-woke). Full QC swept CLEAN — 380/380 JSON-LD
   valid, 0 broken img/og, 0 NAP stragglers (post-C12), vercel.json valid (2 rewrites / 21 redirects).
   IDLE was correct. **Guard added to SKILL 4 (sitemap QC) — two standing FALSE POSITIVES to ignore so

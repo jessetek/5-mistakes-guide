@@ -150,6 +150,13 @@ seo-brain/
 
 ## Changelog (EVOLVE writes here)
 
+- **2026-06-29 — run 08 (frozen-state fast-path):** 2nd consecutive IDLE. HEAD byte-identical to run 07
+  (`da9f3f4`), tree clean, harvester still absent (`launchctl` shows only `seo-brain` + `hourly-autopush`),
+  newest harvest still `2026-06-01` (28d stale). Since public/ couldn't have changed, run 07's full QC
+  verdict (380/380 JSON-LD, 0 broken img/og, 0 NAP stragglers, vercel.json valid) still holds — no SAFE FIX
+  pending; knowledge <30d (no research); no new GSC week (can't MEASURE). **EVOLVE: SKILLS v8 frozen-state
+  fast-path** — when HEAD is unchanged since the prior run + tree clean + knowledge fresh, skip the full QC
+  battery and decide off the 3 cheap liveness checks, so idle runs stay near-free. RESULT: IDLE.
 - **2026-06-11 — run 01 (genesis):** Brain created. Diagnosis: reach, not rank, is the blocker
   (169 impressions/28d). Reframed the goal into 3 winnable surfaces. Seeded knowledge + ledger.
   Launched the `jessetek-seo-research` workflow for the 2026 best-practices knowledge base.
