@@ -1,6 +1,6 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-06-28 (run 03 — C9 #contact anchor QC shipped live)",
+  "updated": "2026-06-28 (run 04 — S3 stripped fabricated Google-attributed Review schema from reviews.html)",
   "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
   "actions": [
     {
@@ -221,6 +221,37 @@
       "owner": "jesse",
       "status": "awaiting-jesse",
       "why": "Built+installed net.jessetek.hourly-autopush (automation/scripts/run-hourly-autopush.sh + plist template; RunAtLoad+hourly; push-only, ahead-count guard). BLOCKED by macOS TCC: launchd agents can't touch the repo because it lives in ~/Documents (protected) -> first run returned 'Operation not permitted'. ONE manual step to activate hands-free deploy: System Settings > Privacy & Security > Full Disk Access > add /bin/bash (or move repo out of ~/Documents). ALT (Mac-independent, cleaner long-term): store a GitHub fine-grained PAT (contents:write) for the cloud task and push over HTTPS directly. Until then: cloud commits locally, Mac pushes via Finder-run script (proven 2026-06-11)."
+    },
+    {
+      "id": "S3-strip-fake-review-schema",
+      "title": "Strip 12 fabricated Google-attributed Review nodes from reviews.html JSON-LD (each had publisher=Organization 'Google' + ratingValue 5 + first-name-initial authors / generic copy)",
+      "surface": "compliance + rich-results",
+      "impact": "high",
+      "effort": "low",
+      "owner": "claude",
+      "status": "done-live",
+      "shipped": "2026-06-28 run04 — S1 (the Jun-11 aggregateRating strip) only targeted aggregateRating and MISSED these per-Review nodes. Same FTC fake-review / Google manual-action liability: machine-readable claim that these hardcoded testimonials were published by Google. Surgical JSON-LD-only removal (206 deletions, 1 file); ZERO visible content changed (the 16 visible testimonial cards stay — they don't claim Google authorship); site-wide 380/380 JSON-LD blocks valid post-edit. Pushed to origin/main.",
+      "why": "Self-serving Review markup falsely attributed to Google = the exact compliance class S1 fixed. Self-hosted reviews about yourself are ineligible for review rich results since 2019 anyway, so zero ranking downside to removal."
+    },
+    {
+      "id": "C10-testimonial-authenticity",
+      "title": "Verify the 16 VISIBLE testimonial cards on reviews.html (+ buyer/seller/home cta-quotes) are REAL clients; activate the dormant #live-reviews Google-Places widget (currently display:none) so the page shows genuine Google reviews instead of/alongside hardcoded ones",
+      "surface": "compliance + trust",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "Discovered run04: reviews.html renders 12 hardcoded testimonials ('Maria G.', 'David R.', generic copy) as visible cards, AND has a live Google-Places review widget (reputationhub.site review-widget.js + #live-reviews data-source='google-places-api') sitting at display:none. Claude removed the fake Review *schema* (S3) but visible testimonial text is a content/authenticity call only Jesse can make: confirm these are real (keep) or replace with the live widget. Do NOT let Claude delete visible praise autonomously."
+    },
+    {
+      "id": "C11-seller-buyerguide-cta",
+      "title": "Fix wrong-persona secondary CTA on seller.html (~line 554): 'Get the Free Buyer Guide' -> /guide on a SELLER page (copy-paste leftover from buyer.html). Repoint to /seller-net or /seller-checklist + matching copy",
+      "surface": "CRO + internal-linking",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "jesse",
+      "status": "awaiting-jesse",
+      "why": "High-confidence finding in UX-AUDIT-2026-05-29. Link resolves (not broken) so it's outside Claude's auto-deploy whitelist; changing visible marketing copy + choosing the offer is a CRO judgment call for Jesse. /seller-net and /seller-checklist both already exist."
     },
     {
       "id": "E4-jtek-reputation-scope",

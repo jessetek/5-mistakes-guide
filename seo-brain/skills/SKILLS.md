@@ -64,3 +64,19 @@ learn faster/cheaper ways to do each step. Version notes at the bottom.
   SKILL 2 (DIAGNOSE/ACT):** before declaring IDLE, mine `UX-AUDIT-*.md` and `seo-brain/drafts/` for
   High-confidence broken-link/markup items, re-verify each against LIVE code (audits go stale), then
   ship the whitelisted ones. Did exactly this → fixed 28 dead `#contact` anchors (C9, commit 559ef36).
+- **v4 (2026-06-28):** Run 04. Two compounding lessons:
+  (a) **COMPLIANCE GUARD — extend the S1 fake-rating sweep to per-`Review` schema, not just
+  `aggregateRating`.** Found 12 hardcoded `Review` nodes on `reviews.html` each tagged
+  `publisher: Organization "Google"` — a machine-readable claim that fabricated testimonials were
+  Google-published. S1 (Jun-11) only stripped `aggregateRating` and missed these. **New standing QC
+  in SKILL 4:** grep `"@type": "Review"` + `"aggregateRating"` + `"ratingValue"` site-wide; any
+  self-hosted review markup attributing reviews to Google (or carrying a rating the site can't
+  substantiate) is the same FTC/Google liability → strip the JSON-LD (schema-only, leave visible
+  text for Jesse). Ineligible for rich results since 2019 anyway = zero ranking downside.
+  Shipped S3 (206-line JSON-LD-only removal, 380/380 blocks valid, 0 visible content touched).
+  (b) **QC-SCRIPT GUARD — verify "missing asset" findings before believing them.** A broken-image
+  sweep this run reported ~50 "MISSING IMG" hits that were ALL a bash word-splitting artifact in the
+  ref-extraction loop (the files existed; 206 img files tracked). Rule: when a QC script flags
+  missing files/links, spot-check 2-3 with `ls`/`git ls-files` before acting — never ship a
+  "fix broken X" change off an unverified script count. (Negative result is also a win: anchors,
+  images, internal links, breadcrumb URLs, and aggregateRating are all CLEAN site-wide as of run 04.)

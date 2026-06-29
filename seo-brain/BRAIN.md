@@ -1,5 +1,14 @@
 # 🧠 jessetek.net SEO Brain
 
+**Target query:** _"real estate agent in Downey and surrounding cities"_ — Downey + South Gate,
+Montebello, Pico Rivera, Norwalk, Whittier, Bell Gardens, Bellflower, Lakewood, Long Beach (the
+LA/OC cities Jesse actually serves). Exact query set lives in `goal.json → target_queries`.
+**Site:** jessetek.net · **GSC property:** `https://jessetek.net/` (fallback `sc-domain:jessetek.net`).
+
+> This Brain is the local-real-estate sibling of the **Jtek** SEO Brain
+> (`../../../Jtek website/seo-brain/`, target = "real estate crm"). Same learn→act→evolve
+> discipline, different target surface (local map pack + qualified-organic vs. a SaaS head term).
+
 A self-improving operator whose single job is to move jessetek.net up Google for
 **"real estate agent" in/around Downey, CA**. It runs as a loop: every cycle it
 **measures** reality, **researches** what's working now, **diagnoses** the gap,
@@ -77,14 +86,22 @@ real work and leave a clean trail, not boil the ocean.
 
 ## How to run it
 
-**Hourly autonomous job (ACTIVE — chosen 2026-06-11, Opus/max):**
-`automation/scripts/run-hourly-seo-brain.sh` runs this loop unattended every hour on the
-**Mac mini** (the automation host — NOT every machine has the `claude` CLI). It auto-deploys
+**Hourly autonomous job (Opus/max by default):**
+`automation/scripts/run-hourly-seo-brain.sh` runs this loop unattended via launchd. It auto-deploys
 only whitelisted safe fixes and drafts anything bigger to `seo-brain/drafts/`.
-- Activate (on the mini): `git pull && bash automation/install.sh`
-- Force a run now: `launchctl kickstart -k "gui/$(id -u)/net.jessetek.hourly-seo-brain"`
-- Kill switch: `launchctl bootout "gui/$(id -u)/net.jessetek.hourly-seo-brain"`
+
+> ⚠️ **Host changed (2026-06): the always-on Mac mini is GONE.** This now runs on Jesse's
+> **MacBook Pro M1 Pro**, which is **NOT always-on** — launchd fires the job only while the laptop
+> is awake. Missed hours simply run the next time it wakes; the loop self-throttles (idle = near-free).
+> The `claude` CLI lives at `~/.claude-cli-global/bin/` (NOT on the default PATH), so the launchd
+> plist must add that dir to `PATH` (see `~/Library/LaunchAgents/net.jessetek.seo-brain.plist`).
+
+- Activate: `launchctl load -w ~/Library/LaunchAgents/net.jessetek.seo-brain.plist`
+- Force a run now: `launchctl kickstart -k "gui/$(id -u)/net.jessetek.seo-brain"`
+- Kill switch: `launchctl unload ~/Library/LaunchAgents/net.jessetek.seo-brain.plist`
 - Cheaper: set `HOURLY_SEO_MODEL=sonnet` in `automation/config.local.sh`
+- Companion job `net.jessetek.hourly-autopush` pushes any local SEO-brain commits to origin
+  (Vercel auto-builds main) whenever the laptop is awake.
 > Note: hourly is for **execution velocity**. Rank **measurement** still only matters weekly
 > (GSC refresh) — the loop skips MEASURE when there's no new data, so most hours are cheap no-ops.
 
@@ -136,6 +153,14 @@ seo-brain/
 - **2026-06-11 — run 01 (genesis):** Brain created. Diagnosis: reach, not rank, is the blocker
   (169 impressions/28d). Reframed the goal into 3 winnable surfaces. Seeded knowledge + ledger.
   Launched the `jessetek-seo-research` workflow for the 2026 best-practices knowledge base.
+- **2026-06-28 — run 04 (compliance):** Site-wide QC sweep: anchors, images, internal links,
+  breadcrumb URLs, and `aggregateRating` all CLEAN. But found 12 fabricated `Review` JSON-LD nodes on
+  `reviews.html`, each falsely tagged `publisher: "Google"` — the S1 aggregateRating strip missed
+  these. **Stripped them (S3, schema-only 206-line removal, 0 visible content changed, 380/380
+  JSON-LD valid), pushed live.** EVOLVE: extended the S1 fake-rating guard to per-`Review` markup
+  (SKILL 4 v4) + added a "verify QC-script missing-asset hits before acting" guard after a
+  broken-image false alarm. Flagged C10 (visible-testimonial authenticity + dormant live Google
+  widget) + C11 (seller buyer-guide CTA) to Jesse.
 - **2026-06-11 — run 01 (ship):** Research returned → `knowledge/best-practices-2026.md`. It read the
   code and verified two structural issues: fabricated `aggregateRating` (105 files) + ~97%-identical
   doorway city pages. **Built `tools/strip-fake-aggregate-rating.py`, stripped all 105 (compliance),
