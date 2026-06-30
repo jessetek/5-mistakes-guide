@@ -1,6 +1,6 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-06-29 (run 21 — IDLE via v11 fast-path: frozen public/ tree 09a40ce == stored last-qc.json hash / run07 validated-clean ⇒ no SAFE FIX pending; knowledge 18d <30, no research; MEASURE still dark [weekly-rank-watch absent, harvest 28d stale, E5 owner=jesse priority 0]. No public/ change, tally-only run logged. Runs 11-21 all frozen IDLE.)",
+  "updated": "2026-06-29 (run 22 — IDLE via v11 fast-path: frozen public/ tree 09a40ce == stored last-qc.json hash / run07 validated-clean ⇒ no SAFE FIX pending; knowledge 18d <30, no research; MEASURE still dark [weekly-rank-watch absent, harvest 28d stale, E5 owner=jesse priority 0]. No public/ change. NEW this run: added E6 (cost-throttle recommendation) — 16 idle Opus fires today on a fully-jesse-blocked frozen site warrant switching HOURLY_SEO_MODEL=sonnet or dropping cadence to daily; surfaced once, future frozen runs just tally. Runs 11-22 all frozen IDLE.)",
   "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
   "actions": [
     {
@@ -284,6 +284,17 @@
       "status": "awaiting-jesse",
       "priority": 0,
       "why": "ROOT-CAUSED run05 (3 prior runs only flagged it 'non-blocking' without diagnosing). GSC harvest stopped at gsc-harvest-2026-06-01.json. Cause = INCOMPLETE HOST MIGRATION: the last weekly-rank-watch log + every generated plist still embed the OLD Mac-mini path (/Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/.../JtekMac/.../landing-page). When the host moved to the MacBook Pro (/Users/jesseonate/Documents/Claude Code/Jessetek/landing-page), ONLY net.jessetek.seo-brain + net.jessetek.hourly-autopush were re-loaded. Confirmed ABSENT from `launchctl list`: weekly-rank-watch (the GSC harvester), daily-health-check, weekly-qc-sweep, weekly-clarity-review (+ all monthly/quarterly jobs). Result: SKILL 1 MEASURE has no fresh data, so every hourly run reports FLAT. FIX (1 idempotent command — re-derives PROJECT_ROOT for THIS laptop, migrates GSC creds, re-registers the job, smoke-tests): bash '/Users/jesseonate/Documents/Claude Code/Jessetek/landing-page/automation/scripts/apply-rank-watch-setup.sh' ; then force an immediate run: launchctl kickstart -k \"gui/$(id -u)/net.jessetek.weekly-rank-watch\". CAVEAT: that setup script's Step 2 references an install.sh not present in the repo this run — if it errors there, fall back to: copy automation/launchd/*.template, replace the jtek iCloud path with /Users/jesseonate/Documents/Claude Code/Jessetek/landing-page, write to ~/Library/LaunchAgents/, then `launchctl load -w` each. NOT auto-deployable (system/launchd + creds = outside the on-page SAFE-FIX whitelist), so it's correctly owner=jesse."
+    },
+    {
+      "id": "E6-frozen-state-cost-throttle",
+      "title": "Cut the autonomous loop's cost while the site is in verified-frozen + fully-jesse-blocked state: switch HOURLY_SEO_MODEL=sonnet in automation/config.local.sh, OR drop the launchd cadence from hourly to daily, until either GSC wakes (E5) or a public/ change lands",
+      "surface": "loop-mechanics/cost",
+      "impact": "medium",
+      "effort": "low",
+      "owner": "jesse",
+      "priority": 3,
+      "status": "awaiting-jesse",
+      "why": "SURFACED run22. The v9-v11 fast-path made each idle run cheap-in-tokens (one tally line) but the launchd job still FIRES HOURLY and burns one Opus invocation every time — 16 idle Opus runs on 2026-06-29 alone, every one blocked on an owner=jesse item (E5 harvester dark, J1/J2 GBP+reviews, J3/J4/J5 off-page). The site has been a verified-frozen clean tree (public/ == 09a40ce since run07) with zero autonomous on-page surface left until Jesse supplies real local content (C2/C3/C4/C6/C7) or unblocks the off-page levers. goal.json's own usage_budget note authorizes exactly this lever ('Cut cost anytime via HOURLY_SEO_MODEL=sonnet in automation/config.local.sh'). RECOMMENDATION: while frozen, either (a) one line in automation/config.local.sh: `export HOURLY_SEO_MODEL=sonnet` (keeps hourly liveness at ~1/5 the cost — a clean frozen tally needs no Opus reasoning), or (b) `launchctl` re-load net.jessetek.seo-brain at a daily cadence. Revert to hourly+Opus the moment E5 lands (fresh GSC data resumes MEASURE) or Jesse ships local content that reopens the on-page backlog. Surfaced once here; future frozen runs just tick the tally and won't re-raise this."
     }
   ]
 }
