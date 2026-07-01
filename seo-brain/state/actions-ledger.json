@@ -1,6 +1,6 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-07-01 (run 36, 2nd of day — IDLE via v11 fast-path: frozen public/ tree 09a40ce == stored last-qc.json hash / run07 validated-clean ⇒ no SAFE FIX pending; knowledge 20d <30, no research; MEASURE still dark [weekly-rank-watch absent per launchctl, harvest 30d stale, E5 owner=jesse priority 0]. No public/ change. E6 cost-throttle (owner=jesse) stays open, not re-raised. Runs 11-36 all frozen IDLE.)",
+  "updated": "2026-07-01 (run 37, 3rd of day — IDLE via v11 fast-path: frozen public/ tree 09a40ce == stored last-qc.json hash / run07 validated-clean ⇒ no SAFE FIX pending; knowledge 20d <30, no research; MEASURE still dark [harvest gsc-harvest-2026-06-01.json 30d stale, E5 owner=jesse priority 0]. No public/ change. E6 cost-throttle (owner=jesse) stays open, not re-raised. Runs 11-37 all frozen IDLE.)",
   "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
   "actions": [
     {
