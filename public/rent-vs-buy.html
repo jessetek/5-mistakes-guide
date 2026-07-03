@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Rent vs Buy Calculator — SoCal Edition | Jesse Oñate</title>
+<title>Rent vs Buy Calculator: SoCal Edition | Jesse Oñate</title>
 <meta name="description" content="Free interactive rent vs buy calculator with real SoCal numbers. Includes property tax, HOA, opportunity cost, appreciation, and live mortgage rates from Freddie Mac. See your break-even point.">
 <link rel="canonical" href="https://jessetek.net/rent-vs-buy">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rent vs Buy Calculator — SoCal Edition | Jesse Oñate">
+<meta property="og:title" content="Rent vs Buy Calculator: SoCal Edition | Jesse Oñate">
 <meta property="og:description" content="Real SoCal numbers, live FRED mortgage rates, property tax, opportunity cost. See your break-even point in years.">
 <meta property="og:image" content="https://jessetek.net/img/og-rent-vs-buy.jpg">
 <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Jesse Oñate Real Estate">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Rent vs Buy Calculator — SoCal Edition">
+<meta name="twitter:title" content="Rent vs Buy Calculator: SoCal Edition">
 <meta name="twitter:description" content="Real SoCal numbers, live FRED rates, see your break-even point.">
 <meta name="twitter:image" content="https://jessetek.net/img/og-rent-vs-buy.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -201,7 +201,7 @@
   <div class="rb-hero-inner">
     <div class="hero-badge"><span class="hero-badge-dot"></span><span>Free · Live FRED rates · Real SoCal numbers</span></div>
     <h1 style="margin-top:24px">Rent vs <span class="g">Buy</span><br>in Southern California.</h1>
-    <p>Should you keep renting or buy now? This calculator uses real SoCal numbers — live mortgage rates from Freddie Mac, property tax, HOA, appreciation, and the opportunity cost of your down payment.</p>
+    <p>Should you keep renting or buy now? This calculator uses real SoCal numbers, live mortgage rates from Freddie Mac, property tax, HOA, appreciation, and the opportunity cost of your down payment.</p>
     <div class="rb-meta">
       <span>Live mortgage rates</span>
       <span>Includes opportunity cost</span>
@@ -324,7 +324,7 @@
   </div>
 
   <p class="rb-fineprint">
-    Estimates only. Real outcomes depend on your specific financial situation, the home's actual price + repairs + selling costs, your tax bracket (mortgage interest deduction not modeled), and SoCal's localized market behavior. Mortgage interest tax deduction would reduce the buy cost further if you itemize. This calculator is a starting point — for a real personalized analysis, book a free 15-min Zoom.
+    Estimates only. Real outcomes depend on your specific financial situation, the home's actual price + repairs + selling costs, your tax bracket (mortgage interest deduction not modeled), and SoCal's localized market behavior. Mortgage interest tax deduction would reduce the buy cost further if you itemize. This calculator is a starting point, for a real personalized analysis, book a free 15-min Zoom.
   </p>
 </section>
 
@@ -334,7 +334,7 @@
     <div class="sec-head reveal">
       <span class="sec-label">What Clients Say</span>
       <h2>Real Reviews. Real Closings.</h2>
-      <p>Live Google reviews from clients who actually closed with me. No edits, no curation — pulled in real time.</p>
+      <p>Live Google reviews from clients who actually closed with me. No edits, no curation, pulled in real time.</p>
     </div>
     <div class="jtek-reviews-wrap">
       <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/4IKcbmtpx3ZLuYU0uJzw" frameborder="0" scrolling="no" title="Live Google reviews for Jesse Oñate Real Estate"></iframe>
@@ -351,7 +351,7 @@
   <div class="footer-grid">
     <div class="f-brand">
       <div class="f-logo"><span>Jesse</span> Oñate.</div>
-      <p>Helping millennials buy and sell homes in Downey and surrounding cities — without getting taken advantage of.</p>
+      <p>Helping millennials buy and sell homes in Downey and surrounding cities, without getting taken advantage of.</p>
       <div class="f-contact-quick">
         <a href="tel:5626094200">(562) 609-4200</a>
         <a href="mailto:jesse@jessetek.net">jesse@jessetek.net</a>
@@ -432,7 +432,7 @@
     var monthlyTax = (price * tax / 100) / 12;
     var monthlyTotal = monthlyPI + monthlyTax + hoa;
 
-    // BUY: total mortgage payments + tax + HOA over period — minus principal paid down — minus appreciation
+    // BUY: total mortgage payments + tax + HOA over period, minus principal paid down, minus appreciation
     // Closing costs: 2% buying, 7% selling
     var closingBuy = price * 0.02;
     var closingSell = price * (1 + appr) ** years * 0.07;
@@ -500,13 +500,13 @@
     var advantage = Math.abs(diff);
     if (diff > 5000) {
       headline.innerHTML = 'Buying wins by <span class="pos">' + fmt(diff) + '</span>';
-      sub.textContent = 'Over ' + years + ' years, buying saves you that much vs renting — assuming home appreciates ' + (appr*100).toFixed(1) + '% per year.';
+      sub.textContent = 'Over ' + years + ' years, buying saves you that much vs renting, assuming home appreciates ' + (appr*100).toFixed(1) + '% per year.';
     } else if (diff < -5000) {
       headline.innerHTML = 'Renting wins by <span class="neg">' + fmt(-diff) + '</span>';
       sub.textContent = 'Over ' + years + ' years, renting + investing the down payment beats buying. Stay flexible, build the down payment.';
     } else {
       headline.innerHTML = '<span class="neutral">It\'s a wash.</span>';
-      sub.textContent = 'The two scenarios are within $5K — your decision should come down to lifestyle, flexibility, and gut.';
+      sub.textContent = 'The two scenarios are within $5K, your decision should come down to lifestyle, flexibility, and gut.';
     }
 
     // Bars: max width based on larger of two
