@@ -1,6 +1,6 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-07-01 (run 40, 6th of day — IDLE via v11 fast-path: frozen public/ tree 09a40ce == stored last-qc.json hash / run07 validated-clean ⇒ no SAFE FIX pending; knowledge 20d <30, no research; MEASURE still dark [harvest gsc-harvest-2026-06-01.json 30d stale, E5 owner=jesse priority 0]. No public/ change. E6 cost-throttle (owner=jesse) stays open, not re-raised. Runs 11-40 all frozen IDLE.)",
+  "updated": "2026-07-09 (run41 — 30-run frozen streak BROKE: Jesse shipped the Rates page redesign 0c61b1e, public/ tree 09a40ce→77a6330. Ran the full QC battery (first real fire of the DIFFERENT-hash→re-anchor branch): CLEAN — 380/380 JSON-LD, 0 broken img/OG, 0 em-dash-as-punctuation in visible prose, rates.html no aggregateRating/0 Review nodes/truthful un-inflated '5.0★ Google'. Re-anchored last-qc.json to 77a6330; SKILLS v12 codifies the 404/offline canonical false-positive as expected. No Brain public/ change (redesign already live+compliant). MEASURE still dark [harvest 2026-06-01, 38d stale, E5 owner=jesse priority 0]. E6 cost-throttle stays open, not re-raised.)",
   "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
   "actions": [
     {

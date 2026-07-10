@@ -1,8 +1,8 @@
 {
   "_note": "Machine-readable anchor for the SKILL 1/4 frozen-state fast-path. Records the public/ subtree hash that last PASSED the full QC battery. Each run: compare `git rev-parse HEAD:public` to public_tree_hash below. If EQUAL + tree clean + knowledge <30d, the prior full-QC verdict still holds → skip the QC battery. If DIFFERENT, run the full QC sweep and (when it passes clean) UPDATE this file to the new hash. This replaces the old practice of burying the validated hash in run-log prose, which had to be re-typed by hand every full-QC run.",
-  "public_tree_hash": "09a40cea3281e72e76c23f60b4064d6720f69ddd",
-  "last_full_qc_run": "run07 (2026-06-29)",
-  "last_full_qc_result": "CLEAN — 380/380 JSON-LD blocks valid, 0 broken img/og refs, 0 NAP stragglers, vercel.json valid, no real sitemap drift",
-  "last_touched_by_commit": "d74c8dd (run06 feed.xml NAP fix)",
-  "updated": "2026-06-29 (run10 — created marker; hash unchanged, fast-path IDLE confirmed)"
+  "public_tree_hash": "77a63300813073a0d83a37b3d3397ee5b0180fe4",
+  "last_full_qc_run": "run41 (2026-07-09)",
+  "last_full_qc_result": "CLEAN — 153 HTML files, 380/380 JSON-LD blocks valid, 0 broken img/OG refs, 0 em-dash-as-punctuation in visible prose, en-dashes only in numeric/currency/grade ranges (acceptable), rates.html redesign carries no aggregateRating / 0 Review nodes / truthful un-inflated '5.0★ Google'. Only 'missing canonical' hits are 404.html + offline.html (utility pages that correctly omit canonicals — known-acceptable, not a regression).",
+  "last_touched_by_commit": "0c61b1e (Rates page redesign: live-terminal hero + sitewide em-dash cleanup; already live on origin/main)",
+  "updated": "2026-07-09 (run41 — public/ tree changed 09a40ce→77a6330 via Jesse's Rates redesign; first real exercise of the fast-path's DIFFERENT-hash→full-QC→re-anchor branch; QC passed clean, re-anchored)"
 }

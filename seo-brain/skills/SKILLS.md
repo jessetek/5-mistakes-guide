@@ -65,6 +65,18 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v12 (2026-07-09):** Run 41. The 30-run frozen streak (11–40) broke: Jesse shipped the Rates page
+  redesign (`0c61b1e`), moving `HEAD:public` `09a40ce`→`77a6330`. **First real firing of the fast-path's
+  DIFFERENT-hash → full-QC → re-anchor branch** — it worked exactly as designed (v9–v11 machinery
+  compounds, doesn't churn). Full QC passed clean (380/380 JSON-LD, 0 broken img/OG, 0 em-dash-as-punctuation
+  in visible prose, rates.html carries no aggregateRating/Review nodes and a truthful un-inflated
+  "5.0★ Google"); re-anchored `last-qc.json` to `77a6330`. **Codified a known-acceptable QC exception:**
+  the canonical check will ALWAYS flag `404.html` + `offline.html` as "missing canonical" — that is CORRECT
+  (error + service-worker-offline utility pages should omit `rel=canonical`), so full-QC runs treat exactly
+  those two as expected, not a regression. Do NOT "fix" them. Also confirmed the human-voice grep must strip
+  HTML comments (`<!-- NAV — DESKTOP -->`) and JS placeholder `>—<` spans and ignore numeric/currency/grade
+  en-dash ranges (`$10K–$30K`, `K–5`) before counting violations — the raw grep's ~280 hits are ~99% these
+  false positives; the real signal is em-dash (`—`) inside visible text nodes, which was 0.
 - **v11 (2026-06-29):** Run 11 (6th run today, 5th consecutive frozen IDLE). **Retired the forced-self-edit
   tactic.** v6→v10 each bumped a SKILLS version on a frozen, clean, harvester-dark site — five increasingly
   marginal tweaks to the same fast-path, which is the "churn, don't compound" anti-pattern the Brain is
