@@ -1,7 +1,7 @@
 {
   "_note": "Every action toward the goal. owner: jesse=off-page/account (Brain can't do); claude=on-page/code; either=Claude builds, Jesse supplies real local data/sends. impact/effort: high|medium|low. status: idea|queued|awaiting-jesse|blocked|in-progress|done-staged|done-live|verified|dropped.",
-  "updated": "2026-07-09 (run41 — 30-run frozen streak BROKE: Jesse shipped the Rates page redesign 0c61b1e, public/ tree 09a40ce→77a6330. Ran the full QC battery (first real fire of the DIFFERENT-hash→re-anchor branch): CLEAN — 380/380 JSON-LD, 0 broken img/OG, 0 em-dash-as-punctuation in visible prose, rates.html no aggregateRating/0 Review nodes/truthful un-inflated '5.0★ Google'. Re-anchored last-qc.json to 77a6330; SKILLS v12 codifies the 404/offline canonical false-positive as expected. No Brain public/ change (redesign already live+compliant). MEASURE still dark [harvest 2026-06-01, 38d stale, E5 owner=jesse priority 0]. E6 cost-throttle stays open, not re-raised.)",
-  "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second. Polish third.",
+  "updated": "2026-07-13 (run48 — RESEARCH, not IDLE: knowledge crossed 30d stale (last full research 2026-06-11 = 32d), public/ still frozen at anchor 77a6330 (== last-qc.json, no SAFE FIX pending), MEASURE still dark (harvest 2026-06-01, 42d stale, E5 owner=jesse priority 0). Ran SKILL 2 one-question verify on post-March-2026-Core-Update local/AI-Overview signals → appended a dated, 7-source-cited refresh to knowledge/best-practices-2026.md. Findings SHARPEN (don't reverse) the backlog: C2 de-doorway is now the highest-value on-page fix (update actively suppresses templated clones); C6 = FAQPage-schema-mirrored-to-visible-Q&A for AI-Overview eligibility; C3/C7 feed 'entity-based authority' now weighted above keyword-match; J2 review ask shifts from volume→recency+reply-to-all (recency ~2.3× weighted), J1 GBP prioritize photo/attribute completeness (incomplete ≈18% rank drag). No new autonomous public/ action unlocked (C2/C3/C6 still need Jesse's real local facts). E6 cost-throttle stays open, not re-raised.)",
+  "priority_order": "Off-page gate (GBP+reviews) first — it's ~70% of the winnable upside. On-page de-doorwaying second (March-2026 update RAISED its payoff — hyper-local unique content rewarded, templated clones suppressed). Polish third.",
   "actions": [
     {
       "id": "S1-strip-fake-rating",
@@ -76,7 +76,7 @@
       "effort": "high",
       "owner": "either",
       "status": "queued",
-      "why": "~97% identical 476-word city clones = the templated-doorway pattern Google suppresses; likely the structural cause of the 169-impression ceiling. Needs Jesse's real local facts/anecdotes."
+      "why": "~97% identical 476-word city clones = the templated-doorway pattern Google suppresses; likely the structural cause of the 169-impression ceiling. Needs Jesse's real local facts/anecdotes. REINFORCED by 2026-07-13 research: the March-2026 Core Update explicitly rewards hyper-local unique content (neighborhood refs, local events, city-specific copy) and penalizes generic/templated national content via 'entity-based local authority' — this is now the HIGHEST-value on-page fix, not just hygiene."
     },
     {
       "id": "C3-eeat-author",
@@ -117,7 +117,7 @@
       "effort": "medium",
       "owner": "either",
       "status": "queued",
-      "why": "44.2% of AI citations come from the first 30% of text; a stat lifts odds ~40%. Jesse validates local numbers."
+      "why": "44.2% of AI citations come from the first 30% of text; a stat lifts odds ~40%. Jesse validates local numbers. SHARPENED 2026-07-13: with 43% of local packs now rendering an AI Overview, FAQPage schema is the concrete eligibility play — BUT the JSON-LD must MIRROR visible on-page Q&A (schema aligned to visible featured-snippet content boosts AI-Overview eligibility; markup that exceeds visible copy does not). Never ship FAQPage without the matching visible Q&A block."
     },
     {
       "id": "C7-schema-entity",

@@ -19,12 +19,20 @@ data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for
 
 ## SKILL 2 — RESEARCH (the research brain)
 **Goal:** keep `knowledge/best-practices-2026.md` current; don't repeat stale advice.
-1. Trigger only if knowledge > ~30 days old OR a new strategic question appeared in DIAGNOSE.
-2. Run the `jessetek-seo-research` workflow (Workflow tool): 6 facet agents (SERP structure, GBP,
-   reviews, citations/links, on-page/content, solo-agent breakthroughs) → 1 synthesizer.
-3. Write the synthesized playbook to `knowledge/best-practices-2026.md`; merge its `top_actions`
-   into the ledger (dedupe by title).
-**Cost rule:** this is the most expensive skill. Cap at ~monthly. Reuse the saved workflow script.
+**Two tiers — do NOT conflate them (v13 fix):**
+- **Tier A — one-question VERIFY (cheap, the ~30d gate).** When knowledge > ~30 days old AND no
+  SAFE FIX is pending, run a SINGLE targeted verify: 2–4 web searches + ≤1 fetch on ONE open
+  question, then APPEND a dated, source-cited refresh section to `knowledge/best-practices-2026.md`
+  (don't rewrite the file) and sharpen the affected ledger `why` fields. This is what the hourly
+  prompt's priority-2 "RESEARCH/VERIFY one open best-practice question" means. Costs a few searches,
+  not a workflow. This IS the operative ~30d trigger.
+- **Tier B — full workflow (expensive, ~quarterly).** Re-run the `jessetek-seo-research` workflow
+  (Workflow tool): 6 facet agents (SERP structure, GBP, reviews, citations/links, on-page/content,
+  solo-agent breakthroughs) → 1 synthesizer → rewrite the playbook + merge `top_actions` into the
+  ledger (dedupe by title). Cap at ~quarterly. Reuse the saved workflow script.
+**Threshold reconciliation (v13):** the file's `Refresh ~quarterly` header governs Tier B ONLY.
+It does NOT license idling past 30d — a Tier-A verify is due at ~30d. Runs 42–47 wrongly read
+"quarterly = fresh" and idled at 29–40d; run48 corrected this at 32d.
 
 ## SKILL 3 — DIAGNOSE
 **Goal:** the ranked gap list.
@@ -65,6 +73,14 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v13 (2026-07-13):** Run 48. Broke a 7-run frozen-IDLE streak (42–47) that idled 29–40d while
+  citing the knowledge file's `Refresh ~quarterly` header as "fresh" — but the hourly prompt's
+  priority order triggers RESEARCH at **~30d stale**. **Split SKILL 2 into two tiers:** Tier A =
+  cheap one-question VERIFY (the real ~30d gate; a few searches, append a cited section) vs Tier B =
+  the ~quarterly full 6-agent workflow. "Quarterly" governs Tier B only and does NOT license idling
+  past 30d. Run48 fired Tier A at 32d: appended a 7-source-cited post-March-2026-Core-Update refresh
+  (43% packs w/ AI Overviews; review recency ~2.3×; on-page now #1 local-organic factor; entity
+  authority > keyword match; FAQPage must mirror visible Q&A) → sharpened C2/C6/J1/J2 in the ledger.
 - **v12 (2026-07-09):** Run 41. The 30-run frozen streak (11–40) broke: Jesse shipped the Rates page
   redesign (`0c61b1e`), moving `HEAD:public` `09a40ce`→`77a6330`. **First real firing of the fast-path's
   DIFFERENT-hash → full-QC → re-anchor branch** — it worked exactly as designed (v9–v11 machinery

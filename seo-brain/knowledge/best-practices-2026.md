@@ -114,3 +114,61 @@ if flow stalls ~3 weeks. Sterling Sky's "magic 10" — the biggest jump is cross
 5. Reflexively hiding the GBP address; any banned review tactic; keyword-stuffing the GBP name.
 6. Buying Yext/mass directory breadth or national links instead of ~20-30 quality citations + a few LOCAL links.
 7. Ignoring the Spanish lane — the clearest white-space win.
+
+---
+
+## 2026-07-13 REFRESH — post-March-2026 Core Update (SKILL 2, one-question verify)
+
+_Knowledge crossed 30d stale (last full research 2026-06-11). Targeted verify of ONE open
+question: "what on-page + schema signals now drive AI Overview citations & local-pack support for
+local real-estate/YMYL pages, and what changed recently?" Sources cited inline (accessed 2026-07-13)._
+
+**The event that changed things: the March 2026 Google Core Update** (~14-day rollout — longer than
+typical, implying deep ranking-infra changes). It hit the local pack harder than the broad organic
+SERP. Verified figures:
+- **43%** of local packs now render an **AI Overview** above them — local intent is increasingly
+  answered before the user reaches the 3-pack. [digitalapplied]
+- **Review recency + owner-response rate overtook raw review COUNT** (~**2.3×** recency-weight
+  increase). Stale-but-high-count profiles dropped; active responders with moderate counts gained.
+  [digitalapplied, PinMeTo/clickrank]
+- **GBP completeness is now a stronger lever**: incomplete profiles (missing hours/services/photos/
+  attributes) saw ~**18%** avg local-rank drop; photo completeness carried ~**67%** impact. [digitalapplied]
+- **On-page is now the single largest LOCAL-ORGANIC factor** (~**19%** of the pack model, and it
+  rises to ~**24%** — the #1 slot — for AI-Search visibility, while GBP's weight COLLAPSES from ~32%
+  to ~12% in the AI-answer context). [clickrank, PinMeTo]
+- **Entity-based local authority replaced pure keyword matching.** Hyper-local page content
+  (neighborhood references, local-event mentions, city-specific service copy) gained; generic
+  national/templated content lost. This is the mechanism that suppresses doorway clones. [digitalapplied]
+- **AI-citation reality:** 3 of the top-5 AI-visibility factors are citation-related (presence on
+  curated "best-of" lists, prominence on authoritative industry domains, quality of unstructured
+  citations like news/associations). Some trackers cite a ~**150-reviews-per-location** threshold
+  below which ChatGPT/Perplexity/Gemini rarely name a local business. [localfalcon, webpronews]
+- **Schema that ALIGNS with on-page featured-snippet content improves AI-Overview eligibility.**
+  FAQPage / Article / Organization(+Person) structured data helps Google parse and extract content,
+  raising citation odds. Schema must MATCH visible copy, not exceed it. [seocrawl, stackmatix]
+
+**What this SHARPENS in our ledger (no strategy reversal — it reinforces the existing plan):**
+1. **C2 (de-doorway) is now explicitly the highest-value on-page fix**, not just a hygiene item:
+   the update rewards hyper-local unique content and actively suppresses the ~476-word templated
+   clones. Structural cause of the impression ceiling, confirmed by the update mechanics.
+2. **C6 (front-loaded FAQ blocks wrapped in FAQPage)** = the concrete AI-Overview eligibility play —
+   BUT the schema must mirror visible on-page answers (don't ship FAQPage markup without the visible Q&A).
+3. **C3 (Person/author E-E-A-T) + C7 (entity sameAs, areaServed)** feed "entity-based local
+   authority" — now weighted above keyword matching. Still needs Jesse's bio facts before shipping.
+4. **Jesse-owned levers get sharper asks:** J2 review sprint should emphasize **recency + replying to
+   every review** (recency now ~2.3× weighted), and J1 GBP should prioritize **photo/attribute
+   completeness** (incomplete = ~18% rank drag). Reviewed volume alone is no longer the goal.
+
+**Net:** the June-11 strategy holds; the March-2026 update RAISED the payoff of the on-page
+de-doorwaying + FAQ-schema + entity work the Brain can partly do, and reframed Jesse's review ask
+from "get to 10" toward "keep them recent and reply to all." No new autonomous public/ action is
+unlocked this run (C2/C3/C6 all still need Jesse's real local facts); the value is a sharper backlog.
+
+_Sources (accessed 2026-07-13):_
+- Local Falcon — Future of Local Search 2026: https://www.localfalcon.com/blog/guide-to-the-future-of-local-search-in-2026-local-ranking-factors--expert-local-seo-approaches
+- digitalapplied — Local SEO After March 2026 Core Update: https://www.digitalapplied.com/blog/local-seo-march-2026-core-update-gbp-optimization-guide
+- clickrank — Local SEO Ranking Factors 2026 [Full Algorithm]: https://www.clickrank.ai/local-seo-ranking-factors/
+- PinMeTo — How AI Changed Google Search Ranking 2026: https://www.pinmeto.com/blog/how-ai-changes-google-search-ranking/
+- SEOcrawl — AI Overviews Ranking Factors 2026: https://seocrawl.ai/blog/ai-overview-ranking-factors
+- Stackmatix — Google AI Overviews Impact on SEO 2026: https://www.stackmatix.com/blog/google-ai-overviews-impact-seo-2026
+- WebProNews — AI's Local SEO Reckoning 2026: https://www.webpronews.com/ais-local-seo-reckoning-2026-survival-signals/
