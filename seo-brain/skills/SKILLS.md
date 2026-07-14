@@ -44,6 +44,13 @@ that negative result IS the run's value — record the number (run59: `Person` s
 + all case-studies, headshot assets exist, and a site-wide BreadcrumbList scan = 373/373 items resolve /
 0 phantom, retiring C7's 'phantom breadcrumbs' sub-concern). Prefer verifying a backlog worry dead over
 manufacturing a low-value edit.
+**Provable-idle-window horizon (v12.3):** when the anchor is frozen, the whole on-page backlog gates on
+Jesse's local facts, all off-page items are owner=jesse, AND the next MEASURE date is known and future,
+the run can name the explicit date range through which NO autonomous non-IDLE action is even possible —
+a horizon, not a vibe. As of run60 that window is 2026-07-14 → ~2026-07-20 (next weekly `rank-watch` fire
+against a settled GSC window; `weekly-gsc-harvest` still owner=jesse). Every hourly Opus run inside that
+window is provably IDLE before it starts, which is the concrete, dated form of the E6 cost-throttle case
+(≈6 more idle Opus fires/day until then). State the horizon once per streak; don't re-raise E6 each run.
 **Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
 INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
 artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
