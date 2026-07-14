@@ -51,6 +51,14 @@ a horizon, not a vibe. As of run60 that window is 2026-07-14 → ~2026-07-20 (ne
 against a settled GSC window; `weekly-gsc-harvest` still owner=jesse). Every hourly Opus run inside that
 window is provably IDLE before it starts, which is the concrete, dated form of the E6 cost-throttle case
 (≈6 more idle Opus fires/day until then). State the horizon once per streak; don't re-raise E6 each run.
+**Idle-streak token thrift (v12.4):** once a provable-idle horizon (v12.3) is named and unchanged, an
+IDLE run inside it should still DO the cheap liveness re-verify (launchctl exit 0, newest `rank-history`
+date vs `rank-snapshot.json`, `git rev-parse HEAD:public` == anchor + clean tree) — that is the guard
+that catches a mid-horizon state change (the run55 lesson) — but LOG it as a one-line tally entry, not a
+fresh multi-line paragraph restating the whole horizon. Re-derive & restate the full horizon only when a
+liveness input actually changes (anchor moves, new rank-history date, launchctl drops) or the named end
+date passes. Near-identical idle paragraphs are pure Opus token burn against the "idle runs near-free"
+mandate; the verify is what matters, not the prose.
 **Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
 INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
 artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
