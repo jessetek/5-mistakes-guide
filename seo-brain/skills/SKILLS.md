@@ -59,6 +59,12 @@ fresh multi-line paragraph restating the whole horizon. Re-derive & restate the 
 liveness input actually changes (anchor moves, new rank-history date, launchctl drops) or the named end
 date passes. Near-identical idle paragraphs are pure Opus token burn against the "idle runs near-free"
 mandate; the verify is what matters, not the prose.
+
+**Schema-agnostic rank-history read (v12.5):** the newest-`rank-history` liveness check must NOT guess at
+the JSON key layout (list vs `readings` vs `history`) — that key-guessing missed on run65 (`parse-check`
+fallback). Canonical read: dump the file to JSON text and regex-scan `20\d\d-\d\d-\d\d`, take max; do the
+same on `rank-snapshot.json`. If newest rank-history date ⊆ snapshot dates ⇒ MEASURE dark. One-liner,
+schema-independent, never silently wrong when the harvester changes its output shape.
 **Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
 INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
 artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
