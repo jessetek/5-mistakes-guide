@@ -16,6 +16,19 @@ learn faster/cheaper ways to do each step. Version notes at the bottom.
 FLAT again — first confirm the harvester is actually alive: check the newest `gsc-harvest-*.json` date
 (stale if older than ~8 days) AND `launchctl list | grep net.jessetek.weekly-rank-watch`. A stalled
 data pipeline masquerades as a stable rank. (Run 05 found the harvester dead for 27 days — see E5.)
+**Frozen-tally liveness re-check (v12):** a frozen IDLE tally (SKILLS v11) may NOT assert "MEASURE dark /
+pipeline still absent" from memory or a stale ledger note. Before ticking the tally, run the two cheap
+liveness probes AND check the newest date actually present in `rank-history.json` (`max date across
+queries`), not just `gsc-harvest-*.json`. The two GSC surfaces are INDEPENDENT: `weekly-rank-watch` →
+`rank-history.json` (per-query monitor) and `weekly-gsc-harvest` → `gsc-harvest-*.json` (aggregate reach
+KPI) can be alive/dark separately. If EITHER produced a date newer than the last `rank-snapshot.json`,
+that is NEW data ⇒ MEASURE, do not IDLE. (Run 55: runs 53/54 tallied "weekly-rank-watch still absent"
+AFTER it had been restored 2026-07-13 and had written fresh entries — the fast-path had stopped
+re-verifying `launchctl`. This guard closes that blind spot.)
+**Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
+INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
+artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
+zeros into `goal.json` baseline_kpis (that would fabricate a regression).
 
 ## SKILL 2 — RESEARCH (the research brain)
 **Goal:** keep `knowledge/best-practices-2026.md` current; don't repeat stale advice.
@@ -73,6 +86,15 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14 (2026-07-14):** Run 55. Broke the run53/54 frozen-IDLE tally by re-checking pipeline liveness
+  and finding **E5 partially resolved**: `net.jessetek.weekly-rank-watch` was re-installed 2026-07-13
+  (correct MacBook path) and had written fresh 2026-07-13 GSC data into `rank-history.json` — while
+  runs 53/54 were still asserting "weekly-rank-watch still absent" from the stale ledger note. **Added
+  the SKILL 1 frozen-tally liveness re-check + latency-artifact honesty guards (v12 tags):** a frozen
+  tally must probe `launchctl` + `max(rank-history date)` before claiming MEASURE-dark, treating the two
+  GSC surfaces (rank-history monitor vs gsc-harvest aggregate) as independent; and all-zero pulls that
+  include the branded term are logged as GSC finalization-lag artifacts, never written to baseline_kpis.
+  Wrote the first `state/rank-snapshot.json`. Result: MEASURED, not IDLE.
 - **v13 (2026-07-13):** Run 48. Broke a 7-run frozen-IDLE streak (42–47) that idled 29–40d while
   citing the knowledge file's `Refresh ~quarterly` header as "fresh" — but the hourly prompt's
   priority order triggers RESEARCH at **~30d stale**. **Split SKILL 2 into two tiers:** Tier A =

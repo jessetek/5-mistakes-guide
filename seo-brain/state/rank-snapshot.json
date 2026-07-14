@@ -1,0 +1,26 @@
+{
+  "_note": "SKILL 1 MEASURE output. First-ever snapshot (the loop had no fresh data to snapshot from 2026-06-01 until the rank-watch pipeline was restored 2026-07-13). Records the state-of-the-world delta each MEASURE run. Two independent GSC surfaces feed this: (A) per-query rank monitor -> automation/.state/rank-history.json, written by net.jessetek.weekly-rank-watch via get-gsc-rank.mjs; (B) aggregate harvest -> automation/.state/gsc-harvest-*.json, written by the SEPARATE weekly-gsc-harvest scheduled task, source of goal.json baseline_kpis (total impressions/clicks). They can be alive/dark independently.",
+  "snapshot_date": "2026-07-14 (run55)",
+  "pipeline_status": {
+    "rank_watch_monitor": "RESTORED 2026-07-13. net.jessetek.weekly-rank-watch.plist re-installed (mtime 2026-07-13 15:05), now points at the correct MacBook path /Users/jesseonate/Documents/Claude Code/Jessetek/landing-page (was the dead /Users/jtek iCloud path). Loaded in launchctl list (exit 0); ran successfully 2026-07-13 15:06 (claude exit 0, 'SILENT 10 queries scanned, all held'); wrote fresh 2026-07-13 source=gsc entries into rank-history.json. GSC creds resolve on this laptop. Schedule: Mondays 07:30 + RunAtLoad catch-up.",
+    "aggregate_harvest": "STILL DARK. Newest gsc-harvest is 2026-06-01 (43d stale). weekly-rank-watch does NOT write gsc-harvest-*.json; that is the separate weekly-gsc-harvest task, which was NOT restored on 2026-07-13. So the trustworthy reach KPIs (total impressions/clicks) cannot be refreshed yet."
+  },
+  "reading_2026-07-13": {
+    "source": "rank-history.json, source=gsc, all 10 tracked queries",
+    "queries": {
+      "downey realtor": {"rank": null, "impressions": 0},
+      "whittier realtor": {"rank": null, "impressions": 0},
+      "long beach realtor bilingual": {"rank": null, "impressions": 0},
+      "bilingual realtor downey": {"rank": null, "impressions": 0},
+      "best realtor downey ca": {"rank": null, "impressions": 0},
+      "socal mortgage rate watch": {"rank": null, "impressions": 0},
+      "mello roos guide": {"rank": null, "impressions": 0},
+      "first time buyer downey": {"rank": null, "impressions": 0},
+      "homes for sale downey": {"rank": null, "impressions": 0},
+      "realtor jesse onate": {"rank": null, "impressions": 0}
+    },
+    "honest_interpretation": "DO NOT read these zeros as a real reach signal. Even the branded query 'realtor jesse onate' (which the 2026-06-01 baseline had at avg position ~2.5) reads 0 impressions/null rank here. When the branded term also zeroes out, the near-certain cause is a GSC data-finalization artifact: GSC has ~2-3 day latency, so a per-query pull run 2026-07-13 against a too-recent / empty window returns all zeros rather than true 'no visibility'. Treat this reading as PIPELINE-ALIVE-BUT-WINDOW-EMPTY, not as a rank/reach measurement. The next Monday run (querying a settled window) should return real numbers; if branded is STILL 0 then, escalate as a genuine indexing problem."
+  },
+  "delta_vs_baseline_2026-06-01": "No usable delta. Baseline (gsc-harvest-2026-06-01): 169 total impressions / 4 clicks / real_estate_agent avg pos 3.9 on 7 impr / realtor 4.6 / branded 2.5. The 2026-07-13 per-query pull is not comparable (empty-window artifact, and per-query != aggregate). The reach KPIs stay at their 2026-06-01 values until the weekly-gsc-harvest aggregate task is restored.",
+  "next_measure": "On the next real GSC pull (Monday 2026-07-20 rank-watch run, or whenever weekly-gsc-harvest is restored per E5): refresh this snapshot with real per-query ranks + aggregate KPIs and compute the true delta. Watch specifically whether branded 'realtor jesse onate' returns to ~2.5 (confirms the 2026-07-13 zeros were a latency artifact)."
+}
