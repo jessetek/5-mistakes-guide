@@ -33,6 +33,17 @@ message reads like a big change (e.g. "Rates page redesign"). A matching tree ha
 bytes are identical to what passed full QC. Only a DIFFERENT hash unlocks the full-QC → re-anchor
 branch. (Run 57 nearly burned a diff-read chasing 0c61b1e's redesign subject before confirming its
 tree was still the QC-passed anchor 77a6330.)
+**SAFE-FIX-eligibility over blind-tick (v12.2):** a frozen-anchor IDLE run must still spend one cheap
+pass confirming NO whitelisted fix is actually shippable — do not just re-read `launchctl` and tick.
+Cheapest high-signal check: walk the ledger's open items against the SAFE-FIX whitelist, then reality-
+check the tempting one against two failure modes: (a) SCOPE — "author block on every money page" =
+75-file sweep, NOT a small step; (b) FABRICATION — if the item's own note wants a fact you can't verify
+(years/closings, review counts, which sameAs profiles exist), it's Jesse-owned. A whitelisted *category*
+(e.g. E-E-A-T author block) does not make a specific *instance* shippable. When a scan comes back clean,
+that negative result IS the run's value — record the number (run59: `Person` schema already on about.html
++ all case-studies, headshot assets exist, and a site-wide BreadcrumbList scan = 373/373 items resolve /
+0 phantom, retiring C7's 'phantom breadcrumbs' sub-concern). Prefer verifying a backlog worry dead over
+manufacturing a low-value edit.
 **Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
 INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
 artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
