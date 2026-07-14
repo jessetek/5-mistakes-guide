@@ -25,6 +25,14 @@ KPI) can be alive/dark separately. If EITHER produced a date newer than the last
 that is NEW data ⇒ MEASURE, do not IDLE. (Run 55: runs 53/54 tallied "weekly-rank-watch still absent"
 AFTER it had been restored 2026-07-13 and had written fresh entries — the fast-path had stopped
 re-verifying `launchctl`. This guard closes that blind spot.)
+**Anchor-vs-commit-message guard (v12.1):** on the SAFE-FIX side of the fast-path, the authority is
+`git rev-parse HEAD:public` vs `last-qc.json` public_tree_hash — NOT the commit subject line and NOT
+run-log prose. If the tree hash EQUALS the anchor and the tree is clean, no new content shipped, full
+stop: do NOT re-investigate a scary-looking `git show`/diff just because the newest public/ commit
+message reads like a big change (e.g. "Rates page redesign"). A matching tree hash already proves the
+bytes are identical to what passed full QC. Only a DIFFERENT hash unlocks the full-QC → re-anchor
+branch. (Run 57 nearly burned a diff-read chasing 0c61b1e's redesign subject before confirming its
+tree was still the QC-passed anchor 77a6330.)
 **Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
 INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
 artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
