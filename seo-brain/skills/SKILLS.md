@@ -65,6 +65,14 @@ the JSON key layout (list vs `readings` vs `history`) — that key-guessing miss
 fallback). Canonical read: dump the file to JSON text and regex-scan `20\d\d-\d\d-\d\d`, take max; do the
 same on `rank-snapshot.json`. If newest rank-history date ⊆ snapshot dates ⇒ MEASURE dark. One-liner,
 schema-independent, never silently wrong when the harvester changes its output shape.
+**Ledger-note compaction over infinite append (v12.6):** the `actions-ledger.json` `updated` field is a
+state marker, NOT a run journal. Do NOT append a full prose note each idle run — that grew it to ~20.8 KB
+of 50 near-identical run48→run97 notes (run98), which every hourly run then re-read, taxing the
+"idle runs near-free" mandate the same way v12.4 targets. Keep `updated` to a compact frozen-state tally
+(horizon, MEASURE-dark cause, E5/E6 status, anchor, last MILESTONE run) + a pointer to the dated
+`runs/*.md` logs, where per-run detail already lives. When it exceeds ~2–3 KB again, re-compact: surgical
+line-replace + `json.loads` validate before write. The dated `runs/` log is the append-only surface; the
+ledger is the current-state surface.
 **Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
 INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
 artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
