@@ -73,6 +73,13 @@ of 50 near-identical run48→run97 notes (run98), which every hourly run then re
 `runs/*.md` logs, where per-run detail already lives. When it exceeds ~2–3 KB again, re-compact: surgical
 line-replace + `json.loads` validate before write. The dated `runs/` log is the append-only surface; the
 ledger is the current-state surface.
+**Run-log append anchoring (v12.7):** appending the new run entry to the dated `runs/*.md` log costs
+extra Edit round-trips when you anchor on the boilerplate `**Did NOT do…**` / `RESULT: IDLE` tail — by
+mid-day that string repeats 10+ times (once per idle run) and the Edit tool refuses the ambiguous match
+(hit run124: 14 identical blocks). GUARD: append by anchoring on the CURRENT-newest entry's UNIQUE `**Did:**`
+sentence (it carries a distinct anchor hash / date), and paste the whole new `## runNNN … + Did + Did NOT +
+RESULT` block after that entry's `RESULT: IDLE`. One Edit, no ambiguity. Never anchor an append on text
+that boilerplate-repeats across entries.
 **Latency-artifact honesty (v12):** if a fresh per-query pull returns 0 impr / null rank on ALL queries
 INCLUDING the branded term (baseline ~2.5), treat it as a GSC ~2–3d finalization-lag empty-window
 artifact, NOT a real reach collapse. Record it as pipeline-alive-but-window-empty; never write those
