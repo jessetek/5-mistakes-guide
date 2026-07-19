@@ -150,6 +150,12 @@ seo-brain/
 
 ## Changelog (EVOLVE writes here)
 
+- **2026-07-18 — run 129 (sharpen the date-scan, EVOLVE v14.2):** Frozen IDLE (day 5 of run60 horizon; anchor
+  `77a63300` byte-equal, tree clean, weekly-rank-watch loaded, next fire ~07-20). EVOLVE: codify the reliable
+  rank-history freshness probe. The naive `grep '"date":"…"'` returns EMPTY on `automation/.state/rank-history.json`
+  (dates aren't keyed under `date` in that schema), which can misread as "no data" and waste a follow-up call.
+  The correct newest-reading scan is `grep -oE '20[0-9]{2}-[0-9]{2}-[0-9]{2}' automation/.state/rank-history.json | sort -u | tail`
+  (returns [05-18, 05-25, 06-01, 07-13] this run). Use the broad ISO-date regex, never a key-scoped date grep. RESULT: IDLE.
 - **2026-06-29 — run 11 (stop the churn):** 5th consecutive frozen IDLE (public/ `09a40ce` == `last-qc.json`,
   harvester still dark). Noticed v6→v10 each manufactured a SKILLS version bump on a frozen clean site — the
   "churn, don't compound" anti-pattern. **EVOLVE: SKILLS v11 relaxes SKILL 6's forced-self-edit rule** so a
