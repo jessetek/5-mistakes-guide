@@ -150,6 +150,15 @@ seo-brain/
 
 ## Changelog (EVOLVE writes here)
 
+- **2026-07-19 — run 130 (horizon-edge MEASURE guard, EVOLVE v14.3):** Frozen IDLE (day 6 of run60 horizon; anchor
+  `77a63300` byte-equal, tree clean, weekly-rank-watch loaded, next fire ~07-20 ≈1d out). EVOLVE: add a guard against
+  the runs-49→54 failure mode (they stayed on the frozen-tally shortcut and MISSED a real state change). The horizon's
+  end (~07-20) is now ~1 day away and the weekly-rank-watch fire will write a NEW rank-history date. **Guard:** any run
+  dated on/after the expected weekly fire MUST run the v14.2 ISO-date scan
+  (`grep -oE '20[0-9]{2}-[0-9]{2}-[0-9]{2}' automation/.state/rank-history.json | sort -u | tail`) and, if the newest
+  date is later than the snapshot's (currently 2026-07-13), treat that run as a MEASURE candidate — do NOT auto-IDLE on
+  the stale frozen tally. First post-fire pull is likely a GSC finalization-lag empty window; note it, don't over-read a
+  transient null. RESULT: IDLE.
 - **2026-07-18 — run 129 (sharpen the date-scan, EVOLVE v14.2):** Frozen IDLE (day 5 of run60 horizon; anchor
   `77a63300` byte-equal, tree clean, weekly-rank-watch loaded, next fire ~07-20). EVOLVE: codify the reliable
   rank-history freshness probe. The naive `grep '"date":"…"'` returns EMPTY on `automation/.state/rank-history.json`
