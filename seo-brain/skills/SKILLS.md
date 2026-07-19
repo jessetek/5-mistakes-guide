@@ -141,6 +141,15 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.1 (2026-07-18):** Run 127. Fast-path FALSE-ALARM guard. This run's opening probe used
+  `git log -1 --format='%H %s' -- public/` and read its result (`0c61b1e` "Rates redesign") as a NEW
+  post-anchor public/ change → briefly treated a frozen run as a state change. That command returns the
+  **last commit id that touched public/**, which is NOT the fast-path comparand. **Rule reinforced in
+  SKILL 4:** the ONLY valid anchor comparand is the subtree **tree hash** from
+  `git rev-parse HEAD:public` vs `last-qc.json.public_tree_hash` — never a commit id, commit subject, or
+  `git log -- public/` output. A commit can touch public/ and still leave the tree byte-identical to the
+  anchor (e.g. an already-QC'd commit like `0c61b1e`, re-anchored at run41). One clean `git rev-parse`
+  settles it; don't spin up a diff/QC sweep off a commit-log misread.
 - **v14 (2026-07-14):** Run 55. Broke the run53/54 frozen-IDLE tally by re-checking pipeline liveness
   and finding **E5 partially resolved**: `net.jessetek.weekly-rank-watch` was re-installed 2026-07-13
   (correct MacBook path) and had written fresh 2026-07-13 GSC data into `rank-history.json` — while
