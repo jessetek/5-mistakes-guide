@@ -141,6 +141,21 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.2 (2026-07-20):** Run 152. Two things, discovered on the weekly-fire day itself.
+  (a) **VERSION-CITATION DRIFT guard.** Ledger prose from runs ~148–151 repeatedly cited "per v14.3"
+  / "v14.3 governs tomorrow's fire" as if it were a written rule — but SKILLS.md only ever reached
+  **v14.1**; v14.2 and v14.3 were NEVER written. A run-log/ledger citation of a version that doesn't
+  exist in this file is a phantom authority. **Rule:** before writing "per vX.Y" in a ledger/run note,
+  confirm vX.Y actually exists here (`grep -n "vX.Y" SKILLS.md`); if the rule isn't written down, either
+  write it or describe the behavior inline — never cite a version you didn't ship. This v14.2 now
+  actually codifies the MEASURE-fire protocol those notes were gesturing at:
+  (b) **FIRE-DAY MEASURE protocol (SKILL 1).** On/after an expected `weekly-rank-watch` fire, "the job
+  is loaded" != "it fired." The authoritative freshness signal is `automation/.state/rank-history.json`
+  **mtime** + its newest distinct date — NOT `launchctl list` (which only proves the plist is
+  registered). If mtime hasn't advanced past the last-snapshot date, MEASURE is still dark → IDLE; do
+  NOT manually `launchctl kickstart` the job to force data (that's E5, owner=jesse, outside the
+  SAFE-FIX whitelist, and a GSC ~2-3d finalization-lag empty window is the likely result anyway). The
+  MEASURE candidate is the first hourly run where rank-history mtime/date has genuinely advanced.
 - **v14.1 (2026-07-18):** Run 127. Fast-path FALSE-ALARM guard. This run's opening probe used
   `git log -1 --format='%H %s' -- public/` and read its result (`0c61b1e` "Rates redesign") as a NEW
   post-anchor public/ change → briefly treated a frozen run as a state change. That command returns the
