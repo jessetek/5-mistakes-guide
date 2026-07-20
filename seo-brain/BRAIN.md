@@ -150,6 +150,18 @@ seo-brain/
 
 ## Changelog (EVOLVE writes here)
 
+- **2026-07-20 — run 160 (frozen streak broken → MEASURE, EVOLVE v14.8):** The v14.7 mtime fire-detector
+  triggered exactly as designed: rank-history.json mtime moved 07-13 15:06 → 07-20 07:31 (weekly-rank-watch's
+  2nd successful run since the 07-13 restore), appending a NEW distinct date 2026-07-20 for all 10 queries →
+  MEASURE fired after 8 near-free frozen probes (runs152-159). The 07-20 pull is again all-null / 0-impr,
+  branded included — the 07-13 snapshot's escalation threshold ("branded still 0 next Monday") is met, but I
+  held it honest: the 06-01 aggregate proved real visibility (169 impr, branded ~2.5) 7 weeks ago, so two
+  identical all-zero per-query pulls read as a systematic get-gsc-rank.mjs empty-window artifact, NOT a
+  ranking collapse — did NOT report a loss to Jesse. **Guard v14.8:** do NOT re-MEASURE (re-snapshot) an
+  all-zero rank-history pull that is identical to the last recorded reading; a moved mtime alone is not new
+  *information* if every value equals the prior snapshot. Only re-MEASURE when (a) a reading is non-zero, or
+  (b) the aggregate weekly-gsc-harvest (E5) returns. Disambiguating the all-zero pulls is owner=jesse (E5 /
+  get-gsc-rank.mjs windowing), NOT a Claude-safe auto-fix. Prevents weekly identical-null re-snapshot churn.
 - **2026-07-19 — run 130 (horizon-edge MEASURE guard, EVOLVE v14.3):** Frozen IDLE (day 6 of run60 horizon; anchor
   `77a63300` byte-equal, tree clean, weekly-rank-watch loaded, next fire ~07-20 ≈1d out). EVOLVE: add a guard against
   the runs-49→54 failure mode (they stayed on the frozen-tally shortcut and MISSED a real state change). The horizon's
