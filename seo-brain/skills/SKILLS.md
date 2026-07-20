@@ -141,6 +141,15 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.3 (2026-07-20):** Run 153. **HORIZON-DATE ≠ FIRE-SIGNAL corollary to v14.2(b).** Same fire-day,
+  one hour later: 07-20 arrived and passed with `rank-history.json` mtime *still* unmoved at 07-13 15:06.
+  The temptation on a "the estimate said it'd fire today" run is to treat the calendar horizon as evidence
+  the job is broken and reach for a manual kickstart. It is not. The "~07-20 Mon" horizon was always an
+  estimate; the ONLY authoritative fire-detector is the mtime/newest-distinct-date advancing (v14.2b).
+  **Rule:** an expected fire date passing WITHOUT an mtime advance is a plain IDLE, not an anomaly and not
+  grounds to intervene — the job fires on its own launchd calendar; keep re-scanning mtime each run and let
+  the first genuine advance be the MEASURE trigger. Do not re-estimate a "new" horizon date each run either
+  (that just re-arms the same false-anomaly next time); trust the file, not the calendar.
 - **v14.2 (2026-07-20):** Run 152. Two things, discovered on the weekly-fire day itself.
   (a) **VERSION-CITATION DRIFT guard.** Ledger prose from runs ~148–151 repeatedly cited "per v14.3"
   / "v14.3 governs tomorrow's fire" as if it were a written rule — but SKILLS.md only ever reached
