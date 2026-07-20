@@ -141,6 +141,16 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.6 (2026-07-20):** Run 156. **Single-probe fast-path is the steady-state default; minimize per-run
+  writes while frozen.** v14.5 established the one-probe IDLE check; v14.6 codifies what mutations a frozen
+  IDLE run should make afterward. When the probe returns the unchanged frozen tuple (tree==anchor + clean +
+  newest-rank-date==snapshot + knowledge <30d), the ONLY required writes are: (1) a compact run-log entry in
+  `runs/<today>.md` and (2) the ledger `updated` header field. Do NOT edit individual ledger action-objects,
+  re-touch state/*.json, or re-narrate the horizon — nothing about the actions changed, so editing them is
+  churn that taxes the "idle near-free" mandate. A ledger action-object edit is warranted ONLY when a probe
+  field actually changes: the anchor moves (content shipped/QC'd), rank-history mtime advances (MEASURE
+  candidate), or knowledge ages past 30d (RESEARCH due). **Rule:** frozen IDLE = run-log + ledger-header
+  only; touch nothing else.
 - **v14.5 (2026-07-20):** Run 155. **Idle fast-path = ONE deterministic probe.** First run under the v14.4
   "frozen-state re-verify" label. Codifies the cheapest sufficient IDLE check so the hourly loop honors the
   "idle runs near-free" mandate: a SINGLE Bash call that emits (1) `git rev-parse HEAD:public` tree hash vs
