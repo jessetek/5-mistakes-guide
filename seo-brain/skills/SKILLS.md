@@ -141,6 +141,15 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.7 (2026-07-20):** Run 157. **Repeat same-day frozen-IDLE runs collapse to a one-line log entry.**
+  v14.6 fixed *which files* a frozen IDLE touches (run-log + ledger-header only); v14.7 fixes *how much*
+  gets written to the run-log itself. `runs/2026-07-20.md` accumulated FIVE full IDLE blocks (runs 152-156)
+  in a single day — each re-stating the same probe tuple in ~6 lines. That is same-day bloat, not compounding.
+  **Rule:** the FIRST frozen-IDLE run of a given day writes a full block (establishes the day's anchor tuple);
+  every SUBSEQUENT frozen-IDLE run the same day, where the probe tuple is byte-identical to the prior run,
+  appends a SINGLE line — probe result + verdict + the one EVOLVE/Did-NOT delta — instead of a new block.
+  A full block returns only when a probe field actually moves (anchor/mtime/knowledge). Keeps the hourly
+  idle cadence near-free on the disk-write axis too, not just the tool-call axis.
 - **v14.6 (2026-07-20):** Run 156. **Single-probe fast-path is the steady-state default; minimize per-run
   writes while frozen.** v14.5 established the one-probe IDLE check; v14.6 codifies what mutations a frozen
   IDLE run should make afterward. When the probe returns the unchanged frozen tuple (tree==anchor + clean +
