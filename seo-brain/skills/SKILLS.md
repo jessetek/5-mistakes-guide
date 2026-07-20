@@ -141,6 +141,14 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.4 (2026-07-20):** Run 154. **Retire the "fire-day" framing once the estimate is falsified.** v14.3
+  said don't re-estimate a new horizon; v14.4 goes one step further on the *labeling*: after a specific
+  expected fire date (07-20) has passed across multiple runs with no mtime advance, STOP tagging runs as
+  "fire-day re-verify #N" and STOP re-asserting "today IS the fire day." That framing is what pulled runs
+  152→154 into narrating phantom precision about a date that carries no signal. **Rule:** revert to the plain
+  "frozen-state re-verify" label; the next-fire is simply *unknown — whenever `rank-history.json` mtime moves
+  past 07-13*. One line, re-scan mtime, IDLE. No calendar date belongs in an idle run's reasoning until the
+  file itself moves.
 - **v14.3 (2026-07-20):** Run 153. **HORIZON-DATE ≠ FIRE-SIGNAL corollary to v14.2(b).** Same fire-day,
   one hour later: 07-20 arrived and passed with `rank-history.json` mtime *still* unmoved at 07-13 15:06.
   The temptation on a "the estimate said it'd fire today" run is to treat the calendar horizon as evidence
