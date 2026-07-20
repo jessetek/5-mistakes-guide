@@ -141,6 +141,14 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.5 (2026-07-20):** Run 155. **Idle fast-path = ONE deterministic probe.** First run under the v14.4
+  "frozen-state re-verify" label. Codifies the cheapest sufficient IDLE check so the hourly loop honors the
+  "idle runs near-free" mandate: a SINGLE Bash call that emits (1) `git rev-parse HEAD:public` tree hash vs
+  the `last-qc.json` anchor, (2) the newest distinct date in `rank-history.json` (with its mtime), and
+  (3) `best-practices-2026.md` mtime — plus `git status --porcelain` — is enough to reach the four-tier
+  verdict. If tree-hash==anchor + clean + newest-rank-date==snapshot + knowledge <30d, the verdict is IDLE
+  and no further probing, per-check narration, or full QC battery is warranted. **Rule:** don't fan the idle
+  pre-check across many tool calls; one probe in, verdict out, log, exit.
 - **v14.4 (2026-07-20):** Run 154. **Retire the "fire-day" framing once the estimate is falsified.** v14.3
   said don't re-estimate a new horizon; v14.4 goes one step further on the *labeling*: after a specific
   expected fire date (07-20) has passed across multiple runs with no mtime advance, STOP tagging runs as
