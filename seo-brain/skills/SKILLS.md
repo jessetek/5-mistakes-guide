@@ -349,3 +349,15 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   re-run it in the run(s) immediately following a sweep-ship — the just-audited surfaces (sitemap, schema,
   OG, anchors, robots/canonical) don't re-rot in an hour. Only re-arm the sweep after the frozen streak has
   re-accumulated (≈≥8 idle runs, matching runs152-169), or when a public/ change lands from another source.
+
+- **v16 (2026-07-21):** Run 178. The latent-defect sweep has now paid out on BOTH re-arms — run170 caught
+  future-dated `<lastmod>`, run178 caught a **malformed image sitemap** (`sitemap-images.xml` had 5 bare
+  unescaped `&` → whole file failed `xmlParseEntityRef`, so Google discarded every image entry). The
+  ~8-run cadence is validated: keep it. **Standing sweep checklist (make these the first probes each re-arm,
+  they are cheap and high-yield):** (1) `xmllint --noout` EVERY file in `public/**/*.xml` (not just
+  `sitemap.xml` — the images sitemap and feed are separate files and were the ones that rotted); (2) bare-`&`
+  / unescaped-entity grep across xml; (3) future-dated `<lastmod>` vs `date +%Y-%m-%d`; (4) regression greps
+  for `aggregateRating` (must be 0) and false review-count claims (must be 0). A found defect ships and resets
+  the cooldown (next re-arm ≈run186); a fully-clean sweep just re-arms and the run IDLEs. **Scope discipline
+  reaffirmed:** the same sweep found 53 em-dashes in the image sitemap — logged as C15 (queued), NOT fixed in
+  the same run. One structural QC fix per re-arm; copy-voice rewrites are a separate scoped pass.
