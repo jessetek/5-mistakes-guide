@@ -141,6 +141,18 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
 ---
 
 ## Version notes
+- **v14.9 (2026-07-20):** Run 170. **Long idle streaks must run a latent-defect sweep, not only re-check the anchor.**
+  The single-probe fast-path (v14.5-14.8) proved a clean tree by `HEAD:public == last-qc anchor`. That is a
+  correct test of ONE thing: *no un-QC'd NEW content slipped in since the anchor.* It says NOTHING about latent
+  defects sitting in already-committed files — the anchor moved to those files at commit time and never got
+  re-audited. Runs 152-169 (18 consecutive IDLE) rode that blind spot while `public/sitemap.xml` carried 5
+  future-dated `<lastmod>` values (a real crawl-signal loss). **Rule added to SKILL 4/EVOLVE:** after a run of
+  ≥~6 consecutive frozen-IDLE probes, one run must spend a *single* cheap latent-defect sweep over the
+  zero-Jesse-input whitelist surfaces instead of a 7th blind anchor re-check — concretely: (1) sitemap
+  `<lastmod>` sanity (no future dates; parses; loc count plausible), (2) JSON-LD still valid on a sampled money
+  page, (3) robots/canonical unchanged-and-correct. Anchor-equality is necessary but not sufficient for
+  "nothing shippable." A found defect breaks the streak with a real SHIPPED fix (C13); a clean sweep re-arms
+  the fast-path for another ~6 runs. Keeps idle cheap WITHOUT going structurally blind to pre-existing rot.
 - **v14.7 (2026-07-20):** Run 157. **Repeat same-day frozen-IDLE runs collapse to a one-line log entry.**
   v14.6 fixed *which files* a frozen IDLE touches (run-log + ledger-header only); v14.7 fixes *how much*
   gets written to the run-log itself. `runs/2026-07-20.md` accumulated FIVE full IDLE blocks (runs 152-156)
