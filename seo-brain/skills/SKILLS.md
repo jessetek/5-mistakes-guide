@@ -339,3 +339,13 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   liveness check, not a rank report. Also verified this run: sitemap, vercel.json routing/canonical,
   and the Person/RealEstateAgent schema are all clean — so a clean-QC run should DIAGNOSE the loop's
   own machinery (crons, creds, data freshness) rather than manufacture a low-value on-page edit.
+- **v15 (2026-07-20):** Run 171. Two-part sharpening after run170's latent-sweep ship.
+  (1) **Anchor rotation:** the frozen fast-path's `HEAD:public==anchor` check is only valid against the
+  CURRENT committed public tree. When a SAFE FIX ships (like run170's sitemap), `public/` changes and the
+  anchor MOVES — retired `77a63300` → now **`0012fbc7`**. Guard: after any push that touches `public/`,
+  record the new `git rev-parse HEAD:public` as the anchor in the run log; do not compare later runs to a
+  stale hash (a stale-anchor compare would false-positive "un-QC'd content" on a clean tree).
+  (2) **Sweep cooldown:** the v14.9 latent-defect sweep is for LONG idle streaks, not every run. Do NOT
+  re-run it in the run(s) immediately following a sweep-ship — the just-audited surfaces (sitemap, schema,
+  OG, anchors, robots/canonical) don't re-rot in an hour. Only re-arm the sweep after the frozen streak has
+  re-accumulated (≈≥8 idle runs, matching runs152-169), or when a public/ change lands from another source.
