@@ -361,3 +361,21 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   the cooldown (next re-arm ≈run186); a fully-clean sweep just re-arms and the run IDLEs. **Scope discipline
   reaffirmed:** the same sweep found 53 em-dashes in the image sitemap — logged as C15 (queued), NOT fixed in
   the same run. One structural QC fix per re-arm; copy-voice rewrites are a separate scoped pass.
+
+- **v17 (2026-07-22):** Run 186. **Falsifies v16's "the sweep pays out on every re-arm."** The 3rd re-arm ran
+  the full checklist and found the structural layer **fully clean** — no ship. This is the correct, expected
+  outcome now, not a miss: run170's future-lastmod and run178's malformed-XML were both one-time
+  *sitemap-generator artifacts*; once fixed they hold, so the structural surface is now well-covered and a
+  **clean sweep = SUCCESS**. Guidance: (a) keep the ~8-run cooldown and the standing checklist (still cheap
+  insurance against a generator regression), next re-arm ≈run194; (b) do NOT manufacture a "ship" from a clean
+  sweep — IDLE is the right result; (c) the sweep's remaining frontier is *content/voice debt*, which is
+  **out-of-whitelist** (owner=jesse), so future re-arms should expect clean structural results. **Two new
+  sweep-hygiene rules learned this run:** (1) **Verify resolver false-positives before alarming** — a naive
+  internal-href check flagged 149 "broken `/`" links + 1 `sms:`; both were artifacts (`/` is served by a
+  `vercel.json` rewrite `/ → /home`, so the homepage is `home.html` not `index.html`; `sms:` is a valid URI
+  scheme). Always reconcile a "broken link" finding against `vercel.json` rewrites/redirects + URI schemes
+  before treating it as a defect. (2) **Don't hand-edit generated/derived files** — `sitemap-images.xml`
+  captions are generated and DIVERGENT from live page OG (sitemap title used `·`/`—`; `home.html` uses `|`/`:`),
+  so C15's dashes must be fixed at the page-source and the sitemap regenerated, never edited directly. C15 was
+  re-scoped from "53 dashes in one file" to its true size: **296 em/en dashes across 140/154 HTML pages**
+  (site-wide human-voice debt, owner=jesse, dedicated skill pass with the grep QC gate).
