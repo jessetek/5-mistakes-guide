@@ -404,3 +404,16 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   with a python glob, not recursive grep; (b) reconcile any zero-count against a known-present example before
   trusting it. 3rd real ship from re-arms (run170, run178, run194); structural layer otherwise clean. Next
   re-arm ≈run202.
+
+- **v20 (2026-07-23):** Run 202, latent-sweep re-arm. **The structural sweep has CONVERGED — the remainder
+  frontier is empty.** Ran the full v19 sweep: layer clean (4/4 XML well-formed, 0 future lastmod, 151+170 loc,
+  0 aggregateRating/Review, 380/380 JSON-LD valid, 0 missing og targets, 0 www canonicals, 0 bare `&`). The v19
+  remainder audit — the whole point of the last EVOLVE — now returns **hascanon=151, noindex=3, NEITHER=empty**:
+  every one of the 154 pages is either canonical or noindex, because run194 closed the last neither-page. So the
+  remainder hiding-place v19 warned about is exhausted at the structural layer; the only unswept frontier left is
+  content/voice debt (C15, 296 site-wide dashes), which is out-of-whitelist owner=jesse. **Convergence rule:**
+  after two consecutive clean re-arms (run186, run202) AND a proven-empty remainder, future re-arms can revert to
+  the cheap single-probe UNLESS the `public/` HTML file-count OR the canonical/noindex tally changes — a NEW page
+  is the only way a structural defect can re-enter, so gate the expensive full sweep on that delta instead of
+  running it blind every 8 runs. The v19 grep-artifact lesson reconfirmed once more: raw `grep '<loc>'` reported
+  0, xmllint xpath confirmed 151 — always cross-check zero-counts. Cooldown reset, next re-arm ≈run210.
