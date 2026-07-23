@@ -379,3 +379,14 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   so C15's dashes must be fixed at the page-source and the sitemap regenerated, never edited directly. C15 was
   re-scoped from "53 dashes in one file" to its true size: **296 em/en dashes across 140/154 HTML pages**
   (site-wide human-voice debt, owner=jesse, dedicated skill pass with the grep QC gate).
+
+- **v18 (2026-07-22):** Run 187. **The v15 anchor is a git TREE hash, not a commit hash — never confuse them.**
+  This run I first probed with `git log -1 --format=%H -- public/`, which returns the last *commit that touched
+  public/* (`5bbc6e61`, run178's C14 ship) and momentarily false-read as "anchor rotated." The recorded anchor
+  `bee60a73` comes from `git rev-parse HEAD:public` = the *tree object* of the public/ directory (its content),
+  a different object class. Only the tree hash is the correct frozen-state probe: it stays constant across
+  seo-brain-only commits (which don't touch public/) and changes iff public/ CONTENT changes — exactly the
+  invariant we want. The commit hash, by contrast, moves whenever any public/ file is committed and would
+  drift/mislead. **Guard:** always verify the anchor with `git rev-parse HEAD:public | cut -c1-8`; if a probe
+  ever seems to show rotation, reconcile against THIS command before alarming, and never "correct" the recorded
+  anchor to a commit hash. (Frozen-streak status unchanged: 9th clean re-verify, sweep re-arms ≈run194.)
