@@ -390,3 +390,17 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   drift/mislead. **Guard:** always verify the anchor with `git rev-parse HEAD:public | cut -c1-8`; if a probe
   ever seems to show rotation, reconcile against THIS command before alarming, and never "correct" the recorded
   anchor to a commit hash. (Frozen-streak status unchanged: 9th clean re-verify, sweep re-arms ≈run194.)
+
+- **v19 (2026-07-23):** Run 194, latent-sweep re-arm. **The sweep must examine the REMAINDER, not just tally
+  the healthy majority.** Every prior sweep recorded "canonicals 151/151 jessetek.net 0 www" and moved on — but
+  154 HTML pages exist, so "151/151" silently accepted 3 pages WITHOUT a canonical as if they didn't count. This
+  run inverted the lens and inspected those 3: `offline.html` + `404.html` correctly carry `noindex`, but
+  `img/og-generator.html` (a public dev tool, OG-card generator, no `<title>`, not in sitemap) had NEITHER
+  canonical NOR noindex → a crawlable/indexable thin non-customer page diluting quality signals. Shipped C16
+  (added `noindex, nofollow`, whitelisted robots/meta). **Guard added to the standing sweep:** after tallying the
+  N pages that PASS a check, always enumerate the (total − N) that don't and classify each — a healthy-looking
+  ratio is a hiding place, not an all-clear. Two grep lessons reconfirmed: (a) `grep -r --include=*.html` is
+  UNRELIABLE in the ctx sandbox (returned 0 for canonicals that demonstrably exist) — verify HTML-content checks
+  with a python glob, not recursive grep; (b) reconcile any zero-count against a known-present example before
+  trusting it. 3rd real ship from re-arms (run170, run178, run194); structural layer otherwise clean. Next
+  re-arm ≈run202.
