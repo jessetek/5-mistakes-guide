@@ -417,3 +417,13 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   is the only way a structural defect can re-enter, so gate the expensive full sweep on that delta instead of
   running it blind every 8 runs. The v19 grep-artifact lesson reconfirmed once more: raw `grep '<loc>'` reported
   0, xmllint xpath confirmed 151 — always cross-check zero-counts. Cooldown reset, next re-arm ≈run210.
+
+- **v21 (2026-07-23):** Run 210, the ≈run210 re-arm point v20 predicted. **v20's sweep-gate got its first live
+  test and HELD.** At the scheduled re-arm the gate fired: `public/` file-count = 380, unchanged from the recorded
+  baseline, so no new page entered and no structural-defect vector could have re-appeared — the expensive full
+  sweep was correctly SKIPPED and the cheap single-probe was sufficient. v20 is now validated end-to-end, not just
+  theorized. **Rule change:** the latent-sweep no longer needs a fixed ~8-run cooldown cadence at all — retire the
+  cooldown counter and make the sweep purely **event-triggered** on a `public/` file-count OR canonical/noindex-tally
+  delta. Re-arm ONLY when the gate detects a structural change (a new/removed page); while the tree is frozen, idle
+  runs stay near-free indefinitely with no scheduled "expensive" run looming. This closes the loop v14.9 opened:
+  the latent-defect surface is fully covered by cheap structural anchors, and the full sweep is now demand-driven.
