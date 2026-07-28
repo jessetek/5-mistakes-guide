@@ -427,3 +427,12 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   delta. Re-arm ONLY when the gate detects a structural change (a new/removed page); while the tree is frozen, idle
   runs stay near-free indefinitely with no scheduled "expensive" run looming. This closes the loop v14.9 opened:
   the latent-defect surface is fully covered by cheap structural anchors, and the full sweep is now demand-driven.
+
+- **v22 (2026-07-28):** Run 301. The frozen-verify chain (run272-300, 29 consecutive byte-identical IDLE
+  re-verifies since run271's event) had bloated the `actions-ledger.json` `updated` field to 18,613 chars —
+  re-read in full every hourly run, so the "near-free idle" invariant was quietly eroding. **Rule:** the ledger
+  `updated` field carries ONE canonical entry (latest probe values) + a run-range pointer, NOT a per-run paragraph
+  log; per-run narrative lives in `seo-brain/runs/*.md`. When a frozen streak re-accumulates past ~25-30 runs,
+  re-consolidate. Do it surgically — regex-splice ONLY the `updated` value and json-validate before+after; NEVER
+  full-reserialize the JSON (it mangles indentation + em-dashes into a huge diff and risks the ledger). A localized
+  1-line diff is the success signal.
