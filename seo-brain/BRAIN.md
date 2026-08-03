@@ -150,6 +150,18 @@ seo-brain/
 
 ## Changelog (EVOLVE writes here)
 
+- **2026-08-03 — run 397 (MEASURE event fired, held DARK; EVOLVE v14.8.1):** The awaited Monday
+  `net.jessetek.weekly-rank-watch` pull LANDED after the run272-396 frozen chain: rank-history.json mtime
+  advanced 07-27 07:31 → 08-03 05:31, appending a NEW distinct date 2026-08-03 for all 10 queries. The v14.7
+  fire-detector triggered; the v14.8 guard resolved it. Sandbox-verified: the 08-03 pull is 10/10 all-zero and
+  **value-identical to the 07-27 pull** (07-27==07-20==07-13) → **4th consecutive empty-window Monday** →
+  held DARK per v14.8, no re-snapshot, no loss reported to Jesse. **Sharpen v14.8.1:** an mtime advance that
+  appends a *new date* whose per-query values are byte-identical-all-zero to the last recorded reading is DARK,
+  NOT a re-arm. A standing "MEASURE re-arm candidate" flag (as the ledger carried across runs391-396 while
+  awaiting this fire) is discharged by *confirming the values*, not by the mtime move itself. n=4 empty-window
+  Mondays now corroborate the get-gsc-rank.mjs empty-window artifact hypothesis; the ONLY MEASURE re-arm
+  triggers remain (a) a per-query non-zero reading or (b) the aggregate weekly-gsc-harvest (E5) returning.
+  New frozen baseline: rank-history mtime 08-03 05:31, newest date 08-03 all-zero (recorded-as-dark).
 - **2026-07-20 — run 160 (frozen streak broken → MEASURE, EVOLVE v14.8):** The v14.7 mtime fire-detector
   triggered exactly as designed: rank-history.json mtime moved 07-13 15:06 → 07-20 07:31 (weekly-rank-watch's
   2nd successful run since the 07-13 restore), appending a NEW distinct date 2026-07-20 for all 10 queries →
