@@ -436,3 +436,10 @@ every run" means *compounding*, which on a frozen clean site means staying quiet
   re-consolidate. Do it surgically — regex-splice ONLY the `updated` value and json-validate before+after; NEVER
   full-reserialize the JSON (it mangles indentation + em-dashes into a huge diff and risks the ledger). A localized
   1-line diff is the success signal.
+- **v22.1 (2026-08-05):** Run 406. Same bloat pressure v22 fixed in the ledger was quietly re-growing the
+  *runs* file — each frozen re-verify appended a fresh ~10-line verbose block (238 lines by run405, all
+  byte-identical prose). Run405 also exposed a failure mode: it wrote a standalone block but never committed
+  it and never advanced the ledger pointer, so run406 inherited a dangling entry. **Rule (collapse-on-write):**
+  when the immediately-prior IDLE run's runs-file entry is still uncommitted AND this run's probe is
+  byte-identical to it, merge the two into a single `runNNN-MMM` range-pointer header instead of appending a
+  new block — then commit. Keeps the per-day runs file from ballooning and self-heals an uncommitted prior run.
