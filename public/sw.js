@@ -4,7 +4,7 @@
 // - Network-first for HTML (always get freshest content if online)
 // - No background sync, no push (out of scope for a real-estate site)
 
-const CACHE_VERSION = 'jt-v2-2026-05-15';
+const CACHE_VERSION = 'jt-v4-2026-08-25';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
@@ -12,7 +12,7 @@ const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const PRECACHE = [
   '/',
   '/offline.html',
-  '/css/main.min.css?v=19',
+  '/css/main.min.css?v=41',
   '/img/jesse-headshot.webp',
   '/img/og-home.jpg',
   '/favicon.ico',

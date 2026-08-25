@@ -150,12 +150,12 @@
       ctaText = 'Reservar →';
       ctaHref = '/zoom';
     } else if (/\/valuation/.test(path)) {
-      ctaTitle = 'Free home value report';
+      ctaTitle = 'Home value report';
       ctaSub = 'Real comps · 24h delivery.';
       ctaText = 'Get it →';
       ctaHref = '#vfForm';
     } else if (/\/guide/.test(path)) {
-      ctaTitle = 'Free 5-Mistakes guide';
+      ctaTitle = '5-Mistakes guide';
       ctaSub = 'Sent in under 60 seconds.';
       ctaText = 'Send it →';
       ctaHref = '#guideForm';
@@ -179,17 +179,17 @@
       ctaHref = 'tel:5626094200';
     } else if (/\/seller|\/sellers/.test(path)) {
       ctaTitle = "What's your home worth?";
-      ctaSub = 'Free CMA · 24h.';
+      ctaSub = 'CMA · 24h.';
       ctaText = 'Find out →';
       ctaHref = '/valuation';
     } else if (/\/buyer|\/checklist|\/calculator|\/rent-vs-buy|\/listings/.test(path)) {
-      ctaTitle = 'Free 15-min strategy call';
+      ctaTitle = '15-min strategy call';
       ctaSub = 'No pressure. No pitch.';
       ctaText = 'Book →';
       ctaHref = '/zoom';
     } else {
       // Default — homepage, about, neighborhoods, insights, etc.
-      ctaTitle = 'Free 15-min strategy call';
+      ctaTitle = '15-min strategy call';
       ctaSub = 'No pressure. No pitch.';
       ctaText = 'Book →';
       ctaHref = '/zoom';
@@ -224,46 +224,6 @@
 
     sc.querySelector('.sticky-mobile-cta-btn').addEventListener('click', function () {
       if (window.trackEvent) window.trackEvent('sticky_cta_click', { page: path, target: ctaHref });
-    });
-  }
-
-  /* ---------- Text Jesse floating widget ----------
-     Bottom-right circular button that opens SMS to Jesse. Hidden if
-     a sticky-mobile-cta is already present (avoid double-CTA stacking).
-  ------------------------------------------------- */
-  function initTextWidget() {
-    if (document.getElementById('textJesseWidget')) return;
-    // Skip on legal pages and on pages with a sticky mobile CTA already
-    if (/\/(privacy|terms|accessibility)(\.html)?$/.test(location.pathname)) return;
-    if (document.querySelector('.sticky-mobile-cta')) return;
-    // Detect Spanish
-    var isSpanish = /^\/es(\/|$)/.test(location.pathname);
-    var label = isSpanish ? 'Mandar texto a Jesse' : 'Text Jesse';
-    var smsBody = encodeURIComponent(isSpanish
-      ? 'Hola Jesse, tengo una pregunta…'
-      : "Hi Jesse, I have a quick question…");
-    var btn = document.createElement('a');
-    btn.id = 'textJesseWidget';
-    btn.href = 'sms:5626094200?body=' + smsBody;
-    btn.setAttribute('aria-label', label);
-    btn.title = label;
-    btn.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:9989;' +
-      'width:54px;height:54px;border-radius:50%;background:#0a84ff;color:#fff;' +
-      'display:flex;align-items:center;justify-content:center;text-decoration:none;' +
-      'box-shadow:0 8px 24px rgba(10,132,255,.45);' +
-      'transition:transform .2s ease,box-shadow .2s ease;' +
-      'animation:tjwIn .35s ease both';
-    btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>';
-    var st = document.createElement('style');
-    st.textContent = '@keyframes tjwIn{from{opacity:0;transform:scale(.4) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}' +
-      '#textJesseWidget:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(10,132,255,.6)}' +
-      '#textJesseWidget::after{content:"' + label + '";position:absolute;right:62px;top:50%;transform:translateY(-50%);background:rgba(14,16,20,.94);color:#fff;font-size:12.5px;font-weight:500;padding:7px 12px;border-radius:999px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s ease}' +
-      '#textJesseWidget:hover::after{opacity:1}' +
-      '@media(max-width:780px){#textJesseWidget{bottom:16px;right:16px}#textJesseWidget::after{display:none}}';
-    document.head.appendChild(st);
-    document.body.appendChild(btn);
-    btn.addEventListener('click', function () {
-      if (window.trackEvent) window.trackEvent('text_jesse_widget_click', {});
     });
   }
 
@@ -396,7 +356,6 @@
   function boot() {
     initUtmCapture();
     initAutoSave();
-    initTextWidget();
     initLiveTicker();
   }
   if (document.readyState === 'loading') {

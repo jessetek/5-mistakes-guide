@@ -220,90 +220,18 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
     });
   }
 
-  // ----- Cookie consent banner (CCPA-friendly) -----
-  // Lightweight, dismissible, persists choice in localStorage for 12 months.
-  // We always run strictly-necessary cookies + first-party performance metrics.
-  // Analytics fires by default but the user can opt out via the banner.
+  // ----- Cookie consent -----
+  // Banner UI removed 2026-08-25 (was hurting conversions). Analytics runs by
+  // default; visitors who chose 'essential only' under the old banner keep
+  // their opt-out via the stored localStorage flag. Cookie disclosure lives
+  // on /privacy.
   try {
-    var consentKey = 'jt_cookie_consent_v1';
-    var stored = localStorage.getItem(consentKey);
-    if (!stored) {
-      window.addEventListener('DOMContentLoaded', function () {
-        // Don't show on legal pages themselves to avoid loop
-        if (/\/(privacy|terms|accessibility)(\.html)?$/.test(location.pathname)) return;
-
-        // Detect Spanish pages — translate banner copy when on /es/* or html lang=es
-        var isSpanish = /^\/es(\/|$)/.test(location.pathname) ||
-                        (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
-        var copy = isSpanish ? {
-          msg: 'Usamos cookies para análisis y rendimiento.',
-          link: 'Política de privacidad',
-          accept: 'Aceptar',
-          essential: 'Solo esenciales',
-        } : {
-          msg: 'We use cookies for analytics and performance.',
-          link: 'Privacy policy',
-          accept: 'Accept',
-          essential: 'Essential only',
-        };
-
-        var banner = document.createElement('div');
-        banner.id = 'cookie-banner';
-        banner.setAttribute('role', 'dialog');
-        banner.setAttribute('aria-label', 'Cookie consent');
-        // Single-line bottom bar — minimal footprint, full-width on mobile
-        banner.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:9998;' +
-          'background:rgba(14,16,20,.96);backdrop-filter:saturate(180%) blur(20px);' +
-          '-webkit-backdrop-filter:saturate(180%) blur(20px);' +
-          'color:#fff;padding:10px 14px;' +
-          'box-shadow:0 -6px 24px rgba(0,0,0,.20);' +
-          'font-family:inherit;font-size:12.5px;line-height:1.4;' +
-          'border-top:1px solid rgba(255,255,255,.06);' +
-          'animation:cookieIn .35s ease both';
-        banner.innerHTML =
-          '<div style="display:flex;align-items:center;gap:10px;max-width:1240px;margin:0 auto;flex-wrap:wrap;justify-content:center">' +
-          '<span style="color:rgba(255,255,255,.8);flex:1 1 auto;min-width:200px;text-align:center">' +
-          copy.msg + ' <a href="/privacy" style="color:#0a84ff;font-weight:500;white-space:nowrap">' + copy.link + '</a>' +
-          '</span>' +
-          '<div style="display:flex;gap:6px;flex:0 0 auto">' +
-          '<button id="cookieAcceptAll" type="button" style="background:#0a84ff;color:#fff;border:0;padding:7px 14px;border-radius:999px;font-weight:600;font-size:12.5px;cursor:pointer;min-height:34px">' + copy.accept + '</button>' +
-          '<button id="cookieEssentialOnly" type="button" style="background:rgba(255,255,255,.08);color:#fff;border:0;padding:7px 14px;border-radius:999px;font-weight:500;font-size:12.5px;cursor:pointer;min-height:34px">' + copy.essential + '</button>' +
-          '</div>' +
-          '</div>';
-        if (!document.getElementById('cookie-banner-style')) {
-          var st = document.createElement('style');
-          st.id = 'cookie-banner-style';
-          st.textContent = '@keyframes cookieIn{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}';
-          document.head.appendChild(st);
-        }
-        document.body.appendChild(banner);
-
-        var save = function (choice) {
-          localStorage.setItem(consentKey, JSON.stringify({
-            choice: choice,
-            ts: Date.now(),
-          }));
-          banner.style.animation = 'none';
-          banner.style.transition = 'opacity .25s ease';
-          banner.style.opacity = '0';
-          setTimeout(function () { banner.remove(); }, 260);
-          if (window.trackEvent) trackEvent('cookie_consent', { choice: choice });
-        };
-        document.getElementById('cookieAcceptAll').addEventListener('click', function () { save('all'); });
-        document.getElementById('cookieEssentialOnly').addEventListener('click', function () {
-          // Disable analytics by setting opt-out flags for GA4 + Vercel
-          try { window['ga-disable-' + cfg.GA4_ID] = true; } catch (_) {}
-          save('essential');
-        });
-      });
-    } else {
-      // Honor existing 'essential only' choice on subsequent loads
-      try {
-        var parsed = JSON.parse(stored);
-        if (parsed && parsed.choice === 'essential' && cfg.GA4_ID) {
-          window['ga-disable-' + cfg.GA4_ID] = true;
-        }
-      } catch (e) {}
+    var stored = localStorage.getItem('jt_cookie_consent_v1');
+    if (stored) {
+      var parsed = JSON.parse(stored);
+      if (parsed && parsed.choice === 'essential' && cfg.GA4_ID) {
+        window['ga-disable-' + cfg.GA4_ID] = true;
+      }
     }
   } catch (e) {}
 })();
