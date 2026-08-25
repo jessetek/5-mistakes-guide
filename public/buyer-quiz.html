@@ -26,7 +26,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=44">
+<link rel="stylesheet" href="/css/main.min.css?v=45">
 <style>
   /* Quiz-specific styles, kept inline because they're scoped to this page */
   .qz-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
@@ -579,36 +579,36 @@
       headline = 'You\'re ready to buy. Let\'s find your home.';
       summary = 'Your foundation is strong. With pre-approval, savings, and a clear target, the only thing missing is the right SoCal home, and the right realtor to win the offer.';
       nextMove = 'Book a 15-minute Zoom with me. We\'ll lock your strategy, line up showings, and have you writing offers within 2 weeks.';
-      cta1 = { text: 'Book a Strategy Call →', href: '/zoom.html' };
-      cta2 = { text: 'See Active Listings', href: '/listings.html' };
+      cta1 = { text: 'Book a Strategy Call →', href: '/zoom' };
+      cta2 = { text: 'See Active Listings', href: '/listings' };
     } else if (score >= 60) {
       band = 'STRONG START · 60–79';
       headline = 'Strong foundation, a few gaps to close.';
       summary = 'You\'re close. The fundamentals are there, but a couple of items below need attention before you write your first offer. Let\'s tighten them up.';
       nextMove = 'Read the Buyer\'s Guide for the full pre-approval + savings playbook, then jump on a quick call to map your 90-day plan.';
-      cta1 = { text: 'Get the Buyer Guide →', href: '/guide.html' };
-      cta2 = { text: 'Talk to Jesse', href: '/zoom.html' };
+      cta1 = { text: 'Get the Buyer Guide →', href: '/guide' };
+      cta2 = { text: 'Talk to Jesse', href: '/zoom' };
     } else if (score >= 40) {
       band = 'BUILDING · 40–59';
       headline = "Solid base, here's what to focus on first.";
       summary = "You're in the right mindset. Now it's about closing the specific gaps below in the next 60–90 days. The work isn't complicated, it's sequencing.";
       nextMove = 'Start with the Buyer Guide (covers pre-approval, DPA programs, and credit prep), then get the 11-step Buyer Roadmap. Most clients in your range close within 4–6 months.';
-      cta1 = { text: 'Get the Buyer Guide →', href: '/guide.html' };
-      cta2 = { text: 'See the Buyer Roadmap', href: '/buyer.html' };
+      cta1 = { text: 'Get the Buyer Guide →', href: '/guide' };
+      cta2 = { text: 'See the Buyer Roadmap', href: '/buyer' };
     } else if (score >= 20) {
       band = 'EARLY · 20–39';
       headline = "Plenty of runway, this is the smart time to learn.";
       summary = 'You\'re early, and that\'s actually the strongest position. Most buyers wait until they\'re desperate. You have time to fix what needs fixing without urgency-pricing your decisions.';
       nextMove = 'Subscribe to the weekly rate text so you stay calibrated, then read the Buyer Guide. Revisit this quiz in 60 days, you\'ll see the score climb.';
-      cta1 = { text: 'Get Weekly Rate Texts →', href: '/rates.html' };
-      cta2 = { text: 'Read the Buyer Guide', href: '/guide.html' };
+      cta1 = { text: 'Get Weekly Rate Texts →', href: '/rates' };
+      cta2 = { text: 'Read the Buyer Guide', href: '/guide' };
     } else {
       band = 'EXPLORING · UNDER 20';
       headline = "You're in research mode, no pressure, no problem.";
       summary = 'You\'re in the earliest stage and that\'s totally fine. Most great SoCal buyers spent 6–18 months learning before they bought. The fact that you\'re asking the right questions now is the move.';
       nextMove = 'Start with the Buyer Guide, it covers everything from pre-approval to closing. Subscribe to the rate texts. Come back to this quiz in 90 days.';
-      cta1 = { text: 'Get the Guide →', href: '/guide.html' };
-      cta2 = { text: 'Get Weekly Rate Texts', href: '/rates.html' };
+      cta1 = { text: 'Get the Guide →', href: '/guide' };
+      cta2 = { text: 'Get Weekly Rate Texts', href: '/rates' };
     }
 
     document.getElementById('qzBand').textContent = band;
