@@ -140,16 +140,9 @@
     if (/\/(privacy|terms|accessibility|404|offline)(\.html)?$/.test(location.pathname)) return;
 
     var path = location.pathname;
-    var isSpanish = /^\/es(\/|$)/.test(path);
-
     // Decide CTA per page intent
     var ctaTitle, ctaSub, ctaText, ctaHref;
-    if (isSpanish) {
-      ctaTitle = 'Llamada gratis · 15 min';
-      ctaSub = 'Sin presión, sin pitch.';
-      ctaText = 'Reservar →';
-      ctaHref = '/zoom';
-    } else if (/\/valuation/.test(path)) {
+    if (/\/valuation/.test(path)) {
       ctaTitle = 'Home value report';
       ctaSub = 'Real comps · 24h delivery.';
       ctaText = 'Get it →';
