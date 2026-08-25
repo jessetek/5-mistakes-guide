@@ -2402,15 +2402,7 @@ body.vid-modal-open{overflow:hidden}
 
 /* ===== GFX 2: TOUR CALENDAR (dark indigo with grid) ===== */
 .gfx--tour{background:linear-gradient(155deg,#0F1535 0%,#1A2450 100%)}
-.gfx--tour::before{
-  content:'';position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
-  background-size:26px 26px;
-  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 50%,transparent 100%);
-  mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 50%,transparent 100%);
-}
+
 .gfx-t-day{position:relative;font-size:10px;font-weight:800;color:rgba(155,184,255,.7);letter-spacing:.8px;text-transform:uppercase}
 .gfx-t-date{position:relative;font-size:22px;font-weight:800;color:#fff;letter-spacing:-.5px;margin:2px 0 12px;line-height:1}
 .gfx-t-tours{position:relative;display:flex;flex-direction:column;gap:6px}
