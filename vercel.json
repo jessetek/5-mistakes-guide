@@ -17,6 +17,7 @@
     { "source": "/contact2", "destination": "/zoom", "permanent": true },
     { "source": "/connect", "destination": "/zoom", "permanent": true },
     { "source": "/es", "destination": "/", "permanent": false },
+    { "source": "/es/", "destination": "/", "permanent": false },
     { "source": "/es/:path*", "destination": "/", "permanent": false },
     { "source": "/gallery", "destination": "/listings", "permanent": true },
     { "source": "/property", "destination": "/listings", "permanent": true },
