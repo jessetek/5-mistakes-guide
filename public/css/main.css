@@ -757,8 +757,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
    CTA SECTION
 ===================================================== */
 .cta-section{
-  /* Bottom fades to the footer's #F0EDF8 so the two read as one surface */
-  background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 55%,#F0EDF8 100%);
+  /* Bottom fades to the footer's #FAF9FC so the two read as one surface */
+  background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 55%,#FAF9FC 100%);
   padding:120px 40px 130px;
   text-align:center;
   position:relative;overflow:hidden;
@@ -770,7 +770,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 }
 .cta-section::after{
   content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
-  background:linear-gradient(0deg,#F0EDF8 0%,transparent 100%);
+  background:linear-gradient(0deg,#FAF9FC 0%,transparent 100%);
   z-index:1;pointer-events:none;
 }
 .cta-blob{
@@ -780,7 +780,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 .cta-blob-1{
   width:520px;height:520px;
   top:-120px;left:-100px;
-  background:radial-gradient(circle,rgba(89,40,228,.2) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(89,40,228,.12) 0%,transparent 70%);
   animation:b1anim 14s ease-in-out infinite alternate;
 }
 .cta-blob-2{
@@ -788,7 +788,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   /* Kept clear of the section's bottom edge so overflow:hidden never
      slices the glow at the footer seam */
   bottom:0;right:-100px;
-  background:radial-gradient(circle,rgba(88,86,214,.18) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(88,86,214,.10) 0%,transparent 70%);
   animation:b1anim 18s ease-in-out infinite alternate-reverse;
 }
 .cta-card{
@@ -951,7 +951,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 /* =====================================================
    FOOTER
 ===================================================== */
-.footer{background:#F0EDF8;padding:60px 40px 32px}
+.footer{background:#FAF9FC;padding:60px 40px 32px}
 .footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px}
 /* Home-page footer: Connect column removed, link columns centered.
    Desktop only — below 980px the shared 2-column stack takes over */
@@ -3057,7 +3057,7 @@ body.vid-modal-open{overflow:hidden}
 .nbhd-dothings .sec-head{margin-bottom:56px}
 .nbhd-do-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .nbhd-do{
-  background:linear-gradient(155deg,#F8FAFD 0%,#F0EDF8 100%);
+  background:linear-gradient(155deg,#F8FAFD 0%,#FAF9FC 100%);
   border-radius:22px;
   padding:36px 32px;
   border:1px solid rgba(0,30,80,.04);
