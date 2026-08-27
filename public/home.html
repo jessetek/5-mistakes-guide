@@ -37,9 +37,9 @@
 /* ---- Klarna-style hero trial (homepage only) ---- */
 .klarna-try{height:auto;background:#fff;padding-top:92px}
 .klarna-try .hero{
-  position:relative;top:auto;height:clamp(440px,60vw,560px);min-height:0;
+  position:relative;top:auto;height:clamp(500px,66vw,660px);min-height:0;
   width:min(1280px,calc(100% - 48px));
-  margin:0 auto 44px;
+  margin:0 auto 110px;
   border-radius:26px;overflow:hidden;
   background:#EDEAE4;
   display:flex;align-items:center;
@@ -72,27 +72,11 @@
 .nav-menu{background:rgba(255,255,255,.98);border:1px solid rgba(0,0,0,.08);box-shadow:0 20px 50px rgba(0,0,0,.14)}
 .nav-menu a{color:rgba(0,0,0,.72)}
 .nav-menu a:hover{color:#000;background:rgba(0,0,0,.045)}
-/* illustrated action cards (Samara-style backgrounds) */
-.hero-strip{width:min(1280px,calc(100% - 48px));margin:0 auto;padding:6px 0 88px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pcard{position:relative;display:block;border-radius:18px;overflow:hidden;height:clamp(400px,38vw,520px);background:#EAF3FB;border:1px solid rgba(0,0,0,.05)}
-.pcard-art{position:absolute;inset:0;width:100%;height:100%;transition:transform .7s cubic-bezier(.25,.46,.45,.94);transform-origin:center bottom}
-.pcard:hover .pcard-art{transform:scale(1.035)}
-.pcard-txt{position:absolute;top:22px;left:24px;right:24px;z-index:3}
-.pcard-txt span{display:block;font-size:20px;font-weight:600;letter-spacing:-.5px;color:rgba(17,17,17,.5);line-height:1.3}
-.pcard-txt b{display:block;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#111;line-height:1.3}
-.pcard-txt b em{font-style:normal;display:inline-block;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
-.pcard:hover .pcard-txt b em{transform:translateX(5px)}
-.pcard picture{position:absolute;inset:0;display:block}
-.pc-call .acc{transform-box:fill-box;transform-origin:center;animation:accPulse 1.9s ease-in-out infinite}
-@keyframes accPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
-@media(prefers-reduced-motion:reduce){.pc-call .acc{animation:none}}
 /* reveal enters with the scale/rotate animation */
 .klarna-try .hero-reveal{transform-origin:center top;will-change:transform;border-radius:36px 36px 0 0;overflow:hidden}
 @media (max-width:760px){
-  .hero-strip{padding-bottom:56px;gap:12px;grid-template-columns:1fr}
-  .pcard{height:300px}
   .klarna-try{padding-top:84px}
-  .klarna-try .hero{height:auto;min-height:440px;margin:0 auto 36px;width:calc(100% - 28px);border-radius:20px}
+  .klarna-try .hero{height:auto;min-height:500px;margin:0 auto 72px;width:calc(100% - 28px);border-radius:20px}
   .klarna-try .hero-inner{padding:48px 26px 44px;align-items:flex-start;text-align:left}
   .klarna-try .hero-overlay{background:linear-gradient(to bottom,rgba(255,255,255,.86) 0%,rgba(255,255,255,.55) 55%,rgba(255,255,255,.08) 100%)}
   .klarna-try .hero-sub{margin:0 0 26px}
@@ -177,47 +161,6 @@
     </div>
   </div>
 
-</section>
-
-<!-- Action cards under the hero: real photography + call-screen card -->
-<section class="hero-strip">
-  <a href="/buyer" class="pcard">
-    <picture><source srcset="/img/card-buy.webp" type="image/webp"><img class="pcard-art" src="/img/card-buy.jpg" alt="Staged living room corner with wicker chair and plant" loading="lazy" width="800" height="1040"></picture>
-    <div class="pcard-txt"><span>Thinking of buying?</span><b>Start your search <em aria-hidden="true">&rarr;</em></b></div>
-  </a>
-  <a href="/seller" class="pcard">
-    <picture><source srcset="/img/card-sell.webp" type="image/webp"><img class="pcard-art" src="/img/card-sell.jpg" alt="Staged fireplace with wood mantel and vase" loading="lazy" width="800" height="1040"></picture>
-    <div class="pcard-txt"><span>Selling your home?</span><b>Get top dollar <em aria-hidden="true">&rarr;</em></b></div>
-  </a>
-  <a href="/zoom" class="pcard pc-call">
-    <svg class="pcard-art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="gSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B4D1EE"/><stop offset="1" stop-color="#E9F2FA"/></linearGradient>
-        <linearGradient id="gScr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#31343F"/><stop offset="1" stop-color="#1B1D24"/></linearGradient>
-      </defs>
-      <rect width="400" height="520" fill="url(#gSky2)"/>
-      <g>
-        <rect x="106" y="150" width="188" height="400" rx="32" fill="#17181B"/>
-        <rect x="114" y="158" width="172" height="392" rx="25" fill="url(#gScr)"/>
-        <path d="M114 158 L226 550 L180 550 L114 260 Z" fill="#fff" opacity=".035"/>
-        <rect x="172" y="168" width="56" height="17" rx="8.5" fill="#000"/>
-        <text x="200" y="222" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" font-weight="500" fill="#8E96A3">Incoming call</text>
-        <circle cx="200" cy="262" r="30" fill="#5928E4"/>
-        <text x="200" y="268" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="17" font-weight="800" fill="#fff">JO</text>
-        <text x="200" y="322" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="19" font-weight="700" fill="#fff">Jesse O&ntilde;ate</text>
-        <text x="200" y="344" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11.5" font-weight="500" fill="#8E96A3">Jessetek &middot; 15-min intro call</text>
-        <g>
-          <circle cx="156" cy="478" r="25" fill="#E5473A"/>
-          <path d="M146 480 c6 -5 14 -5 20 0 l-3 5 c-4 -3 -10 -3 -14 0 Z" fill="#fff" transform="rotate(135 156 478)"/>
-        </g>
-        <g class="acc">
-          <circle cx="244" cy="478" r="25" fill="#34C759"/>
-          <path d="M236.4 468.6 c1.2 -1.2 3.1 -1.2 4.2 0 l3.4 3.4 c1 1 1.2 2.6 .4 3.8 l-1.8 2.8 c2 3 4.6 5.6 7.6 7.6 l2.8 -1.8 c1.2 -.8 2.8 -.6 3.8 .4 l3.4 3.4 c1.2 1.2 1.2 3.1 0 4.2 l-2 2 c-1.3 1.3 -3.2 1.8 -4.9 1.2 -5.6 -1.9 -10.8 -5.1 -15 -9.3 -4.2 -4.2 -7.4 -9.4 -9.3 -15 -.6 -1.7 -.1 -3.6 1.2 -4.9 Z" fill="#fff"/>
-        </g>
-      </g>
-    </svg>
-    <div class="pcard-txt"><span>No pressure. No pitch.</span><b>Book a 15-min call <em aria-hidden="true">&rarr;</em></b></div>
-  </a>
 </section>
 
 <!-- Scroll-reveal panel that rises up as hero folds back -->
