@@ -34,18 +34,33 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <style id="navPally">
-.nav{width:min(1040px,calc(100% - 32px));height:66px;padding:0 10px 0 28px;background:rgba(16,17,22,.88);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,.09);border-radius:999px;justify-content:space-between}
-.nav.scrolled{background:rgba(16,17,22,.95);border-color:rgba(255,255,255,.1);box-shadow:0 14px 38px rgba(0,0,0,.4)}
-.nav-logo,.nav-logo span{color:#fff;font-size:17px}
-.nav-links{gap:30px}
-.nav-links a{color:rgba(255,255,255,.78);font-size:14px}
+.nav{
+  width:min(760px,calc(100% - 32px));height:54px;padding:0 8px 0 22px;top:14px;
+  background:rgba(16,17,22,.9);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);
+  border:1px solid rgba(255,255,255,.09);border-radius:999px;justify-content:space-between;
+  transition:height .35s cubic-bezier(.25,.46,.45,.94),width .35s cubic-bezier(.25,.46,.45,.94),top .35s cubic-bezier(.25,.46,.45,.94),background .3s,box-shadow .3s;
+}
+.nav.scrolled{background:rgba(16,17,22,.96);border-color:rgba(255,255,255,.1);box-shadow:0 12px 34px rgba(0,0,0,.4)}
+.nav.nav-hidden{transform:translateX(-50%);opacity:1;pointer-events:auto}
+.nav-logo,.nav-logo span{color:#fff;font-size:15.5px;transition:font-size .35s cubic-bezier(.25,.46,.45,.94)}
+.nav-links{gap:22px}
+.nav-links a,.nav-toggle{color:rgba(255,255,255,.78);font-size:13.5px;transition:color .2s,font-size .35s cubic-bezier(.25,.46,.45,.94)}
 .nav-links a:hover{color:#fff}
-.nav-toggle{color:rgba(255,255,255,.78);font-size:14px}
 .nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
-.nav-cta2{display:inline-flex;align-items:center;height:48px;padding:0 24px;background:#fff;color:#111;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:-.1px;text-decoration:none;transition:transform .25s ease}
-.nav-cta2:hover{transform:scale(1.04)}
+.nav-cta2{
+  display:inline-flex;align-items:center;height:38px;padding:0 18px;
+  background:#5928E4;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
+  transition:transform .25s ease,height .35s cubic-bezier(.25,.46,.45,.94),font-size .35s cubic-bezier(.25,.46,.45,.94),padding .35s cubic-bezier(.25,.46,.45,.94),background .2s;
+}
+.nav-cta2:hover{transform:scale(1.04);background:#6B3BF2}
 .nav-hamburger{border-radius:999px}
+/* scroll-down: shrink; scroll-up: back to regular */
+.nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
+.nav.nav-mini .nav-logo,.nav.nav-mini .nav-logo span{font-size:13.5px}
+.nav.nav-mini .nav-links a,.nav.nav-mini .nav-toggle{font-size:12px}
+.nav.nav-mini .nav-cta2{height:30px;padding:0 13px;font-size:11.5px}
 @media(max-width:640px){.nav-cta2{display:none}}
+@media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
 </head>
 <body>
@@ -284,10 +299,10 @@
           <div class="imsg-bubble">Jesse, did we get the house?</div>
         </div>
         <div class="imsg-row them">
-          <div class="imsg-bubble">WE GOT IT. 🎉 Offer accepted, closing in 21 days.</div>
+          <div class="imsg-bubble">WE GOT IT. Offer accepted, closing in 21 days.</div>
         </div>
         <div class="imsg-row me">
-          <div class="imsg-bubble">I'm literally shaking right now 😭</div>
+          <div class="imsg-bubble">I'm literally shaking right now</div>
         </div>
       </div>
     </div>
@@ -379,25 +394,25 @@
         <div class="offers-head">Multiple Offers</div>
         <div class="offers-msgs">
           <div class="offers-row me">
-            <div class="offers-bubble">Jesse how's the listing doing? 👀</div>
+            <div class="offers-bubble">Jesse how's the listing doing?</div>
           </div>
           <div class="offers-row them">
-            <div class="offers-bubble">7 offers in 48 hours 🔥</div>
+            <div class="offers-bubble">Best and final by Sunday</div>
           </div>
           <div class="offers-row me">
-            <div class="offers-bubble">NO WAY 😭🙌🏽</div>
+            <div class="offers-bubble">NO WAY!!</div>
           </div>
         </div>
-        <div class="offers-result">Best offer: $40K over asking 🏆</div>
+        <div class="offers-result">Best offer: $42K over asking</div>
       </div>
     </div>
 
     <!-- COL 6 ROW 2: Bilingual -->
     <!-- COL 6 ROW 2: Bilingual — Big quote card -->
     <div class="bc bc-bilingual bc-fast reveal-s d1">
-      <div class="fc-kicker">Average Escrow</div>
+      <div class="fc-kicker">Fastest Escrow</div>
       <div class="fc-mid">
-        <div class="fc-num">21 Days</div>
+        <div class="fc-num">14 Days</div>
         <div class="fc-path">Offer <span class="fc-arrow">&rarr;</span> keys in hand</div>
       </div>
     </div>
@@ -739,6 +754,7 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 // ---- Top Dollar results cycler ----
 (function(){
   var wins = [
+    ['$115K', 'Over asking price', 'Personal record'],
     ['$42K', 'Over asking price', 'Sold in 8 days \u00b7 Whittier'],
     ['$32K', 'Over asking price', '14 days on market \u00b7 Downey'],
     ['$18K', 'Saved under list price', 'Won vs 5 offers \u00b7 La Mirada']
@@ -772,11 +788,12 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     if(!ticking){
       window.requestAnimationFrame(function(){
         var y=window.scrollY;
-        if(y>80){
-          nav.classList.toggle('nav-hidden',y>lastY);
+        if(y>120){
+          if(y>lastY+4){ nav.classList.add('nav-mini'); }
+          else if(y<lastY-4){ nav.classList.remove('nav-mini'); }
           nav.classList.add('scrolled');
         }else{
-          nav.classList.remove('nav-hidden');
+          nav.classList.remove('nav-mini');
           nav.classList.remove('scrolled');
         }
         lastY=y;
