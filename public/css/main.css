@@ -429,11 +429,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 .bc-offmarket{background:var(--white)}
 .offers-wrap{flex:1;padding:10px 10px 8px;display:flex;flex-direction:column;gap:0;justify-content:space-between}
 .offers-head{font-size:8.5px;font-weight:700;color:var(--text3);letter-spacing:.4px;text-transform:uppercase;flex-shrink:0;margin-bottom:8px}
-.offers-msgs{display:flex;flex-direction:column;gap:4px}
+.offers-msgs{flex:1;display:flex;flex-direction:column;gap:4px;justify-content:space-evenly}
 .offers-row{display:flex;flex-direction:column}
 .offers-row.them{align-items:flex-start}
 .offers-row.me{align-items:flex-end}
-.offers-bubble{padding:5px 9px;border-radius:14px;font-size:10px;line-height:1.35;max-width:90%;font-family:var(--font)}
+.offers-bubble{padding:7px 11px;border-radius:15px;font-size:10.5px;line-height:1.4;max-width:90%;font-family:var(--font)}
 .offers-row.them .offers-bubble{background:#E9E9EB;color:#000;border-bottom-left-radius:3px}
 .offers-row.me .offers-bubble{background:#0B7AEA;color:#fff;border-bottom-right-radius:3px}
 .offers-result{margin-top:7px;background:linear-gradient(135deg,rgba(89,40,228,.07),rgba(122,77,255,.05));border:1px solid rgba(89,40,228,.12);border-radius:10px;padding:7px 9px;font-size:9.5px;color:var(--text);font-weight:600;line-height:1.4;text-align:center}

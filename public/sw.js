@@ -12,7 +12,7 @@ const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const PRECACHE = [
   '/',
   '/offline.html',
-  '/css/main.min.css?v=48',
+  '/css/main.min.css?v=49',
   '/img/jesse-headshot.webp',
   '/img/og-home.jpg',
   '/favicon.ico',
