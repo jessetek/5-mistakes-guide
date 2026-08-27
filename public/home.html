@@ -33,28 +33,50 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style id="heroTryKlarna">
-/* ---- Klarna-style hero trial (homepage only) ---- */
-.klarna-try{height:auto;background:#fff;padding-top:92px}
+/* ---- light hero v2: editorial two-column (homepage only) ---- */
+.klarna-try{height:auto;background:#fff;padding-top:96px}
 .klarna-try .hero{
-  position:relative;top:auto;height:clamp(500px,66vw,660px);min-height:0;
-  width:min(1280px,calc(100% - 48px));
-  margin:0 auto 110px;
-  border-radius:26px;overflow:hidden;
-  background:#EDEAE4;
-  display:flex;align-items:center;
+  position:relative;top:auto;height:auto;min-height:0;
+  width:min(1240px,calc(100% - 48px));
+  margin:0 auto 120px;
+  background:transparent;display:block;overflow:visible;
 }
-.klarna-try .hero-photo-bg{object-position:right center;background:transparent}
-.klarna-try .hero-photo-bg.loaded{animation:none}
-.klarna-try .hero-overlay{background:linear-gradient(to right,rgba(255,255,255,.88) 0%,rgba(255,255,255,.66) 32%,rgba(255,255,255,.26) 54%,rgba(255,255,255,0) 72%)}
-.klarna-try .hero-inner{max-width:none;margin:0;padding:0 68px;align-items:flex-start;text-align:left}
-.klarna-try .hero h1{color:#111;font-size:clamp(34px,4.1vw,56px);letter-spacing:-2.2px;line-height:1.03;margin-bottom:14px}
-.klarna-try .type-word{color:#111;text-shadow:none;animation:none}
-.klarna-try .type-cursor{background:rgba(0,0,0,.45)}
-.klarna-try .hero-sub{color:#3a3a3a;margin:0 0 26px;max-width:430px}
-.klarna-try .hero-btns{justify-content:flex-start}
-.klarna-try .btn-primary{background:#111;color:#fff;padding:12px 22px;font-size:13.5px}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:64px;align-items:center;padding-top:40px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#F4F0FE;color:#4A1DC8;font-size:12.5px;font-weight:600;letter-spacing:.1px;border-radius:999px;padding:8px 16px;margin-bottom:28px}
+.hero-eyebrow svg{flex-shrink:0}
+.klarna-try .hero h1{color:#111;font-size:clamp(38px,4.5vw,62px);letter-spacing:-2.6px;line-height:1.03;margin-bottom:20px;text-align:left}
+.klarna-try .type-word{
+  font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;
+  color:#5928E4;text-shadow:none;animation:none;letter-spacing:-1px;
+}
+.klarna-try .type-cursor{background:rgba(89,40,228,.5)}
+.klarna-try .hero-sub{color:#565656;margin:0 0 30px;max-width:440px;text-align:left;font-size:17px}
+.klarna-try .hero-btns{justify-content:flex-start;gap:12px}
+.klarna-try .btn-primary{background:#111;color:#fff;padding:14px 26px;font-size:14px}
 .klarna-try .btn-primary:hover{background:#2b2b2b;transform:scale(1.02)}
+.btn-ghost2{display:inline-flex;align-items:center;border:1px solid rgba(0,0,0,.18);color:#111;border-radius:999px;padding:14px 26px;font-size:14px;font-weight:600;text-decoration:none;transition:border-color .2s,background .2s}
+.btn-ghost2:hover{border-color:#111;background:rgba(0,0,0,.03)}
+.hero-stats{display:flex;gap:clamp(28px,3.4vw,48px);margin-top:40px;padding-top:28px;border-top:1px solid rgba(0,0,0,.08);opacity:0;animation:fadeUp .8s ease 1s forwards}
+.hero-stats b{font-size:24px;font-weight:700;letter-spacing:-1.2px;color:#111;display:flex;align-items:center;gap:6px}
+.hero-stats b svg{flex-shrink:0}
+.hero-stats span{display:block;font-size:12px;color:#7a7a7a;margin-top:4px}
+.hero-photo{position:relative;border-radius:24px;overflow:hidden;height:clamp(440px,42vw,590px);box-shadow:0 26px 64px rgba(20,15,40,.15)}
+.hero-photo .hero-photo-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% center;background:transparent}
+.hero-photo .hero-photo-bg.loaded{animation:none}
+.sold-chip{
+  position:absolute;left:18px;bottom:18px;z-index:2;
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.85);border-radius:14px;padding:11px 15px;
+  box-shadow:0 10px 28px rgba(20,15,40,.16);
+  animation:chipFloat 6s ease-in-out infinite alternate;
+}
+.sold-chip .sc-dot{width:9px;height:9px;border-radius:999px;background:#22A06B;flex-shrink:0}
+.sold-chip b{display:block;font-size:12.5px;font-weight:700;letter-spacing:-.2px;color:#111}
+.sold-chip span{display:block;font-size:11px;color:#666;margin-top:1px}
+@keyframes chipFloat{from{transform:translateY(0)}to{transform:translateY(-7px)}}
 /* dark pill header (Pally-style) */
 .nav{width:min(1040px,calc(100% - 32px));height:66px;padding:0 10px 0 28px;background:#14161C;border:1px solid rgba(255,255,255,.09);border-radius:999px;box-shadow:0 12px 34px rgba(10,10,20,.16);backdrop-filter:none;-webkit-backdrop-filter:none;justify-content:space-between}
 .nav.scrolled{background:#14161C;border-color:rgba(255,255,255,.09);box-shadow:0 14px 38px rgba(10,10,20,.24);backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -74,14 +96,18 @@
 @media(max-width:640px){.nav-cta2{display:none}}
 /* reveal enters with the scale/rotate animation */
 .klarna-try .hero-reveal{transform-origin:center top;will-change:transform;border-radius:36px 36px 0 0;overflow:hidden}
-@media (max-width:760px){
-  .klarna-try{padding-top:84px}
-  .klarna-try .hero{height:auto;min-height:500px;margin:0 auto 72px;width:calc(100% - 28px);border-radius:20px}
-  .klarna-try .hero-inner{padding:48px 26px 44px;align-items:flex-start;text-align:left}
-  .klarna-try .hero-overlay{background:linear-gradient(to bottom,rgba(255,255,255,.86) 0%,rgba(255,255,255,.55) 55%,rgba(255,255,255,.08) 100%)}
-  .klarna-try .hero-sub{margin:0 0 26px}
-  .klarna-try .hero-btns{justify-content:flex-start}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px;padding-top:16px}
+  .hero-photo{height:420px}
 }
+@media (max-width:760px){
+  .klarna-try{padding-top:88px}
+  .klarna-try .hero{margin:0 auto 80px;width:calc(100% - 32px)}
+  .klarna-try .hero h1{letter-spacing:-1.8px}
+  .hero-stats{flex-wrap:wrap;gap:20px 32px}
+  .hero-photo{height:360px;border-radius:20px}
+}
+@media(prefers-reduced-motion:reduce){.sold-chip{animation:none}}
 </style>
 </head>
 <body>
@@ -147,20 +173,29 @@
 <!-- ===================== HERO + SCROLL STAGE ===================== -->
 <div class="hero-scroll-stage klarna-try" id="heroScrollStage">
 <section class="hero">
-  <picture><source srcset="/img/hero-bg-hd.webp" type="image/webp"><img src="/img/hero-bg-hd.jpg" alt="" class="hero-photo-bg" id="heroBg" fetchpriority="high" decoding="async" width="3840" height="2550"></picture>
-  <div class="hero-overlay"></div>
-
-  <div class="hero-inner">
-    <h1>
-      <span class="hero-h1-line">Confused by the market?</span>
-      <span class="hero-h1-line">You found the right <span class="type-wrap"><span class="type-word" id="typeWord">agent.</span><span class="type-cursor"></span></span></span>
-    </h1>
-    <p class="hero-sub">I'll walk you through it.</p>
-    <div class="hero-btns">
-      <a href="/zoom" class="btn-primary">Book my 15-min call</a>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>SoCal real estate &middot; DRE #02133131</div>
+      <h1>
+        <span class="hero-h1-line">Confused by the market?</span>
+        <span class="hero-h1-line">You found the right <span class="type-wrap"><span class="type-word" id="typeWord">agent.</span><span class="type-cursor"></span></span></span>
+      </h1>
+      <p class="hero-sub">I'll walk you through it, from the first call to keys in hand.</p>
+      <div class="hero-btns">
+        <a href="/zoom" class="btn-primary">Book my 15-min call</a>
+        <a href="/listings" class="btn-ghost2">Browse listings</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>100+</b><span>homes closed</span></div>
+        <div><b>$115K</b><span>over asking, record</span></div>
+        <div><b>5.0<svg width="17" height="17" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.3l7.1-.7z"/></svg></b><span>Google rating</span></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <picture><source srcset="/img/hero-bg-hd.webp" type="image/webp"><img src="/img/hero-bg-hd.jpg" alt="Jesse O&ntilde;ate in a staged Downey listing" class="hero-photo-bg" id="heroBg" fetchpriority="high" decoding="async" width="3840" height="2550"></picture>
+      <div class="sold-chip"><span class="sc-dot"></span><div><b>SOLD &middot; $42K over asking</b><span>Whittier &middot; 8 days on market</span></div></div>
     </div>
   </div>
-
 </section>
 
 <!-- Scroll-reveal panel that rises up as hero folds back -->
