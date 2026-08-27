@@ -87,6 +87,15 @@
 .ios-when{font-size:9px;color:#7a7a7e;flex-shrink:0}
 .ios-subj{font-size:10.5px;color:#3a3a3e;letter-spacing:-.05px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(prefers-reduced-motion:reduce){.ios-notif.in{animation:none}}
+/* Below 980px the bento rows are auto-sized, so the notif churn (2->3->2) resized the
+   card and shifted the whole page. Pin it at its 2-notif height; overflow clips the rest. */
+@media(max-width:980px){.bc-instagram.bc-al{height:192px}}
+/* 601-980px: these cards span the full 2-col grid, so their width-scaled content
+   balloons (dream-team SVG figures ~2x, iOS notif ~620px wide). Cap and center. */
+@media(min-width:601px) and (max-width:980px){
+  .bc-contacts .dream-figures,.bc-contacts .dream-labels{max-width:420px;width:100%;margin-left:auto;margin-right:auto}
+  .bc-instagram.bc-al .ios-nc{max-width:420px;width:100%;margin-left:auto;margin-right:auto}
+}
 </style>
 </head>
 <body>
