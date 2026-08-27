@@ -82,14 +82,10 @@
 .pcard-txt b{display:block;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#111;line-height:1.3}
 .pcard-txt b em{font-style:normal;display:inline-block;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
 .pcard:hover .pcard-txt b em{transform:translateX(5px)}
-.pcard .fl{transform-box:fill-box;transform-origin:bottom center;animation:flSway 6s ease-in-out infinite alternate}
-.pcard .fl2{animation-duration:7s;animation-delay:.7s}
-.pcard .fl3{animation-duration:7.5s;animation-delay:.3s}
-.pcard .fl5{animation-duration:8s;animation-delay:.5s}
-@keyframes flSway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.6deg)}}
-.pc-warm .sun{transform-box:fill-box;transform-origin:center;animation:sunBreathe 8s ease-in-out infinite alternate}
-@keyframes sunBreathe{from{transform:scale(1);opacity:.85}to{transform:scale(1.05);opacity:1}}
-@media(prefers-reduced-motion:reduce){.pcard .fl,.pc-warm .sun{animation:none}}
+.pcard picture{position:absolute;inset:0;display:block}
+.pc-call .acc{transform-box:fill-box;transform-origin:center;animation:accPulse 1.9s ease-in-out infinite}
+@keyframes accPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+@media(prefers-reduced-motion:reduce){.pc-call .acc{animation:none}}
 /* reveal enters with the scale/rotate animation */
 .klarna-try .hero-reveal{transform-origin:center top;will-change:transform;border-radius:36px 36px 0 0;overflow:hidden}
 @media (max-width:760px){
@@ -183,98 +179,40 @@
 
 </section>
 
-<!-- Illustrated action cards under the hero (Samara-style backgrounds) -->
+<!-- Action cards under the hero: real photography + call-screen card -->
 <section class="hero-strip">
-  <a href="/buyer" class="pcard pc-sky">
-    <svg class="pcard-art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE9F4"/><stop offset="1" stop-color="#EDF4FA"/></linearGradient>
-        <linearGradient id="gRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2D32"/><stop offset="1" stop-color="#191A1E"/></linearGradient>
-        <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4E6172"/><stop offset="1" stop-color="#2C3A46"/></linearGradient>
-      </defs>
-      <rect width="400" height="520" fill="url(#gSky)"/>
-      <path d="M-10 268 L410 218 L410 258 L-10 308 Z" fill="url(#gRoof)"/>
-      <g stroke="#3F424A" stroke-width="2"><path d="M40 302 l0 -37 M120 292 l0 -37 M200 283 l0 -37 M280 273 l0 -37 M360 263 l0 -37"/></g>
-      <path d="M-10 306 L410 256 L410 266 L-10 316 Z" fill="#FBFAF7"/>
-      <rect x="-10" y="312" width="420" height="210" fill="#F7F5F0"/>
-      <g stroke="#EAE7E0" stroke-width="2"><path d="M-10 340 h420 M-10 366 h420 M-10 392 h420 M-10 418 h420 M-10 444 h420 M-10 470 h420 M-10 496 h420"/></g>
-      <circle cx="116" cy="352" r="5.5" fill="#E5473A"/>
-      <g>
-        <path d="M212 392 L282 348 L352 392 L344 405 L282 366 L220 405 Z" fill="#FDFDFB"/>
-        <path d="M220 405 L282 366 L344 405 L344 411 L282 374 L220 411 Z" fill="#CFCCC4"/>
-        <ellipse cx="282" cy="420" rx="58" ry="8" fill="#0E0F11" opacity=".08"/>
-        <rect x="248" y="404" width="68" height="116" rx="3" fill="#23252A"/>
-        <rect x="255" y="412" width="54" height="66" rx="2" fill="url(#gGlass)"/>
-        <path d="M255 412 L283 478 L271 478 L248 420 Z" fill="#fff" opacity=".16"/>
-        <circle cx="306" cy="466" r="3.5" fill="#C9A64B"/>
-      </g>
-    </svg>
+  <a href="/buyer" class="pcard">
+    <picture><source srcset="/img/card-buy.webp" type="image/webp"><img class="pcard-art" src="/img/card-buy.jpg" alt="Staged living room corner with wicker chair and plant" loading="lazy" width="800" height="1040"></picture>
     <div class="pcard-txt"><span>Thinking of buying?</span><b>Start your search <em aria-hidden="true">&rarr;</em></b></div>
   </a>
-  <a href="/seller" class="pcard pc-warm">
-    <svg class="pcard-art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="gSunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4A8E6"/><stop offset=".42" stop-color="#F0B4A4"/><stop offset="1" stop-color="#FBE3C2"/></linearGradient>
-        <radialGradient id="gSet" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE3A0" stop-opacity=".85"/><stop offset="1" stop-color="#FFC58A" stop-opacity="0"/></radialGradient>
-      </defs>
-      <rect width="400" height="520" fill="url(#gSunset)"/>
-      <circle class="sun" cx="140" cy="420" r="130" fill="url(#gSet)"/>
-      <rect y="434" width="400" height="86" fill="#7FA35D"/>
-      <rect y="434" width="400" height="6" fill="#6D9150"/>
-      <g class="fl fl5">
-        <path d="M346 438 C350 372 342 326 350 274" stroke="#6E4A30" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <g stroke="#42553B" stroke-width="6" fill="none" stroke-linecap="round">
-          <path d="M350 274 C334 260 314 256 298 262 M350 274 C344 254 330 244 312 242 M350 274 C356 252 368 242 384 238 M350 274 C366 260 382 258 394 264 M350 274 C366 276 378 286 382 298 M350 274 C338 280 330 290 328 302"/>
-        </g>
-      </g>
-      <rect x="236" y="252" width="20" height="42" rx="2" fill="#8A5A46"/>
-      <path d="M84 306 L200 232 L316 306 Z" fill="#5C4038"/>
-      <rect x="80" y="304" width="240" height="8" rx="3" fill="#FBF4E8"/>
-      <rect x="100" y="312" width="200" height="122" fill="#FAF3E6"/>
-      <g>
-        <rect x="124" y="336" width="44" height="52" rx="3" fill="#fff"/>
-        <rect x="129" y="341" width="34" height="42" rx="2" fill="#F4D9A0"/>
-        <path d="M146 341 v42" stroke="#fff" stroke-width="3"/>
-      </g>
-      <g>
-        <rect x="232" y="336" width="44" height="52" rx="3" fill="#fff"/>
-        <rect x="237" y="341" width="34" height="42" rx="2" fill="#F4D9A0"/>
-        <path d="M254 341 v42" stroke="#fff" stroke-width="3"/>
-      </g>
-      <rect x="184" y="360" width="32" height="74" rx="2" fill="#4A3B54"/>
-      <circle cx="210" cy="398" r="3" fill="#C9A64B"/>
-      <g>
-        <rect x="66" y="452" width="6" height="52" rx="2" fill="#F7F4EC"/>
-        <rect x="42" y="442" width="54" height="34" rx="5" fill="#FCFAF5"/>
-        <text x="69" y="464" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="800" letter-spacing="1.2" fill="#111">SOLD</text>
-      </g>
-    </svg>
+  <a href="/seller" class="pcard">
+    <picture><source srcset="/img/card-sell.webp" type="image/webp"><img class="pcard-art" src="/img/card-sell.jpg" alt="Staged fireplace with wood mantel and vase" loading="lazy" width="800" height="1040"></picture>
     <div class="pcard-txt"><span>Selling your home?</span><b>Get top dollar <em aria-hidden="true">&rarr;</em></b></div>
   </a>
-  <a href="/zoom" class="pcard pc-flower">
+  <a href="/zoom" class="pcard pc-call">
     <svg class="pcard-art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs><linearGradient id="gSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B4D1EE"/><stop offset="1" stop-color="#E9F2FA"/></linearGradient></defs>
+      <defs>
+        <linearGradient id="gSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B4D1EE"/><stop offset="1" stop-color="#E9F2FA"/></linearGradient>
+        <linearGradient id="gScr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#31343F"/><stop offset="1" stop-color="#1B1D24"/></linearGradient>
+      </defs>
       <rect width="400" height="520" fill="url(#gSky2)"/>
-      <g class="fl fl1">
-        <path d="M268 520 C265 448 273 404 268 348" stroke="#5B7C4A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
-        <path d="M268 460 C254 454 247 443 247 430 C260 436 267 446 268 460 Z" fill="#6B8A57"/>
-        <g transform="translate(268,334)">
-          <g fill="#7A4DFF"><ellipse rx="14" ry="28" transform="rotate(0)"/><ellipse rx="14" ry="28" transform="rotate(45)"/><ellipse rx="14" ry="28" transform="rotate(90)"/><ellipse rx="14" ry="28" transform="rotate(135)"/></g>
-          <circle r="12" fill="#F5C544"/>
+      <g>
+        <rect x="106" y="150" width="188" height="400" rx="32" fill="#17181B"/>
+        <rect x="114" y="158" width="172" height="392" rx="25" fill="url(#gScr)"/>
+        <path d="M114 158 L226 550 L180 550 L114 260 Z" fill="#fff" opacity=".035"/>
+        <rect x="172" y="168" width="56" height="17" rx="8.5" fill="#000"/>
+        <text x="200" y="222" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" font-weight="500" fill="#8E96A3">Incoming call</text>
+        <circle cx="200" cy="262" r="30" fill="#5928E4"/>
+        <text x="200" y="268" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="17" font-weight="800" fill="#fff">JO</text>
+        <text x="200" y="322" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="19" font-weight="700" fill="#fff">Jesse O&ntilde;ate</text>
+        <text x="200" y="344" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11.5" font-weight="500" fill="#8E96A3">Jessetek &middot; 15-min intro call</text>
+        <g>
+          <circle cx="156" cy="478" r="25" fill="#E5473A"/>
+          <path d="M146 480 c6 -5 14 -5 20 0 l-3 5 c-4 -3 -10 -3 -14 0 Z" fill="#fff" transform="rotate(135 156 478)"/>
         </g>
-      </g>
-      <g class="fl fl2">
-        <path d="M330 520 C333 476 326 448 331 414" stroke="#5B7C4A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-        <g transform="translate(330,402)">
-          <g fill="#5928E4"><ellipse rx="10" ry="19" transform="rotate(20)"/><ellipse rx="10" ry="19" transform="rotate(65)"/><ellipse rx="10" ry="19" transform="rotate(110)"/><ellipse rx="10" ry="19" transform="rotate(155)"/></g>
-          <circle r="8" fill="#F5C544"/>
-        </g>
-      </g>
-      <g class="fl fl3">
-        <path d="M214 520 C216 482 210 462 214 438" stroke="#6B8A57" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <g transform="translate(214,426)">
-          <g fill="#F5D34E"><ellipse rx="9" ry="16" transform="rotate(0)"/><ellipse rx="9" ry="16" transform="rotate(60)"/><ellipse rx="9" ry="16" transform="rotate(120)"/></g>
-          <circle r="6.5" fill="#7A4A20"/>
+        <g class="acc">
+          <circle cx="244" cy="478" r="25" fill="#34C759"/>
+          <path d="M236.4 468.6 c1.2 -1.2 3.1 -1.2 4.2 0 l3.4 3.4 c1 1 1.2 2.6 .4 3.8 l-1.8 2.8 c2 3 4.6 5.6 7.6 7.6 l2.8 -1.8 c1.2 -.8 2.8 -.6 3.8 .4 l3.4 3.4 c1.2 1.2 1.2 3.1 0 4.2 l-2 2 c-1.3 1.3 -3.2 1.8 -4.9 1.2 -5.6 -1.9 -10.8 -5.1 -15 -9.3 -4.2 -4.2 -7.4 -9.4 -9.3 -15 -.6 -1.7 -.1 -3.6 1.2 -4.9 Z" fill="#fff"/>
         </g>
       </g>
     </svg>
