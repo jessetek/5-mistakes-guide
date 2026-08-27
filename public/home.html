@@ -68,7 +68,8 @@
   position:relative;border-radius:14px;overflow:hidden;padding:8px 10px 10px;justify-content:flex-start;
   background:linear-gradient(160deg,#3E2E86 0%,#5A3BB8 34%,#8C5BD6 62%,#C99BD9 100%);
 }
-.ios-time{text-align:center;color:#fff;font-size:15px;font-weight:600;letter-spacing:.3px;margin:0 0 7px;text-shadow:0 1px 6px rgba(0,0,0,.25);flex-shrink:0}
+.ios-nc,.ios-nc *{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display','Helvetica Neue',Helvetica,Arial,sans-serif}
+.ios-time{text-align:center;color:#fff;font-size:15px;font-weight:600;letter-spacing:.2px;margin:0 0 7px;text-shadow:0 1px 6px rgba(0,0,0,.25);flex-shrink:0}
 .ios-stack{display:flex;flex-direction:column;gap:7px;min-height:0}
 .ios-notif{
   display:flex;align-items:center;gap:9px;
@@ -82,9 +83,9 @@
 .ios-ico{flex-shrink:0;border-radius:7px;overflow:hidden;display:block}
 .ios-body{flex:1;min-width:0}
 .ios-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.ios-from{font-size:10.5px;font-weight:700;color:#111}
+.ios-from{font-size:10.5px;font-weight:600;color:#101013;letter-spacing:-.08px}
 .ios-when{font-size:9px;color:#7a7a7e;flex-shrink:0}
-.ios-subj{font-size:10.5px;color:#3c3c40;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ios-subj{font-size:10.5px;color:#3a3a3e;letter-spacing:-.05px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(prefers-reduced-motion:reduce){.ios-notif.in{animation:none}}
 </style>
 </head>
@@ -382,8 +383,8 @@
 
     <!-- COLS 3-4 ROWS 1-3: Jesse Hero Photo -->
     <a href="/about" class="bc bc-hero reveal-s d2">
-      <video class="hero-card-img" autoplay muted loop playsinline preload="metadata" poster="/video/reel-poster.jpg" aria-label="Montage of Jesse Oñate's Instagram home tours">
-        <source src="/video/reel-montage.mp4" type="video/mp4">
+      <video class="hero-card-img" autoplay muted loop playsinline preload="metadata" poster="/video/reel-poster.jpg?v=2" aria-label="Montage of Jesse Oñate's Instagram home tours">
+        <source src="/video/reel-montage.mp4?v=2" type="video/mp4">
       </video>
       <div class="hero-card-overlay"></div>
       <div class="hero-card-text">
@@ -768,7 +769,19 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 (function(){
   var stack = document.getElementById('iosStack');
   if(!stack) return;
-  var MAIL_ICO = '<svg class="ios-ico" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><defs><linearGradient id="mailG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FA8F9"/><stop offset="1" stop-color="#1863E6"/></linearGradient></defs><rect width="26" height="26" rx="6" fill="url(#mailG)"/><rect x="4.5" y="7.5" width="17" height="11" rx="2" fill="#fff"/><path d="M5.5 9l7.5 5.5L20.5 9" fill="none" stroke="#1863E6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var MAIL_ICO = '<svg class="ios-ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">' +
+    '<defs>' +
+    '<linearGradient id="mBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FBEFC"/><stop offset=".52" stop-color="#2E8BF7"/><stop offset="1" stop-color="#0D5FE8"/></linearGradient>' +
+    '<linearGradient id="mShine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+    '<linearGradient id="mEnv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF4FC"/></linearGradient>' +
+    '</defs>' +
+    '<rect width="28" height="28" rx="6.6" fill="url(#mBg)"/>' +
+    '<rect width="28" height="14" rx="6.6" fill="url(#mShine)"/>' +
+    '<rect x="4.6" y="8.6" width="18.8" height="11.6" rx="2.1" fill="#0A48B4" opacity=".25" transform="translate(0,.5)"/>' +
+    '<rect x="4.6" y="8.2" width="18.8" height="11.8" rx="2.1" fill="url(#mEnv)"/>' +
+    '<path d="M5.2 9.3 L13.1 15.05 C13.63 15.43 14.37 15.43 14.9 15.05 L22.8 9.3" fill="none" stroke="#B9CFEE" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<path d="M5.1 19.1 L11.3 14.35 M22.9 19.1 L16.7 14.35" fill="none" stroke="#D2E0F5" stroke-width="1.05" stroke-linecap="round"/>' +
+    '</svg>';
   var feed = [
     'New listing: 4bd in Anaheim &middot; $915K',
     'Just listed: 3bd in Fullerton &middot; $829K',
