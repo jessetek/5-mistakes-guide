@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Hero Lab · 8 directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,-apple-system,sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased}
+.intro{max-width:1240px;margin:0 auto;padding:48px 24px 8px}
+.intro h1{font-size:28px;letter-spacing:-1px}
+.intro p{color:#6d6d6d;font-size:14px;margin-top:6px}
+.lab{max-width:1240px;margin:0 auto;padding:44px 24px 22px}
+.lab-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.badge{width:34px;height:34px;border-radius:50%;background:#5928E4;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;transform:translateY(6px)}
+.lab-head b{font-size:19px;letter-spacing:-.4px}
+.lab-head p{color:#6d6d6d;font-size:13px}
+.mock{position:relative;border-radius:26px;overflow:hidden;height:520px;background:#EDEAE4}
+.mock img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.veil{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,.88) 0%,rgba(255,255,255,.66) 32%,rgba(255,255,255,.26) 54%,rgba(255,255,255,0) 72%)}
+.txt{position:absolute;left:64px;top:50%;transform:translateY(-50%);z-index:5;max-width:560px}
+.txt h2{font-size:clamp(34px,4vw,54px);font-weight:700;letter-spacing:-2.2px;line-height:1.04;margin-bottom:13px}
+.txt p{color:#3a3a3a;font-size:16px;margin-bottom:24px}
+.btn{display:inline-flex;align-items:center;background:#111;color:#fff;padding:13px 24px;border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none}
+@media(max-width:760px){.mock{height:440px}.txt{left:26px;right:26px}}
+
+/* 1 · living image */
+.v1 img{animation:kb 16s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06) translate(-1.2%,-0.8%)}}
+.lightpass{position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.22) 46%,rgba(255,244,214,.28) 52%,transparent 68%);transform:translateX(-120%);animation:sweep 9s ease-in-out infinite}
+@keyframes sweep{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+
+/* 2 · split panel */
+.v2{display:grid;grid-template-columns:44% 56%}
+.v2 .panel{position:relative;background:#F6F2EA;display:flex;align-items:center;padding:56px}
+.v2 .txt2 h2{font-size:clamp(32px,3.6vw,48px);font-weight:700;letter-spacing:-2px;line-height:1.05;margin-bottom:13px}
+.v2 .txt2 p{color:#5a564e;font-size:15.5px;margin-bottom:24px}
+.v2 .imgwrap{position:relative}
+.v2 .imgwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center}
+@media(max-width:760px){.v2{grid-template-columns:1fr}.v2 .imgwrap{display:none}}
+
+/* 3 · big type first */
+.v3wrap h2{font-size:clamp(52px,7.4vw,96px);font-weight:800;letter-spacing:-4px;line-height:.98;margin-bottom:10px}
+.v3wrap .sub3{color:#5c5c5c;font-size:17px;margin-bottom:26px}
+.v3wrap .mock{height:320px;margin-top:34px}
+.v3wrap .mock img{object-position:center 38%}
+
+/* 4 · rotating backdrops */
+.v4 img{opacity:0;animation:rot 21s infinite}
+.v4 img:nth-child(1){animation-delay:0s}
+.v4 img:nth-child(2){animation-delay:7s}
+.v4 img:nth-child(3){animation-delay:14s}
+@keyframes rot{0%{opacity:0;transform:scale(1.05)}4%{opacity:1}33%{opacity:1;transform:scale(1)}38%{opacity:0}100%{opacity:0}}
+
+/* 5 · cursor depth */
+.v5 img{transition:transform .18s ease-out;transform:scale(1.07)}
+.v5 .txt{transition:transform .18s ease-out}
+.hint{position:absolute;right:22px;bottom:18px;z-index:6;background:rgba(17,17,17,.55);color:#fff;font-size:11.5px;padding:7px 13px;border-radius:999px;backdrop-filter:blur(6px)}
+
+/* 6 · search pill */
+.spill{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 30px rgba(20,15,40,.10);border-radius:999px;padding:8px 8px 8px 20px;max-width:440px}
+.spill svg{flex-shrink:0;opacity:.55}
+.spill span{color:#555;font-size:14px;flex:1;white-space:nowrap;overflow:hidden}
+.spill .go{background:#5928E4;color:#fff;border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600}
+.chips{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.chips a{background:rgba(255,255,255,.55);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,.08);color:#222;border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600;text-decoration:none}
+
+/* 7 · glass ticker */
+.ticker{position:absolute;left:0;right:0;bottom:0;z-index:6;background:rgba(255,255,255,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.7);height:58px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tk{position:absolute;font-size:15px;font-weight:700;letter-spacing:-.3px;color:#111;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .6s cubic-bezier(.33,1.42,.05,.96)}
+.tk.on{opacity:1;transform:none}
+.tk b{color:#5928E4}
+
+/* 8 · editorial breakout */
+.v8wrap{padding-top:58px}
+.v8wrap .mock{overflow:visible;border-radius:26px}
+.v8wrap .mock .clip{position:absolute;inset:0;border-radius:26px;overflow:hidden}
+.bigline{position:absolute;left:34px;top:-52px;z-index:7;font-size:clamp(56px,7.6vw,100px);font-weight:800;letter-spacing:-4.5px;line-height:.95}
+.bigline .l2{display:block;color:#5928E4}
+.v8 .txt8{position:absolute;left:40px;bottom:44px;z-index:6}
+.v8 .txt8 p{color:#3a3a3a;font-size:16px;margin-bottom:18px;max-width:380px;font-weight:500}
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Hero Lab: 8 directions</h1>
+  <p>Scroll through, hover and move your mouse where noted. Same copy everywhere so you're comparing style, not words. Pick by number.</p>
+</div>
+
+<!-- 1 -->
+<section class="lab">
+  <div class="lab-head"><span class="badge">1</span><b>Living image</b><p>the photo breathes: slow zoom + a pass of window light (with your real b-roll this becomes true video)</p></div>
+  <div class="mock v1">
+    <img src="/img/hero-bg-hd.jpg" alt="">
+    <div class="lightpass"></div>
+    <div class="veil"></div>
+    <div class="txt"><h2>Confused by the market?<br>You found the right realtor.</h2><p>I'll walk you through it.</p><a class="btn" href="#">Book my 15-min call</a></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="lab">
+  <div class="lab-head"><span class="badge">2</span><b>Split panel</b><p>flat cream panel owns the text, photo owns the right half, no gradient tricks</p></div>
+  <div class="mock v2">
+    <div class="panel"><div class="txt2"><h2>Confused by the market? You found the right realtor.</h2><p>I'll walk you through it.</p><a class="btn" href="#">Book my 15-min call</a></div></div>
+    <div class="imgwrap"><img src="/img/hero-bg-hd.jpg" alt=""></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="lab v3wrap">
+  <div class="lab-head"><span class="badge">3</span><b>Big type first</b><p>headline huge on the white page, photo becomes a wide cinematic strip below</p></div>
+  <h2>Confused by the market?<br>You found the right realtor.</h2>
+  <p class="sub3">I'll walk you through it.</p>
+  <a class="btn" href="#">Book my 15-min call</a>
+  <div class="mock"><img src="/img/hero-bg-hd.jpg" alt=""></div>
+</section>
+
+<!-- 4 -->
+<section class="lab">
+  <div class="lab-head"><span class="badge">4</span><b>Rotating backdrops</b><p>crossfades between shots every 7s (demo uses three crops of one photo; real version uses 3&ndash;4 of your listings)</p></div>
+  <div class="mock v4">
+    <img src="/img/hero-bg-hd.jpg" style="object-position:12% center" alt="">
+    <img src="/img/hero-bg-hd.jpg" style="object-position:50% center" alt="">
+    <img src="/img/hero-bg-hd.jpg" style="object-position:88% center" alt="">
+    <div class="veil"></div>
+    <div class="txt"><h2>Confused by the market?<br>You found the right realtor.</h2><p>I'll walk you through it.</p><a class="btn" href="#">Book my 15-min call</a></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="lab">
+  <div class="lab-head"><span class="badge">5</span><b>Cursor depth</b><p>move your mouse over it: the room shifts, the text counters, the card feels 3D (desktop only)</p></div>
+  <div class="mock v5" id="v5">
+    <img src="/img/hero-bg-hd.jpg" id="v5img" alt="">
+    <div class="veil"></div>
+    <div class="txt" id="v5txt"><h2>Confused by the market?<br>You found the right realtor.</h2><p>I'll walk you through it.</p><a class="btn" href="#">Book my 15-min call</a></div>
+    <div class="hint">move your mouse</div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="lab">
+  <div class="lab-head"><span class="badge">6</span><b>Search pill</b><p>the hero gets a job: frosted search bar + city chips feeding your neighborhood pages and quiz</p></div>
+  <div class="mock">
+    <img src="/img/hero-bg-hd.jpg" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <h2>Confused by the market?<br>You found the right realtor.</h2>
+      <p>I'll walk you through it.</p>
+      <div class="spill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg><span>Where do you want to buy?</span><span class="go">Search</span></div>
+      <div class="chips"><a href="#">Downey</a><a href="#">Whittier</a><a href="#">Long Beach</a><a href="#">Anaheim</a><a href="#">More +</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="lab">
+  <div class="lab-head"><span class="badge">7</span><b>Glass stats ticker</b><p>a frosted strip on the card's bottom edge cycles your receipts one at a time</p></div>
+  <div class="mock">
+    <img src="/img/hero-bg-hd.jpg" alt="">
+    <div class="veil"></div>
+    <div class="txt" style="transform:translateY(-62%)"><h2>Confused by the market?<br>You found the right realtor.</h2><p>I'll walk you through it.</p><a class="btn" href="#">Book my 15-min call</a></div>
+    <div class="ticker" id="ticker">
+      <div class="tk on"><b>$115K</b>&nbsp;over asking, our record</div>
+      <div class="tk"><b>14 days</b>&nbsp;fastest escrow, offer to keys</div>
+      <div class="tk"><b>5.0 on Google</b>&nbsp;from 20+ SoCal families</div>
+      <div class="tk"><b>100+</b>&nbsp;closings across LA &amp; OC</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="lab v8wrap">
+  <div class="lab-head"><span class="badge">8</span><b>Editorial breakout</b><p>the headline breaks out of the card, half on white, half on the photo, magazine-cover energy</p></div>
+  <div class="mock v8">
+    <div class="clip">
+      <img src="/img/hero-bg-hd.jpg" alt="">
+      <div class="veil" style="background:linear-gradient(to top,rgba(255,255,255,.82) 0%,rgba(255,255,255,.3) 38%,rgba(255,255,255,0) 60%)"></div>
+    </div>
+    <div class="bigline">No pressure.<span class="l2">Real results.</span></div>
+    <div class="txt8"><p>Buying or selling in SoCal, I'll walk you through it.</p><a class="btn" href="#">Book my 15-min call</a></div>
+  </div>
+</section>
+
+<div class="intro" style="padding-bottom:80px"><p>End of lab. Tell Claude the number(s) you like.</p></div>
+
+<script>
+// 5: cursor depth
+(function(){
+  var box = document.getElementById('v5'), im = document.getElementById('v5img'), tx = document.getElementById('v5txt');
+  if(!box) return;
+  box.addEventListener('mousemove', function(e){
+    var r = box.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width - .5;
+    var y = (e.clientY - r.top) / r.height - .5;
+    im.style.transform = 'scale(1.07) translate(' + (x * -16) + 'px,' + (y * -10) + 'px)';
+    tx.style.transform = 'translateY(-50%) translate(' + (x * 8) + 'px,' + (y * 5) + 'px)';
+  });
+  box.addEventListener('mouseleave', function(){
+    im.style.transform = 'scale(1.07)';
+    tx.style.transform = 'translateY(-50%)';
+  });
+})();
+// 7: ticker
+(function(){
+  var tks = document.querySelectorAll('#ticker .tk');
+  if(!tks.length) return;
+  var i = 0;
+  setInterval(function(){
+    tks[i].classList.remove('on');
+    i = (i + 1) % tks.length;
+    tks[i].classList.add('on');
+  }, 3200);
+})();
+</script>
+</body>
+</html>
