@@ -56,8 +56,11 @@
 .klarna-try .btn-primary{background:#111;color:#fff;padding:12px 22px;font-size:13.5px}
 .klarna-try .btn-primary:hover{background:#2b2b2b;transform:scale(1.02)}
 /* white header for the light hero */
-.nav{background:transparent;border:1px solid transparent;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
-.nav.scrolled{background:rgba(255,255,255,.95);border-color:rgba(0,0,0,.08);box-shadow:0 8px 30px rgba(0,0,0,.09);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%)}
+.nav{width:auto;max-width:calc(100% - 32px);height:46px;padding:0 8px 0 20px;gap:34px;background:#fff;border:1px solid #111;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.nav.scrolled{background:#fff;border-color:#111;box-shadow:0 10px 30px rgba(0,0,0,.1);backdrop-filter:none;-webkit-backdrop-filter:none}
+.nav-logo{font-size:15px}
+.nav-links{gap:18px}
+.nav-phone{width:34px;height:34px}
 .nav-logo,.nav-logo span{color:#111}
 .nav-links a{color:rgba(0,0,0,.62)}
 .nav-links a:hover{color:#000}
@@ -68,20 +71,24 @@
 .nav-menu{background:rgba(255,255,255,.98);border:1px solid rgba(0,0,0,.08);box-shadow:0 20px 50px rgba(0,0,0,.14)}
 .nav-menu a{color:rgba(0,0,0,.72)}
 .nav-menu a:hover{color:#000;background:rgba(0,0,0,.045)}
-/* trust strip */
-.hero-strip{width:min(1280px,calc(100% - 48px));margin:0 auto;padding:6px 6px 88px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
-.hero-strip h2{font-size:clamp(22px,2.3vw,29px);letter-spacing:-.8px;line-height:1.2;color:#111;font-weight:700;margin:0}
-.hero-strip h2 mark{background:#E9DFFE;color:#4A1DC8;padding:1px 8px;border-radius:7px}
-.strip-stats{display:flex;gap:clamp(26px,4vw,54px)}
-.ss{text-align:center}
-.ss b{display:flex;align-items:center;justify-content:center;gap:7px;font-size:clamp(26px,2.6vw,34px);font-weight:700;letter-spacing:-1.2px;color:#111;line-height:1}
-.ss b svg{flex-shrink:0}
-.ss span{font-size:12.5px;color:#6d6d6d;margin-top:7px;display:block;text-align:center}
+/* reviews strip */
+.hero-strip{width:min(1280px,calc(100% - 48px));margin:0 auto;padding:6px 6px 88px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:52px}
+.strip-stars{color:#FBBC04;font-size:17px;letter-spacing:3px;margin-bottom:9px}
+.strip-head h2{font-size:clamp(22px,2.3vw,29px);letter-spacing:-.8px;line-height:1.15;color:#111;font-weight:700;margin:0 0 7px}
+.strip-head h2 mark{background:#E9DFFE;color:#4A1DC8;padding:1px 8px;border-radius:7px}
+.strip-head p{font-size:13px;color:#6d6d6d;margin:0}
+.strip-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sr-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:16px;padding:16px 18px;margin:0}
+.sr-card blockquote{font-size:13.5px;line-height:1.5;color:#222;margin:0 0 13px;font-weight:500}
+.sr-card figcaption{display:flex;align-items:center;gap:9px}
+.sr-ava{width:30px;height:30px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.sr-meta b{display:block;font-size:12.5px;color:#111;line-height:1.2}
+.sr-meta span{font-size:11.5px;color:#6d6d6d}
 /* reveal enters with the scale/rotate animation */
 .klarna-try .hero-reveal{transform-origin:center top;will-change:transform;border-radius:36px 36px 0 0;overflow:hidden}
 @media (max-width:760px){
-  .hero-strip{padding-bottom:56px;gap:24px}
-  .strip-stats{flex-wrap:wrap;gap:20px 34px}
+  .hero-strip{padding-bottom:56px;gap:26px;grid-template-columns:1fr}
+  .strip-reviews{grid-template-columns:1fr;gap:12px}
   .klarna-try{padding-top:84px}
   .klarna-try .hero{height:auto;min-height:440px;margin:0 auto 36px;width:calc(100% - 28px);border-radius:20px}
   .klarna-try .hero-inner{padding:48px 26px 44px;align-items:flex-start;text-align:left}
@@ -170,14 +177,26 @@
 
 </section>
 
-<!-- Klarna-style trust strip under the hero card -->
+<!-- Google reviews strip under the hero card (quotes verbatim from /reviews) -->
 <section class="hero-strip">
-  <h2>Trusted by <mark>100+ families</mark><br>across LA &amp; Orange County</h2>
-  <div class="strip-stats">
-    <div class="ss"><b><svg width="21" height="21" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.3l7.1-.7z"/></svg>5.0</b><span>Google rating</span></div>
-    <div class="ss"><b>100+</b><span>closings</span></div>
-    <div class="ss"><b>14 days</b><span>fastest escrow</span></div>
-    <div class="ss"><b>$115K</b><span>over asking, record</span></div>
+  <div class="strip-head">
+    <div class="strip-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <h2>Rated <mark>5.0 on Google</mark></h2>
+    <p>20+ five-star reviews from SoCal families</p>
+  </div>
+  <div class="strip-reviews">
+    <figure class="sr-card">
+      <blockquote>"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</blockquote>
+      <figcaption><span class="sr-ava" style="background:#2563EB">M</span><div class="sr-meta"><b>Maria G.</b><span>Downey</span></div></figcaption>
+    </figure>
+    <figure class="sr-card">
+      <blockquote>"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</blockquote>
+      <figcaption><span class="sr-ava" style="background:#16A34A">D</span><div class="sr-meta"><b>David R.</b><span>La Habra</span></div></figcaption>
+    </figure>
+    <figure class="sr-card">
+      <blockquote>"Responded within minutes, day or night. Truly client-first experience."</blockquote>
+      <figcaption><span class="sr-ava" style="background:#5928E4">A</span><div class="sr-meta"><b>Araceli T.</b><span>Pico Rivera</span></div></figcaption>
+    </figure>
   </div>
 </section>
 
