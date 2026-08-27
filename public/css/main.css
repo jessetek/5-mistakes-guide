@@ -357,7 +357,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 
 /* ---- HERO PHOTO (Jesse anchor) ---- */
 .bc-hero{position:relative;background:#000;overflow:hidden}
-.hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.1) 45%,transparent 100%)}
 .hero-card-text{position:absolute;bottom:0;left:0;right:0;padding:20px 22px}
 .hero-card-name{font-size:18px;font-weight:700;color:#fff;letter-spacing:-.3px;line-height:1.15}
@@ -1000,7 +1000,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .bc-comms{grid-area:2/1/3/2}
   .bc-reviews{grid-area:1/2/3/3}
   .bc-contacts{grid-area:3/1/4/3;min-height:130px}
-  .bc-hero{grid-area:4/1/5/3;min-height:300px}
+  .bc-hero{grid-area:4/1/5/3;min-height:400px}
   .bc-instagram{grid-area:5/1/6/3;min-height:130px}
   .bc-offmarket{grid-area:6/1/7/2;min-height:130px}
   .bc-bilingual{grid-area:6/2/7/3;min-height:130px}
@@ -1017,7 +1017,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .step-row{display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:48px}
   .step-row.r-left .step-card,.step-row.r-right .step-card{grid-column:auto;justify-self:auto;max-width:100%;width:100%}
   .step-badge-wrap{grid-column:auto;align-self:center;margin-top:0;margin-bottom:-20px;z-index:3;order:-1}
-  .hero-card-img{object-position:center 25%}
+  .hero-card-img{object-position:center}
   .step-card{height:300px;min-height:300px}
   .step-card.has-mockup{height:380px;min-height:380px}
   .step-card.has-mockup .step-card-overlay{background:linear-gradient(180deg,rgba(8,11,20,0) 0%,rgba(8,11,20,0) 38%,rgba(8,11,20,.96) 52%,rgba(8,11,20,1) 100%)}
@@ -1047,13 +1047,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
   .bc-comms{grid-area:2/1/3/2}
   .bc-reviews{grid-area:1/2/3/3}
   .bc-contacts{grid-area:3/1/4/3;height:auto;min-height:180px;flex-direction:column;padding:18px 20px 14px}
-  .bc-hero{grid-area:4/1/5/3;min-height:280px}
+  .bc-hero{grid-area:4/1/5/3;min-height:430px}
   .bc-instagram{grid-area:5/1/6/3;min-height:140px;flex-direction:row;padding:14px 16px}
   .bc-offmarket{grid-area:6/1/7/2;min-height:200px}
   .bc-bilingual{grid-area:6/2/7/3;min-height:180px}
   .bc-docusign{grid-area:7/1/8/2;min-height:180px}
   .bc-socal{grid-area:7/2/8/3;height:200px;min-height:200px}
-  .hero-card-img{object-position:center 25%}
+  .hero-card-img{object-position:center}
   .dream-figures{min-height:80px}
   .dream-labels{padding-top:4px}
   .dream-lbl{font-size:8px}
