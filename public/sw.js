@@ -4,7 +4,7 @@
 // - Network-first for HTML (always get freshest content if online)
 // - No background sync, no push (out of scope for a real-estate site)
 
-const CACHE_VERSION = 'jt-v4-2026-08-25';
+const CACHE_VERSION = 'jt-v6-2026-08-26';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
