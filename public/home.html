@@ -62,6 +62,31 @@
 @media(max-width:640px){.nav-cta2{display:none}}
 @media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
+<style id="bentoV2">
+.bc-hero video.hero-card-img{width:100%;height:100%;object-fit:cover;display:block}
+.ios-nc{
+  position:relative;border-radius:14px;overflow:hidden;padding:8px 10px 10px;justify-content:flex-start;
+  background:linear-gradient(160deg,#3E2E86 0%,#5A3BB8 34%,#8C5BD6 62%,#C99BD9 100%);
+}
+.ios-time{text-align:center;color:#fff;font-size:15px;font-weight:600;letter-spacing:.3px;margin:0 0 7px;text-shadow:0 1px 6px rgba(0,0,0,.25);flex-shrink:0}
+.ios-stack{display:flex;flex-direction:column;gap:7px;min-height:0}
+.ios-notif{
+  display:flex;align-items:center;gap:9px;
+  background:rgba(250,250,252,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-radius:14px;padding:8px 11px;flex-shrink:0;
+  box-shadow:0 4px 16px rgba(20,10,50,.18);
+}
+.ios-notif.in{animation:iosIn .55s cubic-bezier(.34,1.45,.5,1) both}
+.ios-notif.out{opacity:0;transform:translateY(8px) scale(.96);transition:opacity .3s,transform .35s}
+@keyframes iosIn{from{opacity:0;transform:translateY(-18px) scale(.9)}to{opacity:1;transform:none}}
+.ios-ico{flex-shrink:0;border-radius:7px;overflow:hidden;display:block}
+.ios-body{flex:1;min-width:0}
+.ios-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.ios-from{font-size:10.5px;font-weight:700;color:#111}
+.ios-when{font-size:9px;color:#7a7a7e;flex-shrink:0}
+.ios-subj{font-size:10.5px;color:#3c3c40;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(prefers-reduced-motion:reduce){.ios-notif.in{animation:none}}
+</style>
 </head>
 <body>
 
@@ -357,7 +382,9 @@
 
     <!-- COLS 3-4 ROWS 1-3: Jesse Hero Photo -->
     <a href="/about" class="bc bc-hero reveal-s d2">
-      <picture><source srcset="/img/clients/c-1eed41dca767.webp" type="image/webp"><img class="hero-card-img"  alt="Jesse Oñate, Realtor" src="/img/clients/c-1eed41dca767.jpg"></picture>
+      <video class="hero-card-img" autoplay muted loop playsinline preload="metadata" poster="/video/reel-poster.jpg" aria-label="Montage of Jesse Oñate's Instagram home tours">
+        <source src="/video/reel-montage.mp4" type="video/mp4">
+      </video>
       <div class="hero-card-overlay"></div>
       <div class="hero-card-text">
         <div class="hero-card-name">Jesse Oñate</div>
@@ -368,23 +395,9 @@
     <!-- COLS 5-6 ROW 1: Instant Listing Alerts (slot class bc-instagram is legacy) -->
     <div class="bc bc-instagram bc-al reveal-s">
       <div class="al-head">Instant Listing Alerts</div>
-      <div class="al-visual">
-        <div class="al-mail">
-          <div class="al-mail-avatar">JO</div>
-          <div class="al-mail-body">
-            <div class="al-mail-top"><span class="al-mail-from">Jesse O&ntilde;ate</span><span class="al-mail-time">6:42 AM</span></div>
-            <div class="al-mail-subj">New listing: 3bd in Downey &middot; $675K</div>
-            <div class="al-mail-tag">Matches: Downey &middot; 3bd &middot; under $700K</div>
-          </div>
-        </div>
-        <div class="al-mail">
-          <div class="al-mail-avatar">JO</div>
-          <div class="al-mail-body">
-            <div class="al-mail-top"><span class="al-mail-from">Jesse O&ntilde;ate</span><span class="al-mail-time">Tue</span></div>
-            <div class="al-mail-subj">Just listed: 4bd in Whittier &middot; $729K</div>
-            <div class="al-mail-tag">Matches: Whittier &middot; 4bd &middot; under $750K</div>
-          </div>
-        </div>
+      <div class="al-visual ios-nc">
+        <div class="ios-time">9:41</div>
+        <div class="ios-stack" id="iosStack"></div>
       </div>
     </div>
 
@@ -749,6 +762,55 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
   window.addEventListener('scroll', onScroll, {passive:true});
   window.addEventListener('resize', onScroll);
   update();
+})();
+
+// ---- iOS listing-alert notification feed ----
+(function(){
+  var stack = document.getElementById('iosStack');
+  if(!stack) return;
+  var MAIL_ICO = '<svg class="ios-ico" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><defs><linearGradient id="mailG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FA8F9"/><stop offset="1" stop-color="#1863E6"/></linearGradient></defs><rect width="26" height="26" rx="6" fill="url(#mailG)"/><rect x="4.5" y="7.5" width="17" height="11" rx="2" fill="#fff"/><path d="M5.5 9l7.5 5.5L20.5 9" fill="none" stroke="#1863E6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var feed = [
+    'New listing: 4bd in Anaheim &middot; $915K',
+    'Just listed: 3bd in Fullerton &middot; $829K',
+    'New listing: 5bd in Yorba Linda &middot; $1.24M',
+    'Open house Sat: Garden Grove',
+    'New listing: 3bd in Buena Park &middot; $868K',
+    'Price drop: 4bd in Santa Ana &middot; $799K',
+    'New listing: 2bd in Costa Mesa &middot; $739K',
+    'Just listed: 4bd in Cypress &middot; $989K',
+    'New listing: 3bd in Orange &middot; $905K',
+    'Back on market: Tustin townhome',
+    'New listing: 4bd in Huntington Beach &middot; $1.38M',
+    'Just listed: 3bd in La Habra &middot; $779K',
+    'New listing: 3bd in Westminster &middot; $815K',
+    'Open house Sun: Fountain Valley'
+  ];
+  var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0;
+  function notif(subj, animate){
+    var n = document.createElement('div');
+    n.className = 'ios-notif' + (animate && !reduced ? ' in' : '');
+    n.innerHTML = MAIL_ICO + '<div class="ios-body"><div class="ios-top"><span class="ios-from">Jesse O\u00f1ate</span><span class="ios-when">now</span></div><div class="ios-subj">' + subj + '</div></div>';
+    return n;
+  }
+  stack.appendChild(notif(feed[1], false));
+  stack.querySelector('.ios-when').textContent = '1m ago';
+  stack.insertBefore(notif(feed[0], false), stack.firstChild);
+  i = 2;
+  setInterval(function(){
+    var n = notif(feed[i % feed.length], true);
+    stack.insertBefore(n, stack.firstChild);
+    var kids = stack.querySelectorAll('.ios-notif');
+    kids.forEach(function(k, idx){
+      var when = k.querySelector('.ios-when');
+      if(idx === 1 && when) when.textContent = '1m ago';
+      if(idx >= 2){
+        k.classList.add('out');
+        setTimeout(function(){ k.remove(); }, 380);
+      }
+    });
+    i++;
+  }, 3800);
 })();
 
 // ---- Top Dollar results cycler ----
