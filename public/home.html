@@ -55,23 +55,23 @@
 .klarna-try .hero-btns{justify-content:flex-start}
 .klarna-try .btn-primary{background:#111;color:#fff;padding:12px 22px;font-size:13.5px}
 .klarna-try .btn-primary:hover{background:#2b2b2b;transform:scale(1.02)}
-/* white header for the light hero */
-.nav{width:auto;max-width:calc(100% - 32px);height:46px;padding:0 8px 0 20px;gap:34px;background:#fff;border:1px solid #111;border-radius:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
-.nav-phone,.nav-hamburger{border-radius:0}
-.nav.scrolled{background:#fff;border-color:#111;box-shadow:0 10px 30px rgba(0,0,0,.1);backdrop-filter:none;-webkit-backdrop-filter:none}
-.nav-logo{font-size:15px}
-.nav-links{gap:18px}
-.nav-phone{width:34px;height:34px}
-.nav-logo,.nav-logo span{color:#111}
-.nav-links a{color:rgba(0,0,0,.62)}
-.nav-links a:hover{color:#000}
-.nav-toggle{color:rgba(0,0,0,.62)}
-.nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#000}
-.nav-chev{opacity:.7}
-.nav-hamburger{color:#111;background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.08)}
-.nav-menu{background:rgba(255,255,255,.98);border:1px solid rgba(0,0,0,.08);box-shadow:0 20px 50px rgba(0,0,0,.14)}
-.nav-menu a{color:rgba(0,0,0,.72)}
-.nav-menu a:hover{color:#000;background:rgba(0,0,0,.045)}
+/* dark pill header (Pally-style) */
+.nav{width:min(1040px,calc(100% - 32px));height:66px;padding:0 10px 0 28px;background:#14161C;border:1px solid rgba(255,255,255,.09);border-radius:999px;box-shadow:0 12px 34px rgba(10,10,20,.16);backdrop-filter:none;-webkit-backdrop-filter:none;justify-content:space-between}
+.nav.scrolled{background:#14161C;border-color:rgba(255,255,255,.09);box-shadow:0 14px 38px rgba(10,10,20,.24);backdrop-filter:none;-webkit-backdrop-filter:none}
+.nav-logo,.nav-logo span{color:#fff;font-size:17px}
+.nav-links{gap:30px}
+.nav-links a{color:rgba(255,255,255,.78);font-size:14px}
+.nav-links a:hover{color:#fff}
+.nav-toggle{color:rgba(255,255,255,.78);font-size:14px}
+.nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
+.nav-chev{opacity:.6}
+.nav-cta2{display:inline-flex;align-items:center;height:48px;padding:0 24px;background:#fff;color:#111;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:-.1px;text-decoration:none;transition:transform .25s ease}
+.nav-cta2:hover{transform:scale(1.04)}
+.nav-hamburger{color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:999px}
+.nav-menu{background:#1B1D24;border:1px solid rgba(255,255,255,.09);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.nav-menu a{color:rgba(255,255,255,.75)}
+.nav-menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
+@media(max-width:640px){.nav-cta2{display:none}}
 /* reveal enters with the scale/rotate animation */
 .klarna-try .hero-reveal{transform-origin:center top;will-change:transform;border-radius:36px 36px 0 0;overflow:hidden}
 @media (max-width:760px){
@@ -139,8 +139,8 @@
         <a href="/seller-checklist" role="menuitem">Seller Checklist</a>
       </div>
     </div>
-    <a href="/zoom" class="nav-phone" aria-label="Book a call with Jesse" title="Book a 15-min call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
   </div>
+  <a href="/zoom" class="nav-cta2">Book my 15-min call</a>
   <div class="nav-hamburger" onclick="document.getElementById('mobNav').classList.add('open')">&#9776;</div>
 </nav>
 
