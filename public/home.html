@@ -82,27 +82,14 @@
 .pcard-txt b{display:block;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#111;line-height:1.3}
 .pcard-txt b em{font-style:normal;display:inline-block;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
 .pcard:hover .pcard-txt b em{transform:translateX(5px)}
-.pcard .fl{transform-box:fill-box;transform-origin:bottom center;animation:flSway 5.5s ease-in-out infinite alternate}
-.pcard .fl2{animation-duration:6.5s;animation-delay:.7s}
-.pcard .fl3{animation-duration:7s;animation-delay:.3s}
-.pcard .fl4{animation-duration:6s;animation-delay:1s}
-.pcard .fl5{animation-duration:6.2s;animation-delay:.4s}
-.pcard .fl6{animation-duration:5.4s;animation-delay:.9s}
-.pcard .fl7{animation-duration:7.5s;animation-delay:.2s}
-.pcard .fl8{animation-duration:6.8s;animation-delay:1.2s}
-@keyframes flSway{from{transform:rotate(-1.6deg)}to{transform:rotate(2.2deg)}}
-.pcard .cl{animation:clDrift 26s ease-in-out infinite alternate}
-.pcard .cl2{animation-duration:34s;animation-delay:4s}
-.pcard .cl3{animation-duration:30s;animation-delay:2s}
-@keyframes clDrift{from{transform:translateX(-14px)}to{transform:translateX(18px)}}
-.pc-warm .sun{transform-box:fill-box;transform-origin:center;animation:sunBreathe 7s ease-in-out infinite alternate}
-@keyframes sunBreathe{from{transform:scale(1);opacity:.9}to{transform:scale(1.07);opacity:1}}
-.pc-warm .bird{animation:birdDrift 38s linear infinite}
-@keyframes birdDrift{from{transform:translateX(110px)}to{transform:translateX(-340px)}}
-.pc-flower .bfly{transform-box:view-box;animation:bflyFloat 14s ease-in-out infinite alternate}
-@keyframes bflyFloat{0%{transform:translate(96px,208px)}30%{transform:translate(180px,168px)}60%{transform:translate(268px,214px)}100%{transform:translate(322px,176px)}}
-@media(prefers-reduced-motion:reduce){.pcard .fl,.pcard .cl,.pc-warm .sun,.pc-warm .bird,.pc-flower .bfly{animation:none}
-.pc-flower .bfly{transform:translate(268px,200px)}}
+.pcard .fl{transform-box:fill-box;transform-origin:bottom center;animation:flSway 6s ease-in-out infinite alternate}
+.pcard .fl2{animation-duration:7s;animation-delay:.7s}
+.pcard .fl3{animation-duration:7.5s;animation-delay:.3s}
+.pcard .fl5{animation-duration:8s;animation-delay:.5s}
+@keyframes flSway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.6deg)}}
+.pc-warm .sun{transform-box:fill-box;transform-origin:center;animation:sunBreathe 8s ease-in-out infinite alternate}
+@keyframes sunBreathe{from{transform:scale(1);opacity:.85}to{transform:scale(1.05);opacity:1}}
+@media(prefers-reduced-motion:reduce){.pcard .fl,.pc-warm .sun{animation:none}}
 /* reveal enters with the scale/rotate animation */
 .klarna-try .hero-reveal{transform-origin:center top;will-change:transform;border-radius:36px 36px 0 0;overflow:hidden}
 @media (max-width:760px){
@@ -201,49 +188,25 @@
   <a href="/buyer" class="pcard pc-sky">
     <svg class="pcard-art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
       <defs>
-        <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B7D4F1"/><stop offset="1" stop-color="#EDF4FB"/></linearGradient>
-        <linearGradient id="gRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2C31"/><stop offset="1" stop-color="#17181B"/></linearGradient>
-        <linearGradient id="gFacade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDFCFA"/><stop offset="1" stop-color="#EFEDE6"/></linearGradient>
-        <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54687C"/><stop offset="1" stop-color="#2A3844"/></linearGradient>
-        <radialGradient id="gHaze" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE9F4"/><stop offset="1" stop-color="#EDF4FA"/></linearGradient>
+        <linearGradient id="gRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2D32"/><stop offset="1" stop-color="#191A1E"/></linearGradient>
+        <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4E6172"/><stop offset="1" stop-color="#2C3A46"/></linearGradient>
       </defs>
       <rect width="400" height="520" fill="url(#gSky)"/>
-      <circle cx="330" cy="86" r="80" fill="url(#gHaze)"/>
-      <g class="cl cl1" fill="#fff" opacity=".8">
-        <ellipse cx="258" cy="128" rx="44" ry="15"/><ellipse cx="290" cy="118" rx="30" ry="12"/><ellipse cx="232" cy="120" rx="24" ry="10"/>
-      </g>
-      <g class="cl cl2" fill="#fff" opacity=".55">
-        <ellipse cx="300" cy="160" rx="36" ry="11"/><ellipse cx="326" cy="152" rx="22" ry="9"/>
-      </g>
-      <ellipse cx="200" cy="514" rx="185" ry="12" fill="#8CA2B8" opacity=".28"/>
-      <path d="M24 300 L204 184 L388 300 Z" fill="url(#gRoof)"/>
-      <path d="M198 186 h12 l-2 -6 h-8 Z" fill="#101114"/>
-      <g stroke="#3D4046" stroke-width="2.5"><path d="M78 266 L204 186 M120 292 L204 200 M162 296 L204 214" opacity="0"/><path d="M64 276 v16 M112 246 v16 M160 216 v16 M250 216 v16 M298 246 v16 M346 276 v16"/></g>
-      <rect x="20" y="296" width="368" height="10" rx="3" fill="#FBFAF7"/>
-      <rect x="20" y="304" width="368" height="4" fill="#0E0F11" opacity=".18"/>
-      <rect x="56" y="306" width="288" height="214" fill="url(#gFacade)"/>
-      <g stroke="#E6E3DB" stroke-width="2"><path d="M56 328 h288 M56 350 h288 M56 372 h288 M56 394 h288 M56 416 h288 M56 438 h288 M56 460 h288 M56 482 h288 M56 504 h288"/></g>
-      <rect x="288" y="306" width="56" height="214" fill="#1B1D20" opacity=".05"/>
-      <circle cx="204" cy="256" r="6" fill="#E5473A"/>
+      <path d="M-10 268 L410 218 L410 258 L-10 308 Z" fill="url(#gRoof)"/>
+      <g stroke="#3F424A" stroke-width="2"><path d="M40 302 l0 -37 M120 292 l0 -37 M200 283 l0 -37 M280 273 l0 -37 M360 263 l0 -37"/></g>
+      <path d="M-10 306 L410 256 L410 266 L-10 316 Z" fill="#FBFAF7"/>
+      <rect x="-10" y="312" width="420" height="210" fill="#F7F5F0"/>
+      <g stroke="#EAE7E0" stroke-width="2"><path d="M-10 340 h420 M-10 366 h420 M-10 392 h420 M-10 418 h420 M-10 444 h420 M-10 470 h420 M-10 496 h420"/></g>
+      <circle cx="116" cy="352" r="5.5" fill="#E5473A"/>
       <g>
-        <rect x="92" y="344" width="92" height="104" rx="5" fill="#fff"/>
-        <rect x="99" y="351" width="78" height="90" rx="3" fill="url(#gGlass)"/>
-        <path d="M99 351 L149 441 L128 441 L86 361 Z" fill="#fff" opacity=".22"/>
-        <path d="M138 351 v90 M99 396 h78" stroke="#fff" stroke-width="4"/>
-        <rect x="92" y="448" width="92" height="7" rx="2" fill="#D9D6CE"/>
-      </g>
-      <g>
-        <path d="M216 356 L272 320 L328 356 L320 370 L272 340 L224 370 Z" fill="#fff"/>
-        <path d="M224 370 L272 340 L320 370 L320 376 L272 348 L224 376 Z" fill="#C9C6BE"/>
-        <ellipse cx="272" cy="382" rx="46" ry="7" fill="#0E0F11" opacity=".1"/>
-        <rect x="238" y="368" width="68" height="152" rx="4" fill="#22242A"/>
-        <rect x="245" y="376" width="54" height="74" rx="2" fill="url(#gGlass)"/>
-        <path d="M245 376 L275 450 L262 450 L238 384 Z" fill="#fff" opacity=".18"/>
-        <circle cx="295" cy="470" r="4" fill="#C9A64B"/>
-      </g>
-      <g>
-        <circle cx="66" cy="496" r="26" fill="#5F7C4E"/><circle cx="92" cy="504" r="20" fill="#6E8C5B"/><circle cx="50" cy="508" r="17" fill="#54704546"/><circle cx="50" cy="508" r="17" fill="#547045"/>
-        <ellipse cx="74" cy="518" rx="46" ry="6" fill="#3E5536" opacity=".25"/>
+        <path d="M212 392 L282 348 L352 392 L344 405 L282 366 L220 405 Z" fill="#FDFDFB"/>
+        <path d="M220 405 L282 366 L344 405 L344 411 L282 374 L220 411 Z" fill="#CFCCC4"/>
+        <ellipse cx="282" cy="420" rx="58" ry="8" fill="#0E0F11" opacity=".08"/>
+        <rect x="248" y="404" width="68" height="116" rx="3" fill="#23252A"/>
+        <rect x="255" y="412" width="54" height="66" rx="2" fill="url(#gGlass)"/>
+        <path d="M255 412 L283 478 L271 478 L248 420 Z" fill="#fff" opacity=".16"/>
+        <circle cx="306" cy="466" r="3.5" fill="#C9A64B"/>
       </g>
     </svg>
     <div class="pcard-txt"><span>Thinking of buying?</span><b>Start your search <em aria-hidden="true">&rarr;</em></b></div>
@@ -251,131 +214,68 @@
   <a href="/seller" class="pcard pc-warm">
     <svg class="pcard-art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
       <defs>
-        <linearGradient id="gSunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B99CEF"/><stop offset=".34" stop-color="#F2A3B0"/><stop offset=".64" stop-color="#FFC490"/><stop offset="1" stop-color="#FFE6BC"/></linearGradient>
-        <radialGradient id="gSet" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE08A" stop-opacity=".95"/><stop offset="1" stop-color="#FFB36B" stop-opacity="0"/></radialGradient>
-        <linearGradient id="gLawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FB56A"/><stop offset="1" stop-color="#6E9A4E"/></linearGradient>
-        <linearGradient id="gHouse2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDF7EC"/><stop offset="1" stop-color="#F3E8D4"/></linearGradient>
+        <linearGradient id="gSunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4A8E6"/><stop offset=".42" stop-color="#F0B4A4"/><stop offset="1" stop-color="#FBE3C2"/></linearGradient>
+        <radialGradient id="gSet" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE3A0" stop-opacity=".85"/><stop offset="1" stop-color="#FFC58A" stop-opacity="0"/></radialGradient>
       </defs>
       <rect width="400" height="520" fill="url(#gSunset)"/>
-      <circle class="sun" cx="200" cy="410" r="160" fill="url(#gSet)"/>
-      <circle cx="200" cy="420" r="44" fill="#FFDE8C" opacity=".9"/>
-      <g class="bird" stroke="#7A4E63" stroke-width="3" fill="none" stroke-linecap="round">
-        <path d="M306 108 q7 -7 14 0 M320 108 q7 -7 14 0"/>
-        <path d="M270 134 q5 -5 10 0 M280 134 q5 -5 10 0" opacity=".7"/>
-      </g>
+      <circle class="sun" cx="140" cy="420" r="130" fill="url(#gSet)"/>
+      <rect y="434" width="400" height="86" fill="#7FA35D"/>
+      <rect y="434" width="400" height="6" fill="#6D9150"/>
       <g class="fl fl5">
-        <path d="M352 434 C356 356 346 300 356 236" stroke="#8A5A38" stroke-width="9" fill="none" stroke-linecap="round"/>
-        <g stroke="#3E5536" stroke-width="7" fill="none" stroke-linecap="round">
-          <path d="M356 236 C338 218 316 212 296 218 M356 236 C346 212 330 200 310 196 M356 236 C360 210 372 196 390 190 M356 236 C374 218 392 214 400 218 M356 236 C376 236 392 246 398 258 M356 236 C340 240 328 252 322 264"/>
+        <path d="M346 438 C350 372 342 326 350 274" stroke="#6E4A30" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <g stroke="#42553B" stroke-width="6" fill="none" stroke-linecap="round">
+          <path d="M350 274 C334 260 314 256 298 262 M350 274 C344 254 330 244 312 242 M350 274 C356 252 368 242 384 238 M350 274 C366 260 382 258 394 264 M350 274 C366 276 378 286 382 298 M350 274 C338 280 330 290 328 302"/>
         </g>
       </g>
-      <g class="fl fl6">
-        <path d="M34 436 C30 386 38 352 32 312" stroke="#8A5A38" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <g stroke="#46603D" stroke-width="5.5" fill="none" stroke-linecap="round">
-          <path d="M32 312 C20 298 6 294 -6 298 M32 312 C28 292 18 282 4 278 M32 312 C38 292 48 282 62 278 M32 312 C46 300 60 298 70 302 M32 312 C44 314 54 322 58 332"/>
-        </g>
-      </g>
-      <rect y="430" width="400" height="90" fill="url(#gLawn)"/>
-      <g fill="#fff">
-        <rect x="0" y="416" width="88" height="5" rx="2"/>
-        <rect x="8" y="404" width="7" height="26" rx="2"/><rect x="26" y="404" width="7" height="26" rx="2"/><rect x="44" y="404" width="7" height="26" rx="2"/><rect x="62" y="404" width="7" height="26" rx="2"/><rect x="78" y="404" width="7" height="26" rx="2"/>
-        <rect x="312" y="416" width="88" height="5" rx="2"/>
-        <rect x="318" y="404" width="7" height="26" rx="2"/><rect x="336" y="404" width="7" height="26" rx="2"/><rect x="354" y="404" width="7" height="26" rx="2"/><rect x="372" y="404" width="7" height="26" rx="2"/><rect x="388" y="404" width="7" height="26" rx="2"/>
-      </g>
-      <rect x="252" y="214" width="26" height="54" rx="3" fill="#A2543F"/>
-      <rect x="249" y="210" width="32" height="8" rx="3" fill="#8A4335"/>
-      <path d="M66 280 L200 190 L334 280 Z" fill="#8A4A3A"/>
-      <path d="M66 280 L200 190 L334 280 L334 290 L200 202 L66 290 Z" fill="#7A4033"/>
-      <rect x="60" y="278" width="280" height="9" rx="3" fill="#FBF4E8"/>
-      <rect x="92" y="287" width="216" height="143" fill="url(#gHouse2)"/>
-      <rect x="262" y="287" width="46" height="143" fill="#1B1D20" opacity=".05"/>
+      <rect x="236" y="252" width="20" height="42" rx="2" fill="#8A5A46"/>
+      <path d="M84 306 L200 232 L316 306 Z" fill="#5C4038"/>
+      <rect x="80" y="304" width="240" height="8" rx="3" fill="#FBF4E8"/>
+      <rect x="100" y="312" width="200" height="122" fill="#FAF3E6"/>
       <g>
-        <rect x="118" y="300" width="46" height="38" rx="3" fill="#fff"/>
-        <rect x="123" y="305" width="36" height="28" rx="2" fill="#FFD98A"/>
-        <path d="M141 305 v28" stroke="#fff" stroke-width="3"/>
-        <rect x="236" y="300" width="46" height="38" rx="3" fill="#fff"/>
-        <rect x="241" y="305" width="36" height="28" rx="2" fill="#FFD98A"/>
-        <path d="M259 305 v28" stroke="#fff" stroke-width="3"/>
+        <rect x="124" y="336" width="44" height="52" rx="3" fill="#fff"/>
+        <rect x="129" y="341" width="34" height="42" rx="2" fill="#F4D9A0"/>
+        <path d="M146 341 v42" stroke="#fff" stroke-width="3"/>
       </g>
       <g>
-        <rect x="106" y="356" width="12" height="52" rx="2" fill="#5B6B4A"/>
-        <rect x="120" y="354" width="52" height="54" rx="3" fill="#fff"/>
-        <rect x="125" y="359" width="42" height="44" rx="2" fill="#FFD98A"/>
-        <path d="M146 359 v44 M125 381 h42" stroke="#fff" stroke-width="3"/>
-        <rect x="174" y="356" width="12" height="52" rx="2" fill="#5B6B4A"/>
+        <rect x="232" y="336" width="44" height="52" rx="3" fill="#fff"/>
+        <rect x="237" y="341" width="34" height="42" rx="2" fill="#F4D9A0"/>
+        <path d="M254 341 v42" stroke="#fff" stroke-width="3"/>
       </g>
+      <rect x="184" y="360" width="32" height="74" rx="2" fill="#4A3B54"/>
+      <circle cx="210" cy="398" r="3" fill="#C9A64B"/>
       <g>
-        <path d="M206 352 L233 334 L260 352 L254 362 L233 348 L212 362 Z" fill="#fff"/>
-        <rect x="214" y="356" width="38" height="74" rx="3" fill="#5F35C9"/>
-        <rect x="220" y="362" width="26" height="22" rx="2" fill="#FFD98A" opacity=".9"/>
-        <circle cx="245" cy="398" r="3.5" fill="#C9A64B"/>
-      </g>
-      <path d="M214 430 L252 430 L268 520 L198 520 Z" fill="#EDDFC2"/>
-      <path d="M214 452 h44 M208 478 h52 M202 504 h60" stroke="#DCCBA8" stroke-width="3"/>
-      <g fill="#6E9A4E"><circle cx="102" cy="428" r="17"/><circle cx="128" cy="432" r="13"/><circle cx="288" cy="430" r="15"/><circle cx="311" cy="434" r="11"/></g>
-      <g fill="#F2A3B0"><circle cx="96" cy="422" r="3"/><circle cx="110" cy="418" r="3"/><circle cx="124" cy="426" r="3"/><circle cx="284" cy="424" r="3"/><circle cx="298" cy="420" r="3"/></g>
-      <g transform="rotate(-3 84 452)">
-        <rect x="80" y="452" width="7" height="60" rx="2" fill="#F7F4EC"/>
-        <rect x="54" y="440" width="60" height="40" rx="6" fill="#FCFAF5" stroke="#E2DACB" stroke-width="2"/>
-        <text x="84" y="466" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#111">SOLD</text>
-        <text x="84" y="474" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="6.5" font-weight="600" letter-spacing=".5" fill="#8A8578">OVER ASKING</text>
+        <rect x="66" y="452" width="6" height="52" rx="2" fill="#F7F4EC"/>
+        <rect x="42" y="442" width="54" height="34" rx="5" fill="#FCFAF5"/>
+        <text x="69" y="464" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="800" letter-spacing="1.2" fill="#111">SOLD</text>
       </g>
     </svg>
     <div class="pcard-txt"><span>Selling your home?</span><b>Get top dollar <em aria-hidden="true">&rarr;</em></b></div>
   </a>
   <a href="/zoom" class="pcard pc-flower">
     <svg class="pcard-art" viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="gSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A3C8EC"/><stop offset="1" stop-color="#E4F0FA"/></linearGradient>
-      </defs>
+      <defs><linearGradient id="gSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B4D1EE"/><stop offset="1" stop-color="#E9F2FA"/></linearGradient></defs>
       <rect width="400" height="520" fill="url(#gSky2)"/>
-      <g class="cl cl3" fill="#fff" opacity=".7"><ellipse cx="234" cy="96" rx="40" ry="13"/><ellipse cx="264" cy="88" rx="26" ry="10"/></g>
-      <g class="cl cl1" fill="#fff" opacity=".5"><ellipse cx="316" cy="140" rx="32" ry="10"/><ellipse cx="338" cy="133" rx="18" ry="8"/></g>
-      <g opacity=".45">
-        <g class="fl fl7"><path d="M60 520 C62 484 56 466 62 442" stroke="#7C9769" stroke-width="3.5" fill="none" stroke-linecap="round"/><g transform="translate(62,432)"><ellipse rx="9" ry="16" transform="rotate(15)" fill="#B79BFF"/><ellipse rx="9" ry="16" transform="rotate(75)" fill="#B79BFF"/><ellipse rx="9" ry="16" transform="rotate(135)" fill="#C9B3FF"/><circle r="6" fill="#F5C544"/></g></g>
-        <g class="fl fl8"><path d="M330 520 C332 490 326 474 332 452" stroke="#7C9769" stroke-width="3.5" fill="none" stroke-linecap="round"/><g transform="translate(332,442)"><ellipse rx="8" ry="14" transform="rotate(30)" fill="#F5D34E"/><ellipse rx="8" ry="14" transform="rotate(90)" fill="#F5D34E"/><ellipse rx="8" ry="14" transform="rotate(150)" fill="#EFC53A"/><circle r="5" fill="#7A4A20"/></g></g>
-      </g>
       <g class="fl fl1">
-        <path d="M258 520 C255 436 265 386 260 322" stroke="#5B7C4A" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <path d="M259 452 C244 446 236 434 236 420 C250 426 258 436 259 452 Z" fill="#6B8A57"/>
-        <g transform="translate(260,308)">
-          <g fill="#7A4DFF"><ellipse rx="15" ry="30" transform="rotate(0)"/><ellipse rx="15" ry="30" transform="rotate(45)"/><ellipse rx="15" ry="30" transform="rotate(90)"/><ellipse rx="15" ry="30" transform="rotate(135)"/></g>
-          <g fill="#8E6BFF" opacity=".85"><ellipse rx="12" ry="24" transform="rotate(22)"/><ellipse rx="12" ry="24" transform="rotate(67)"/><ellipse rx="12" ry="24" transform="rotate(112)"/><ellipse rx="12" ry="24" transform="rotate(157)"/></g>
-          <circle r="13" fill="#F5C544"/><circle r="13" fill="#E8B32E" opacity=".4" transform="translate(2,2)"/>
+        <path d="M268 520 C265 448 273 404 268 348" stroke="#5B7C4A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        <path d="M268 460 C254 454 247 443 247 430 C260 436 267 446 268 460 Z" fill="#6B8A57"/>
+        <g transform="translate(268,334)">
+          <g fill="#7A4DFF"><ellipse rx="14" ry="28" transform="rotate(0)"/><ellipse rx="14" ry="28" transform="rotate(45)"/><ellipse rx="14" ry="28" transform="rotate(90)"/><ellipse rx="14" ry="28" transform="rotate(135)"/></g>
+          <circle r="12" fill="#F5C544"/>
         </g>
       </g>
       <g class="fl fl2">
-        <path d="M336 520 C340 464 330 428 336 386" stroke="#5B7C4A" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M337 470 C350 464 356 454 356 442 C344 447 337 456 337 470 Z" fill="#6B8A57"/>
-        <g transform="translate(336,372)">
-          <g fill="#5928E4"><ellipse rx="12" ry="23" transform="rotate(15)"/><ellipse rx="12" ry="23" transform="rotate(60)"/><ellipse rx="12" ry="23" transform="rotate(105)"/><ellipse rx="12" ry="23" transform="rotate(150)"/></g>
-          <circle r="9" fill="#F5C544"/>
-        </g>
-      </g>
-      <g class="fl fl3">
-        <path d="M186 520 C188 466 180 438 186 402" stroke="#6B8A57" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-        <g transform="translate(186,390)">
-          <g fill="#FDFDFB"><ellipse rx="10" ry="19" transform="rotate(0)"/><ellipse rx="10" ry="19" transform="rotate(36)"/><ellipse rx="10" ry="19" transform="rotate(72)"/><ellipse rx="10" ry="19" transform="rotate(108)"/><ellipse rx="10" ry="19" transform="rotate(144)"/></g>
+        <path d="M330 520 C333 476 326 448 331 414" stroke="#5B7C4A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <g transform="translate(330,402)">
+          <g fill="#5928E4"><ellipse rx="10" ry="19" transform="rotate(20)"/><ellipse rx="10" ry="19" transform="rotate(65)"/><ellipse rx="10" ry="19" transform="rotate(110)"/><ellipse rx="10" ry="19" transform="rotate(155)"/></g>
           <circle r="8" fill="#F5C544"/>
         </g>
       </g>
-      <g class="fl fl4">
-        <path d="M104 520 C106 480 100 460 104 434" stroke="#6B8A57" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <g transform="translate(104,458)" fill="#9F7BFF">
-          <circle r="5.5" cy="-26"/><circle r="6" cx="-7" cy="-14"/><circle r="6" cx="7" cy="-14"/><circle r="6.5" cx="-8" cy="0"/><circle r="6.5" cx="8" cy="0"/><circle r="6" cy="-8" fill="#8E6BFF"/>
+      <g class="fl fl3">
+        <path d="M214 520 C216 482 210 462 214 438" stroke="#6B8A57" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <g transform="translate(214,426)">
+          <g fill="#F5D34E"><ellipse rx="9" ry="16" transform="rotate(0)"/><ellipse rx="9" ry="16" transform="rotate(60)"/><ellipse rx="9" ry="16" transform="rotate(120)"/></g>
+          <circle r="6.5" fill="#7A4A20"/>
         </g>
-      </g>
-      <g class="bfly">
-        <g transform="rotate(-14)">
-          <ellipse cx="-7" cy="-4" rx="9" ry="6.5" fill="#5928E4" transform="rotate(-28 -7 -4)"/>
-          <ellipse cx="7" cy="-4" rx="9" ry="6.5" fill="#8E6BFF" transform="rotate(28 7 -4)"/>
-          <ellipse cx="-6" cy="4" rx="6" ry="4.5" fill="#7A4DFF" transform="rotate(-18 -6 4)"/>
-          <ellipse cx="6" cy="4" rx="6" ry="4.5" fill="#9F7BFF" transform="rotate(18 6 4)"/>
-          <rect x="-1.5" y="-8" width="3" height="15" rx="1.5" fill="#26232E"/>
-        </g>
-      </g>
-      <g stroke="#7C9769" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55">
-        <path d="M36 520 C38 502 32 492 38 478 M150 520 C148 504 154 494 150 482 M232 520 C234 504 228 494 234 480 M296 520 C294 506 300 496 296 484 M376 520 C378 504 372 494 378 480"/>
       </g>
     </svg>
     <div class="pcard-txt"><span>No pressure. No pitch.</span><b>Book a 15-min call <em aria-hidden="true">&rarr;</em></b></div>
