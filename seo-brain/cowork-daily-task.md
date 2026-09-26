@@ -12,7 +12,7 @@ Read before acting: `seo-brain/BRAIN.md`, `seo-brain/goal.json`,
 
 ## Verified facts (NEVER state anything beyond these; never inflate)
 Jesse Oñate · bilingual EN/ES realtor · DRE #02133131 · REALTOR® since Dec 2020 · **5.0★ from ~20
-Google reviews** · GBP/office 830 N Wilcox Ave, Montebello CA 90640 · (562) 609-4200 · serves Downey,
+Google reviews** · no public office address (service-area business; never state or publish an address) · (562) 609-4200 · serves Downey,
 Montebello, Pico Rivera, Norwalk, Whittier, Bell Gardens, Bellflower. Goal = Downey/SE-LA **map-pack
 share** + qualified/Spanish organic + branded. Bottleneck = REACH (impressions); ~70% of the win is
 off-page (only Jesse can submit it). His GBP pin is in Montebello, so push into Downey via Downey-relevant

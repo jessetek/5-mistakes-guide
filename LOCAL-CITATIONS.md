@@ -12,7 +12,9 @@ To avoid Google penalties for inconsistent business signals, **always use this e
 
 ```
 Business name:    Jesse Onate
-Business address: 830 N Wilcox Ave, Montebello, CA 90640
+Business address: NONE. List as a service-area business and hide the
+                  address wherever the site allows it (Jesse,
+                  2026-09-25). Never publish an office address.
 Business phone:   (562) 609-4200
 Website:          https://jessetek.net/
 Email:            jesse@jesseonate.com

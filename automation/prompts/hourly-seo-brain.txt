@@ -24,8 +24,8 @@ is pending, IDLE and exit — idle runs should be near-free.
 
 ## 3. HARD SAFETY RULES — breaking one is worse than doing nothing
 - NEVER invent facts. The ONLY verified facts you may state: DRE #02133131; REALTOR® since Dec 2020;
-  5.0★ from ~20 Google reviews (NEVER inflate the count); bilingual EN/ES; office 830 N Wilcox Ave,
-  Montebello CA 90640; phone (562) 609-4200; serves Downey/Montebello/Pico Rivera/Norwalk/Whittier/
+  5.0★ from ~20 Google reviews (NEVER inflate the count); bilingual EN/ES; NO public office address
+  (service-area business, never state or publish one); phone (562) 609-4200; serves Downey/Montebello/Pico Rivera/Norwalk/Whittier/
   Bell Gardens/Bellflower. If you lack a fact (exact closings, market stats, client anecdotes) DO NOT
   fabricate it — leave it out or draft for Jesse.
 - NEVER re-add aggregateRating schema. NEVER fabricate reviews, ratings, testimonials, or stats.
