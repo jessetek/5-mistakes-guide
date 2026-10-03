@@ -396,6 +396,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
 /* white screens: balance the empty bottom half (center content, biased up) */
 #qs.bg-white .qt{margin-top:auto}
 #qs.bg-white #qBody{margin-bottom:auto;padding-bottom:9vh}
+#qs.is-addr .qt{margin-top:0}#qs.is-addr .top{margin-bottom:18px}#qs.is-addr .sheet{margin-top:16px}#qs.is-addr .sheet .skip{margin:12px auto 0;color:var(--mut)}#qs.is-addr .asub{margin-bottom:10px}#qs.is-addr #qBody{margin-bottom:0;padding-bottom:0}
 #qs.bg-white .f-rows{gap:12px}
 #qs.bg-white .f-rows .ans{height:64px;font-size:17px}
 #qs.bg-white .f-pills .ans{height:64px;font-size:18px}
@@ -604,6 +605,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
     var ic=$('qIco');if(bg!=='white'&&look[1]&&!/^(cards|rows|pills|field)$/.test(look[1])){ic.src=icoUrl(look[1]);ic.style.display=''}else{ic.removeAttribute('src');ic.style.display='none'}
     var m=document.querySelector('meta[name=theme-color]');if(m)m.content=bg==='white'?'#FFFFFF':(bg==='sunset'?'#7A5BC8':'#2F5BEA');
     $('qTitle').className='qt h-'+fmt;
+    $('qs').classList.toggle('is-addr',q.type==='addr');
     $('qTitle').textContent=q.q;
     document.querySelector('#qs .pad').scrollTop=0;
     var body=$('qBody');body.innerHTML='';
@@ -658,7 +660,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
       var aw=el('label','swrap');aw.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';aw.appendChild(ai);
       ab.appendChild(aw);ab.appendChild(ago);
       var sk=el('button','skip','Skip for now');sk.onclick=function(){delete A.address;next()};
-      body.appendChild(ab);body.appendChild(sk);
+      ab.appendChild(sk);body.appendChild(ab);
       setTimeout(function(){try{ai.focus({preventScroll:true})}catch(e){}},350);
     }else if(q.type==='slider'){
       var v=parseInt(A.rentNum||2500,10);
