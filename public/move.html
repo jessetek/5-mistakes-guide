@@ -401,6 +401,15 @@ input,select,textarea{font-size:max(16px,1em)!important}
 #qs.bg-white .f-rows .ans{height:64px;font-size:17px}
 #qs.bg-white .f-pills .ans{height:64px;font-size:18px}
 #qs.bg-white .f-cards:not(.many) .ans{height:70px}
+
+/* last step: while typing, compact the header so fields + button stay above the iPhone keyboard */
+#cap .me,#cap .capsub,#cap .title-dark{transition:all .25s ease}
+#cap.typing .me{height:0;width:0;margin:0;opacity:0;overflow:hidden}
+#cap.typing .capsub{display:none}
+#cap.typing .title-dark{font-size:21px;line-height:1.3}
+#cap.typing .top{margin-bottom:10px}
+#cap.typing .fine{margin-top:8px}
+#cap.typing .pad{padding-top:calc(6px + env(safe-area-inset-top))}#cap.typing .top{height:34px;margin-bottom:6px}#cap.typing .fwrap{margin-top:8px}#cap.typing .errmsg{margin:4px 0 2px;min-height:14px}#cap.typing .title-dark{font-size:20px}
 @media(max-height:620px){.top{margin-bottom:14px}.cards{gap:46px;margin-top:48px}.card{height:118px}.card .ico{width:92px;height:92px;top:-34px}.answers{margin-top:26px;gap:12px}.ans{height:50px}.f-cards .ans{height:56px}.f-cards.many .ans{height:42px;font-size:16px}.f-cards.many{gap:7px}#qs.bg-white .qnum{padding:8px 14px}#qs.bg-white .qnum b{font-size:19px}.f-rows .ans{height:52px}.f-pills .ans{height:52px}.f-pills{gap:10px;margin-top:22px}.qico{width:92px;height:92px}#qs.bg-white .qt{margin-top:16px;font-size:24px}#qs .top{margin-bottom:16px}#qs .pad{padding-top:calc(12px + env(safe-area-inset-top))}.pickl{margin-top:18px}.qt{font-size:24px}.trophy{width:96px;height:96px;margin-bottom:4px}#res .pad{padding-top:calc(18px + env(safe-area-inset-top))}#res .title-dark{font-size:23px}#res .rs{font-size:14px;margin-top:6px}.gcard{margin-top:14px;padding:12px 14px;gap:10px}.gcard img{width:44px;height:44px}.gcard b{font-size:15px;white-space:nowrap}.gcard span{font-size:11.5px;white-space:nowrap}#res .spacer{flex:0 0 18px;min-height:18px}#res .chips2{margin-top:10px}.chip2{font-size:12px;padding:5px 10px}.closex{top:10px;left:14px;width:34px;height:34px}.title-dark{font-size:24px}.sheet{margin-top:18px}.note{margin-top:12px}}
 @media (max-height:620px){#qs .qico{width:50px;height:50px;top:calc(2px + env(safe-area-inset-top));right:18px}#qs.has-ico .top{padding-right:64px}#qs .top{margin-bottom:18px}}
 </style>
@@ -727,6 +736,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
     e.target.value=o;
   });
 
+  ['fName','fPhone'].forEach(function(id){var f=$(id);f.addEventListener('focus',function(){$('cap').classList.add('typing')});f.addEventListener('blur',function(){setTimeout(function(){if(!/^(fName|fPhone)$/.test((document.activeElement||{}).id))$('cap').classList.remove('typing')},120)})});
   $('fName').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('fPhone').focus()}});
   $('capForm').addEventListener('submit',function(e){
     e.preventDefault();
