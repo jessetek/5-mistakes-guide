@@ -125,23 +125,37 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .slider .u{font-size:14px;color:var(--mut)}
 input[type=range]{width:100%;margin:14px 0 2px;accent-color:var(--purple);height:44px;touch-action:none}
 .ends{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
-.fan{position:relative;width:220px;height:190px}
-.fan img{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:16px;border:5px solid #fff;object-fit:cover;box-shadow:0 14px 28px rgba(10,20,90,.3);animation:deal 2.7s ease-in-out infinite}
-.fan img:nth-child(1){--r:-12deg;--x:-46px;animation-delay:0s}
-.fan img:nth-child(2){--r:10deg;--x:46px;animation-delay:.15s}
-.fan img:nth-child(3){--r:-2deg;--x:0px;animation-delay:.3s}
-@keyframes deal{0%{transform:translateX(0) rotate(0) scale(.9);opacity:0}18%,100%{transform:translateX(var(--x)) rotate(var(--r)) scale(1);opacity:1}}
+/* loading photo wall (option 3, Jesse 2026-10-03): tilted rows of real closings scrolling */
+.ldwall{position:relative;width:calc(100% + 48px);margin:0 -24px;height:290px;flex:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.ldwall .wall{position:absolute;left:50%;top:50%;width:620px;margin-left:-310px;transform:translateY(-50%) rotate(-8deg);display:flex;flex-direction:column;gap:10px}
+.ldwall .row{display:flex;gap:10px;width:max-content}
+#load.on .ldwall .row{animation:slide 14s linear infinite,rise .5s cubic-bezier(.2,.8,.2,1) backwards}
+#load.on .ldwall .row:nth-child(2){animation:slide 14s linear infinite reverse,rise .5s .12s cubic-bezier(.2,.8,.2,1) backwards}
+#load.on .ldwall .row:nth-child(3){animation:slide 18s linear infinite,rise .5s .24s cubic-bezier(.2,.8,.2,1) backwards}
+.ldwall img{width:124px;height:88px;border-radius:12px;object-fit:cover;border:3px solid #fff;flex:none;background:rgba(255,255,255,.25)}
+@keyframes slide{to{transform:translateX(-50%)}}
 
 /* loading */
 #load .pad{align-items:center;justify-content:center;text-align:center}
 .float{width:120px;height:120px;animation:bob 1.6s ease-in-out infinite;filter:drop-shadow(0 16px 18px rgba(10,30,110,.35))}
 @keyframes bob{50%{transform:translateY(-10px) rotate(-6deg)}}
 #load h2{color:#fff;font-size:25px;font-weight:600;margin-top:24px}
-.checks{margin-top:22px;display:flex;flex-direction:column;gap:14px;text-align:left}
-.checks li{list-style:none;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:rgba(255,255,255,.55);transition:color .3s}
-.checks li:before{content:"";width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.5);transition:all .3s;flex:none}
+.ldbar{width:280px;max-width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,.22);margin:18px auto 0;overflow:hidden}
+.ldbar i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#7CF0A0,#34C759);transition:width .5s cubic-bezier(.32,.72,0,1)}
+.checks{margin-top:20px;display:flex;flex-direction:column;gap:13px;text-align:left}
+.checks li{list-style:none;display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:rgba(255,255,255,.5);transition:color .3s}
+.checks .ck{position:relative;width:24px;height:24px;border-radius:50%;flex:none;border:2px solid rgba(255,255,255,.4)}
+.checks .ck svg{position:absolute;inset:0;width:100%;height:100%;padding:4px;opacity:0}
+.checks .ck path{fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:22;stroke-dashoffset:22}
+.checks li.act{color:rgba(255,255,255,.88)}
+.checks li.act .ck{border-color:rgba(255,255,255,.22)}
+.checks li.act .ck:after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid transparent;border-top-color:#fff;border-right-color:#fff;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 .checks li.done{color:#fff}
-.checks li.done:before{border-color:transparent;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat,linear-gradient(180deg,#F0DC17,#C2C414)}
+.checks li.done .ck{border-color:transparent;background:#34C759;box-shadow:0 4px 12px rgba(31,168,74,.45);animation:ckpop .42s cubic-bezier(.3,1.8,.5,1)}
+.checks li.done .ck svg{opacity:1}
+.checks li.done .ck path{transition:stroke-dashoffset .3s .08s ease-out;stroke-dashoffset:0}
+@keyframes ckpop{from{transform:scale(.6)}}
 
 /* capture: "Daily Challenge" layout */
 .title-dark{font-size:28px;font-weight:600;line-height:1.25;color:var(--ink)}
@@ -228,7 +242,6 @@ input[type=range]{width:100%;margin:14px 0 2px;accent-color:var(--purple);height
 .f-rows .ans .lbl{flex:1}
 .f-rows .ans .ckc{width:24px;height:24px;border-radius:50%;background:var(--pill);flex:none}
 .f-rows .ans.sel{background:linear-gradient(180deg,var(--yel1),var(--yel2));color:#fff;box-shadow:0 4px 0 var(--yelEdge)}
-.f-rows .ans.sel .rk{color:#B0A800}
 .f-rows .ans.sel .ckc{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23B0A800' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
 .f-rows .ans.sel:after{display:none}
 /* format: pill tabs like "Today / Week / All Time" */
@@ -292,7 +305,6 @@ input[type=range]{width:100%;margin:14px 0 2px;accent-color:var(--purple);height
 .f-rows .ans.pc2 .rk{background:linear-gradient(135deg,#8E6BF0,#C79BEB)}
 .f-rows .ans.pc3 .rk{background:linear-gradient(135deg,#F59E5B,#F8C963)}
 .f-rows .ans.pc4 .rk{background:linear-gradient(135deg,#2EC4B6,#4FC6F7)}
-.f-rows .ans.sel .rk{background:#fff;color:#B0A800}
 /* capture fields + stat card get a hint of color */
 .field{background:#F4F6FC}
 #qs.bg-white .qnum{background:rgba(255,255,255,.92);border:1px solid #EEF1F7}
@@ -412,6 +424,138 @@ input,select,textarea{font-size:max(16px,1em)!important}
 #cap.typing .pad{padding-top:calc(6px + env(safe-area-inset-top))}#cap.typing .top{height:34px;margin-bottom:6px}#cap.typing .fwrap{margin-top:8px}#cap.typing .errmsg{margin:4px 0 2px;min-height:14px}#cap.typing .title-dark{font-size:20px}
 @media(max-height:620px){.top{margin-bottom:14px}.cards{gap:46px;margin-top:48px}.card{height:118px}.card .ico{width:92px;height:92px;top:-34px}.answers{margin-top:26px;gap:12px}.ans{height:50px}.f-cards .ans{height:56px}.f-cards.many .ans{height:42px;font-size:16px}.f-cards.many{gap:7px}#qs.bg-white .qnum{padding:8px 14px}#qs.bg-white .qnum b{font-size:19px}.f-rows .ans{height:52px}.f-pills .ans{height:52px}.f-pills{gap:10px;margin-top:22px}.qico{width:92px;height:92px}#qs.bg-white .qt{margin-top:16px;font-size:24px}#qs .top{margin-bottom:16px}#qs .pad{padding-top:calc(12px + env(safe-area-inset-top))}.pickl{margin-top:18px}.qt{font-size:24px}.trophy{width:96px;height:96px;margin-bottom:4px}#res .pad{padding-top:calc(18px + env(safe-area-inset-top))}#res .title-dark{font-size:23px}#res .rs{font-size:14px;margin-top:6px}.gcard{margin-top:14px;padding:12px 14px;gap:10px}.gcard img{width:44px;height:44px}.gcard b{font-size:15px;white-space:nowrap}.gcard span{font-size:11.5px;white-space:nowrap}#res .spacer{flex:0 0 18px;min-height:18px}#res .chips2{margin-top:10px}.chip2{font-size:12px;padding:5px 10px}.closex{top:10px;left:14px;width:34px;height:34px}.title-dark{font-size:24px}.sheet{margin-top:18px}.note{margin-top:12px}}
 @media (max-height:620px){#qs .qico{width:50px;height:50px;top:calc(2px + env(safe-area-inset-top));right:18px}#qs.has-ico .top{padding-right:64px}#qs .top{margin-bottom:18px}}
+
+/* ===== Apple pass (2026-10-03): iOS look and feel on top of the brand colors =====
+   SF Pro type, iOS buttons and press states, Liquid Glass back buttons, grouped lists with
+   Settings-style icons, iOS search bar, slider and form, system blue checkmarks, iMessage preview. */
+:root{--font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue","Segoe UI",Roboto,"Poppins",sans-serif;
+  --ios-blue:#007AFF;--ios-green:#34C759;--ios-red:#FF3B30;--ios-bg:#F2F2F7;--ios-fill:rgba(118,118,128,.12);--ios-sep:rgba(60,60,67,.2);--ios-2:rgba(60,60,67,.6);--spring:cubic-bezier(.32,.72,0,1)}
+body{font-family:var(--font);letter-spacing:-.01em}
+.logo{font-family:"Poppins",sans-serif;letter-spacing:-1px}
+/* screen push: iOS navigation curve */
+.screen{transform:translateX(40px);transition:opacity .3s ease,transform .5s var(--spring)}
+.screen.on{transform:none}
+#qs{transition:opacity .3s ease,transform .5s var(--spring),background-color .3s}
+#qs.rev:not(.on){transform:translateX(-40px)}
+/* type: SF Pro Display titles, bold with tight tracking */
+.qt,.title-pink,.title-dark,#load h2{font-weight:700;letter-spacing:-.025em}
+.sub,.csub,#pick .sub{color:var(--ios-2)}
+.capsub,.rs,.asub,.fine{color:var(--ios-2)}
+.pickl{font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:rgba(235,240,255,.82)}
+/* grouped background on light screens */
+#qs.bg-white,#pick,#cap,#res{background-color:var(--ios-bg)}
+/* buttons: iOS filled buttons, 14pt corners, spring press */
+.btn{height:52px;border-radius:14px;font-size:17px;font-weight:600;transition:transform .35s var(--spring),opacity .2s}
+.btn:active{transform:scale(.97);opacity:.85}
+.btn-white,.btn-white:active{box-shadow:0 1px 2px rgba(10,20,80,.08),0 8px 24px rgba(10,30,110,.16)}
+.btn-purple,.btn-purple:active{background:var(--purple);box-shadow:0 8px 20px rgba(89,40,228,.26)}
+.btn:disabled{opacity:.35}
+.btn .bi{width:20px;height:20px}
+/* Liquid Glass round buttons */
+.bk,.closex{width:44px;height:44px;border-radius:50%;-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);transition:transform .35s var(--spring)}
+.bk:active,.closex:active{transform:scale(.9)}
+.bk svg{width:19px;height:19px}
+.blue .bk,#qs.bg-blue .bk,#qs.bg-sunset .bk{color:#fff;background:rgba(255,255,255,.2);box-shadow:inset 0 0 0 .5px rgba(255,255,255,.55),inset 0 1px 0 rgba(255,255,255,.4),0 4px 14px rgba(10,20,80,.14)}
+.white .bk,#qs.bg-white .bk,.closex{color:#1C1C1E;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 .5px rgba(0,0,0,.08),0 4px 16px rgba(30,40,90,.10)}
+.closex svg{width:16px;height:16px}
+/* progress: thin iOS progress view */
+.pbar{height:6px;background:rgba(255,255,255,.26)}
+#qs.bg-white .pbar{background:var(--ios-fill)}
+#qs.bg-white .pbar i{background:var(--ios-blue)}
+/* answer buttons on blue and sunset screens: clean iOS buttons, system blue checkmark when picked */
+.ans,.f-glass .ans{height:54px;border-radius:14px;font-size:17px;font-weight:600;color:var(--ans);background:#fff;border:0;text-shadow:none;box-shadow:0 1px 2px rgba(10,20,80,.08),0 6px 18px rgba(10,30,110,.14);transition:transform .35s var(--spring),box-shadow .2s,color .2s}
+.f-glass .ans{color:#5B36CC}
+.ans:active,.f-glass .ans:active{transform:scale(.97);box-shadow:0 1px 2px rgba(10,20,80,.08),0 6px 18px rgba(10,30,110,.14)}
+.ans.sel,.f-glass .ans.sel{background:#fff;color:var(--ios-blue);text-shadow:none;box-shadow:0 0 0 3px rgba(255,255,255,.6),0 10px 24px rgba(10,30,110,.22)}
+.ans.sel:after,.f-glass .ans.sel:after{width:24px;height:24px;margin-top:-12px;right:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23007AFF'/%3E%3Cpath d='M7 12.4l3.3 3.3L17 9' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/24px no-repeat}
+@keyframes pick{0%{transform:scale(1)}40%{transform:scale(.96)}100%{transform:scale(1)}}
+/* gradient cards and the path picker: round iOS check circles */
+.f-cards .ans{border-radius:16px;color:#fff}
+.f-cards .ans .ckc,#pick .card .ck{border-radius:50%}
+.f-cards .ans.sel{color:#fff}
+.f-cards .ans.sel .ckc{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23007AFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat}
+.card{transition:transform .35s var(--spring)}.card:active{transform:scale(.97)}
+/* pills: capsules with spring press */
+.f-pills .ans{border-radius:999px}
+#qs.bg-white .f-pills .ans{height:58px;font-size:17px}
+/* leaderboard rows become an iOS inset grouped list with Settings style icons */
+.answers.f-rows{gap:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(30,40,90,.07)}
+#qs.bg-white .f-rows .ans,.f-rows .ans{height:56px;border-radius:0;background:#fff;color:#1C1C1E;font-size:17px;font-weight:500;box-shadow:none;padding:0 16px;gap:14px;transition:background .25s}
+.f-rows .ans+.ans:before{content:"";position:absolute;left:60px;right:0;top:0;height:1px;transform:scaleY(.5);transform-origin:top;background:var(--ios-sep)}
+.f-rows .ans .rk{width:30px;height:30px;border-radius:8px;font-size:15px;box-shadow:none}
+.f-rows .ans .ckc{width:22px;height:22px;background:none;border-radius:0}
+.f-rows .ans:active{transform:none;background:#E5E5EA}
+.f-rows .ans.sel{background:#fff;color:#1C1C1E;box-shadow:none}
+.f-rows .ans.sel .ckc{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7' fill='none' stroke='%23007AFF' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.answers.f-rows>.ans.sel{animation:rowflash .5s ease!important}
+@keyframes rowflash{0%{background:#D1D1D6}100%{background:#fff}}
+/* city picker: iOS search bar + grouped list */
+.sheet{border-radius:16px;padding:12px}
+.csearch{height:40px;border-radius:10px;background:var(--ios-fill);font-size:17px}
+.csearch::placeholder{color:var(--ios-2)}
+.clist{gap:0;margin-top:10px}
+.crow{position:relative;height:50px;border-radius:0;background:#fff;font-size:17px;font-weight:500;padding:0 6px;color:#1C1C1E;transition:background .25s}
+.crow+.crow:before{content:"";position:absolute;left:50px;right:0;top:0;height:1px;transform:scaleY(.5);transform-origin:top;background:var(--ios-sep)}
+.crow:active{background:#E5E5EA}
+.crow .ck{width:22px;height:22px;background:none}
+.crow.sel{background:#fff;color:var(--ios-blue);text-shadow:none}
+.crow.sel .ck{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7' fill='none' stroke='%23007AFF' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.crow.sel .cav{box-shadow:none}
+.clist>.crow.sel{animation:rowflash .5s ease}
+.cav{width:30px;height:30px;border-radius:8px;font-size:15px;box-shadow:none}
+/* rent: iOS stepper buttons, SF Rounded number, iOS slider */
+.step-b{background:var(--ios-fill);color:var(--ios-blue);box-shadow:none;font-weight:500;transition:transform .3s var(--spring)}
+.step-b:active{transform:scale(.9);box-shadow:none}
+.slider .v{font-family:ui-rounded,"SF Pro Rounded",var(--font);font-variant-numeric:tabular-nums;color:#1C1C1E;letter-spacing:-.02em}
+.slider .u,.ends{color:var(--ios-2)}
+input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;accent-color:var(--ios-blue);--p:21%}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--ios-blue) var(--p),rgba(120,120,128,.2) var(--p))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-12px;border-radius:50%;background:#fff;box-shadow:0 .5px 4px rgba(0,0,0,.12),0 6px 13px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
+input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:rgba(120,120,128,.2)}
+input[type=range]::-moz-range-progress{height:4px;border-radius:2px;background:var(--ios-blue)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radius:50%;background:#fff;box-shadow:0 .5px 4px rgba(0,0,0,.12),0 6px 13px rgba(0,0,0,.12)}
+/* text fields: iOS filled fields; the last step uses an inset grouped card like Contacts */
+.field{background:var(--ios-fill);border:0;border-radius:12px;font-size:17px;caret-color:var(--ios-blue)}
+.field::placeholder{color:var(--ios-2)}
+.field:focus{background:#fff;box-shadow:0 0 0 1px var(--ios-sep)}
+.field.err{background:#FFF0EF;box-shadow:inset 0 0 0 1.5px var(--ios-red)}
+.errmsg{color:var(--ios-red)}
+.group{background:#fff;border-radius:14px;overflow:hidden;margin-top:20px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(30,40,90,.07)}
+#cap .group .fwrap{margin-top:0!important}
+.group .fwrap+.fwrap:before{content:"";position:absolute;left:48px;right:0;top:0;height:1px;transform:scaleY(.5);transform-origin:top;background:var(--ios-sep);z-index:1}
+.group .field,.group .field:focus{height:52px;background:#fff;border-radius:0;box-shadow:none}
+.group .field.err{background:#FFF0EF;box-shadow:none}
+.lockl{color:#248A3D}
+/* result: option 9 (Jesse 2026-10-03): green check, Jesse's card with Text, Call, Book */
+#res .rpad{justify-content:center;padding-top:calc(64px + env(safe-area-inset-top));padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+#res .rpad>*{position:relative;z-index:1}
+.rchk{width:72px;height:72px;display:block;margin:0 auto 14px;flex:none}
+.rchk circle{fill:var(--ios-green);transform-origin:center}
+.rchk path{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60}
+#res.on .rchk circle{animation:rpop .5s cubic-bezier(.3,1.6,.5,1) both}
+#res.on .rchk path{animation:rdraw .4s .35s ease-out forwards}
+@keyframes rpop{from{opacity:0;transform:scale(.6)}}
+@keyframes rdraw{to{stroke-dashoffset:0}}
+#res .title-dark{font-size:28px}
+#res .rs{font-size:16px;line-height:1.4;margin-top:8px}
+.jcard{margin-top:22px;background:#fff;border-radius:16px;padding:16px;text-align:left;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(30,40,90,.08)}
+.jrow{display:flex;align-items:center;gap:12px;padding-bottom:14px}
+.jrow img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}
+.jrow b{display:block;font-size:16px;font-weight:600;color:var(--ink)}
+.jrow span{font-size:13px;color:var(--ios-2)}
+.rstar{width:13px;height:13px;vertical-align:-2px;margin-right:2px;fill:#FFB800}
+.racts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ract{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:64px;border-radius:12px;background:#F2F2F7;color:var(--ios-blue);font-size:13px;font-weight:600;text-decoration:none;transition:transform .35s var(--spring),opacity .2s}
+.ract svg{width:24px;height:24px}
+.ract.main{background:var(--purple);color:#fff;box-shadow:0 8px 20px rgba(89,40,228,.26)}
+.ract:active{transform:scale(.95);opacity:.85}
+.rfoot{font-size:14px;color:var(--ios-2);margin-top:16px}
+#res.on .rpad>h2,#res.on .rpad>.rs{animation:rise .5s .1s var(--spring) backwards}
+#res.on .jcard{animation:rise .55s .2s var(--spring) backwards}
+#res.on .rfoot{animation:rise .5s .3s var(--spring) backwards}
+@media (max-height:620px){#res .rpad{padding-top:calc(52px + env(safe-area-inset-top))}.rchk{width:56px;height:56px;margin-bottom:8px}#res .title-dark{font-size:24px}.jcard{margin-top:14px;padding:12px}.ract{min-height:56px}}
+/* chips: system style */
+.chip2{font-weight:600}
 </style>
 </head>
 <body>
@@ -450,10 +594,11 @@ input,select,textarea{font-size:max(16px,1em)!important}
 
   <section class="screen blue" id="load">
     <div class="pad">
-      <div class="fan"><img src="/img/quiz/client-keys.webp" alt=""><img src="/img/quiz/client-family.webp" alt=""><img src="/img/quiz/client-papers.webp" alt=""></div>
+      <div class="ldwall" aria-hidden="true"><div class="wall" id="ldWall"></div></div>
       <h2>Building your plan</h2>
       <div class="chips2" id="ldChips"></div>
-      <ul class="checks" id="checks"><li>Reading your answers</li><li>Matching your timeline</li><li>Lining up your next steps</li></ul>
+      <div class="ldbar" aria-hidden="true"><i id="ldBar"></i></div>
+      <ul class="checks" id="checks"><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>Reading your answers</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>Matching your timeline</li><li><span class="ck"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>Lining up your next steps</li></ul>
     </div>
   </section>
 
@@ -466,8 +611,10 @@ input,select,textarea{font-size:max(16px,1em)!important}
         <p class="capsub">I'll text you personally from <b>(562) 609-4200</b>.</p>
       </div>
       <form id="capForm" novalidate>
+        <div class="group">
         <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><input class="field" id="fName" name="name" type="text" placeholder="First name" autocomplete="given-name" autocapitalize="words" enterkeyhint="next" required></label>
         <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg><input class="field" id="fPhone" name="phone" type="tel" inputmode="tel" placeholder="Mobile number" autocomplete="tel" enterkeyhint="send" required></label>
+        </div>
         <input class="hp" id="fWebsite" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="errmsg" id="capErr"></div>
         <button class="btn btn-purple" type="submit" id="capBtn">Text me my plan</button>
@@ -480,15 +627,15 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <section class="screen white" id="res">
     <canvas id="confetti"></canvas>
     <a class="closex" href="/" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-    <div class="pad center">
-      <img class="ico trophy" id="trophy" src="/img/quiz/3d/trophy.webp" alt="">
+    <div class="pad center rpad">
+      <svg class="rchk" viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="46"/><path d="M28 47l12 12 24-26"/></svg>
       <h2 class="title-dark" id="rTitle"></h2>
       <p class="rs" id="rSub"></p>
-      <div class="chips2 light" id="rChips"></div>
-      <div class="gcard"><img src="/img/quiz/jesse-suit.webp" alt="Jesse Onate"><div><b>Jesse Onate, Realtor</b><span>DRE 02133131 · 5.0 on Google</span></div></div>
-      <div class="spacer"></div>
-      <a class="btn btn-purple" id="rText" href="sms:5626094200">Text Jesse now</a>
-      <a class="link" href="/zoom">Or book a 15 min call</a>
+      <div class="jcard">
+        <div class="jrow"><img src="/img/quiz/jesse-portrait.webp" alt="Jesse Onate" width="52" height="52"><div><b>Jesse Onate, Realtor</b><span>DRE 02133131 · <svg class="rstar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>5.0 on Google</span></div></div>
+        <div class="racts"><a class="ract main" id="rText" href="sms:5626094200"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.7 1.5 5.1 3.8 6.6-.2 1.3-.8 2.5-1.8 3.4 1.9-.1 3.7-.8 5-1.9 1 .2 2 .4 3 .4 5.5 0 10-3.8 10-8.5S17.5 3 12 3z"/></svg>Text</a><a class="ract" id="rCall" href="tel:5626094200"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call</a><a class="ract" id="rBook" href="/zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Book</a></div>
+      </div>
+      <p class="rfoot">100+ closings across LA and Orange County</p>
     </div>
   </section>
 
@@ -677,10 +824,10 @@ input,select,textarea{font-size:max(16px,1em)!important}
       var val=el('div','v');var u=el('div','u','per month');
       var r=document.createElement('input');r.type='range';r.min=500;r.max=10000;r.step=100;r.value=v;r.setAttribute('aria-label','Monthly rent');
       var ends=el('div','ends');ends.appendChild(el('span',null,'$500'));ends.appendChild(el('span',null,'$10,000+'));
-      function upd(){var n=+r.value;A.rentNum=n;A.rent='$'+n.toLocaleString()+(n>=10000?'+':'')+'/mo';val.textContent='$'+n.toLocaleString()+(n>=10000?'+':'')}
+      function upd(){var n=+r.value;r.style.setProperty('--p',((n-500)/9500*100)+'%');A.rentNum=n;A.rent='$'+n.toLocaleString()+(n>=10000?'+':'')+'/mo';val.textContent='$'+n.toLocaleString()+(n>=10000?'+':'')}
       r.oninput=upd;upd();
       // iPhone sliders only move when the tiny knob is grabbed; let a tap or drag anywhere on the track set the value
-      var drag=false;function at(x){var b=r.getBoundingClientRect(),f=Math.min(1,Math.max(0,(x-b.left-12)/(b.width-24)));r.value=Math.round((500+f*9500)/100)*100;upd()}
+      var drag=false;function at(x){var b=r.getBoundingClientRect(),f=Math.min(1,Math.max(0,(x-b.left-14)/(b.width-28)));r.value=Math.round((500+f*9500)/100)*100;upd()}
       r.addEventListener('touchstart',function(e){drag=true;at(e.touches[0].clientX);e.preventDefault()},{passive:false});
       r.addEventListener('touchmove',function(e){if(drag){at(e.touches[0].clientX);e.preventDefault()}},{passive:false});
       r.addEventListener('touchend',function(){drag=false});
@@ -704,16 +851,28 @@ input,select,textarea{font-size:max(16px,1em)!important}
     var c=A.city&&A.city!==NOT_LISTED?A.city:(A.where&&A.where!==NOT_LISTED?A.where:null);
     [c,A.type,A.beds?A.beds+' bed':(A.bedsNeed?A.bedsNeed+' bed':null),A.timeline,A.worth&&A.worth!=='No idea'?A.worth:null].filter(Boolean).slice(0,max||4).forEach(function(t,i){w.appendChild(el('span','chip2 cc'+i,t))});
   }
+  // 15 real closing photos for the loading wall; built when the quiz starts so they are loaded by the end
+  var WALL=['22a76791b5f8','0e825d8dbe5f','855fac0ab0a4','0f51da672c21','7805108a62b3','8b5cafc6742f','a1aad6cea072','49c639f3425a','694e4ff1f028','d5a299833803','193d075e2b1c','e1bd774edc33','3f3a0e45244d','9444c5c9643c','0ca2b5f85002'];
+  var ldT=[];
+  function buildWall(){
+    var w=$('ldWall');if(w.childNodes.length)return;
+    [0,5,10].forEach(function(st){var row=el('div','row');var ids=WALL.slice(st,st+5);ids.concat(ids).forEach(function(id){var i=document.createElement('img');i.src='/img/clients/c-'+id+'.webp';i.alt='';i.decoding='async';row.appendChild(i)});w.appendChild(row)});
+  }
   function loading(){
     chipsInto('ldChips');
     show('load');track('quiz_complete',{path:pathName()});
+    buildWall();
     var lis=$('checks').querySelectorAll('li');
-    lis.forEach(function(li){li.classList.remove('done')});
-    lis.forEach(function(li,i){setTimeout(function(){li.classList.add('done')},500+i*700)});
+    ldT.forEach(clearTimeout);ldT=[];$('ldBar').style.width='0';
+    lis.forEach(function(li){li.classList.remove('act','done')});
+    lis.forEach(function(li,i){
+      ldT.push(setTimeout(function(){li.classList.add('act')},400+i*1700));
+      ldT.push(setTimeout(function(){li.classList.remove('act');li.classList.add('done');$('ldBar').style.width=((i+1)/lis.length*100)+'%'},1600+i*1700));
+    });
     var isB=pathName()==='buyer',bl=isB?'Text me my plan':'Text me my home value';
     $('capTitle').textContent=isB?'Last step! Where should I text your plan?':'Last step! Where should I text your home value?';
     $('capBtn').textContent=bl;$('capBtnName').textContent=bl;
-    setTimeout(function(){show('cap');track('quiz_capture_view',{path:pathName()})},2700);
+    ldT.push(setTimeout(function(){show('cap');track('quiz_capture_view',{path:pathName()})},6000));
   }
   function animate(){var s=document.querySelector('.screen.on');if(!s||s.id!=='qs')return;s.style.transition='none';s.classList.remove('on');void s.offsetWidth;s.style.transition='';s.classList.add('on')}
   function pathName(){
@@ -722,10 +881,11 @@ input,select,textarea{font-size:max(16px,1em)!important}
     return 'moveup';
   }
 
-  $('startBtn').onclick=function(){idx=0;render();track('quiz_start',utm)};
+  $('startBtn').onclick=function(){idx=0;render();track('quiz_start',utm);setTimeout(buildWall,800)};
   $('backBtn').onclick=back;
   $('pickBack').onclick=function(){show('land')};
-  $('capBack').onclick=function(){render()};
+  ['rText','rCall','rBook'].forEach(function(id){$(id).addEventListener('click',function(){track('quiz_result_'+id.slice(1).toLowerCase(),{path:pathName()})})});
+  $('capBack').onclick=function(){ldT.forEach(clearTimeout);render()};
 
   function cap1(s){s=s.trim().split(/\s+/)[0]||'';return s.charAt(0).toUpperCase()+s.slice(1)}
   function fmtPhone(v){var d=v.replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);return d}
@@ -765,10 +925,11 @@ input,select,textarea{font-size:max(16px,1em)!important}
     else if(p==='buyer'){t=fe+', your first home is closer than you <em>think!</em>';s='I’ll text you a simple game plan within 24 hours. No pressure, just next steps.'}
     else if(p==='seller'){t=fe+', let’s find out what your '+city+'home is <em>worth!</em>';s='I’ll text you its real value within 24 hours.'}
     else{t=fe+', your home could be your <em>down payment!</em>';s='I’ll text you its real value within 24 hours, plus how to buy and sell without moving twice.'}
-    $('rTitle').innerHTML=t;
+    $('rTitle').innerHTML='You’re all set, '+fe+'!';
     $('rSub').textContent=s;
-    $('rText').href='sms:5626094200?body='+encodeURIComponent('Hi Jesse, it’s '+first+'. I just took your Move Up Quiz.');
-    chipsInto('rChips',3);show('res');confetti();
+    var msg='Hi Jesse, it’s '+first+'. I just took your Move Up Quiz.';
+    $('rText').href='sms:5626094200?body='+encodeURIComponent(msg);
+    show('res');confetti();
   }
   function escapeHtml(s){return s.replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 
@@ -778,11 +939,12 @@ input,select,textarea{font-size:max(16px,1em)!important}
     var cols=['#E2445C','#F0DC17','#3A8EF2','#7AC943','#F59E5B','#A18FD0'],R=[],B=[];
     for(var i=0;i<14;i++)R.push({x:Math.random()*W,y:-Math.random()*H*.5-40,len:120+Math.random()*160,amp:14+Math.random()*16,ph:Math.random()*6,vy:3+Math.random()*3,vx:-1+Math.random()*2,c:cols[i%cols.length],w:7+Math.random()*4});
     for(var j=0;j<70;j++)B.push({x:Math.random()*W,y:-Math.random()*H*.7,r:Math.random()*6,vr:-.12+Math.random()*.24,vy:3+Math.random()*4,s:6+Math.random()*8,c:cols[j%cols.length],k:j%3});
-    var t=0;(function f(){x.clearRect(0,0,W,H);t++;var a=Math.max(0,Math.min(1,(300-t)/60));x.globalAlpha=a;
-      R.forEach(function(r){r.y+=r.vy;r.x+=r.vx;x.beginPath();for(var k=0;k<=24;k++){var u=k/24,yy=r.y-u*r.len,xx=r.x+Math.sin(u*9+r.ph+t*.06)*r.amp;k?x.lineTo(xx,yy):x.moveTo(xx,yy)}x.strokeStyle=r.c;x.lineWidth=r.w;x.lineCap='round';x.stroke()});
-      B.forEach(function(b){b.y+=b.vy;b.x+=Math.sin((t+b.r*30)/20)*1.2;b.r+=b.vr;x.save();x.translate(b.x,b.y);x.rotate(b.r);x.fillStyle=b.c;
+    // time based so it lasts exactly 3 seconds on 60Hz and 120Hz phones alike; fades over the last 0.6s
+    var DUR=3000,t0=performance.now(),last=t0,t=0;(function f(now){now=now||performance.now();var k=Math.min(3,(now-last)/16.67);last=now;t+=k;var el=now-t0;x.clearRect(0,0,W,H);x.globalAlpha=Math.max(0,Math.min(1,(DUR-el)/600));
+      R.forEach(function(r){r.y+=r.vy*k;r.x+=r.vx*k;x.beginPath();for(var q=0;q<=24;q++){var u=q/24,yy=r.y-u*r.len,xx=r.x+Math.sin(u*9+r.ph+t*.06)*r.amp;q?x.lineTo(xx,yy):x.moveTo(xx,yy)}x.strokeStyle=r.c;x.lineWidth=r.w;x.lineCap='round';x.stroke()});
+      B.forEach(function(b){b.y+=b.vy*k;b.x+=Math.sin((t+b.r*30)/20)*1.2*k;b.r+=b.vr*k;x.save();x.translate(b.x,b.y);x.rotate(b.r);x.fillStyle=b.c;
         if(b.k===0){x.fillRect(-b.s/2,-b.s/4,b.s,b.s/2)}else if(b.k===1){x.beginPath();x.arc(0,0,b.s/2,0,Math.PI);x.lineWidth=3;x.strokeStyle=b.c;x.stroke()}else{x.fillRect(-2,-b.s/2,4,b.s)}x.restore()});
-      if(t<300)requestAnimationFrame(f);else x.clearRect(0,0,W,H)})();
+      if(el<DUR)requestAnimationFrame(f);else x.clearRect(0,0,W,H)})();
   }
 
   track('quiz_view',utm);
