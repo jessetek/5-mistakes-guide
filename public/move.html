@@ -216,7 +216,7 @@ input[type=range]{width:100%;margin:20px 0 6px;accent-color:var(--purple);height
 .gc2{background:linear-gradient(110deg,#A18FD0,#F5BFE6)!important}
 .gc3{background:linear-gradient(110deg,#F59E5B,#F8C963)!important}
 .gc4{background:linear-gradient(110deg,#2EC4B6,#4FC6F7)!important}
-.gc5{background:linear-gradient(110deg,#7A55E6,#B47CF0)!important}
+.gc5{background:linear-gradient(110deg,#2E7D5B,#4CAF7A)!important}
 .f-cards.many{gap:9px}.f-cards.many .ans{height:50px;font-size:17px}
 .answers.many{gap:10px}.f-buttons.many .ans,.f-glass.many .ans{height:50px}
 .pickl.tight{margin-top:16px}#qs.bg-white .f-cards.many{margin-top:18px}
@@ -607,7 +607,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
       var list=COUNTIES[A[q.from]].concat([NOT_LISTED]);
       var picked=(A[q.id]||'').split(', ').filter(Boolean);
       var sh2=el('div','sheet');
-      var srch=document.createElement('input');srch.className='csearch';srch.type='search';srch.placeholder='Search cities';srch.setAttribute('aria-label','Search cities');
+      var srch=document.createElement('input');srch.className='csearch';srch.type='search';srch.placeholder='Search cities';srch.setAttribute('aria-label','Search cities');srch.setAttribute('autocomplete','off');srch.setAttribute('autocorrect','off');srch.setAttribute('autocapitalize','off');srch.spellcheck=false;
       var cl=el('div','clist');
       var gob=el('button','btn btn-purple csticky','Continue');
       function syncGo(){gob.disabled=!picked.length;gob.textContent=picked.length>1?'Continue with '+picked.length+' cities':'Continue'}
