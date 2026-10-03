@@ -25,7 +25,7 @@ const __dirname = dirname(__filename);
 
 // Resolve the env file: same fallback chain as scripts/send-telegram-text.sh
 // and scripts/get-gsc-rank.mjs. /Jessetek/.env is canonical; the legacy
-// /Jtek website/instagram-stories/.env.local is honored last for users who
+// /Jtek/instagram-stories/.env.local is honored last for users who
 // haven't migrated yet. Override with JTEK_ENV=/some/path if you keep creds
 // somewhere unusual.
 function resolveEnvPath() {
@@ -37,7 +37,7 @@ function resolveEnvPath() {
     resolve(__dirname, '../.env'),                                                 // landing-page is inside Jessetek
     join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/.env'),
     resolve(__dirname, '.env'),                                                    // copied next to setup script
-    join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek website/instagram-stories/.env.local'),
+    join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek/instagram-stories/.env.local'),
   ].filter(Boolean);
   for (const c of candidates) {
     if (existsSync(c)) return c;

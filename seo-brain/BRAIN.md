@@ -6,7 +6,7 @@ LA/OC cities Jesse actually serves). Exact query set lives in `goal.json → tar
 **Site:** jessetek.net · **GSC property:** `https://jessetek.net/` (fallback `sc-domain:jessetek.net`).
 
 > This Brain is the local-real-estate sibling of the **Jtek** SEO Brain
-> (`../../../Jtek website/seo-brain/`, target = "real estate crm"). Same learn→act→evolve
+> (`../../../Jtek/seo-brain/`, target = "real estate crm"). Same learn→act→evolve
 > discipline, different target surface (local map pack + qualified-organic vs. a SaaS head term).
 
 A self-improving operator whose single job is to move jessetek.net up Google for

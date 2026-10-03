@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-shot setup for the new weekly-rank-watch task.
-# Idempotent — safe to re-run. Does not require the legacy /Jtek website/
+# Idempotent — safe to re-run. Does not require the legacy /Jtek/
 # folder to be mounted; if it's reachable it migrates the existing GSC creds,
 # otherwise it tells you to run setup-gsc-oauth.mjs interactively.
 #
@@ -19,7 +19,7 @@ AUTOMATION_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 PROJECT_ROOT="$(cd "$AUTOMATION_DIR/.." && pwd)"
 JESSETEK_DIR="$(cd "$PROJECT_ROOT/.." && pwd)"
 ENV_FILE="$JESSETEK_DIR/.env"
-LEGACY_ENV="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek website/instagram-stories/.env.local"
+LEGACY_ENV="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek/instagram-stories/.env.local"
 
 ok()   { printf '\033[1;32m✓\033[0m %s\n' "$*"; }
 info() { printf '\033[1;36m▸\033[0m %s\n' "$*"; }

@@ -34,7 +34,7 @@ function findEnvFile() {
     resolve(__dirname, '../../../.env'),
     join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/.env'),
     resolve(__dirname, '../.env'),
-    join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek website/instagram-stories/.env.local'),
+    join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek/instagram-stories/.env.local'),
   ].filter(Boolean);
   for (const c of candidates) if (existsSync(c)) return c;
   return null;

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Portable Telegram sender for Jessetek scheduled tasks.
 # Replaces the prior send-telegram-text.mjs that lived in the unmounted
-# /Jtek website/instagram-stories/ folder. Reads creds from /Jessetek/.env
+# /Jtek/instagram-stories/ folder. Reads creds from /Jessetek/.env
 # and gracefully no-ops if TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID are blank,
 # so scheduled tasks never fail just because alerting isn't configured yet.
 #

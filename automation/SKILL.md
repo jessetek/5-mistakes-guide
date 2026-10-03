@@ -11,7 +11,7 @@ CRITICAL — phone-number filter is the most important safeguard:
 Read creds from one of these files (in order):
   1. /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/tools/.env.local  ← canonical (holds Clarity, FRED, GitHub, GSC, JTEK/LeadConnector, and Telegram creds for all sibling scheduled tasks)
   2. /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/.env  ← partial mirror (GSC + JTEK_* + TELEGRAM_* only) for sessions where /Jessetek/tools isn't reachable
-  3. /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek website/instagram-stories/.env.local  ← legacy location, kept honored for un-migrated setups
+  3. /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek/instagram-stories/.env.local  ← legacy location, kept honored for un-migrated setups
 
 If none is reachable, request the Jessetek folder via request_cowork_directory before failing.
 
@@ -57,7 +57,7 @@ FALLBACK (curl-based, runs without node, graceful no-op if creds blank):
   Reads creds from /Jessetek/tools/.env.local or /Jessetek/.env via candidate path resolution (or JTEK_ENV override).
 
 LEGACY (kept honored for un-migrated setups; same interface as PRIMARY):
-  /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek website/instagram-stories/send-telegram-text.mjs
+  /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek/instagram-stories/send-telegram-text.mjs
 
 Steps:
 
@@ -116,4 +116,4 @@ Changelog:
 - 2026-05-04 #1: token rotated to pit-014b8a07-... (saved to both .env.local and /Jessetek/.env); humboldfarm typo fixed to humboldtfarm; dnd boolean check added.
 - 2026-05-04 #2: Jtek website folder remounted in Cowork → original .env.local + send-telegram-text.mjs path restored as canonical. Mirror at /Jessetek/.env + bash sender at landing-page/automation/scripts/send-telegram-text.sh kept as fallback for sessions where Jtek website isn't mounted.
 - 2026-05-04 #3: Verified end-to-end — 60 contacts added to workflow, Telegram summary delivered (mid 284) confirming bot is healthy.
-- 2026-05-12: canonical creds moved to /Jessetek/tools/.env.local (consolidated: Clarity + FRED + GitHub + GSC + JTEK + Telegram all in one file). /Jtek website/instagram-stories/.env.local demoted to legacy (still honored by env resolvers). PRIMARY Telegram sender updated to /Jessetek/tools/send-telegram-text.mjs to match the new canonical folder. Triggered by gsc-harvest re-auth — the new account's refresh token writes to /Jessetek/tools/.env.local and the env path resolvers across setup-gsc.sh, setup-gsc-oauth.mjs, get-gsc-rank.mjs, list-gsc-properties.mjs, fetch-fred-key.sh were all updated to find it there. Old paths kept as fallbacks for un-migrated setups.
+- 2026-05-12: canonical creds moved to /Jessetek/tools/.env.local (consolidated: Clarity + FRED + GitHub + GSC + JTEK + Telegram all in one file). /Jtek/instagram-stories/.env.local demoted to legacy (still honored by env resolvers). PRIMARY Telegram sender updated to /Jessetek/tools/send-telegram-text.mjs to match the new canonical folder. Triggered by gsc-harvest re-auth — the new account's refresh token writes to /Jessetek/tools/.env.local and the env path resolvers across setup-gsc.sh, setup-gsc-oauth.mjs, get-gsc-rank.mjs, list-gsc-properties.mjs, fetch-fred-key.sh were all updated to find it there. Old paths kept as fallbacks for un-migrated setups.

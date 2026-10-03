@@ -16,7 +16,7 @@ automation/
 ├── launchd/net.jessetek.weekly-rank-watch.plist.template   NEW — Mondays 07:30
 ├── install.sh                                 EDITED — registers the new label
 ├── setup-gsc-oauth.mjs                        EDITED — env path is now portable
-│                                              (was hardcoded to /Jtek website/...)
+│                                              (was hardcoded to /Jtek/...)
 └── .state/rank-history.json                   RESET to clean { "queries": {} }
                                                (the bootstrap row I wrote earlier
                                                 used a `websearch_fallback` source
@@ -28,10 +28,10 @@ automation/
 
 1. **Move GSC creds into `/Jessetek/.env`** (canonical location all scheduled
    tasks now read from). If you already have a `.env.local` over in
-   `/Jtek website/instagram-stories/`, copy the four `GSC_*` vars over:
+   `/Jtek/instagram-stories/`, copy the four `GSC_*` vars over:
 
    ```sh
-   grep '^GSC_' "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek website/instagram-stories/.env.local" \
+   grep '^GSC_' "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek/instagram-stories/.env.local" \
      >> "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/.env"
    ```
 

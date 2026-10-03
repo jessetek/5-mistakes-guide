@@ -71,7 +71,7 @@ function findEnvFile() {
     join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/.env'),
     resolve(__dirname, '../.env'),                                                // copied next to automation/
     // Legacy fallback — for users who haven't migrated creds yet.
-    join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek website/instagram-stories/.env.local'),
+    join(homedir(), 'Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jtek/instagram-stories/.env.local'),
   ].filter(Boolean);
   for (const c of candidates) {
     if (existsSync(c)) return c;
