@@ -578,9 +578,10 @@ input,select,textarea{font-size:max(16px,1em)!important}
     $('barFill').style.width=Math.round((idx+1)/(path.length+1)*100)+'%';
     var look=LOOK[path[idx]]||['blue'],bg=bgAt(idx),fmt=bg==='white'?(look[1]||'rows'):(bg==='sunset'?'glass':'buttons');
     var qs=$('qs');qs.classList.remove('blue','bg-blue','bg-white','bg-sunset');qs.classList.add('bg-'+bg);
-    var pct=Math.round(idx/path.length*100),secs=Math.max(10,(path.length-idx)*6);
-    $('stepTxt').innerHTML='<b>'+(idx+1)+'</b><span class="of">/'+path.length+'</span><span class="coin"><i></i>'+pct+'%</span><span class="opill">'+secs+' sec left</span>';
-    $('stepTxt').dataset.q='Question '+(idx+1)+' of '+path.length;
+    var tot=0,num=0;for(var k=0;k<path.length;k++){var qk=Q[path[k]];if(qk&&qk.type==='city'&&A[qk.from]!==undefined&&!COUNTIES[A[qk.from]])continue;tot++;if(k<=idx)num++}
+    var pct=Math.round((num-1)/tot*100),secs=Math.max(10,(tot-num+1)*6);
+    $('stepTxt').innerHTML='<b>'+num+'</b><span class="of">/'+tot+'</span><span class="coin"><i></i>'+pct+'%</span><span class="opill">'+secs+' sec left</span>';
+    $('stepTxt').dataset.q='Question '+num+' of '+tot;
     var ic=$('qIco');if(bg!=='white'&&look[1]&&!/^(cards|rows|pills|field)$/.test(look[1])){ic.src=icoUrl(look[1]);ic.style.display=''}else{ic.removeAttribute('src');ic.style.display='none'}
     var m=document.querySelector('meta[name=theme-color]');if(m)m.content=bg==='white'?'#FFFFFF':(bg==='sunset'?'#7A5BC8':'#2F5BEA');
     $('qTitle').className='qt h-'+fmt;
