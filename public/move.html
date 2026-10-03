@@ -419,7 +419,7 @@ input:focus-visible{outline:none}
     <canvas id="confetti"></canvas>
     <a class="closex" href="/" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
     <div class="pad center">
-      <img class="ico trophy" id="trophy" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Trophy/3D/trophy_3d.png" alt="">
+      <img class="ico trophy" id="trophy" src="/img/quiz/3d/trophy.webp" alt="">
       <h2 class="title-dark" id="rTitle"></h2>
       <p class="rs" id="rSub"></p>
       <div class="chips2 light" id="rChips"></div>
@@ -445,10 +445,10 @@ input:focus-visible{outline:none}
   var NOT_LISTED='Not on the list';
   var AVC=['linear-gradient(135deg,#F35F86,#F8A47B)','linear-gradient(135deg,#2E95F3,#4FC6F7)','linear-gradient(135deg,#F59E5B,#F8C963)','linear-gradient(135deg,#2EC4B6,#4FC6F7)','linear-gradient(135deg,#A18FD0,#F2A7D5)','linear-gradient(135deg,#7A55E6,#B47CF0)'];
   var PATH_CARDS=[
-    {v:'Buy a home',lv:'Buyer',g:'g-blue',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Key/3D/key_3d.png'},
-    {v:'Sell my home',lv:'Seller',g:'g-pink',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Chart%20increasing/3D/chart_increasing_3d.png'},
-    {v:'Sell and buy',lv:'Move up',g:'g-purple',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Delivery%20truck/3D/delivery_truck_3d.png'},
-    {v:'Just curious',lv:'Curious',g:'g-orange',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Magnifying%20glass%20tilted%20left/3D/magnifying_glass_tilted_left_3d.png'}
+    {v:'Buy a home',lv:'Buyer',g:'g-blue',ico:'/img/quiz/3d/key.webp'},
+    {v:'Sell my home',lv:'Seller',g:'g-pink',ico:'/img/quiz/3d/chart-increasing.webp'},
+    {v:'Sell and buy',lv:'Move up',g:'g-purple',ico:'/img/quiz/3d/delivery-truck.webp'},
+    {v:'Just curious',lv:'Curious',g:'g-orange',ico:'/img/quiz/3d/magnifying-glass-tilted-left.webp'}
   ];
   var WHEN={id:'timeline',q:'When would you like to move?',note:'No pressure. This just helps me plan the timing.',type:'one',opts:['As soon as I can','This year','Next year','No rush']};
   var Q={
@@ -485,8 +485,7 @@ input:focus-visible{outline:none}
     matters:['white','cards'],rent:['blue','Dollar banknote'],lender:['sunset','Bank'],saved:['white','pills'],
     sellFirst:['sunset','Delivery truck'],own:['sunset','Key']
   };
-  var ICO='https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/';
-  function icoUrl(n){return ICO+encodeURIComponent(n)+'/3D/'+n.toLowerCase().replace(/ /g,'_')+'_3d.png'}
+  function icoUrl(n){return '/img/quiz/3d/'+n.toLowerCase().replace(/ /g,'-')+'.webp'}
   Object.keys(LOOK).forEach(function(k){var n=LOOK[k][1];if(n&&!/^(cards|rows|pills|field)$/.test(n)){var im=new Image();im.src=icoUrl(n)}});
   function buzz(){try{if(navigator.vibrate)navigator.vibrate(8)}catch(e){}}
   document.addEventListener('click',function(e){if(e.target.closest('.ans,.card,.crow,.btn'))buzz()},true);

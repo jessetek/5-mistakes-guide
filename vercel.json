@@ -8,7 +8,7 @@
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/home12", "destination": "/", "permanent": true },
     { "source": "/oldhome", "destination": "/", "permanent": true },
-    { "source": "/ig", "destination": "/", "permanent": true },
+    { "source": "/ig", "destination": "/move", "permanent": false },
     { "source": "/quiz", "destination": "/move", "permanent": true },
     { "source": "/buyer-quiz", "destination": "/move", "permanent": true },
     { "source": "/sellerguide", "destination": "/seller", "permanent": true },
