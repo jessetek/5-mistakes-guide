@@ -45,15 +45,8 @@ export default async function handler(req, res) {
   const a = answers && typeof answers === 'object' ? answers : {};
   const pathTag = PATHS[path] || 'buyer';
 
-  const tags = ['move-up-quiz', pathTag];
-  if (pathTag === 'move-up') tags.push('seller');
-  if (a.move === 'Just curious') tags.push('quiz-curious');
-  const tl = clean(a.timeline);
-  if (tl === 'As soon as I can') tags.push('lead-hot', 'timeline-asap');
-  else if (tl === 'This year') tags.push('lead-warm', 'timeline-this-year');
-  else if (tl === 'Next year') tags.push('lead-nurture', 'timeline-next-year');
-  else tags.push('lead-nurture', 'timeline-no-rush');
-  if (utm && clean(utm.utm_source).toLowerCase() === 'instagram') tags.push('src-instagram');
+  // One tag only (Jesse, 2026-10-02). Path, timeline and source live in the contact note.
+  const tags = ['move-up-quiz'];
 
   const nameParts = clean(name, 80).split(/\s+/);
   const firstName = nameParts[0];
