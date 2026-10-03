@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>The Move Up Quiz | Jesse Onate Realtor</title>
+<meta name="description" content="Buying, selling, or both? Take the Move Up Quiz and get a simple plan for your next home from Jesse Onate, SoCal realtor.">
+<link rel="canonical" href="https://jessetek.net/move">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Move Up Quiz">
+<meta property="og:description" content="Ready for your next home? Answer a few easy questions and get a real plan from Jesse.">
+<meta property="og:image" content="https://jessetek.net/img/move-in-celebration.jpg">
+<meta property="og:url" content="https://jessetek.net/move">
+<meta property="og:site_name" content="Jesse Onate Real Estate">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3790F1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* Design tokens measured from the reference (scaled 297px -> 375px phone) */
+:root{
+  --sky:#3A8EF2;--sky2:#4A7EEE;--peri:#5A6FE8;--ink:#1E1E2A;--mut:#8A8FA6;--ans:#4659C8;
+  --yel1:#F0DC17;--yel2:#C2C414;--yelEdge:#9EA10E;--pink:#F0607F;--purple:#5928E4;--purple2:#7A55E6;--cyan:#EBF7F9;--field:#F2F5F9;--pill:#E6EBEF;
+  --bg-blue:radial-gradient(120% 60% at 50% 18%,rgba(255,255,255,.32) 0%,rgba(255,255,255,0) 60%),linear-gradient(170deg,#2F5BEA 0%,#4A63EE 50%,#7682F5 100%);
+  --bg-q:var(--bg-blue);
+  --font:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:var(--font);background:linear-gradient(170deg,#2F5BEA,#7682F5);background-attachment:fixed;color:var(--ink);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.app{position:relative;max-width:480px;margin:0 auto;min-height:100%;min-height:100dvh;overflow:hidden;overflow:clip}
+@media(min-width:520px){body{padding:24px 0}.app{min-height:calc(100dvh - 48px);border-radius:36px;box-shadow:0 30px 80px rgba(10,30,110,.35)}}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateX(28px);transition:opacity .32s ease,transform .38s cubic-bezier(.2,.8,.2,1)}
+.screen.on{opacity:1;pointer-events:auto;transform:none}
+.blue{background:var(--bg-q)}
+#land.blue{background:var(--bg-blue)}
+.white{background:#fff}
+.pad{position:relative;z-index:1;display:flex;flex-direction:column;flex:1;padding:calc(14px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));overflow-y:auto}
+.pad>*,#qBody>*{flex-shrink:0}
+.spacer{flex:1;min-height:18px}
+.ico{display:block;object-fit:contain;pointer-events:none;user-select:none}
+.center{text-align:center}
+
+/* soft bokeh circles on blue question screens */
+.blue:before,.blue:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.blue:before{width:340px;height:340px;right:-140px;bottom:-110px;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.22),rgba(255,255,255,.04) 70%)}
+.blue:after{width:160px;height:160px;left:-70px;top:38%;background:radial-gradient(circle at 60% 40%,rgba(255,255,255,.14),rgba(255,255,255,0) 70%)}
+
+/* buttons: 8-10px corners, raised bottom edge like the reference */
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:54px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translateY(2px)}
+.btn-white{background:#fff;color:var(--ink);box-shadow:0 4px 0 rgba(20,50,150,.22),0 10px 20px rgba(20,50,150,.12)}
+.btn-white:active{box-shadow:0 2px 0 rgba(20,50,150,.22)}
+.btn-purple{background:linear-gradient(180deg,var(--purple2),var(--purple));color:#fff;box-shadow:0 4px 0 #3E1BB0,0 12px 24px rgba(89,40,228,.28)}
+.btn-purple:active{box-shadow:0 2px 0 #3E1BB0}
+.btn:disabled{opacity:.45;cursor:default}
+.link{display:block;text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:var(--purple);text-decoration:none}
+
+/* top bar */
+.top{display:flex;align-items:center;height:40px;margin-bottom:26px}
+.bk{width:40px;height:40px;border-radius:50%;display:grid;place-items:center}
+.bk svg{width:20px;height:20px}
+.blue .bk{color:#fff;background:rgba(255,255,255,.18)}
+.white .bk{color:var(--ink);background:#fff;box-shadow:0 4px 14px rgba(30,40,90,.12)}
+
+/* landing */
+#land .pad{align-items:center;justify-content:center;text-align:center;padding-top:calc(24px + env(safe-area-inset-top))}
+.stage{position:relative;width:74%}
+.photo{width:100%;aspect-ratio:1.25;border-radius:20px;border:5px solid #fff;background:url(/img/move-in-celebration.webp) 50% 30%/cover no-repeat;transform:rotate(-3deg);box-shadow:0 18px 40px rgba(10,30,110,.32)}
+.logo{margin-top:30px;font-weight:900;font-size:56px;line-height:.9;letter-spacing:-1px;text-transform:uppercase;color:#FFF7CF;transform:rotate(-4deg);
+  text-shadow:0 2px 0 #3BD6C6,0 4px 0 #26B3A6,0 6px 0 #1C8F88,0 8px 0 #156E6C,0 14px 22px rgba(8,20,80,.45);-webkit-text-stroke:1px #1C8F88}
+.logo small{display:block;font-size:30px;letter-spacing:6px;margin-bottom:4px}
+.go{width:100%;margin-top:34px}
+.arr{width:20px;height:20px;color:var(--ans)}
+.proof{color:rgba(255,255,255,.78);font-size:12px;margin-top:16px}
+.proof b{color:#fff;font-weight:600}
+.proof .star{width:14px;height:14px;vertical-align:-2px;margin-right:4px}
+
+/* path cards (white screen), measured: 143 tall, 64 gap, 104 icon, 25px title */
+.title-pink{color:var(--pink);font-size:25px;font-weight:600;line-height:1.25}
+.sub{color:#B5B8C6;font-size:14px;margin-top:4px}
+.cards{display:flex;flex-direction:column;gap:56px;margin-top:56px;padding-bottom:8px}
+.card{position:relative;height:140px;border-radius:18px;padding:0 22px 20px;display:flex;flex-direction:column;justify-content:flex-end;text-align:left;color:#fff;transition:transform .15s}
+.card:active{transform:scale(.98)}
+.card .ck{position:absolute;top:18px;left:20px;width:32px;height:32px;border-radius:9px;border:1.5px solid rgba(255,255,255,.7);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l8 5-8 5z' fill='white'/%3E%3C/svg%3E") center/16px no-repeat}
+.card.sel .ck{border-color:#fff;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23F0607F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.card .lv{display:none}
+.card .tt{font-size:25px;font-weight:600;line-height:1.2;text-shadow:0 1px 2px rgba(0,0,0,.08)}
+.card .ico{position:absolute;right:20px;top:-42px;width:108px;height:108px;filter:drop-shadow(0 12px 14px rgba(0,0,0,.2))}
+.g-blue{background:linear-gradient(110deg,#556AD7 0%,#2E95F3 55%,#0CB7FB 100%);box-shadow:0 14px 26px rgba(40,140,240,.28)}
+.g-pink{background:linear-gradient(110deg,#E871A0 0%,#EA8B70 100%);box-shadow:0 14px 26px rgba(232,113,140,.28)}
+.g-purple{background:linear-gradient(110deg,#A18FD0 0%,#F5BFE6 100%);box-shadow:0 14px 26px rgba(170,140,220,.3)}
+.g-orange{background:linear-gradient(110deg,#F59E5B 0%,#F8C963 100%);box-shadow:0 14px 26px rgba(245,160,90,.3)}
+
+/* blue question screen, measured: label 15px, question 25px/33px, answers 57px, 17px gap */
+.qnum{color:rgba(230,238,255,.8);font-size:15px;font-weight:500}
+.bar{display:none}
+.qt{color:#fff;font-size:25px;font-weight:600;line-height:1.32;margin-top:6px}
+.note{display:flex;gap:8px;align-items:flex-end;margin-top:18px}
+.note img{width:36px;height:36px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 4px 10px rgba(10,20,90,.25)}
+.note p{color:#fff;font-size:13px;line-height:1.45;background:rgba(255,255,255,.16);border-radius:16px 16px 16px 4px;padding:9px 13px}
+.answers{display:flex;flex-direction:column;gap:17px;margin-top:40px}
+.ans{position:relative;height:57px;border-radius:9px;background:#fff;color:var(--ans);font-size:18px;font-weight:600;box-shadow:0 4px 0 rgba(30,60,170,.28);transition:background .15s,color .15s,transform .1s}
+.ans:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(30,60,170,.28)}
+@keyframes pick{0%{transform:scale(1)}45%{transform:scale(1.03)}100%{transform:scale(1)}}
+.ans.sel,.card.sel,.crow.sel{animation:pick .32s ease}
+.ans.sel{background:linear-gradient(180deg,var(--yel1),var(--yel2));color:#fff;text-shadow:0 1px 1px rgba(110,100,0,.35);box-shadow:0 4px 0 var(--yelEdge)}
+.ans.sel:after{content:"";position:absolute;right:22px;top:50%;width:22px;height:22px;margin-top:-11px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/22px no-repeat}
+
+/* white sheet on blue: leaderboard style rows */
+.sheet{background:#fff;border-radius:22px;padding:16px;margin-top:28px;box-shadow:0 16px 36px rgba(10,30,110,.25)}
+.csearch{width:100%;height:48px;padding:0 16px;font:inherit;font-size:15px;border-radius:12px;background:var(--field);border:0;outline:none;color:var(--ink)}
+.clist{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.crow{display:flex;align-items:center;justify-content:space-between;width:100%;height:56px;padding:0 16px;border-radius:12px;background:var(--cyan);font-size:15px;font-weight:600;text-align:left;color:var(--ink)}
+.crow .ck{width:24px;height:24px;border-radius:50%;background:var(--pill);flex:none}
+.crow.sel{background:linear-gradient(180deg,var(--yel1),var(--yel2));color:#fff;text-shadow:0 1px 1px rgba(110,100,0,.35)}
+.crow.sel .ck{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23B0A800' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.dock{position:sticky;bottom:calc(-24px - env(safe-area-inset-bottom));margin:0 -24px;padding:26px 24px calc(24px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(90,111,234,0) 0%,#5A6FEA 38%)}
+.slider{text-align:center;padding:12px 6px 4px}
+.slider .v{font-size:46px;font-weight:700;color:var(--ans)}
+.slider .u{font-size:14px;color:var(--mut)}
+input[type=range]{width:100%;margin:20px 0 6px;accent-color:var(--purple);height:28px}
+.ends{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.fan{position:relative;width:220px;height:190px}
+.fan img{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:16px;border:5px solid #fff;object-fit:cover;box-shadow:0 14px 28px rgba(10,20,90,.3);animation:deal 2.7s ease-in-out infinite}
+.fan img:nth-child(1){--r:-12deg;--x:-46px;animation-delay:0s}
+.fan img:nth-child(2){--r:10deg;--x:46px;animation-delay:.15s}
+.fan img:nth-child(3){--r:-2deg;--x:0px;animation-delay:.3s}
+@keyframes deal{0%{transform:translateX(0) rotate(0) scale(.9);opacity:0}18%,100%{transform:translateX(var(--x)) rotate(var(--r)) scale(1);opacity:1}}
+
+/* loading */
+#load .pad{align-items:center;justify-content:center;text-align:center}
+.float{width:120px;height:120px;animation:bob 1.6s ease-in-out infinite;filter:drop-shadow(0 16px 18px rgba(10,30,110,.35))}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-6deg)}}
+#load h2{color:#fff;font-size:25px;font-weight:600;margin-top:24px}
+.checks{margin-top:22px;display:flex;flex-direction:column;gap:14px;text-align:left}
+.checks li{list-style:none;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:rgba(255,255,255,.55);transition:color .3s}
+.checks li:before{content:"";width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.5);transition:all .3s;flex:none}
+.checks li.done{color:#fff}
+.checks li.done:before{border-color:transparent;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat,linear-gradient(180deg,#F0DC17,#C2C414)}
+
+/* capture: "Daily Challenge" layout */
+.title-dark{font-size:28px;font-weight:600;line-height:1.25;color:var(--ink)}
+.title-dark em{font-style:normal;color:var(--purple)}
+.me{position:relative;width:92px;height:92px;margin:0 auto 18px}
+.me img{width:92px;height:92px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 0 3px #F0DC17,0 12px 26px rgba(30,40,90,.18)}
+.me i{position:absolute;right:5px;bottom:5px;width:18px;height:18px;border-radius:50%;background:#34C759;border:3px solid #fff}
+.fwrap{position:relative;display:block;margin-top:12px}
+.fwrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#A0A6BC;pointer-events:none}
+.field{width:100%;height:54px;background:var(--field);border:1.5px solid transparent;border-radius:10px;padding:0 16px 0 48px;font:inherit;font-size:16px;color:var(--ink);outline:none}
+.field:focus{border-color:var(--purple);background:#fff}
+.field.err{border-color:#E5294A}
+.errmsg{color:#E5294A;font-size:13px;margin:8px 0 6px;min-height:18px}
+.capsub{font-size:15px;color:var(--mut);margin-top:10px}
+.capsub b{color:var(--ink);font-weight:600}
+.asub{font-size:14px;color:var(--mut);margin:2px 2px 12px}
+.afield{padding-left:16px}
+.skip{display:block;margin:18px auto 0;color:rgba(255,255,255,.8);font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.fine{font-size:11px;color:var(--mut);margin-top:14px;line-height:1.5;text-align:center}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* result: trophy + ribbons + "New Game" gradient card */
+#res .pad{padding-top:calc(40px + env(safe-area-inset-top))}
+#confetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.trophy{width:144px;height:144px;margin:0 auto 8px;animation:pop .6s cubic-bezier(.2,1.6,.4,1) both;filter:drop-shadow(0 18px 20px rgba(200,140,0,.28))}
+@keyframes pop{from{transform:scale(.3) rotate(-12deg);opacity:0}}
+.rs{font-size:15px;color:var(--mut);margin-top:10px;line-height:1.55}
+.gcard{position:relative;overflow:hidden;margin-top:26px;border-radius:20px;padding:20px;display:flex;align-items:center;gap:14px;text-align:left;color:#fff;background:linear-gradient(115deg,#6A5BC8 0%,#B46AB6 50%,#F5AD6F 100%);box-shadow:0 14px 28px rgba(150,90,180,.28)}
+.gcard:before,.gcard:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.gcard:before{width:120px;height:120px;right:-30px;top:-50px}
+.gcard:after{width:90px;height:90px;left:30%;bottom:-55px}
+.gcard img{position:relative;z-index:1;width:54px;height:54px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.9)}
+.gcard div{position:relative;z-index:1}
+.gcard b{display:block;font-size:18px;font-weight:600}
+.gcard span{font-size:13px;opacity:.9}
+
+
+/* ===== per-question looks (reference: backgrounds + formats change every screen) ===== */
+#qs{transition:opacity .32s ease,transform .38s cubic-bezier(.2,.8,.2,1),background-color .3s}
+#qs.bg-blue{background:var(--bg-blue)}
+#qs.bg-sunset{background:radial-gradient(90% 45% at 80% 8%,rgba(255,255,255,.22),rgba(255,255,255,0) 60%),linear-gradient(160deg,#5B5BD6 0%,#9A62C2 45%,#E57FA0 75%,#F5AD6F 100%)}
+#qs.bg-white{background:#fff}
+#qs.bg-white:before,#qs.bg-white:after{display:none}
+#qs.bg-sunset:before{background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.26),rgba(255,255,255,.06) 70%)}
+#qs.bg-sunset:after{width:200px;height:200px;left:-80px;top:30%;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 70%)}
+#qs.bg-blue .bk,#qs.bg-sunset .bk{color:#fff;background:rgba(255,255,255,.2)}
+#qs.bg-white .bk{color:var(--pink);background:#fff;box-shadow:0 4px 14px rgba(30,40,90,.12)}
+/* 3D object peeking at the top, like the reference ship */
+.qico{position:absolute;right:8px;top:calc(-6px + env(safe-area-inset-top));width:118px;height:118px;filter:drop-shadow(0 14px 16px rgba(10,20,80,.3));pointer-events:none;animation:drop .5s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes drop{from{transform:translateY(-24px) rotate(-8deg);opacity:0}}
+/* white screens: stat card header like "$100 / 200 / Invite" */
+#qs.bg-white .qnum{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 6px 20px rgba(30,40,90,.09);color:var(--ink);font-size:16px;font-weight:700}
+
+#qs.bg-white .qt{color:var(--ink);text-align:center;margin-top:26px;font-size:26px;line-height:1.28}
+#qs.bg-white .qt.h-cards{color:var(--pink);text-align:left;font-size:25px;font-weight:600}
+/* pale label above answers, like "Continue with" */
+.pickl{color:#DDF2FF;font-size:14px;font-weight:600;text-align:center;margin-top:30px;letter-spacing:.2px}
+.pickl+.answers{margin-top:12px}
+/* format: glass buttons on sunset */
+.f-glass .ans{background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.55);box-shadow:none;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.f-glass .ans.sel{background:#fff;color:var(--purple);text-shadow:none;border-color:#fff;box-shadow:0 8px 20px rgba(60,20,120,.25)}
+.f-glass .ans.sel:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7' fill='none' stroke='%235928E4' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+/* format: gradient cards like "Let's Play" */
+.f-cards{gap:14px}
+.f-cards .ans{height:66px;border-radius:16px;color:#fff;text-align:left;padding:0 18px 0 20px;display:flex;align-items:center;justify-content:space-between;font-size:18px;box-shadow:0 10px 22px rgba(60,60,140,.16)}
+.f-cards .ans .ckc{width:26px;height:26px;border-radius:8px;border:1.5px solid rgba(255,255,255,.75);flex:none}
+.f-cards .ans.sel{box-shadow:0 0 0 3px #fff,0 0 0 6px rgba(240,96,127,.55),0 12px 24px rgba(60,60,140,.2);text-shadow:none}
+.f-cards .ans.sel .ckc{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23F0607F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/15px no-repeat;border-color:#fff}
+.f-cards .ans.sel:after{display:none}
+.gc0{background:linear-gradient(110deg,#556AD7,#2E95F3 55%,#0CB7FB)!important}
+.gc1{background:linear-gradient(110deg,#E871A0,#EA8B70)!important}
+.gc2{background:linear-gradient(110deg,#A18FD0,#F5BFE6)!important}
+.gc3{background:linear-gradient(110deg,#F59E5B,#F8C963)!important}
+.gc4{background:linear-gradient(110deg,#2EC4B6,#4FC6F7)!important}
+.gc5{background:linear-gradient(110deg,#7A55E6,#B47CF0)!important}
+.f-cards.many{gap:9px}.f-cards.many .ans{height:50px;font-size:17px}
+.answers.many{gap:10px}.f-buttons.many .ans,.f-glass.many .ans{height:50px}
+.pickl.tight{margin-top:16px}#qs.bg-white .f-cards.many{margin-top:18px}
+.f-rows.many{gap:8px}.f-rows.many .ans{height:52px}
+/* format: leaderboard rows with number badges */
+.f-rows{gap:10px;margin-top:26px}
+.f-rows .ans{height:60px;border-radius:12px;background:var(--cyan);color:var(--ink);box-shadow:none;display:flex;align-items:center;gap:14px;padding:0 16px;text-align:left;font-size:16px}
+.f-rows .ans .rk{width:30px;height:30px;border-radius:50%;background:#fff;color:var(--ans);font-weight:700;font-size:14px;display:grid;place-items:center;box-shadow:0 2px 6px rgba(30,40,90,.08);flex:none}
+.f-rows .ans .lbl{flex:1}
+.f-rows .ans .ckc{width:24px;height:24px;border-radius:50%;background:var(--pill);flex:none}
+.f-rows .ans.sel{background:linear-gradient(180deg,var(--yel1),var(--yel2));color:#fff;box-shadow:0 4px 0 var(--yelEdge)}
+.f-rows .ans.sel .rk{color:#B0A800}
+.f-rows .ans.sel .ckc{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23B0A800' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.f-rows .ans.sel:after{display:none}
+/* format: pill tabs like "Today / Week / All Time" */
+.f-pills{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.f-pills .ans{height:56px;border-radius:999px;background:#fff;color:var(--ink);box-shadow:0 4px 14px rgba(30,40,90,.1);border:1px solid #EEF0F5;font-size:16px}
+.f-pills .ans:last-child:nth-child(odd){grid-column:1/-1}
+.f-pills .ans.sel{background:linear-gradient(180deg,#F57C9A,var(--pink));color:#fff;text-shadow:none;border-color:transparent;box-shadow:0 8px 18px rgba(240,96,127,.35)}
+.f-pills .ans.sel:after{display:none}
+/* sheets on white/sunset */
+#qs.bg-white .sheet{box-shadow:0 8px 26px rgba(30,40,90,.1)}
+#qs.bg-white .skip{color:var(--mut)}
+#qs.bg-sunset .dock{background:linear-gradient(180deg,rgba(229,127,160,0),#E8909A 40%)}
+
+/* round 3 reference details */
+#qs .pad{padding-top:calc(22px + env(safe-area-inset-top))}
+#qs .top{margin-bottom:34px}
+#qs:not(.bg-white) .qnum>*{display:none}
+#qs:not(.bg-white) .qnum:before{content:attr(data-q)}
+#qs.bg-white .qnum{justify-content:flex-start;gap:8px}
+.qnum b{font-size:22px;font-weight:800;letter-spacing:-.3px}
+.qnum .of{color:var(--mut);font-weight:600;font-size:15px;margin:0 auto 0 -6px}
+.qnum .coin{display:inline-flex;align-items:center;gap:6px;background:#FFF7DB;border-radius:999px;padding:5px 11px 5px 6px;font-size:13px;font-weight:600;color:#7A6200}
+.qnum .coin i{width:17px;height:17px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFF6B0,#F2C200 60%,#D49D00);box-shadow:inset 0 -1px 0 rgba(0,0,0,.18)}
+.qnum .opill{border:1.5px solid #E6E9F0;border-radius:999px;padding:4px 11px;font-size:12px;font-weight:600;color:var(--ink)}
+.csub{color:#B5B8C6;font-size:14px;margin-top:6px}
+.f-seg,.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg .ans{height:52px;font-size:13.5px;padding:0 4px;white-space:nowrap;grid-column:auto!important}
+.f-cards .ans{position:relative;overflow:hidden}
+.f-cards .ans:before{content:"";position:absolute;width:96px;height:96px;right:34px;top:-52px;border-radius:50%;background:rgba(255,255,255,.17);pointer-events:none}
+.f-cards .ans .lbl,.f-cards .ans .ckc{position:relative;z-index:1}
+.cnm{display:flex;align-items:center;gap:12px}
+.cav{width:32px;height:32px;border-radius:50%;color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center;flex:none;box-shadow:0 2px 6px rgba(30,40,90,.12)}
+.crow.sel .cav{box-shadow:0 0 0 2px #fff}
+.closex{position:absolute;top:calc(16px + env(safe-area-inset-top));left:24px;z-index:3;width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(30,40,90,.12);display:grid;place-items:center;color:var(--pink)}
+.closex svg{width:18px;height:18px}
+.playc{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#F57C9A,#9B7BF2);display:grid;place-items:center;box-shadow:0 4px 10px rgba(155,123,242,.4);flex:none}
+.playc svg{width:16px;height:16px}
+.legal{color:rgba(255,255,255,.6);font-size:11px;margin-top:10px}
+.legal a{color:#fff;font-weight:600;text-decoration:none}
+
+/* color round: no plain-white screens */
+#qs.bg-white,#pick,#cap{background:radial-gradient(70% 38% at 108% -4%,rgba(79,198,247,.20),rgba(79,198,247,0) 70%),radial-gradient(60% 34% at -10% 104%,rgba(245,124,154,.16),rgba(245,124,154,0) 70%),radial-gradient(50% 30% at 100% 70%,rgba(161,143,208,.12),rgba(161,143,208,0) 70%),#fff}
+#res{background:radial-gradient(60% 34% at -10% 104%,rgba(161,143,208,.16),rgba(161,143,208,0) 70%),radial-gradient(70% 38% at 108% 60%,rgba(245,173,111,.14),rgba(245,173,111,0) 70%),#fff}
+/* pastel pills with matching text */
+.f-pills .ans{border:1.5px solid transparent;box-shadow:0 6px 16px rgba(30,40,90,.07)}
+.f-pills .ans.pc0{background:#EAF3FF;color:#2363D6;border-color:#D3E5FF}
+.f-pills .ans.pc1{background:#FDECEF;color:#D93D63;border-color:#F9D3DC}
+.f-pills .ans.pc2{background:#F1EDFC;color:#6A45DA;border-color:#E2D9FA}
+.f-pills .ans.pc3{background:#FFF1E3;color:#C9650F;border-color:#FBDDBE}
+.f-pills .ans.pc4{background:#E3F7F5;color:#12897E;border-color:#C6EDE8}
+.f-pills .ans.sel{color:#fff;border-color:transparent;text-shadow:0 1px 1px rgba(0,0,0,.12)}
+.f-pills .ans.pc0.sel{background:linear-gradient(110deg,#556AD7,#2E95F3 55%,#0CB7FB);box-shadow:0 10px 20px rgba(46,149,243,.35)}
+.f-pills .ans.pc1.sel{background:linear-gradient(110deg,#E871A0,#EA8B70);box-shadow:0 10px 20px rgba(232,113,140,.35)}
+.f-pills .ans.pc2.sel{background:linear-gradient(110deg,#8E6BF0,#C79BEB);box-shadow:0 10px 20px rgba(142,107,240,.35)}
+.f-pills .ans.pc3.sel{background:linear-gradient(110deg,#F59E5B,#F8C963);box-shadow:0 10px 20px rgba(245,158,91,.35)}
+.f-pills .ans.pc4.sel{background:linear-gradient(110deg,#2EC4B6,#4FC6F7);box-shadow:0 10px 20px rgba(46,196,182,.35)}
+/* rows: colored rank badges */
+.f-rows .ans .rk{color:#fff;box-shadow:0 3px 8px rgba(30,40,90,.15)}
+.f-rows .ans.pc0 .rk{background:linear-gradient(135deg,#2E95F3,#4FC6F7)}
+.f-rows .ans.pc1 .rk{background:linear-gradient(135deg,#F35F86,#F8A47B)}
+.f-rows .ans.pc2 .rk{background:linear-gradient(135deg,#8E6BF0,#C79BEB)}
+.f-rows .ans.pc3 .rk{background:linear-gradient(135deg,#F59E5B,#F8C963)}
+.f-rows .ans.pc4 .rk{background:linear-gradient(135deg,#2EC4B6,#4FC6F7)}
+.f-rows .ans.sel .rk{background:#fff;color:#B0A800}
+/* capture fields + stat card get a hint of color */
+.field{background:#F4F6FC}
+#qs.bg-white .qnum{background:rgba(255,255,255,.92);border:1px solid #EEF1F7}
+
+/* color round 2: bigger, bolder pastel pills, stronger glows */
+.f-pills{grid-template-columns:1fr;gap:14px;margin-top:34px}
+.f-pills .ans{height:60px;font-size:17px;font-weight:600}
+.f-pills .ans.pc0{background:#DCEBFF;color:#1F5BCC;border-color:#C2DBFF}
+.f-pills .ans.pc1{background:#FCE0E7;color:#CC2F57;border-color:#F7C7D3}
+.f-pills .ans.pc2{background:#E9E2FB;color:#5B36CC;border-color:#D9CDF8}
+.f-pills .ans.pc3{background:#FFE6CC;color:#B85A08;border-color:#FAD3AA}
+.f-pills .ans.pc4{background:#D5F3EF;color:#0F7D73;border-color:#B5E8E1}
+#qs.bg-white,#pick,#cap{background:radial-gradient(75% 40% at 108% -4%,rgba(79,198,247,.30),rgba(79,198,247,0) 70%),radial-gradient(65% 36% at -10% 104%,rgba(245,124,154,.24),rgba(245,124,154,0) 70%),radial-gradient(55% 32% at 105% 72%,rgba(161,143,208,.18),rgba(161,143,208,0) 70%),#fff}
+.f-pills .ans.sel.sel{color:#fff;border-color:transparent;text-shadow:0 1px 2px rgba(0,0,0,.15)}
+
+/* round: polish */
+.f-glass .ans{background:rgba(255,255,255,.26);border:1.5px solid rgba(255,255,255,.75);box-shadow:0 6px 16px rgba(70,30,120,.18);text-shadow:0 1px 2px rgba(60,20,100,.25);font-weight:700}
+.vrow{display:flex;align-items:center;justify-content:center;gap:18px}
+.step-b{width:44px;height:44px;border-radius:50%;background:#EEF2FF;color:var(--ans);font-size:24px;font-weight:600;line-height:1;display:grid;place-items:center;box-shadow:0 3px 0 rgba(70,89,200,.18)}
+.step-b:active{transform:translateY(2px);box-shadow:none}
+.swrap{position:relative;display:block}
+.swrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#9AA1BD;pointer-events:none}
+.swrap .csearch{padding-left:42px}
+.swrap .afield{padding-left:44px}
+#res .spacer{flex:0 0 22px;min-height:22px}
+
+/* round: feel */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+#qs.on .answers>.ans,#pick.on #cards>.card,#qs.on .clist>.crow:nth-child(-n+8){animation:rise .3s cubic-bezier(.2,.8,.2,1) backwards}
+\.answers>.ans:nth-child(2),#cards>.card:nth-child(2),.clist>.crow:nth-child(2){animation-delay:.03s!important}
+.answers>.ans:nth-child(3),#cards>.card:nth-child(3),.clist>.crow:nth-child(3){animation-delay:.06s!important}
+.answers>.ans:nth-child(4),#cards>.card:nth-child(4),.clist>.crow:nth-child(4){animation-delay:.09s!important}
+.answers>.ans:nth-child(5),.clist>.crow:nth-child(5){animation-delay:.12s!important}
+.answers>.ans:nth-child(6),.clist>.crow:nth-child(6){animation-delay:.15s!important}
+.clist>.crow:nth-child(7){animation-delay:.18s!important}.clist>.crow:nth-child(8){animation-delay:.21s!important}
+.answers>.ans.sel{animation:pick .32s ease!important}
+@keyframes landDrop{from{opacity:0;transform:translateY(-26px)}}
+@keyframes landPop{from{opacity:0;transform:rotate(-4deg) scale(.7)}to{transform:rotate(-4deg) scale(1)}}
+#land .stage{animation:landDrop .6s cubic-bezier(.2,1.2,.4,1) backwards}
+#land .logo{animation:landPop .55s .18s cubic-bezier(.2,1.5,.4,1) backwards}
+#land .go{animation:rise .5s .34s cubic-bezier(.2,.8,.2,1) backwards}
+#qs.rev:not(.on){transform:translateX(-28px)}
+.more{position:absolute;left:0;right:0;bottom:0;height:84px;display:grid;place-items:end center;padding-bottom:calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.95) 70%);pointer-events:none;z-index:2;transition:opacity .25s}
+.more svg{width:28px;height:28px;color:var(--pink);animation:nudge 1.3s ease-in-out infinite}
+.more.gone{opacity:0}
+@keyframes nudge{50%{transform:translateY(6px)}}
+.chips2{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+.chip2{font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.chips2.light .chip2{border:0}
+.chips2.light .cc0{background:#DCEBFF;color:#1F5BCC}.chips2.light .cc1{background:#FCE0E7;color:#CC2F57}.chips2.light .cc2{background:#E9E2FB;color:#5B36CC}.chips2.light .cc3{background:#FFE6CC;color:#B85A08}
+.lockl{display:flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:600;color:#3B8C5A;margin-top:12px}
+.lockl svg{width:15px;height:15px}
+button:focus-visible,a:focus-visible{outline:3px solid #FBE425;outline-offset:2px}
+input:focus-visible{outline:none}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+@media(max-height:620px){.top{margin-bottom:14px}.cards{gap:46px;margin-top:48px}.card{height:118px}.card .ico{width:92px;height:92px;top:-34px}.answers{margin-top:26px;gap:12px}.ans{height:50px}.f-cards .ans{height:56px}.f-cards.many .ans{height:48px}.f-cards.many{gap:8px}.f-rows .ans{height:52px}.f-pills .ans{height:52px}.f-pills{gap:10px;margin-top:22px}.qico{width:92px;height:92px}#qs.bg-white .qt{margin-top:16px;font-size:23px}#qs .top{margin-bottom:16px}#qs .pad{padding-top:calc(12px + env(safe-area-inset-top))}.pickl{margin-top:18px}.qt{font-size:22px}.trophy{width:96px;height:96px;margin-bottom:4px}#res .pad{padding-top:calc(18px + env(safe-area-inset-top))}#res .title-dark{font-size:21px}#res .rs{font-size:14px;margin-top:6px}.gcard{margin-top:14px;padding:12px 14px;gap:10px}.gcard img{width:44px;height:44px}.gcard b{font-size:15px;white-space:nowrap}.gcard span{font-size:11.5px;white-space:nowrap}#res .spacer{flex:0 0 18px;min-height:18px}#res .chips2{margin-top:10px}.chip2{font-size:12px;padding:5px 10px}.closex{top:10px;left:14px;width:34px;height:34px}.title-dark{font-size:24px}.sheet{margin-top:18px}.note{margin-top:12px}}
+</style>
+</head>
+<body>
+<main class="app" id="app">
+
+  <section class="screen blue on" id="land" aria-label="Start">
+    <div class="pad">
+      <div class="stage"><div class="photo" role="img" aria-label="Jesse with happy clients on move in day"></div></div>
+      <div class="logo"><small>The</small>Move Up<br>Quiz</div>
+      <div class="go">
+      <button class="btn btn-white" id="startBtn"><span class="playc"><svg viewBox="0 0 24 24"><path d="M9 7l8 5-8 5z" fill="#fff"/></svg></span>Start the quiz</button>
+      <div class="proof"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z" fill="#FBE425"/></svg><b>5.0</b> on Google · <b>100+</b> closings</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen white" id="pick">
+    <div class="pad">
+      <div class="top"><button class="bk" id="pickBack" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+      <h2 class="title-pink">What's your next move?</h2>
+      <p class="sub">No wrong answers.</p>
+      <div class="cards" id="cards"></div>
+    </div>
+    <div class="more" id="moreHint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+  </section>
+
+  <section class="screen blue" id="qs" aria-live="polite">
+    <div class="pad">
+      <div class="top"><button class="bk" id="backBtn" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+      <img class="ico qico" id="qIco" alt="">
+      <div class="qnum" id="stepTxt"></div>
+      <div class="bar"><i id="barFill"></i></div>
+      <h2 class="qt" id="qTitle"></h2>
+      <div id="qBody"></div>
+    </div>
+  </section>
+
+  <section class="screen blue" id="load">
+    <div class="pad">
+      <div class="fan"><img src="/img/quiz/client-keys.webp" alt=""><img src="/img/quiz/client-family.webp" alt=""><img src="/img/quiz/client-papers.webp" alt=""></div>
+      <h2>Building your plan</h2>
+      <div class="chips2" id="ldChips"></div>
+      <ul class="checks" id="checks"><li>Reading your answers</li><li>Matching your timeline</li><li>Lining up your next steps</li></ul>
+    </div>
+  </section>
+
+  <section class="screen white" id="cap">
+    <div class="pad">
+      <div class="top"><button class="bk" id="capBack" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+      <div class="center">
+        <div class="me"><img src="/img/quiz/jesse-portrait.webp" alt="Jesse Onate"><i></i></div>
+        <h2 class="title-dark" id="capTitle">Last step! Where should I text your plan?</h2>
+        <p class="capsub">I'll text you personally from <b>(562) 609-4200</b>.</p>
+      </div>
+      <form id="capForm" novalidate>
+        <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><input class="field" id="fName" name="name" type="text" placeholder="First name" autocomplete="given-name" autocapitalize="words" enterkeyhint="next" required></label>
+        <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg><input class="field" id="fPhone" name="phone" type="tel" inputmode="tel" placeholder="Mobile number" autocomplete="tel" enterkeyhint="send" required></label>
+        <input class="hp" id="fWebsite" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="errmsg" id="capErr"></div>
+        <button class="btn btn-purple" type="submit" id="capBtn">Text me my plan</button>
+        <p class="lockl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your number stays private.</p>
+        <p class="fine">By tapping <span id="capBtnName">Text me my plan</span>, you agree Jesse Onate may text you about your move. Msg and data rates may apply. Reply STOP anytime.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="screen white" id="res">
+    <canvas id="confetti"></canvas>
+    <a class="closex" href="/" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+    <div class="pad center">
+      <img class="ico trophy" id="trophy" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Trophy/3D/trophy_3d.png" alt="">
+      <h2 class="title-dark" id="rTitle"></h2>
+      <p class="rs" id="rSub"></p>
+      <div class="chips2 light" id="rChips"></div>
+      <div class="gcard"><img src="/img/quiz/jesse-smile.webp" alt="Jesse Onate"><div><b>Jesse Onate, Realtor</b><span>DRE 02133131 · 5.0 on Google</span></div></div>
+      <div class="spacer"></div>
+      <a class="btn btn-purple" id="rText" href="sms:5626094200">Text Jesse now</a>
+      <a class="link" href="/zoom">Or book a 15 min call</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  // Every incorporated city per county, plus a few well known unincorporated communities.
+  var COUNTIES={
+    'Los Angeles County':['Agoura Hills','Alhambra','Altadena','Arcadia','Artesia','Avalon','Azusa','Baldwin Park','Bell','Bell Gardens','Bellflower','Beverly Hills','Bradbury','Burbank','Calabasas','Carson','Cerritos','Claremont','Commerce','Compton','Covina','Cudahy','Culver City','Diamond Bar','Downey','Duarte','East Los Angeles','El Monte','El Segundo','Gardena','Glendale','Glendora','Hacienda Heights','Hawaiian Gardens','Hawthorne','Hermosa Beach','Hidden Hills','Huntington Park','Industry','Inglewood','Irwindale','La Ca\u00f1ada Flintridge','La Habra Heights','La Mirada','La Puente','La Verne','Lakewood','Lancaster','Lawndale','Lomita','Long Beach','Los Angeles','Lynwood','Malibu','Manhattan Beach','Maywood','Monrovia','Montebello','Monterey Park','Norwalk','Palmdale','Palos Verdes Estates','Paramount','Pasadena','Pico Rivera','Pomona','Rancho Palos Verdes','Redondo Beach','Rolling Hills','Rolling Hills Estates','Rosemead','Rowland Heights','San Dimas','San Fernando','San Gabriel','San Marino','Santa Clarita','Santa Fe Springs','Santa Monica','Sierra Madre','Signal Hill','South El Monte','South Gate','South Pasadena','South Whittier','Temple City','Torrance','Vernon','Walnut','West Covina','West Hollywood','Westlake Village','Whittier'],
+    'Orange County':['Aliso Viejo','Anaheim','Brea','Buena Park','Costa Mesa','Coto de Caza','Cypress','Dana Point','Fountain Valley','Fullerton','Garden Grove','Huntington Beach','Irvine','La Habra','La Palma','Ladera Ranch','Laguna Beach','Laguna Hills','Laguna Niguel','Laguna Woods','Lake Forest','Los Alamitos','Mission Viejo','Newport Beach','Orange','Placentia','Rancho Santa Margarita','Rossmoor','San Clemente','San Juan Capistrano','Santa Ana','Seal Beach','Stanton','Tustin','Villa Park','Westminster','Yorba Linda'],
+    'Riverside County':['Banning','Beaumont','Blythe','Calimesa','Canyon Lake','Cathedral City','Coachella','Corona','Desert Hot Springs','Eastvale','Hemet','Indian Wells','Indio','Jurupa Valley','La Quinta','Lake Elsinore','Menifee','Moreno Valley','Murrieta','Norco','Palm Desert','Palm Springs','Perris','Rancho Mirage','Riverside','San Jacinto','Temecula','Wildomar'],
+    'San Bernardino County':['Adelanto','Apple Valley','Barstow','Big Bear Lake','Chino','Chino Hills','Colton','Fontana','Grand Terrace','Hesperia','Highland','Loma Linda','Montclair','Needles','Ontario','Rancho Cucamonga','Redlands','Rialto','San Bernardino','Twentynine Palms','Upland','Victorville','Yucaipa','Yucca Valley']
+  };
+  var COUNTY_OPTS=['Los Angeles County','Orange County','Riverside County','San Bernardino County'];
+  var NOT_LISTED='Not on the list';
+  var AVC=['linear-gradient(135deg,#F35F86,#F8A47B)','linear-gradient(135deg,#2E95F3,#4FC6F7)','linear-gradient(135deg,#F59E5B,#F8C963)','linear-gradient(135deg,#2EC4B6,#4FC6F7)','linear-gradient(135deg,#A18FD0,#F2A7D5)','linear-gradient(135deg,#7A55E6,#B47CF0)'];
+  var PATH_CARDS=[
+    {v:'Buy a home',lv:'Buyer',g:'g-blue',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Key/3D/key_3d.png'},
+    {v:'Sell my home',lv:'Seller',g:'g-pink',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Chart%20increasing/3D/chart_increasing_3d.png'},
+    {v:'Sell and buy',lv:'Move up',g:'g-purple',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Delivery%20truck/3D/delivery_truck_3d.png'},
+    {v:'Just curious',lv:'Curious',g:'g-orange',ico:'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Magnifying%20glass%20tilted%20left/3D/magnifying_glass_tilted_left_3d.png'}
+  ];
+  var WHEN={id:'timeline',q:'When would you like to move?',note:'No pressure. This just helps me plan the timing.',type:'one',opts:['As soon as I can','This year','Next year','No rush']};
+  var Q={
+    move:{id:'move',type:'pick'},
+    own:{id:'own',q:'Do you own a home right now?',type:'one',opts:['Yes, I do','Not yet']},
+    rent:{id:'rent',q:'What do you pay in rent now?',note:'This helps me show you what a monthly payment could look like.',type:'slider'},
+    lender:{id:'lender',q:'Have you talked to a lender yet?',note:'Not yet is totally normal. I can walk you through it.',type:'one',opts:['Yes','Not yet',"What's a lender?"]},
+    saved:{id:'saved',q:'Have you saved up for the move?',note:'Down payments can be smaller than most people think.',type:'one',opts:['A good chunk','A little','Not yet']},
+    buyCounty:{id:'whereCounty',q:'Which county do you want to move to?',type:'one',clears:'where',opts:COUNTY_OPTS.concat(['Somewhere else','Not sure yet'])},
+    whereBuy:{id:'where',q:'If you had to choose 1 city, which would you move to?',type:'city',from:'whereCounty'},
+    matters:{id:'matters',q:'What matters most in your next home?',note:'This helps me narrow down the right neighborhoods.',type:'one',opts:['More space','Good schools','A shorter commute','A yard']},
+    county:{id:'county',q:'Which county is your home in?',type:'one',clears:'city',opts:COUNTY_OPTS.concat(['Somewhere else'])},
+    city:{id:'city',q:'Which city is your home in?',type:'city',from:'county'},
+    years:{id:'years',q:'How long have you lived there?',note:'The longer you have owned, the more equity you have usually built.',type:'one',opts:['Less than 5 years','5 to 10 years','10 to 20 years','20+ years']},
+    why:{id:'why',q:"What's making you think about moving?",note:'Knowing why helps me plan the right next step.',type:'one',opts:['We need more room','Kids moved out','A new job','Closer to family','Ready to cash out']},
+    work:{id:'work',q:'Does the home need any work?',note:'Either way is fine. Plenty of homes sell as is.',type:'one',opts:['Move in ready','A little','A lot']},
+    next:{id:'next',q:'Where are you headed after?',type:'one',opts:['Buying another home','Renting','Leaving the area','Not sure yet']},
+    sellFirst:{id:'sellFirst',q:'Do you need to sell before you buy?',note:'There are ways to buy first. I will explain your options.',type:'one',opts:['Yes','No','Not sure']},
+    nextCounty:{id:'whereCounty',q:'Where do you want to move next?',type:'one',clears:'where',opts:COUNTY_OPTS.concat(['Somewhere else','Not sure yet'])},
+    whereNext:{id:'where',q:'If you had to choose 1 city, which would you move to?',type:'city',from:'whereCounty'},
+    type:{id:'type',q:'What kind of home is it?',type:'one',opts:['House','Condo or townhome','2 to 4 units','Mobile home']},
+    beds:{id:'beds',q:'How many bedrooms does it have?',type:'one',opts:['1 to 2','3','4','5 or more']},
+    bedsNeed:{id:'bedsNeed',q:'How many bedrooms do you need?',type:'one',opts:['1 to 2','3','4','5 or more']},
+    worth:{id:'worth',q:'What do you think your home is worth?',type:'one',opts:['Under $600K','$600K to $800K','$800K to $1M','$1M to $1.5M','Over $1.5M','No idea']},
+    address:{id:'address',q:"What's the address?",sub:'So I can pull the real value of your home.',type:'addr'},
+    when:WHEN
+  };
+  // Look per question: background + answer format + 3D object (reference: screens alternate blue / white / sunset)
+  var LOOK={
+    when:['blue','Spiral calendar'],county:['white','cards'],buyCounty:['white','cards'],nextCounty:['white','cards'],
+    city:['blue','Round pushpin'],whereBuy:['blue','Round pushpin'],whereNext:['blue','Round pushpin'],
+    type:['white','rows'],beds:['sunset','Bed'],bedsNeed:['sunset','Bed'],years:['blue','Hourglass not done'],
+    why:['white','rows'],work:['sunset','Hammer and wrench'],worth:['blue','Money bag'],address:['white','field'],
+    matters:['white','cards'],rent:['blue','Dollar banknote'],lender:['sunset','Bank'],saved:['white','pills'],
+    sellFirst:['sunset','Delivery truck'],own:['sunset','Key']
+  };
+  var ICO='https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/';
+  function icoUrl(n){return ICO+encodeURIComponent(n)+'/3D/'+n.toLowerCase().replace(/ /g,'_')+'_3d.png'}
+  Object.keys(LOOK).forEach(function(k){var n=LOOK[k][1];if(n&&!/^(cards|rows|pills|field)$/.test(n)){var im=new Image();im.src=icoUrl(n)}});
+  function buzz(){try{if(navigator.vibrate)navigator.vibrate(8)}catch(e){}}
+  document.addEventListener('click',function(e){if(e.target.closest('.ans,.card,.crow,.btn'))buzz()},true);
+  function bgAt(i){
+    var prev='white';
+    for(var k=1;k<=i;k++){ if(skip(k))continue; var l=LOOK[path[k]]||['blue']; var bg=l[0];
+      if(bg===prev)bg=prev==='white'?'blue':(prev==='blue'?'sunset':'blue'); if(k===i)return bg; prev=bg; }
+    return prev;
+  }
+  var PATHS={
+    buyer:['move','when','buyCounty','whereBuy','bedsNeed','matters','rent','lender','saved'],
+    seller:['move','when','county','city','type','beds','years','why','work','worth','address'],
+    moveup:['move','when','county','city','type','worth','why','sellFirst','nextCounty','whereNext','address'],
+    curiousOwner:['move','own','when','county','city','type','years','worth','address'],
+    curiousRenter:['move','own','when','buyCounty','whereBuy','bedsNeed','rent','lender','saved']
+  };
+
+  var A={}, path=PATHS.buyer, idx=0, t0=Date.now(), utm={};
+  try{var sp=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){if(sp.get(k))utm[k]=sp.get(k).slice(0,80)})}catch(e){}
+  if(!utm.utm_source&&/instagram/i.test(navigator.userAgent))utm.utm_source='instagram';
+
+  function track(n,p){try{if(window.trackEvent)window.trackEvent(n,p||{});else if(window.gtag)window.gtag('event',n,p||{})}catch(e){}}
+  var $=function(id){return document.getElementById(id)};
+  function show(id){
+    document.querySelectorAll('.screen').forEach(function(s){s.classList.toggle('on',s.id===id)});
+    var ap=$('app');ap.scrollTop=0;ap.scrollLeft=0;
+    var m=document.querySelector('meta[name=theme-color]');if(m)m.content=$(id).classList.contains('white')?'#FFFFFF':'#448AF0';
+    window.scrollTo(0,0);
+  }
+  function routeFrom(){
+    var m=A.move;
+    if(m==='Buy a home')path=PATHS.buyer;
+    else if(m==='Sell my home')path=PATHS.seller;
+    else if(m==='Sell and buy')path=PATHS.moveup;
+    else path=(A.own==='Yes, I do')?PATHS.curiousOwner:PATHS.curiousRenter;
+  }
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+  function img(src,cls){var i=document.createElement('img');i.className='ico '+(cls||'');i.src=src;i.alt='';return i}
+  function nextBtn(label){var b=el('button','btn btn-white',label||'Continue');b.style.marginTop='22px';b.onclick=next;return b}
+
+  function moreHint(){var pd=document.querySelector('#pick .pad'),h=$('moreHint');h.classList.toggle('gone',pd.scrollTop>24||pd.scrollHeight<=pd.clientHeight+4)}
+  document.querySelector('#pick .pad').addEventListener('scroll',moreHint,{passive:true});
+  function renderPick(){
+    var w=$('cards');w.innerHTML='';
+    PATH_CARDS.forEach(function(c){
+      var b=el('button','card '+c.g+(A.move===c.v?' sel':''));
+      b.appendChild(el('span','ck'));b.appendChild(img(c.ico));
+      b.appendChild(el('span','tt',c.v));
+      b.onclick=function(){A.move=c.v;w.querySelectorAll('.card').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');routeFrom();setTimeout(next,280)};
+      w.appendChild(b);
+    });
+  }
+  function render(){
+    var q=Q[path[idx]];
+    if(q.type==='pick'){renderPick();show('pick');setTimeout(moreHint,50);return}
+    if(!$('qs').classList.contains('on'))show('qs');
+    $('barFill').style.width=Math.round((idx+1)/(path.length+1)*100)+'%';
+    var look=LOOK[path[idx]]||['blue'],bg=bgAt(idx),fmt=bg==='white'?(look[1]||'rows'):(bg==='sunset'?'glass':'buttons');
+    var qs=$('qs');qs.classList.remove('blue','bg-blue','bg-white','bg-sunset');qs.classList.add('bg-'+bg);
+    var pct=Math.round(idx/path.length*100),secs=Math.max(10,(path.length-idx)*6);
+    $('stepTxt').innerHTML='<b>'+(idx+1)+'</b><span class="of">/'+path.length+'</span><span class="coin"><i></i>'+pct+'%</span><span class="opill">'+secs+' sec left</span>';
+    $('stepTxt').dataset.q='Question '+(idx+1)+' of '+path.length;
+    var ic=$('qIco');if(bg!=='white'&&look[1]&&!/^(cards|rows|pills|field)$/.test(look[1])){ic.src=icoUrl(look[1]);ic.style.display=''}else{ic.removeAttribute('src');ic.style.display='none'}
+    var m=document.querySelector('meta[name=theme-color]');if(m)m.content=bg==='white'?'#FFFFFF':(bg==='sunset'?'#7A5BC8':'#2F5BEA');
+    $('qTitle').className='qt h-'+fmt;
+    $('qTitle').textContent=q.q;
+    document.querySelector('#qs .pad').scrollTop=0;
+    var body=$('qBody');body.innerHTML='';
+    if(q.type==='one'){
+      if(bg!=='white')body.appendChild(el('div','pickl'+(q.opts.length>4?' tight':''),'Pick one'));
+      var seg=false;
+      if(fmt==='cards'&&q.opts.length<=4)body.appendChild(el('p','csub','Tap the one that fits.'));
+      var wrap=el('div','answers f-'+fmt+(q.opts.length>4?' many':'')+(seg?' seg':''));
+      q.opts.forEach(function(o,oi){
+        var b=el('button','ans'+(A[q.id]===o?' sel':''));
+        if(fmt==='rows')b.appendChild(el('span','rk',String(oi+1)));
+        b.appendChild(el('span','lbl',o));
+        if(fmt==='cards'){b.classList.add('gc'+(oi%6));}
+        if(fmt==='pills'||fmt==='rows'){b.classList.add('pc'+(oi%5));}
+        if(fmt==='rows'||fmt==='cards')b.appendChild(el('span','ckc'));
+        b.onclick=function(){if(q.clears&&A[q.id]!==o)delete A[q.clears];A[q.id]=o;wrap.querySelectorAll('.ans').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');if(q.id==='own')routeFrom();setTimeout(next,320)};
+        wrap.appendChild(b);
+      });
+      body.appendChild(wrap);
+    }else if(q.type==='city'){
+      var list=COUNTIES[A[q.from]].concat([NOT_LISTED]);
+      var picked=(A[q.id]||'').split(', ').filter(Boolean);
+      var sh2=el('div','sheet');
+      var srch=document.createElement('input');srch.className='csearch';srch.type='search';srch.placeholder='Search cities';srch.setAttribute('aria-label','Search cities');
+      var cl=el('div','clist');
+      var gob=el('button','btn btn-purple csticky','Continue');
+      function syncGo(){gob.disabled=!picked.length;gob.textContent=picked.length>1?'Continue with '+picked.length+' cities':'Continue'}
+      list.forEach(function(c){
+        var r=el('button','crow'+(picked.indexOf(c)>-1?' sel':''));r.dataset.n=c.toLowerCase();
+        var av=el('span','cav',c===NOT_LISTED?'?':c.charAt(0));av.style.background=AVC[list.indexOf(c)%AVC.length];
+        var nm=el('span','cnm');nm.appendChild(av);nm.appendChild(el('span',null,c));r.appendChild(nm);r.appendChild(el('span','ck'));
+        r.onclick=function(){
+          if(q.multi){var i=picked.indexOf(c);if(i>-1)picked.splice(i,1);else picked.push(c);r.classList.toggle('sel');A[q.id]=picked.join(', ');syncGo()}
+          else{A[q.id]=c;cl.querySelectorAll('.crow').forEach(function(x){x.classList.remove('sel')});r.classList.add('sel');setTimeout(next,280)}
+        };
+        cl.appendChild(r);
+      });
+      srch.oninput=function(){var v=srch.value.trim().toLowerCase();cl.querySelectorAll('.crow').forEach(function(r){r.style.display=!v||r.dataset.n.indexOf(v)>-1||r.dataset.n===NOT_LISTED.toLowerCase()?'':'none'})};
+      var sw=el('label','swrap');sw.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>';sw.appendChild(srch);
+      sh2.appendChild(sw);sh2.appendChild(cl);
+      body.appendChild(sh2);
+      if(q.multi){gob.onclick=next;syncGo();var dk=el('div','dock');dk.appendChild(gob);body.appendChild(dk)}
+    }else if(q.type==='addr'){
+      var ab=el('div','sheet');
+      if(q.sub)ab.appendChild(el('p','asub',q.sub));
+      var ai=document.createElement('input');ai.className='field afield';ai.type='text';ai.placeholder='Street address';ai.autocomplete='street-address';ai.setAttribute('aria-label','Street address');ai.value=A.address||'';
+      var ago=el('button','btn btn-purple','Continue');ago.style.marginTop='14px';
+      function okA(){ago.disabled=ai.value.trim().length<5}
+      ai.oninput=function(){A.address=ai.value.trim().slice(0,160);okA()};
+      ai.onkeydown=function(e){if(e.key==='Enter'&&!ago.disabled){e.preventDefault();next()}};
+      ago.onclick=next;okA();
+      var aw=el('label','swrap');aw.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';aw.appendChild(ai);
+      ab.appendChild(aw);ab.appendChild(ago);
+      var sk=el('button','skip','Skip for now');sk.onclick=function(){delete A.address;next()};
+      body.appendChild(ab);body.appendChild(sk);
+      setTimeout(function(){try{ai.focus({preventScroll:true})}catch(e){}},350);
+    }else if(q.type==='slider'){
+      var v=parseInt(A.rentNum||2500,10);
+      var box=el('div','sheet');var s=el('div','slider');
+      var val=el('div','v');var u=el('div','u','per month');
+      var r=document.createElement('input');r.type='range';r.min=500;r.max=10000;r.step=100;r.value=v;r.setAttribute('aria-label','Monthly rent');
+      var ends=el('div','ends');ends.appendChild(el('span',null,'$500'));ends.appendChild(el('span',null,'$10,000+'));
+      function upd(){var n=+r.value;A.rentNum=n;A.rent='$'+n.toLocaleString()+(n>=10000?'+':'')+'/mo';val.textContent='$'+n.toLocaleString()+(n>=10000?'+':'')}
+      r.oninput=upd;upd();
+      var row=el('div','vrow'),mn=el('button','step-b','\u2212'),pl=el('button','step-b','+');
+      mn.setAttribute('aria-label','Less');pl.setAttribute('aria-label','More');
+      mn.onclick=function(){r.value=Math.max(500,+r.value-100);upd();buzz()};pl.onclick=function(){r.value=Math.min(10000,+r.value+100);upd();buzz()};
+      row.appendChild(mn);row.appendChild(val);row.appendChild(pl);
+      s.appendChild(row);s.appendChild(u);s.appendChild(r);s.appendChild(ends);box.appendChild(s);
+      body.appendChild(box);body.appendChild(nextBtn());
+    }
+  }
+  function skip(i){var q=Q[path[i]];return q&&q.type==='city'&&!COUNTIES[A[q.from]]}
+  function next(){
+    var n=idx+1;while(n<path.length&&skip(n))n++;
+    if(n<path.length){var was=$('qs').classList.contains('on');idx=n;render();if(was)animate()}
+    else loading();
+  }
+  function back(){var n=idx-1;while(n>0&&skip(n))n--;if(n>=0){var was=$('qs').classList.contains('on');idx=n;$('qs').classList.add('rev');render();if(was&&Q[path[n]].type!=='pick')animate();setTimeout(function(){$('qs').classList.remove('rev')},420)}else show('land')}
+  function chipsInto(id,max){
+    var w=$(id);if(!w)return;w.innerHTML='';
+    var c=A.city&&A.city!==NOT_LISTED?A.city:(A.where&&A.where!==NOT_LISTED?A.where:null);
+    [c,A.type,A.beds?A.beds+' bed':(A.bedsNeed?A.bedsNeed+' bed':null),A.timeline,A.worth&&A.worth!=='No idea'?A.worth:null].filter(Boolean).slice(0,max||4).forEach(function(t,i){w.appendChild(el('span','chip2 cc'+i,t))});
+  }
+  function loading(){
+    chipsInto('ldChips');
+    show('load');track('quiz_complete',{path:pathName()});
+    var lis=$('checks').querySelectorAll('li');
+    lis.forEach(function(li){li.classList.remove('done')});
+    lis.forEach(function(li,i){setTimeout(function(){li.classList.add('done')},500+i*700)});
+    var isB=pathName()==='buyer',bl=isB?'Text me my plan':'Text me my home value';
+    $('capTitle').textContent=isB?'Last step! Where should I text your plan?':'Last step! Where should I text your home value?';
+    $('capBtn').textContent=bl;$('capBtnName').textContent=bl;
+    setTimeout(function(){show('cap');track('quiz_capture_view',{path:pathName()})},2700);
+  }
+  function animate(){var s=document.querySelector('.screen.on');if(!s||s.id!=='qs')return;s.style.transition='none';s.classList.remove('on');void s.offsetWidth;s.style.transition='';s.classList.add('on')}
+  function pathName(){
+    if(path===PATHS.buyer||path===PATHS.curiousRenter)return 'buyer';
+    if(path===PATHS.seller||path===PATHS.curiousOwner)return 'seller';
+    return 'moveup';
+  }
+
+  $('startBtn').onclick=function(){idx=0;render();track('quiz_start',utm)};
+  $('backBtn').onclick=back;
+  $('pickBack').onclick=function(){show('land')};
+  $('capBack').onclick=function(){render()};
+
+  function cap1(s){s=s.trim().split(/\s+/)[0]||'';return s.charAt(0).toUpperCase()+s.slice(1)}
+  function fmtPhone(v){var d=v.replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);return d}
+  $('fPhone').addEventListener('input',function(e){
+    var d=fmtPhone(e.target.value).slice(0,10),o=d;
+    if(d.length>6)o='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
+    else if(d.length>3)o='('+d.slice(0,3)+') '+d.slice(3);
+    e.target.value=o;
+  });
+
+  $('fName').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('fPhone').focus()}});
+  $('capForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('fName').value.trim(),phone=fmtPhone($('fPhone').value),err='';
+    $('fName').classList.toggle('err',!name);
+    $('fPhone').classList.toggle('err',phone.length!==10);
+    if(!name)err='Please add your first name.';
+    else if(phone.length!==10)err='Please add a 10 digit mobile number.';
+    $('capErr').textContent=err;
+    if(err)return;
+    var btn=$('capBtn');btn.disabled=true;btn.textContent='Sending...';
+    var answers={};Object.keys(A).forEach(function(k){if(k!=='rentNum')answers[k]=A[k]});
+    var payload={name:name,phone:phone,path:pathName(),answers:answers,utm:utm,website:$('fWebsite').value,elapsed:Date.now()-t0};
+    var done=false;
+    function finish(){if(done)return;done=true;showResult(name);track('quiz_lead',{path:payload.path,timeline:A.timeline||''});try{if(window.fbq)window.fbq('track','Lead',{content_name:'Move Up Quiz'})}catch(e){}}
+    fetch('/api/quiz',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true})
+      .then(finish,finish);
+    setTimeout(finish,4000);
+  });
+
+  function showResult(name){
+    var first=cap1(name), fe=escapeHtml(first);
+    var p=pathName(),t,s,city=A.city&&A.city!==NOT_LISTED?A.city+' ':'';
+    var ready=(A.timeline==='As soon as I can'||A.timeline==='This year')&&(A.lender==='Yes'||A.saved==='A good chunk');
+    if(p==='buyer'&&ready){t=fe+', you’re ready to start <em>touring!</em>';s='I’ll text you within 24 hours with homes that fit what you told me.'}
+    else if(p==='buyer'){t=fe+', your first home is closer than you <em>think!</em>';s='I’ll text you a simple game plan within 24 hours. No pressure, just next steps.'}
+    else if(p==='seller'){t=fe+', let’s find out what your '+city+'home is <em>worth!</em>';s='I’ll text you its real value within 24 hours.'}
+    else{t=fe+', your home could be your <em>down payment!</em>';s='I’ll text you its real value within 24 hours, plus how to buy and sell without moving twice.'}
+    $('rTitle').innerHTML=t;
+    $('rSub').textContent=s;
+    $('rText').href='sms:5626094200?body='+encodeURIComponent('Hi Jesse, it’s '+first+'. I just took your Move Up Quiz.');
+    chipsInto('rChips',3);show('res');confetti();
+  }
+  function escapeHtml(s){return s.replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+
+  function confetti(){
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var c=$('confetti'),x=c.getContext('2d'),d=2,W=c.width=c.offsetWidth*d,H=c.height=c.offsetHeight*d;
+    var cols=['#E2445C','#F0DC17','#3A8EF2','#7AC943','#F59E5B','#A18FD0'],R=[],B=[];
+    for(var i=0;i<14;i++)R.push({x:Math.random()*W,y:-Math.random()*H*.5-40,len:120+Math.random()*160,amp:14+Math.random()*16,ph:Math.random()*6,vy:3+Math.random()*3,vx:-1+Math.random()*2,c:cols[i%cols.length],w:7+Math.random()*4});
+    for(var j=0;j<70;j++)B.push({x:Math.random()*W,y:-Math.random()*H*.7,r:Math.random()*6,vr:-.12+Math.random()*.24,vy:3+Math.random()*4,s:6+Math.random()*8,c:cols[j%cols.length],k:j%3});
+    var t=0;(function f(){x.clearRect(0,0,W,H);t++;var a=Math.max(0,Math.min(1,(300-t)/60));x.globalAlpha=a;
+      R.forEach(function(r){r.y+=r.vy;r.x+=r.vx;x.beginPath();for(var k=0;k<=24;k++){var u=k/24,yy=r.y-u*r.len,xx=r.x+Math.sin(u*9+r.ph+t*.06)*r.amp;k?x.lineTo(xx,yy):x.moveTo(xx,yy)}x.strokeStyle=r.c;x.lineWidth=r.w;x.lineCap='round';x.stroke()});
+      B.forEach(function(b){b.y+=b.vy;b.x+=Math.sin((t+b.r*30)/20)*1.2;b.r+=b.vr;x.save();x.translate(b.x,b.y);x.rotate(b.r);x.fillStyle=b.c;
+        if(b.k===0){x.fillRect(-b.s/2,-b.s/4,b.s,b.s/2)}else if(b.k===1){x.beginPath();x.arc(0,0,b.s/2,0,Math.PI);x.lineWidth=3;x.strokeStyle=b.c;x.stroke()}else{x.fillRect(-2,-b.s/2,4,b.s)}x.restore()});
+      if(t<300)requestAnimationFrame(f);else x.clearRect(0,0,W,H)})();
+  }
+
+  track('quiz_view',utm);
+})();
+</script>
+<script src="/js/analytics.js" defer></script>
+</body>
+</html>

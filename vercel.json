@@ -9,6 +9,8 @@
     { "source": "/home12", "destination": "/", "permanent": true },
     { "source": "/oldhome", "destination": "/", "permanent": true },
     { "source": "/ig", "destination": "/", "permanent": true },
+    { "source": "/quiz", "destination": "/move", "permanent": true },
+    { "source": "/buyer-quiz", "destination": "/move", "permanent": true },
     { "source": "/sellerguide", "destination": "/seller", "permanent": true },
     { "source": "/buyerguide", "destination": "/buyer", "permanent": true },
     { "source": "/equityreport", "destination": "/valuation", "permanent": true },
