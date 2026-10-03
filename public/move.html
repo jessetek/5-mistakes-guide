@@ -348,7 +348,28 @@ input[type=range]{width:100%;margin:20px 0 6px;accent-color:var(--purple);height
 button:focus-visible,a:focus-visible{outline:3px solid #FBE425;outline-offset:2px}
 input:focus-visible{outline:none}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-@media(max-height:620px){.top{margin-bottom:14px}.cards{gap:46px;margin-top:48px}.card{height:118px}.card .ico{width:92px;height:92px;top:-34px}.answers{margin-top:26px;gap:12px}.ans{height:50px}.f-cards .ans{height:56px}.f-cards.many .ans{height:48px}.f-cards.many{gap:8px}.f-rows .ans{height:52px}.f-pills .ans{height:52px}.f-pills{gap:10px;margin-top:22px}.qico{width:92px;height:92px}#qs.bg-white .qt{margin-top:16px;font-size:23px}#qs .top{margin-bottom:16px}#qs .pad{padding-top:calc(12px + env(safe-area-inset-top))}.pickl{margin-top:18px}.qt{font-size:22px}.trophy{width:96px;height:96px;margin-bottom:4px}#res .pad{padding-top:calc(18px + env(safe-area-inset-top))}#res .title-dark{font-size:21px}#res .rs{font-size:14px;margin-top:6px}.gcard{margin-top:14px;padding:12px 14px;gap:10px}.gcard img{width:44px;height:44px}.gcard b{font-size:15px;white-space:nowrap}.gcard span{font-size:11.5px;white-space:nowrap}#res .spacer{flex:0 0 18px;min-height:18px}#res .chips2{margin-top:10px}.chip2{font-size:12px;padding:5px 10px}.closex{top:10px;left:14px;width:34px;height:34px}.title-dark{font-size:24px}.sheet{margin-top:18px}.note{margin-top:12px}}
+
+/* fit-to-screen (Instagram in-app browser is ~393x708) + larger titles */
+#pick .pad{padding-top:calc(10px + env(safe-area-inset-top));overflow-y:auto}
+#pick .top{height:38px;margin-bottom:10px}
+.title-pink{font-size:29px;line-height:1.2}
+#pick .sub{font-size:15px}
+#pick{--ch:clamp(66px,calc((100dvh - 290px) / 4),124px)}
+#pick .cards{margin-top:22px;gap:26px;padding-bottom:4px}
+#pick .card{height:var(--ch);padding:0 22px calc(var(--ch) * .16)}
+#pick .card .tt{font-size:26px}
+#pick .card .ico{width:calc(var(--ch) * .84);height:calc(var(--ch) * .84);top:-12px;right:16px}
+#pick .card .ck{top:14px;width:30px;height:30px}
+.qt{font-size:28px;line-height:1.28}
+#qs.bg-white .qt{font-size:28px}
+#qs.bg-white .qt.h-cards{font-size:28px}
+.title-dark{font-size:30px}
+@media (max-height:700px){#pick .card .ck{display:none}#pick .cards{margin-top:18px}#pick .card .tt{font-size:24px}}
+
+#res .title-dark{font-size:28px}
+.trophy{width:122px;height:122px}
+@media (max-height:600px){.answers.many{gap:8px;margin-top:14px}.answers.many .ans,.f-cards.many .ans{height:44px}.pickl.tight{display:none}.pickl.tight+.answers{margin-top:16px}.qico{width:76px;height:76px}#qs.bg-white .f-cards.many{margin-top:12px}#qs .top{margin-bottom:10px}}
+@media(max-height:620px){.top{margin-bottom:14px}.cards{gap:46px;margin-top:48px}.card{height:118px}.card .ico{width:92px;height:92px;top:-34px}.answers{margin-top:26px;gap:12px}.ans{height:50px}.f-cards .ans{height:56px}.f-cards.many .ans{height:42px;font-size:16px}.f-cards.many{gap:7px}#qs.bg-white .qnum{padding:8px 14px}#qs.bg-white .qnum b{font-size:19px}.f-rows .ans{height:52px}.f-pills .ans{height:52px}.f-pills{gap:10px;margin-top:22px}.qico{width:92px;height:92px}#qs.bg-white .qt{margin-top:16px;font-size:24px}#qs .top{margin-bottom:16px}#qs .pad{padding-top:calc(12px + env(safe-area-inset-top))}.pickl{margin-top:18px}.qt{font-size:24px}.trophy{width:96px;height:96px;margin-bottom:4px}#res .pad{padding-top:calc(18px + env(safe-area-inset-top))}#res .title-dark{font-size:23px}#res .rs{font-size:14px;margin-top:6px}.gcard{margin-top:14px;padding:12px 14px;gap:10px}.gcard img{width:44px;height:44px}.gcard b{font-size:15px;white-space:nowrap}.gcard span{font-size:11.5px;white-space:nowrap}#res .spacer{flex:0 0 18px;min-height:18px}#res .chips2{margin-top:10px}.chip2{font-size:12px;padding:5px 10px}.closex{top:10px;left:14px;width:34px;height:34px}.title-dark{font-size:24px}.sheet{margin-top:18px}.note{margin-top:12px}}
 </style>
 </head>
 <body>
