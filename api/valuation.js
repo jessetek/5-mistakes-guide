@@ -6,6 +6,8 @@
 //   - JTEK_API_KEY
 //   - JTEK_LOCATION_ID
 
+import { screen } from './_form-guard.js';
+
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,13 +27,6 @@ export default async function handler(req, res) {
     website, elapsed,
   } = req.body || {};
 
-  // Honeypot + time-trap. Same as submit.js.
-  // 'website' is hidden from real users — bots auto-fill it.
-  // 'elapsed' under 2s = bot.
-  if (website || (typeof elapsed === 'number' && elapsed < 2000)) {
-    return res.status(200).json({ success: true });
-  }
-
   if (!address || !name || !contact) {
     return res.status(400).json({ error: 'Address, name, and contact are required' });
   }
@@ -40,6 +35,14 @@ export default async function handler(req, res) {
   const isEmail = /\S+@\S+\.\S+/.test(contact);
   const phone = isEmail ? '' : contact.replace(/[^0-9+]/g, '');
   const email = isEmail ? contact : '';
+
+  // Spam screen, same rules as submit.js. A blocked bot still gets a 200.
+  const [first, ...rest] = String(name).trim().split(/\s+/);
+  const verdict = screen({ firstName: first, lastName: rest.join(' '), email, phone }, { honeypot: website, elapsed });
+  if (!verdict.ok) {
+    console.warn('valuation blocked:', verdict.reasons.join(','));
+    return res.status(200).json({ success: true });
+  }
 
   // Auto-tag by timeline so workflows can branch by urgency.
   const tags = ['valuation-request', 'seller'];

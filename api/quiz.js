@@ -6,6 +6,8 @@
 //   - JTEK_API_KEY
 //   - JTEK_LOCATION_ID
 
+import { screen } from './_form-guard.js';
+
 const PATHS = { buyer: 'buyer', seller: 'seller', moveup: 'move-up' };
 
 const LABELS = {
@@ -32,14 +34,19 @@ export default async function handler(req, res) {
 
   const { name, phone, path, answers, utm, website, elapsed } = req.body || {};
 
-  // Honeypot + time-trap, same as submit.js. A real person needs well over 5s for the quiz.
-  if (website || (typeof elapsed === 'number' && elapsed < 5000)) {
-    return res.status(200).json({ success: true });
-  }
-
   const digits = String(phone || '').replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');
   if (!clean(name) || digits.length !== 10) {
     return res.status(400).json({ error: 'Name and a 10 digit phone are required' });
+  }
+
+  // Spam screen, same rules as submit.js. A real person needs well over 5s for
+  // the quiz. A blocked bot still gets a 200.
+  const [first, ...rest] = clean(name, 80).split(/\s+/);
+  const verdict = screen({ firstName: first, lastName: rest.join(' '), phone: digits },
+    { honeypot: website, elapsed, minMs: 5000 });
+  if (!verdict.ok) {
+    console.warn('quiz blocked:', verdict.reasons.join(','));
+    return res.status(200).json({ success: true });
   }
 
   const a = answers && typeof answers === 'object' ? answers : {};

@@ -1,3 +1,5 @@
+import { screen } from './_form-guard.js';
+
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -14,10 +16,11 @@ export default async function handler(req, res) {
 
   const { firstName, email, phone, website, elapsed, source, quizScore, quizBand, quizAnswers } = req.body;
 
-  // Honeypot: real users never see this field, so any value means a bot.
-  // Time-trap: humans take longer than 2s to fill the form.
-  // Silently return 200 so bots think they succeeded and stop retrying.
-  if (website || typeof elapsed !== 'number' || elapsed < 2000) {
+  // Spam screen (honeypot, timer, email, name and phone signals). A blocked
+  // bot still gets a 200 so it thinks it succeeded and stops retrying.
+  const verdict = screen({ firstName, email, phone }, { honeypot: website, elapsed });
+  if (!verdict.ok) {
+    console.warn('submit blocked:', source || 'guide', verdict.reasons.join(','));
     return res.status(200).json({ success: true });
   }
 
