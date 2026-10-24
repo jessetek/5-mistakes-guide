@@ -710,7 +710,8 @@
           quizScore: score,
           quizBand: band,
           quizAnswers: state.answers,
-          elapsed: Date.now() - (window.__qzLoadedAt || 0)
+          elapsed: Date.now() - (window.__qzLoadedAt || 0),
+          attribution: window.siteAttribution ? window.siteAttribution() : null
         })
       }).then(function(r){
         if(!r.ok)throw new Error('submit failed');

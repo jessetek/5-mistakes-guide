@@ -7,6 +7,7 @@
 //   - JTEK_LOCATION_ID
 
 import { screen } from './_form-guard.js';
+import { saveAttribution } from './_attribution.js';
 
 const PATHS = { buyer: 'buyer', seller: 'seller', moveup: 'move-up' };
 
@@ -117,6 +118,7 @@ export default async function handler(req, res) {
       const result = await response.json();
       const contactId = result?.contact?.id || '';
       await attachNote(contactId);
+      await saveAttribution(contactId, (req.body || {}).attribution, ghlHeaders);
       return res.status(200).json({ success: true });
     }
 
@@ -130,6 +132,7 @@ export default async function handler(req, res) {
       });
       const upsertResult = await upsertResponse.json();
       await attachNote(upsertResult?.contact?.id || '');
+      await saveAttribution(upsertResult?.contact?.id || '', (req.body || {}).attribution, ghlHeaders);
       return res.status(200).json({ success: true });
     }
 

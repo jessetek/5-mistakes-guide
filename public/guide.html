@@ -289,7 +289,8 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
         email: document.getElementById(emailId).value.trim(),
         phone: document.getElementById(phoneId).value.trim(),
         website: hpInput ? hpInput.value : '',
-        elapsed: Date.now() - loadedAt
+        elapsed: Date.now() - loadedAt,
+        attribution: window.siteAttribution ? window.siteAttribution() : null
       };
 
       try {

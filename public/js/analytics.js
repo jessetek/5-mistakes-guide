@@ -220,6 +220,9 @@ window.JESSE_CONFIG = window.JESSE_CONFIG || {
     });
   }
 
+  // ----- Where the visitor came from, for the site forms (js/attrib.js, same file as jtek.app) -----
+  var at = document.createElement('script'); at.src = '/js/attrib.js'; at.async = true; document.head.appendChild(at);
+
   // ----- Cookie consent -----
   // Banner UI removed 2026-08-25 (was hurting conversions). Analytics runs by
   // default; visitors who chose 'essential only' under the old banner keep

@@ -609,7 +609,7 @@ img{display:block}
     if(err)return;
     var btn=$('capBtn');btn.disabled=true;btn.textContent='Sending...';
     var answers={};Object.keys(A).forEach(function(k){if(k!=='rentNum')answers[k]=A[k]});
-    var payload={name:name,phone:phone,path:pathName(),answers:answers,utm:utm,website:$('fWebsite').value,elapsed:Date.now()-t0};
+    var payload={name:name,phone:phone,path:pathName(),answers:answers,utm:utm,website:$('fWebsite').value,elapsed:Date.now()-t0,attribution:window.siteAttribution ? window.siteAttribution() : null};
     var done=false;
     function finish(){if(done)return;done=true;showResult(name);track('quiz_lead',{path:payload.path,timeline:A.timeline||''});try{if(window.fbq)window.fbq('track','Lead',{content_name:'Move Up Quiz'})}catch(e){}}
     fetch('/api/quiz',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true})

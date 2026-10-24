@@ -953,6 +953,7 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     var data = {};
     new FormData(form).forEach(function(v, k){ data[k] = v; });
     data.elapsed = Date.now() - loadedAt;
+    data.attribution = window.siteAttribution ? window.siteAttribution() : null;
 
     if (!data.address || !data.name || !data.contact) {
       err.textContent = 'Address, name, and a phone or email are all required.';
