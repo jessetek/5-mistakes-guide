@@ -21,8 +21,9 @@
     { "source": "/es", "destination": "/", "permanent": false },
     { "source": "/es/", "destination": "/", "permanent": false },
     { "source": "/es/:path*", "destination": "/", "permanent": false },
-    { "source": "/gallery", "destination": "/listings", "permanent": true },
-    { "source": "/property", "destination": "/listings", "permanent": true },
+    { "source": "/gallery", "destination": "/buyer", "permanent": true },
+    { "source": "/property", "destination": "/buyer", "permanent": true },
+    { "source": "/listings", "destination": "/buyer", "permanent": true },
     { "source": "/resume", "destination": "/about", "permanent": true }
   ],
   "crons": [

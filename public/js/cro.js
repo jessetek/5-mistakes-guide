@@ -175,7 +175,7 @@
       ctaSub = 'CMA · 24h.';
       ctaText = 'Find out →';
       ctaHref = '/valuation';
-    } else if (/\/buyer|\/checklist|\/calculator|\/rent-vs-buy|\/listings/.test(path)) {
+    } else if (/\/buyer|\/checklist|\/calculator|\/rent-vs-buy/.test(path)) {
       ctaTitle = '15-min strategy call';
       ctaSub = 'No pressure. No pitch.';
       ctaText = 'Book →';
