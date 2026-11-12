@@ -10,8 +10,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=49">
+<meta name="theme-color" content="#B8CAF5">
+<link rel="stylesheet" href="/css/main.min.css?v=52">
 <style>
   .nf-shell{
     min-height:100vh;display:flex;align-items:center;justify-content:center;
@@ -20,11 +20,11 @@
     color:#fff;text-align:center;position:relative;overflow:hidden;
   }
   .nf-shell::before{content:'';position:absolute;inset:0;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
-  .nf-shell::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,113,227,.18) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
+  .nf-shell::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(3,3,2,0.108) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
   .nf-inner{position:relative;z-index:2;max-width:600px;margin:0 auto}
   .nf-code{
     font-size:clamp(80px,12vw,160px);font-weight:800;letter-spacing:-6px;line-height:1;
-    background:linear-gradient(135deg,#0071E3,#5856D6);
+    background:linear-gradient(135deg,#030302,#030302);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     margin-bottom:14px;
   }
@@ -40,7 +40,7 @@
   .nf-popular h3{font-size:14px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--text3);margin:0 0 14px}
   .nf-popular-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .nf-popular a{display:block;padding:10px 12px;border-radius:10px;color:var(--text);text-decoration:none;font-size:14px;font-weight:500;transition:background .15s}
-  .nf-popular a:hover{background:rgba(0,113,227,.06);color:var(--blue)}
+  .nf-popular a:hover{background:rgba(3,3,2,0.036);color:var(--blue)}
   @media(max-width:600px){.nf-popular-grid{grid-template-columns:1fr}}
 </style>
 <style id="navPally">
@@ -59,10 +59,10 @@
 .nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
 .nav-cta2{
   display:inline-flex;align-items:center;height:38px;padding:0 18px;
-  background:#5928E4;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
+  background:#030302;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
   transition:transform .25s ease,height .35s cubic-bezier(.25,.46,.45,.94),font-size .35s cubic-bezier(.25,.46,.45,.94),padding .35s cubic-bezier(.25,.46,.45,.94),background .2s;
 }
-.nav-cta2:hover{transform:scale(1.04);background:#6B3BF2}
+.nav-cta2:hover{transform:scale(1.04);background:#26261f}
 .nav-hamburger{border-radius:999px}
 /* scroll-down: shrink; scroll-up: back to regular */
 .nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
@@ -72,8 +72,12 @@
 @media(max-width:640px){.nav-cta2{display:none}}
 @media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/kb.css?v=8">
 </head>
-<body>
+<body style="--th:#B8CAF5;--th2:#9BD8A9">
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">

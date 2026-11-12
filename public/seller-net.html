@@ -25,15 +25,15 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=49">
+<meta name="theme-color" content="#9ED4EF">
+<link rel="stylesheet" href="/css/main.min.css?v=52">
 <style>
   .nx-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
   .nx-hero::before{content:'';position:absolute;inset:0;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
   .nx-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(52,199,89,.18) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
   .nx-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
   .nx-hero h1{font-size:clamp(36px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px}
-  .nx-hero h1 .g{background:linear-gradient(135deg,#34c759,#0071E3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .nx-hero h1 .g{background:linear-gradient(135deg,#34c759,#030302);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .nx-hero p{font-size:17px;color:rgba(255,255,255,.62);max-width:580px;margin:0 auto 6px;line-height:1.55}
   .nx-meta{display:inline-flex;gap:14px;margin-top:18px;font-size:12px;color:rgba(255,255,255,.5);font-weight:500}
   .nx-meta span{display:inline-flex;align-items:center;gap:5px}
@@ -63,14 +63,14 @@
     -webkit-appearance:none;appearance:none;
     width:22px;height:22px;border-radius:50%;
     background:#fff;border:2px solid var(--blue);
-    box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer;
+    box-shadow:0 2px 8px rgba(3,3,2,0.18);cursor:pointer;
     transition:transform .15s ease;
   }
   .nx-slider::-webkit-slider-thumb:hover{transform:scale(1.1)}
   .nx-slider::-moz-range-thumb{
     width:22px;height:22px;border-radius:50%;
     background:#fff;border:2px solid var(--blue);
-    box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer;
+    box-shadow:0 2px 8px rgba(3,3,2,0.18);cursor:pointer;
   }
   .nx-range-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:6px}
 
@@ -80,8 +80,8 @@
     padding:8px 14px;border-radius:999px;font-size:13px;font-weight:500;color:var(--text);
     cursor:pointer;transition:border-color .2s ease, background .2s ease;
   }
-  .nx-pill:hover{border-color:rgba(0,113,227,.4)}
-  .nx-pill.active{border-color:var(--blue);background:rgba(0,113,227,.06);color:var(--blue);font-weight:600}
+  .nx-pill:hover{border-color:rgba(3,3,2,0.24)}
+  .nx-pill.active{border-color:var(--blue);background:rgba(3,3,2,0.036);color:var(--blue);font-weight:600}
 
   .nx-toggle{
     display:inline-flex;background:rgba(0,0,0,.05);border-radius:999px;padding:3px;
@@ -103,7 +103,7 @@
   .nx-result-label{font-size:11px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px}
   .nx-result-amount{
     font-size:clamp(34px,11vw,48px);font-weight:800;letter-spacing:-2px;line-height:1;
-    background:linear-gradient(135deg,#34c759,#0071E3);
+    background:linear-gradient(135deg,#34c759,#030302);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     font-variant-numeric:tabular-nums;
     margin-bottom:6px;
@@ -177,10 +177,10 @@
 .nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
 .nav-cta2{
   display:inline-flex;align-items:center;height:38px;padding:0 18px;
-  background:#5928E4;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
+  background:#030302;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
   transition:transform .25s ease,height .35s cubic-bezier(.25,.46,.45,.94),font-size .35s cubic-bezier(.25,.46,.45,.94),padding .35s cubic-bezier(.25,.46,.45,.94),background .2s;
 }
-.nav-cta2:hover{transform:scale(1.04);background:#6B3BF2}
+.nav-cta2:hover{transform:scale(1.04);background:#26261f}
 .nav-hamburger{border-radius:999px}
 /* scroll-down: shrink; scroll-up: back to regular */
 .nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
@@ -190,8 +190,12 @@
 @media(max-width:640px){.nav-cta2{display:none}}
 @media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/kb.css?v=8">
 </head>
-<body>
+<body style="--th:#9ED4EF;--th2:#B8CAF5">
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
@@ -353,7 +357,7 @@
           <svg viewBox="0 0 120 120" aria-hidden="true">
             <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="14"/>
             <circle id="nxArcNet" cx="60" cy="60" r="50" fill="none" stroke="#34c759" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" stroke-dashoffset="0" style="transition:stroke-dasharray .4s ease"/>
-            <circle id="nxArcMortgage" cx="60" cy="60" r="50" fill="none" stroke="#0071E3" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" style="transition:stroke-dasharray .4s ease"/>
+            <circle id="nxArcMortgage" cx="60" cy="60" r="50" fill="none" stroke="#030302" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" style="transition:stroke-dasharray .4s ease"/>
             <circle id="nxArcCommission" cx="60" cy="60" r="50" fill="none" stroke="#ff9500" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" style="transition:stroke-dasharray .4s ease"/>
             <circle id="nxArcOther" cx="60" cy="60" r="50" fill="none" stroke="#ff6b6b" stroke-width="14" stroke-linecap="butt" stroke-dasharray="0 999" style="transition:stroke-dasharray .4s ease"/>
           </svg>
@@ -364,7 +368,7 @@
         </div>
         <div class="nx-donut-legend">
           <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#34c759"></span><span>You keep</span><span id="nxLegNet">$0</span></div>
-          <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#0071E3"></span><span>Mortgage payoff</span><span id="nxLegMortgage">$0</span></div>
+          <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#030302"></span><span>Mortgage payoff</span><span id="nxLegMortgage">$0</span></div>
           <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#ff9500"></span><span>Commissions</span><span id="nxLegCommission">$0</span></div>
           <div class="nx-legend-row"><span class="nx-legend-dot" style="background:#ff6b6b"></span><span>Closing + taxes</span><span id="nxLegOther">$0</span></div>
         </div>

@@ -25,15 +25,15 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=49">
+<meta name="theme-color" content="#B8CAF5">
+<link rel="stylesheet" href="/css/main.min.css?v=52">
 <style>
   .rb-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
   .rb-hero::before{content:'';position:absolute;inset:0;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
-  .rb-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,113,227,.22) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
+  .rb-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(3,3,2,0.132) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
   .rb-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
   .rb-hero h1{font-size:clamp(36px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px}
-  .rb-hero h1 .g{background:linear-gradient(135deg,#0071E3,#5856D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .rb-hero h1 .g{background:linear-gradient(135deg,#030302,#030302);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .rb-hero p{font-size:17px;color:rgba(255,255,255,.62);max-width:580px;margin:0 auto 6px;line-height:1.55}
   .rb-meta{display:inline-flex;gap:14px;margin-top:18px;font-size:12px;color:rgba(255,255,255,.5);font-weight:500}
   .rb-meta span{display:inline-flex;align-items:center;gap:5px}
@@ -44,7 +44,7 @@
 
   .rb-card{background:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.04)}
   .rb-card h2{font-size:18px;font-weight:700;letter-spacing:-.3px;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px}
-  .rb-card h2::before{content:'';width:4px;height:16px;background:linear-gradient(180deg,#0071E3,#5856D6);border-radius:2px}
+  .rb-card h2::before{content:'';width:4px;height:16px;background:linear-gradient(180deg,#030302,#030302);border-radius:2px}
   .rb-card-sub{font-size:13px;color:var(--text2);margin-bottom:20px;line-height:1.55}
 
   .rb-section{margin-bottom:24px;padding-bottom:20px;border-bottom:1px dashed rgba(0,0,0,.08)}
@@ -61,11 +61,11 @@
   }
   .rb-slider::-webkit-slider-thumb{
     -webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
-    background:#fff;border:2px solid var(--blue);box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer;
+    background:#fff;border:2px solid var(--blue);box-shadow:0 2px 8px rgba(3,3,2,0.18);cursor:pointer;
     transition:transform .15s ease;
   }
   .rb-slider::-webkit-slider-thumb:hover{transform:scale(1.1)}
-  .rb-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--blue);box-shadow:0 2px 8px rgba(0,113,227,.3);cursor:pointer}
+  .rb-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--blue);box-shadow:0 2px 8px rgba(3,3,2,0.18);cursor:pointer}
   .rb-range{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:5px}
 
   /* Result panel */
@@ -85,7 +85,7 @@
     font-size:30px;font-weight:800;letter-spacing:-1.2px;line-height:1.15;
     margin-bottom:6px;color:#fff;
   }
-  .rb-headline .pos{background:linear-gradient(135deg,#34c759,#0071E3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .rb-headline .pos{background:linear-gradient(135deg,#34c759,#030302);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .rb-headline .neg{background:linear-gradient(135deg,#ff453a,#ff9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .rb-headline .neutral{background:linear-gradient(135deg,#ffd60a,#ff9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .rb-headline-sub{font-size:14px;color:rgba(255,255,255,.62);line-height:1.5;margin-bottom:22px}
@@ -111,7 +111,7 @@
   .rb-chart-track{flex:1;height:14px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
   .rb-chart-fill{height:100%;border-radius:6px;transition:width .5s ease}
   .rb-chart-fill.rent{background:linear-gradient(90deg,#ff453a,#ff9500)}
-  .rb-chart-fill.buy{background:linear-gradient(90deg,#34c759,#0071E3)}
+  .rb-chart-fill.buy{background:linear-gradient(90deg,#34c759,#030302)}
   .rb-chart-amt{width:75px;flex-shrink:0;text-align:right;font-weight:600;color:#fff;font-variant-numeric:tabular-nums}
 
   .rb-cta-row{display:flex;flex-direction:column;gap:8px}
@@ -149,10 +149,10 @@
 .nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
 .nav-cta2{
   display:inline-flex;align-items:center;height:38px;padding:0 18px;
-  background:#5928E4;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
+  background:#030302;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
   transition:transform .25s ease,height .35s cubic-bezier(.25,.46,.45,.94),font-size .35s cubic-bezier(.25,.46,.45,.94),padding .35s cubic-bezier(.25,.46,.45,.94),background .2s;
 }
-.nav-cta2:hover{transform:scale(1.04);background:#6B3BF2}
+.nav-cta2:hover{transform:scale(1.04);background:#26261f}
 .nav-hamburger{border-radius:999px}
 /* scroll-down: shrink; scroll-up: back to regular */
 .nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
@@ -162,8 +162,12 @@
 @media(max-width:640px){.nav-cta2{display:none}}
 @media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/kb.css?v=8">
 </head>
-<body>
+<body style="--th:#B8CAF5;--th2:#9BD8A9">
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">

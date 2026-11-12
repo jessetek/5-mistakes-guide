@@ -1,0 +1,461 @@
+/* =====================================================================
+   Jessetek sitewide look, from the 5 Mistakes guide and the Move Up Quiz
+   (staged 2026-11-12). Loaded LAST on every page, after main.min.css and
+   any inline <style>, so it wins at equal specificity.
+   Beige paper, pastel grain bands, Newsreader serif headings, Inter body,
+   white window cards, black pills. Minimal: no hero pills, no hero subtext,
+   no purple. Same tokens as /move and /guide.
+   ===================================================================== */
+:root{
+  --bg:#FCF9F7;--white:#FFFFFF;--text:#030302;--text2:#4a4a52;--text3:#86868e;
+  --blue:#030302;--blue2:#030302;--r:22px;
+  --font:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --kb-ink:#030302;--kb-ink2:#4a4a52;--kb-mute:#86868e;--kb-line:rgba(3,3,2,.08);
+  --kb-serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --kb-yellow:#FDE99B;--kb-blue:#B8CAF5;--kb-sky:#D1EEF9;--kb-green:#9BD8A9;--kb-aqua:#9ED4EF;
+  --kb-tile:#F9F7F4;--kb-soft:#F3F0EC;--kb-tip:#FEF6D2;
+  --shadow:0 50px 40px rgba(0,0,0,.01),0 20px 40px rgba(0,0,0,.05),0 3px 10px rgba(0,0,0,.08);
+  --shadow-hover:0 50px 40px rgba(0,0,0,.015),0 24px 48px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.1);
+  --kb-grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.5'/></svg>");
+}
+html,body{background:var(--bg)}
+body{font-family:var(--font);color:var(--text);-webkit-font-smoothing:antialiased}
+::selection{background:var(--kb-yellow);color:var(--kb-ink)}
+
+/* ---------- serif headings everywhere ---------- */
+h1,h2,.sec-title{font-family:var(--kb-serif);font-weight:400!important;letter-spacing:-.02em!important;color:var(--kb-ink)}
+h3{letter-spacing:-.01em}
+h1 i,h2 i,h1 em,h2 em{font-style:italic}
+/* purple gradient words become serif italics */
+.g,h1 .g,h2 .g,.page-hero h1 .g,.sec-title .g{
+  background:none!important;-webkit-text-fill-color:currentColor!important;color:inherit!important;
+  font-family:var(--kb-serif);font-style:italic;font-weight:400
+}
+
+/* ---------- nav: light glass pill ---------- */
+.nav,.nav.scrolled{
+  background:rgba(252,249,247,.82);border:1px solid var(--kb-line);
+  box-shadow:0 10px 30px rgba(3,3,2,.06),0 2px 6px rgba(3,3,2,.04)
+}
+.nav-logo,.nav-logo span{color:var(--kb-ink);font-family:var(--kb-serif);font-weight:500;font-size:19px;letter-spacing:-.02em}
+.nav-links a,.nav-toggle{color:var(--kb-ink2)}
+.nav-links a:hover,.nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:var(--kb-ink)}
+.nav-cta{background:var(--kb-ink)!important;color:#fff!important;border:0!important}
+.nav-cta:hover{background:#26261f!important}
+.nav-hamburger{color:var(--kb-ink);background:rgba(3,3,2,.05);border-color:var(--kb-line)}
+.nav-menu,.nav.scrolled .nav-menu{background:rgba(255,255,255,.97);border:1px solid var(--kb-line);box-shadow:0 18px 50px rgba(3,3,2,.1),0 4px 12px rgba(3,3,2,.05)}
+.nav-menu a,.nav.scrolled .nav-menu a{color:var(--kb-ink2)}
+.nav-menu a:hover,.nav-menu a:focus-visible,.nav.scrolled .nav-menu a:hover{background:var(--kb-soft);color:var(--kb-ink)}
+.mob-nav{background:var(--bg)}
+.mob-nav a,.mob-nav .mob-link,.mob-section > summary{color:var(--kb-ink);border-bottom-color:var(--kb-line)}
+.mob-section > summary::after{color:var(--kb-mute)}
+.mob-section .mob-sub{color:var(--kb-ink2)!important;border-bottom-color:rgba(3,3,2,.05)}
+.mob-section .mob-sub:hover,.mob-nav a:hover{color:var(--kb-ink)!important}
+.mob-close{color:var(--kb-mute)}
+.mob-cta{background:var(--kb-ink)!important;color:#fff!important}
+
+/* ---------- hero: pastel grain band, headline only ---------- */
+html body .page-hero,html body .post-hero,html body .cs-hero,html body .legal-hero{
+  position:relative;background:var(--th,var(--kb-blue))!important;min-height:0!important;
+  padding:132px 22px 64px!important;text-align:left!important;display:block!important;overflow:hidden;color:var(--kb-ink)
+}
+html body .page-hero::before,html body .post-hero::before,html body .cs-hero::before,html body .legal-hero::before{display:none!important}
+html body .page-hero::after,html body .post-hero::after,html body .cs-hero::after,html body .legal-hero::after{
+  content:""!important;position:absolute!important;inset:0!important;width:auto!important;height:auto!important;
+  transform:none!important;border-radius:0!important;filter:none!important;
+  background:var(--kb-grain)!important;opacity:.35;mix-blend-mode:overlay;pointer-events:none
+}
+html body .page-hero-inner,html body .post-hero-inner,html body .cs-hero-inner,html body .legal-hero-inner{
+  position:relative;z-index:2;max-width:760px!important;margin:0 auto!important;align-items:flex-start!important;text-align:left!important
+}
+html body .page-hero h1,html body .post-hero h1,html body .cs-hero h1,html body .legal-hero h1{
+  font-family:var(--kb-serif)!important;font-weight:400!important;color:var(--kb-ink)!important;
+  font-size:clamp(44px,6.2vw,76px)!important;line-height:1.02!important;letter-spacing:-.025em!important;margin:0 0 28px!important;text-align:left!important
+}
+/* the guide hero has no pills and no subtext */
+.page-hero .hero-badge,.post-hero .hero-badge,.cs-hero .hero-badge,.legal-hero .hero-badge,
+html body .page-hero-inner > p,html body .page-hero-inner > .hero-sub,html body .cs-hero-inner > p{display:none!important}
+html body .post-hero p,html body .post-meta,html body .cs-hero-meta,html body .legal-hero p{color:var(--kb-ink2)!important}
+html body .post-meta,html body .cs-hero-meta{font-size:13px!important;font-weight:600;letter-spacing:.02em;text-transform:none}
+html body .page-hero .hero-btns{justify-content:flex-start!important;opacity:1;animation:none}
+
+/* ---------- buttons: black pill, outline pill ---------- */
+.btn-primary,.btn-ghost{min-height:52px;padding:0 24px;justify-content:center;font-size:15px;transform:none}
+.btn-primary{background:var(--kb-ink)!important;color:#fff!important;font-weight:600;box-shadow:none}
+.btn-primary:hover{background:#26261f!important;transform:none}
+.btn-ghost{background:transparent!important;color:var(--kb-ink)!important;border:1.5px solid var(--kb-ink)!important;backdrop-filter:none;-webkit-backdrop-filter:none;font-weight:600}
+.btn-ghost:hover{background:var(--kb-ink)!important;color:#fff!important;transform:none}
+.btn-primary:active,.btn-ghost:active{transform:scale(.98)}
+
+/* ---------- section heads: serif title, no eyebrow ---------- */
+.sec-label{display:none!important}
+.sec-title{font-size:clamp(36px,4.6vw,56px)!important;line-height:1.04!important;margin-bottom:12px}
+.sec-sub{color:var(--kb-ink2)!important}
+.sec-head{margin-bottom:40px}
+
+/* ---------- cards: white windows ---------- */
+.trust-strip-inner,.nbhd-stat,.nbhd-feature,.nbhd-do,.nbhd-eat,.nbhd-school,.related-city-card,.faq-item,
+.cta-card,.val-story,.cs-stat,.cs-callout,.step-proof{
+  background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;border-radius:22px
+}
+.related-city-card,.faq-item,.nbhd-school{border-radius:18px}
+.related-city-card:hover,.nbhd-eat:hover{box-shadow:var(--shadow-hover)!important}
+
+/* stat numbers: big serif, ink */
+.trust-num,.trust-num.gold,.nbhd-stat-num,.cs-stat-num{
+  background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--kb-ink)!important;
+  font-family:var(--kb-serif)!important;font-weight:400!important;letter-spacing:-.03em!important
+}
+.trust-num{font-size:34px!important}
+.nbhd-stat-num{font-size:clamp(46px,6vw,60px)!important}
+.trust-label,.nbhd-stat-label,.cs-stat-label{color:var(--kb-ink2)!important}
+
+/* emoji icons sit in a pastel window tile, like the guide rows */
+.nbhd-feature-icon,.nbhd-do-icon,.nbhd-eat-icon{
+  width:60px;height:60px;border-radius:14px;display:grid;place-items:center;
+  font-size:28px!important;line-height:1;margin-bottom:18px;background:var(--kb-blue);position:relative;overflow:hidden
+}
+.nbhd-feature:nth-child(5n+2) .nbhd-feature-icon,.nbhd-do:nth-child(5n+2) .nbhd-do-icon,.nbhd-eat:nth-child(5n+2) .nbhd-eat-icon{background:var(--kb-yellow)}
+.nbhd-feature:nth-child(5n+3) .nbhd-feature-icon,.nbhd-do:nth-child(5n+3) .nbhd-do-icon,.nbhd-eat:nth-child(5n+3) .nbhd-eat-icon{background:var(--kb-sky)}
+.nbhd-feature:nth-child(5n+4) .nbhd-feature-icon,.nbhd-do:nth-child(5n+4) .nbhd-do-icon,.nbhd-eat:nth-child(5n+4) .nbhd-eat-icon{background:var(--kb-green)}
+.nbhd-feature:nth-child(5n) .nbhd-feature-icon,.nbhd-do:nth-child(5n) .nbhd-do-icon,.nbhd-eat:nth-child(5n) .nbhd-eat-icon{background:var(--kb-aqua)}
+.nbhd-feature h3,.nbhd-do h3,.nbhd-eat-name,.nbhd-school-name,.related-city-name,.faq-item summary,.cs-callout h3{
+  font-family:var(--kb-serif);font-weight:400!important;letter-spacing:-.02em!important;color:var(--kb-ink)
+}
+.nbhd-feature h3{font-size:24px!important}
+.nbhd-do h3{font-size:22px!important}
+.nbhd-eat-name{font-size:20px!important}
+.nbhd-eat-cat{color:var(--kb-ink2)!important}
+.nbhd-school-badge{background:var(--kb-green)!important;color:var(--kb-ink)!important;border-radius:14px!important}
+.related-city-name{font-size:19px}
+.related-city-arrow{color:var(--kb-ink)!important}
+.faq-item summary{font-size:19px!important}
+.faq-item summary::after{color:var(--kb-ink)!important}
+.faq-category-head h2{font-family:var(--kb-serif);font-weight:400!important;letter-spacing:-.02em!important}
+
+/* section backgrounds: one beige paper, no white/grey bands */
+.bento-section,.nbhd-stats,.nbhd-why,.nbhd-mapsection,.nbhd-eats,.nbhd-dothings,.nbhd-schools,.related-cities,
+.trust-strip,.faq-page,.reviews-strip-embed,.steps-section{background:var(--bg)!important}
+.nbhd-map-wrap{border-radius:22px!important;border:1px solid var(--kb-line);box-shadow:var(--shadow)}
+
+/* ---------- live rate card: white window, pastel tile ---------- */
+.live-rate-banner{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;color:var(--kb-ink)!important}
+.live-rate-banner::before,.live-rate-banner::after{display:none!important}
+.lrc-icon{background:var(--kb-yellow)!important;color:var(--kb-ink)!important;box-shadow:none!important}
+.lrc-icon svg{color:var(--kb-ink);stroke:var(--kb-ink)}
+.lrc-num{font-family:var(--kb-serif);font-weight:400!important;color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important;background:none!important}
+.lrc-label,.lrc-foot{color:var(--kb-ink2)!important}
+.lrc-cta{background:var(--kb-ink)!important;color:#fff!important}
+
+/* ---------- last step: blue band behind the booking card ---------- */
+.cta-section{background:var(--bg)!important;padding-top:0!important}
+.cta-section::before{
+  content:""!important;position:absolute;top:0;left:0;right:0;height:min(420px,62%)!important;z-index:0!important;
+  background:var(--kb-grain),var(--th2,var(--kb-blue))!important;background-blend-mode:overlay
+}
+.cta-section::after{display:none!important}
+.cta-section > *{position:relative;z-index:2}
+.cta-section .sec-head{padding-top:72px}
+.cta-blob,.cta-blob-1,.cta-blob-2{display:none!important}
+.cta-card{border-radius:22px!important}
+
+/* ---------- article body ---------- */
+.post-body h2,.cs-body h2,.legal-body h2{font-family:var(--kb-serif);font-weight:400!important;letter-spacing:-.02em!important;color:var(--kb-ink)}
+.post-body h3,.cs-body h3,.legal-body h3{color:var(--kb-ink)}
+.post-body a,.cs-body a,.legal-body a{color:var(--kb-ink)!important;text-decoration:underline;text-decoration-color:rgba(3,3,2,.3);text-underline-offset:3px}
+.post-body blockquote,.cs-body blockquote{border-left:0!important;background:var(--kb-tip);border-radius:16px;padding:16px 18px!important;font-family:var(--kb-serif);font-size:20px}
+.post-body table th,.post-body table td{border-color:var(--kb-line)!important}
+.post-cta,.cs-cta{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;border-radius:22px!important;color:var(--kb-ink)!important}
+.post-cta h2,.post-cta h3,.cs-cta h2,.cs-cta h3,.post-cta p,.cs-cta p{color:var(--kb-ink)!important}
+
+/* ---------- footer: beige paper ---------- */
+.footer{background:var(--bg)!important;border-top:1px solid var(--kb-line)}
+.f-logo,.f-logo span{color:var(--kb-ink)!important;font-family:var(--kb-serif);font-weight:500;letter-spacing:-.02em}
+.f-col h4{color:var(--kb-ink)}
+.f-col a,.f-socials a,.f-contact-quick a{color:var(--kb-ink2)}
+.f-col a:hover,.f-socials a:hover,.f-contact-quick a:hover{color:var(--kb-ink)}
+.footer-bot{border-top-color:var(--kb-line)}
+
+/* ---------- phone sticky bar from cro.js ---------- */
+.sticky-mobile-cta{background:rgba(252,249,247,.92)!important;border-top:1px solid var(--kb-line)!important;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.sticky-mobile-cta-btn{background:var(--kb-ink)!important;color:#fff!important;border-radius:999px!important;box-shadow:none!important}
+.sticky-mobile-cta-text,.sticky-mobile-cta-text *{color:var(--kb-ink)!important}
+
+@media(max-width:600px){
+  html body .page-hero,html body .post-hero,html body .cs-hero,html body .legal-hero{padding:116px 18px 52px!important}
+  html body .page-hero h1,html body .post-hero h1,html body .cs-hero h1,html body .legal-hero h1{font-size:44px!important}
+  .sec-title{font-size:38px!important}
+  html body .page-hero .hero-btns{flex-direction:column;align-items:stretch;width:100%}
+  html body .page-hero .hero-btns a{width:100%}
+}
+
+/* =====================================================================
+   HOME (/): original hero layout (full-bleed background, centered copy,
+   scroll stage into 100+ Families), now on the paper-cut sky
+   (img/hero-sky-*.webp, built by Jessetek/outputs/sky-hero-2026-11-12).
+   ===================================================================== */
+html body .hero-scroll-stage{background:var(--bg)!important}
+html body .hero{background:#A9D8F1!important}
+html body .hero-photo-bg{object-position:center bottom!important;background:#A9D8F1!important;animation:none!important}
+html body .hero-overlay{background:linear-gradient(to bottom,rgba(255,255,255,.28) 0%,rgba(255,255,255,0) 55%)!important}
+html body .hero-inner{padding-top:200px!important}
+html body .hero h1{font-family:var(--kb-serif)!important;font-weight:400!important;color:var(--kb-ink)!important;letter-spacing:-.025em!important;line-height:1.02!important}
+html body .type-word{color:var(--kb-ink)!important;text-shadow:none!important;animation:none!important;font-style:italic}
+html body .type-cursor{background:var(--kb-ink)!important}
+html body .hero-sub{color:var(--kb-ink)!important;font-weight:500}
+html body .hero .btn-primary{box-shadow:0 10px 30px rgba(20,60,100,.18)}
+@media(max-width:760px){
+  html body .hero-inner{padding:150px 20px 0!important}
+  html body .hero h1{font-size:44px!important}
+}
+
+/* 100+ families: beige paper, serif */
+html body .hero-reveal{background:var(--bg)!important;color:var(--kb-ink)!important}
+html body .hero-reveal::before{display:none!important}
+html body .hero-reveal-eyebrow{display:none!important}
+html body .hero-reveal h2{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--kb-ink)!important;font-family:var(--kb-serif)!important;font-weight:400!important;letter-spacing:-.025em!important;font-size:clamp(44px,6.5vw,84px)!important}
+html body .hero-reveal p{color:var(--kb-ink2)!important}
+html body .hero-reveal .client-thumb{box-shadow:var(--shadow)!important;border:4px solid #fff;border-radius:14px}
+
+/* bento tiles: white windows and pastel tiles, no dark slabs */
+.bc{box-shadow:var(--shadow)!important;border:1px solid var(--kb-line)}
+.bc:hover{transform:translateY(-3px)!important}
+.bc-reviews,.bc-comms,.bc-contacts,.bc-offmarket{background:#fff!important}
+.bc-instagram,.bc-docusign{background:var(--kb-tile)!important}
+.bc-families{background:var(--kb-grain),var(--kb-yellow)!important;background-blend-mode:overlay}
+.fam-count{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--kb-ink)!important;font-family:var(--kb-serif);font-weight:400!important;letter-spacing:-.03em!important}
+.td-line1{color:var(--kb-ink)!important}.td-line2{color:var(--kb-ink2)!important}
+.bc-bilingual,.bc-bilingual.bc-fast{background:var(--kb-grain),var(--kb-blue)!important;background-blend-mode:overlay}
+.bc-bilingual::before{display:none!important}
+.fc-kicker,.fc-path{color:var(--kb-ink2)!important}
+.fc-num{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--kb-ink)!important;font-family:var(--kb-serif);font-weight:400!important;letter-spacing:-.03em!important}
+.fc-arrow{color:var(--kb-ink)!important}
+html body .ios-nc{background:linear-gradient(160deg,#B8CAF5 0%,#D1EEF9 60%,#FDE99B 100%)!important}
+html body .ios-time{color:var(--kb-ink)!important;text-shadow:none!important}
+.al-mail-tag{color:var(--kb-ink)!important}
+
+/* how it works: step badges are ink circles with a serif number */
+.step-badge-circle{background:var(--kb-ink)!important;color:#fff!important;font-family:var(--kb-serif)!important;font-weight:400!important;box-shadow:0 0 0 6px var(--bg)!important}
+.step-card{border-radius:22px!important}
+.step-card-title{font-family:var(--kb-serif)!important;font-weight:400!important;letter-spacing:-.02em!important}
+
+
+/* =====================================================================
+   PAGE-SPECIFIC HEROES (tools, indexes, compare, 404): same band
+   ===================================================================== */
+html body .cs-list-hero,html body .insights-hero,html body .compare-hero,html body .lh-hero,html body .pa-hero,
+html body .rb-hero,html body .nx-hero,html body .sa-hero,html body .nf-shell{
+  position:relative;background:var(--th,var(--kb-blue))!important;min-height:0!important;padding:132px 22px 64px!important;
+  text-align:left!important;overflow:hidden;color:var(--kb-ink)!important
+}
+html body .cs-list-hero::before,html body .insights-hero::before,html body .compare-hero::before,html body .lh-hero::before,html body .pa-hero::before,
+html body .rb-hero::before,html body .nx-hero::before,html body .sa-hero::before,html body .nf-shell::before{display:none!important}
+html body .cs-list-hero::after,html body .insights-hero::after,html body .compare-hero::after,html body .lh-hero::after,html body .pa-hero::after,
+html body .rb-hero::after,html body .nx-hero::after,html body .sa-hero::after,html body .nf-shell::after{
+  content:""!important;position:absolute!important;inset:0!important;width:auto!important;height:auto!important;transform:none!important;filter:none!important;border-radius:0!important;
+  background:var(--kb-grain)!important;opacity:.35;mix-blend-mode:overlay;pointer-events:none
+}
+html body .cs-list-hero-inner,html body .insights-hero-inner,html body .compare-hero-inner,html body .lh-hero-inner,html body .pa-hero-inner,
+html body .rb-hero-inner,html body .nx-hero-inner,html body .sa-hero-inner,html body .nf-inner{position:relative;z-index:2;max-width:760px!important;margin:0 auto!important;text-align:left!important;align-items:flex-start!important}
+html body .cs-list-hero h1,html body .insights-hero h1,html body .compare-hero h1,html body .lh-hero h1,html body .pa-hero h1,
+html body .rb-hero h1,html body .nx-hero h1,html body .sa-hero h1,html body .nf-title{
+  font-family:var(--kb-serif)!important;font-weight:400!important;color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important;
+  font-size:clamp(44px,6.2vw,76px)!important;line-height:1.02!important;letter-spacing:-.025em!important;margin:0 0 28px!important;text-align:left!important
+}
+html body .cs-list-hero-inner > p,html body .insights-hero-inner > p,html body .compare-hero-inner > p,html body .lh-hero-inner > p,html body .pa-hero-inner > p,
+html body .rb-hero-inner > p,html body .nx-hero-inner > p,html body .sa-hero-inner > p,html body .rb-meta,html body .nx-meta,
+html body .insights-hero .hero-badge,html body .compare-hero .hero-badge,html body .pa-hero .hero-badge,html body .rb-hero .hero-badge,html body .nx-hero .hero-badge{display:none!important}
+html body .insights-hero h1,html body .rb-hero h1,html body .nx-hero h1{margin-top:0!important}
+html body .lh-search,html body .sa-search-wrap{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;border-radius:18px!important;width:100%}
+html body .lh-search input,html body .sa-search{color:var(--kb-ink)!important;background:transparent!important}
+html body .sa-search{border:0!important}
+html body .sa-counter{color:var(--kb-ink2)!important}
+html body .nf-code{background:none!important;-webkit-text-fill-color:currentColor!important;color:rgba(3,3,2,.14)!important;font-family:var(--kb-serif);font-weight:400!important}
+html body .nf-sub{color:var(--kb-ink2)!important}
+html body .nf-primary{background:var(--kb-ink)!important;color:#fff!important}
+html body .nf-ghost{background:transparent!important;color:var(--kb-ink)!important;border:1.5px solid var(--kb-ink)!important}
+html body .nf-popular h3{color:var(--kb-ink)!important}
+html body .nf-popular-grid a{background:#fff!important;color:var(--kb-ink)!important;border:1px solid var(--kb-line)!important}
+html body .lh-pill{border:1px solid var(--kb-line)!important;background:#fff!important;color:var(--kb-ink2)!important}
+html body .lh-pill.active{background:var(--kb-ink)!important;color:#fff!important;border-color:var(--kb-ink)!important}
+
+/* result cards: yellow tile, ink text, black pill */
+html body .calc-result,html body .rb-result,html body .nx-result-card{
+  background:var(--kb-grain),var(--th,var(--kb-yellow))!important;background-blend-mode:overlay;color:var(--kb-ink)!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important
+}
+html body .calc-result *:not(a):not(button),html body .rb-result *:not(a):not(button),html body .nx-result-card *:not(a):not(button){color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important;border-color:rgba(3,3,2,.1)!important}
+html body .calc-result a,html body .calc-result button,html body .rb-result a,html body .nx-result-card a{background:var(--kb-ink)!important;color:#fff!important}
+
+/* other dark slabs: white windows or the blue band */
+html body .cl-progress-card,html body .sellers-process-step,html body .sp-step,html body .val-comp-stat,html body .compare-head{
+  background:#fff!important;color:var(--kb-ink)!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important
+}
+html body .cl-progress-card *:not(a):not(button),html body .sellers-process-step *:not(a):not(button),html body .sp-step *:not(a):not(button),
+html body .val-comp-stat *:not(a):not(button),html body .compare-head *{color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important}
+html body .rates-sample{background:var(--bg)!important;color:var(--kb-ink)!important}
+html body .rates-sample > * > h2,html body .rates-sample h2,html body .rates-sample > * > p{color:var(--kb-ink)!important}
+html body .rates-cta,html body .ig-cta-inner{background:var(--kb-grain),var(--th2,var(--kb-blue))!important;background-blend-mode:overlay;color:var(--kb-ink)!important}
+html body .rates-cta *:not(a):not(button):not(input),html body .ig-cta-inner *:not(a):not(button){color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important}
+html body .rates-cta a,html body .rates-cta button,html body .ig-cta-inner a{background:var(--kb-ink)!important;color:#fff!important}
+html body .rates-cta input{background:#fff!important;color:var(--kb-ink)!important;border:1px solid var(--kb-line)!important}
+@media(max-width:600px){
+  html body .cs-list-hero,html body .insights-hero,html body .compare-hero,html body .lh-hero,html body .pa-hero,
+  html body .rb-hero,html body .nx-hero,html body .sa-hero,html body .nf-shell{padding:116px 18px 52px!important}
+  html body .cs-list-hero h1,html body .insights-hero h1,html body .compare-hero h1,html body .lh-hero h1,html body .pa-hero h1,
+  html body .rb-hero h1,html body .nx-hero h1,html body .sa-hero h1,html body .nf-title{font-size:44px!important}
+}
+
+/* ---------- rates (/rates): band hero, light widgets ---------- */
+html body .rates-hero{position:relative;background:var(--th,var(--kb-blue))!important;color:var(--kb-ink)!important;padding:132px 22px 120px!important}
+html body .rates-hero::before{display:none!important}
+html body .rates-hero::after{content:""!important;position:absolute!important;inset:0!important;width:auto!important;height:auto!important;transform:none!important;filter:none!important;border-radius:0!important;background:var(--kb-grain)!important;opacity:.35;mix-blend-mode:overlay;pointer-events:none}
+html body .rv2-orb{display:none!important}
+html body .rv2-glow{background:none!important;box-shadow:none!important;filter:none!important}
+html body .rv2-glow::before,html body .rv2-glow::after{display:none!important}
+html body .rates-form-card{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;border-radius:22px!important}
+html body .rates-form-card *:not(a):not(button):not(iframe){color:var(--kb-ink)}
+html body .rates-form-sub,html body .rates-form-tcpa,html body .rates-form-trust{color:var(--kb-ink2)!important}
+html body .rates-hero h1{font-family:var(--kb-serif)!important;font-weight:400!important;color:var(--kb-ink)!important;font-size:clamp(44px,6.2vw,76px)!important;line-height:1.02!important;letter-spacing:-.025em!important;text-align:left}
+html body .rates-hero h1 .g{background:none!important;-webkit-text-fill-color:currentColor!important;color:inherit!important;animation:none!important;transform:none!important}
+html body .rates-hero .hero-badge,html body .rates-hero-sub,html body .rates-hero-meta{display:none!important}
+html body .rates-hero *:not(a):not(button):not(input):not(.rates-form-card):not(.rates-form-card *){color:var(--kb-ink)}
+html body .rv2-count-label,html body .rates-chart-axis{color:var(--kb-ink2)!important}
+html body .rv2-cell{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow);color:var(--kb-ink)!important}
+html body .rv2-cell *{color:var(--kb-ink)!important}
+html body .rates-chart{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;color:var(--kb-ink)!important}
+html body .rates-chart *{color:var(--kb-ink)}
+html body .rates-chart-toggle{background:var(--kb-soft)!important}
+html body .rcTfBtn{color:var(--kb-ink2)!important}
+html body .rcTfBtn.active{background:var(--kb-ink)!important;color:#fff!important}
+html body .rates-chart-line{stroke:var(--kb-ink)!important}
+html body .rv2-tape{background:rgba(255,255,255,.55)!important;border-top:1px solid var(--kb-line)!important}
+html body .rv2-tape *{color:var(--kb-ink)}
+html body .rv2-tape .up{color:#1f8a46!important}html body .rv2-tape .dn{color:#c2362f!important}
+html body .rates-hero-chip{background:#fff!important;color:var(--kb-ink)!important;border:1px solid var(--kb-line)!important}
+
+/* 404: page paper under the band */
+html body .nf-shell{min-height:0!important;display:block!important}
+
+/* ---------- step illustration cards (/buyer, /seller, home step 2) ---------- */
+html body .step-card--gfx,html body .step-card.has-mockup{background:#fff!important;border:1px solid var(--kb-line)!important}
+html body .step-card--gfx .step-card-overlay,html body .step-card--gfx.gfx-light-bg .step-card-overlay,html body .step-card.has-mockup .step-card-overlay{background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 44%,#fff 56%,#fff 100%)!important}
+html body .step-card--gfx .step-card-title,html body .step-card--gfx .step-card-desc,
+html body .step-card.has-mockup .step-card-title,html body .step-card.has-mockup .step-card-desc{color:var(--kb-ink)!important;text-shadow:none!important}
+html body .step-card--gfx .step-card-desc,html body .step-card.has-mockup .step-card-desc{color:var(--kb-ink2)!important}
+html body .gfx--tour{background:var(--kb-grain),var(--kb-blue)!important;background-blend-mode:overlay}
+html body .gfx--wire{background:var(--kb-grain),var(--kb-green)!important;background-blend-mode:overlay}
+html body .gfx--caution{background:var(--kb-grain),var(--kb-yellow)!important;background-blend-mode:overlay}
+html body .gfx--sign{background:var(--kb-grain),var(--kb-sky)!important;background-blend-mode:overlay}
+html body .gfx--tour *,html body .gfx--wire *,html body .gfx--caution *,html body .gfx--sign *{color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important;border-color:rgba(3,3,2,.12)!important}
+html body .checklist-mockup{background:var(--kb-grain),var(--kb-blue)!important;background-blend-mode:overlay}
+html body .checklist-mockup *{color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important}
+/* home phone: copy sits high in the sky, homes stay below */
+@media(max-width:760px){
+  html body .hero{align-items:flex-start!important}
+  html body .hero-inner{padding:118px 20px 0!important}
+}
+
+/* ---------- home sky, part 1: hero clouds are their own layers (drift out on scroll, see home.html) ---------- */
+html body .sky-clouds{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+html body .hero-overlay{z-index:2!important}
+html body .sky-clouds .sc{position:absolute;height:auto;max-width:none;will-change:transform,opacity;filter:drop-shadow(0 10px 22px rgba(40,90,140,.10))}
+html body .sc-l1{left:-9%;top:16%;width:37%}
+html body .sc-r1{right:-7%;top:4%;width:37%}
+html body .sc-l2{left:2%;top:48%;width:23%;opacity:.8}
+html body .sc-r2{right:-2%;top:50%;width:25%;opacity:.75}
+html body .sc-c{left:43%;top:60%;width:14%;opacity:.5}
+@media(max-width:760px){
+  html body .sc-l1{left:-46%;top:3%;width:82%}
+  html body .sc-r1{right:-34%;top:11%;width:64%}
+  html body .sc-l2{left:-34%;top:44%;width:58%}
+  html body .sc-r2{right:-28%;top:52%;width:52%}
+  html body .sc-c{display:none}
+}
+
+/* ---------- home sky, part 2: the booking section is the same sky, later. One cloud, and the sun is out ---------- */
+html body #contact.cta-sky-on{--skyh:500px;padding-top:150px!important}
+html body #contact.cta-sky-on::before{
+  height:var(--skyh)!important;
+  background:var(--kb-grain),linear-gradient(180deg,#8FCDEE 0%,#A9D8F1 45%,#CBE8F6 100%)!important;background-blend-mode:overlay
+}
+html body .cta-sky{position:absolute;left:0;right:0;top:0;height:var(--skyh);z-index:1;pointer-events:none;overflow:hidden}
+html body .cs-edge{position:absolute;left:0;bottom:-1px;width:100%;height:36px;filter:drop-shadow(0 -3px 4px rgba(29,42,58,.12))}
+html body .cs-cloud{position:absolute;left:-6%;top:40px;width:34%;height:auto;max-width:none;
+  filter:drop-shadow(0 10px 22px rgba(40,90,140,.10));opacity:0;transform:translate3d(-28%,0,0);
+  transition:transform 1.8s cubic-bezier(.2,.8,.2,1),opacity 1.2s ease}
+/* realistic sun: still, soft bloom like a bright afternoon sun behind a light haze */
+html body .cs-sun{position:absolute;right:9%;top:46px;width:180px;height:180px}
+html body .cs-sun i{position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%)}
+html body .cs-haze{width:640%;height:640%;background:radial-gradient(circle,rgba(255,248,222,.55) 0%,rgba(255,244,214,.28) 22%,rgba(255,240,205,.10) 45%,rgba(255,240,205,0) 70%)}
+html body .cs-halo{width:240%;height:240%;background:radial-gradient(circle,rgba(255,255,248,.95) 0%,rgba(255,250,226,.85) 16%,rgba(255,240,190,.45) 34%,rgba(255,236,180,.12) 58%,rgba(255,236,180,0) 72%);filter:blur(2px)}
+html body .cs-core{width:62%;height:62%;background:radial-gradient(circle,#FFFFFF 0%,#FFFEF6 46%,#FFF6D2 72%,rgba(255,240,190,.0) 100%);box-shadow:0 0 40px 18px rgba(255,252,236,.9),0 0 90px 40px rgba(255,244,206,.55)}
+html body .sun-out .cs-cloud{opacity:1;transform:none}
+html body #contact.cta-sky-on .cta-card{position:relative;z-index:2}
+@media(max-width:760px){
+  html body #contact.cta-sky-on{--skyh:330px;padding-top:170px!important}
+  html body .cs-cloud{left:-24%;top:28px;width:78%}
+  html body .cs-sun{right:2%;top:30px;width:120px;height:120px}
+}
+@media(prefers-reduced-motion:reduce){
+  html body .cs-cloud{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* =====================================================================
+   QC fixes (2026-11-12)
+   ===================================================================== */
+/* valuation: the address form lives in the hero; make it the guide's white window */
+html body .valuation-form{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-radius:22px!important;color:var(--kb-ink)!important}
+html body .valuation-form *:not(button):not(.vf-submit):not(.mstep-dot){color:var(--kb-ink)}
+html body .vf-label,html body .mstep-meta{color:var(--kb-ink2)!important}
+html body .valuation-form input,html body .valuation-form select,html body .valuation-form textarea{background:#F6F3EF!important;color:var(--kb-ink)!important;border:1px solid var(--kb-line)!important;-webkit-text-fill-color:var(--kb-ink)}
+html body .valuation-form input::placeholder,html body .valuation-form textarea::placeholder{color:#a9a4a0!important;-webkit-text-fill-color:#a9a4a0}
+html body .mstep-dot{background:rgba(3,3,2,.12)!important}
+html body .mstep-dot.done,html body .mstep-dot.on,html body .mstep-dot.active{background:var(--kb-ink)!important}
+html body .vf-submit{background:var(--kb-ink)!important;color:#fff!important;border-radius:999px!important}
+html body .mstep-back{color:var(--kb-ink2)!important}
+html body .form-testimonial{background:var(--kb-tip)!important;border:0!important;border-radius:16px!important}
+html body .form-testimonial *{color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important}
+html body .form-testimonial-quote{font-family:var(--kb-serif);font-size:18px!important;font-style:normal!important}
+html body .form-testimonial-attr{color:var(--kb-ink2)!important}
+html body .form-testimonial-stars,html body .val-story-stars,html body .review-stars,html body .gr-stars,html body .gr-mini-stars{color:#E0A100!important;-webkit-text-fill-color:#E0A100!important}
+
+/* valuation market snapshot tiles: white windows, serif numbers */
+html body .val-stat-card{background:#fff!important;border:1px solid var(--kb-line)!important;box-shadow:var(--shadow)!important;color:var(--kb-ink)!important}
+html body .val-stat-card::before,html body .val-stat-card::after{display:none!important}
+html body .val-stat-big{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--kb-ink)!important;font-family:var(--kb-serif)!important;font-weight:400!important;letter-spacing:-.03em!important}
+html body .val-stat-lbl{color:var(--kb-ink2)!important}
+html body .val-stat-trend{color:#1f8a46!important}
+
+/* buttons inside articles stay white on black (the article link rule was turning them ink on ink) */
+html body .post-body .post-cta a,html body .post-cta a,html body .cs-cta a,html body .post-body a.lrc-cta,html body .lrc-cta{color:#fff!important;-webkit-text-fill-color:#fff!important;text-decoration:none!important;background:var(--kb-ink)!important}
+html body .post-cta p{color:var(--kb-ink2)!important}
+
+/* rates: explainer copy next to the phone */
+html body .rates-sample-text,html body .rates-sample-text *{color:var(--kb-ink)!important;-webkit-text-fill-color:currentColor!important}
+html body .rates-sample-text p{color:var(--kb-ink2)!important}
+html body .rates-sample-text strong{color:var(--kb-ink)!important}
+
+/* checklists: reset button, learn tags */
+html body .cl-reset-btn{color:var(--kb-ink)!important;background:var(--kb-soft)!important;border:1px solid var(--kb-line)!important}
+html body .lh-card-tag{color:var(--kb-ink2)!important}
+html body .lh-card-tag::before{background:var(--th,var(--kb-blue))!important}
+/* review avatars: pastel tiles, ink initials */
+html body .review-avatar{background:var(--kb-blue)!important;color:var(--kb-ink)!important;font-family:var(--kb-serif);font-weight:400!important}
+html body .review-card:nth-child(5n+2) .review-avatar{background:var(--kb-yellow)!important}
+html body .review-card:nth-child(5n+3) .review-avatar{background:var(--kb-sky)!important}
+html body .review-card:nth-child(5n+4) .review-avatar{background:var(--kb-green)!important}
+html body .review-card:nth-child(5n) .review-avatar{background:var(--kb-aqua)!important}
+/* city landing pages: hero buttons line up with the left-aligned headline */
+html body .page-hero-inner > div[style*="justify-content:center"]{justify-content:flex-start!important}
+@media(max-width:600px){
+  html body .page-hero-inner > div[style*="justify-content:center"]{flex-direction:column;align-items:stretch;width:100%}
+  html body .page-hero-inner > div[style*="justify-content:center"] a{width:100%}
+}
+/* compare table: header cells on paper */
+html body .compare-head .compare-cell,html body .compare-head .compare-cell.us{background:var(--kb-soft)!important;color:var(--kb-ink)!important}
+html body .compare-head .compare-cell.us{background:var(--th,var(--kb-blue))!important}
+/* author strip (rates): paper, ink */
+html body .guide-author{background:var(--bg)!important;border-top:1px solid var(--kb-line);border-bottom:1px solid var(--kb-line)}
+html body .guide-author *{color:var(--kb-ink)!important}
+html body .guide-author-sub{color:var(--kb-ink2)!important}
+html body .guide-author-name{font-family:var(--kb-serif);font-weight:400!important;font-size:20px}

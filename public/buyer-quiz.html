@@ -25,16 +25,16 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=49">
+<meta name="theme-color" content="#9ED4EF">
+<link rel="stylesheet" href="/css/main.min.css?v=52">
 <style>
   /* Quiz-specific styles, kept inline because they're scoped to this page */
   .qz-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
   .qz-hero::before{content:'';position:absolute;inset:0;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
-  .qz-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,113,227,.22) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
+  .qz-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(3,3,2,0.132) 0%,transparent 70%);filter:blur(80px);pointer-events:none}
   .qz-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
   .qz-hero h1{font-size:clamp(36px,4.6vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.06;margin-bottom:14px}
-  .qz-hero h1 .g{background:linear-gradient(135deg,#0071E3,#5856D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .qz-hero h1 .g{background:linear-gradient(135deg,#030302,#030302);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .qz-hero p{font-size:17px;color:rgba(255,255,255,.62);max-width:560px;margin:0 auto 6px;line-height:1.55}
   .qz-meta{display:inline-flex;gap:14px;margin-top:18px;font-size:12px;color:rgba(255,255,255,.5);font-weight:500}
   .qz-meta span{display:inline-flex;align-items:center;gap:5px}
@@ -50,7 +50,7 @@
   .qz-progress-wrap{margin-bottom:30px}
   .qz-progress-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--text3);font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:8px}
   .qz-progress{height:6px;background:rgba(0,0,0,.06);border-radius:999px;overflow:hidden}
-  .qz-progress-bar{height:100%;background:linear-gradient(90deg,#0071E3,#5856D6);border-radius:999px;width:0%;transition:width .5s cubic-bezier(.4,0,.2,1)}
+  .qz-progress-bar{height:100%;background:linear-gradient(90deg,#030302,#030302);border-radius:999px;width:0%;transition:width .5s cubic-bezier(.4,0,.2,1)}
 
   /* Question */
   .qz-question{font-size:24px;font-weight:700;letter-spacing:-.6px;line-height:1.3;color:var(--text);margin-bottom:8px}
@@ -64,8 +64,8 @@
     font-size:15.5px;font-weight:500;color:var(--text);line-height:1.4;
     user-select:none;
   }
-  .qz-option:hover{border-color:rgba(0,113,227,.4);background:#fff}
-  .qz-option.selected{border-color:var(--blue);background:rgba(0,113,227,.06)}
+  .qz-option:hover{border-color:rgba(3,3,2,0.24);background:#fff}
+  .qz-option.selected{border-color:var(--blue);background:rgba(3,3,2,0.036)}
   .qz-option-radio{
     width:22px;height:22px;border-radius:50%;border:2px solid rgba(0,0,0,.18);
     flex-shrink:0;display:flex;align-items:center;justify-content:center;
@@ -114,7 +114,7 @@
   }
   .qz-score-num{
     font-size:48px;font-weight:800;letter-spacing:-2px;
-    background:linear-gradient(135deg,#0071E3,#5856D6);
+    background:linear-gradient(135deg,#030302,#030302);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     line-height:1;
   }
@@ -122,7 +122,7 @@
   .qz-band{
     font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
     padding:6px 14px;border-radius:999px;
-    background:rgba(0,113,227,.1);color:var(--blue);
+    background:rgba(3,3,2,0.06);color:var(--blue);
     margin-bottom:8px;
   }
   .qz-headline{font-size:26px;font-weight:700;letter-spacing:-.7px;line-height:1.25;color:var(--text);margin-bottom:8px;max-width:520px}
@@ -147,8 +147,8 @@
 
   .qz-next-move{
     padding:24px 22px;border-radius:18px;
-    background:linear-gradient(135deg,rgba(0,113,227,.08),rgba(88,86,214,.08));
-    border:1px solid rgba(0,113,227,.18);
+    background:linear-gradient(135deg,rgba(3,3,2,0.048),rgba(3,3,2,0.048));
+    border:1px solid rgba(3,3,2,0.108);
     margin-bottom:24px;
   }
   .qz-next-move h4{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
@@ -187,10 +187,10 @@
 .nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
 .nav-cta2{
   display:inline-flex;align-items:center;height:38px;padding:0 18px;
-  background:#5928E4;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
+  background:#030302;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
   transition:transform .25s ease,height .35s cubic-bezier(.25,.46,.45,.94),font-size .35s cubic-bezier(.25,.46,.45,.94),padding .35s cubic-bezier(.25,.46,.45,.94),background .2s;
 }
-.nav-cta2:hover{transform:scale(1.04);background:#6B3BF2}
+.nav-cta2:hover{transform:scale(1.04);background:#26261f}
 .nav-hamburger{border-radius:999px}
 /* scroll-down: shrink; scroll-up: back to regular */
 .nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
@@ -200,8 +200,12 @@
 @media(max-width:640px){.nav-cta2{display:none}}
 @media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/kb.css?v=8">
 </head>
-<body>
+<body style="--th:#9ED4EF;--th2:#B8CAF5">
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
@@ -306,8 +310,8 @@
           <svg class="qz-score-svg" viewBox="0 0 160 160">
             <defs>
               <linearGradient id="qzGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#0071E3"/>
-                <stop offset="100%" stop-color="#5856D6"/>
+                <stop offset="0%" stop-color="#030302"/>
+                <stop offset="100%" stop-color="#030302"/>
               </linearGradient>
             </defs>
             <circle class="qz-score-track" cx="80" cy="80" r="70"/>
@@ -345,7 +349,7 @@
       </div>
 
       <!-- Email opt-in shown AFTER result (deliver value first, ask second) -->
-      <div class="qz-email-optin" id="qzEmailOptin" style="margin-top:32px;background:rgba(0,113,227,.05);border:1px solid rgba(0,113,227,.15);border-radius:18px;padding:22px 24px;text-align:center">
+      <div class="qz-email-optin" id="qzEmailOptin" style="margin-top:32px;background:rgba(3,3,2,0.03);border:1px solid rgba(3,3,2,0.09);border-radius:18px;padding:22px 24px;text-align:center">
         <div style="font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">Want this delivered?</div>
         <h4 style="font-size:18px;font-weight:700;color:var(--text);margin:0 0 6px;letter-spacing:-.01em">Get your 30-day action plan as a PDF</h4>
         <p style="font-size:13.5px;color:var(--text2);line-height:1.55;margin:0 0 14px">Personalized to your score and gaps. Plus the 5-Mistakes guide. No spam, unsubscribe anytime.</p>

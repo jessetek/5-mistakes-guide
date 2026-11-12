@@ -24,10 +24,11 @@
 <meta name="twitter:title" content="Jesse Oñate | Realtor: Downey & SoCal">
 <meta name="twitter:description" content="Helping millennials buy and sell homes. No pressure, no games, just straight talk and real results.">
 <meta name="twitter:image" content="https://jessetek.net/img/og-home.jpg">
-<link rel="stylesheet" href="/css/main.min.css?v=50">
-<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="/img/hero-bg.webp" imagesrcset="/img/hero-bg.webp 1920w, /img/hero-bg-hd.webp 3840w" imagesizes="100vw">
+<link rel="stylesheet" href="/css/main.min.css?v=52">
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="/img/hero-sky-tall.webp" media="(max-width:760px)">
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="/img/hero-sky-wide.webp" media="(min-width:761px)">
 
-<meta name="theme-color" content="#0E1014">
+<meta name="theme-color" content="#A9D8F1">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -49,10 +50,10 @@
 .nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
 .nav-cta2{
   display:inline-flex;align-items:center;height:38px;padding:0 18px;
-  background:#5928E4;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
+  background:#030302;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
   transition:transform .25s ease,height .35s cubic-bezier(.25,.46,.45,.94),font-size .35s cubic-bezier(.25,.46,.45,.94),padding .35s cubic-bezier(.25,.46,.45,.94),background .2s;
 }
-.nav-cta2:hover{transform:scale(1.04);background:#6B3BF2}
+.nav-cta2:hover{transform:scale(1.04);background:#26261f}
 .nav-hamburger{border-radius:999px}
 /* scroll-down: shrink; scroll-up: back to regular */
 .nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
@@ -97,8 +98,12 @@
   .bc-instagram.bc-al .ios-nc{max-width:420px;width:100%;margin-left:auto;margin-right:auto}
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/kb.css?v=8">
 </head>
-<body>
+<body style="--th:#9ED4EF;--th2:#B8CAF5">
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
@@ -159,7 +164,8 @@
 <!-- ===================== HERO + SCROLL STAGE ===================== -->
 <div class="hero-scroll-stage" id="heroScrollStage">
 <section class="hero">
-  <picture><source srcset="/img/hero-bg.webp 1920w, /img/hero-bg-hd.webp 3840w" sizes="100vw" type="image/webp"><img src="/img/hero-bg.jpg" srcset="/img/hero-bg.jpg 1920w, /img/hero-bg-hd.jpg 3840w" sizes="100vw" alt="" class="hero-photo-bg" id="heroBg" fetchpriority="high" decoding="async" width="1920" height="1275"></picture>
+  <picture><source media="(max-width:760px)" srcset="/img/hero-sky-tall.webp" type="image/webp"><source media="(max-width:760px)" srcset="/img/hero-sky-tall.jpg"><source srcset="/img/hero-sky-wide.webp" type="image/webp"><img src="/img/hero-sky-wide.jpg" alt="" class="hero-photo-bg" id="heroBg" fetchpriority="high" decoding="async" width="2400" height="1400"></picture>
+  <div class="sky-clouds" aria-hidden="true"><img class="sc sc-l1" data-dir="-1" data-k="1" src="/img/sky/hero-left.webp" srcset="/img/sky/hero-left-480.webp 480w, /img/sky/hero-left.webp 960w" sizes="(max-width:760px) 90vw, 40vw" alt="" fetchpriority="high"><img class="sc sc-r1" data-dir="1" data-k="1" src="/img/sky/hero-right.webp" srcset="/img/sky/hero-right-480.webp 480w, /img/sky/hero-right.webp 960w" sizes="(max-width:760px) 70vw, 40vw" alt=""><img class="sc sc-l2" data-dir="-1" data-k="1.35" src="/img/sky/hero-right.webp" srcset="/img/sky/hero-right-480.webp 480w, /img/sky/hero-right.webp 960w" sizes="(max-width:760px) 60vw, 26vw" alt="" loading="lazy"><img class="sc sc-r2" data-dir="1" data-k="1.35" src="/img/sky/hero-left.webp" srcset="/img/sky/hero-left-480.webp 480w, /img/sky/hero-left.webp 960w" sizes="(max-width:760px) 56vw, 26vw" alt="" loading="lazy"><img class="sc sc-c" data-dir="1" data-k=".7" src="/img/sky/hero-right.webp" srcset="/img/sky/hero-right-480.webp 480w, /img/sky/hero-right.webp 960w" sizes="18vw" alt="" loading="lazy"></div>
   <div class="hero-overlay"></div>
 
   <div class="hero-inner">
@@ -621,7 +627,8 @@
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="cta-section cta-section-cal" id="contact">
+<section class="cta-section cta-section-cal cta-sky-on" id="contact">
+  <div class="cta-sky" aria-hidden="true"><img class="cs-cloud" src="/img/sky/hero-left.webp" srcset="/img/sky/hero-left-480.webp 480w, /img/sky/hero-left.webp 960w" sizes="(max-width:760px) 70vw, 34vw" alt="" loading="lazy"><div class="cs-sun"><i class="cs-haze"></i><i class="cs-halo"></i><i class="cs-core"></i></div><svg class="cs-edge" viewBox="0 0 1440 36" preserveAspectRatio="none"><path d="M0,36 L0,13.4 L25,19.1 L49,14.1 L74,10.2 L98,15.6 L128,9.1 L148,9.1 L179,16.3 L193,19.8 L227,15.8 L253,9.9 L267,14.3 L283,10.3 L301,8.4 L325,13.3 L356,14.2 L382,14.0 L410,13.5 L429,20.0 L463,18.1 L491,11.8 L510,11.5 L525,17.2 L547,18.2 L569,19.5 L600,8.0 L618,18.9 L641,19.8 L663,8.9 L690,17.3 L709,9.0 L730,19.6 L759,9.4 L778,9.2 L793,17.6 L811,14.7 L834,10.3 L862,9.6 L889,9.4 L912,10.6 L931,19.7 L961,11.6 L993,10.5 L1015,18.3 L1042,9.2 L1075,10.6 L1095,17.3 L1115,11.6 L1131,9.1 L1156,10.9 L1182,12.5 L1205,19.5 L1229,14.9 L1260,10.2 L1277,18.9 L1308,11.0 L1326,16.9 L1358,10.4 L1391,18.6 L1418,13.1 L1434,8.5 L1440,14 L1440,36 Z" fill="#FCF9F7"/></svg></div>
   <div class="cta-blob cta-blob-1"></div>
   <div class="cta-blob cta-blob-2"></div>
   <div class="cta-card cta-card-cal reveal">
@@ -1152,5 +1159,49 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 }
 </script>
 <!-- Sticky mobile CTA now auto-attached by /js/cro.js -->
+
+<script>
+/* Home sky: hero clouds drift off to the sides as you scroll; the sun comes out at the booking section */
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stage=document.getElementById('heroScrollStage');
+  var cl=[].slice.call(document.querySelectorAll('.sky-clouds .sc'));
+  if(stage&&cl.length&&!reduce){
+    /* each cloud travels exactly far enough to clear its side of the hero, and is fully out by 55% of the fold */
+    var hero=stage.querySelector('.hero'),dist=[],tick=false;
+    function measure(){
+      var ht=hero.style.transform;hero.style.transform='none';
+      cl.forEach(function(c){c.style.transform='none'});
+      var W=hero.getBoundingClientRect().width;
+      dist=cl.map(function(c){
+        var r=c.getBoundingClientRect(),d=+c.getAttribute('data-dir'),h=hero.getBoundingClientRect();
+        return ((d<0?(r.right-h.left):(h.right-r.left))+W*.06)/.8+W*.06;
+      });
+      hero.style.transform=ht;
+    }
+    function drift(){
+      var max=Math.max(1,stage.offsetHeight-window.innerHeight);
+      var p=Math.max(0,Math.min(1,window.scrollY/(max*.55)));
+      var e=p*p*(3-2*p);
+      cl.forEach(function(c,i){
+        var d=+c.getAttribute('data-dir');
+        c.style.transform='translate3d('+(d*e*dist[i]).toFixed(1)+'px,'+(-e*28).toFixed(1)+'px,0)';
+      });
+      tick=false;
+    }
+    window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(drift)}},{passive:true});
+    window.addEventListener('resize',function(){measure();drift()});
+    function start(){measure();drift()}
+    if(document.readyState==='complete')start();else window.addEventListener('load',start);
+    start();
+  }
+  var cta=document.querySelector('.cta-sky-on');
+  if(cta){
+    if(reduce||!('IntersectionObserver' in window)){cta.classList.add('sun-out');return}
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){cta.classList.add('sun-out');io.disconnect()}})},{threshold:.18});
+    io.observe(cta);
+  }
+})();
+</script>
 </body>
 </html>

@@ -26,14 +26,14 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0E1014">
-<link rel="stylesheet" href="/css/main.min.css?v=49">
+<meta name="theme-color" content="#D1EEF9">
+<link rel="stylesheet" href="/css/main.min.css?v=52">
 <style>
   .sa-hero{padding:140px 40px 50px;background:linear-gradient(180deg,#0E1014 0%,#06060E 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
   .sa-hero::before{content:'';position:absolute;inset:0;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%)}
   .sa-hero-inner{position:relative;z-index:2;max-width:780px;margin:0 auto}
   .sa-hero h1{font-size:clamp(36px,4.5vw,60px);font-weight:700;letter-spacing:-1.8px;line-height:1.06;color:#fff;margin-bottom:14px}
-  .sa-hero h1 .g{background:linear-gradient(135deg,#0071E3,#5856D6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .sa-hero h1 .g{background:linear-gradient(135deg,#030302,#030302);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .sa-hero p{font-size:17px;color:rgba(255,255,255,.62);max-width:560px;margin:0 auto 28px;line-height:1.55}
   .sa-search-wrap{max-width:540px;margin:0 auto}
   .sa-search{width:100%;padding:16px 22px;border-radius:999px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:16px;outline:none;backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15)}
@@ -69,10 +69,10 @@
 .nav-toggle:hover,.nav-dropdown:hover .nav-toggle,.nav-dropdown.open .nav-toggle{color:#fff}
 .nav-cta2{
   display:inline-flex;align-items:center;height:38px;padding:0 18px;
-  background:#5928E4;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
+  background:#030302;color:#fff;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:-.1px;text-decoration:none;
   transition:transform .25s ease,height .35s cubic-bezier(.25,.46,.45,.94),font-size .35s cubic-bezier(.25,.46,.45,.94),padding .35s cubic-bezier(.25,.46,.45,.94),background .2s;
 }
-.nav-cta2:hover{transform:scale(1.04);background:#6B3BF2}
+.nav-cta2:hover{transform:scale(1.04);background:#26261f}
 .nav-hamburger{border-radius:999px}
 /* scroll-down: shrink; scroll-up: back to regular */
 .nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
@@ -82,8 +82,12 @@
 @media(max-width:640px){.nav-cta2{display:none}}
 @media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/kb.css?v=8">
 </head>
-<body>
+<body style="--th:#D1EEF9;--th2:#9ED4EF">
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">

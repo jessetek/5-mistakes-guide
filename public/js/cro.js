@@ -80,7 +80,7 @@
             'background:rgba(14,16,20,.96);color:#fff;padding:10px 14px;border-radius:12px;' +
             'font-size:13px;line-height:1.4;max-width:280px;box-shadow:0 8px 28px rgba(0,0,0,.3);' +
             'animation:fsToastIn .3s ease both';
-          toast.innerHTML = 'Welcome back — picking up where you left off. <button style="background:none;border:0;color:#0a84ff;cursor:pointer;font-size:13px;font-weight:500;padding:0 0 0 6px">Clear</button>';
+          toast.innerHTML = 'Welcome back. Your answers are saved. <button style="background:none;border:0;color:#FDE99B;cursor:pointer;font-size:13px;font-weight:500;padding:0 0 0 6px">Clear</button>';
           var st = document.createElement('style');
           st.textContent = '@keyframes fsToastIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}';
           document.head.appendChild(st);
