@@ -21,5 +21,5 @@ and delete it here, so this file stays short.
 ### 2026-11-12 (built by hand, Jesse approved weekly auto-publish)
 - Article: living-in-downey-ca (topic 1, Downey head target). 1,082 body words, 6 sources, linked from /neighborhoods/downey and the Mello-Roos article.
 - Linking from old pages surfaced old copy violations (bilingual in schema FAQ and og tags, en dashes). Fix them in any page you touch, so every run leaves the site cleaner.
-- The bilingual-realtor-downey article and its index card are skipped by QC until Jesse decides. Do not edit or delete that article.
+- (Resolved 2026-11-12) Jesse retired the bilingual-realtor-downey article. It 301s to /real-estate-agent-downey. Never recreate a bilingual article or topic.
 - Next: site task predated-drafts, then the topic downey-vs-whittier-where-to-buy.

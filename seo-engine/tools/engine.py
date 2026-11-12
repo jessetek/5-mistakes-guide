@@ -226,10 +226,7 @@ def qc(paths):
         f = pathlib.Path(p)
         s = f.read_text(encoding='utf-8')
         name = f.relative_to(ROOT).as_posix() if f.is_absolute() else p
-        # Pending Jesse's call (2026-11-12): the existing bilingual-realtor-downey article and its index card.
-        # Skip that one card so weekly runs are not blocked; the article itself is a Jesse decision.
-        s_scan = re.sub(r'<a href="/insights/bilingual-realtor-downey"[^>]*>.*?</a>', ' ', s, flags=re.S)
-        vis = visible_text(s_scan)
+        vis = visible_text(s)
         # copy rules: scan what readers and Google see (visible text, title, description, schema)
         title_t = (re.search(r'<title>(.*?)</title>', s, re.S) or [None, ''])[1] if re.search(r'<title>', s) else ''
         desc_t = (re.search(r'<meta name="description" content="([^"]*)"', s) or [None, ''])[1] if 'name="description"' in s else ''

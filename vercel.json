@@ -24,7 +24,8 @@
     { "source": "/gallery", "destination": "/buyer", "permanent": true },
     { "source": "/property", "destination": "/buyer", "permanent": true },
     { "source": "/listings", "destination": "/buyer", "permanent": true },
-    { "source": "/resume", "destination": "/about", "permanent": true }
+    { "source": "/resume", "destination": "/about", "permanent": true },
+    { "source": "/insights/bilingual-realtor-downey", "destination": "/real-estate-agent-downey", "permanent": true }
   ],
   "crons": [
     {
