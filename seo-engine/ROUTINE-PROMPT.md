@@ -10,7 +10,7 @@ local article from the topic queue (real facts only, sourced), build and wire it
 link it from 2 related pages, do ONE site task from site-tasks.json, run QC until it shows 0 FAIL, publish,
 and append this week's entry to LEARNINGS.md.
 
-PUBLISH MODE: {{PUBLISH_MODE}}
+PUBLISH MODE: Jesse approved weekly auto-publish on 2026-11-12. When QC shows 0 FAIL, commit and push to main yourself (Vercel deploys it). Publish ONE article plus the ONE site task.
 
 HARD RULES:
 - Never touch api/, vercel.json, public/js/, public/css/, home.html, guide.html, move.html, forms or tracking.
