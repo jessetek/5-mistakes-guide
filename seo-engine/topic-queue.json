@@ -18,9 +18,10 @@
    "keyword": "downey vs whittier",
    "intent": "compare",
    "city": "downey",
-   "status": "queued",
+   "status": "published",
    "why": "comparison searches convert; two farm cities in one post",
-   "priority": 2
+   "priority": 2,
+   "published": "2026-11-12"
   },
   {
    "slug": "best-neighborhoods-in-downey",

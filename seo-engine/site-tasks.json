@@ -5,7 +5,9 @@
    "id": "predated-drafts",
    "title": "Fix the 3 hidden pre-dated drafts",
    "detail": "socal-rate-watch-september-2026, socal-rate-watch-october-2026 and socal-refinance-guide-2026 were written on 2026-04-30 with future dates and noindex, so the rate watches hold numbers written before those months happened. Rewrite each one with real, sourced Freddie Mac PMMS numbers for that month and honest dates, remove noindex, add them to the insights index and sitemap. If the real numbers cannot be sourced, leave noindex in place and report it (vercel.json is off limits, so no redirects).",
-   "status": "open"
+   "status": "done",
+   "done": "2026-11-12",
+   "note": "Rewrote Sept/Oct rate watches and refinance guide with real Freddie Mac PMMS data (CSV), removed noindex, wired to index and sitemap."
   },
   {
    "id": "author-box-bilingual",

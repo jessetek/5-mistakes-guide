@@ -11,6 +11,13 @@ and delete it here, so this file stays short.
 - 10 of 11 farm cities had no "Real Estate Agent in <City>" page. Those are the money queries, so site tasks build them one per week.
 
 ## Log
+### 2026-11-12 (second run, automated)
+- Article: downey-vs-whittier-where-to-buy (topic 2, compare intent). About 1,050 body words, 6 sources; linked from the Whittier guide and the living-in-downey article.
+- Site task predated-drafts done. The old drafts invented a rate cut and 6.3% rates; real PMMS rose to 7.40% in October. The official history CSV at freddiemac.com/pmms/docs/PMMS_history.csv works with curl and gives every weekly number.
+- Hard: QC wants 1,000+ words, so rewrites with only real data needed extra sourced-math sections (payments, 15 vs 30, break-even).
+- Whittier guide had a bilingual FAQ in its schema; removed. Pages april, june and may rate pages still FAIL QC for bilingual and dashes, so fix them via author-box-bilingual.
+- Next: author-box-bilingual (include those 3 rate pages), then best-neighborhoods-in-downey. Aim for 1,200 words.
+
 ### 2026-11-12 (built by hand, Jesse approved weekly auto-publish)
 - Article: living-in-downey-ca (topic 1, Downey head target). 1,082 body words, 6 sources, linked from /neighborhoods/downey and the Mello-Roos article.
 - Linking from old pages surfaced old copy violations (bilingual in schema FAQ and og tags, en dashes). Fix them in any page you touch, so every run leaves the site cleaner.
