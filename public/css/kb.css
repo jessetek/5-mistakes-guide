@@ -459,3 +459,34 @@ html body .guide-author{background:var(--bg)!important;border-top:1px solid var(
 html body .guide-author *{color:var(--kb-ink)!important}
 html body .guide-author-sub{color:var(--kb-ink2)!important}
 html body .guide-author-name{font-family:var(--kb-serif);font-weight:400!important;font-size:20px}
+
+/* ---------- home hero, round 3 (2026-11-12): centered headline, homes on the bottom edge ---------- */
+/* the blinking cursor floats outside the word so it adds no width: a finished word centers exactly */
+html body .type-wrap{position:relative;display:inline-block;white-space:nowrap}
+html body .type-cursor{position:absolute!important;left:100%;top:50%;transform:translateY(-50%);margin-left:4px!important}
+/* the hero always fills exactly the visible screen; the homes sit on its bottom edge */
+html body .hero-scroll-stage .hero{height:100vh!important;height:100svh!important;min-height:0!important}
+html body .hero-photo-bg{object-position:center bottom!important}
+/* lift the copy so it centers in the open sky above the rooftops */
+html body .hero-inner{padding:110px 40px 21vh!important}
+@media(max-width:760px){
+  html body .hero{align-items:center!important}
+  html body .hero-inner{padding:84px 20px 30vh!important}
+  html body .hero-h1-line .type-wrap{display:table;margin:0 auto}
+}
+
+/* ---------- footer: the Jtek footer (ink card, paper texture at .2 screen, 16px from the screen edges) ---------- */
+html body .footer{
+  position:relative;overflow:hidden;background:#030302!important;color:#fff;border:0!important;border-radius:24px;
+  margin:24px 16px 16px;padding:56px 40px 28px;box-shadow:0 20px 40px rgba(0,0,0,.08),0 3px 10px rgba(0,0,0,.1)
+}
+html body .footer::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.2;mix-blend-mode:screen;background:url(/img/paper-texture.webp) 0 0/596px 421px}
+html body .footer > *{position:relative;z-index:2}
+html body .f-logo,html body .f-logo span{color:#fff!important}
+html body .f-brand p{color:rgba(255,255,255,.7)!important}
+html body .f-col h4{color:#fff!important;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding-bottom:10px;border-bottom:.5px solid rgba(255,255,255,.2);margin-bottom:14px}
+html body .f-col a,html body .f-contact-quick a,html body .f-socials a{color:rgba(255,255,255,.8)!important}
+html body .f-col a:hover,html body .f-contact-quick a:hover,html body .f-socials a:hover{color:#fff!important}
+html body .footer-bot{border-top:.5px solid rgba(255,255,255,.2)!important}
+html body .footer-bot p,html body .f-dre,html body .f-eho,html body .f-jtek{color:rgba(255,255,255,.6)!important}
+@media(max-width:700px){html body .footer{margin:16px 12px 12px;padding:40px 22px 24px}}

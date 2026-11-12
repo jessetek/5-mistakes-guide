@@ -13,7 +13,8 @@ and append this week's entry to LEARNINGS.md.
 PUBLISH MODE: Jesse approved weekly auto-publish on 2026-11-12. When QC shows 0 FAIL, commit and push to main yourself (Vercel deploys it). Publish ONE article plus the ONE site task.
 
 HARD RULES:
-- Never touch api/, vercel.json, public/js/, public/css/, home.html, guide.html, move.html, forms or tracking.
+- Never touch api/, public/js/, public/css/, home.html, guide.html, move.html, forms or tracking. vercel.json may
+  only change through `python3 seo-engine/tools/engine.py repoint <city>` after building that city's agent page.
 - One new article per run, never more.
 - Zero em or en dashes in anything a reader sees. No "bilingual" or Spanish promotion. No address. QC
   enforces this (`python3 seo-engine/tools/engine.py qc <files>`), so never skip or weaken a gate.

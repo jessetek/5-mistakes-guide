@@ -109,8 +109,8 @@ Commit LEARNINGS.md with the same push (or a second push right after).
 ## Hard rules
 - Only touch: `public/insights/*`, `public/sitemap.xml`, the city guides, the city landing pages, new
   `public/real-estate-agent-*.html` pages, `public/service-areas.html` (links only), and `seo-engine/*`.
-  **Never** modify `api/`, `vercel.json`, `public/js/`, `public/css/`, `home.html`, `guide.html`,
-  `move.html`, forms, or tracking.
+  **Never** modify `api/`, `public/js/`, `public/css/`, `home.html`, `guide.html`, `move.html`, forms, or
+  tracking. `vercel.json` may only be changed by `engine.py repoint <city>` after building that city's agent page.
 - One article per run. Never publish more than one new article in a run.
 - Never invent numbers, people, quotes or reviews. If the honest version is weaker, publish the honest version.
 - No em or en dashes. No "bilingual". No address. QC enforces this, so do not bypass it.

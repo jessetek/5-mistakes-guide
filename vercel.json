@@ -25,7 +25,22 @@
     { "source": "/property", "destination": "/buyer", "permanent": true },
     { "source": "/listings", "destination": "/buyer", "permanent": true },
     { "source": "/resume", "destination": "/about", "permanent": true },
-    { "source": "/insights/bilingual-realtor-downey", "destination": "/real-estate-agent-downey", "permanent": true }
+    { "source": "/insights/bilingual-realtor-downey", "destination": "/real-estate-agent-downey", "permanent": true },
+    { "source": "/best-bilingual-realtor-anaheim", "destination": "/neighborhoods/anaheim", "permanent": true },
+    { "source": "/best-bilingual-realtor-bellflower", "destination": "/neighborhoods/bellflower", "permanent": true },
+    { "source": "/best-bilingual-realtor-cerritos", "destination": "/neighborhoods/cerritos", "permanent": true },
+    { "source": "/best-bilingual-realtor-downey", "destination": "/real-estate-agent-downey", "permanent": true },
+    { "source": "/best-bilingual-realtor-garden-grove", "destination": "/neighborhoods/garden-grove", "permanent": true },
+    { "source": "/best-bilingual-realtor-la-mirada", "destination": "/neighborhoods/la-mirada", "permanent": true },
+    { "source": "/best-bilingual-realtor-lakewood", "destination": "/neighborhoods/lakewood", "permanent": true },
+    { "source": "/best-bilingual-realtor-long-beach", "destination": "/neighborhoods/long-beach", "permanent": true },
+    { "source": "/best-bilingual-realtor-manhattan-beach", "destination": "/neighborhoods/manhattan-beach", "permanent": true },
+    { "source": "/best-bilingual-realtor-montebello", "destination": "/neighborhoods/montebello", "permanent": true },
+    { "source": "/best-bilingual-realtor-norwalk", "destination": "/neighborhoods/norwalk", "permanent": true },
+    { "source": "/best-bilingual-realtor-pasadena", "destination": "/neighborhoods/pasadena", "permanent": true },
+    { "source": "/best-bilingual-realtor-pico-rivera", "destination": "/neighborhoods/pico-rivera", "permanent": true },
+    { "source": "/best-bilingual-realtor-santa-ana", "destination": "/neighborhoods/santa-ana", "permanent": true },
+    { "source": "/best-bilingual-realtor-whittier", "destination": "/neighborhoods/whittier", "permanent": true }
   ],
   "crons": [
     {

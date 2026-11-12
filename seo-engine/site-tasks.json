@@ -30,70 +30,70 @@
   {
    "id": "agent-page-whittier",
    "title": "Create \"Real Estate Agent in Whittier, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Whittier: use cities.json numbers, ZIPs 90601, 90606, schools, neighbors, and link the Whittier city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Whittier city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent whittier\" / \"whittier realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Whittier: use cities.json numbers, ZIPs 90601, 90606, schools, neighbors, and link the Whittier city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Whittier city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent whittier\" / \"whittier realtor\". Finally run `python3 seo-engine/tools/engine.py repoint whittier` so the retired /best-bilingual-realtor-whittier URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "whittier"
   },
   {
    "id": "agent-page-pico-rivera",
    "title": "Create \"Real Estate Agent in Pico Rivera, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Pico Rivera: use cities.json numbers, ZIPs 90660, 90661, schools, neighbors, and link the Pico Rivera city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Pico Rivera city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent pico rivera\" / \"pico rivera realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Pico Rivera: use cities.json numbers, ZIPs 90660, 90661, schools, neighbors, and link the Pico Rivera city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Pico Rivera city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent pico rivera\" / \"pico rivera realtor\". Finally run `python3 seo-engine/tools/engine.py repoint pico-rivera` so the retired /best-bilingual-realtor-pico-rivera URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "pico-rivera"
   },
   {
    "id": "agent-page-norwalk",
    "title": "Create \"Real Estate Agent in Norwalk, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Norwalk: use cities.json numbers, ZIPs 90650, 90651, schools, neighbors, and link the Norwalk city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Norwalk city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent norwalk\" / \"norwalk realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Norwalk: use cities.json numbers, ZIPs 90650, 90651, schools, neighbors, and link the Norwalk city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Norwalk city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent norwalk\" / \"norwalk realtor\". Finally run `python3 seo-engine/tools/engine.py repoint norwalk` so the retired /best-bilingual-realtor-norwalk URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "norwalk"
   },
   {
    "id": "agent-page-bellflower",
    "title": "Create \"Real Estate Agent in Bellflower, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Bellflower: use cities.json numbers, ZIPs 90706, schools, neighbors, and link the Bellflower city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Bellflower city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent bellflower\" / \"bellflower realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Bellflower: use cities.json numbers, ZIPs 90706, schools, neighbors, and link the Bellflower city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Bellflower city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent bellflower\" / \"bellflower realtor\". Finally run `python3 seo-engine/tools/engine.py repoint bellflower` so the retired /best-bilingual-realtor-bellflower URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "bellflower"
   },
   {
    "id": "agent-page-long-beach",
    "title": "Create \"Real Estate Agent in Long Beach, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Long Beach: use cities.json numbers, ZIPs 90802, 90815, schools, neighbors, and link the Long Beach city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Long Beach city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent long beach\" / \"long beach realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Long Beach: use cities.json numbers, ZIPs 90802, 90815, schools, neighbors, and link the Long Beach city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Long Beach city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent long beach\" / \"long beach realtor\". Finally run `python3 seo-engine/tools/engine.py repoint long-beach` so the retired /best-bilingual-realtor-long-beach URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "long-beach"
   },
   {
    "id": "agent-page-cerritos",
    "title": "Create \"Real Estate Agent in Cerritos, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Cerritos: use cities.json numbers, ZIPs 90703, schools, neighbors, and link the Cerritos city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Cerritos city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent cerritos\" / \"cerritos realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Cerritos: use cities.json numbers, ZIPs 90703, schools, neighbors, and link the Cerritos city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Cerritos city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent cerritos\" / \"cerritos realtor\". Finally run `python3 seo-engine/tools/engine.py repoint cerritos` so the retired /best-bilingual-realtor-cerritos URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "cerritos"
   },
   {
    "id": "agent-page-la-mirada",
    "title": "Create \"Real Estate Agent in La Mirada, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for La Mirada: use cities.json numbers, ZIPs 90638, schools, neighbors, and link the La Mirada city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the La Mirada city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent la mirada\" / \"la mirada realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for La Mirada: use cities.json numbers, ZIPs 90638, schools, neighbors, and link the La Mirada city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the La Mirada city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent la mirada\" / \"la mirada realtor\". Finally run `python3 seo-engine/tools/engine.py repoint la-mirada` so the retired /best-bilingual-realtor-la-mirada URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "la-mirada"
   },
   {
    "id": "agent-page-lakewood",
    "title": "Create \"Real Estate Agent in Lakewood, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Lakewood: use cities.json numbers, ZIPs 90712, 90713, 90715, schools, neighbors, and link the Lakewood city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Lakewood city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent lakewood\" / \"lakewood realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Lakewood: use cities.json numbers, ZIPs 90712, 90713, 90715, schools, neighbors, and link the Lakewood city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Lakewood city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent lakewood\" / \"lakewood realtor\". Finally run `python3 seo-engine/tools/engine.py repoint lakewood` so the retired /best-bilingual-realtor-lakewood URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "lakewood"
   },
   {
    "id": "agent-page-montebello",
    "title": "Create \"Real Estate Agent in Montebello, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Montebello: use cities.json numbers, ZIPs 90640, schools, neighbors, and link the Montebello city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Montebello city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent montebello\" / \"montebello realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Montebello: use cities.json numbers, ZIPs 90640, schools, neighbors, and link the Montebello city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Montebello city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent montebello\" / \"montebello realtor\". Finally run `python3 seo-engine/tools/engine.py repoint montebello` so the retired /best-bilingual-realtor-montebello URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "montebello"
   },
   {
    "id": "agent-page-la-habra",
    "title": "Create \"Real Estate Agent in La Habra, CA\"",
-   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for La Habra: use cities.json numbers, ZIPs 90631, schools, neighbors, and link the La Habra city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the La Habra city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent la habra\" / \"la habra realtor\".",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for La Habra: use cities.json numbers, ZIPs 90631, schools, neighbors, and link the La Habra city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the La Habra city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent la habra\" / \"la habra realtor\". Finally run `python3 seo-engine/tools/engine.py repoint la-habra` so the retired /best-bilingual-realtor-la-habra URL (if any) 301s to the new agent page; commit vercel.json with it. Do not edit vercel.json any other way.",
    "status": "open",
    "city": "la-habra"
   },

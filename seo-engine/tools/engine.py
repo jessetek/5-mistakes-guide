@@ -7,6 +7,7 @@ this script does every step that must be identical each week.
   python3 seo-engine/tools/engine.py touch  public/<page>.html [...]        # sitemap lastmod = today for refreshed pages
   python3 seo-engine/tools/engine.py qc     public/<file>.html [...]        # all gates; exit 1 on any failure
   python3 seo-engine/tools/engine.py status                                 # what is published, queued, and missing
+  python3 seo-engine/tools/engine.py repoint <city>                         # after an agent page: move its retired redirect there
 
 Spec JSON (drafts/<slug>.json):
 {
@@ -212,6 +213,29 @@ def touch(paths):
     sm.write_text(t, encoding='utf-8')
 
 
+# --------------------------------------------------------------------------- repoint
+def repoint(city):
+    """After building public/real-estate-agent-<city>.html, move the retired /best-bilingual-realtor-<city>
+    redirect from the city guide to the new agent page. This is the ONLY vercel.json edit the engine may make."""
+    page = PUB / f'real-estate-agent-{city}.html'
+    if not page.exists():
+        die(f'{page.name} does not exist yet; build the agent page first')
+    vf = ROOT / 'vercel.json'
+    t = vf.read_text()
+    old = f'{{ "source": "/best-bilingual-realtor-{city}", "destination": "/neighborhoods/{city}", "permanent": true }}'
+    new = f'{{ "source": "/best-bilingual-realtor-{city}", "destination": "/real-estate-agent-{city}", "permanent": true }}'
+    if new in t:
+        print(f'repoint: already points at /real-estate-agent-{city}')
+        return
+    if old not in t:
+        print(f'repoint: no retired bilingual redirect for {city} (nothing to do)')
+        return
+    t = t.replace(old, new, 1)
+    json.loads(t)   # never write invalid JSON
+    vf.write_text(t)
+    print(f'repoint: /best-bilingual-realtor-{city} now 301s to /real-estate-agent-{city}')
+
+
 # --------------------------------------------------------------------------- qc
 def visible_text(s):
     s = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', s, flags=re.S)
@@ -326,4 +350,4 @@ if __name__ == '__main__':
         sys.exit(0)
     cmd, args = sys.argv[1], sys.argv[2:]
     {'build': lambda: build(args[0]), 'wire': lambda: wire(args[0]), 'touch': lambda: touch(args),
-     'qc': lambda: qc(args), 'status': status}.get(cmd, lambda: die('unknown command ' + cmd))()
+     'qc': lambda: qc(args), 'status': status, 'repoint': lambda: repoint(args[0])}.get(cmd, lambda: die('unknown command ' + cmd))()

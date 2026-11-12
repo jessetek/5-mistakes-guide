@@ -22,4 +22,5 @@ and delete it here, so this file stays short.
 - Article: living-in-downey-ca (topic 1, Downey head target). 1,082 body words, 6 sources, linked from /neighborhoods/downey and the Mello-Roos article.
 - Linking from old pages surfaced old copy violations (bilingual in schema FAQ and og tags, en dashes). Fix them in any page you touch, so every run leaves the site cleaner.
 - (Resolved 2026-11-12) Jesse retired the bilingual-realtor-downey article. It 301s to /real-estate-agent-downey. Never recreate a bilingual article or topic.
+- (2026-11-12) Jesse also retired the 15 best-bilingual-realtor-<city> pages. Downey 301s to /real-estate-agent-downey, the rest to /neighborhoods/<city>. After building a city's agent page, run `engine.py repoint <city>`.
 - Next: site task predated-drafts, then the topic downey-vs-whittier-where-to-buy.
