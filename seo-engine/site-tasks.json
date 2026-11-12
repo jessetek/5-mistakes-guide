@@ -1,0 +1,105 @@
+{
+ "_how": "Do exactly ONE open task per run, in order. Mark it done with the date and a one-line note. refresh-oldest repeats forever once the rest are done.",
+ "tasks": [
+  {
+   "id": "predated-drafts",
+   "title": "Fix the 3 hidden pre-dated drafts",
+   "detail": "socal-rate-watch-september-2026, socal-rate-watch-october-2026 and socal-refinance-guide-2026 were written on 2026-04-30 with future dates and noindex, so the rate watches hold numbers written before those months happened. Rewrite each one with real, sourced Freddie Mac PMMS numbers for that month and honest dates, remove noindex, add them to the insights index and sitemap. If the real numbers cannot be sourced, leave noindex in place and report it (vercel.json is off limits, so no redirects).",
+   "status": "open"
+  },
+  {
+   "id": "author-box-bilingual",
+   "title": "Clean the author box on older articles",
+   "detail": "Older insights articles say \"Bilingual SoCal Realtor\" and \"Spanish/English\" in the author box and image alt. Replace with the template author box line (Realtor, DRE, 100+ closings, 5.0 on Google, cities). Copy rule: never promote bilingual.",
+   "status": "open"
+  },
+  {
+   "id": "orphan-links",
+   "title": "Link every article from at least 2 related pages",
+   "detail": "Most articles get 0 or 1 inbound links (excluding the insights index). For each, add one natural in-sentence link from 2 relevant pages (a city guide, a related article, /buyer or /seller). Do up to 6 articles per run until none is under 2.",
+   "status": "open"
+  },
+  {
+   "id": "sitemap-lastmod",
+   "title": "Backfill sitemap lastmod",
+   "detail": "Only 13 of 135 sitemap URLs have lastmod. Set lastmod from `git log -1 --format=%cs -- public/<file>` for every URL.",
+   "status": "open"
+  },
+  {
+   "id": "agent-page-whittier",
+   "title": "Create \"Real Estate Agent in Whittier, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Whittier: use cities.json numbers, ZIPs 90601, 90606, schools, neighbors, and link the Whittier city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Whittier city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent whittier\" / \"whittier realtor\".",
+   "status": "open",
+   "city": "whittier"
+  },
+  {
+   "id": "agent-page-pico-rivera",
+   "title": "Create \"Real Estate Agent in Pico Rivera, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Pico Rivera: use cities.json numbers, ZIPs 90660, 90661, schools, neighbors, and link the Pico Rivera city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Pico Rivera city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent pico rivera\" / \"pico rivera realtor\".",
+   "status": "open",
+   "city": "pico-rivera"
+  },
+  {
+   "id": "agent-page-norwalk",
+   "title": "Create \"Real Estate Agent in Norwalk, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Norwalk: use cities.json numbers, ZIPs 90650, 90651, schools, neighbors, and link the Norwalk city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Norwalk city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent norwalk\" / \"norwalk realtor\".",
+   "status": "open",
+   "city": "norwalk"
+  },
+  {
+   "id": "agent-page-bellflower",
+   "title": "Create \"Real Estate Agent in Bellflower, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Bellflower: use cities.json numbers, ZIPs 90706, schools, neighbors, and link the Bellflower city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Bellflower city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent bellflower\" / \"bellflower realtor\".",
+   "status": "open",
+   "city": "bellflower"
+  },
+  {
+   "id": "agent-page-long-beach",
+   "title": "Create \"Real Estate Agent in Long Beach, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Long Beach: use cities.json numbers, ZIPs 90802, 90815, schools, neighbors, and link the Long Beach city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Long Beach city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent long beach\" / \"long beach realtor\".",
+   "status": "open",
+   "city": "long-beach"
+  },
+  {
+   "id": "agent-page-cerritos",
+   "title": "Create \"Real Estate Agent in Cerritos, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Cerritos: use cities.json numbers, ZIPs 90703, schools, neighbors, and link the Cerritos city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Cerritos city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent cerritos\" / \"cerritos realtor\".",
+   "status": "open",
+   "city": "cerritos"
+  },
+  {
+   "id": "agent-page-la-mirada",
+   "title": "Create \"Real Estate Agent in La Mirada, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for La Mirada: use cities.json numbers, ZIPs 90638, schools, neighbors, and link the La Mirada city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the La Mirada city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent la mirada\" / \"la mirada realtor\".",
+   "status": "open",
+   "city": "la-mirada"
+  },
+  {
+   "id": "agent-page-lakewood",
+   "title": "Create \"Real Estate Agent in Lakewood, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Lakewood: use cities.json numbers, ZIPs 90712, 90713, 90715, schools, neighbors, and link the Lakewood city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Lakewood city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent lakewood\" / \"lakewood realtor\".",
+   "status": "open",
+   "city": "lakewood"
+  },
+  {
+   "id": "agent-page-montebello",
+   "title": "Create \"Real Estate Agent in Montebello, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for Montebello: use cities.json numbers, ZIPs 90640, schools, neighbors, and link the Montebello city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the Montebello city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent montebello\" / \"montebello realtor\".",
+   "status": "open",
+   "city": "montebello"
+  },
+  {
+   "id": "agent-page-la-habra",
+   "title": "Create \"Real Estate Agent in La Habra, CA\"",
+   "detail": "Model on public/real-estate-agent-downey.html (structure, schema, FAQ) but write it fresh for La Habra: use cities.json numbers, ZIPs 90631, schools, neighbors, and link the La Habra city guide, first-time buyer and sell pages if they exist. Add it to sitemap.xml, service-areas.html card for the city (link), and the La Habra city guide (one in-sentence link). No bilingual promo. This is the money query: \"real estate agent la habra\" / \"la habra realtor\".",
+   "status": "open",
+   "city": "la-habra"
+  },
+  {
+   "id": "refresh-oldest",
+   "title": "Refresh the oldest article",
+   "detail": "Every run after the list above is done: refresh the article with the oldest dateModified. Update facts with sources, add a section or FAQ that answers a real question, bump dateModified, run touch.",
+   "status": "repeat"
+  }
+ ]
+}

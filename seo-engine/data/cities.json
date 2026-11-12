@@ -1,0 +1,1432 @@
+{
+ "_source": "public/neighborhoods/*.html (site source of truth)",
+ "farm_order": [
+  "downey",
+  "whittier",
+  "pico-rivera",
+  "long-beach",
+  "cerritos",
+  "norwalk",
+  "la-mirada",
+  "bellflower",
+  "la-habra",
+  "lakewood",
+  "montebello"
+ ],
+ "cities": {
+  "anaheim": {
+   "name": "Anaheim",
+   "county": "Orange County",
+   "zips": [
+    "92801",
+    "92802",
+    "92804",
+    "92805",
+    "92806",
+    "92807",
+    "92808"
+   ],
+   "farm": false,
+   "median_price": "$910K",
+   "days_on_market": "38",
+   "residents": "346K",
+   "schools": [
+    "Canyon High School",
+    "Esperanza High School",
+    "Western High School"
+   ],
+   "neighbors": [
+    "fullerton",
+    "orange",
+    "buena-park",
+    "cypress"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/anaheim",
+    "first_time_buyer": "/first-time-buyer-anaheim",
+    "sell_over_asking": "/sell-over-asking-anaheim",
+    "agent": null
+   }
+  },
+  "bellflower": {
+   "name": "Bellflower",
+   "county": "LA County",
+   "zips": [
+    "90706"
+   ],
+   "farm": true,
+   "median_price": "$680K",
+   "days_on_market": "50",
+   "residents": "78K",
+   "schools": [
+    "Mayfair High School",
+    "Bellflower High School",
+    "Hollydale Elementary"
+   ],
+   "neighbors": [
+    "lakewood",
+    "norwalk",
+    "cerritos",
+    "long-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/bellflower",
+    "first_time_buyer": "/first-time-buyer-bellflower",
+    "sell_over_asking": "/sell-over-asking-bellflower",
+    "agent": null
+   }
+  },
+  "beverly-hills": {
+   "name": "Beverly Hills",
+   "county": "",
+   "zips": [
+    "90210",
+    "90211",
+    "90212"
+   ],
+   "farm": false,
+   "median_price": "$4.5M",
+   "days_on_market": "45",
+   "residents": "32K",
+   "schools": [
+    "Beverly Hills High School",
+    "Beverly Vista Middle School",
+    "BHUSD Elementary avg"
+   ],
+   "neighbors": [
+    "culver-city",
+    "santa-monica",
+    "sherman-oaks",
+    "calabasas"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/beverly-hills",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "brea": {
+   "name": "Brea",
+   "county": "Orange County",
+   "zips": [
+    "92821",
+    "92823"
+   ],
+   "farm": false,
+   "median_price": "$1.12M",
+   "days_on_market": "30",
+   "residents": "47K",
+   "schools": [
+    "Brea Olinda High School",
+    "Brea Junior High School",
+    "Country Hills Elementary"
+   ],
+   "neighbors": [
+    "fullerton",
+    "la-habra",
+    "yorba-linda",
+    "diamond-bar"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/brea",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "buena-park": {
+   "name": "Buena Park",
+   "county": "Orange County",
+   "zips": [
+    "90620",
+    "90621"
+   ],
+   "farm": false,
+   "median_price": "$865K",
+   "days_on_market": "40",
+   "residents": "82K",
+   "schools": [
+    "Buena Park High School",
+    "Kennedy High School",
+    "Beatty Middle School"
+   ],
+   "neighbors": [
+    "fullerton",
+    "anaheim",
+    "cypress",
+    "la-mirada"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/buena-park",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "burbank": {
+   "name": "Burbank",
+   "county": "LA County",
+   "zips": [
+    "91501",
+    "91506",
+    "91510",
+    "91521",
+    "91526"
+   ],
+   "farm": false,
+   "median_price": "$1.20M",
+   "days_on_market": "28",
+   "residents": "108K",
+   "schools": [
+    "Burroughs High School",
+    "Burbank High School",
+    "Jordan Middle School"
+   ],
+   "neighbors": [
+    "glendale",
+    "pasadena",
+    "sherman-oaks",
+    "la-canada-flintridge"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/burbank",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "calabasas": {
+   "name": "Calabasas",
+   "county": "",
+   "zips": [
+    "91301",
+    "91302"
+   ],
+   "farm": false,
+   "median_price": "$2.5M",
+   "days_on_market": "42",
+   "residents": "23K",
+   "schools": [
+    "Calabasas High School",
+    "AC Stelle Middle School",
+    "LVUSD Elementary avg"
+   ],
+   "neighbors": [
+    "sherman-oaks",
+    "beverly-hills",
+    "la-canada-flintridge",
+    "glendale"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/calabasas",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "cerritos": {
+   "name": "Cerritos",
+   "county": "LA County",
+   "zips": [
+    "90703"
+   ],
+   "farm": true,
+   "median_price": "$1.05M",
+   "days_on_market": "35",
+   "residents": "49K",
+   "schools": [
+    "Whitney High School",
+    "Gretchen Whitney HS Feeder Elementaries",
+    "Cerritos High School"
+   ],
+   "neighbors": [
+    "lakewood",
+    "la-mirada",
+    "norwalk",
+    "cypress"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/cerritos",
+    "first_time_buyer": "/first-time-buyer-cerritos",
+    "sell_over_asking": "/sell-over-asking-cerritos",
+    "agent": null
+   }
+  },
+  "costa-mesa": {
+   "name": "Costa Mesa",
+   "county": "Orange County",
+   "zips": [
+    "92626",
+    "92627",
+    "92628"
+   ],
+   "farm": false,
+   "median_price": "$1.15M",
+   "days_on_market": "36",
+   "residents": "111K",
+   "schools": [
+    "Estancia High School",
+    "Costa Mesa High School",
+    "Newport-Mesa USD avg"
+   ],
+   "neighbors": [
+    "newport-beach",
+    "huntington-beach",
+    "irvine",
+    "tustin"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/costa-mesa",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "culver-city": {
+   "name": "Culver City",
+   "county": "",
+   "zips": [
+    "90230",
+    "90232"
+   ],
+   "farm": false,
+   "median_price": "$1.55M",
+   "days_on_market": "35",
+   "residents": "39K",
+   "schools": [
+    "Culver City High School",
+    "Culver City Middle School",
+    "CCUSD Elementary avg"
+   ],
+   "neighbors": [
+    "santa-monica",
+    "beverly-hills",
+    "sherman-oaks",
+    "manhattan-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/culver-city",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "cypress": {
+   "name": "Cypress",
+   "county": "Orange County",
+   "zips": [
+    "90630"
+   ],
+   "farm": false,
+   "median_price": "$1.05M",
+   "days_on_market": "32",
+   "residents": "49K",
+   "schools": [
+    "Oxford Academy",
+    "Cypress High School",
+    "Lexington Junior High"
+   ],
+   "neighbors": [
+    "buena-park",
+    "anaheim",
+    "lakewood"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/cypress",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "diamond-bar": {
+   "name": "Diamond Bar",
+   "county": "LA County",
+   "zips": [
+    "91765",
+    "91789"
+   ],
+   "farm": false,
+   "median_price": "$1.05M",
+   "days_on_market": "33",
+   "residents": "55K",
+   "schools": [
+    "Diamond Bar High School",
+    "Chaparral Middle School",
+    "Walnut Elementary"
+   ],
+   "neighbors": [
+    "rowland-heights",
+    "brea",
+    "hacienda-heights",
+    "yorba-linda"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/diamond-bar",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "downey": {
+   "name": "Downey",
+   "county": "LA County",
+   "zips": [
+    "90240",
+    "90241",
+    "90242"
+   ],
+   "farm": true,
+   "median_price": "$926K",
+   "days_on_market": "45",
+   "residents": "108K",
+   "schools": [
+    "Warren High School",
+    "Downey High School",
+    "Williams Elementary School",
+    "Griffiths Middle School"
+   ],
+   "neighbors": [
+    "pico-rivera",
+    "norwalk",
+    "whittier",
+    "bellflower"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/downey",
+    "first_time_buyer": "/first-time-buyer-downey",
+    "sell_over_asking": "/sell-over-asking-downey",
+    "agent": "/real-estate-agent-downey"
+   }
+  },
+  "el-monte": {
+   "name": "El Monte",
+   "county": "LA County",
+   "zips": [
+    "91731",
+    "91732",
+    "91733",
+    "91734",
+    "91735"
+   ],
+   "farm": false,
+   "median_price": "$680K",
+   "days_on_market": "47",
+   "residents": "108K",
+   "schools": [
+    "Mountain View High School",
+    "El Monte High School",
+    "South El Monte High School"
+   ],
+   "neighbors": [
+    "la-puente",
+    "west-covina",
+    "rowland-heights",
+    "montebello"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/el-monte",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "fullerton": {
+   "name": "Fullerton",
+   "county": "Orange County",
+   "zips": [
+    "92831",
+    "92832",
+    "92833",
+    "92835"
+   ],
+   "farm": false,
+   "median_price": "$1.05M",
+   "days_on_market": "35",
+   "residents": "143K",
+   "schools": [
+    "Sunny Hills High School",
+    "Troy High School",
+    "Fullerton Union High School"
+   ],
+   "neighbors": [
+    "brea",
+    "la-habra",
+    "anaheim",
+    "buena-park"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/fullerton",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "garden-grove": {
+   "name": "Garden Grove",
+   "county": "Orange County",
+   "zips": [
+    "92840",
+    "92841",
+    "92843",
+    "92844",
+    "92845"
+   ],
+   "farm": false,
+   "median_price": "$885K",
+   "days_on_market": "36",
+   "residents": "172K",
+   "schools": [
+    "Pacifica High School",
+    "Bolsa Grande High School",
+    "Garden Grove High School"
+   ],
+   "neighbors": [
+    "westminster",
+    "anaheim",
+    "cypress",
+    "orange"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/garden-grove",
+    "first_time_buyer": "/first-time-buyer-garden-grove",
+    "sell_over_asking": "/sell-over-asking-garden-grove",
+    "agent": null
+   }
+  },
+  "glendale": {
+   "name": "Glendale",
+   "county": "LA County",
+   "zips": [
+    "91201",
+    "91202",
+    "91203",
+    "91204",
+    "91205",
+    "91206",
+    "91207",
+    "91208"
+   ],
+   "farm": false,
+   "median_price": "$1.15M",
+   "days_on_market": "30",
+   "residents": "196K",
+   "schools": [
+    "Crescenta Valley High School",
+    "Glendale High School",
+    "Hoover High School"
+   ],
+   "neighbors": [
+    "pasadena",
+    "burbank",
+    "sherman-oaks",
+    "la-canada-flintridge"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/glendale",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "hacienda-heights": {
+   "name": "Hacienda Heights",
+   "county": "LA County",
+   "zips": [
+    "91745"
+   ],
+   "farm": false,
+   "median_price": "$925K",
+   "days_on_market": "35",
+   "residents": "54K",
+   "schools": [
+    "Wilson High School",
+    "Newton Middle School",
+    "Wedgeworth Elementary"
+   ],
+   "neighbors": [
+    "rowland-heights",
+    "la-puente",
+    "diamond-bar",
+    "whittier"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/hacienda-heights",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "hermosa-beach": {
+   "name": "Hermosa Beach",
+   "county": "",
+   "zips": [
+    "90254"
+   ],
+   "farm": false,
+   "median_price": "$2.4M",
+   "days_on_market": "33",
+   "residents": "20K",
+   "schools": [
+    "Mira Costa High School (feeder)",
+    "Hermosa View Elementary",
+    "Hermosa Valley Elementary"
+   ],
+   "neighbors": [
+    "manhattan-beach",
+    "redondo-beach",
+    "torrance",
+    "long-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/hermosa-beach",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "huntington-beach": {
+   "name": "Huntington Beach",
+   "county": "Orange County",
+   "zips": [
+    "92646",
+    "92647",
+    "92648",
+    "92649"
+   ],
+   "farm": false,
+   "median_price": "$1.35M",
+   "days_on_market": "34",
+   "residents": "199K",
+   "schools": [
+    "Edison High School",
+    "Huntington Beach High School",
+    "Marina High School"
+   ],
+   "neighbors": [
+    "costa-mesa",
+    "westminster",
+    "newport-beach",
+    "long-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/huntington-beach",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "irvine": {
+   "name": "Irvine",
+   "county": "Orange County",
+   "zips": [
+    "92602",
+    "92603",
+    "92604",
+    "92606",
+    "92612",
+    "92614",
+    "92617",
+    "92618",
+    "92620"
+   ],
+   "farm": false,
+   "median_price": "$1.45M",
+   "days_on_market": "32",
+   "residents": "307K",
+   "schools": [
+    "University High School",
+    "Northwood High School",
+    "Beckman High School"
+   ],
+   "neighbors": [
+    "tustin",
+    "newport-beach",
+    "lake-forest",
+    "mission-viejo"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/irvine",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "la-canada-flintridge": {
+   "name": "La Ca\u00f1ada Flintridge",
+   "county": "",
+   "zips": [
+    "91011",
+    "91012"
+   ],
+   "farm": false,
+   "median_price": "$2.8M",
+   "days_on_market": "38",
+   "residents": "20K",
+   "schools": [
+    "La Ca\u00f1ada High School",
+    "La Ca\u00f1ada Elementary",
+    "Paradise Canyon Elementary"
+   ],
+   "neighbors": [
+    "pasadena",
+    "glendale",
+    "burbank",
+    "calabasas"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/la-canada-flintridge",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "la-habra": {
+   "name": "La Habra",
+   "county": "Orange County",
+   "zips": [
+    "90631"
+   ],
+   "farm": true,
+   "median_price": "$815K",
+   "days_on_market": "38",
+   "residents": "62K",
+   "schools": [
+    "La Habra High School",
+    "Sonora High School",
+    "Macy Elementary"
+   ],
+   "neighbors": [
+    "whittier",
+    "la-mirada",
+    "fullerton",
+    "brea"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/la-habra",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "la-mirada": {
+   "name": "La Mirada",
+   "county": "LA County",
+   "zips": [
+    "90638"
+   ],
+   "farm": true,
+   "median_price": "$830K",
+   "days_on_market": "42",
+   "residents": "49K",
+   "schools": [
+    "La Mirada High School",
+    "La Mirada Middle School",
+    "Eastwood Elementary"
+   ],
+   "neighbors": [
+    "cerritos",
+    "la-habra",
+    "whittier",
+    "lakewood"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/la-mirada",
+    "first_time_buyer": "/first-time-buyer-la-mirada",
+    "sell_over_asking": "/sell-over-asking-la-mirada",
+    "agent": null
+   }
+  },
+  "la-puente": {
+   "name": "La Puente",
+   "county": "LA County",
+   "zips": [
+    "91744",
+    "91746"
+   ],
+   "farm": false,
+   "median_price": "$695K",
+   "days_on_market": "45",
+   "residents": "39K",
+   "schools": [
+    "Bassett High School",
+    "Workman High School",
+    "Sunset Elementary"
+   ],
+   "neighbors": [
+    "hacienda-heights",
+    "west-covina",
+    "rowland-heights",
+    "el-monte"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/la-puente",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "lake-forest": {
+   "name": "Lake Forest",
+   "county": "Orange County",
+   "zips": [
+    "92630",
+    "92679"
+   ],
+   "farm": false,
+   "median_price": "$1.20M",
+   "days_on_market": "36",
+   "residents": "85K",
+   "schools": [
+    "El Toro High School",
+    "Trabuco Hills High School",
+    "Mission Viejo High School"
+   ],
+   "neighbors": [
+    "mission-viejo",
+    "irvine",
+    "tustin",
+    "orange"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/lake-forest",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "lakewood": {
+   "name": "Lakewood",
+   "county": "LA County",
+   "zips": [
+    "90712",
+    "90713",
+    "90715"
+   ],
+   "farm": true,
+   "median_price": "$880K",
+   "days_on_market": "32",
+   "residents": "81K",
+   "schools": [
+    "Lakewood High School",
+    "Mayfair High School",
+    "Cleveland Elementary"
+   ],
+   "neighbors": [
+    "long-beach",
+    "cerritos",
+    "bellflower",
+    "cypress"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/lakewood",
+    "first_time_buyer": "/first-time-buyer-lakewood",
+    "sell_over_asking": "/sell-over-asking-lakewood",
+    "agent": null
+   }
+  },
+  "long-beach": {
+   "name": "Long Beach",
+   "county": "LA County",
+   "zips": [
+    "90802",
+    "90815"
+   ],
+   "farm": true,
+   "median_price": "$833K",
+   "days_on_market": "42",
+   "residents": "450K",
+   "schools": [
+    "Long Beach Polytechnic High School",
+    "Wilson High School",
+    "Prisk Elementary School",
+    "Keller Dual Immersion Middle School"
+   ],
+   "neighbors": [
+    "lakewood",
+    "bellflower",
+    "cerritos",
+    "cypress"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/long-beach",
+    "first_time_buyer": "/first-time-buyer-long-beach",
+    "sell_over_asking": "/sell-over-asking-long-beach",
+    "agent": null
+   }
+  },
+  "manhattan-beach": {
+   "name": "Manhattan Beach",
+   "county": "",
+   "zips": [
+    "90266"
+   ],
+   "farm": false,
+   "median_price": "$3.4M",
+   "days_on_market": "32",
+   "residents": "35K",
+   "schools": [
+    "Mira Costa High School",
+    "Manhattan Beach Middle School",
+    "MBUSD Elementary avg"
+   ],
+   "neighbors": [
+    "hermosa-beach",
+    "redondo-beach",
+    "torrance",
+    "newport-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/manhattan-beach",
+    "first_time_buyer": "/first-time-buyer-manhattan-beach",
+    "sell_over_asking": "/sell-over-asking-manhattan-beach",
+    "agent": null
+   }
+  },
+  "mission-viejo": {
+   "name": "Mission Viejo",
+   "county": "Orange County",
+   "zips": [
+    "92691",
+    "92692",
+    "92694"
+   ],
+   "farm": false,
+   "median_price": "$1.35M",
+   "days_on_market": "38",
+   "residents": "93K",
+   "schools": [
+    "Mission Viejo High School",
+    "Capistrano Valley High School",
+    "Trabuco Hills High School"
+   ],
+   "neighbors": [
+    "lake-forest",
+    "irvine",
+    "tustin",
+    "orange"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/mission-viejo",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "montebello": {
+   "name": "Montebello",
+   "county": "LA County",
+   "zips": [
+    "90640"
+   ],
+   "farm": true,
+   "median_price": "$840K",
+   "days_on_market": "40",
+   "residents": "62K",
+   "schools": [
+    "Montebello High School",
+    "Schurr High School",
+    "Bell Gardens Elementary"
+   ],
+   "neighbors": [
+    "pico-rivera",
+    "whittier",
+    "el-monte",
+    "downey"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/montebello",
+    "first_time_buyer": "/first-time-buyer-montebello",
+    "sell_over_asking": "/sell-over-asking-montebello",
+    "agent": null
+   }
+  },
+  "newport-beach": {
+   "name": "Newport Beach",
+   "county": "Orange County",
+   "zips": [
+    "92657",
+    "92660",
+    "92661",
+    "92662",
+    "92663"
+   ],
+   "farm": false,
+   "median_price": "$3.2M",
+   "days_on_market": "41",
+   "residents": "85K",
+   "schools": [
+    "Corona del Mar High School",
+    "Newport Harbor High School",
+    "Sage Hill School"
+   ],
+   "neighbors": [
+    "costa-mesa",
+    "irvine",
+    "huntington-beach",
+    "manhattan-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/newport-beach",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "norwalk": {
+   "name": "Norwalk",
+   "county": "LA County",
+   "zips": [
+    "90650",
+    "90651"
+   ],
+   "farm": true,
+   "median_price": "$695K",
+   "days_on_market": "48",
+   "residents": "102K",
+   "schools": [
+    "Norwalk High School",
+    "John Glenn High School",
+    "Cesar Chavez Elementary"
+   ],
+   "neighbors": [
+    "bellflower",
+    "lakewood",
+    "cerritos",
+    "la-mirada"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/norwalk",
+    "first_time_buyer": "/first-time-buyer-norwalk",
+    "sell_over_asking": "/sell-over-asking-norwalk",
+    "agent": null
+   }
+  },
+  "orange": {
+   "name": "Orange",
+   "county": "Orange County",
+   "zips": [
+    "92856",
+    "92857",
+    "92859",
+    "92862",
+    "92869"
+   ],
+   "farm": false,
+   "median_price": "$1.05M",
+   "days_on_market": "33",
+   "residents": "139K",
+   "schools": [
+    "Villa Park High School",
+    "El Modena High School",
+    "Orange High School"
+   ],
+   "neighbors": [
+    "tustin",
+    "anaheim",
+    "santa-ana",
+    "fullerton"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/orange",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "pasadena": {
+   "name": "Pasadena",
+   "county": "LA County",
+   "zips": [
+    "91101",
+    "91107",
+    "91110",
+    "91182"
+   ],
+   "farm": false,
+   "median_price": "$1.35M",
+   "days_on_market": "32",
+   "residents": "138K",
+   "schools": [
+    "Pasadena High School",
+    "Marshall Fundamental",
+    "Sierra Madre Elementary"
+   ],
+   "neighbors": [
+    "glendale",
+    "la-canada-flintridge",
+    "sherman-oaks",
+    "burbank"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/pasadena",
+    "first_time_buyer": "/first-time-buyer-pasadena",
+    "sell_over_asking": "/sell-over-asking-pasadena",
+    "agent": null
+   }
+  },
+  "pico-rivera": {
+   "name": "Pico Rivera",
+   "county": "LA County",
+   "zips": [
+    "90660",
+    "90661"
+   ],
+   "farm": true,
+   "median_price": "$740K",
+   "days_on_market": "47",
+   "residents": "57K",
+   "schools": [
+    "El Rancho High School",
+    "Rivera Elementary School",
+    "Birney Tech Academy",
+    "Rivera Middle School"
+   ],
+   "neighbors": [
+    "downey",
+    "whittier",
+    "montebello",
+    "norwalk"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/pico-rivera",
+    "first_time_buyer": "/first-time-buyer-pico-rivera",
+    "sell_over_asking": "/sell-over-asking-pico-rivera",
+    "agent": null
+   }
+  },
+  "redondo-beach": {
+   "name": "Redondo Beach",
+   "county": "",
+   "zips": [
+    "90277",
+    "90278"
+   ],
+   "farm": false,
+   "median_price": "$1.65M",
+   "days_on_market": "33",
+   "residents": "70K",
+   "schools": [
+    "Redondo Union High School",
+    "Aviation High School (Manhattan/HB)",
+    "Mira Costa High School (MB)"
+   ],
+   "neighbors": [
+    "hermosa-beach",
+    "manhattan-beach",
+    "torrance",
+    "long-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/redondo-beach",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "rowland-heights": {
+   "name": "Rowland Heights",
+   "county": "LA County",
+   "zips": [
+    "91748"
+   ],
+   "farm": false,
+   "median_price": "$890K",
+   "days_on_market": "40",
+   "residents": "47K",
+   "schools": [
+    "Rowland High School",
+    "Nogales High School",
+    "Yorbita Elementary"
+   ],
+   "neighbors": [
+    "hacienda-heights",
+    "la-puente",
+    "diamond-bar",
+    "whittier"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/rowland-heights",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "santa-ana": {
+   "name": "Santa Ana",
+   "county": "Orange County",
+   "zips": [
+    "92701",
+    "92703",
+    "92704",
+    "92705",
+    "92706",
+    "92707"
+   ],
+   "farm": false,
+   "median_price": "$815K",
+   "days_on_market": "40",
+   "residents": "310K",
+   "schools": [
+    "Santa Ana High School",
+    "Saddleback High School",
+    "Mater Dei (private)"
+   ],
+   "neighbors": [
+    "tustin",
+    "orange",
+    "garden-grove",
+    "anaheim"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/santa-ana",
+    "first_time_buyer": "/first-time-buyer-santa-ana",
+    "sell_over_asking": "/sell-over-asking-santa-ana",
+    "agent": null
+   }
+  },
+  "santa-monica": {
+   "name": "Santa Monica",
+   "county": "",
+   "zips": [
+    "90401",
+    "90402",
+    "90403",
+    "90404",
+    "90405"
+   ],
+   "farm": false,
+   "median_price": "$2.0M",
+   "days_on_market": "38",
+   "residents": "92K",
+   "schools": [
+    "Santa Monica High School (Samohi)",
+    "New Roads Middle/Upper",
+    "SMMUSD Elementary avg"
+   ],
+   "neighbors": [
+    "culver-city",
+    "beverly-hills",
+    "manhattan-beach",
+    "sherman-oaks"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/santa-monica",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "sherman-oaks": {
+   "name": "Sherman Oaks",
+   "county": "",
+   "zips": [
+    "91401",
+    "91403",
+    "91411",
+    "91423"
+   ],
+   "farm": false,
+   "median_price": "$1.85M",
+   "days_on_market": "36",
+   "residents": "55K",
+   "schools": [
+    "Notre Dame High School (private)",
+    "Sherman Oaks Elementary Charter",
+    "Buckley School (private K-12)"
+   ],
+   "neighbors": [
+    "glendale",
+    "burbank",
+    "beverly-hills",
+    "culver-city"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/sherman-oaks",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "torrance": {
+   "name": "Torrance",
+   "county": "",
+   "zips": [
+    "90501",
+    "90502",
+    "90503",
+    "90504",
+    "90505"
+   ],
+   "farm": false,
+   "median_price": "$1.10M",
+   "days_on_market": "32",
+   "residents": "147K",
+   "schools": [
+    "West High School",
+    "North High School",
+    "South High School"
+   ],
+   "neighbors": [
+    "redondo-beach",
+    "manhattan-beach",
+    "long-beach",
+    "hermosa-beach"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/torrance",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "tustin": {
+   "name": "Tustin",
+   "county": "Orange County",
+   "zips": [
+    "92780",
+    "92782"
+   ],
+   "farm": false,
+   "median_price": "$1.10M",
+   "days_on_market": "31",
+   "residents": "80K",
+   "schools": [
+    "Beckman High School",
+    "Foothill High School",
+    "Tustin High School"
+   ],
+   "neighbors": [
+    "orange",
+    "anaheim",
+    "irvine",
+    "santa-ana"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/tustin",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "west-covina": {
+   "name": "West Covina",
+   "county": "LA County",
+   "zips": [
+    "91790",
+    "91791",
+    "91792",
+    "91793"
+   ],
+   "farm": false,
+   "median_price": "$845K",
+   "days_on_market": "38",
+   "residents": "106K",
+   "schools": [
+    "South Hills High School",
+    "West Covina High School",
+    "Edgewood High School"
+   ],
+   "neighbors": [
+    "la-puente",
+    "hacienda-heights",
+    "el-monte",
+    "rowland-heights"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/west-covina",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "westminster": {
+   "name": "Westminster",
+   "county": "Orange County",
+   "zips": [
+    "92683",
+    "92684"
+   ],
+   "farm": false,
+   "median_price": "$915K",
+   "days_on_market": "34",
+   "residents": "91K",
+   "schools": [
+    "Westminster High School",
+    "La Quinta High School",
+    "Marina High School"
+   ],
+   "neighbors": [
+    "garden-grove",
+    "huntington-beach",
+    "cypress",
+    "anaheim"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/westminster",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  },
+  "whittier": {
+   "name": "Whittier",
+   "county": "LA County",
+   "zips": [
+    "90601",
+    "90606"
+   ],
+   "farm": true,
+   "median_price": "$847K",
+   "days_on_market": "46",
+   "residents": "85K",
+   "schools": [
+    "La Serna High School",
+    "California High School",
+    "Rancho-Starbuck Intermediate",
+    "East Whittier Middle School"
+   ],
+   "neighbors": [
+    "la-mirada",
+    "la-habra",
+    "downey",
+    "pico-rivera"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/whittier",
+    "first_time_buyer": "/first-time-buyer-whittier",
+    "sell_over_asking": "/sell-over-asking-whittier",
+    "agent": null
+   }
+  },
+  "yorba-linda": {
+   "name": "Yorba Linda",
+   "county": "Orange County",
+   "zips": [
+    "92886",
+    "92887"
+   ],
+   "farm": false,
+   "median_price": "$1.40M",
+   "days_on_market": "40",
+   "residents": "68K",
+   "schools": [
+    "Yorba Linda High School",
+    "Esperanza High School",
+    "El Dorado High School"
+   ],
+   "neighbors": [
+    "brea",
+    "fullerton",
+    "diamond-bar",
+    "anaheim"
+   ],
+   "pages": {
+    "guide": "/neighborhoods/yorba-linda",
+    "first_time_buyer": null,
+    "sell_over_asking": null,
+    "agent": null
+   }
+  }
+ }
+}

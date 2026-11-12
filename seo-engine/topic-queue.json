@@ -1,0 +1,506 @@
+{
+ "_how": "Pick the first status=queued topic whose city/keyword is not already covered (check published.json and public/). Mark it published with the date. Add new topics at the end when you spot a gap. Monthly rate watch: see SKILL.md step 2.",
+ "topics": [
+  {
+   "slug": "living-in-downey-ca",
+   "title": "Living in Downey, CA: What It Is Really Like in 2026",
+   "keyword": "living in downey ca",
+   "intent": "move-research",
+   "city": "downey",
+   "status": "published",
+   "why": "Downey is the head target; top-of-funnel searches that later become \"downey realtor\"",
+   "priority": 1,
+   "published": "2026-11-12"
+  },
+  {
+   "slug": "downey-vs-whittier-where-to-buy",
+   "title": "Downey vs Whittier: Where Should You Buy in 2026?",
+   "keyword": "downey vs whittier",
+   "intent": "compare",
+   "city": "downey",
+   "status": "queued",
+   "why": "comparison searches convert; two farm cities in one post",
+   "priority": 2
+  },
+  {
+   "slug": "best-neighborhoods-in-downey",
+   "title": "The Best Neighborhoods in Downey by Budget",
+   "keyword": "best neighborhoods in downey",
+   "intent": "neighborhoods",
+   "city": "downey",
+   "status": "queued",
+   "why": "",
+   "priority": 3
+  },
+  {
+   "slug": "cost-of-owning-a-home-in-downey",
+   "title": "What It Really Costs to Own a Home in Downey",
+   "keyword": "downey property tax",
+   "intent": "costs",
+   "city": "downey",
+   "status": "queued",
+   "why": "",
+   "priority": 4
+  },
+  {
+   "slug": "selling-a-house-in-downey-timeline",
+   "title": "How Long It Takes to Sell a House in Downey (and What Speeds It Up)",
+   "keyword": "how long to sell a house in downey",
+   "intent": "seller",
+   "city": "downey",
+   "status": "queued",
+   "why": "seller intent, complements /sell-over-asking-downey without copying it",
+   "priority": 5
+  },
+  {
+   "slug": "living-in-whittier-ca",
+   "title": "Living in Whittier, CA: What It Is Really Like in 2026",
+   "keyword": "living in whittier ca",
+   "intent": "move-research",
+   "city": "whittier",
+   "status": "queued",
+   "why": "",
+   "priority": 6
+  },
+  {
+   "slug": "best-neighborhoods-in-whittier",
+   "title": "The Best Neighborhoods in Whittier by Budget",
+   "keyword": "best neighborhoods in whittier",
+   "intent": "neighborhoods",
+   "city": "whittier",
+   "status": "queued",
+   "why": "",
+   "priority": 7
+  },
+  {
+   "slug": "la-county-closing-costs-2026",
+   "title": "LA County Closing Costs in 2026: What Buyers and Sellers Pay",
+   "keyword": "closing costs los angeles county",
+   "intent": "costs",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 8
+  },
+  {
+   "slug": "whittier-vs-la-mirada-where-to-buy",
+   "title": "Whittier vs La Mirada: Where Should You Buy in 2026?",
+   "keyword": "whittier vs la mirada",
+   "intent": "compare",
+   "city": "whittier",
+   "status": "queued",
+   "why": "",
+   "priority": 9
+  },
+  {
+   "slug": "living-in-pico-rivera-ca",
+   "title": "Living in Pico Rivera, CA: What It Is Really Like in 2026",
+   "keyword": "living in pico rivera ca",
+   "intent": "move-research",
+   "city": "pico-rivera",
+   "status": "queued",
+   "why": "",
+   "priority": 10
+  },
+  {
+   "slug": "la-county-transfer-tax-by-city",
+   "title": "LA County Transfer Tax by City: What Sellers Owe",
+   "keyword": "la county transfer tax",
+   "intent": "seller",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 11
+  },
+  {
+   "slug": "best-neighborhoods-in-pico-rivera",
+   "title": "The Best Neighborhoods in Pico Rivera by Budget",
+   "keyword": "best neighborhoods in pico rivera",
+   "intent": "neighborhoods",
+   "city": "pico-rivera",
+   "status": "queued",
+   "why": "",
+   "priority": 12
+  },
+  {
+   "slug": "pico-rivera-vs-montebello-where-to-buy",
+   "title": "Pico Rivera vs Montebello: Where Should You Buy in 2026?",
+   "keyword": "pico rivera vs montebello",
+   "intent": "compare",
+   "city": "pico-rivera",
+   "status": "queued",
+   "why": "",
+   "priority": 13
+  },
+  {
+   "slug": "prop-19-explained-socal-homeowners",
+   "title": "Prop 19 Explained for SoCal Homeowners Over 55",
+   "keyword": "prop 19 california",
+   "intent": "seller",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 14
+  },
+  {
+   "slug": "living-in-norwalk-ca",
+   "title": "Living in Norwalk, CA: What It Is Really Like in 2026",
+   "keyword": "living in norwalk ca",
+   "intent": "move-research",
+   "city": "norwalk",
+   "status": "queued",
+   "why": "",
+   "priority": 15
+  },
+  {
+   "slug": "best-neighborhoods-in-norwalk",
+   "title": "The Best Neighborhoods in Norwalk by Budget",
+   "keyword": "best neighborhoods in norwalk",
+   "intent": "neighborhoods",
+   "city": "norwalk",
+   "status": "queued",
+   "why": "",
+   "priority": 16
+  },
+  {
+   "slug": "first-time-buyer-programs-la-county-2026",
+   "title": "First-Time Buyer Programs in LA County for 2026",
+   "keyword": "first time home buyer programs los angeles county",
+   "intent": "buyer",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 17
+  },
+  {
+   "slug": "norwalk-vs-bellflower-where-to-buy",
+   "title": "Norwalk vs Bellflower: Where Should You Buy in 2026?",
+   "keyword": "norwalk vs bellflower",
+   "intent": "compare",
+   "city": "norwalk",
+   "status": "queued",
+   "why": "",
+   "priority": 18
+  },
+  {
+   "slug": "living-in-bellflower-ca",
+   "title": "Living in Bellflower, CA: What It Is Really Like in 2026",
+   "keyword": "living in bellflower ca",
+   "intent": "move-research",
+   "city": "bellflower",
+   "status": "queued",
+   "why": "",
+   "priority": 19
+  },
+  {
+   "slug": "how-to-win-a-multiple-offer-socal",
+   "title": "How to Win When Your Offer Is One of Eight",
+   "keyword": "how to win a multiple offer",
+   "intent": "buyer",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 20
+  },
+  {
+   "slug": "best-neighborhoods-in-bellflower",
+   "title": "The Best Neighborhoods in Bellflower by Budget",
+   "keyword": "best neighborhoods in bellflower",
+   "intent": "neighborhoods",
+   "city": "bellflower",
+   "status": "queued",
+   "why": "",
+   "priority": 21
+  },
+  {
+   "slug": "bellflower-vs-lakewood-where-to-buy",
+   "title": "Bellflower vs Lakewood: Where Should You Buy in 2026?",
+   "keyword": "bellflower vs lakewood",
+   "intent": "compare",
+   "city": "bellflower",
+   "status": "queued",
+   "why": "",
+   "priority": 22
+  },
+  {
+   "slug": "california-fair-plan-home-insurance-buyers",
+   "title": "Home Insurance in SoCal: What Buyers Need to Know Before They Offer",
+   "keyword": "california fair plan home insurance",
+   "intent": "buyer",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 23
+  },
+  {
+   "slug": "living-in-long-beach-ca",
+   "title": "Living in Long Beach, CA: What It Is Really Like in 2026",
+   "keyword": "living in long beach ca",
+   "intent": "move-research",
+   "city": "long-beach",
+   "status": "queued",
+   "why": "",
+   "priority": 24
+  },
+  {
+   "slug": "best-neighborhoods-in-long-beach",
+   "title": "The Best Neighborhoods in Long Beach by Budget",
+   "keyword": "best neighborhoods in long beach",
+   "intent": "neighborhoods",
+   "city": "long-beach",
+   "status": "queued",
+   "why": "",
+   "priority": 25
+  },
+  {
+   "slug": "adu-rules-la-county-what-they-add",
+   "title": "ADUs in LA County: The Rules and What One Adds to Your Value",
+   "keyword": "adu rules los angeles county",
+   "intent": "seller",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 26
+  },
+  {
+   "slug": "long-beach-vs-lakewood-where-to-buy",
+   "title": "Long Beach vs Lakewood: Where Should You Buy in 2026?",
+   "keyword": "long beach vs lakewood",
+   "intent": "compare",
+   "city": "long-beach",
+   "status": "queued",
+   "why": "",
+   "priority": 27
+  },
+  {
+   "slug": "living-in-cerritos-ca",
+   "title": "Living in Cerritos, CA: What It Is Really Like in 2026",
+   "keyword": "living in cerritos ca",
+   "intent": "move-research",
+   "city": "cerritos",
+   "status": "queued",
+   "why": "",
+   "priority": 28
+  },
+  {
+   "slug": "selling-a-house-with-tenants-california",
+   "title": "Selling a House With Tenants in California",
+   "keyword": "selling a house with tenants california",
+   "intent": "seller",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 29
+  },
+  {
+   "slug": "best-neighborhoods-in-cerritos",
+   "title": "The Best Neighborhoods in Cerritos by Budget",
+   "keyword": "best neighborhoods in cerritos",
+   "intent": "neighborhoods",
+   "city": "cerritos",
+   "status": "queued",
+   "why": "",
+   "priority": 30
+  },
+  {
+   "slug": "cerritos-vs-la-mirada-where-to-buy",
+   "title": "Cerritos vs La Mirada: Where Should You Buy in 2026?",
+   "keyword": "cerritos vs la mirada",
+   "intent": "compare",
+   "city": "cerritos",
+   "status": "queued",
+   "why": "",
+   "priority": 31
+  },
+  {
+   "slug": "inherited-house-sale-la-county",
+   "title": "Selling an Inherited House in LA County: Probate, Taxes, Timeline",
+   "keyword": "selling inherited house california",
+   "intent": "seller",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 32
+  },
+  {
+   "slug": "living-in-la-mirada-ca",
+   "title": "Living in La Mirada, CA: What It Is Really Like in 2026",
+   "keyword": "living in la mirada ca",
+   "intent": "move-research",
+   "city": "la-mirada",
+   "status": "queued",
+   "why": "",
+   "priority": 33
+  },
+  {
+   "slug": "best-neighborhoods-in-la-mirada",
+   "title": "The Best Neighborhoods in La Mirada by Budget",
+   "keyword": "best neighborhoods in la mirada",
+   "intent": "neighborhoods",
+   "city": "la-mirada",
+   "status": "queued",
+   "why": "",
+   "priority": 34
+  },
+  {
+   "slug": "buy-and-sell-at-the-same-time-socal",
+   "title": "How to Buy and Sell at the Same Time in SoCal",
+   "keyword": "buy and sell house at the same time",
+   "intent": "move-up",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 35
+  },
+  {
+   "slug": "la-mirada-vs-la-habra-where-to-buy",
+   "title": "La Mirada vs La Habra: Where Should You Buy in 2026?",
+   "keyword": "la mirada vs la habra",
+   "intent": "compare",
+   "city": "la-mirada",
+   "status": "queued",
+   "why": "",
+   "priority": 36
+  },
+  {
+   "slug": "living-in-lakewood-ca",
+   "title": "Living in Lakewood, CA: What It Is Really Like in 2026",
+   "keyword": "living in lakewood ca",
+   "intent": "move-research",
+   "city": "lakewood",
+   "status": "queued",
+   "why": "",
+   "priority": 37
+  },
+  {
+   "slug": "older-socal-homes-inspection-red-flags",
+   "title": "Buying a 1950s SoCal Home: Inspection Red Flags to Know",
+   "keyword": "1950s home inspection issues",
+   "intent": "buyer",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 38
+  },
+  {
+   "slug": "best-neighborhoods-in-lakewood",
+   "title": "The Best Neighborhoods in Lakewood by Budget",
+   "keyword": "best neighborhoods in lakewood",
+   "intent": "neighborhoods",
+   "city": "lakewood",
+   "status": "queued",
+   "why": "",
+   "priority": 39
+  },
+  {
+   "slug": "lakewood-vs-long-beach-where-to-buy",
+   "title": "Lakewood vs Long Beach: Where Should You Buy in 2026?",
+   "keyword": "lakewood vs long beach",
+   "intent": "compare",
+   "city": "lakewood",
+   "status": "queued",
+   "why": "",
+   "priority": 40
+  },
+  {
+   "slug": "fha-vs-conventional-socal-2026",
+   "title": "FHA vs Conventional Loans in SoCal for 2026",
+   "keyword": "fha vs conventional loan california",
+   "intent": "buyer",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 41
+  },
+  {
+   "slug": "living-in-montebello-ca",
+   "title": "Living in Montebello, CA: What It Is Really Like in 2026",
+   "keyword": "living in montebello ca",
+   "intent": "move-research",
+   "city": "montebello",
+   "status": "queued",
+   "why": "",
+   "priority": 42
+  },
+  {
+   "slug": "best-neighborhoods-in-montebello",
+   "title": "The Best Neighborhoods in Montebello by Budget",
+   "keyword": "best neighborhoods in montebello",
+   "intent": "neighborhoods",
+   "city": "montebello",
+   "status": "queued",
+   "why": "",
+   "priority": 43
+  },
+  {
+   "slug": "condo-vs-house-downey-area",
+   "title": "Condo or House in the Downey Area? The Honest Math",
+   "keyword": "condo vs house",
+   "intent": "buyer",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 44
+  },
+  {
+   "slug": "montebello-vs-pico-rivera-where-to-buy",
+   "title": "Montebello vs Pico Rivera: Where Should You Buy in 2026?",
+   "keyword": "montebello vs pico rivera",
+   "intent": "compare",
+   "city": "montebello",
+   "status": "queued",
+   "why": "",
+   "priority": 45
+  },
+  {
+   "slug": "living-in-la-habra-ca",
+   "title": "Living in La Habra, CA: What It Is Really Like in 2026",
+   "keyword": "living in la habra ca",
+   "intent": "move-research",
+   "city": "la-habra",
+   "status": "queued",
+   "why": "",
+   "priority": 46
+  },
+  {
+   "slug": "what-a-good-realtor-does-for-sellers",
+   "title": "What a Good Listing Agent Actually Does Before Your Home Hits the Market",
+   "keyword": "what does a listing agent do",
+   "intent": "seller",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 47
+  },
+  {
+   "slug": "best-neighborhoods-in-la-habra",
+   "title": "The Best Neighborhoods in La Habra by Budget",
+   "keyword": "best neighborhoods in la habra",
+   "intent": "neighborhoods",
+   "city": "la-habra",
+   "status": "queued",
+   "why": "",
+   "priority": 48
+  },
+  {
+   "slug": "la-habra-vs-whittier-where-to-buy",
+   "title": "La Habra vs Whittier: Where Should You Buy in 2026?",
+   "keyword": "la habra vs whittier",
+   "intent": "compare",
+   "city": "la-habra",
+   "status": "queued",
+   "why": "",
+   "priority": 49
+  },
+  {
+   "slug": "how-to-choose-a-realtor-socal",
+   "title": "How to Choose a Realtor in SoCal: 9 Questions to Ask First",
+   "keyword": "how to choose a realtor",
+   "intent": "choose-agent",
+   "city": null,
+   "status": "queued",
+   "why": "",
+   "priority": 50
+  }
+ ]
+}
