@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <title>Guide: 5 Mistakes First-Time Homebuyers Make | Jesse Oñate</title>
 <meta name="description" content="Guide from Jesse Oñate, the hidden traps first-time homebuyers in Southern California need to know before they buy. Delivered instantly.">
 <link rel="canonical" href="https://jessetek.net/guide">
@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://jessetek.net/img/og-guide.jpg">
 <meta property="og:site_name" content="Jesse Oñate Real Estate">
 <meta property="og:locale" content="en_US">
-<meta property="og:image:alt" content="Jesse Oñate, bilingual SoCal realtor serving Downey, Whittier, Pico Rivera">
+<meta property="og:image:alt" content="Jesse Oñate, SoCal realtor serving Downey, Whittier, Pico Rivera">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://jessetek.net/guide">
@@ -24,271 +24,380 @@
 <meta name="twitter:title" content="Guide: 5 Mistakes First-Time Buyers Make | Jesse Oñate">
 <meta name="twitter:description" content="The hidden traps most agents won't tell you about. PDF download, instant delivery.">
 <meta name="twitter:image" content="https://jessetek.net/img/og-guide.jpg">
-<link rel="stylesheet" href="/css/main.css?v=46">
-<meta name="theme-color" content="#0E1014">
+<meta name="theme-color" content="#FDE99B">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+/* 5 Mistakes guide in the Move Up Quiz look (2026-11-12): beige paper, Newsreader serif,
+   pastel grain bands, white window cards, grouped form, black pills. Same tokens as /move. */
+:root{
+  --bg:#FCF9F7;--ink:#030302;--ink2:#4a4a52;--mute:#86868e;--line:rgba(3,3,2,.08);
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  --th:#FDE99B;
+  --shadow:0 50px 40px rgba(0,0,0,.01),0 20px 40px rgba(0,0,0,.05),0 3px 10px rgba(0,0,0,.08);
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.5'/></svg>");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;min-height:100dvh}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.in{max-width:560px;margin:0 auto;padding:0 18px}
+
+/* color band */
+.band{position:relative;background:var(--th);padding:max(14px,env(safe-area-inset-top)) 0 120px;overflow:hidden}
+.band::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.35;mix-blend-mode:overlay;pointer-events:none}
+.band > .in{position:relative;z-index:1}
+.band h1,.band h2,.sh{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1.02;color:var(--ink)}
+.band h1 i,.band h2 i,.sh i{font-style:italic}
+.body{position:relative;z-index:2;margin-top:-96px}
+
+.toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink2);background:rgba(255,255,255,.55);padding:6px 12px 6px 6px;border-radius:999px}
+.kicker img{width:22px;height:22px;border-radius:50%;object-fit:cover}
+.tag{font-size:12px;font-weight:600;color:var(--ink2);background:rgba(255,255,255,.55);padding:6px 11px;border-radius:999px;white-space:nowrap}
+#top h1{font-size:46px;margin-top:40px}
+#top h1 .amt{display:block;font-style:italic}
+.nw{white-space:nowrap}
+.lede{font-size:16.5px;color:var(--ink2);margin-top:14px;max-width:440px}
+
+/* chips like the quiz loader */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;background:rgba(255,255,255,.6);padding:5px 12px 5px 6px;border-radius:999px}
+.chip img{width:20px;height:20px;object-fit:contain}
+
+/* window card holding the guide cover */
+.win{display:block;border-radius:22px;background:#F9F7F4;border:1px solid var(--line);padding:10px;box-shadow:var(--shadow)}
+.wbar{display:flex;align-items:center;gap:5px;padding:4px 6px 10px}
+.wbar i{width:8px;height:8px;border-radius:50%;background:rgba(3,3,2,.16)}
+.wbar span{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.cover{position:relative;border-radius:14px;overflow:hidden;background:#B8CAF5;aspect-ratio:1.45}
+.cover img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;transition:filter .6s ease,transform .6s ease}
+.gated .cover img{filter:blur(7px) saturate(.9);transform:scale(1.06)}
+.lockb{position:absolute;inset:0;display:grid;place-items:center;transition:opacity .4s ease}
+.lockb span{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:10px 16px;border-radius:999px;box-shadow:0 10px 24px rgba(3,3,2,.25)}
+.lockb svg{width:15px;height:15px}
+.unlocked .lockb{opacity:0;pointer-events:none}
+.unlocked .cover img{filter:none;transform:none}
+
+/* grouped form, same as the quiz capture screen */
+.formblock{margin-top:14px}
+.ftitle{font-family:var(--serif);font-size:26px;letter-spacing:-.02em;line-height:1.1;margin:24px 4px 12px}
+.fsub{font-size:15px;color:var(--ink2);margin:0 4px 12px}
+.group{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.fwrap{display:flex;align-items:center;gap:12px;padding:0 18px;min-height:60px}
+.fwrap + .fwrap{border-top:1px solid #F1EEEA}
+.fwrap svg{width:20px;height:20px;color:var(--mute);flex-shrink:0}
+.field{flex:1;min-width:0;border:0;background:none;outline:none;font:500 17px var(--sans);color:var(--ink);padding:18px 0}
+.field::placeholder{color:#a9a4a0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;overflow:hidden}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;padding:0 24px;margin-top:12px;border-radius:999px;background:var(--ink);color:#fff;font-size:16px;font-weight:600;transition:transform .2s ease,opacity .2s ease}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.45;cursor:default}
+.playc{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;flex-shrink:0}
+.playc svg{width:14px;height:14px}
+.lockl{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;font-size:13.5px;font-weight:500;color:var(--ink2)}
+.lockl svg{width:14px;height:14px}
+.proof{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font-size:14px;color:var(--ink2)}
+.proof b{color:var(--ink)}
+.proof svg{width:16px;height:16px}
+.hidden{display:none!important}
+
+/* success, same as the quiz result */
+.done{display:none;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px 20px;text-align:center;margin-top:14px}
+.done.active{display:block;animation:fadeup .42s cubic-bezier(.2,.8,.2,1)}
+.rchk{width:54px;height:54px;margin:0 auto;animation:ckpop .5s cubic-bezier(.2,.8,.2,1.4)}
+.rchk circle{fill:var(--ink)}
+.rchk path{fill:none;stroke:#9BD8A9;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.done h3{font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:-.02em;line-height:1.1;margin-top:14px}
+.done p{font-size:15.5px;color:var(--ink2);margin-top:8px}
+.done .btn{margin-top:16px}
+@keyframes fadeup{from{opacity:0;transform:translateY(12px)}}
+@keyframes ckpop{from{transform:scale(.6)}}
+
+/* quote, in the knowledge base tip box */
+.tip{margin-top:16px;padding:16px 18px;border-radius:16px;background:#FEF6D2}
+.tip .st{display:flex;gap:2px}
+.tip .st svg{width:14px;height:14px;fill:#F4B400}
+.tip q{display:block;font-family:var(--serif);font-size:19px;line-height:1.3;letter-spacing:-.01em;margin-top:8px;quotes:"\201C" "\201D"}
+.tip .who{font-size:13.5px;color:var(--ink2);margin-top:8px}
+.tip .who b{color:var(--ink)}
+
+/* section head */
+.sec{padding:64px 0 8px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.sh{font-size:40px;margin-top:8px}
+.ssub{font-size:15.5px;color:var(--ink2);margin-top:8px}
+
+/* the 5 mistakes: white rows with a serif index and a pastel window */
+.mlist{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.mrow{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 16px 12px 12px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.mrow.on{opacity:1;transform:none}
+.mw{position:relative;width:64px;height:64px;border-radius:14px;background:var(--h);flex-shrink:0;display:grid;place-items:center;overflow:hidden}
+.mw::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.45;mix-blend-mode:overlay;pointer-events:none}
+.mw img{width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 6px 8px rgba(3,3,2,.15))}
+.mtx{flex:1;min-width:0}
+.mtx .rk{font-family:var(--serif);font-size:15px;color:#b9b4ae;line-height:1}
+.mtx h3{font-family:var(--serif);font-weight:400;font-size:21px;letter-spacing:-.02em;line-height:1.15;margin-top:3px;transition:filter .5s ease,opacity .5s ease}
+.mtx p{font-size:14px;color:var(--ink2);margin-top:3px;line-height:1.4;transition:filter .5s ease,opacity .5s ease}
+.gated .mtx h3,.gated .mtx p{filter:blur(7px);opacity:.75;user-select:none;pointer-events:none}
+.unlocked .mtx h3,.unlocked .mtx p{filter:none;opacity:1;user-select:auto}
+.mlk{width:28px;height:28px;border-radius:50%;background:#F3F0EC;display:grid;place-items:center;flex-shrink:0;transition:background .3s ease}
+.mlk svg{width:13px;height:13px}
+.mlk .o{display:none}
+.unlocked .mlk{background:#9BD8A9}
+.unlocked .mlk .c{display:none}
+.unlocked .mlk .o{display:block}
+.unhint{text-align:center;margin-top:16px}
+.unhint a{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;padding:12px 20px;border-radius:999px;border:1.5px solid var(--ink);transition:background .2s ease,color .2s ease}
+.unhint a:hover{background:var(--ink);color:#fff}
+
+/* author card, same as the quiz result card */
+.jcard{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:16px;margin-top:22px}
+.jrow{display:flex;align-items:center;gap:14px}
+.jrow img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.jrow b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:-.02em;line-height:1.1}
+.jrow span{display:block;font-size:13px;color:var(--mute);margin-top:4px;line-height:1.4}
+.rstar{display:inline-block;width:13px;height:13px;fill:#F4B400;vertical-align:-1px;margin-right:4px}
+
+/* last step band */
+#last{margin-top:64px}
+#last .band{--th:#B8CAF5;padding-bottom:110px}
+#last h2{font-size:40px;margin-top:48px}
+#last .body{margin-top:-84px}
+#last .win{margin-bottom:4px}
+#last .cover{aspect-ratio:2.1}
+
+.foot{text-align:center;font-size:12.5px;color:var(--mute);padding:36px 18px calc(36px + env(safe-area-inset-bottom))}
+
+/* toast */
+.toast{position:fixed;left:50%;top:max(16px,env(safe-area-inset-top));z-index:30;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:11px 16px 11px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 12px 30px rgba(3,3,2,.25);transform:translate(-50%,-80px);transition:transform .45s cubic-bezier(.2,.8,.2,1.2)}
+.toast.show{transform:translate(-50%,0)}
+.toast i{width:22px;height:22px;border-radius:50%;background:#9BD8A9;display:grid;place-items:center}
+.toast svg{width:12px;height:12px}
+
+/* phone sticky pill (hand rolled, so cro.js skips its own) */
+.sticky-mobile-cta{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:25;transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.sticky-mobile-cta.show{transform:none}
+.sticky-mobile-cta .btn{margin:0;box-shadow:0 14px 30px rgba(3,3,2,.28)}
+
+@media (min-width:700px){
+  #top h1{font-size:64px}
+  .sh,#last h2{font-size:50px}
+  .band{padding-bottom:140px}
+  .body{margin-top:-110px}
+  .sticky-mobile-cta{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mrow{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
 </head>
-<body class="lp-page">
+<body>
 
-<!-- Minimal logo bar -->
-<div class="lp-logo-bar">
-  <div class="lp-logo">Jesse Oñate.</div>
-</div>
+<!-- ===================== HERO ===================== -->
+<section id="top">
+  <div class="band"><div class="in">
+    <h1>5 mistakes that cost SoCal <span class="nw">first-time</span> buyers <span class="amt">$10K to $30K</span></h1>
+    </div></div>
 
-<!-- ===================== GUIDE HERO + FORM ===================== -->
-<section class="guide-hero">
-  <div class="guide-hero-inner">
-
-    <!-- LEFT: Pitch -->
-    <div class="guide-hero-text">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        <span>PDF Download · Instant Delivery</span>
-      </div>
-      <h1>5 Mistakes That Cost<br>SoCal First-Time Buyers<br><span class="g">$10K–$30K.</span></h1>
-      <p class="guide-hero-sub">The hidden traps most agents won't tell you about. Avoid them in 2026.</p>
-
-      <div class="guide-tiles">
-        <div class="guide-tile">
-          <div class="guide-tile-icon">💰</div>
-          <div class="guide-tile-label">Save<br>$10K+</div>
-        </div>
-        <div class="guide-tile">
-          <div class="guide-tile-icon">⚡</div>
-          <div class="guide-tile-label">60-sec<br>delivery</div>
-        </div>
-        <div class="guide-tile">
-          <div class="guide-tile-icon">📍</div>
-          <div class="guide-tile-label">SoCal<br>specific</div>
-        </div>
+  <div class="body in" id="get">
+    <div class="win gated" id="pdfMockup">
+      <div class="wbar"><i></i><i></i><i></i></div>
+      <div class="cover">
+        <picture><source srcset="/img/guide-cover.webp" type="image/webp"><img alt="PDF guide: 5 mistakes first-time homebuyers make in Southern California" decoding="async" src="/img/guide-cover.jpg" width="618" height="800"></picture>
+        <div class="lockb"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Unlocks when you send it</span></div>
       </div>
     </div>
 
-    <!-- RIGHT: PDF mockup floating above form -->
-    <div class="guide-offer">
-      <div class="guide-pdf-mockup gated" id="pdfMockup">
-        <div class="guide-pdf-badge">NO COST</div>
-        <div class="gated-blur">
-          <picture><source srcset="/img/guide-cover.webp" type="image/webp"><img alt="PDF guide: 5 mistakes first-time homebuyers make in Southern California" loading="lazy" decoding="async" src="/img/guide-cover.jpg" width="618" height="800"></picture>
+    <div class="formblock">
+      <form id="guideForm" class="guide-form" novalidate>
+        <div class="ftitle">Get the free guide</div>
+        <div class="hp" aria-hidden="true">
+          <label for="gf-website">Website (leave blank)</label>
+          <input type="text" id="gf-website" name="website" tabindex="-1" autocomplete="off">
         </div>
+        <div class="group">
+          <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><input class="field" type="text" id="gf-name" name="firstName" placeholder="First name" required autocomplete="given-name" aria-label="First name"></label>
+          <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><input class="field" type="email" id="gf-email" name="email" placeholder="Email" required autocomplete="email" inputmode="email" aria-label="Email"></label>
+          <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><input class="field" type="tel" id="gf-phone" name="phone" placeholder="Phone" required autocomplete="tel" inputmode="tel" aria-label="Phone"></label>
+        </div>
+        <button type="submit" class="btn" id="gfSubmit"><span class="playc"><svg viewBox="0 0 24 24" fill="#030302"><path d="M8 5.5v13l10.5-6.5z"/></svg></span><span class="bl">Send me the guide</span></button>
+        <div class="lockl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>No spam. Unsubscribe anytime.</div>
+      </form>
+
+      <div class="done guide-form-success" id="guideSuccess">
+        <svg class="rchk" viewBox="0 0 58 58" aria-hidden="true"><circle cx="29" cy="29" r="29"/><path d="M17 30l8 8 16-17"/></svg>
+        <h3>Check your email</h3>
+        <p>Your guide is on the way. Want it right now? Download it here.</p>
+        <a class="btn" href="/img/5-mistakes-guide.pdf" download>Download the guide</a>
       </div>
 
-      <div class="guide-form-card">
-        <div class="guide-form-head">
-          <div class="guide-form-title">Get the Guide</div>
-          <div class="guide-form-sub">Delivered to your inbox in under 60 seconds.</div>
-        </div>
-
-        <form class="guide-form" id="guideForm">
-          <div class="guide-form-hp" aria-hidden="true">
-            <label for="gf-website">Website (leave blank)</label>
-            <input type="text" id="gf-website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="guide-form-field">
-            <label class="guide-form-label" for="gf-name">Your First Name</label>
-            <input type="text" id="gf-name" name="firstName" placeholder="Jesse" required autocomplete="given-name" inputmode="text">
-          </div>
-          <div class="guide-form-field">
-            <label class="guide-form-label" for="gf-email">Email Address</label>
-            <input type="email" id="gf-email" name="email" placeholder="you@email.com" required autocomplete="email" inputmode="email">
-          </div>
-          <div class="guide-form-field">
-            <label class="guide-form-label" for="gf-phone">Phone Number</label>
-            <input type="tel" id="gf-phone" name="phone" placeholder="(562) 555-0123" required autocomplete="tel" inputmode="tel">
-          </div>
-          <button type="submit" class="guide-form-submit" id="gfSubmit">Send me the 5-Mistakes guide →</button>
-          <div class="guide-form-trust">🔒 No spam. Unsubscribe anytime.</div>
-
-          <!-- Testimonial adjacent to form (research: +37% vs separate section) -->
-          <div class="form-testimonial light" style="margin-top:18px">
-            <div class="form-testimonial-stars">★★★★★</div>
-            <p class="form-testimonial-quote">"This guide saved us from a Mello-Roos surprise that would've added $4,800/yr we hadn't budgeted for."</p>
-            <div class="form-testimonial-attr"><strong>Aaron R.</strong> · First-time buyer, La Mirada</div>
-          </div>
-        </form>
-
-        <div class="guide-form-success" id="guideSuccess">
-          <div class="guide-form-success-icon">✓</div>
-          <h3>Check Your Email!</h3>
-          <p>Your guide is on the way. While you wait, download it here:</p>
-          <a href="/img/5-mistakes-guide.pdf" download>📄 Download Now</a>
-        </div>
+      <div class="tip">
+        <div class="st"><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg></div>
+        <q>This guide saved us from a Mello-Roos surprise that would've added $4,800 a year we hadn't budgeted for.</q>
+        <div class="who"><b>Aaron R.</b> · First-time buyer, La Mirada</div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== AUTHOR STRIP ===================== -->
-<section class="guide-author">
-  <div class="guide-author-inner reveal">
-    <picture><source srcset="/img/jesse-headshot.webp" type="image/webp"><img alt="Jesse Oñate, bilingual realtor in Downey, CA" class="guide-author-photo" loading="lazy" decoding="async" src="/img/jesse-headshot.jpeg" width="800" height="1200"></picture>
-    <div class="guide-author-text">
-      <div class="guide-author-name">Written by Jesse Oñate</div>
-      <div class="guide-author-sub">Local SoCal realtor · 100+ families served · 5.0★ Google</div>
     </div>
   </div>
 </section>
 
-<!-- ===================== WHAT'S INSIDE PREVIEW ===================== -->
-<section class="guide-preview">
-  <div class="guide-preview-inner">
-    <div class="sec-head reveal">
-      <span class="sec-label">What's Inside</span>
-      <h2 class="sec-title">Unlock All 5 Mistakes.</h2>
+<!-- ===================== WHAT'S INSIDE ===================== -->
+<section class="sec">
+  <div class="in">
+    <h2 class="sh">Unlock all <i>5 mistakes</i></h2>
+
+    <div class="mlist" id="guideMistakes">
+      <div class="mrow gated guide-mistake">
+        <div class="mw" style="--h:#B8CAF5"><img src="/img/quiz/3d/spiral-calendar.webp" alt=""></div>
+        <div class="mtx"><div class="rk">01</div><h3>Supplemental tax bills</h3><p>A surprise tax bill hits 3 to 6 months after closing.</p></div>
+        <div class="mlk"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="o" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      </div>
+      <div class="mrow gated guide-mistake">
+        <div class="mw" style="--h:#FDE99B"><img src="/img/quiz/3d/dollar-banknote.webp" alt=""></div>
+        <div class="mtx"><div class="rk">02</div><h3>The Mello-Roos hidden tax</h3><p>An extra $3K to $5K a year most calculators won't show.</p></div>
+        <div class="mlk"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="o" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      </div>
+      <div class="mrow gated guide-mistake">
+        <div class="mw" style="--h:#D1EEF9"><img src="/img/quiz/3d/magnifying-glass-tilted-left.webp" alt=""></div>
+        <div class="mtx"><div class="rk">03</div><h3>The dual agency trap</h3><p>One agent works both sides, and you lose leverage.</p></div>
+        <div class="mlk"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="o" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      </div>
+      <div class="mrow gated guide-mistake">
+        <div class="mw" style="--h:#9BD8A9"><img src="/img/quiz/3d/chart-increasing.webp" alt=""></div>
+        <div class="mtx"><div class="rk">04</div><h3>The appraisal gap</h3><p>If it comes in low, you bring the difference in cash.</p></div>
+        <div class="mlk"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="o" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      </div>
+      <div class="mrow gated guide-mistake">
+        <div class="mw" style="--h:#9ED4EF"><img src="/img/quiz/3d/hammer-and-wrench.webp" alt=""></div>
+        <div class="mtx"><div class="rk">05</div><h3>HOA special assessments</h3><p>One big repair and you owe $10K+ on top of your mortgage.</p></div>
+        <div class="mlk"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="o" viewBox="0 0 24 24" fill="none" stroke="#030302" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      </div>
     </div>
 
-    <div class="guide-mistakes" id="guideMistakes">
-
-      <div class="guide-mistake gated reveal-s">
-        <div class="guide-mistake-num">01</div>
-        <div class="gated-blur">
-          <div class="guide-mistake-icon">💸</div>
-          <h3>Supplemental Tax Bills</h3>
-          <p>A surprise tax bill hits 3–6 months after closing.</p>
-        </div>
+    <div class="jcard">
+      <div class="jrow">
+        <img src="/img/quiz/jesse-portrait.webp" alt="Jesse Onate, realtor in Downey, CA" loading="lazy">
+        <div><b>Written by Jesse Onate</b><span><svg class="rstar" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>5.0 on Google · 100+ closings in LA and Orange County</span></div>
       </div>
-
-      <div class="guide-mistake gated reveal-s d1">
-        <div class="guide-mistake-num">02</div>
-        <div class="gated-blur">
-          <div class="guide-mistake-icon">📊</div>
-          <h3>Mello-Roos Hidden Tax</h3>
-          <p>An extra $3K–$5K/year most calculators won't show.</p>
-        </div>
-      </div>
-
-      <div class="guide-mistake gated reveal-s d2">
-        <div class="guide-mistake-num">03</div>
-        <div class="gated-blur">
-          <div class="guide-mistake-icon">⚠️</div>
-          <h3>The Dual Agency Trap</h3>
-          <p>One agent works both sides, and you lose leverage.</p>
-        </div>
-      </div>
-
-      <div class="guide-mistake gated reveal-s d3">
-        <div class="guide-mistake-num">04</div>
-        <div class="gated-blur">
-          <div class="guide-mistake-icon">📉</div>
-          <h3>The Appraisal Gap</h3>
-          <p>If it comes in low, you bring the difference in cash.</p>
-        </div>
-      </div>
-
-      <div class="guide-mistake gated reveal-s d4">
-        <div class="guide-mistake-num">05</div>
-        <div class="gated-blur">
-          <div class="guide-mistake-icon">🏚️</div>
-          <h3>HOA Special Assessments</h3>
-          <p>One repair and you owe $10K+ on top of your mortgage.</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- Unlock toast -->
-<div class="guide-unlock-toast" id="unlockToast">
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8 L7 12 L13 4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  All 5 mistakes unlocked!
-</div>
-
-<!-- ===================== BOTTOM CTA — FORM ONLY ===================== -->
-<section class="guide-final">
-  <div class="guide-final-inner reveal">
-    <div class="guide-pdf-mockup gated" id="pdfMockup2">
-      <div class="guide-pdf-badge">NO COST</div>
-      <div class="gated-blur">
+<!-- ===================== LAST STEP ===================== -->
+<section id="last">
+  <div class="band"><div class="in">
+    <h2>Where should I <i>send it?</i></h2>
+  </div></div>
+  <div class="body in">
+    <div class="win gated" id="pdfMockup2">
+      <div class="wbar"><i></i><i></i><i></i></div>
+      <div class="cover">
         <picture><source srcset="/img/guide-cover.webp" type="image/webp"><img alt="PDF guide: 5 mistakes first-time homebuyers make in Southern California" loading="lazy" decoding="async" src="/img/guide-cover.jpg" width="618" height="800"></picture>
+        <div class="lockb"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Unlocks when you send it</span></div>
       </div>
     </div>
 
-    <div class="guide-final-headline">Last step:<br><span class="g">where should I send it?</span></div>
-
-    <div class="guide-form-card">
-      <form class="guide-form" id="guideForm2">
-        <div class="guide-form-hp" aria-hidden="true">
+    <div class="formblock">
+      <form id="guideForm2" class="guide-form" novalidate>
+        <div class="hp" aria-hidden="true">
           <label for="gf2-website">Website (leave blank)</label>
           <input type="text" id="gf2-website" name="website" tabindex="-1" autocomplete="off">
         </div>
-        <div class="guide-form-field">
-          <label class="guide-form-label" for="gf2-name">Your First Name</label>
-          <input type="text" id="gf2-name" name="firstName" placeholder="Jesse" required autocomplete="given-name">
+        <div class="group">
+          <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><input class="field" type="text" id="gf2-name" name="firstName" placeholder="First name" required autocomplete="given-name" aria-label="First name"></label>
+          <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><input class="field" type="email" id="gf2-email" name="email" placeholder="Email" required autocomplete="email" inputmode="email" aria-label="Email"></label>
+          <label class="fwrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><input class="field" type="tel" id="gf2-phone" name="phone" placeholder="Phone" required autocomplete="tel" inputmode="tel" aria-label="Phone"></label>
         </div>
-        <div class="guide-form-field">
-          <label class="guide-form-label" for="gf2-email">Email Address</label>
-          <input type="email" id="gf2-email" name="email" placeholder="you@email.com" required autocomplete="email" inputmode="email">
-        </div>
-        <div class="guide-form-field">
-          <label class="guide-form-label" for="gf2-phone">Phone Number</label>
-          <input type="tel" id="gf2-phone" name="phone" placeholder="(562) 555-0123" required autocomplete="tel" inputmode="tel">
-        </div>
-        <button type="submit" class="guide-form-submit" id="gfSubmit2">Send me the 5-Mistakes guide →</button>
-        <div class="guide-form-trust">🔒 No spam. Unsubscribe anytime.</div>
+        <button type="submit" class="btn" id="gfSubmit2"><span class="playc"><svg viewBox="0 0 24 24" fill="#030302"><path d="M8 5.5v13l10.5-6.5z"/></svg></span><span class="bl">Send me the guide</span></button>
+        <div class="lockl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>No spam. Unsubscribe anytime.</div>
       </form>
 
-      <div class="guide-form-success" id="guideSuccess2">
-        <div class="guide-form-success-icon">✓</div>
-        <h3>Check Your Email!</h3>
-        <p>Your guide is on the way. While you wait, download it here:</p>
-        <a href="/img/5-mistakes-guide.pdf" download>📄 Download Now</a>
+      <div class="done guide-form-success" id="guideSuccess2">
+        <svg class="rchk" viewBox="0 0 58 58" aria-hidden="true"><circle cx="29" cy="29" r="29"/><path d="M17 30l8 8 16-17"/></svg>
+        <h3>Check your email</h3>
+        <p>Your guide is on the way. Want it right now? Download it here.</p>
+        <a class="btn" href="/img/5-mistakes-guide.pdf" download>Download the guide</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Minimal copyright bar -->
-<div class="lp-copyright">
-  © 2026 Jesse Oñate · Realtor · DRE #02133131 · Downey, CA
-</div>
+<div class="foot">© 2026 Jesse Onate · Realtor · DRE #02133131 · Downey, CA</div>
+
+<!-- Unlock toast -->
+<div class="toast" id="unlockToast" role="status"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8 L7 12 L13 4" stroke="#030302" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>All 5 mistakes unlocked</div>
+
+<!-- Phone sticky pill -->
+<div class="sticky-mobile-cta" id="stickyMobileCta"><a class="btn" href="#get">Get the free guide</a></div>
 
 <script>
-var io = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
-  });
-}, {threshold: 0.08});
-document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(el); });
-
 (function(){
-  var toast = document.getElementById('unlockToast');
+  /* rows rise in as they scroll into view */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var i = Array.prototype.indexOf.call(e.target.parentNode.children, e.target);
+        setTimeout(function(){ e.target.classList.add('on'); }, i * 70);
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.mrow').forEach(function(el){ io.observe(el); });
 
-  function unlockAll() {
-    document.querySelectorAll('#pdfMockup, #pdfMockup2').forEach(function(el){
-      el.classList.add('unlocked');
-    });
-    document.querySelectorAll('.guide-mistake.gated').forEach(function(el){
-      el.classList.add('unlocked');
-    });
-    if (toast) {
+  /* phone sticky pill: show once the top form is out of view, hide near the last form */
+  var sticky = document.getElementById('stickyMobileCta');
+  var seen = {top:true, last:false}, sent = false;
+  var so = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ seen[e.target.id === 'guideForm2' ? 'last' : 'top'] = e.isIntersecting; });
+    sticky.classList.toggle('show', !sent && !seen.top && !seen.last);
+  }, {threshold: 0});
+  so.observe(document.getElementById('guideForm'));
+  so.observe(document.getElementById('guideForm2'));
+
+  var toast = document.getElementById('unlockToast');
+  function unlockAll(){
+    document.querySelectorAll('#pdfMockup, #pdfMockup2, .guide-mistake').forEach(function(el){ el.classList.add('unlocked'); });
+    var h = document.getElementById('unhint'); if (h) h.classList.add('hidden');
+    sent = true; sticky.classList.remove('show');
+    if (toast){
       toast.classList.add('show');
       setTimeout(function(){ toast.classList.remove('show'); }, 3500);
     }
   }
 
-  function wireForm(formId, nameId, emailId, phoneId, successId, btnId) {
+  function wireForm(formId, nameId, emailId, phoneId, btnId){
     var form = document.getElementById(formId);
     if (!form) return;
-    var submitBtn = document.getElementById(btnId);
-    var hpInput = form.querySelector('input[name="website"]');
+    var btn = document.getElementById(btnId);
+    var label = btn.querySelector('.bl');
+    var hp = form.querySelector('input[name="website"]');
     var loadedAt = Date.now();
 
     form.addEventListener('submit', async function(e){
       e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
+      var bad = null;
+      [nameId, emailId, phoneId].forEach(function(id){
+        var f = document.getElementById(id);
+        if (!bad && !f.checkValidity()) bad = f;
+      });
+      if (bad){ bad.focus(); bad.reportValidity(); return; }
+
+      btn.disabled = true;
+      label.textContent = 'Sending...';
 
       var data = {
         firstName: document.getElementById(nameId).value.trim(),
         email: document.getElementById(emailId).value.trim(),
         phone: document.getElementById(phoneId).value.trim(),
-        website: hpInput ? hpInput.value : '',
+        website: hp ? hp.value : '',
         elapsed: Date.now() - loadedAt,
         attribution: window.siteAttribution ? window.siteAttribution() : null
       };
@@ -305,14 +414,14 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
       document.querySelectorAll('.guide-form-success').forEach(function(s){ s.classList.add('active'); });
       unlockAll();
 
-      if (formId === 'guideForm2') {
+      if (formId === 'guideForm2'){
         setTimeout(function(){ window.scrollTo({top:0, behavior:'smooth'}); }, 800);
       }
     });
   }
 
-  wireForm('guideForm',  'gf-name',  'gf-email',  'gf-phone',  'guideSuccess',  'gfSubmit');
-  wireForm('guideForm2', 'gf2-name', 'gf2-email', 'gf2-phone', 'guideSuccess2', 'gfSubmit2');
+  wireForm('guideForm',  'gf-name',  'gf-email',  'gf-phone',  'gfSubmit');
+  wireForm('guideForm2', 'gf2-name', 'gf2-email', 'gf2-phone', 'gfSubmit2');
 })();
 </script>
 
@@ -320,194 +429,63 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "name": "Jesse O\u00f1ate",
+  "name": "Jesse Oñate",
   "image": "https://jessetek.net/img/jesse-headshot.jpeg",
   "telephone": "+1-562-609-4200",
   "email": "jesse@jessetek.net",
   "url": "https://jessetek.net/",
-  "description": "Bilingual SoCal realtor helping millennials buy and sell homes in Downey, Whittier, Pico Rivera, and surrounding cities. 100+ families served. 5.0 star Google rating.",
+  "description": "SoCal realtor helping millennials buy and sell homes in Downey, Whittier, Pico Rivera, and surrounding cities. 100+ families served. 5.0 star Google rating.",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 33.9401,
     "longitude": -118.1332
   },
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Downey"
-    },
-    {
-      "@type": "City",
-      "name": "Whittier"
-    },
-    {
-      "@type": "City",
-      "name": "Pico Rivera"
-    },
-    {
-      "@type": "City",
-      "name": "Long Beach"
-    },
-    {
-      "@type": "City",
-      "name": "Cerritos"
-    },
-    {
-      "@type": "City",
-      "name": "Norwalk"
-    },
-    {
-      "@type": "City",
-      "name": "La Mirada"
-    },
-    {
-      "@type": "City",
-      "name": "Bellflower"
-    },
-            {
-              "@type": "City",
-              "name": "Montebello"
-            },
-            {
-              "@type": "City",
-              "name": "Anaheim"
-            },
-            {
-              "@type": "City",
-              "name": "Cypress"
-            },
-            {
-              "@type": "City",
-              "name": "Buena Park"
-            },
-            {
-              "@type": "City",
-              "name": "Fullerton"
-            },
-            {
-              "@type": "City",
-              "name": "Brea"
-            },
-            {
-              "@type": "City",
-              "name": "La Puente"
-            },
-            {
-              "@type": "City",
-              "name": "West Covina"
-            },
-            {
-              "@type": "City",
-              "name": "Garden Grove"
-            },
-            {
-              "@type": "City",
-              "name": "Westminster"
-            },
-            {
-              "@type": "City",
-              "name": "El Monte"
-            },
-    {
-      "@type": "City",
-      "name": "Pasadena"
-    },
-    {
-      "@type": "City",
-      "name": "Glendale"
-    },
-    {
-      "@type": "City",
-      "name": "Burbank"
-    },
-    {
-      "@type": "City",
-      "name": "Tustin"
-    },
-    {
-      "@type": "City",
-      "name": "Orange"
-    },
-    {
-      "@type": "City",
-      "name": "Irvine"
-    },
-    {
-      "@type": "City",
-      "name": "Huntington Beach"
-    },
-    {
-      "@type": "City",
-      "name": "Newport Beach"
-    },
-    {
-      "@type": "City",
-      "name": "Costa Mesa"
-    },
-    {
-      "@type": "City",
-      "name": "Mission Viejo"
-    },
-    {
-      "@type": "City",
-      "name": "Santa Ana"
-    },
-    {
-      "@type": "City",
-      "name": "Lake Forest"
-    },
-    {
-      "@type": "City",
-      "name": "Yorba Linda"
-    },
-    {
-      "@type": "City",
-      "name": "Torrance"
-    },
-    {
-      "@type": "City",
-      "name": "Redondo Beach"
-    },
-    {
-      "@type": "City",
-      "name": "Manhattan Beach"
-    },
-    {
-      "@type": "City",
-      "name": "Hermosa Beach"
-    },
-    {
-      "@type": "City",
-      "name": "Santa Monica"
-    },
-    {
-      "@type": "City",
-      "name": "Culver City"
-    },
-    {
-      "@type": "City",
-      "name": "Beverly Hills"
-    },
-    {
-      "@type": "City",
-      "name": "Calabasas"
-    },
-    {
-      "@type": "City",
-      "name": "Sherman Oaks"
-    },
-    {
-      "@type": "City",
-      "name": "La Cañada Flintridge"
-    }
+    {"@type": "City", "name": "Downey"},
+    {"@type": "City", "name": "Whittier"},
+    {"@type": "City", "name": "Pico Rivera"},
+    {"@type": "City", "name": "Long Beach"},
+    {"@type": "City", "name": "Cerritos"},
+    {"@type": "City", "name": "Norwalk"},
+    {"@type": "City", "name": "La Mirada"},
+    {"@type": "City", "name": "Bellflower"},
+    {"@type": "City", "name": "Montebello"},
+    {"@type": "City", "name": "Anaheim"},
+    {"@type": "City", "name": "Cypress"},
+    {"@type": "City", "name": "Buena Park"},
+    {"@type": "City", "name": "Fullerton"},
+    {"@type": "City", "name": "Brea"},
+    {"@type": "City", "name": "La Puente"},
+    {"@type": "City", "name": "West Covina"},
+    {"@type": "City", "name": "Garden Grove"},
+    {"@type": "City", "name": "Westminster"},
+    {"@type": "City", "name": "El Monte"},
+    {"@type": "City", "name": "Pasadena"},
+    {"@type": "City", "name": "Glendale"},
+    {"@type": "City", "name": "Burbank"},
+    {"@type": "City", "name": "Tustin"},
+    {"@type": "City", "name": "Orange"},
+    {"@type": "City", "name": "Irvine"},
+    {"@type": "City", "name": "Huntington Beach"},
+    {"@type": "City", "name": "Newport Beach"},
+    {"@type": "City", "name": "Costa Mesa"},
+    {"@type": "City", "name": "Mission Viejo"},
+    {"@type": "City", "name": "Santa Ana"},
+    {"@type": "City", "name": "Lake Forest"},
+    {"@type": "City", "name": "Yorba Linda"},
+    {"@type": "City", "name": "Torrance"},
+    {"@type": "City", "name": "Redondo Beach"},
+    {"@type": "City", "name": "Manhattan Beach"},
+    {"@type": "City", "name": "Hermosa Beach"},
+    {"@type": "City", "name": "Santa Monica"},
+    {"@type": "City", "name": "Culver City"},
+    {"@type": "City", "name": "Beverly Hills"},
+    {"@type": "City", "name": "Calabasas"},
+    {"@type": "City", "name": "Sherman Oaks"},
+    {"@type": "City", "name": "La Cañada Flintridge"}
   ],
-  "knowsLanguage": [
-    "en",
-    "es"
-  ],
-  "sameAs": [
-    "https://instagram.com/jessetek"
-  ],
+  "knowsLanguage": ["en", "es"],
+  "sameAs": ["https://instagram.com/jessetek"],
   "identifier": "DRE #02133131",
   "openingHours": "Mo-Su 08:00-20:00"
 }
@@ -517,18 +495,8 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://jessetek.net/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "5 Mistakes Guide",
-      "item": "https://jessetek.net/guide"
-    }
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jessetek.net/"},
+    {"@type": "ListItem", "position": 2, "name": "5 Mistakes Guide", "item": "https://jessetek.net/guide"}
   ]
 }
 </script>
@@ -537,23 +505,17 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "5 Mistakes First-Time Homebuyers Make in SoCal",
-  "description": "The hidden traps Southern California first-time homebuyers need to know \u2014 supplemental tax bills, Mello-Roos, dual agency, appraisal gaps, HOA assessments.",
+  "description": "The hidden traps Southern California first-time homebuyers need to know: supplemental tax bills, Mello-Roos, dual agency, appraisal gaps, HOA assessments.",
   "image": "https://jessetek.net/img/jesse-headshot.jpeg",
   "author": {"@id": "https://jessetek.net/about#jesse"},
   "publisher": {
     "@type": "Organization",
-    "name": "Jesse O\u00f1ate Real Estate",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://jessetek.net/img/jesse-headshot.jpeg"
-    }
+    "name": "Jesse Oñate Real Estate",
+    "logo": {"@type": "ImageObject", "url": "https://jessetek.net/img/jesse-headshot.jpeg"}
   },
   "datePublished": "2026-01-01",
-  "dateModified": "2026-04-30",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://jessetek.net/guide"
-  }
+  "dateModified": "2026-11-12",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jessetek.net/guide"}
 }
 </script>
 <script src="/js/analytics.js" defer></script>
@@ -563,45 +525,16 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Avoid the 5 Mistakes First-Time SoCal Homebuyers Make",
-  "description": "Five hidden traps SoCal first-time buyers fall into \u2014 supplemental tax bills, Mello-Roos, dual agency, appraisal gaps, HOA assessments \u2014 and exactly how to avoid each one.",
+  "description": "Five hidden traps SoCal first-time buyers fall into (supplemental tax bills, Mello-Roos, dual agency, appraisal gaps, HOA assessments) and exactly how to avoid each one.",
   "image": "https://jessetek.net/img/og-guide.jpg",
   "totalTime": "PT15M",
-  "estimatedCost": {
-    "@type": "MonetaryAmount",
-    "currency": "USD",
-    "value": "0"
-  },
+  "estimatedCost": {"@type": "MonetaryAmount", "currency": "USD", "value": "0"},
   "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Watch for Supplemental Tax Bills",
-      "text": "After closing, expect a supplemental property tax bill 3-6 months later. This is in addition to regular property tax \u2014 budget for it and don't be caught off guard."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Spot Mello-Roos Hidden Tax",
-      "text": "Mello-Roos can add $3,000-$8,000 a year to your property tax. Always check the disclosure packet for the Notice of Special Tax before offering."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Avoid the Dual Agency Trap",
-      "text": "When one agent represents both buyer and seller, you lose negotiating leverage. Insist on independent representation."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Plan for the Appraisal Gap",
-      "text": "If the appraisal comes in lower than your offer, you'll need to bring the difference in cash or renegotiate. Plan for this scenario before writing the offer."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 5,
-      "name": "Check HOA Special Assessments",
-      "text": "HOA special assessments for major repairs can hit you with $10,000+ on top of your regular dues. Always review HOA financials before closing."
-    }
+    {"@type": "HowToStep", "position": 1, "name": "Watch for Supplemental Tax Bills", "text": "After closing, expect a supplemental property tax bill 3 to 6 months later. This is in addition to regular property tax, so budget for it and don't be caught off guard."},
+    {"@type": "HowToStep", "position": 2, "name": "Spot Mello-Roos Hidden Tax", "text": "Mello-Roos can add $3,000 to $8,000 a year to your property tax. Always check the disclosure packet for the Notice of Special Tax before offering."},
+    {"@type": "HowToStep", "position": 3, "name": "Avoid the Dual Agency Trap", "text": "When one agent represents both buyer and seller, you lose negotiating leverage. Insist on independent representation."},
+    {"@type": "HowToStep", "position": 4, "name": "Plan for the Appraisal Gap", "text": "If the appraisal comes in lower than your offer, you'll need to bring the difference in cash or renegotiate. Plan for this scenario before writing the offer."},
+    {"@type": "HowToStep", "position": 5, "name": "Check HOA Special Assessments", "text": "HOA special assessments for major repairs can hit you with $10,000+ on top of your regular dues. Always review HOA financials before closing."}
   ]
 }
 </script>
