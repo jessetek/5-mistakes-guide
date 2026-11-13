@@ -61,7 +61,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/kb.css?v=12">
+<link rel="stylesheet" href="/css/kb.css?v=29">
 </head>
 <body style="--th:#9ED4EF;--th2:#B8CAF5">
 
@@ -153,13 +153,122 @@
 </section>
 
 <!-- ===================== PAYMENT TOOL ===================== -->
+<!-- cityhub:start -->
+<nav class="hub-jump" aria-label="On this page"><div class="hub-jump-in"><a href="#payment">Monthly cost</a><a href="#story">Story</a><a href="#prices">Prices</a><a href="#buy">What money buys</a><a href="#parks">Parks</a><a href="#todo">Things to do</a></div></nav>
+
+<!-- cityhub:end -->
+
 <section class="cp-section" id="payment">
   <div class="cp-head reveal">
     <h2>What a Culver City Home<br>Costs Per Month.</h2>
     <p>Move the sliders. The rate is this week's average, so the number is honest.</p>
   </div>
-  <div class="cp-card" data-citypay data-city="Culver City" data-median="1550000"></div>
+  <div class="cp-card" data-citypay data-min="477905" data-max="2405848" data-city="Culver City" data-median="1550000"></div>
 </section>
+
+<!-- cityhub:start -->
+<!-- hub: story -->
+<section id="story" class="hub-section hub-band">
+  <div class="hub-inner hub-story">
+    <div class="hub-story-text reveal">
+      <span class="hub-eye"><i style="background:#B8CAF5"></i>The place</span>
+      <h2 class="sec-title">The Story of<br>Culver City.</h2>
+      <p class="hub-lede">About 39,883 people call Culver City home. It sits in Los Angeles County.</p><p>The name comes from Harry Culver. For green space, Culver City has 14 parks, led by Veterans Memorial Park at roughly 11 acres. Open space and trails include Baldwin Hills Scenic Overlook.</p><p>Places people go: Westfield Culver City, Kirk Douglas Theatre and The Culver Theater. The map shows 189 places to eat and drink, with Coffee, Pizza and Mexican the most common. There are 8 public schools inside the boundary, run by Culver City Unified.</p>
+      <p class="hub-fine">Assembled from the U.S. Census Bureau, Wikidata, OpenStreetMap and the California Department of Education. <a href="/photo-credits">Photo credits</a>.</p>
+    </div>
+    <figure class="hub-story-photo" style="background:#382D2A"><img src="/img/places/culver-city-1.webp" alt="Kirk Douglas Theatre in Culver City." loading="lazy" width="1600" height="1000"><figcaption>Kirk Douglas Theatre</figcaption></figure>
+  </div>
+  <div class="hub-inner"><div class="hub-factrow reveal"><div class="hub-fact" style="--tint:#FDE99B"><b data-count>39,883</b><span>People, 2024 estimate</span></div><div class="hub-fact" style="--tint:#D1EEF9"><b data-count>14</b><span>Parks</span></div><div class="hub-fact" style="--tint:#9BD8A9"><b data-count>52</b><span>Acres of parks</span></div><div class="hub-fact" style="--tint:#B8CAF5"><b data-count>8</b><span>Public schools</span></div><div class="hub-fact" style="--tint:#9ED4EF"><b data-count>189</b><span>Places to eat</span></div><div class="hub-fact" style="--tint:#F7C9B6"><b data-count>$1.27M</b><span>Typical home value</span></div></div></div>
+</section>
+
+<!-- hub: price history -->
+<section id="prices" class="hub-section">
+  <div class="hub-inner">
+    <div class="sec-head reveal">
+      <h2 class="sec-title">Ten Years of<br>Culver City Home Values.</h2>
+      <p class="sec-sub">The typical home value, month by month. Move across the chart to read any month.</p>
+    </div>
+    <div class="hub-card hub-chart reveal" data-hub-chart='{&quot;start&quot;:&quot;2016-08&quot;,&quot;v&quot;:[682990,669858,664106,663406,665860,678871,700138,726707,750707,770253,787429,788000,780317,768864,768756,771540,776041,789260,814943,846220,873419,893657,909223,924729,947351,975153,1002879,1022665,1033064,1028715,1010399,987984,969604,957881,948478,949018,959628,978218,996175,1009915,1020913,1025836,1026952,1026745,1025959,1019877,1007424,1001940,1009977,1032653,1054877,1074973,1090762,1099011,1101144,1096925,1100559,1109979,1124695,1141246,1156781,1171863,1187058,1203083,1220865,1240073,1261335,1281629,1294977,1304957,1307462,1309762,1304351,1296178,1287046,1284633,1287933,1278998,1259151,1233301,1218191,1213070,1218175,1232042,1253500,1275874,1296594,1311483,1321770,1317679,1302664,1286120,1277229,1276968,1275035,1277322,1281984,1290544,1298750,1305975,1312545,1310920,1303425,1289919,1278699,1266354,1254564,1246334,1243218,1247394,1257587,1270663,1282969,1286407,1282923,1276910,1273763,1273284,1272568,1271654,1272609,1274528]}'>
+      <div class="hub-chart-top">
+        <div><div class="hub-chart-val" data-hc="val">$1,274,528</div><div class="hub-chart-date" data-hc="date">September 2026</div></div>
+        <div class="hub-chips"><span><b>+2.2%</b> 1 year</span><span><b>+9%</b> 5 years</span><span><b>+90%</b> 10 years</span></div>
+      </div>
+      <div class="hub-plot">
+        <svg viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-label="Line chart of the typical home value in Culver City over ten years">
+          <path class="hub-area" d="M0.0,271.6 L8.3,276.8 L16.5,279.0 L24.8,279.3 L33.1,278.3 L41.3,273.2 L49.6,264.9 L57.9,254.4 L66.1,245.0 L74.4,237.3 L82.6,230.6 L90.9,230.4 L99.2,233.4 L107.4,237.9 L115.7,237.9 L124.0,236.8 L132.2,235.1 L140.5,229.9 L148.8,219.8 L157.0,207.5 L165.3,196.8 L173.6,188.9 L181.8,182.7 L190.1,176.7 L198.3,167.8 L206.6,156.8 L214.9,146.0 L223.1,138.2 L231.4,134.1 L239.7,135.8 L247.9,143.0 L256.2,151.8 L264.5,159.0 L272.7,163.6 L281.0,167.3 L289.3,167.1 L297.5,162.9 L305.8,155.6 L314.0,148.6 L322.3,143.2 L330.6,138.9 L338.8,136.9 L347.1,136.5 L355.4,136.6 L363.6,136.9 L371.9,139.3 L380.2,144.2 L388.4,146.3 L396.7,143.2 L405.0,134.3 L413.2,125.5 L421.5,117.6 L429.8,111.4 L438.0,108.2 L446.3,107.4 L454.5,109.0 L462.8,107.6 L471.1,103.9 L479.3,98.1 L487.6,91.6 L495.9,85.5 L504.1,79.6 L512.4,73.6 L520.7,67.3 L528.9,60.3 L537.2,52.8 L545.5,44.4 L553.7,36.5 L562.0,31.2 L570.2,27.3 L578.5,26.3 L586.8,25.4 L595.0,27.5 L603.3,30.7 L611.6,34.3 L619.8,35.3 L628.1,34.0 L636.4,37.5 L644.6,45.3 L652.9,55.4 L661.2,61.4 L669.4,63.4 L677.7,61.4 L686.0,55.9 L694.2,47.5 L702.5,38.7 L710.7,30.6 L719.0,24.7 L727.3,20.7 L735.5,22.3 L743.8,28.2 L752.1,34.7 L760.3,38.2 L768.6,38.3 L776.9,39.0 L785.1,38.1 L793.4,36.3 L801.7,33.0 L809.9,29.7 L818.2,26.9 L826.4,24.3 L834.7,25.0 L843.0,27.9 L851.2,33.2 L859.5,37.6 L867.8,42.5 L876.0,47.1 L884.3,50.3 L892.6,51.5 L900.8,49.9 L909.1,45.9 L917.4,40.8 L925.6,35.9 L933.9,34.6 L942.1,35.9 L950.4,38.3 L958.7,39.5 L966.9,39.7 L975.2,40.0 L983.5,40.4 L991.7,40.0 L1000.0,39.2 L1000.0,300.0 L0,300.0 Z"/><path class="hub-line" d="M0.0,271.6 L8.3,276.8 L16.5,279.0 L24.8,279.3 L33.1,278.3 L41.3,273.2 L49.6,264.9 L57.9,254.4 L66.1,245.0 L74.4,237.3 L82.6,230.6 L90.9,230.4 L99.2,233.4 L107.4,237.9 L115.7,237.9 L124.0,236.8 L132.2,235.1 L140.5,229.9 L148.8,219.8 L157.0,207.5 L165.3,196.8 L173.6,188.9 L181.8,182.7 L190.1,176.7 L198.3,167.8 L206.6,156.8 L214.9,146.0 L223.1,138.2 L231.4,134.1 L239.7,135.8 L247.9,143.0 L256.2,151.8 L264.5,159.0 L272.7,163.6 L281.0,167.3 L289.3,167.1 L297.5,162.9 L305.8,155.6 L314.0,148.6 L322.3,143.2 L330.6,138.9 L338.8,136.9 L347.1,136.5 L355.4,136.6 L363.6,136.9 L371.9,139.3 L380.2,144.2 L388.4,146.3 L396.7,143.2 L405.0,134.3 L413.2,125.5 L421.5,117.6 L429.8,111.4 L438.0,108.2 L446.3,107.4 L454.5,109.0 L462.8,107.6 L471.1,103.9 L479.3,98.1 L487.6,91.6 L495.9,85.5 L504.1,79.6 L512.4,73.6 L520.7,67.3 L528.9,60.3 L537.2,52.8 L545.5,44.4 L553.7,36.5 L562.0,31.2 L570.2,27.3 L578.5,26.3 L586.8,25.4 L595.0,27.5 L603.3,30.7 L611.6,34.3 L619.8,35.3 L628.1,34.0 L636.4,37.5 L644.6,45.3 L652.9,55.4 L661.2,61.4 L669.4,63.4 L677.7,61.4 L686.0,55.9 L694.2,47.5 L702.5,38.7 L710.7,30.6 L719.0,24.7 L727.3,20.7 L735.5,22.3 L743.8,28.2 L752.1,34.7 L760.3,38.2 L768.6,38.3 L776.9,39.0 L785.1,38.1 L793.4,36.3 L801.7,33.0 L809.9,29.7 L818.2,26.9 L826.4,24.3 L834.7,25.0 L843.0,27.9 L851.2,33.2 L859.5,37.6 L867.8,42.5 L876.0,47.1 L884.3,50.3 L892.6,51.5 L900.8,49.9 L909.1,45.9 L917.4,40.8 L925.6,35.9 L933.9,34.6 L942.1,35.9 L950.4,38.3 L958.7,39.5 L966.9,39.7 L975.2,40.0 L983.5,40.4 L991.7,40.0 L1000.0,39.2" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="hub-cursor" data-hc="cursor" hidden><i></i></div>
+        <div class="hub-range"><span>$1.32M</span><span>$663K</span></div>
+      </div>
+      <div class="hub-years"><span style="left:14.05%">2018</span><span style="left:33.88%">2020</span><span style="left:53.72%">2022</span><span style="left:73.55%">2024</span><span style="left:93.39%">2026</span></div>
+      <p class="hub-note">The highest point in these ten years is $1,321,770, in December 2023.</p>
+    </div>
+  </div>
+</section>
+
+<!-- hub: what your money buys -->
+<section id="buy" class="hub-section">
+  <div class="hub-inner">
+    <div class="sec-head reveal">
+      <h2 class="sec-title">What Your Money Buys<br>in Culver City.</h2>
+      <p class="sec-sub">Typical values by home size and type, so you can match the city to your budget before you tour anything.</p>
+    </div>
+    <div class="hub-grid2"><div class="hub-card reveal">
+        <h3>By bedroom count</h3>
+        <p class="hub-sub">Tap a row to load that price into the payment tool below.</p>
+        <div class="hub-beds"><button type="button" class="hub-bed" data-hub-price="477905" aria-label="1 bedroom, $477,905. Use this price in the payment tool."><span class="hub-bed-n">1 bed</span><span class="hub-bar"><i style="width:20%"></i></span><span class="hub-bed-v">$478K</span></button><button type="button" class="hub-bed" data-hub-price="789159" aria-label="2 bedroom, $789,159. Use this price in the payment tool."><span class="hub-bed-n">2 bed</span><span class="hub-bar"><i style="width:33%"></i></span><span class="hub-bed-v">$789K</span></button><button type="button" class="hub-bed" data-hub-price="1464651" aria-label="3 bedroom, $1,464,651. Use this price in the payment tool."><span class="hub-bed-n">3 bed</span><span class="hub-bar"><i style="width:61%"></i></span><span class="hub-bed-v">$1.46M</span></button><button type="button" class="hub-bed" data-hub-price="1945791" aria-label="4 bedroom, $1,945,791. Use this price in the payment tool."><span class="hub-bed-n">4 bed</span><span class="hub-bar"><i style="width:81%"></i></span><span class="hub-bed-v">$1.95M</span></button><button type="button" class="hub-bed" data-hub-price="2405848" aria-label="5 bedroom, $2,405,848. Use this price in the payment tool."><span class="hub-bed-n">5+ bed</span><span class="hub-bar"><i style="width:100%"></i></span><span class="hub-bed-v">$2.41M</span></button></div>
+      </div><div class="hub-card reveal"><h3>Houses and condos</h3><div class="hub-duo"><div><span>Single-family house</span><b>$1.59M</b></div><div><span>Condo or townhome</span><b>$610K</b></div></div>
+        <p class="hub-sub">A house costs about $978,189 more than a condo here.</p><h3 class="hub-h3b">The range</h3>
+        <div class="hub-rangebar"><i style="left:50%"></i></div>
+        <div class="hub-rangelab"><span><b>$645K</b>lower-priced third</span><span><b>$1.27M</b>typical</span><span><b>$1.9M</b>upper third</span></div></div></div>
+  </div>
+</section>
+
+<!-- hub: rent vs own -->
+<section class="hub-section hub-tight">
+  <div class="hub-inner">
+    <div class="hub-card hub-rent reveal" data-hub-rent="3521">
+      <div class="hub-rent-l">
+        <h3>Renting in Culver City</h3>
+        <div class="hub-rent-n">$3,521<small>/mo</small></div>
+        <p class="hub-sub">Typical asking rent, September 2026. That is +2.2% from a year ago. Over a year that is $42,252 in rent.</p>
+      </div>
+      <div class="hub-rent-r">
+        <h3>Owning, at your settings above</h3>
+        <div class="hub-rent-n" data-hr="own">&nbsp;</div>
+        <p class="hub-sub" data-hr="line">Set a price and down payment in the tool above and this compares it with the rent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- hub: parks -->
+<section id="parks" class="hub-section hub-band hub-band-g">
+  <div class="hub-inner">
+    <div class="sec-head reveal">
+      <span class="hub-eye"><i style="background:#2F9E63"></i>Outdoors</span>
+      <h2 class="sec-title">Parks and Open Space<br>in Culver City.</h2>
+      <p class="sec-sub">14 parks, about 52 acres of them in all. Sizes are measured from each park's mapped outline. Tap any park to see it on the map.</p>
+    </div>
+    
+    <div class="hub-places reveal"><div class="hub-place" style="--tint:#FDE99B" data-spot="-118.40245,34.01203" role="button" tabindex="0" title="Show Veterans Memorial Park on the map"><span class="hub-place-k">Park</span><b>Veterans Memorial Park</b><span class="hub-place-m">11 acres</span><span class="hub-place-bar" aria-hidden="true"><i style="width:100%"></i></span></div><div class="hub-place" style="--tint:#D1EEF9" data-spot="-118.38585,33.98332" role="button" tabindex="0" title="Show Fox Hills Park on the map"><span class="hub-place-k">Park</span><b>Fox Hills Park</b><span class="hub-place-m">9.6 acres</span><span class="hub-place-bar" aria-hidden="true"><i style="width:86%"></i></span></div><div class="hub-place" style="--tint:#9BD8A9" data-spot="-118.37746,34.02787" role="button" tabindex="0" title="Show Syd Kronenthal Park on the map"><span class="hub-place-k">Park</span><b>Syd Kronenthal Park</b><span class="hub-place-m">6.6 acres</span><span class="hub-place-bar" aria-hidden="true"><i style="width:59%"></i></span></div><div class="hub-place" style="--tint:#B8CAF5" data-spot="-118.3769,34.01415" role="button" tabindex="0" title="Show Stoneview Nature Center on the map"><span class="hub-place-k">Park</span><b>Stoneview Nature Center</b><span class="hub-place-m">4.8 acres</span><span class="hub-place-bar" aria-hidden="true"><i style="width:43%"></i></span></div><div class="hub-place" style="--tint:#9ED4EF" data-spot="-118.39855,34.00294" role="button" tabindex="0" title="Show Lindberg Park on the map"><span class="hub-place-k">Park</span><b>Lindberg Park</b><span class="hub-place-m">4.4 acres</span><span class="hub-place-bar" aria-hidden="true"><i style="width:39%"></i></span></div><div class="hub-place" style="--tint:#F7C9B6" data-spot="-118.39261,33.99589" role="button" tabindex="0" title="Show Blanco Park on the map"><span class="hub-place-k">Park</span><b>Blanco Park</b><span class="hub-place-m">3.1 acres</span><span class="hub-place-bar" aria-hidden="true"><i style="width:28%"></i></span></div><div class="hub-place" style="--tint:#B8CAF5" data-spot="-118.37959,34.01678" role="button" tabindex="0" title="Show Baldwin Hills Scenic Overlook on the map"><span class="hub-place-k">Nature area</span><b>Baldwin Hills Scenic Overlook</b></div></div>
+    <p class="hub-sub hub-more"><b>More parks:</b> <span class="hub-morelink" data-spot="-118.43404,33.99323" role="button" tabindex="0" title="Show Culver West Park on the map">Culver West Park</span>, <span class="hub-morelink" data-spot="-118.39791,34.01377" role="button" tabindex="0" title="Show Doctor Paul Carlson Memorial Park on the map">Doctor Paul Carlson Memorial Park</span>, <span class="hub-morelink" data-spot="-118.37828,34.01574" role="button" tabindex="0" title="Show Blair Hills Park on the map">Blair Hills Park</span>, <span class="hub-morelink" data-spot="-118.39938,33.99249" role="button" tabindex="0" title="Show El Marino Park on the map">El Marino Park</span>, <span class="hub-morelink" data-spot="-118.41247,34.01022" role="button" tabindex="0" title="Show Tellefson Park on the map">Tellefson Park</span>, <span class="hub-morelink" data-spot="-118.38157,33.98735" role="button" tabindex="0" title="Show Fox Hills Parkette on the map">Fox Hills Parkette</span>, <span class="hub-morelink" data-spot="-118.3863,34.01375" role="button" tabindex="0" title="Show Boneyard Dog Park on the map">Boneyard Dog Park</span>, <span class="hub-morelink" data-spot="-118.4,34.00858" role="button" tabindex="0" title="Show Coombs Parkette on the map">Coombs Parkette</span>.</p>
+  </div>
+</section>
+
+<!-- hub: things to do -->
+<section id="todo" class="hub-section">
+  <div class="hub-inner">
+    <div class="sec-head reveal">
+      <span class="hub-eye"><i style="background:#6A5BD6"></i>Weekends</span>
+      <h2 class="sec-title">Things to Do and<br>Places to Hang Out.</h2>
+      <p class="sec-sub">Real places inside Culver City. Tap any one to see it on the map.</p>
+    </div>
+    <div class="hub-lists reveal"><div class="hub-list" style="--tint:#FDE99B"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3.5 20h17"/></svg>Museum</h3><ul><li data-spot="-118.4042,34.01131" role="button" tabindex="0" title="Show Wende Museum of the Cold War on the map">Wende Museum of the Cold War</li></ul></div><div class="hub-list" style="--tint:#D1EEF9"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>Attractions</h3><ul><li data-spot="-118.40373,34.01615" role="button" tabindex="0" title="Show Sony Pictures Studio Tour on the map">Sony Pictures Studio Tour</li><li data-spot="-118.41403,34.00817" role="button" tabindex="0" title="Show Jeanne French&#x27;s Car on the map">Jeanne French&#x27;s Car</li></ul></div><div class="hub-list" style="--tint:#9BD8A9"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v6a8 8 0 0 1-16 0z"/><path d="M8.5 9h.01M15.5 9h.01M9 13c1.8 1.5 4.200 1.5 6 0"/></svg>Theaters</h3><ul><li data-spot="-118.39698,34.02158" role="button" tabindex="0" title="Show Kirk Douglas Theatre on the map">Kirk Douglas Theatre</li><li data-spot="-118.41959,34.01101" role="button" tabindex="0" title="Show Fanatic Salon Theater on the map">Fanatic Salon Theater</li><li data-spot="-118.40258,34.00751" role="button" tabindex="0" title="Show Robert Lee Frost Auditorium on the map">Robert Lee Frost Auditorium</li><li data-spot="-118.38073,34.01759" role="button" tabindex="0" title="Show Skyline Terrace on the map">Skyline Terrace</li></ul></div><div class="hub-list" style="--tint:#B8CAF5"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 1.5-2.2-.6-1.5.3-2.800 2-2.800H18a3 3 0 0 0 3-3c0-5.5-4-10-9-10z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg>Arts center</h3><ul><li data-spot="-118.38148,34.02413" role="button" tabindex="0" title="Show UCLA Margo Leavin Graduate Art Studios on the map">UCLA Margo Leavin Graduate Art Studios</li></ul></div><div class="hub-list" style="--tint:#9ED4EF"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="m4 16 4.5-4.5 3.5 3.5 2.5-2.5L20 17"/><circle cx="9" cy="9" r="1.3"/></svg>Gallery</h3><ul><li data-spot="-118.38217,34.03005" role="button" tabindex="0" title="Show K&amp;K Gallery on the map">K&amp;K Gallery</li></ul></div><div class="hub-list" style="--tint:#F7C9B6"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 9.5h17M8 5l-1.5 4.5M13 5l-1.5 4.5M18 5l-1.5 4.5"/></svg>Movie theater</h3><ul><li data-spot="-118.39407,34.02311" role="button" tabindex="0" title="Show The Culver Theater on the map">The Culver Theater</li></ul></div><div class="hub-list" style="--tint:#FDE99B"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>Shopping centers</h3><ul><li data-spot="-118.39321,33.9856" role="button" tabindex="0" title="Show Westfield Culver City on the map">Westfield Culver City</li><li data-spot="-118.39333,34.0245" role="button" tabindex="0" title="Show The Culver Steps on the map">The Culver Steps</li></ul></div><div class="hub-list" style="--tint:#D1EEF9"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9 5.5 4h13L20 9"/><path d="M4 9a2.7 2.7 0 0 0 5.300 0 2.7 2.7 0 0 0 5.400 0A2.7 2.7 0 0 0 20 9M5.5 12v8h13v-8"/></svg>Market</h3><ul><li data-spot="-118.3944,34.02463" role="button" tabindex="0" title="Show Culver City Farmers&#x27; Market on the map">Culver City Farmers&#x27; Market</li></ul></div><div class="hub-list" style="--tint:#9BD8A9"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 19 6-10 4 6 2.5-3.5L21 19z"/><circle cx="17" cy="6" r="1.8"/></svg>Viewpoint</h3><ul><li data-spot="-118.38165,34.01777" role="button" tabindex="0" title="Show Baldwin Hills Scenic Overlook on the map">Baldwin Hills Scenic Overlook</li></ul></div><div class="hub-list" style="--tint:#B8CAF5"><h3><svg class="hub-ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5c2.7-1 5.300-1 8 .5v13c-2.7-1.5-5.300-1.5-8-.5zM20 5.5c-2.7-1-5.300-1-8 .5v13c2.7-1.5 5.300-1.5 8-.5z"/></svg>Library</h3><ul><li data-spot="-118.39702,34.00751" role="button" tabindex="0" title="Show Culver City Julian Dixon Library on the map">Culver City Julian Dixon Library</li></ul></div></div>
+  </div>
+</section>
+
+<!-- cityhub:end -->
 
 <section class="nbhd-why">
   <div class="nbhd-why-inner">
@@ -291,6 +400,16 @@
   </div>
 </section>
 
+<!-- cityhub:start -->
+<section class="hub-section hub-tight"><div class="hub-inner"><div class="hub-card hub-schools reveal">
+      <h3>8 public schools inside the Culver City limits</h3>
+      <div class="hub-sch"><div class="hub-sch-n" style="background:#FDE99B"><b>6</b><span><i class="hub-lvl hub-lvl-elementary"></i>Elementary</span></div><div class="hub-sch-n" style="background:#D1EEF9"><b>1</b><span><i class="hub-lvl hub-lvl-middle"></i>Middle</span></div><div class="hub-sch-n" style="background:#9BD8A9"><b>1</b><span><i class="hub-lvl hub-lvl-high"></i>High</span></div></div>
+      <p class="hub-sub"><b>Public high schools inside Culver City:</b> Culver City High.</p><p class="hub-sub"><b>School district:</b> Culver City Unified.</p>
+      <details class="hub-sch-all"><summary>See every school by name</summary><div class="hub-lists"><div class="hub-list" style="--tint:#FDE99B"><h3>Elementary</h3><ul><li>El Marino Elementary</li><li>El Rincon Elementary</li><li>Farragut Elementary</li><li>Grand View Boulevard Elementary</li><li>La Ballona Elementary</li><li>Linwood E. Howe Elementary</li></ul></div><div class="hub-list" style="--tint:#D1EEF9"><h3>Middle</h3><ul><li>Culver City Middle</li></ul></div><div class="hub-list" style="--tint:#9BD8A9"><h3>High</h3><ul><li>Culver City High</li></ul></div></div></details>
+      <p class="hub-fine">Counted from the California Department of Education school directory by each campus location. Which school a home is assigned to depends on the address, so confirm with the district before you buy.</p>
+    </div></div></section>
+<!-- cityhub:end -->
+
 <section class="cta-section cta-section-cal">
   <div class="cta-card cta-card-cal reveal">
     <iframe src="https://api.jtek.pro/widget/booking/28f2ayq3SHijgkHqCXwW" allow="payment" style="width:100%;border:none;overflow:hidden;min-height:720px" scrolling="no" id="28f2ayq3SHijgkHqCXwW_cta" title="Book a Call with Jesse"></iframe>
@@ -323,7 +442,7 @@
         </a>
     </div>
     <div style="text-align:center;margin-top:24px">
-      <a href="/service-areas" style="font-size:14px;color:var(--blue);font-weight:500;text-decoration:none">View all 42 SoCal cities I cover →</a>
+      <a href="/service-areas" style="font-size:14px;color:var(--blue);font-weight:500;text-decoration:none">See every city I cover on the map →</a>
     </div>
   </div>
 </section>
@@ -546,6 +665,7 @@
 }
 </script>
 
-<script src="/js/citypay.js?v=1" defer></script>
+<script src="/js/citypay.js?v=3" defer></script>
+<script src="/js/cityhub.js?v=2" defer></script>
 </body>
 </html>

@@ -1,2 +1,2 @@
 #!/bin/bash
-cd "$(dirname "$0")/public" && python3 -m http.server 8125
+cd "$(dirname "$0")" && python3 preview_server.py 8125

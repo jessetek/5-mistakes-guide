@@ -1,0 +1,702 @@
+{
+ "agoura-hills": {
+  "name": "Agoura Hills",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "alhambra": {
+  "name": "Alhambra",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "arcadia": {
+  "name": "Arcadia",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "artesia": {
+  "name": "Artesia",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "azusa": {
+  "name": "Azusa",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "baldwin-park": {
+  "name": "Baldwin Park",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "bell": {
+  "name": "Bell",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "bell-gardens": {
+  "name": "Bell Gardens",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "bellflower": {
+  "name": "Bellflower",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "beverly-hills": {
+  "name": "Beverly Hills",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "bradbury": {
+  "name": "Bradbury",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "burbank": {
+  "name": "Burbank",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "calabasas": {
+  "name": "Calabasas",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "carson": {
+  "name": "Carson",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "cerritos": {
+  "name": "Cerritos",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "claremont": {
+  "name": "Claremont",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "commerce": {
+  "name": "Commerce",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "compton": {
+  "name": "Compton",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "covina": {
+  "name": "Covina",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "cudahy": {
+  "name": "Cudahy",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "culver-city": {
+  "name": "Culver City",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "diamond-bar": {
+  "name": "Diamond Bar",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "downey": {
+  "name": "Downey",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "duarte": {
+  "name": "Duarte",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "el-monte": {
+  "name": "El Monte",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "el-segundo": {
+  "name": "El Segundo",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "gardena": {
+  "name": "Gardena",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "glendale": {
+  "name": "Glendale",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "glendora": {
+  "name": "Glendora",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "hawaiian-gardens": {
+  "name": "Hawaiian Gardens",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "hawthorne": {
+  "name": "Hawthorne",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "hermosa-beach": {
+  "name": "Hermosa Beach",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "hidden-hills": {
+  "name": "Hidden Hills",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "huntington-park": {
+  "name": "Huntington Park",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "industry": {
+  "name": "Industry",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "inglewood": {
+  "name": "Inglewood",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "irwindale": {
+  "name": "Irwindale",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "la-canada-flintridge": {
+  "name": "La Cañada Flintridge",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "la-habra-heights": {
+  "name": "La Habra Heights",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "la-mirada": {
+  "name": "La Mirada",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "la-puente": {
+  "name": "La Puente",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "la-verne": {
+  "name": "La Verne",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "lakewood": {
+  "name": "Lakewood",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "lawndale": {
+  "name": "Lawndale",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "lomita": {
+  "name": "Lomita",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "long-beach": {
+  "name": "Long Beach",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "los-angeles": {
+  "name": "Los Angeles",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "lynwood": {
+  "name": "Lynwood",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "malibu": {
+  "name": "Malibu",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "manhattan-beach": {
+  "name": "Manhattan Beach",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "maywood": {
+  "name": "Maywood",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "monrovia": {
+  "name": "Monrovia",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "montebello": {
+  "name": "Montebello",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "monterey-park": {
+  "name": "Monterey Park",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "norwalk": {
+  "name": "Norwalk",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "palos-verdes-estates": {
+  "name": "Palos Verdes Estates",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "paramount": {
+  "name": "Paramount",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "pasadena": {
+  "name": "Pasadena",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "pico-rivera": {
+  "name": "Pico Rivera",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "pomona": {
+  "name": "Pomona",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "rancho-palos-verdes": {
+  "name": "Rancho Palos Verdes",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "redondo-beach": {
+  "name": "Redondo Beach",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "rolling-hills": {
+  "name": "Rolling Hills",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "rolling-hills-estates": {
+  "name": "Rolling Hills Estates",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "rosemead": {
+  "name": "Rosemead",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "san-dimas": {
+  "name": "San Dimas",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "san-fernando": {
+  "name": "San Fernando",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "san-gabriel": {
+  "name": "San Gabriel",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "san-marino": {
+  "name": "San Marino",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "santa-clarita": {
+  "name": "Santa Clarita",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "santa-fe-springs": {
+  "name": "Santa Fe Springs",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "santa-monica": {
+  "name": "Santa Monica",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "sierra-madre": {
+  "name": "Sierra Madre",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "signal-hill": {
+  "name": "Signal Hill",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "south-el-monte": {
+  "name": "South El Monte",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "south-gate": {
+  "name": "South Gate",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "south-pasadena": {
+  "name": "South Pasadena",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "temple-city": {
+  "name": "Temple City",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "torrance": {
+  "name": "Torrance",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "vernon": {
+  "name": "Vernon",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "walnut": {
+  "name": "Walnut",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "west-covina": {
+  "name": "West Covina",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "west-hollywood": {
+  "name": "West Hollywood",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "westlake-village": {
+  "name": "Westlake Village",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "whittier": {
+  "name": "Whittier",
+  "county": "LA County",
+  "kind": "city"
+ },
+ "aliso-viejo": {
+  "name": "Aliso Viejo",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "anaheim": {
+  "name": "Anaheim",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "brea": {
+  "name": "Brea",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "buena-park": {
+  "name": "Buena Park",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "costa-mesa": {
+  "name": "Costa Mesa",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "cypress": {
+  "name": "Cypress",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "dana-point": {
+  "name": "Dana Point",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "fountain-valley": {
+  "name": "Fountain Valley",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "fullerton": {
+  "name": "Fullerton",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "garden-grove": {
+  "name": "Garden Grove",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "huntington-beach": {
+  "name": "Huntington Beach",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "irvine": {
+  "name": "Irvine",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "la-habra": {
+  "name": "La Habra",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "la-palma": {
+  "name": "La Palma",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "laguna-beach": {
+  "name": "Laguna Beach",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "laguna-hills": {
+  "name": "Laguna Hills",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "laguna-niguel": {
+  "name": "Laguna Niguel",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "laguna-woods": {
+  "name": "Laguna Woods",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "lake-forest": {
+  "name": "Lake Forest",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "los-alamitos": {
+  "name": "Los Alamitos",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "mission-viejo": {
+  "name": "Mission Viejo",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "newport-beach": {
+  "name": "Newport Beach",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "orange": {
+  "name": "Orange",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "placentia": {
+  "name": "Placentia",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "rancho-santa-margarita": {
+  "name": "Rancho Santa Margarita",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "san-clemente": {
+  "name": "San Clemente",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "san-juan-capistrano": {
+  "name": "San Juan Capistrano",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "santa-ana": {
+  "name": "Santa Ana",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "seal-beach": {
+  "name": "Seal Beach",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "stanton": {
+  "name": "Stanton",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "tustin": {
+  "name": "Tustin",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "villa-park": {
+  "name": "Villa Park",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "westminster": {
+  "name": "Westminster",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "yorba-linda": {
+  "name": "Yorba Linda",
+  "county": "Orange County",
+  "kind": "city"
+ },
+ "ontario": {
+  "name": "Ontario",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "chino": {
+  "name": "Chino",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "chino-hills": {
+  "name": "Chino Hills",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "montclair": {
+  "name": "Montclair",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "upland": {
+  "name": "Upland",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "rancho-cucamonga": {
+  "name": "Rancho Cucamonga",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "fontana": {
+  "name": "Fontana",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "rialto": {
+  "name": "Rialto",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "colton": {
+  "name": "Colton",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "san-bernardino": {
+  "name": "San Bernardino",
+  "county": "San Bernardino County",
+  "kind": "city"
+ },
+ "riverside": {
+  "name": "Riverside",
+  "county": "Riverside County",
+  "kind": "city"
+ },
+ "corona": {
+  "name": "Corona",
+  "county": "Riverside County",
+  "kind": "city"
+ },
+ "norco": {
+  "name": "Norco",
+  "county": "Riverside County",
+  "kind": "city"
+ },
+ "eastvale": {
+  "name": "Eastvale",
+  "county": "Riverside County",
+  "kind": "city"
+ },
+ "jurupa-valley": {
+  "name": "Jurupa Valley",
+  "county": "Riverside County",
+  "kind": "city"
+ },
+ "moreno-valley": {
+  "name": "Moreno Valley",
+  "county": "Riverside County",
+  "kind": "city"
+ },
+ "east-los-angeles": {
+  "name": "East Los Angeles",
+  "county": "LA County",
+  "kind": "cdp"
+ },
+ "south-whittier": {
+  "name": "South Whittier",
+  "county": "LA County",
+  "kind": "cdp"
+ },
+ "hacienda-heights": {
+  "name": "Hacienda Heights",
+  "county": "LA County",
+  "kind": "cdp"
+ },
+ "rowland-heights": {
+  "name": "Rowland Heights",
+  "county": "LA County",
+  "kind": "cdp"
+ },
+ "sherman-oaks": {
+  "name": "Sherman Oaks",
+  "county": "LA County",
+  "kind": "neighborhood"
+ }
+}

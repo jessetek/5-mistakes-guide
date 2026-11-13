@@ -18,14 +18,15 @@
     var city = box.getAttribute('data-city') || 'this city';
     var median = parseInt(box.getAttribute('data-median'), 10) || 800000;
     var rate = live && live.current ? live.current : FALLBACK_RATE;
-    var min = Math.round(median * 0.55 / 1000) * 1000;
-    var max = Math.round(median * 1.6 / 1000) * 1000;
+    var lo = parseInt(box.getAttribute('data-min'), 10), hi = parseInt(box.getAttribute('data-max'), 10);
+    var min = Math.round(Math.min(median * 0.55, lo || 1e12) * 0.97 / 1000) * 1000;
+    var max = Math.round(Math.max(median * 1.6, hi || 0) * 1.03 / 1000) * 1000;
 
     box.innerHTML =
       '<div class="cp-controls">' +
         '<label class="cp-field"><span class="cp-label">Home price <b class="cp-val" data-o="price"></b></span>' +
           '<input type="range" class="cp-range" data-i="price" min="' + min + '" max="' + max + '" step="1000" value="' + median + '">' +
-          '<span class="cp-hint">' + city + ' median is ' + short(median) + '</span></label>' +
+          '<span class="cp-hint">' + city + ' ' + (box.getAttribute('data-label') || 'median') + ' is ' + short(median) + '</span></label>' +
         '<label class="cp-field"><span class="cp-label">Down payment <b class="cp-val" data-o="down"></b></span>' +
           '<input type="range" class="cp-range" data-i="down" min="3" max="30" step="1" value="10">' +
           '<span class="cp-hint" data-o="downhint"></span></label>' +
@@ -41,6 +42,7 @@
           '<li><i class="cp-k cp-k-ins"></i><span>Home insurance</span><b data-o="ins"></b></li>' +
           '<li data-row="pmi"><i class="cp-k cp-k-pmi"></i><span>Mortgage insurance</span><b data-o="pmi"></b></li>' +
         '</ul>' +
+        '<p class="cp-income" data-o="income"></p>' +
         '<a class="cp-cta" href="/zoom">Get my real number</a>' +
         '<p class="cp-fine">An estimate, not a quote. Tax about 1.2% and insurance about 0.22% of the price per year. Mortgage insurance about 0.5% of the loan per year under 20% down. No HOA or Mello-Roos.</p>' +
       '</div>';
@@ -72,7 +74,15 @@
       b.pi.style.flexGrow = pi; b.tax.style.flexGrow = tax; b.ins.style.flexGrow = ins; b.pmi.style.flexGrow = pmi;
       b.pmi.style.display = pmi ? '' : 'none';
       fill(iPrice); fill(iDown);
+      // plain arithmetic, no advice: the income at which this payment is 36% of gross pay
+      o.income.textContent = 'This payment is 36% of a household income of about ' + money(total / 0.36 * 12 / 1000) + 'K a year.';
+      box.dispatchEvent(new CustomEvent('citypay:update', { bubbles: true, detail: { total: total, price: price, down: pct, rate: rate } }));
     }
+    // another block on the page can load a price into the tool (the bedroom rows do)
+    box.addEventListener('citypay:set', function (e) {
+      var v = Math.max(+iPrice.min, Math.min(+iPrice.max, Math.round(e.detail.price / 1000) * 1000));
+      iPrice.value = v; calc();
+    });
     iPrice.addEventListener('input', calc);
     iDown.addEventListener('input', calc);
     calc();

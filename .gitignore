@@ -6,3 +6,11 @@ node_modules/
 _fonts/
 # Local automation logs (untracked output)
 automation/logs/
+
+# Not for the public repo: client closings, raw download caches, logs
+soldmap/
+servicemap/places_raw/
+servicemap/*.log
+servicemap/__pycache__/
+servicemap/commons_candidates.json
+servicemap/place_photos_lookup.json

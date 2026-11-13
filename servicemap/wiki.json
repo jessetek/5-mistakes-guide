@@ -1,0 +1,960 @@
+{
+ "alhambra": {
+  "title": "Alhambra, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Alhambra%2C_California",
+  "short": "City in California, United States",
+  "named_after": "Alhambra",
+  "elevation_m": 150
+ },
+ "aliso-viejo": {
+  "title": "Aliso Viejo, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Aliso_Viejo%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 410
+ },
+ "altadena": {
+  "title": "Altadena, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Altadena%2C_California",
+  "short": "Unincorporated community in California, United States",
+  "founded": 1887,
+  "elevation_m": 1358
+ },
+ "anaheim": {
+  "title": "Anaheim, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Anaheim%2C_California",
+  "short": "City in California, United States",
+  "founded": 1857,
+  "elevation_m": 157
+ },
+ "arcadia": {
+  "title": "Arcadia, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Arcadia%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 147
+ },
+ "artesia": {
+  "title": "Artesia, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Artesia%2C_California",
+  "short": "City in California, United States",
+  "founded": 1875,
+  "elevation_m": 52
+ },
+ "azusa": {
+  "title": "Azusa, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Azusa%2C_California",
+  "short": "City in California, United States",
+  "founded": 1887,
+  "elevation_m": 610
+ },
+ "baldwin-park": {
+  "title": "Baldwin Park, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Baldwin_Park%2C_California",
+  "short": "City in California, United States",
+  "founded": 1880,
+  "elevation_m": 114
+ },
+ "bell": {
+  "title": "Bell, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Bell%2C_California",
+  "short": "City in California, United States",
+  "founded": 1913,
+  "elevation_m": 43
+ },
+ "bell-gardens": {
+  "title": "Bell Gardens, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Bell_Gardens%2C_California",
+  "short": "City in California, United States",
+  "founded": 1961,
+  "elevation_m": 37
+ },
+ "bellflower": {
+  "title": "Bellflower, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Bellflower%2C_California",
+  "short": "City in California, United States",
+  "founded": 1957,
+  "elevation_m": 22
+ },
+ "beverly-hills": {
+  "title": "Beverly Hills, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Beverly_Hills%2C_California",
+  "short": "City in California, United States",
+  "nickname": "Garden Spot of the World",
+  "named_after": "Beverly Farms",
+  "elevation_m": 79
+ },
+ "bradbury": {
+  "title": "Bradbury, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Bradbury%2C_California",
+  "short": "City in California, United States",
+  "founded": 1957,
+  "elevation_m": 206
+ },
+ "brea": {
+  "title": "Brea, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Brea%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 110
+ },
+ "buena-park": {
+  "title": "Buena Park, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Buena_Park%2C_California",
+  "short": "City in California, United States",
+  "founded": 1887,
+  "elevation_m": 23
+ },
+ "burbank": {
+  "title": "Burbank, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Burbank%2C_California",
+  "short": "City in the United States",
+  "founded": 1887,
+  "named_after": "David Burbank",
+  "elevation_m": 607
+ },
+ "calabasas": {
+  "title": "Calabasas, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Calabasas%2C_California",
+  "short": "City in California, United States",
+  "founded": 1991,
+  "elevation_m": 283
+ },
+ "carson": {
+  "title": "Carson, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Carson%2C_California",
+  "short": "City in California, United States",
+  "founded": 1968,
+  "elevation_m": 12
+ },
+ "cerritos": {
+  "title": "Cerritos, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Cerritos%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 46
+ },
+ "chino": {
+  "title": "Chino, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Chino%2C_California",
+  "short": "City in California, United States",
+  "founded": 1910,
+  "elevation_m": 222
+ },
+ "chino-hills": {
+  "title": "Chino Hills, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Chino_Hills%2C_California",
+  "short": "City in California, United States",
+  "founded": 1991,
+  "named_after": "Chino Hills",
+  "elevation_m": 262
+ },
+ "claremont": {
+  "title": "Claremont, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Claremont%2C_California",
+  "short": "City in California, United States",
+  "named_after": "Claremont",
+  "elevation_m": 1168
+ },
+ "commerce": {
+  "title": "Commerce, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Commerce%2C_California",
+  "short": "City in California, United States",
+  "founded": 1960,
+  "elevation_m": 43
+ },
+ "compton": {
+  "title": "Compton, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Compton%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 69
+ },
+ "corona": {
+  "title": "Corona, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Corona%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 679
+ },
+ "costa-mesa": {
+  "title": "Costa Mesa, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Costa_Mesa%2C_California",
+  "short": "City in California, United States",
+  "founded": 1776,
+  "elevation_m": 30
+ },
+ "covina": {
+  "title": "Covina, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Covina%2C_California",
+  "short": "City in California, United States",
+  "founded": 1882,
+  "elevation_m": 558
+ },
+ "cudahy": {
+  "title": "Cudahy, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Cudahy%2C_California",
+  "short": "City in California, United States",
+  "founded": 1960,
+  "elevation_m": 37
+ },
+ "culver-city": {
+  "title": "Culver City, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Culver_City%2C_California",
+  "short": "City in California, United States",
+  "named_after": "Harry Culver",
+  "elevation_m": 95
+ },
+ "cypress": {
+  "title": "Cypress, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Cypress%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 12
+ },
+ "dana-point": {
+  "title": "Dana Point, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Dana_Point%2C_California",
+  "short": "City in California, United States",
+  "founded": 1989,
+  "elevation_m": 44
+ },
+ "diamond-bar": {
+  "title": "Diamond Bar, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Diamond_Bar%2C_California",
+  "short": "City in Los Angeles County, California, US",
+  "founded": 1989,
+  "elevation_m": 696
+ },
+ "downey": {
+  "title": "Downey, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Downey%2C_California",
+  "short": "City in California, United States",
+  "founded": 1873,
+  "named_after": "John G. Downey",
+  "elevation_m": 36
+ },
+ "duarte": {
+  "title": "Duarte, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Duarte%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 156
+ },
+ "east-los-angeles": {
+  "title": "East Los Angeles, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/East_Los_Angeles%2C_California",
+  "short": "Unincorporated community in California, United States",
+  "elevation_m": 61
+ },
+ "east-rancho-dominguez": {
+  "title": "East Rancho Dominguez, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/East_Rancho_Dominguez%2C_California",
+  "short": "Unincorporated community in California, United States",
+  "elevation_m": 22
+ },
+ "east-san-gabriel": {
+  "title": "East San Gabriel, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/East_San_Gabriel%2C_California",
+  "short": "Place in California, United States",
+  "elevation_m": 115
+ },
+ "eastvale": {
+  "title": "Eastvale, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Eastvale%2C_California",
+  "short": "City in California, United States",
+  "founded": 2010,
+  "elevation_m": 191
+ },
+ "el-monte": {
+  "title": "El Monte, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/El_Monte%2C_California",
+  "short": "City in California, United States",
+  "founded": 1852,
+  "elevation_m": 91
+ },
+ "florence-graham": {
+  "title": "Florence-Graham, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Florence-Graham%2C_California",
+  "short": "Census-designated place in Los Angeles County, California, United States",
+  "elevation_m": 144
+ },
+ "fountain-valley": {
+  "title": "Fountain Valley, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Fountain_Valley%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 10
+ },
+ "fullerton": {
+  "title": "Fullerton, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Fullerton%2C_California",
+  "short": "City in California, United States",
+  "founded": 1887,
+  "named_after": "George H. Fullerton",
+  "elevation_m": 50
+ },
+ "garden-grove": {
+  "title": "Garden Grove, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Garden_Grove%2C_California",
+  "short": "City in California, U.S.",
+  "founded": 1874,
+  "elevation_m": 27
+ },
+ "gardena": {
+  "title": "Gardena, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Gardena%2C_California",
+  "short": "City in California, United States",
+  "founded": 1930,
+  "elevation_m": 15
+ },
+ "glendale": {
+  "title": "Glendale, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Glendale%2C_California",
+  "short": "City in California, United States",
+  "founded": 1884,
+  "elevation_m": 522
+ },
+ "glendora": {
+  "title": "Glendora, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Glendora%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 236
+ },
+ "hacienda-heights": {
+  "title": "Hacienda Heights, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Hacienda_Heights%2C_California",
+  "short": "Place in California, United States",
+  "elevation_m": 138
+ },
+ "hawaiian-gardens": {
+  "title": "Hawaiian Gardens, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Hawaiian_Gardens%2C_California",
+  "short": "City in California, United States",
+  "founded": 1920,
+  "elevation_m": 33
+ },
+ "hawthorne": {
+  "title": "Hawthorne, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Hawthorne%2C_California",
+  "short": "City in California, United States",
+  "founded": 1922,
+  "named_after": "Nathaniel Hawthorne",
+  "elevation_m": 72
+ },
+ "hermosa-beach": {
+  "title": "Hermosa Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Hermosa_Beach%2C_California",
+  "short": "City in California, United States",
+  "founded": 1907,
+  "elevation_m": 8
+ },
+ "huntington-beach": {
+  "title": "Huntington Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Huntington_Beach%2C_California",
+  "short": "City in California, United States",
+  "named_after": "Henry E. Huntington",
+  "elevation_m": 39
+ },
+ "huntington-park": {
+  "title": "Huntington Park, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Huntington_Park%2C_California",
+  "short": "City in California, United States",
+  "founded": 1906,
+  "elevation_m": 171
+ },
+ "industry": {
+  "title": "City of Industry, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/City_of_Industry%2C_California",
+  "short": "City in the United States",
+  "named_after": "secondary sector of the economy",
+  "elevation_m": 322
+ },
+ "inglewood": {
+  "title": "Inglewood, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Inglewood%2C_California",
+  "short": "City in California, United States",
+  "founded": 1888,
+  "elevation_m": 40
+ },
+ "irvine": {
+  "title": "Irvine, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Irvine%2C_California",
+  "short": "City in Orange County, California, US",
+  "founded": 1971,
+  "named_after": "James Harvey Irvine, Sr.",
+  "elevation_m": 56
+ },
+ "irwindale": {
+  "title": "Irwindale, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Irwindale%2C_California",
+  "short": "City in California, United States",
+  "founded": 1860,
+  "elevation_m": 143
+ },
+ "jurupa-valley": {
+  "title": "Jurupa Valley, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Jurupa_Valley%2C_California",
+  "short": "City in California, United States",
+  "founded": 2011,
+  "elevation_m": 477
+ },
+ "la-canada-flintridge": {
+  "title": "La Cañada Flintridge, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Ca%C3%B1ada_Flintridge%2C_California",
+  "short": "City in California, United States",
+  "founded": 1976,
+  "elevation_m": 362
+ },
+ "la-crescenta-montrose": {
+  "title": "La Crescenta-Montrose, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Crescenta-Montrose%2C_California",
+  "short": "Unincorporated community in California, United States",
+  "elevation_m": 469
+ },
+ "la-habra": {
+  "title": "La Habra, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Habra%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 91
+ },
+ "la-habra-heights": {
+  "title": "La Habra Heights, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Habra_Heights%2C_California",
+  "short": "City in California, United States",
+  "founded": 1978,
+  "elevation_m": 225
+ },
+ "la-mirada": {
+  "title": "La Mirada, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Mirada%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 59
+ },
+ "la-palma": {
+  "title": "La Palma, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Palma%2C_California",
+  "short": "City in California, United States",
+  "founded": 1955,
+  "elevation_m": 14
+ },
+ "la-puente": {
+  "title": "La Puente, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Puente%2C_California",
+  "short": "City in California, United States",
+  "founded": 1956,
+  "elevation_m": 107
+ },
+ "la-verne": {
+  "title": "La Verne, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/La_Verne%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 323
+ },
+ "ladera-ranch": {
+  "title": "Ladera Ranch, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Ladera_Ranch%2C_California",
+  "short": "Census-designated place in California, United States",
+  "founded": 1999,
+  "elevation_m": 404
+ },
+ "laguna-beach": {
+  "title": "Laguna Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Laguna_Beach%2C_California",
+  "short": "City in the United States",
+  "founded": 1887,
+  "elevation_m": 6
+ },
+ "laguna-hills": {
+  "title": "Laguna Hills, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Laguna_Hills%2C_California",
+  "short": "City in California, United States",
+  "founded": 1991,
+  "elevation_m": 364
+ },
+ "laguna-niguel": {
+  "title": "Laguna Niguel, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Laguna_Niguel%2C_California",
+  "short": "City in California, United States",
+  "founded": 1989,
+  "elevation_m": 400
+ },
+ "laguna-woods": {
+  "title": "Laguna Woods, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Laguna_Woods%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 381
+ },
+ "lake-forest": {
+  "title": "Lake Forest, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Lake_Forest%2C_California",
+  "short": "City in California, United States",
+  "founded": 1991,
+  "elevation_m": 148
+ },
+ "lakewood": {
+  "title": "Lakewood, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Lakewood%2C_California",
+  "short": "City in California, United States",
+  "founded": 1954,
+  "elevation_m": 14
+ },
+ "lawndale": {
+  "title": "Lawndale, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Lawndale%2C_California",
+  "short": "City in California, United States",
+  "founded": 1959,
+  "elevation_m": 18
+ },
+ "lennox": {
+  "title": "Lennox, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Lennox%2C_California",
+  "short": "Census-designated place in California, United States",
+  "elevation_m": 22
+ },
+ "lomita": {
+  "title": "Lomita, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Lomita%2C_California",
+  "short": "City in California, United States",
+  "founded": 1964,
+  "elevation_m": 95
+ },
+ "long-beach": {
+  "title": "Long Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Long_Beach%2C_California",
+  "short": "City in California, United States",
+  "founded": 1888,
+  "elevation_m": 30
+ },
+ "los-alamitos": {
+  "title": "Los Alamitos, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Los_Alamitos%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 7
+ },
+ "los-angeles": {
+  "title": "Los Angeles",
+  "wiki_url": "https://en.wikipedia.org/wiki/Los_Angeles",
+  "short": "Most populous city in California, US",
+  "founded": 1781,
+  "nickname": "City of Angels",
+  "named_after": "Queen of Heaven",
+  "elevation_m": 106
+ },
+ "lynwood": {
+  "title": "Lynwood, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Lynwood%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 92
+ },
+ "manhattan-beach": {
+  "title": "Manhattan Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Manhattan_Beach%2C_California",
+  "short": "City in California, United States",
+  "founded": 1912,
+  "elevation_m": 66
+ },
+ "maywood": {
+  "title": "Maywood, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Maywood%2C_California",
+  "short": "City in California, United States",
+  "founded": 1924,
+  "elevation_m": 46
+ },
+ "mission-viejo": {
+  "title": "Mission Viejo, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Mission_Viejo%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 171
+ },
+ "monrovia": {
+  "title": "Monrovia, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Monrovia%2C_California",
+  "short": "City in the United States",
+  "elevation_m": 174
+ },
+ "montclair": {
+  "title": "Montclair, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Montclair%2C_California",
+  "short": "City in California, United States",
+  "founded": 1956,
+  "elevation_m": 325
+ },
+ "montebello": {
+  "title": "Montebello, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Montebello%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 61
+ },
+ "monterey-park": {
+  "title": "Monterey Park, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Monterey_Park%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 117
+ },
+ "newport-beach": {
+  "title": "Newport Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Newport_Beach%2C_California",
+  "short": "City in California, United States",
+  "founded": 1870,
+  "elevation_m": 10
+ },
+ "norco": {
+  "title": "Norco, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Norco%2C_California",
+  "short": "City in California, United States",
+  "founded": 1964,
+  "elevation_m": 195
+ },
+ "north-tustin": {
+  "title": "North Tustin, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/North_Tustin%2C_California",
+  "short": "Place in California, United States",
+  "elevation_m": 256
+ },
+ "norwalk": {
+  "title": "Norwalk, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Norwalk%2C_California",
+  "short": "City in California, United States",
+  "founded": 1957,
+  "elevation_m": 92
+ },
+ "ontario": {
+  "title": "Ontario, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Ontario%2C_California",
+  "short": "City in California, United States",
+  "named_after": "Ontario",
+  "elevation_m": 306
+ },
+ "orange": {
+  "title": "Orange, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Orange%2C_California",
+  "short": "City in California, United States",
+  "founded": 1869,
+  "elevation_m": 58
+ },
+ "paramount": {
+  "title": "Paramount, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Paramount%2C_California",
+  "short": "City in California, United States",
+  "founded": 1957,
+  "elevation_m": 21
+ },
+ "pasadena": {
+  "title": "Pasadena, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Pasadena%2C_California",
+  "short": "City in California, United States",
+  "founded": 1886,
+  "elevation_m": 263
+ },
+ "pico-rivera": {
+  "title": "Pico Rivera, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Pico_Rivera%2C_California",
+  "short": "City in California, United States",
+  "founded": 1958,
+  "elevation_m": 50
+ },
+ "placentia": {
+  "title": "Placentia, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Placentia%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 83
+ },
+ "pomona": {
+  "title": "Pomona, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Pomona%2C_California",
+  "short": "City in California, United States",
+  "founded": 1888,
+  "named_after": "Pomona",
+  "elevation_m": 259
+ },
+ "rancho-cucamonga": {
+  "title": "Rancho Cucamonga, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Rancho_Cucamonga%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 368
+ },
+ "rancho-santa-margarita": {
+  "title": "Rancho Santa Margarita, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Rancho_Santa_Margarita%2C_California",
+  "short": "City in California, United States",
+  "founded": 2000,
+  "elevation_m": 282
+ },
+ "redondo-beach": {
+  "title": "Redondo Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Redondo_Beach%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 62
+ },
+ "rolling-hills": {
+  "title": "Rolling Hills, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Rolling_Hills%2C_California",
+  "short": "City in California, United States"
+ },
+ "rolling-hills-estates": {
+  "title": "Rolling Hills Estates, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Rolling_Hills_Estates%2C_California",
+  "short": "City in California, United States",
+  "founded": 1957,
+  "elevation_m": 143
+ },
+ "rosemead": {
+  "title": "Rosemead, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Rosemead%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 97
+ },
+ "rowland-heights": {
+  "title": "Rowland Heights, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Rowland_Heights%2C_California",
+  "short": "Census-designated place in California, United States",
+  "elevation_m": 525
+ },
+ "san-clemente": {
+  "title": "San Clemente, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/San_Clemente%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 71
+ },
+ "san-dimas": {
+  "title": "San Dimas, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/San_Dimas%2C_California",
+  "short": "City in California, United States",
+  "founded": 1960,
+  "elevation_m": 291
+ },
+ "san-gabriel": {
+  "title": "San Gabriel, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/San_Gabriel%2C_California",
+  "short": "City in California, United States"
+ },
+ "san-juan-capistrano": {
+  "title": "San Juan Capistrano, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/San_Juan_Capistrano%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 36
+ },
+ "san-marino": {
+  "title": "San Marino, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/San_Marino%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 564
+ },
+ "santa-ana": {
+  "title": "Santa Ana, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Santa_Ana%2C_California",
+  "short": "City in California, United States",
+  "founded": 1869,
+  "named_after": "Saint Anne",
+  "elevation_m": 35
+ },
+ "santa-fe-springs": {
+  "title": "Santa Fe Springs, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Santa_Fe_Springs%2C_California",
+  "short": "City in California, United States",
+  "founded": 1957,
+  "elevation_m": 41
+ },
+ "santa-monica": {
+  "title": "Santa Monica, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Santa_Monica%2C_California",
+  "short": "Coastal city in Los Angeles County, California",
+  "founded": 1769,
+  "named_after": "Monica of Hippo",
+  "elevation_m": 32
+ },
+ "seal-beach": {
+  "title": "Seal Beach, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Seal_Beach%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 4
+ },
+ "sherman-oaks": {
+  "title": "Sherman Oaks, Los Angeles",
+  "wiki_url": "https://en.wikipedia.org/wiki/Sherman_Oaks%2C_Los_Angeles",
+  "short": "Neighborhood of Los Angeles in California, United States",
+  "founded": 1927,
+  "elevation_m": 202
+ },
+ "sierra-madre": {
+  "title": "Sierra Madre, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Sierra_Madre%2C_California",
+  "short": "City in California, United States",
+  "founded": 1907,
+  "elevation_m": 252
+ },
+ "signal-hill": {
+  "title": "Signal Hill, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Signal_Hill%2C_California",
+  "short": "City in California, United States",
+  "founded": 1924,
+  "elevation_m": 45
+ },
+ "south-el-monte": {
+  "title": "South El Monte, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/South_El_Monte%2C_California",
+  "short": "City in California, United States",
+  "founded": 1958,
+  "elevation_m": 76
+ },
+ "south-gate": {
+  "title": "South Gate, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/South_Gate%2C_California",
+  "short": "City in California, United States",
+  "founded": 1923,
+  "elevation_m": 35
+ },
+ "south-pasadena": {
+  "title": "South Pasadena, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/South_Pasadena%2C_California",
+  "short": "City in California, United States",
+  "founded": 1888,
+  "elevation_m": 659
+ },
+ "south-san-jose-hills": {
+  "title": "South San Jose Hills, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/South_San_Jose_Hills%2C_California",
+  "short": "Census-designated place in California, United States",
+  "elevation_m": 127
+ },
+ "south-whittier": {
+  "title": "South Whittier, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/South_Whittier%2C_California",
+  "short": "Place in California, United States",
+  "elevation_m": 54
+ },
+ "stanton": {
+  "title": "Stanton, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Stanton%2C_California",
+  "short": "City in California, United States",
+  "founded": 1956,
+  "elevation_m": 20
+ },
+ "temescal-valley": {
+  "title": "Temescal Valley, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Temescal_Valley%2C_California",
+  "short": "Census-designated place in California, United States",
+  "elevation_m": 1138
+ },
+ "temple-city": {
+  "title": "Temple City, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Temple_City%2C_California",
+  "short": "City in California, United States",
+  "founded": 1923,
+  "named_after": "Walter P. Temple",
+  "elevation_m": 122
+ },
+ "torrance": {
+  "title": "Torrance, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Torrance%2C_California",
+  "short": "City in Los Angeles County, California, US",
+  "named_after": "Jared Sidney Torrance",
+  "elevation_m": 27
+ },
+ "tustin": {
+  "title": "Tustin, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Tustin%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 42
+ },
+ "upland": {
+  "title": "Upland, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Upland%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 1237
+ },
+ "valinda": {
+  "title": "Valinda, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Valinda%2C_California",
+  "short": "Census-designated place in California, United States",
+  "elevation_m": 106
+ },
+ "vernon": {
+  "title": "Vernon, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Vernon%2C_California",
+  "short": "City in California, United States",
+  "founded": 1905,
+  "elevation_m": 203
+ },
+ "villa-park": {
+  "title": "Villa Park, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Villa_Park%2C_California",
+  "short": "City in California, United States",
+  "founded": 1962,
+  "elevation_m": 104
+ },
+ "vincent": {
+  "title": "Vincent, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Vincent%2C_California",
+  "short": "Census-designated place in California, United States",
+  "named_after": "Vincent Avenue",
+  "elevation_m": 983
+ },
+ "walnut": {
+  "title": "Walnut, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Walnut%2C_California",
+  "short": "City in California, United States",
+  "founded": 1959,
+  "elevation_m": 171
+ },
+ "walnut-park": {
+  "title": "Walnut Park, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Walnut_Park%2C_California",
+  "short": "Census-designated place in Los Angeles County, California, United States",
+  "elevation_m": 45
+ },
+ "west-carson": {
+  "title": "West Carson, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/West_Carson%2C_California",
+  "short": "Unincorporated community in California, United States",
+  "elevation_m": 13
+ },
+ "west-covina": {
+  "title": "West Covina, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/West_Covina%2C_California",
+  "short": "City in California, United States",
+  "elevation_m": 117
+ },
+ "west-puente-valley": {
+  "title": "West Puente Valley, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/West_Puente_Valley%2C_California",
+  "short": "Census-designated place in California, United States",
+  "elevation_m": 98
+ },
+ "west-rancho-dominguez": {
+  "title": "West Rancho Dominguez, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/West_Rancho_Dominguez%2C_California",
+  "short": "Unincorporated community in California, United States",
+  "elevation_m": 25
+ },
+ "west-whittier-los-nietos": {
+  "title": "West Whittier-Los Nietos, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/West_Whittier-Los_Nietos%2C_California",
+  "short": "Census-designated place in California, United States"
+ },
+ "westminster": {
+  "title": "Westminster, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Westminster%2C_California",
+  "short": "City in California, United States",
+  "founded": 1870,
+  "elevation_m": 12
+ },
+ "westmont": {
+  "title": "Westmont, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Westmont%2C_California",
+  "short": "Place in California, United States",
+  "elevation_m": 66
+ },
+ "whittier": {
+  "title": "Whittier, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Whittier%2C_California",
+  "short": "City in California, United States",
+  "named_after": "John Greenleaf Whittier",
+  "elevation_m": 367
+ },
+ "willowbrook": {
+  "title": "Willowbrook, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Willowbrook%2C_California",
+  "short": "Unincorporated community in the United States",
+  "elevation_m": 29
+ },
+ "yorba-linda": {
+  "title": "Yorba Linda, California",
+  "wiki_url": "https://en.wikipedia.org/wiki/Yorba_Linda%2C_California",
+  "short": "City in California, United States",
+  "founded": 1967,
+  "elevation_m": 381
+ }
+}

@@ -41,7 +41,7 @@ TODAY = dt.date.today()
 DASH = re.compile(r'—|–|&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;', re.I)
 BANNED = [
     (re.compile(r'bilingual|biling[üu]e|espa[ñn]ol|habla|se habla|spanish[- ]speaking', re.I), 'never promote bilingual / Spanish (Jesse, 2026-10-02)'),
-    (re.compile(r'wilcox|830 N', re.I), 'old office address, never use'),
+    (re.compile(r'wilcox\s+(ave|av\b|st\b)|\bn\.?\s+wilcox|830 N', re.I), 'old office address, never use'),   # the street, not Wilcox Elementary (a real Montebello school)
     (re.compile(r'AggregateRating', re.I), 'no self-serving review schema'),
     (re.compile(r'\bguarantee(d)?\b', re.I), 'no guarantees in real estate copy'),
     (re.compile(r'\b(as an AI|in today\'s fast-paced|delve|tapestry|navigating the complexities|it\'s important to note)\b', re.I), 'reads AI-written'),

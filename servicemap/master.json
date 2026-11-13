@@ -1,0 +1,1094 @@
+{
+ "hawaiian-gardens": {
+  "name": "Hawaiian Gardens",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0632506",
+  "pop2020": 14149,
+  "in_frame": 1.0
+ },
+ "cudahy": {
+  "name": "Cudahy",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0617498",
+  "pop2020": 22811,
+  "in_frame": 1.0
+ },
+ "maywood": {
+  "name": "Maywood",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0646492",
+  "pop2020": 25138,
+  "in_frame": 1.0
+ },
+ "artesia": {
+  "name": "Artesia",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0602896",
+  "pop2020": 16395,
+  "in_frame": 1.0
+ },
+ "la-palma": {
+  "name": "La Palma",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0640256",
+  "pop2020": 15581,
+  "in_frame": 1.0
+ },
+ "lomita": {
+  "name": "Lomita",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0642468",
+  "pop2020": 20921,
+  "in_frame": 1.0
+ },
+ "bradbury": {
+  "name": "Bradbury",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0607946",
+  "pop2020": 921,
+  "in_frame": 1.0
+ },
+ "lawndale": {
+  "name": "Lawndale",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0640886",
+  "pop2020": 31807,
+  "in_frame": 0.99
+ },
+ "villa-park": {
+  "name": "Villa Park",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0682744",
+  "pop2020": 5843,
+  "in_frame": 1.0
+ },
+ "signal-hill": {
+  "name": "Signal Hill",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0671876",
+  "pop2020": 11848,
+  "in_frame": 1.0
+ },
+ "bell-gardens": {
+  "name": "Bell Gardens",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0604996",
+  "pop2020": 39501,
+  "in_frame": 1.0
+ },
+ "bell": {
+  "name": "Bell",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0604870",
+  "pop2020": 33559,
+  "in_frame": 1.0
+ },
+ "south-el-monte": {
+  "name": "South El Monte",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0672996",
+  "pop2020": 19567,
+  "in_frame": 1.0
+ },
+ "stanton": {
+  "name": "Stanton",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0673962",
+  "pop2020": 37962,
+  "in_frame": 1.0
+ },
+ "rolling-hills": {
+  "name": "Rolling Hills",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0662602",
+  "pop2020": 1739,
+  "in_frame": 1.0
+ },
+ "sierra-madre": {
+  "name": "Sierra Madre",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0671806",
+  "pop2020": 11268,
+  "in_frame": 1.0
+ },
+ "huntington-park": {
+  "name": "Huntington Park",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0636056",
+  "pop2020": 54883,
+  "in_frame": 1.0
+ },
+ "south-pasadena": {
+  "name": "South Pasadena",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0673220",
+  "pop2020": 26943,
+  "in_frame": 1.0
+ },
+ "laguna-woods": {
+  "name": "Laguna Woods",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0639259",
+  "pop2020": 17644,
+  "in_frame": 1.0
+ },
+ "rolling-hills-estates": {
+  "name": "Rolling Hills Estates",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0662644",
+  "pop2020": 8280,
+  "in_frame": 0.69
+ },
+ "la-puente": {
+  "name": "La Puente",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0640340",
+  "pop2020": 38062,
+  "in_frame": 1.0
+ },
+ "san-marino": {
+  "name": "San Marino",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0668224",
+  "pop2020": 12513,
+  "in_frame": 1.0
+ },
+ "los-alamitos": {
+  "name": "Los Alamitos",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0643224",
+  "pop2020": 11780,
+  "in_frame": 1.0
+ },
+ "temple-city": {
+  "name": "Temple City",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0678148",
+  "pop2020": 36494,
+  "in_frame": 1.0
+ },
+ "san-gabriel": {
+  "name": "San Gabriel",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0667042",
+  "pop2020": 39568,
+  "in_frame": 1.0
+ },
+ "paramount": {
+  "name": "Paramount",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0655618",
+  "pop2020": 53733,
+  "in_frame": 1.0
+ },
+ "vernon": {
+  "name": "Vernon",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0682422",
+  "pop2020": 222,
+  "in_frame": 1.0
+ },
+ "lynwood": {
+  "name": "Lynwood",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0644574",
+  "pop2020": 67265,
+  "in_frame": 1.0
+ },
+ "rosemead": {
+  "name": "Rosemead",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0662896",
+  "pop2020": 51185,
+  "in_frame": 1.0
+ },
+ "montclair": {
+  "name": "Montclair",
+  "county": "San Bernardino County",
+  "kind": "city",
+  "geoid": "0648788",
+  "pop2020": 37865,
+  "in_frame": 1.0
+ },
+ "bellflower": {
+  "name": "Bellflower",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0604982",
+  "pop2020": 79190,
+  "in_frame": 1.0
+ },
+ "hawthorne": {
+  "name": "Hawthorne",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0632548",
+  "pop2020": 88083,
+  "in_frame": 0.85
+ },
+ "la-habra-heights": {
+  "name": "La Habra Heights",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0639304",
+  "pop2020": 5682,
+  "in_frame": 1.0
+ },
+ "gardena": {
+  "name": "Gardena",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0628168",
+  "pop2020": 61027,
+  "in_frame": 1.0
+ },
+ "cypress": {
+  "name": "Cypress",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0617750",
+  "pop2020": 50151,
+  "in_frame": 1.0
+ },
+ "baldwin-park": {
+  "name": "Baldwin Park",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0603666",
+  "pop2020": 72176,
+  "in_frame": 1.0
+ },
+ "commerce": {
+  "name": "Commerce",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0614974",
+  "pop2020": 12378,
+  "in_frame": 1.0
+ },
+ "dana-point": {
+  "name": "Dana Point",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0617946",
+  "pop2020": 33107,
+  "in_frame": 1.0
+ },
+ "laguna-hills": {
+  "name": "Laguna Hills",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0639220",
+  "pop2020": 31374,
+  "in_frame": 1.0
+ },
+ "covina": {
+  "name": "Covina",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0616742",
+  "pop2020": 51268,
+  "in_frame": 1.0
+ },
+ "south-gate": {
+  "name": "South Gate",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0673080",
+  "pop2020": 92726,
+  "in_frame": 1.0
+ },
+ "aliso-viejo": {
+  "name": "Aliso Viejo",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0600947",
+  "pop2020": 52176,
+  "in_frame": 1.0
+ },
+ "placentia": {
+  "name": "Placentia",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0657526",
+  "pop2020": 51824,
+  "in_frame": 1.0
+ },
+ "duarte": {
+  "name": "Duarte",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0619990",
+  "pop2020": 21727,
+  "in_frame": 1.0
+ },
+ "la-mirada": {
+  "name": "La Mirada",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0640032",
+  "pop2020": 48008,
+  "in_frame": 1.0
+ },
+ "monterey-park": {
+  "name": "Monterey Park",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0648914",
+  "pop2020": 61096,
+  "in_frame": 1.0
+ },
+ "alhambra": {
+  "name": "Alhambra",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0600884",
+  "pop2020": 82868,
+  "in_frame": 1.0
+ },
+ "la-habra": {
+  "name": "La Habra",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0639290",
+  "pop2020": 63097,
+  "in_frame": 1.0
+ },
+ "la-canada-flintridge": {
+  "name": "La Cañada Flintridge",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0639003",
+  "pop2020": 20573,
+  "in_frame": 1.0
+ },
+ "laguna-beach": {
+  "name": "Laguna Beach",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0639178",
+  "pop2020": 23032,
+  "in_frame": 1.0
+ },
+ "irwindale": {
+  "name": "Irwindale",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0636826",
+  "pop2020": 1472,
+  "in_frame": 1.0
+ },
+ "santa-fe-springs": {
+  "name": "Santa Fe Springs",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0669154",
+  "pop2020": 19219,
+  "in_frame": 1.0
+ },
+ "cerritos": {
+  "name": "Cerritos",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0612552",
+  "pop2020": 49578,
+  "in_frame": 1.0
+ },
+ "montebello": {
+  "name": "Montebello",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0648816",
+  "pop2020": 62640,
+  "in_frame": 1.0
+ },
+ "pico-rivera": {
+  "name": "Pico Rivera",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0656924",
+  "pop2020": 62088,
+  "in_frame": 1.0
+ },
+ "la-verne": {
+  "name": "La Verne",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0640830",
+  "pop2020": 31334,
+  "in_frame": 1.0
+ },
+ "el-monte": {
+  "name": "El Monte",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0622230",
+  "pop2020": 109450,
+  "in_frame": 1.0
+ },
+ "compton": {
+  "name": "Compton",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0615044",
+  "pop2020": 95740,
+  "in_frame": 1.0
+ },
+ "azusa": {
+  "name": "Azusa",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0603386",
+  "pop2020": 50000,
+  "in_frame": 1.0
+ },
+ "norwalk": {
+  "name": "Norwalk",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0652526",
+  "pop2020": 102773,
+  "in_frame": 1.0
+ },
+ "walnut": {
+  "name": "Walnut",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0683332",
+  "pop2020": 28430,
+  "in_frame": 1.0
+ },
+ "inglewood": {
+  "name": "Inglewood",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0636546",
+  "pop2020": 107762,
+  "in_frame": 0.89
+ },
+ "fountain-valley": {
+  "name": "Fountain Valley",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0625380",
+  "pop2020": 57047,
+  "in_frame": 1.0
+ },
+ "lakewood": {
+  "name": "Lakewood",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0639892",
+  "pop2020": 82496,
+  "in_frame": 1.0
+ },
+ "arcadia": {
+  "name": "Arcadia",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0602462",
+  "pop2020": 56681,
+  "in_frame": 1.0
+ },
+ "seal-beach": {
+  "name": "Seal Beach",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0670686",
+  "pop2020": 25242,
+  "in_frame": 1.0
+ },
+ "tustin": {
+  "name": "Tustin",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0680854",
+  "pop2020": 80276,
+  "in_frame": 1.0
+ },
+ "westminster": {
+  "name": "Westminster",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0684550",
+  "pop2020": 90911,
+  "in_frame": 1.0
+ },
+ "buena-park": {
+  "name": "Buena Park",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0608786",
+  "pop2020": 84034,
+  "in_frame": 1.0
+ },
+ "claremont": {
+  "name": "Claremont",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0613756",
+  "pop2020": 37266,
+  "in_frame": 1.0
+ },
+ "rancho-santa-margarita": {
+  "name": "Rancho Santa Margarita",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0659587",
+  "pop2020": 47949,
+  "in_frame": 1.0
+ },
+ "monrovia": {
+  "name": "Monrovia",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0648648",
+  "pop2020": 37931,
+  "in_frame": 1.0
+ },
+ "eastvale": {
+  "name": "Eastvale",
+  "county": "Riverside County",
+  "kind": "city",
+  "geoid": "0621230",
+  "pop2020": 69757,
+  "in_frame": 1.0
+ },
+ "brea": {
+  "name": "Brea",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0608100",
+  "pop2020": 47325,
+  "in_frame": 1.0
+ },
+ "downey": {
+  "name": "Downey",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0619766",
+  "pop2020": 114355,
+  "in_frame": 1.0
+ },
+ "industry": {
+  "name": "Industry",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0636490",
+  "pop2020": 264,
+  "in_frame": 1.0
+ },
+ "costa-mesa": {
+  "name": "Costa Mesa",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0616532",
+  "pop2020": 111918,
+  "in_frame": 1.0
+ },
+ "lake-forest": {
+  "name": "Lake Forest",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0639496",
+  "pop2020": 85858,
+  "in_frame": 1.0
+ },
+ "west-covina": {
+  "name": "West Covina",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0684200",
+  "pop2020": 109501,
+  "in_frame": 1.0
+ },
+ "san-dimas": {
+  "name": "San Dimas",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0666070",
+  "pop2020": 34924,
+  "in_frame": 1.0
+ },
+ "upland": {
+  "name": "Upland",
+  "county": "San Bernardino County",
+  "kind": "city",
+  "geoid": "0681344",
+  "pop2020": 79040,
+  "in_frame": 1.0
+ },
+ "norco": {
+  "name": "Norco",
+  "county": "Riverside County",
+  "kind": "city",
+  "geoid": "0651560",
+  "pop2020": 26316,
+  "in_frame": 1.0
+ },
+ "laguna-niguel": {
+  "name": "Laguna Niguel",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0639248",
+  "pop2020": 64355,
+  "in_frame": 1.0
+ },
+ "whittier": {
+  "name": "Whittier",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0685292",
+  "pop2020": 87306,
+  "in_frame": 1.0
+ },
+ "diamond-bar": {
+  "name": "Diamond Bar",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0619192",
+  "pop2020": 55072,
+  "in_frame": 1.0
+ },
+ "san-juan-capistrano": {
+  "name": "San Juan Capistrano",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0668028",
+  "pop2020": 35196,
+  "in_frame": 1.0
+ },
+ "pasadena": {
+  "name": "Pasadena",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0656000",
+  "pop2020": 138699,
+  "in_frame": 1.0
+ },
+ "pomona": {
+  "name": "Pomona",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0658072",
+  "pop2020": 151713,
+  "in_frame": 1.0
+ },
+ "newport-beach": {
+  "name": "Newport Beach",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0651182",
+  "pop2020": 85239,
+  "in_frame": 1.0
+ },
+ "fullerton": {
+  "name": "Fullerton",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0628000",
+  "pop2020": 143617,
+  "in_frame": 1.0
+ },
+ "torrance": {
+  "name": "Torrance",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0680000",
+  "pop2020": 147067,
+  "in_frame": 0.76
+ },
+ "garden-grove": {
+  "name": "Garden Grove",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0629000",
+  "pop2020": 171949,
+  "in_frame": 1.0
+ },
+ "burbank": {
+  "name": "Burbank",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0608954",
+  "pop2020": 107337,
+  "in_frame": 1.0
+ },
+ "glendora": {
+  "name": "Glendora",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0630014",
+  "pop2020": 52558,
+  "in_frame": 1.0
+ },
+ "carson": {
+  "name": "Carson",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0611530",
+  "pop2020": 95558,
+  "in_frame": 1.0
+ },
+ "yorba-linda": {
+  "name": "Yorba Linda",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0686832",
+  "pop2020": 68336,
+  "in_frame": 1.0
+ },
+ "mission-viejo": {
+  "name": "Mission Viejo",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0648256",
+  "pop2020": 93653,
+  "in_frame": 1.0
+ },
+ "san-clemente": {
+  "name": "San Clemente",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0665084",
+  "pop2020": 64293,
+  "in_frame": 0.98
+ },
+ "chino": {
+  "name": "Chino",
+  "county": "San Bernardino County",
+  "kind": "city",
+  "geoid": "0613210",
+  "pop2020": 91403,
+  "in_frame": 1.0
+ },
+ "glendale": {
+  "name": "Glendale",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0630000",
+  "pop2020": 196543,
+  "in_frame": 1.0
+ },
+ "orange": {
+  "name": "Orange",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0653980",
+  "pop2020": 139911,
+  "in_frame": 1.0
+ },
+ "huntington-beach": {
+  "name": "Huntington Beach",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0636000",
+  "pop2020": 198711,
+  "in_frame": 1.0
+ },
+ "santa-ana": {
+  "name": "Santa Ana",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0669000",
+  "pop2020": 310227,
+  "in_frame": 1.0
+ },
+ "los-angeles": {
+  "name": "Los Angeles",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0644000",
+  "pop2020": 3898747,
+  "in_frame": 0.4,
+  "label": [
+   -118.284,
+   34.03512
+  ]
+ },
+ "rancho-cucamonga": {
+  "name": "Rancho Cucamonga",
+  "county": "San Bernardino County",
+  "kind": "city",
+  "geoid": "0659451",
+  "pop2020": 174453,
+  "in_frame": 1.0
+ },
+ "jurupa-valley": {
+  "name": "Jurupa Valley",
+  "county": "Riverside County",
+  "kind": "city",
+  "geoid": "0637692",
+  "pop2020": 105053,
+  "in_frame": 0.43,
+  "label": [
+   -117.51298,
+   33.99845
+  ]
+ },
+ "corona": {
+  "name": "Corona",
+  "county": "Riverside County",
+  "kind": "city",
+  "geoid": "0616350",
+  "pop2020": 157136,
+  "in_frame": 1.0
+ },
+ "irvine": {
+  "name": "Irvine",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0636770",
+  "pop2020": 307670,
+  "in_frame": 1.0
+ },
+ "ontario": {
+  "name": "Ontario",
+  "county": "San Bernardino County",
+  "kind": "city",
+  "geoid": "0653896",
+  "pop2020": 175265,
+  "in_frame": 1.0
+ },
+ "anaheim": {
+  "name": "Anaheim",
+  "county": "Orange County",
+  "kind": "city",
+  "geoid": "0602000",
+  "pop2020": 346824,
+  "in_frame": 1.0
+ },
+ "long-beach": {
+  "name": "Long Beach",
+  "county": "LA County",
+  "kind": "city",
+  "geoid": "0643000",
+  "pop2020": 466742,
+  "in_frame": 1.0
+ },
+ "chino-hills": {
+  "name": "Chino Hills",
+  "county": "San Bernardino County",
+  "kind": "city",
+  "geoid": "0613214",
+  "pop2020": 78411,
+  "in_frame": 1.0
+ },
+ "walnut-park": {
+  "name": "Walnut Park",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0683402",
+  "pop2020": 15214,
+  "in_frame": 1.0
+ },
+ "east-rancho-dominguez": {
+  "name": "East Rancho Dominguez",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0621034",
+  "pop2020": 15114,
+  "in_frame": 1.0
+ },
+ "lennox": {
+  "name": "Lennox",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0641180",
+  "pop2020": 20323,
+  "in_frame": 0.76
+ },
+ "south-san-jose-hills": {
+  "name": "South San Jose Hills",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0673290",
+  "pop2020": 19855,
+  "in_frame": 1.0
+ },
+ "vincent": {
+  "name": "Vincent",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0682815",
+  "pop2020": 15714,
+  "in_frame": 1.0
+ },
+ "willowbrook": {
+  "name": "Willowbrook",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0685614",
+  "pop2020": 24295,
+  "in_frame": 1.0
+ },
+ "west-puente-valley": {
+  "name": "West Puente Valley",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0684774",
+  "pop2020": 22959,
+  "in_frame": 1.0
+ },
+ "westmont": {
+  "name": "Westmont",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0684592",
+  "pop2020": 33913,
+  "in_frame": 1.0
+ },
+ "valinda": {
+  "name": "Valinda",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0681638",
+  "pop2020": 22437,
+  "in_frame": 1.0
+ },
+ "east-san-gabriel": {
+  "name": "East San Gabriel",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0621096",
+  "pop2020": 22769,
+  "in_frame": 1.0
+ },
+ "west-carson": {
+  "name": "West Carson",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0684144",
+  "pop2020": 22870,
+  "in_frame": 1.0
+ },
+ "west-whittier-los-nietos": {
+  "name": "West Whittier-Los Nietos",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0684921",
+  "pop2020": 25325,
+  "in_frame": 1.0
+ },
+ "la-crescenta-montrose": {
+  "name": "La Crescenta-Montrose",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0639045",
+  "pop2020": 19997,
+  "in_frame": 1.0
+ },
+ "florence-graham": {
+  "name": "Florence-Graham",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0624477",
+  "pop2020": 61983,
+  "in_frame": 1.0
+ },
+ "west-rancho-dominguez": {
+  "name": "West Rancho Dominguez",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0684780",
+  "pop2020": 24347,
+  "in_frame": 1.0
+ },
+ "ladera-ranch": {
+  "name": "Ladera Ranch",
+  "county": "Orange County",
+  "kind": "cdp",
+  "geoid": "0639114",
+  "pop2020": 26170,
+  "in_frame": 1.0
+ },
+ "south-whittier": {
+  "name": "South Whittier",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0673430",
+  "pop2020": 56415,
+  "in_frame": 1.0
+ },
+ "north-tustin": {
+  "name": "North Tustin",
+  "county": "Orange County",
+  "kind": "cdp",
+  "geoid": "0652379",
+  "pop2020": 25718,
+  "in_frame": 1.0
+ },
+ "east-los-angeles": {
+  "name": "East Los Angeles",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0620802",
+  "pop2020": 118786,
+  "in_frame": 1.0
+ },
+ "altadena": {
+  "name": "Altadena",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0601290",
+  "pop2020": 42846,
+  "in_frame": 1.0
+ },
+ "hacienda-heights": {
+  "name": "Hacienda Heights",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0631596",
+  "pop2020": 54191,
+  "in_frame": 1.0
+ },
+ "rowland-heights": {
+  "name": "Rowland Heights",
+  "county": "LA County",
+  "kind": "cdp",
+  "geoid": "0663218",
+  "pop2020": 48231,
+  "in_frame": 1.0
+ },
+ "temescal-valley": {
+  "name": "Temescal Valley",
+  "county": "Riverside County",
+  "kind": "cdp",
+  "geoid": "0678138",
+  "pop2020": 26232,
+  "in_frame": 0.45,
+  "label": [
+   -117.50089,
+   33.7812
+  ]
+ }
+}
