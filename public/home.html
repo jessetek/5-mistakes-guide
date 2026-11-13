@@ -101,7 +101,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/kb.css?v=10">
+<link rel="stylesheet" href="/css/kb.css?v=12">
 </head>
 <body style="--th:#9ED4EF;--th2:#B8CAF5">
 
@@ -276,57 +276,15 @@
     </div>
 
     <!-- COL 2 ROWS 1-2: Google Reviews (2 always visible, slow scroll) -->
-    <div class="bc bc-reviews reveal-s d1">
+    <div class="bc bc-reviews reveal-s d1" data-reviews="mini">
       <div class="gr-header">
         <div class="gr-g">G</div>
-        <div class="gr-title">Google Reviews</div>
-        <div class="gr-rating">5.0 <span class="gr-stars">★★★★★</span></div>
+        <a class="gr-title" href="https://www.google.com/maps?cid=9817183126910437877" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Google Reviews</a>
+        <div class="gr-rating"><span data-reviews-rating>5.0</span> <span class="gr-stars">★★★★★</span></div>
       </div>
       <div class="gr-stage">
-        <div class="gr-scroll">
-          <!-- 4 real cards -->
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</div>
-            <div class="gr-mini-name">Maria G. <span class="gr-mini-date">· 2 months ago</span></div>
-          </div>
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</div>
-            <div class="gr-mini-name">David R. <span class="gr-mini-date">· 4 months ago</span></div>
-          </div>
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"Responded within minutes, day or night. Truly client-first experience."</div>
-            <div class="gr-mini-name">Araceli T. <span class="gr-mini-date">· 6 months ago</span></div>
-          </div>
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"Sold our home in 6 days above asking. Jesse knows exactly what buyers want."</div>
-            <div class="gr-mini-name">The Garcia Family <span class="gr-mini-date">· 8 months ago</span></div>
-          </div>
-          <!-- Duplicate set for seamless loop -->
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"Jesse got us into our dream home when we thought we'd been outbid. Best agent ever!"</div>
-            <div class="gr-mini-name">Maria G. <span class="gr-mini-date">· 2 months ago</span></div>
-          </div>
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"He negotiated $15K off asking AND got the seller to cover closing costs. Incredible."</div>
-            <div class="gr-mini-name">David R. <span class="gr-mini-date">· 4 months ago</span></div>
-          </div>
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"Responded within minutes, day or night. Truly client-first experience."</div>
-            <div class="gr-mini-name">Araceli T. <span class="gr-mini-date">· 6 months ago</span></div>
-          </div>
-          <div class="gr-mini">
-            <div class="gr-mini-stars">★★★★★</div>
-            <div class="gr-mini-quote">"Sold our home in 6 days above asking. Jesse knows exactly what buyers want."</div>
-            <div class="gr-mini-name">The Garcia Family <span class="gr-mini-date">· 8 months ago</span></div>
-          </div>
-        </div>
+        <!-- Filled by /js/reviews.js with real Google reviews (live, snapshot fallback) -->
+        <div class="gr-scroll"></div>
       </div>
     </div>
 
@@ -795,20 +753,20 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     '<path d="M5.1 19.1 L11.3 14.35 M22.9 19.1 L16.7 14.35" fill="none" stroke="#D2E0F5" stroke-width="1.05" stroke-linecap="round"/>' +
     '</svg>';
   var feed = [
-    'New listing: 4bd in Anaheim &middot; $915K',
-    'Just listed: 3bd in Fullerton &middot; $829K',
-    'New listing: 5bd in Yorba Linda &middot; $1.24M',
-    'Open house Sat: Garden Grove',
-    'New listing: 3bd in Buena Park &middot; $868K',
-    'Price drop: 4bd in Santa Ana &middot; $799K',
-    'New listing: 2bd in Costa Mesa &middot; $739K',
-    'Just listed: 4bd in Cypress &middot; $989K',
-    'New listing: 3bd in Orange &middot; $905K',
-    'Back on market: Tustin townhome',
-    'New listing: 4bd in Huntington Beach &middot; $1.38M',
+    'New listing: 4bd in Downey &middot; $915K',
+    'Just listed: 3bd in Whittier &middot; $829K',
+    'New listing: 4bd in Cerritos &middot; $1.14M',
+    'Open house Sat: Pico Rivera',
+    'New listing: 3bd in Norwalk &middot; $768K',
+    'Price drop: 4bd in La Mirada &middot; $899K',
+    'New listing: 2bd in Long Beach &middot; $739K',
+    'Just listed: 4bd in Lakewood &middot; $889K',
+    'New listing: 3bd in Bellflower &middot; $705K',
+    'Back on market: Montebello townhome',
+    'New listing: 4bd in Downey &middot; $1.08M',
     'Just listed: 3bd in La Habra &middot; $779K',
-    'New listing: 3bd in Westminster &middot; $815K',
-    'Open house Sun: Fountain Valley'
+    'New listing: 3bd in Whittier &middot; $815K',
+    'Open house Sun: Lakewood'
   ];
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var i = 0;
@@ -1129,6 +1087,7 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 </script>
 <script src="/js/analytics.js" defer></script>
 <script src="/js/cro.js" defer></script>
+<script src="/js/reviews.js?v=2" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

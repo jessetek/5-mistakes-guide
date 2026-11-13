@@ -61,7 +61,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/kb.css?v=10">
+<link rel="stylesheet" href="/css/kb.css?v=12">
 </head>
 <body style="--th:#B8CAF5;--th2:#9BD8A9">
 
@@ -152,12 +152,26 @@
   </div>
 </section>
 
+<!-- ===================== PAYMENT TOOL ===================== -->
+<section class="cp-section" id="payment">
+  <div class="cp-head reveal">
+    <h2>What a Torrance Home<br>Costs Per Month.</h2>
+    <p>Move the sliders. The rate is this week's average, so the number is honest.</p>
+  </div>
+  <div class="cp-card" data-citypay data-city="Torrance" data-median="1100000"></div>
+</section>
+
 <section class="nbhd-why">
   <div class="nbhd-why-inner">
     <div class="sec-head reveal">
       <span class="sec-label">Why Torrance</span>
       <h2 class="sec-title">What Makes Torrance<br>Worth Calling Home.</h2>
     </div>
+    <div class="city-photos">
+      <figure class="city-photo"><img src="/img/cities/torrance-1.webp" srcset="/img/cities/torrance-1-sm.webp 800w, /img/cities/torrance-1.webp 1600w" sizes="(max-width:760px) 100vw, 640px" alt="A path leading down to the shore of Torrance Beach." loading="lazy" width="1600" height="1000"><figcaption>Torrance Beach</figcaption></figure>
+      <figure class="city-photo"><img src="/img/cities/torrance-2.webp" srcset="/img/cities/torrance-2-sm.webp 800w, /img/cities/torrance-2.webp 1600w" sizes="(max-width:760px) 100vw, 640px" alt="Torrance City Hall in the civic center on Torrance Boulevard." loading="lazy" width="1600" height="1000"><figcaption>Torrance City Hall</figcaption></figure>
+    </div>
+    <p class="city-photos-credit"><a href="/photo-credits">Photo credits</a></p>
     <div class="nbhd-features">
       <div class="nbhd-feature">
         <div class="nbhd-feature-icon">🏫</div>
@@ -533,5 +547,6 @@
 }
 </script>
 
+<script src="/js/citypay.js?v=1" defer></script>
 </body>
 </html>

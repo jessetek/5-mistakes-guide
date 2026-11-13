@@ -61,7 +61,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/kb.css?v=10">
+<link rel="stylesheet" href="/css/kb.css?v=12">
 </head>
 <body style="--th:#FDE99B;--th2:#D1EEF9">
 
@@ -134,9 +134,22 @@
   <div class="nbhd-stat"><div class="nbhd-stat-num">172K</div><div class="nbhd-stat-label">Residents</div></div>
 </div></section>
 
+<!-- ===================== PAYMENT TOOL ===================== -->
+<section class="cp-section" id="payment">
+  <div class="cp-head reveal">
+    <h2>What a Garden Grove Home<br>Costs Per Month.</h2>
+    <p>Move the sliders. The rate is this week's average, so the number is honest.</p>
+  </div>
+  <div class="cp-card" data-citypay data-city="Garden Grove" data-median="885000"></div>
+</section>
+
 <section class="nbhd-why"><div class="nbhd-why-inner">
   <div class="sec-head reveal"><span class="sec-label">Why Garden Grove</span><h2 class="sec-title">What Makes Garden Grove<br>Worth Calling Home.</h2></div>
-  <div class="nbhd-features"><div class="nbhd-feature">
+  <div class="city-photos city-photos-1">
+      <figure class="city-photo"><img src="/img/cities/garden-grove-1.webp" srcset="/img/cities/garden-grove-1-sm.webp 800w, /img/cities/garden-grove-1.webp 1600w" sizes="(max-width:760px) 100vw, 640px" alt="The glass Christ Cathedral and its tower in Garden Grove." loading="lazy" width="1600" height="1000"><figcaption>Christ Cathedral, Garden Grove</figcaption></figure>
+    </div>
+    <p class="city-photos-credit"><a href="/photo-credits">Photo credits</a></p>
+    <div class="nbhd-features"><div class="nbhd-feature">
         <div class="nbhd-feature-icon">🍜</div>
         <h3>Little Saigon Culinary Capital</h3>
         <p>The Bolsa Avenue corridor is a regional food destination. Vietnamese, Chinese, Korean, and Thai food at the highest concentration in SoCal.</p>
@@ -525,5 +538,6 @@
 }
 </script>
 
+<script src="/js/citypay.js?v=1" defer></script>
 </body>
 </html>

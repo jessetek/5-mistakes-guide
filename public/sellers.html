@@ -61,7 +61,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/kb.css?v=10">
+<link rel="stylesheet" href="/css/kb.css?v=12">
 </head>
 <body style="--th:#B8CAF5;--th2:#9BD8A9">
 
@@ -275,47 +275,10 @@
 <section class="val-stories">
   <div class="val-stories-inner">
     <div class="sec-head reveal">
-      <span class="sec-label">Real Sellers · Real Results</span>
-      <h2 class="sec-title">Proof Is in<br>the Sale Price.</h2>
+      <h2 class="sec-title">What My Clients<br>Say on Google.</h2>
+      <p class="sec-sub">Real reviews, word for word. <span data-reviews-rating>5.0</span> stars from <span data-reviews-total>20</span> clients.</p>
     </div>
-    <div class="val-stories-grid">
-      <div class="val-story reveal-s">
-        <div class="val-story-stars">★★★★★</div>
-        <p class="val-story-quote">"Jesse sold our home in 6 days above asking. Best decision we ever made."</p>
-        <div class="val-story-meta">
-          <div class="val-story-avatar" style="background:#0E7490">G</div>
-          <div>
-            <div class="val-story-name">The Garcia Family</div>
-            <div class="val-story-loc">Norwalk, CA</div>
-          </div>
-          <div class="val-story-tag">+$40K</div>
-        </div>
-      </div>
-      <div class="val-story reveal-s d1">
-        <div class="val-story-stars">★★★★★</div>
-        <p class="val-story-quote">"Jesse sold our home in 9 days, above asking. He knows the market inside and out."</p>
-        <div class="val-story-meta">
-          <div class="val-story-avatar" style="background:#BE123C">V</div>
-          <div>
-            <div class="val-story-name">Vanessa L.</div>
-            <div class="val-story-loc">Pico Rivera, CA</div>
-          </div>
-          <div class="val-story-tag">+$25K</div>
-        </div>
-      </div>
-      <div class="val-story reveal-s d2">
-        <div class="val-story-stars">★★★★★</div>
-        <p class="val-story-quote">"He negotiated like it was his own money. Three offers over asking, waived contingencies."</p>
-        <div class="val-story-meta">
-          <div class="val-story-avatar" style="background:#2563EB">A</div>
-          <div>
-            <div class="val-story-name">Anthony T.</div>
-            <div class="val-story-loc">Whittier, CA</div>
-          </div>
-          <div class="val-story-tag">+$35K</div>
-        </div>
-      </div>
-    </div>
+    <div class="rv-wall" data-reviews="wall" data-limit="3"></div>
   </div>
 </section>
 
@@ -664,5 +627,6 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
 </script>
 <script src="/js/analytics.js" defer></script>
 <script src="/js/cro.js" defer></script>
+<script src="/js/reviews.js?v=2" defer></script>
 </body>
 </html>

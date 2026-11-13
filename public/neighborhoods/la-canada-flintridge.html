@@ -61,7 +61,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/kb.css?v=10">
+<link rel="stylesheet" href="/css/kb.css?v=12">
 </head>
 <body style="--th:#B8CAF5;--th2:#9BD8A9">
 
@@ -142,12 +142,25 @@
   </div>
 </section>
 
+<!-- ===================== PAYMENT TOOL ===================== -->
+<section class="cp-section" id="payment">
+  <div class="cp-head reveal">
+    <h2>What a La Cañada Flintridge Home<br>Costs Per Month.</h2>
+    <p>Move the sliders. The rate is this week's average, so the number is honest.</p>
+  </div>
+  <div class="cp-card" data-citypay data-city="La Cañada Flintridge" data-median="2800000"></div>
+</section>
+
 <section class="nbhd-why">
   <div class="nbhd-why-inner">
     <div class="sec-head reveal">
       <span class="sec-label">Why La Cañada Flintridge</span>
       <h2 class="sec-title">What Makes La Cañada Flintridge<br>Worth Calling Home.</h2>
     </div>
+    <div class="city-photos city-photos-1">
+      <figure class="city-photo"><img src="/img/cities/la-canada-flintridge-1.webp" srcset="/img/cities/la-canada-flintridge-1-sm.webp 800w, /img/cities/la-canada-flintridge-1.webp 1600w" sizes="(max-width:760px) 100vw, 640px" alt="The Japanese Garden at Descanso Gardens in La Cañada Flintridge." loading="lazy" width="1600" height="1000"><figcaption>Descanso Gardens</figcaption></figure>
+    </div>
+    <p class="city-photos-credit"><a href="/photo-credits">Photo credits</a></p>
     <div class="nbhd-features">
       <div class="nbhd-feature">
         <div class="nbhd-feature-icon">🏫</div>
@@ -476,5 +489,6 @@
 }
 </script>
 
+<script src="/js/citypay.js?v=1" defer></script>
 </body>
 </html>
