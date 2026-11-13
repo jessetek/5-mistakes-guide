@@ -96,7 +96,7 @@
   <details class="mob-section">
     <summary>For Buyers</summary>
     <a href="/buyer" class="mob-sub">Buyer Guide</a>
-    <a href="/buyer-quiz" class="mob-sub">Readiness Quiz</a>
+    <a href="/move" class="mob-sub">Move Up Quiz</a>
     <a href="/guide" class="mob-sub">5-Mistakes Guide</a>
     <a href="/calculator" class="mob-sub">Mortgage Calculator</a>
     <a href="/rent-vs-buy" class="mob-sub">Rent vs Buy</a>
@@ -124,7 +124,7 @@
       <button class="nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">For Buyers <span class="nav-chev" aria-hidden="true">▾</span></button>
       <div class="nav-menu" role="menu">
         <a href="/buyer" role="menuitem">Buyer Guide</a>
-        <a href="/buyer-quiz" role="menuitem">Readiness Quiz</a>
+        <a href="/move" role="menuitem">Move Up Quiz</a>
         <a href="/guide" role="menuitem">5-Mistakes Guide</a>
         <a href="/calculator" role="menuitem">Mortgage Calculator</a>
         <a href="/rent-vs-buy" role="menuitem">Rent vs Buy</a>
@@ -211,6 +211,31 @@
   <div class="sa-empty" id="saEmpty">No matching cities. Try "Beverly Hills", "Manhattan Beach", "Irvine", "Anaheim"...</div>
 </section>
 
+<!-- City directory: agent, buyer and seller pages per city -->
+<section class="sa-dir">
+  <style>
+    .sa-dir{padding:10px 22px 90px;background:var(--bg)}
+    .sa-dir-inner{max-width:1080px;margin:0 auto}
+    .sa-dir h2{font-size:clamp(32px,4vw,44px);text-align:center;margin:0 0 10px}
+    .sa-dir-sub{text-align:center;color:var(--text2);font-size:16px;margin:0 0 30px}
+    .sa-dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+    .sa-dir-city{background:#fff;border:1px solid rgba(3,3,2,.08);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow)}
+    .sa-dir-city h3{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:22px;margin:0 0 8px}
+    .sa-dir-city h3 a{color:var(--text);text-decoration:none}
+    .sa-dir-city ul{list-style:none;margin:0;padding:0}
+    .sa-dir-city li{margin:4px 0}
+    .sa-dir-city li a{color:var(--text2);font-size:14.5px;text-decoration:underline;text-decoration-color:rgba(3,3,2,.25);text-underline-offset:3px}
+  </style>
+  <div class="sa-dir-inner">
+    <h2>Buying or selling in <i>your city</i></h2>
+    <p class="sa-dir-sub">Local agent pages and step-by-step guides for the cities I work in most.</p>
+    <div class="sa-dir-grid">
+      <div class="sa-dir-city"><h3><a href="/neighborhoods/downey">Downey</a></h3><ul><li><a href="/real-estate-agent-downey">Real estate agent</a></li><li><a href="/first-time-buyer-downey">First-time buyers</a></li><li><a href="/sell-over-asking-downey">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/whittier">Whittier</a></h3><ul><li><a href="/real-estate-agent-whittier">Real estate agent</a></li><li><a href="/first-time-buyer-whittier">First-time buyers</a></li><li><a href="/sell-over-asking-whittier">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/pico-rivera">Pico Rivera</a></h3><ul><li><a href="/real-estate-agent-pico-rivera">Real estate agent</a></li><li><a href="/first-time-buyer-pico-rivera">First-time buyers</a></li><li><a href="/sell-over-asking-pico-rivera">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/long-beach">Long Beach</a></h3><ul><li><a href="/real-estate-agent-long-beach">Real estate agent</a></li><li><a href="/first-time-buyer-long-beach">First-time buyers</a></li><li><a href="/sell-over-asking-long-beach">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/cerritos">Cerritos</a></h3><ul><li><a href="/real-estate-agent-cerritos">Real estate agent</a></li><li><a href="/first-time-buyer-cerritos">First-time buyers</a></li><li><a href="/sell-over-asking-cerritos">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/norwalk">Norwalk</a></h3><ul><li><a href="/real-estate-agent-norwalk">Real estate agent</a></li><li><a href="/first-time-buyer-norwalk">First-time buyers</a></li><li><a href="/sell-over-asking-norwalk">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/la-mirada">La Mirada</a></h3><ul><li><a href="/real-estate-agent-la-mirada">Real estate agent</a></li><li><a href="/first-time-buyer-la-mirada">First-time buyers</a></li><li><a href="/sell-over-asking-la-mirada">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/bellflower">Bellflower</a></h3><ul><li><a href="/real-estate-agent-bellflower">Real estate agent</a></li><li><a href="/first-time-buyer-bellflower">First-time buyers</a></li><li><a href="/sell-over-asking-bellflower">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/la-habra">La Habra</a></h3><ul><li><a href="/real-estate-agent-la-habra">Real estate agent</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/lakewood">Lakewood</a></h3><ul><li><a href="/real-estate-agent-lakewood">Real estate agent</a></li><li><a href="/first-time-buyer-lakewood">First-time buyers</a></li><li><a href="/sell-over-asking-lakewood">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/montebello">Montebello</a></h3><ul><li><a href="/real-estate-agent-montebello">Real estate agent</a></li><li><a href="/first-time-buyer-montebello">First-time buyers</a></li><li><a href="/sell-over-asking-montebello">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/anaheim">Anaheim</a></h3><ul><li><a href="/first-time-buyer-anaheim">First-time buyers</a></li><li><a href="/sell-over-asking-anaheim">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/garden-grove">Garden Grove</a></h3><ul><li><a href="/first-time-buyer-garden-grove">First-time buyers</a></li><li><a href="/sell-over-asking-garden-grove">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/manhattan-beach">Manhattan Beach</a></h3><ul><li><a href="/first-time-buyer-manhattan-beach">First-time buyers</a></li><li><a href="/sell-over-asking-manhattan-beach">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/pasadena">Pasadena</a></h3><ul><li><a href="/first-time-buyer-pasadena">First-time buyers</a></li><li><a href="/sell-over-asking-pasadena">Selling over asking</a></li></ul></div><div class="sa-dir-city"><h3><a href="/neighborhoods/santa-ana">Santa Ana</a></h3><ul><li><a href="/first-time-buyer-santa-ana">First-time buyers</a></li><li><a href="/sell-over-asking-santa-ana">Selling over asking</a></li></ul></div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="footer-grid footer-grid-4">
@@ -225,7 +250,7 @@
     <div class="f-col">
       <h4>For Buyers</h4>
       <a href="/buyer">Buyer Guide</a>
-      <a href="/buyer-quiz">Readiness Quiz</a>
+      <a href="/move">Move Up Quiz</a>
       <a href="/guide">5-Mistakes Guide</a>
       <a href="/checklist">Buyer Checklist</a>
       <a href="/calculator">Mortgage Calculator</a>

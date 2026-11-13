@@ -34,6 +34,7 @@ automatically, serving `public/`. The engine lives in `seo-engine/`, which is no
   `socal-rate-watch-<month>-<year>` article exists for this month, write that instead. Use the real
   Freddie Mac PMMS 30-year and 15-year numbers for the latest Thursday (search the web, cite freddiemac.com).
   If you cannot source the real number, skip the rate watch and use the queue.
+  After a rate watch, also add the month to `seo-engine/drafts/socal-mortgage-rate-history.json` (table row and the November-style note), rebuild it with `engine.py build`, and `touch` nothing else for it.
 - Do not cannibalize. Before writing, check that no existing page targets the same keyword:
   `grep -ril "<keyword words>" public --include=*.html`. City pages already exist for first-time buyers
   (`/first-time-buyer-<city>`), selling (`/sell-over-asking-<city>`) and city guides (`/neighborhoods/<city>`).
@@ -76,6 +77,8 @@ python3 seo-engine/tools/engine.py wire <slug>
 Then add **2 in-sentence links to the new article** from the most related existing pages (the city guide
 for that city and one related article). Edit those pages by hand with a natural sentence, then run
 `engine.py touch` on them.
+**If the page you link from is an engine-built article** (it has a draft in `seo-engine/drafts/`), add the link to its
+draft JSON and rebuild it with `engine.py build`; never edit its HTML directly, or the next rebuild erases the link.
 
 QC, every file you created or edited, must pass with 0 FAIL:
 ```

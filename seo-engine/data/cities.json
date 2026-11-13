@@ -60,8 +60,7 @@
    "residents": "78K",
    "schools": [
     "Mayfair High School",
-    "Bellflower High School",
-    "Hollydale Elementary"
+    "Bellflower High School"
    ],
    "neighbors": [
     "lakewood",
@@ -73,7 +72,7 @@
     "guide": "/neighborhoods/bellflower",
     "first_time_buyer": "/first-time-buyer-bellflower",
     "sell_over_asking": "/sell-over-asking-bellflower",
-    "agent": null
+    "agent": "/real-estate-agent-bellflower"
    }
   },
   "beverly-hills": {
@@ -250,7 +249,7 @@
     "guide": "/neighborhoods/cerritos",
     "first_time_buyer": "/first-time-buyer-cerritos",
     "sell_over_asking": "/sell-over-asking-cerritos",
-    "agent": null
+    "agent": "/real-estate-agent-cerritos"
    }
   },
   "costa-mesa": {
@@ -706,7 +705,7 @@
     "guide": "/neighborhoods/la-habra",
     "first_time_buyer": null,
     "sell_over_asking": null,
-    "agent": null
+    "agent": "/real-estate-agent-la-habra"
    }
   },
   "la-mirada": {
@@ -734,7 +733,7 @@
     "guide": "/neighborhoods/la-mirada",
     "first_time_buyer": "/first-time-buyer-la-mirada",
     "sell_over_asking": "/sell-over-asking-la-mirada",
-    "agent": null
+    "agent": "/real-estate-agent-la-mirada"
    }
   },
   "la-puente": {
@@ -822,7 +821,7 @@
     "guide": "/neighborhoods/lakewood",
     "first_time_buyer": "/first-time-buyer-lakewood",
     "sell_over_asking": "/sell-over-asking-lakewood",
-    "agent": null
+    "agent": "/real-estate-agent-lakewood"
    }
   },
   "long-beach": {
@@ -852,7 +851,7 @@
     "guide": "/neighborhoods/long-beach",
     "first_time_buyer": "/first-time-buyer-long-beach",
     "sell_over_asking": "/sell-over-asking-long-beach",
-    "agent": null
+    "agent": "/real-estate-agent-long-beach"
    }
   },
   "manhattan-beach": {
@@ -938,7 +937,7 @@
     "guide": "/neighborhoods/montebello",
     "first_time_buyer": "/first-time-buyer-montebello",
     "sell_over_asking": "/sell-over-asking-montebello",
-    "agent": null
+    "agent": "/real-estate-agent-montebello"
    }
   },
   "newport-beach": {
@@ -999,7 +998,7 @@
     "guide": "/neighborhoods/norwalk",
     "first_time_buyer": "/first-time-buyer-norwalk",
     "sell_over_asking": "/sell-over-asking-norwalk",
-    "agent": null
+    "agent": "/real-estate-agent-norwalk"
    }
   },
   "orange": {
@@ -1092,7 +1091,7 @@
     "guide": "/neighborhoods/pico-rivera",
     "first_time_buyer": "/first-time-buyer-pico-rivera",
     "sell_over_asking": "/sell-over-asking-pico-rivera",
-    "agent": null
+    "agent": "/real-estate-agent-pico-rivera"
    }
   },
   "redondo-beach": {
@@ -1396,7 +1395,7 @@
     "guide": "/neighborhoods/whittier",
     "first_time_buyer": "/first-time-buyer-whittier",
     "sell_over_asking": "/sell-over-asking-whittier",
-    "agent": null
+    "agent": "/real-estate-agent-whittier"
    }
   },
   "yorba-linda": {

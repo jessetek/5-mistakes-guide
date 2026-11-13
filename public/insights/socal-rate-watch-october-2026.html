@@ -42,6 +42,8 @@
   .post-body table{width:100%;border-collapse:collapse;margin:18px 0 26px;font-size:15px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
   .post-body th,.post-body td{padding:12px 14px;text-align:left;border-bottom:1px solid rgba(3,3,2,.07);vertical-align:top}
   .post-body th{font-weight:600;color:var(--text);background:#F6F3EF}
+  /* table-scroll-fix: wide tables scroll inside their card on phones */
+  @media(max-width:640px){.post-body table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:14px}}
   .post-tldr{background:#fff;border:1px solid rgba(3,3,2,.08);border-radius:22px;box-shadow:var(--shadow);padding:20px 22px;margin:0 0 34px}
   .post-tldr b{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:8px}
   .post-tldr ul{margin:0 0 0 18px}

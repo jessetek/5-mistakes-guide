@@ -11,6 +11,12 @@ and delete it here, so this file stays short.
 - 10 of 11 farm cities had no "Real Estate Agent in <City>" page. Those are the money queries, so site tasks build them one per week.
 
 ## Log
+### 2026-11-12 (sitewide improvements, by hand, Jesse approved the list)
+- All 10 farm-city agent pages are live, linked from their city guides and a new Service Areas directory; their bilingual redirects were repointed.
+- Bilingual and dashes are gone sitewide (copy and schema). QC should stay green on any page you touch; if an old page fails, fix it as part of the run.
+- New /insights/socal-mortgage-rate-history holds every monthly PMMS average. When you write a monthly rate watch, ALSO add that month's row to the history table, rebuild it, and link it from the new watch.
+- April and June 2026 rate watches now redirect to the history page. Next site task: sitemap-lastmod, then refresh-oldest.
+
 ### 2026-11-12 (second run, automated)
 - Article: downey-vs-whittier-where-to-buy (topic 2, compare intent). About 1,050 body words, 6 sources; linked from the Whittier guide and the living-in-downey article.
 - Site task predated-drafts done. The old drafts invented a rate cut and 6.3% rates; real PMMS rose to 7.40% in October. The official history CSV at freddiemac.com/pmms/docs/PMMS_history.csv works with curl and gives every weekly number.

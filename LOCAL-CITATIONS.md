@@ -17,17 +17,17 @@ Business address: NONE. List as a service-area business and hide the
                   2026-09-25). Never publish an office address.
 Business phone:   (562) 609-4200
 Website:          https://jessetek.net/
-Email:            jesse@jesseonate.com
+Email:            jesse@jessetek.net (matches the website footer)
 Category:         Real estate agent
 DRE License:      02133131
-Bilingual:        English / Spanish
 Service areas:    Downey, Whittier, Pico Rivera, Long Beach, Cerritos,
                   Norwalk, La Mirada, Bellflower, La Habra, Lakewood,
                   Montebello
-Hours:            Mon-Sun 8am-9pm PT
-Description:      Use the same one as Google Business Profile (the
-                  keyword-rich version mentioning bilingual,
-                  100+ closings, 5.0 Google rating, DRE #02133131)
+Hours:            Monday to Sunday, 8am to 9pm PT
+Description:      Use the paste-ready text in
+                  Jessetek/outputs/citations-checklist-2026-11-12.md
+                  (100+ closings, 5.0 Google rating, DRE #02133131;
+                  never mention bilingual)
 ```
 
 **Critical:** Don't deviate. "Jesse Oñate" with the ñ vs "Jesse Onate" without — pick one and use it everywhere. Same for "St" vs "Street", "(562)" vs "562-", etc. Google compares these signals literally.
