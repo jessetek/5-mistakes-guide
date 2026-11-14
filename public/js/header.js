@@ -24,14 +24,16 @@
     return (m && m.classList.contains('open')) || !!nav.querySelector('.nav-dropdown.open') || nav.contains(document.activeElement) && document.activeElement !== document.body;
   }
   var last = window.pageYOffset || 0, ticking = false;
-  function show() { nav.classList.remove('nav-autohide'); }
+  var root = document.documentElement;
+  function show() { nav.classList.remove('nav-autohide'); root.classList.remove('nav-hidden'); }
+  function hide() { nav.classList.add('nav-autohide'); root.classList.add('nav-hidden'); }
   function update() {
     ticking = false;
     var y = Math.max(window.pageYOffset || document.documentElement.scrollTop || 0, 0);
     if (y <= TOP || menuOpen()) { show(); last = y; return; }
     var d = y - last;
     if (Math.abs(d) < THRESHOLD) return;          // ignore jitter, keep measuring from the last real move
-    if (d > 0 && y > nav.offsetHeight + 24) nav.classList.add('nav-autohide');
+    if (d > 0 && y > nav.offsetHeight + 24) hide();
     else if (d < 0) show();
     last = y;
   }

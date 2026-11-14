@@ -904,14 +904,15 @@ a.hv-row:hover{background:var(--kb-tile)}
 .hub-shots-6 .hub-shot:nth-child(n+4){aspect-ratio:3/2}
 /* ---- city guide design pass, 2026-11-13: outline in the hero, jump bar, eyebrows, icons, tap to map ---- */
 html:has(.hub-jump){scroll-behavior:smooth}
-section[id]{scroll-margin-top:128px}
+section[id]{scroll-margin-top:144px}
 .page-hero .hero-shape{position:absolute;z-index:2;right:max(5vw,calc(50% - 590px));top:54%;transform:translateY(-50%) rotate(-4deg);width:clamp(190px,24vw,310px);display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;color:var(--kb-ink);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .hero-shape svg{width:100%;height:auto;overflow:visible;filter:drop-shadow(0 14px 22px rgba(3,3,2,.16))}
 .hero-shape path{fill:#fff;fill-opacity:.94;stroke:var(--kb-ink);stroke-width:1.6;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .hero-shape span{font:600 12px/1 var(--font);background:rgba(255,255,255,.9);padding:7px 11px;border-radius:999px;transform:rotate(4deg)}
 @media(hover:hover){.page-hero .hero-shape:hover{transform:translateY(-52%) rotate(-1deg) scale(1.03)}}
 @media(max-width:1020px){.page-hero .hero-shape{position:relative;right:auto;top:auto;transform:none;width:auto;max-width:760px;margin:28px auto 0;flex-direction:row;justify-content:flex-start;gap:14px}.page-hero .hero-shape svg{width:112px;flex:0 0 auto;transform:rotate(-4deg)}.hero-shape span{transform:none}}
-.hub-jump{position:sticky;top:74px;z-index:40;padding:14px 14px 0;pointer-events:none;transition:opacity .25s}
+.hub-jump{position:sticky;top:74px;z-index:40;padding:14px 14px 0;pointer-events:none;transition:opacity .25s,top .32s cubic-bezier(.2,.8,.2,1)}
+html.nav-hidden .hub-jump{top:0}
 .hub-jump.gone{opacity:0}
 .hub-jump-in{pointer-events:auto;display:flex;gap:4px;width:max-content;max-width:100%;margin:0 auto;padding:5px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--kb-line);border-radius:999px;box-shadow:0 8px 24px rgba(3,3,2,.08);overflow-x:auto;scrollbar-width:none}
 .hub-jump.gone .hub-jump-in{pointer-events:none}
@@ -966,6 +967,7 @@ section[id]{scroll-margin-top:128px}
 @keyframes hubpin{from{transform:translate(-50%,-110%) scale(.6);opacity:0}}
 @media(prefers-reduced-motion:reduce){
   html:has(.hub-jump){scroll-behavior:auto}
+  .hub-jump{transition:opacity .25s}
   .hub-place,.hub-shot,.hero-shape,.hub-cz .hub-bar i,.hub-place-bar i,.hub-pl-bar i,.hub-split-bar i{transition:none!important}
   .reveal:not(.on) .hub-cz .hub-bar i,.reveal:not(.on) .hub-place-bar i,.reveal:not(.on).hub-pl .hub-pl-bar i,.reveal:not(.on).hub-split .hub-split-bar i{transform:none}
   .svc-tip.pin{animation:none}
