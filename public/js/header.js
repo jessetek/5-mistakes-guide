@@ -41,6 +41,11 @@
     if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
   }, { passive: true });
   nav.addEventListener('focusin', show);
+  // The header never changes size on scroll: hide and show only move it. Drop any old shrink state a cached page script adds.
+  if (window.MutationObserver) {
+    nav.classList.remove('nav-mini');
+    new MutationObserver(function () { if (nav.classList.contains('nav-mini')) nav.classList.remove('nav-mini'); }).observe(nav, { attributes: true, attributeFilter: ['class'] });
+  }
   var m = document.getElementById('mobNav');
   if (m && window.MutationObserver) new MutationObserver(function () { if (m.classList.contains('open')) show(); }).observe(m, { attributes: true, attributeFilter: ['class'] });
 })();

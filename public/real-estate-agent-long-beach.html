@@ -48,11 +48,6 @@
 }
 .nav-cta2:hover{transform:scale(1.04);background:#26261f}
 .nav-hamburger{border-radius:999px}
-/* scroll-down: shrink; scroll-up: back to regular */
-.nav.nav-mini{height:42px;width:min(640px,calc(100% - 32px));top:10px;padding:0 6px 0 18px}
-.nav.nav-mini .nav-logo,.nav.nav-mini .nav-logo span{font-size:13.5px}
-.nav.nav-mini .nav-links a,.nav.nav-mini .nav-toggle{font-size:12px}
-.nav.nav-mini .nav-cta2{height:30px;padding:0 13px;font-size:11.5px}
 @media(max-width:640px){.nav-cta2{display:none}}
 @media(prefers-reduced-motion:reduce){.nav,.nav-logo,.nav-links a,.nav-toggle,.nav-cta2{transition:none}}
 </style>
@@ -320,7 +315,7 @@
   window.addEventListener('scroll',function(){
     if(!ticking){window.requestAnimationFrame(function(){
       var y=window.scrollY;
-      if(y>120){if(y>lastY+4){nav.classList.add('nav-mini');}else if(y<lastY-4){nav.classList.remove('nav-mini');}nav.classList.add('scrolled');}else{nav.classList.remove('nav-mini');nav.classList.remove('scrolled');}
+      if(y>120){if(y>lastY+4){}else if(y<lastY-4){nav.classList.remove('nav-mini');}nav.classList.add('scrolled');}else{nav.classList.remove('nav-mini');nav.classList.remove('scrolled');}
       lastY=y;ticking=false;
     });ticking=true;}
   },{passive:true});
@@ -373,6 +368,6 @@
 
 <script src="/js/analytics.js" defer></script>
 <script src="/js/cro.js" defer></script>
-<script src="/js/header.js?v=2" defer></script>
+<script src="/js/header.js?v=3" defer></script>
 </body>
 </html>

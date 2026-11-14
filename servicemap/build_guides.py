@@ -113,7 +113,7 @@ def scripts(r, with_map):
     if r['value']: out.append(f'<script src="/js/citypay.js?v={VER["pay"]}" defer></script>')
     if with_map: out.append(f'<script src="/js/servicemap.js?v={VER["map"]}" defer></script>')
     out.append(f'<script src="/js/cityhub.js?v={VER["hub"]}" defer></script>')
-    out.append('<script src="/js/header.js?v=2" defer></script>')   # hide-on-scroll header, on every page with the nav
+    out.append('<script src="/js/header.js?v=3" defer></script>')   # hide-on-scroll header, on every page with the nav
     return '\n'.join(out) + '\n'
 
 
