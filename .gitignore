@@ -14,3 +14,4 @@ servicemap/*.log
 servicemap/__pycache__/
 servicemap/commons_candidates.json
 servicemap/place_photos_lookup.json
+servicemap/_cache/

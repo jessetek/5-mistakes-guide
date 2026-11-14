@@ -52,7 +52,20 @@
   }
  ],
  "baldwin-park": [],
- "chino": [],
+ "chino": [
+  {
+   "file": "chino-1.webp",
+   "caption": "Moyse Building",
+   "alt": "The historic Moyse Building in Chino.",
+   "title": "Moyse Building Chino CA 4.JPG",
+   "author": "Einbierbitte",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Moyse_Building_Chino_CA_4.JPG",
+   "desc": "Moyse Building in Chino CA \n\n\n\n\n\nThis is an image of a place or building that is listed on the National Register of Historic Places in the United States of America. Its reference number is 79000522 (Wikidata).\n\n",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
  "covina": [
   {
    "file": "covina-1.webp",
@@ -79,8 +92,34 @@
    "desc": "Dana Point is a city located in southern Orange County CA Photo Don Ramey Logan"
   }
  ],
- "duarte": [],
- "eastvale": [],
+ "duarte": [
+  {
+   "file": "duarte-1.webp",
+   "caption": "City of Hope",
+   "alt": "The Helford Clinical Research Hospital at City of Hope in Duarte.",
+   "title": "Helford Hospital City of Hope.jpg",
+   "author": "w:User:matthewstringer",
+   "license": "CC BY-SA 3.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Helford_Hospital_City_of_Hope.jpg",
+   "desc": "Image depicting the City of Hope Helford Clinical Research Hospital[1], located at w:City of Hope National Medical Center in Duarte, California, United States.  Matthew Stringer is the author of this image[2].\n\n\n↑ http://www.cityofhope.org/Documents/Patient%20Care/patient-and-family-guide.pdf - Map ",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "eastvale": [
+  {
+   "file": "eastvale-1.webp",
+   "caption": "Eastvale",
+   "alt": "Homes and a tree lined street in Eastvale.",
+   "title": "Eastvale Community.jpg",
+   "author": "City of Eastvale",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Eastvale_Community.jpg",
+   "desc": "Eastvale",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
  "fountain-valley": [],
  "glendora": [
   {
@@ -135,7 +174,20 @@
    "desc": "Front of La Casa Nueva."
   }
  ],
- "inglewood": [],
+ "inglewood": [
+  {
+   "file": "inglewood-1.webp",
+   "caption": "Randy's Donuts",
+   "alt": "Randy's Donuts and its giant donut sign in Inglewood.",
+   "title": "2008-0914-RandysDonuts.jpg",
+   "author": "Bobak Ha'Eri",
+   "license": "CC BY 3.0",
+   "licurl": "https://creativecommons.org/licenses/by/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:2008-0914-RandysDonuts.jpg",
+   "desc": "Randy's Donuts, Los Angeles, California.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
  "irwindale": [
   {
    "file": "irwindale-1.webp",
@@ -176,7 +228,20 @@
    "desc": "La Habra Heights"
   }
  ],
- "la-palma": [],
+ "la-palma": [
+  {
+   "file": "la-palma-1.webp",
+   "caption": "La Palma Civic Center",
+   "alt": "The La Palma Civic Center sign and City Hall.",
+   "title": "LaPalmaCityHall.jpg",
+   "author": "Mike Greene",
+   "license": "CC BY-SA 2.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:LaPalmaCityHall.jpg",
+   "desc": "La Palma Civic Center",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
  "ladera-ranch": [
   {
    "file": "ladera-ranch-1.webp",
@@ -308,7 +373,20 @@
    "desc": "Interstate 210 in Monrovia, California with San Gabriel Mountains. Summit in upper right is Mount Bliss, (approx. 3240 feet AMSL). This summit is in the San Gabriel Mountains inside Angeles National F"
   }
  ],
- "monterey-park": [],
+ "monterey-park": [
+  {
+   "file": "monterey-park-1.webp",
+   "caption": "Monterey Park Civic Center",
+   "alt": "The Monterey Park Civic Center.",
+   "title": "Monterey Park (2013) 01.JPG",
+   "author": "Nandaro",
+   "license": "CC BY-SA 3.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Monterey_Park_(2013)_01.JPG",
+   "desc": "Monterey Park Civic Center in Monterey Park, California, U.S.A.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
  "north-tustin": [],
  "ontario": [
   {
@@ -454,7 +532,20 @@
    "desc": "Laguna Beach California United States"
   }
  ],
- "maywood": [],
+ "maywood": [
+  {
+   "file": "maywood-1.webp",
+   "caption": "Maywood City Hall",
+   "alt": "Maywood City Hall.",
+   "title": "Maywood CA CityHall.jpg",
+   "author": "User:Geographer at English Wikipedia.",
+   "license": "CC BY 2.5",
+   "licurl": "https://creativecommons.org/licenses/by/2.5",
+   "page": "https://commons.wikimedia.org/wiki/File:Maywood_CA_CityHall.jpg",
+   "desc": "The City Hall of Maywood, California.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
  "villa-park": [
   {
    "file": "villa-park-1.webp",
@@ -610,6 +701,258 @@
    "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
    "page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_houses_in_Walnut_Park,_Los_Angeles,_April_2024.JPG",
    "desc": "Aerial view of houses in Walnut Park, Los Angeles, in April 2024. The view spans from Hill Street (bottom of the image) in the north to Santa Ana Street in the south, centered near Cypress Avenue"
+  }
+ ],
+ "altadena": [
+  {
+   "file": "altadena-1.webp",
+   "caption": "Lake Avenue",
+   "alt": "Lake Avenue running north through Altadena toward the San Gabriel Mountains.",
+   "title": "Lake Avenue Altadena.jpg",
+   "author": "Weedwhacker128",
+   "license": "CC0",
+   "licurl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:Lake_Avenue_Altadena.jpg",
+   "desc": "Lake Avenue in Altadena with the Charles W. Eliot Middle School prominent on the left.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "arcadia": [
+  {
+   "file": "arcadia-1.webp",
+   "caption": "Los Angeles County Arboretum",
+   "alt": "The central fountain at the Los Angeles County Arboretum in Arcadia, with the San Gabriel Mountains behind.",
+   "title": "LA County Arboretum - fountain.JPG",
+   "author": "Daderot at English Wikipedia",
+   "license": "CC BY-SA 3.0",
+   "licurl": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:LA_County_Arboretum_-_fountain.JPG",
+   "desc": "Central fountain in the Los Angeles County Arboretum — with view of San Gabriel Mountains behind, located in Arcadia, Southern California.\n\nCredits\nPhotograph taken by me in March 2006.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "bell": [
+  {
+   "file": "bell-1.webp",
+   "caption": "James George Bell House",
+   "alt": "The historic James George Bell House on Pine Avenue in Bell.",
+   "title": "Bell House2.jpg",
+   "author": "Mortis24",
+   "license": "Public domain",
+   "licurl": "",
+   "page": "https://commons.wikimedia.org/wiki/File:Bell_House2.jpg",
+   "desc": "James George Bell House on Pine Ave. in Bell, California",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "carson": [
+  {
+   "file": "carson-1.webp",
+   "caption": "Leo F. Cain Library, CSU Dominguez Hills",
+   "alt": "The Leo F. Cain Library at California State University, Dominguez Hills in Carson.",
+   "title": "DSC 0262-X5 Leo F. Cain Library.jpg",
+   "author": "CSU Dominguez Hills",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:DSC_0262-X5_Leo_F._Cain_Library.jpg",
+   "desc": "Additions made to Dominguez Hills library.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "claremont": [
+  {
+   "file": "claremont-1.webp",
+   "caption": "Claremont Station",
+   "alt": "The Claremont train station.",
+   "title": "ClaremontStation.jpg",
+   "author": "User:Oakshade",
+   "license": "CC BY-SA 3.0",
+   "licurl": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:ClaremontStation.jpg",
+   "desc": "Trackside of Claremont Metrolink station.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "compton": [
+  {
+   "file": "compton-1.webp",
+   "caption": "Compton High School",
+   "alt": "The Compton High School sign in front of the school building.",
+   "title": "Compton High School billboard.jpg",
+   "author": "Bahn Mi at English Wikipedia",
+   "license": "CC BY-SA 2.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Compton_High_School_billboard.jpg",
+   "desc": "Compton High School billboard.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "corona": [
+  {
+   "file": "corona-1.webp",
+   "caption": "Santa Fe Depot",
+   "alt": "The 1937 Santa Fe train station in Corona.",
+   "title": "Corona, CA train station.jpg",
+   "author": "Ron Reiring",
+   "license": "CC BY 2.0",
+   "licurl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Corona,_CA_train_station.jpg",
+   "desc": "Santa Fe station in Corona, CA built in 1937.  Now a restaurant &amp; bar (with a really bad roof).",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "east-los-angeles": [
+  {
+   "file": "east-los-angeles-1.webp",
+   "caption": "Whittier Boulevard",
+   "alt": "An old theater building on Whittier Boulevard in East Los Angeles.",
+   "title": "Old Theater, 5190 Whittier Blvd., Los Angeles.JPG",
+   "author": "Los Angeles",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Old_Theater,_5190_Whittier_Blvd.,_Los_Angeles.JPG",
+   "desc": "Old Theater, approximately 5190 Whittier Blvd., Los Angeles, California",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "la-crescenta-montrose": [
+  {
+   "file": "la-crescenta-montrose-1.webp",
+   "caption": "Holy Redeemer Catholic Church",
+   "alt": "Holy Redeemer Catholic Church in Montrose.",
+   "title": "Holy Redeemer Catholic Church, Montrose.JPG",
+   "author": "Cbl62 (talk)",
+   "license": "CC BY-SA 3.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Holy_Redeemer_Catholic_Church,_Montrose.JPG",
+   "desc": "Holy Redeemer Catholic Church, Montrose, California",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "la-verne": [
+  {
+   "file": "la-verne-1.webp",
+   "caption": "University of La Verne",
+   "alt": "Founders Hall at the University of La Verne.",
+   "title": "Founders Hall, University of La Verne.jpg",
+   "author": "Phu \"Son\" Nguyen from CA, USA",
+   "license": "CC BY 2.0",
+   "licurl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Founders_Hall,_University_of_La_Verne.jpg",
+   "desc": "Founder's Hall, University of La Verne",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "pomona": [
+  {
+   "file": "pomona-1.webp",
+   "caption": "Antique Row, Downtown Pomona",
+   "alt": "The Antique Row arch over a street in downtown Pomona.",
+   "title": "Downtown Pomona 04 - panoramio.jpg",
+   "author": "kl91711",
+   "license": "CC BY 3.0",
+   "licurl": "https://creativecommons.org/licenses/by/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Downtown_Pomona_04_-_panoramio.jpg",
+   "desc": "Downtown Pomona 04",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "seal-beach": [
+  {
+   "file": "seal-beach-1.webp",
+   "caption": "Red Car Museum",
+   "alt": "The restored Pacific Electric Red Car at the museum in Seal Beach.",
+   "title": "Pacific Electric Railcar Sideview.jpg",
+   "author": "Natureluv7",
+   "license": "CC BY 4.0",
+   "licurl": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Pacific_Electric_Railcar_Sideview.jpg",
+   "desc": "The Pacific Electric Railcar  Museum Sideview in Seal Beach, CA.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "sierra-madre": [
+  {
+   "file": "sierra-madre-1.webp",
+   "caption": "Sierra Madre Wistaria",
+   "alt": "The giant wisteria vine in Sierra Madre in bloom.",
+   "title": "Sierra Madre Wistaria Festival 2016 01.jpg",
+   "author": "Patrick Pelletier",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Sierra_Madre_Wistaria_Festival_2016_01.jpg",
+   "desc": "The world's largest wisteria plant, in Sierra Madre, California, which is open to the public one day a year.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "south-pasadena": [
+  {
+   "file": "south-pasadena-1.webp",
+   "caption": "Mission Street",
+   "alt": "Historic storefronts on Mission Street in South Pasadena.",
+   "title": "South Pasadena Historic District, North Side of Mission St..jpg",
+   "author": "Cbl62",
+   "license": "CC BY-SA 3.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:South_Pasadena_Historic_District,_North_Side_of_Mission_St..jpg",
+   "desc": "South Pasadena Historic District, North Side of Mission St. at Meridian Ave. — South Pasadena.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "upland": [
+  {
+   "file": "upland-1.webp",
+   "caption": "Upland Memorial Park",
+   "alt": "Oak trees and lawn at Upland Memorial Park.",
+   "title": "Upland Memorial Park in April 2023.jpg",
+   "author": "Sdkb",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Upland_Memorial_Park_in_April_2023.jpg",
+   "desc": "Upland Memorial Park in Upland, California, in April 2023",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "vernon": [
+  {
+   "file": "vernon-1.webp",
+   "caption": "Vernon City Hall",
+   "alt": "Vernon City Hall.",
+   "title": "Vernon City Hall.jpg",
+   "author": "RightCowLeftCoast",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Vernon_City_Hall.jpg",
+   "desc": "City Hall of Vernon, California. In the mid-ground is the Native Sons of the Golden West monument for the Battle of La Mesa.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "west-carson": [
+  {
+   "file": "west-carson-1.webp",
+   "caption": "Harbor-UCLA Medical Center",
+   "alt": "Harbor-UCLA Medical Center in West Carson.",
+   "title": "Harbor-UCLA Medical Center 20150328 (3).jpg",
+   "author": "Biochemistry2016",
+   "license": "CC BY-SA 4.0",
+   "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Harbor-UCLA_Medical_Center_20150328_(3).jpg",
+   "desc": "The picture was taken with a Pentax Optio RZ10 camera. \nTaken on March 28, 2015.",
+   "source": "wikipedia-lead-2026-11-13"
+  }
+ ],
+ "willowbrook": [
+  {
+   "file": "willowbrook-1.webp",
+   "caption": "Willowbrook Station",
+   "alt": "The Metro station platform at Willowbrook.",
+   "title": "Green line platform at Willowbrook (Los Angeles Metro station).JPG",
+   "author": "Jeffrey Beall",
+   "license": "CC BY 3.0",
+   "licurl": "https://creativecommons.org/licenses/by/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Green_line_platform_at_Willowbrook_(Los_Angeles_Metro_station).JPG",
+   "desc": "The green line platform at the Willowbrook stop on the Los Angeles Metro.",
+   "source": "wikipedia-lead-2026-11-13"
   }
  ]
 }

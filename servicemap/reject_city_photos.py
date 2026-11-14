@@ -4,6 +4,7 @@ import json, os
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(HERE, 'photo_credits.json'); C = json.load(open(P))
 REJECT = 'baldwin-park chino duarte fountain-valley hawthorne inglewood lawndale monterey-park north-tustin rowland-heights la-palma eastvale la-habra maywood sherman-oaks'.split()
 for s in REJECT:
+    if C.get(s) and C[s][0].get('source') == 'wikipedia-lead-2026-11-13': continue   # second pass picks (pick_wiki_lead.py), reviewed separately
     if s in C: C[s] = []
     for f in (s + '-1.webp', s + '-1-sm.webp'):
         f = os.path.join(HERE, '..', 'public', 'img', 'cities', f)

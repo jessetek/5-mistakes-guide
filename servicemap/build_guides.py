@@ -24,7 +24,7 @@ COUNTY_Z = CD.COUNTY_Z
 HUES = [('#FDE99B', '#F7C9B6'), ('#D1EEF9', '#9ED4EF'), ('#9BD8A9', '#FDE99B'), ('#B8CAF5', '#D1EEF9'),
         ('#9ED4EF', '#9BD8A9'), ('#F7C9B6', '#FDE99B')]
 MARK = '<meta name="generator" content="servicemap/build_guides.py">'
-VER = {'map': 11, 'pay': 3, 'hub': 2}     # bump when the script files change
+VER = {'map': 12, 'pay': 3, 'hub': 2}     # bump when the script files change
 e = lambda s: html.escape(str(s), quote=True)
 money, short, pct, signed, month, join = H.money, H.short, H.pct, H.signed, H.month, H.join
 
@@ -188,6 +188,80 @@ def faq_items(r, nbn):
     return faq
 
 
+def img_size(src):
+    """Real pixel size of a site image, for og:image:width/height."""
+    from PIL import Image
+    return Image.open(os.path.join(PUB, src.lstrip('/'))).size
+
+
+def og_size(head, src):
+    w, h = img_size(src)
+    return re.sub(r'<meta property="og:image:width" content="\d+">\n<meta property="og:image:height" content="\d+">',
+                  f'<meta property="og:image:width" content="{w}">\n<meta property="og:image:height" content="{h}">', head, count=1)
+
+
+SITE_PAGES = set(f[:-5] for f in os.listdir(PUB) if f.endswith('.html'))
+def more_links(slug, name):
+    """Other pages on the site about this same city (agent page, first-time buyer, selling over asking)."""
+    out = []
+    for pre, label in (('real-estate-agent-', f'Real estate agent in {name}'), ('first-time-buyer-', f'First-time buyer guide for {name}'), ('sell-over-asking-', f'Selling over asking in {name}')):
+        if pre + slug in SITE_PAGES: out.append(f'<a href="/{pre}{slug}">{e(label)}</a>')
+    return out
+
+
+def city_cta(slug, name):
+    """One clear next step near the end of every city guide. Same block on generated and hand-written guides."""
+    links = more_links(slug, name) + ['<a href="/rates">Weekly mortgage rate texts</a>', '<a href="/insights/">SoCal market insights</a>']
+    return f'''<!-- citycta:start -->
+<section class="city-cta" aria-labelledby="cityCtaTitle">
+  <div class="city-cta-card reveal">
+    <h2 class="sec-title" id="cityCtaTitle">Thinking About<br><span class="g">{e(name)}?</span></h2>
+    <p class="city-cta-sub">Find out what your home is worth, see which move fits your budget, or talk it through with Jesse.</p>
+    <div class="city-cta-btns">
+      <a href="/valuation" class="btn-primary">What&#39;s My Home Worth?</a>
+      <a href="/move" class="btn-ghost">Take the Move Up Quiz</a>
+      <a href="/zoom" class="btn-ghost">Talk to Jesse</a>
+    </div>
+    <p class="city-cta-links">{' <span aria-hidden="true">·</span> '.join(links)}</p>
+  </div>
+</section>
+<!-- citycta:end -->
+
+'''
+
+
+def mid_cta(r):
+    """A short nudge halfway down the page, where people finish reading the prices."""
+    name = e(r['name'])
+    return f'''<!-- hub: mid cta -->
+<section class="hub-section hub-tight city-mid">
+  <div class="hub-inner"><div class="city-mid-card">
+    <p><b>Own in {name}?</b> These are citywide numbers. Get a value for your street and your home.</p>
+    <a href="/valuation" class="btn-primary">Get My Home Value</a>
+  </div></div>
+</section>
+
+'''
+
+
+def schema_graph(r, slug, desc, pic):
+    """Breadcrumbs plus the page and the place it is about (Census point, county). No street address anywhere."""
+    url = f'https://jessetek.net/neighborhoods/{slug}'; t = CD.T.get(slug, {})
+    place = {'@type': 'City' if r['kind'] == 'city' else 'Place', 'name': f"{r['name']}, California",
+             'containedInPlace': {'@type': 'AdministrativeArea', 'name': COUNTY_Z[r['county']] + ', California'}}
+    if r['kind'] == 'cdp': place['description'] = f"Unincorporated community (Census designated place) in {COUNTY_Z[r['county']]}."
+    if t.get('lat'): place['geo'] = {'@type': 'GeoCoordinates', 'latitude': round(t['lat'], 5), 'longitude': round(t['lon'], 5)}
+    page = {'@type': 'WebPage', '@id': url, 'url': url, 'name': f"{r['name']} Real Estate Guide", 'description': desc, 'inLanguage': 'en',
+            'isPartOf': {'@id': 'https://jessetek.net/'}, 'about': place, 'author': {'@id': 'https://jessetek.net/about#jesse'},
+            'breadcrumb': {'@id': url + '#breadcrumb'}, 'dateModified': '2026-11-13'}
+    if pic: page['primaryImageOfPage'] = {'@type': 'ImageObject', 'url': 'https://jessetek.net' + pic['src']}
+    crumbs = {'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://jessetek.net/'},
+        {'@type': 'ListItem', 'position': 2, 'name': 'Service Areas', 'item': 'https://jessetek.net/service-areas'},
+        {'@type': 'ListItem', 'position': 3, 'name': r['name'], 'item': url}]}
+    return '<script type="application/ld+json">\n' + json.dumps({'@context': 'https://schema.org', '@graph': [page, crumbs]}, indent=2, ensure_ascii=False) + '\n</script>\n'
+
+
 TPL = None
 def template():
     global TPL
@@ -242,6 +316,11 @@ def page(slug, i):
                      (r'<body style="[^"]*">', f'<body style="--th:{th};--th2:{th2}">')):
         head = re.sub(pat, val, head, count=1)
     head = head.replace('https://jessetek.net/neighborhoods/downey', f'https://jessetek.net/neighborhoods/{slug}')
+    pic = photo(slug)
+    if pic:   # share previews show the city's own (freely licensed) photo instead of the generic site image
+        for pat in (r'(<meta property="og:image" content=")[^"]*(">)', r'(<meta name="twitter:image" content=")[^"]*(">)'):
+            head = re.sub(pat, r'\g<1>https://jessetek.net' + pic['src'] + r'\g<2>', head, count=1)
+        head = og_size(head, pic['src'])
 
     body = f'''<!-- ===================== PAGE HERO ===================== -->
 <section class="page-hero">
@@ -267,7 +346,7 @@ def page(slug, i):
   </div>
 </section>
 
-''' + (lambda mid: jump(mid) + mid)(anchors(H.story(r, photo(slug)) + H.gallery(r, skip_first=not photo(slug)) + H.chart(r) + H.money_buys(r) + pay_tool(r) + H.rent(r) + H.ranks(r) + H.parks(r) + H.things(r) + H.eat(r) + map_block(r))) + f'''<!-- ===================== FAQ ===================== -->
+''' + (lambda mid: jump(mid) + mid)(anchors(H.story(r, photo(slug)) + H.gallery(r, skip_first=not photo(slug)) + H.chart(r) + H.money_buys(r) + pay_tool(r) + H.rent(r) + H.ranks(r) + (mid_cta(r) if r['value'] else '') + H.parks(r) + H.things(r) + H.eat(r) + map_block(r))) + f'''<!-- ===================== FAQ ===================== -->
 <section class="hv-section">
   <div class="hv-inner">
     <div class="sec-head reveal">
@@ -280,13 +359,7 @@ def page(slug, i):
   </div>
 </section>
 
-<!-- ===================== CTA ===================== -->
-<section style="background:var(--bg);padding:40px 22px 0;text-align:center">
-  <div style="max-width:780px;margin:0 auto">
-    <p class="city-next-links" style="font-size:15px;color:var(--text2);line-height:1.65;margin:0">Ready for the next step? Start with <a href="/buyer" style="color:var(--blue);font-weight:500">my buyer guide</a> or <a href="/sellers" style="color:var(--blue);font-weight:500">how I sell homes</a>, get <a href="/rates" style="color:var(--blue);font-weight:500">weekly mortgage rate texts</a>, or browse the latest <a href="/insights/" style="color:var(--blue);font-weight:500">SoCal market insights</a>.</p>
-  </div>
-</section>
-''' + booking + f'''<!-- RELATED CITIES -->
+''' + city_cta(slug, name) + booking + f'''<!-- RELATED CITIES -->
 <section class="related-cities">
   <div class="related-cities-inner">
     <div class="sec-head reveal">
@@ -302,13 +375,14 @@ def page(slug, i):
   </div>
 </section>
 
-''' + footer_etc + f'<script type="application/ld+json">\n{faq_ld}\n</script>\n\n' + scripts(r, True) + '</body>\n</html>\n'
+''' + footer_etc + f'<script type="application/ld+json">\n{faq_ld}\n</script>\n' + schema_graph(r, slug, desc, pic) + '\n' + scripts(r, True) + '</body>\n</html>\n'
     return head + body
 
 
 # ---------------------------------------------------------------- hand-written guides: add the hub
 GOOGLE_MAP = re.compile(r'<!-- ===================== MAP ===================== -->.*?</section>\n*', re.S)
 HUB = re.compile(r'<!-- cityhub:start -->.*?<!-- cityhub:end -->\n*', re.S)
+CTA = re.compile(r'<!-- citycta:start -->.*?<!-- citycta:end -->\n*', re.S)
 def add_hub(path, slug):
     h = open(path).read()
     if slug not in CD.ALL or slug not in CD.T: return False
@@ -319,12 +393,13 @@ def add_hub(path, slug):
     m = GOOGLE_MAP.search(h)
     if m and slug not in keep: keep[slug] = m.group(0); json.dump(keep, open(side, 'w'), indent=1)
     h = HUB.sub('', h)
+    h = CTA.sub('', h)
     h = re.sub(r'<script src="/js/(cityhub|servicemap)\.js\?v=\d+" defer></script>\n', '', h)
     prices = [v for v in list(r['beds'].values()) + [r['low'], r['high']] if v]
     if prices and 'data-citypay' in h and 'data-min=' not in h:
         h = h.replace('data-citypay ', f'data-citypay data-min="{min(prices)}" data-max="{max(prices)}" ', 1)
     # the hub goes right after the payment tool, which every hand-written guide has
-    block = '<!-- cityhub:start -->\n' + H.story(r, photo(slug)) + H.gallery(r, skip_first=not photo(slug)) + H.chart(r) + H.money_buys(r) + H.rent(r) + H.ranks(r) + H.parks(r) + H.things(r) + '<!-- cityhub:end -->\n\n'
+    block = '<!-- cityhub:start -->\n' + H.story(r, photo(slug)) + H.gallery(r, skip_first=not photo(slug)) + H.chart(r) + H.money_buys(r) + H.rent(r) + H.ranks(r) + (mid_cta(r) if r['value'] else '') + H.parks(r) + H.things(r) + '<!-- cityhub:end -->\n\n'
     block = anchors(block)
     m = re.search(r'<section class="cp-section" id="payment">.*?</section>\n*', h, flags=re.S)
     if not m: return False
@@ -345,6 +420,8 @@ def add_hub(path, slug):
     if hero and on_map and shape(slug):
         k = hero.end() - len('</section>')
         h = h[:k] + '<!-- cityhub:start -->\n  ' + shape(slug) + '\n<!-- cityhub:end -->\n\n' + h[k:]
+    anchor = '<section class="cta-section cta-section-cal">' if '<section class="cta-section cta-section-cal">' in h else '<!-- RELATED CITIES -->' if '<!-- RELATED CITIES -->' in h else '<section class="related-cities">'
+    h = h.replace(anchor, city_cta(slug, r['name']) + anchor, 1)
     tags = (f'<script src="/js/servicemap.js?v={VER["map"]}" defer></script>\n' if on_map else '') + f'<script src="/js/cityhub.js?v={VER["hub"]}" defer></script>\n'
     h = re.sub(r'/js/citypay\.js\?v=\d+', f'/js/citypay.js?v={VER["pay"]}', h)
     h = h.replace('</body>', tags + '</body>', 1)

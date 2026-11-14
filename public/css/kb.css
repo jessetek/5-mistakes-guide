@@ -732,6 +732,17 @@ a.hv-row:hover{background:var(--kb-tile)}
   .svc-map-main{width:100%;height:auto;min-height:0;max-height:86vh}
   .svc-side{height:auto;min-height:0;max-height:420px;border-radius:22px}
 }
+/* Phones (Instagram link in bio): the map alone, edge to edge, at the frame's own portrait shape.
+   The city list and its search stay on tablets and desktop; on phones the card under a tapped city opens its guide. */
+@media(max-width:760px){
+  .svc-wrap{display:block}
+  .svc-wrap .svc-side{display:none}
+  .svc-section:has(.svc-map-main){padding-left:0;padding-right:0}
+  .svc-map-main{width:100%;max-width:none;height:auto;aspect-ratio:83/100;min-height:0;max-height:none;border-radius:0;border-left:0;border-right:0;box-shadow:none}
+  .svc-map-main .maplibregl-cooperative-gesture-screen{border-radius:0}
+  .svc-map-main .svc-card{min-height:64px;box-sizing:border-box}
+  .svc-map-main .svc-card-go{padding:13px 16px}
+}
 
 /* ============ CITY HUB: data blocks shared by every city guide (servicemap/hub.py, js/cityhub.js) ============ */
 .hub-section{padding:26px 40px 44px;background:var(--bg)}
@@ -985,3 +996,33 @@ section[id]{scroll-margin-top:128px}
   .hub-story-photo{transform:none;border-radius:20px}
   .hub-cz{grid-template-columns:96px 1fr 26px}
 }
+/* source line under the hand-written guides' hero stats */
+.nbhd-stats-src{max-width:1100px;margin:14px auto 0;padding:0 20px;text-align:center;font:400 12.5px/1.4 var(--font);color:var(--kb-mute)}
+/* city guides: next-step card + mid-page nudge */
+.city-cta{background:var(--bg);padding:48px 22px 8px}
+.city-cta-card{max-width:860px;margin:0 auto;background:var(--kb-tile);border:1px solid var(--kb-line);border-radius:28px;padding:44px 40px 34px;text-align:center}
+.city-cta-card .sec-title{margin:0 0 12px}
+.city-cta-sub{max-width:560px;margin:0 auto 24px;font-size:17px;line-height:1.55;color:var(--kb-ink2)}
+.city-cta-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.city-cta-btns a{display:inline-flex;align-items:center;text-decoration:none}
+.city-cta-links{margin:24px 0 0;font-size:14.5px;line-height:1.9;color:var(--kb-ink2)}
+.city-cta-links a{color:var(--kb-ink);font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(3,3,2,.25);white-space:nowrap}
+.city-cta-links span{margin:0 6px;color:var(--kb-mute)}
+.city-mid-card{display:flex;align-items:center;justify-content:space-between;gap:18px;background:var(--kb-tile);border:1px solid var(--kb-line);border-radius:22px;padding:18px 22px}
+.city-mid-card p{margin:0;font-size:15.5px;line-height:1.5;color:var(--kb-ink2)}
+.city-mid-card p b{color:var(--kb-ink);font-weight:600}
+.city-mid-card .btn-primary{display:inline-flex;align-items:center;flex:none;text-decoration:none}
+@media(max-width:760px){
+  .city-cta{padding:36px 14px 4px}
+  .city-cta-card{padding:32px 20px 26px;border-radius:22px}
+  .city-cta-sub{font-size:16px;margin-bottom:20px}
+  .city-cta-btns{flex-direction:column;gap:10px}
+  .city-cta-btns a{width:100%}
+  .city-cta-links{font-size:14px;line-height:1.75}
+  .city-cta-links span{display:none}
+  .city-cta-links a{display:block;white-space:normal;padding:6px 0}
+  .city-mid-card{flex-direction:column;align-items:stretch;text-align:center;padding:18px}
+  .city-mid-card .btn-primary{width:100%}
+}
+/* phones: pinch zooms and the first tap zooms to the city, so the +/- buttons go; they covered the map's right edge (Temescal Valley) */
+@media(max-width:760px) and (hover:none){.svc-wrap .svc-ctrl{display:none}}

@@ -44,7 +44,7 @@ def main():
         }
         cities[slug] = {
             'name': name, 'county': county, 'zips': zips, 'farm': slug in FARM,
-            'median_price': stats.get('Median Home Price'), 'days_on_market': stats.get('Avg Days on Market'),
+            'median_price': stats.get('Median Home Price') or stats.get('Median Sale Price'), 'days_on_market': stats.get('Avg Days on Market') or stats.get('Median Days on Market'),
             'residents': stats.get('Residents'), 'schools': schools, 'neighbors': neighbors, 'pages': pages,
         }
     OUT.parent.mkdir(parents=True, exist_ok=True)

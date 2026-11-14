@@ -84,8 +84,8 @@
     "90212"
    ],
    "farm": false,
-   "median_price": "$4.5M",
-   "days_on_market": "45",
+   "median_price": "$4.6M",
+   "days_on_market": "100",
    "residents": "32K",
    "schools": [
     "Beverly Hills High School",
@@ -103,7 +103,8 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
   },
   "brea": {
    "name": "Brea",
@@ -203,8 +204,8 @@
     "91302"
    ],
    "farm": false,
-   "median_price": "$2.5M",
-   "days_on_market": "42",
+   "median_price": "$1.56M",
+   "days_on_market": "59",
    "residents": "23K",
    "schools": [
     "Calabasas High School",
@@ -222,7 +223,8 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
   },
   "cerritos": {
    "name": "Cerritos",
@@ -290,8 +292,8 @@
     "90232"
    ],
    "farm": false,
-   "median_price": "$1.55M",
-   "days_on_market": "35",
+   "median_price": "$1.23M",
+   "days_on_market": "51",
    "residents": "39K",
    "schools": [
     "Culver City High School",
@@ -309,7 +311,8 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
   },
   "cypress": {
    "name": "Cypress",
@@ -1195,8 +1198,8 @@
     "90405"
    ],
    "farm": false,
-   "median_price": "$2.0M",
-   "days_on_market": "38",
+   "median_price": "$1.87M",
+   "days_on_market": "53",
    "residents": "92K",
    "schools": [
     "Santa Monica High School (Samohi)",
@@ -1214,7 +1217,8 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
   },
   "sherman-oaks": {
    "name": "Sherman Oaks",

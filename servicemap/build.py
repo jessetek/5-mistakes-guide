@@ -53,7 +53,13 @@ for s in order[len(KB):]:
     taken = [color[t] for t in NB.get(s, ()) if t in color]
     best = max(pool, key=lambda c: (round(min([hdist(c, t) for t in taken] or [1]), 3), -pool.index(c)))
     color[s] = best; pool.remove(best)
+# keep every city's color fixed (city pages wear the same color), new cities get one from the pool
+PIN = os.path.join(HERE, 'colors.json')
+if os.path.exists(PIN):
+    for s_, c_ in json.load(open(PIN)).items():
+        if s_ in color: color[s_] = c_
 FRAME = json.load(open(os.path.join(HERE, 'frame.json')))['frame']   # the area of Jesse's original screenshot
+LP = os.path.join(HERE, 'label_points.json'); INWARD = json.load(open(LP)) if os.path.exists(LP) else {}
 feats = []; missing = []
 for slug in order:
     c = M[slug]
@@ -63,7 +69,8 @@ for slug in order:
     xs = [p[0] for r in rings(geo) for p in r]; ys = [p[1] for r in rings(geo) for p in r]
     # label point: the Census internal point when we have one, else the middle of the biggest piece
     if c.get('label'): center = c['label']                 # a city the frame cuts through: label where it shows
-    elif o.get('source') == 'census-tiger': center = [round(o['lon'], 5), round(o['lat'], 5)]
+    elif slug in INWARD: center = INWARD[slug]          # Census point too close to the edge to tap (label_points.py)
+    elif str(o.get('source', '')).startswith('census-tiger'): center = [round(o['lon'], 5), round(o['lat'], 5)]
     else: center = [round((min(p[0] for p in big) + max(p[0] for p in big)) / 2, 5), round((min(p[1] for p in big) + max(p[1] for p in big)) / 2, 5)]
     old = C['cities'].get(slug)
     z = G.zhvi(slug)
@@ -78,12 +85,12 @@ for slug in order:
                   'bbox': [round(min(xs), 5), round(min(ys), 5), round(max(xs), 5), round(max(ys), 5)],
                   'size': round(sum(area(r) for r in rings(geo)) * 1e4, 3),
                   # coastal = the legal boundary runs out to sea, so the map draws its outline under the water
-                  'coastal': slug in COAST},
+                  'coastal': slug in COAST, 'kind': c.get('kind', 'city')},
                   'geometry': {'type': geo['type'], 'coordinates': rnd(geo['coordinates'])}})
 # big cities first, so a small city inside or beside a big one sits on top and stays clickable
 feats.sort(key=lambda f: -f['properties']['size'])
 for i, f in enumerate(feats): f['id'] = i + 1
-out = {'type': 'FeatureCollection', 'credit': 'City boundaries: U.S. Census Bureau', 'frame': FRAME, 'features': feats}
+out = {'type': 'FeatureCollection', 'credit': 'City boundaries: U.S. Census Bureau TIGER/Line 2026', 'frame': FRAME, 'features': feats}
 json.dump(out, open(OUT, 'w'), separators=(',', ':'), ensure_ascii=False)
 print('wrote', os.path.relpath(OUT), '|', len(feats), 'cities |', os.path.getsize(OUT) // 1024, 'KB | missing:', missing,
       '| unique colors:', len(set(f['properties']['color'] for f in feats)))

@@ -18,6 +18,7 @@ M = _j('master.json')                      # places on the map
 ALL = dict(_j('master_v2_192.json')); ALL.update(M)   # also the hand-written guides just west of the map
 Z = _j('zillow_zhvi.json'); ZX = _j('zillow_extra.json'); P = _j('census_pop.json'); C20 = _j('census_2020_pop.json')
 T = _j('tiger_outlines.json'); SCH = _j('cde_schools.json')
+if os.path.exists(os.path.join(HERE, 'tiger2026_outlines.json')): T.update(_j('tiger2026_outlines.json'))   # newest official lines for the 135 map places
 PLACES = _j('places.json') if os.path.exists(os.path.join(HERE, 'places.json')) else {}
 WIKI = _j('wiki.json') if os.path.exists(os.path.join(HERE, 'wiki.json')) else {}
 COUNTY_Z = {'LA County': 'Los Angeles County', 'Orange County': 'Orange County', 'Ventura County': 'Ventura County',

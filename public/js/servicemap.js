@@ -11,7 +11,7 @@
   var LIB = 'https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js';
   var CSS = 'https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css';
   var STYLE = 'https://tiles.openfreemap.org/styles/positron';
-  var DATA = '/data/service-area.json?v=8';
+  var DATA = '/data/service-area.json?v=10';
 
   // The look: warm paper land, soft blue water, quiet roads.
   var LAND = '#F7F3EC', WATER = '#BFE1F3', PARK = '#D9EBCF', WOOD = '#E3EDD6', ROAD = '#FFFFFF',
@@ -100,7 +100,10 @@
 
     var card = box.querySelector('.svc-card'), hint = box.querySelector('.svc-hint');
     var cName = card.querySelector('.svc-card-name'), cMeta = card.querySelector('.svc-card-meta'), cSw = card.querySelector('.svc-card-swatch');
-    var active = null, touch = false;
+    var active = null;
+    // touch screens (phones, tablets): no hover, so a tap picks a city and the card opens its guide
+    var touch = !!(window.matchMedia && window.matchMedia('(hover: none)').matches);
+    if (touch) hint.textContent = 'Tap a city';
 
     function setActive(f) {
       if (active && (!f || f.id !== active.id)) map.setFeatureState({ source: 'cities', id: active.id }, { on: false });
@@ -108,11 +111,13 @@
       if (!f) { card.hidden = true; hint.hidden = false; map.getCanvas().style.cursor = ''; document.querySelectorAll('.svc-side-row.on').forEach(function (r) { r.classList.remove('on'); }); return; }
       map.setFeatureState({ source: 'cities', id: f.id }, { on: true });
       var p = f.properties;
-      cName.textContent = p.name;
-      cMeta.textContent = [p.county, p.value].filter(Boolean).join(' · ');
-      cSw.style.background = p.color;
       // on a city's own guide, its card is a label, not a link back to the same page
       var here = box._svc_focus && box._svc_focus.id === f.id && box.getAttribute('data-focus');
+      cName.textContent = p.name;
+      // unincorporated communities (Census CDPs) say so, so nobody mistakes them for a city hall
+      cMeta.textContent = [p.kind === 'cdp' ? 'Unincorporated ' + p.county : p.county, p.value].filter(Boolean).join(' · ');
+      card.setAttribute('aria-label', here ? p.name : 'Open the ' + p.name + ' guide');
+      cSw.style.background = p.color;
       if (here) card.removeAttribute('href'); else card.href = p.url;
       card.classList.toggle('svc-card-here', !!here);
       card.hidden = false; hint.hidden = true;
@@ -140,7 +145,7 @@
       map.addLayer({ id: 'city-line-coast', type: 'line', source: 'cities', filter: ['==', ['get', 'coastal'], true], layout: { 'line-join': 'round' }, paint: linePaint }, first);
       map.addLayer({ id: 'city-line', type: 'line', source: 'cities', filter: ['!=', ['get', 'coastal'], true], layout: { 'line-join': 'round' }, paint: linePaint }, firstLabel);
       map.addSource('city-labels', { type: 'geojson', data: { type: 'FeatureCollection', features: feats.map(function (f) {
-        return { type: 'Feature', id: f.id, properties: { name: f.properties.name, rank: -(f.properties.pop || 0), anchor: f.properties.anchor || 'center' }, geometry: { type: 'Point', coordinates: f.properties.center } };
+        return { type: 'Feature', id: f.id, properties: { slug: f.properties.slug, name: f.properties.name, rank: -(f.properties.pop || 0), anchor: f.properties.anchor || 'center' }, geometry: { type: 'Point', coordinates: f.properties.center } };
       }) } });
       map.addLayer({ id: 'city-name', type: 'symbol', source: 'city-labels', layout: {
         'text-field': ['get', 'name'], 'text-font': ['Noto Sans Bold'],
@@ -152,11 +157,21 @@
       map.on('mousemove', 'city-fill', function (e) { if (!touch && e.features.length) setActive(bySlug[e.features[0].properties.slug]); });
       // leaving a city: on a city's own guide the map falls back to that city, elsewhere to nothing
       map.on('mouseleave', 'city-fill', function () { if (!touch) setActive(box.getAttribute('data-focus') && box._svc_focus ? box._svc_focus : null); });
+      // What a tap or click means: the outline under the finger (small cities sit on top of big ones), then a
+      // city name under the finger, then on touch the closest city within a finger's width.
+      function pick(pt) {
+        var hit = map.queryRenderedFeatures(pt, { layers: ['city-fill'] })[0];
+        if (hit) return bySlug[hit.properties.slug];
+        var lab = map.queryRenderedFeatures(pt, { layers: ['city-name'] })[0];
+        if (lab && bySlug[lab.properties.slug]) return bySlug[lab.properties.slug];
+        if (!touch) return null;
+        var near = map.queryRenderedFeatures([[pt.x - 22, pt.y - 22], [pt.x + 22, pt.y + 22]], { layers: ['city-fill'] });
+        return near.length ? bySlug[near[0].properties.slug] : null;
+      }
       map.on('click', function (e) {
         if (map.getLayer('dots') && map.queryRenderedFeatures(e.point, { layers: ['dots'] }).length) return;
-        var hit = map.queryRenderedFeatures(e.point, { layers: ['city-fill'] })[0];
-        if (!hit) { setActive(null); return; }
-        var f = bySlug[hit.properties.slug];
+        var f = pick(e.point);
+        if (!f) { setActive(null); return; }
         // mouse: click goes straight to the guide. touch: first tap picks, second tap (or the card) opens.
         if (box._svc_focus && f.id === box._svc_focus.id) { setActive(f); return; }   // already on this city's page
         if (!touch || (active && active.id === f.id)) { window.location.href = f.properties.url; return; }
