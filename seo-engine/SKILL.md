@@ -43,7 +43,7 @@ automatically, serving `public/`. The engine lives in `seo-engine/`, which is no
 
 ## Step 2: Research (real facts only)
 - City numbers (median price, days on market, residents, ZIPs, schools, neighbors) come from
-  `seo-engine/data/cities.json`. That is the site's own data. Never contradict it. Write "around $926K"
+  `seo-engine/data/cities.json`. That is the site's own data. Never contradict it. Write "around $874K"
   and name the source as "my Downey market guide" with a link to `/neighborhoods/<city>`.
 - Anything else (programs, tax rules, rates, insurance, laws, landmarks, transit) must come from a page
   you fetch this run. Prefer .gov, county, city, Freddie Mac, CAR and school district sites. Put each one

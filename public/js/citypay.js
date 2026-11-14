@@ -1,5 +1,5 @@
 /* City payment tool: "what does a home here cost per month?"
-   <div class="cp-card" data-citypay data-city="Downey" data-median="926000"></div>
+   <div class="cp-card" data-citypay data-city="Downey" data-median="874000"></div>
    Rate comes from /api/rates (Freddie Mac weekly average). Everything else is a
    stated estimate, listed under the result.
 */
