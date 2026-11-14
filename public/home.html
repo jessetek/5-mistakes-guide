@@ -97,6 +97,14 @@
   .bc-contacts .dream-figures,.bc-contacts .dream-labels{max-width:420px;width:100%;margin-left:auto;margin-right:auto}
   .bc-instagram.bc-al .ios-nc{max-width:420px;width:100%;margin-left:auto;margin-right:auto}
 }
+/* Service area map on the home page (map + list styles live in kb.css) */
+.svc-onhome{padding:100px 40px 20px}
+.svc-onhome .sec-head{text-align:center}
+.svc-onhome-more{text-align:center;margin:22px 0 0}
+.svc-onhome-more a{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--font);color:var(--kb-ink);text-decoration:none;padding:13px 18px;border-radius:999px;background:#fff;border:1px solid var(--kb-line)}
+.svc-onhome-more a:hover{background:var(--kb-tile)}
+.svc-onhome-more i{font-style:normal}
+@media(max-width:760px){.svc-onhome{padding:60px 12px 10px}.svc-onhome .svc-side{max-height:300px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -483,6 +491,20 @@
       </a>
     </div>
   </div>
+</section>
+
+<!-- ===================== SERVICE AREA MAP ===================== -->
+<section class="svc-section svc-onhome" id="service-map">
+  <div class="sec-head reveal">
+    <span class="sec-label">Service Areas</span>
+    <h2 class="sec-title">Pick Your City<br><span class="g">on the Map.</span></h2>
+    <p class="sec-sub">Every city has its own page with real home values and a monthly payment estimate.</p>
+  </div>
+  <div class="svc-wrap">
+    <div class="svc-map svc-map-main" data-servicemap aria-label="Interactive map of the cities Jesse serves in Southern California"></div>
+    <aside class="svc-side" data-svc-list aria-label="Cities on the map"></aside>
+  </div>
+  <p class="svc-onhome-more"><a href="/service-areas">See every service area <i aria-hidden="true">&rarr;</i></a></p>
 </section>
 
 <!-- ===================== 1-2-3 STEPS ===================== -->
@@ -1085,6 +1107,7 @@ document.querySelectorAll('.reveal,.reveal-s').forEach(function(el){ io.observe(
     .catch(function(){});
 })();
 </script>
+<script src="/js/servicemap.js?v=11" defer></script>
 <script src="/js/analytics.js" defer></script>
 <script src="/js/cro.js" defer></script>
 <script src="/js/reviews.js?v=2" defer></script>
