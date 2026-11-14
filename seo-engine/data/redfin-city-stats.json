@@ -1,0 +1,337 @@
+{
+ "_source": "Redfin city housing market pages (redfin.com/city/<id>/CA/<name>/housing-market): median sale price and median days on market, all home types, three months ending October 2026. Fetched 2026-11-13.",
+ "period": "three months ending October 2026",
+ "fetched": "2026-11-13",
+ "cities": {
+  "anaheim": {
+   "median_sale_price": 939347,
+   "median_days_on_market": 42,
+   "homes_sold_october": 336,
+   "redfin_name": "Anaheim, CA",
+   "url": "https://www.redfin.com/city/517/CA/Anaheim/housing-market"
+  },
+  "bellflower": {
+   "median_sale_price": 821928,
+   "median_days_on_market": 40,
+   "homes_sold_october": 51,
+   "redfin_name": "Bellflower, CA",
+   "url": "https://www.redfin.com/city/1328/CA/Bellflower/housing-market"
+  },
+  "beverly-hills": {
+   "median_sale_price": 4596803,
+   "median_days_on_market": 100,
+   "homes_sold_october": 78,
+   "redfin_name": "Beverly Hills, CA",
+   "url": "https://www.redfin.com/city/1669/CA/Beverly-Hills/housing-market"
+  },
+  "brea": {
+   "median_sale_price": 1141706,
+   "median_days_on_market": 38,
+   "homes_sold_october": 82,
+   "redfin_name": "Brea, CA",
+   "url": "https://www.redfin.com/city/2099/CA/Brea/housing-market"
+  },
+  "buena-park": {
+   "median_sale_price": 909367,
+   "median_days_on_market": 43,
+   "homes_sold_october": 84,
+   "redfin_name": "Buena Park, CA",
+   "url": "https://www.redfin.com/city/2280/CA/Buena-Park/housing-market"
+  },
+  "burbank": {
+   "median_sale_price": 1174183,
+   "median_days_on_market": 39,
+   "homes_sold_october": 151,
+   "redfin_name": "Burbank, CA",
+   "url": "https://www.redfin.com/city/2320/CA/Burbank/housing-market"
+  },
+  "calabasas": {
+   "median_sale_price": 1558916,
+   "median_days_on_market": 59,
+   "homes_sold_october": 67,
+   "redfin_name": "Calabasas, CA",
+   "url": "https://www.redfin.com/city/2471/CA/Calabasas/housing-market"
+  },
+  "cerritos": {
+   "median_sale_price": 1064260,
+   "median_days_on_market": 31,
+   "homes_sold_october": 70,
+   "redfin_name": "Cerritos, CA",
+   "url": "https://www.redfin.com/city/3268/CA/Cerritos/housing-market"
+  },
+  "costa-mesa": {
+   "median_sale_price": 1508950,
+   "median_days_on_market": 39,
+   "homes_sold_october": 166,
+   "redfin_name": "Costa Mesa, CA",
+   "url": "https://www.redfin.com/city/4306/CA/Costa-Mesa/housing-market"
+  },
+  "culver-city": {
+   "median_sale_price": 1229145,
+   "median_days_on_market": 51,
+   "homes_sold_october": 83,
+   "redfin_name": "Culver City, CA",
+   "url": "https://www.redfin.com/city/4557/CA/Culver-City/housing-market"
+  },
+  "cypress": {
+   "median_sale_price": 956834,
+   "median_days_on_market": 48,
+   "homes_sold_october": 82,
+   "redfin_name": "Cypress, CA",
+   "url": "https://www.redfin.com/city/4596/CA/Cypress/housing-market"
+  },
+  "diamond-bar": {
+   "median_sale_price": 1079249,
+   "median_days_on_market": 69,
+   "homes_sold_october": 89,
+   "redfin_name": "Diamond Bar, CA",
+   "url": "https://www.redfin.com/city/4957/CA/Diamond-Bar/housing-market"
+  },
+  "downey": {
+   "median_sale_price": 874392,
+   "median_days_on_market": 38,
+   "homes_sold_october": 83,
+   "redfin_name": "Downey, CA",
+   "url": "https://www.redfin.com/city/5092/CA/Downey/housing-market"
+  },
+  "el-monte": {
+   "median_sale_price": 796946,
+   "median_days_on_market": 45,
+   "homes_sold_october": 72,
+   "redfin_name": "El Monte, CA",
+   "url": "https://www.redfin.com/city/5726/CA/El-Monte/housing-market"
+  },
+  "fullerton": {
+   "median_sale_price": 1079249,
+   "median_days_on_market": 47,
+   "homes_sold_october": 206,
+   "redfin_name": "Fullerton, CA",
+   "url": "https://www.redfin.com/city/7158/CA/Fullerton/housing-market"
+  },
+  "garden-grove": {
+   "median_sale_price": 1043024,
+   "median_days_on_market": 36,
+   "homes_sold_october": 153,
+   "redfin_name": "Garden Grove, CA",
+   "url": "https://www.redfin.com/city/7381/CA/Garden-Grove/housing-market"
+  },
+  "glendale": {
+   "median_sale_price": 1249131,
+   "median_days_on_market": 45,
+   "homes_sold_october": 199,
+   "redfin_name": "Glendale, CA",
+   "url": "https://www.redfin.com/city/7646/CA/Glendale/housing-market"
+  },
+  "hacienda-heights": {
+   "median_sale_price": 912865,
+   "median_days_on_market": 44,
+   "homes_sold_october": 80,
+   "redfin_name": "Hacienda Heights, CA",
+   "url": "https://www.redfin.com/city/23174/CA/Hacienda-Heights/housing-market"
+  },
+  "hermosa-beach": {
+   "median_sale_price": 2460788,
+   "median_days_on_market": 43,
+   "homes_sold_october": 55,
+   "redfin_name": "Hermosa Beach, CA",
+   "url": "https://www.redfin.com/city/8536/CA/Hermosa-Beach/housing-market"
+  },
+  "huntington-beach": {
+   "median_sale_price": 1416515,
+   "median_days_on_market": 46,
+   "homes_sold_october": 404,
+   "redfin_name": "Huntington Beach, CA",
+   "url": "https://www.redfin.com/city/9164/CA/Huntington-Beach/housing-market"
+  },
+  "irvine": {
+   "median_sale_price": 1458985,
+   "median_days_on_market": 60,
+   "homes_sold_october": 534,
+   "redfin_name": "Irvine, CA",
+   "url": "https://www.redfin.com/city/9361/CA/Irvine/housing-market"
+  },
+  "la-canada-flintridge": {
+   "median_sale_price": 2398332,
+   "median_days_on_market": 26,
+   "homes_sold_october": 38,
+   "redfin_name": "La Ca\u00f1ada Flintridge, CA",
+   "url": "https://www.redfin.com/city/9895/CA/La-Caada-Flintridge/housing-market"
+  },
+  "la-habra": {
+   "median_sale_price": 825075,
+   "median_days_on_market": 41,
+   "homes_sold_october": 79,
+   "redfin_name": "La Habra, CA",
+   "url": "https://www.redfin.com/city/9975/CA/La-Habra/housing-market"
+  },
+  "la-mirada": {
+   "median_sale_price": 921859,
+   "median_days_on_market": 40,
+   "homes_sold_october": 74,
+   "redfin_name": "La Mirada, CA",
+   "url": "https://www.redfin.com/city/10208/CA/La-Mirada/housing-market"
+  },
+  "la-puente": {
+   "median_sale_price": 786953,
+   "median_days_on_market": 57,
+   "homes_sold_october": 18,
+   "redfin_name": "La Puente, CA",
+   "url": "https://www.redfin.com/city/10290/CA/La-Puente/housing-market"
+  },
+  "lake-forest": {
+   "median_sale_price": 1229145,
+   "median_days_on_market": 63,
+   "homes_sold_october": 150,
+   "redfin_name": "Lake Forest, CA",
+   "url": "https://www.redfin.com/city/10039/CA/Lake-Forest/housing-market"
+  },
+  "lakewood": {
+   "median_sale_price": 882886,
+   "median_days_on_market": 35,
+   "homes_sold_october": 117,
+   "redfin_name": "Lakewood, CA",
+   "url": "https://www.redfin.com/city/10167/CA/Lakewood/housing-market"
+  },
+  "long-beach": {
+   "median_sale_price": 889381,
+   "median_days_on_market": 51,
+   "homes_sold_october": 607,
+   "redfin_name": "Long Beach, CA",
+   "url": "https://www.redfin.com/city/10940/CA/Long-Beach/housing-market"
+  },
+  "manhattan-beach": {
+   "median_sale_price": 3784867,
+   "median_days_on_market": 29,
+   "homes_sold_october": 100,
+   "redfin_name": "Manhattan Beach, CA",
+   "url": "https://www.redfin.com/city/11576/CA/Manhattan-Beach/housing-market"
+  },
+  "mission-viejo": {
+   "median_sale_price": 1207660,
+   "median_days_on_market": 43,
+   "homes_sold_october": 235,
+   "redfin_name": "Mission Viejo, CA",
+   "url": "https://www.redfin.com/city/12331/CA/Mission-Viejo/housing-market"
+  },
+  "montebello": {
+   "median_sale_price": 851907,
+   "median_days_on_market": 58,
+   "homes_sold_october": 51,
+   "redfin_name": "Montebello, CA",
+   "url": "https://www.redfin.com/city/12502/CA/Montebello/housing-market"
+  },
+  "newport-beach": {
+   "median_sale_price": 3897289,
+   "median_days_on_market": 63,
+   "homes_sold_october": 273,
+   "redfin_name": "Newport Beach, CA",
+   "url": "https://www.redfin.com/city/13193/CA/Newport-Beach/housing-market"
+  },
+  "norwalk": {
+   "median_sale_price": 784454,
+   "median_days_on_market": 37,
+   "homes_sold_october": 85,
+   "redfin_name": "Norwalk, CA",
+   "url": "https://www.redfin.com/city/13533/CA/Norwalk/housing-market"
+  },
+  "orange": {
+   "median_sale_price": 1069256,
+   "median_days_on_market": 38,
+   "homes_sold_october": 197,
+   "redfin_name": "Orange, CA",
+   "url": "https://www.redfin.com/city/13969/CA/Orange/housing-market"
+  },
+  "pasadena": {
+   "median_sale_price": 1201664,
+   "median_days_on_market": 47,
+   "homes_sold_october": 272,
+   "redfin_name": "Pasadena, CA",
+   "url": "https://www.redfin.com/city/14498/CA/Pasadena/housing-market"
+  },
+  "pico-rivera": {
+   "median_sale_price": 738993,
+   "median_days_on_market": 45,
+   "homes_sold_october": 53,
+   "redfin_name": "Pico Rivera, CA",
+   "url": "https://www.redfin.com/city/14737/CA/Pico-Rivera/housing-market"
+  },
+  "redondo-beach": {
+   "median_sale_price": 1498458,
+   "median_days_on_market": 44,
+   "homes_sold_october": 170,
+   "redfin_name": "Redondo Beach, CA",
+   "url": "https://www.redfin.com/city/15507/CA/Redondo-Beach/housing-market"
+  },
+  "rowland-heights": {
+   "median_sale_price": 973073,
+   "median_days_on_market": 60,
+   "homes_sold_october": 61,
+   "redfin_name": "Rowland Heights, CA",
+   "url": "https://www.redfin.com/city/25415/CA/Rowland-Heights/housing-market"
+  },
+  "santa-ana": {
+   "median_sale_price": 829423,
+   "median_days_on_market": 53,
+   "homes_sold_october": 197,
+   "redfin_name": "Santa Ana, CA",
+   "url": "https://www.redfin.com/city/17650/CA/Santa-Ana/housing-market"
+  },
+  "santa-monica": {
+   "median_sale_price": 1869699,
+   "median_days_on_market": 53,
+   "homes_sold_october": 158,
+   "redfin_name": "Santa Monica, CA",
+   "url": "https://www.redfin.com/city/17882/CA/Santa-Monica/housing-market"
+  },
+  "sherman-oaks": {
+   "median_sale_price": 1401829,
+   "median_days_on_market": 59,
+   "homes_sold_october": 175,
+   "redfin_name": "Sherman Oaks, CA",
+   "url": "https://www.redfin.com/neighborhood/2440/CA/Los-Angeles/Sherman-Oaks/housing-market",
+   "note": "Redfin neighborhood of the City of Los Angeles"
+  },
+  "torrance": {
+   "median_sale_price": 1199166,
+   "median_days_on_market": 36,
+   "homes_sold_october": 246,
+   "redfin_name": "Torrance, CA",
+   "url": "https://www.redfin.com/city/20094/CA/Torrance/housing-market"
+  },
+  "tustin": {
+   "median_sale_price": 1139208,
+   "median_days_on_market": 59,
+   "homes_sold_october": 96,
+   "redfin_name": "Tustin, CA",
+   "url": "https://www.redfin.com/city/20258/CA/Tustin/housing-market"
+  },
+  "west-covina": {
+   "median_sale_price": 883386,
+   "median_days_on_market": 38,
+   "homes_sold_october": 104,
+   "redfin_name": "West Covina, CA",
+   "url": "https://www.redfin.com/city/20753/CA/West-Covina/housing-market"
+  },
+  "westminster": {
+   "median_sale_price": 1194169,
+   "median_days_on_market": 37,
+   "homes_sold_october": 69,
+   "redfin_name": "Westminster, CA",
+   "url": "https://www.redfin.com/city/20793/CA/Westminster/housing-market"
+  },
+  "whittier": {
+   "median_sale_price": 894378,
+   "median_days_on_market": 44,
+   "homes_sold_october": 85,
+   "redfin_name": "Whittier, CA",
+   "url": "https://www.redfin.com/city/20869/CA/Whittier/housing-market"
+  },
+  "yorba-linda": {
+   "median_sale_price": 1597889,
+   "median_days_on_market": 42,
+   "homes_sold_october": 179,
+   "redfin_name": "Yorba Linda, CA",
+   "url": "https://www.redfin.com/city/21006/CA/Yorba-Linda/housing-market"
+  }
+ }
+}

@@ -12,6 +12,8 @@ import json, pathlib, re
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PUB = ROOT / 'public'
 OUT = ROOT / 'seo-engine' / 'data' / 'cities.json'
+# Redfin median sale price / days on market behind the guide stats (see servicemap/apply_redfin.py)
+REDFIN = ROOT / 'seo-engine' / 'data' / 'redfin-city-stats.json'
 
 # Jesse's farm (CLAUDE.md). Farm cities get priority in topics and agent pages.
 FARM = ['downey', 'whittier', 'pico-rivera', 'long-beach', 'cerritos', 'norwalk',
@@ -24,6 +26,7 @@ def clean(t):
 
 def main():
     cities = {}
+    rf = json.loads(REDFIN.read_text()) if REDFIN.exists() else {'cities': {}}
     for f in sorted((PUB / 'neighborhoods').glob('*.html')):
         s = f.read_text(encoding='utf-8')
         slug = f.stem
@@ -47,6 +50,13 @@ def main():
             'median_price': stats.get('Median Home Price') or stats.get('Median Sale Price'), 'days_on_market': stats.get('Avg Days on Market') or stats.get('Median Days on Market'),
             'residents': stats.get('Residents'), 'schools': schools, 'neighbors': neighbors, 'pages': pages,
         }
+        r = rf['cities'].get(slug)
+        if r and cities[slug]['median_price']:
+            cities[slug].update({
+                'median_sale_price': r['median_sale_price'], 'median_days_on_market': r['median_days_on_market'],
+                'median_source': f"Redfin median sale price and median days on market, {rf['period']} (fetched {rf['fetched']})",
+                'median_as_of': '2026-10-31', 'median_source_url': r['url'],
+            })
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({'_source': 'public/neighborhoods/*.html (site source of truth)', 'farm_order': FARM, 'cities': cities}, indent=1) + '\n')
     missing_agent = [c for c in FARM if c in cities and not cities[c]['pages']['agent']]

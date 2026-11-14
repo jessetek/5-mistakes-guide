@@ -27,8 +27,8 @@
     "92808"
    ],
    "farm": false,
-   "median_price": "$910K",
-   "days_on_market": "38",
+   "median_price": "$939K",
+   "days_on_market": "42",
    "residents": "346K",
    "schools": [
     "Canyon High School",
@@ -46,7 +46,12 @@
     "first_time_buyer": "/first-time-buyer-anaheim",
     "sell_over_asking": "/sell-over-asking-anaheim",
     "agent": null
-   }
+   },
+   "median_sale_price": 939347,
+   "median_days_on_market": 42,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/517/CA/Anaheim/housing-market"
   },
   "bellflower": {
    "name": "Bellflower",
@@ -55,8 +60,8 @@
     "90706"
    ],
    "farm": true,
-   "median_price": "$680K",
-   "days_on_market": "50",
+   "median_price": "$822K",
+   "days_on_market": "40",
    "residents": "78K",
    "schools": [
     "Mayfair High School",
@@ -73,7 +78,12 @@
     "first_time_buyer": "/first-time-buyer-bellflower",
     "sell_over_asking": "/sell-over-asking-bellflower",
     "agent": "/real-estate-agent-bellflower"
-   }
+   },
+   "median_sale_price": 821928,
+   "median_days_on_market": 40,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/1328/CA/Bellflower/housing-market"
   },
   "beverly-hills": {
    "name": "Beverly Hills",
@@ -104,7 +114,11 @@
     "sell_over_asking": null,
     "agent": null
    },
-   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
+   "median_sale_price": 4596803,
+   "median_days_on_market": 100,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/1669/CA/Beverly-Hills/housing-market"
   },
   "brea": {
    "name": "Brea",
@@ -114,8 +128,8 @@
     "92823"
    ],
    "farm": false,
-   "median_price": "$1.12M",
-   "days_on_market": "30",
+   "median_price": "$1.14M",
+   "days_on_market": "38",
    "residents": "47K",
    "schools": [
     "Brea Olinda High School",
@@ -133,7 +147,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1141706,
+   "median_days_on_market": 38,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/2099/CA/Brea/housing-market"
   },
   "buena-park": {
    "name": "Buena Park",
@@ -143,8 +162,8 @@
     "90621"
    ],
    "farm": false,
-   "median_price": "$865K",
-   "days_on_market": "40",
+   "median_price": "$909K",
+   "days_on_market": "43",
    "residents": "82K",
    "schools": [
     "Buena Park High School",
@@ -162,7 +181,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 909367,
+   "median_days_on_market": 43,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/2280/CA/Buena-Park/housing-market"
   },
   "burbank": {
    "name": "Burbank",
@@ -175,8 +199,8 @@
     "91526"
    ],
    "farm": false,
-   "median_price": "$1.20M",
-   "days_on_market": "28",
+   "median_price": "$1.17M",
+   "days_on_market": "39",
    "residents": "108K",
    "schools": [
     "Burroughs High School",
@@ -194,7 +218,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1174183,
+   "median_days_on_market": 39,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/2320/CA/Burbank/housing-market"
   },
   "calabasas": {
    "name": "Calabasas",
@@ -224,7 +253,11 @@
     "sell_over_asking": null,
     "agent": null
    },
-   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
+   "median_sale_price": 1558916,
+   "median_days_on_market": 59,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/2471/CA/Calabasas/housing-market"
   },
   "cerritos": {
    "name": "Cerritos",
@@ -233,8 +266,8 @@
     "90703"
    ],
    "farm": true,
-   "median_price": "$1.05M",
-   "days_on_market": "35",
+   "median_price": "$1.06M",
+   "days_on_market": "31",
    "residents": "49K",
    "schools": [
     "Whitney High School",
@@ -252,7 +285,12 @@
     "first_time_buyer": "/first-time-buyer-cerritos",
     "sell_over_asking": "/sell-over-asking-cerritos",
     "agent": "/real-estate-agent-cerritos"
-   }
+   },
+   "median_sale_price": 1064260,
+   "median_days_on_market": 31,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/3268/CA/Cerritos/housing-market"
   },
   "costa-mesa": {
    "name": "Costa Mesa",
@@ -263,8 +301,8 @@
     "92628"
    ],
    "farm": false,
-   "median_price": "$1.15M",
-   "days_on_market": "36",
+   "median_price": "$1.51M",
+   "days_on_market": "39",
    "residents": "111K",
    "schools": [
     "Estancia High School",
@@ -282,7 +320,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1508950,
+   "median_days_on_market": 39,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/4306/CA/Costa-Mesa/housing-market"
   },
   "culver-city": {
    "name": "Culver City",
@@ -312,7 +355,11 @@
     "sell_over_asking": null,
     "agent": null
    },
-   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
+   "median_sale_price": 1229145,
+   "median_days_on_market": 51,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/4557/CA/Culver-City/housing-market"
   },
   "cypress": {
    "name": "Cypress",
@@ -321,8 +368,8 @@
     "90630"
    ],
    "farm": false,
-   "median_price": "$1.05M",
-   "days_on_market": "32",
+   "median_price": "$957K",
+   "days_on_market": "48",
    "residents": "49K",
    "schools": [
     "Oxford Academy",
@@ -339,7 +386,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 956834,
+   "median_days_on_market": 48,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/4596/CA/Cypress/housing-market"
   },
   "diamond-bar": {
    "name": "Diamond Bar",
@@ -349,8 +401,8 @@
     "91789"
    ],
    "farm": false,
-   "median_price": "$1.05M",
-   "days_on_market": "33",
+   "median_price": "$1.08M",
+   "days_on_market": "69",
    "residents": "55K",
    "schools": [
     "Diamond Bar High School",
@@ -368,7 +420,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1079249,
+   "median_days_on_market": 69,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/4957/CA/Diamond-Bar/housing-market"
   },
   "downey": {
    "name": "Downey",
@@ -379,8 +436,8 @@
     "90242"
    ],
    "farm": true,
-   "median_price": "$926K",
-   "days_on_market": "45",
+   "median_price": "$874K",
+   "days_on_market": "38",
    "residents": "108K",
    "schools": [
     "Warren High School",
@@ -399,7 +456,12 @@
     "first_time_buyer": "/first-time-buyer-downey",
     "sell_over_asking": "/sell-over-asking-downey",
     "agent": "/real-estate-agent-downey"
-   }
+   },
+   "median_sale_price": 874392,
+   "median_days_on_market": 38,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/5092/CA/Downey/housing-market"
   },
   "el-monte": {
    "name": "El Monte",
@@ -412,8 +474,8 @@
     "91735"
    ],
    "farm": false,
-   "median_price": "$680K",
-   "days_on_market": "47",
+   "median_price": "$797K",
+   "days_on_market": "45",
    "residents": "108K",
    "schools": [
     "Mountain View High School",
@@ -431,7 +493,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 796946,
+   "median_days_on_market": 45,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/5726/CA/El-Monte/housing-market"
   },
   "fullerton": {
    "name": "Fullerton",
@@ -443,8 +510,8 @@
     "92835"
    ],
    "farm": false,
-   "median_price": "$1.05M",
-   "days_on_market": "35",
+   "median_price": "$1.08M",
+   "days_on_market": "47",
    "residents": "143K",
    "schools": [
     "Sunny Hills High School",
@@ -462,7 +529,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1079249,
+   "median_days_on_market": 47,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/7158/CA/Fullerton/housing-market"
   },
   "garden-grove": {
    "name": "Garden Grove",
@@ -475,7 +547,7 @@
     "92845"
    ],
    "farm": false,
-   "median_price": "$885K",
+   "median_price": "$1.04M",
    "days_on_market": "36",
    "residents": "172K",
    "schools": [
@@ -494,7 +566,12 @@
     "first_time_buyer": "/first-time-buyer-garden-grove",
     "sell_over_asking": "/sell-over-asking-garden-grove",
     "agent": null
-   }
+   },
+   "median_sale_price": 1043024,
+   "median_days_on_market": 36,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/7381/CA/Garden-Grove/housing-market"
   },
   "glendale": {
    "name": "Glendale",
@@ -510,8 +587,8 @@
     "91208"
    ],
    "farm": false,
-   "median_price": "$1.15M",
-   "days_on_market": "30",
+   "median_price": "$1.25M",
+   "days_on_market": "45",
    "residents": "196K",
    "schools": [
     "Crescenta Valley High School",
@@ -529,7 +606,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1249131,
+   "median_days_on_market": 45,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/7646/CA/Glendale/housing-market"
   },
   "hacienda-heights": {
    "name": "Hacienda Heights",
@@ -538,8 +620,8 @@
     "91745"
    ],
    "farm": false,
-   "median_price": "$925K",
-   "days_on_market": "35",
+   "median_price": "$913K",
+   "days_on_market": "44",
    "residents": "54K",
    "schools": [
     "Wilson High School",
@@ -557,7 +639,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 912865,
+   "median_days_on_market": 44,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/23174/CA/Hacienda-Heights/housing-market"
   },
   "hermosa-beach": {
    "name": "Hermosa Beach",
@@ -566,8 +653,8 @@
     "90254"
    ],
    "farm": false,
-   "median_price": "$2.4M",
-   "days_on_market": "33",
+   "median_price": "$2.46M",
+   "days_on_market": "43",
    "residents": "20K",
    "schools": [
     "Mira Costa High School (feeder)",
@@ -585,7 +672,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 2460788,
+   "median_days_on_market": 43,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/8536/CA/Hermosa-Beach/housing-market"
   },
   "huntington-beach": {
    "name": "Huntington Beach",
@@ -597,8 +689,8 @@
     "92649"
    ],
    "farm": false,
-   "median_price": "$1.35M",
-   "days_on_market": "34",
+   "median_price": "$1.42M",
+   "days_on_market": "46",
    "residents": "199K",
    "schools": [
     "Edison High School",
@@ -616,7 +708,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1416515,
+   "median_days_on_market": 46,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/9164/CA/Huntington-Beach/housing-market"
   },
   "irvine": {
    "name": "Irvine",
@@ -633,8 +730,8 @@
     "92620"
    ],
    "farm": false,
-   "median_price": "$1.45M",
-   "days_on_market": "32",
+   "median_price": "$1.46M",
+   "days_on_market": "60",
    "residents": "307K",
    "schools": [
     "University High School",
@@ -652,7 +749,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1458985,
+   "median_days_on_market": 60,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/9361/CA/Irvine/housing-market"
   },
   "la-canada-flintridge": {
    "name": "La Ca\u00f1ada Flintridge",
@@ -662,8 +764,8 @@
     "91012"
    ],
    "farm": false,
-   "median_price": "$2.8M",
-   "days_on_market": "38",
+   "median_price": "$2.4M",
+   "days_on_market": "26",
    "residents": "20K",
    "schools": [
     "La Ca\u00f1ada High School",
@@ -681,7 +783,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 2398332,
+   "median_days_on_market": 26,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/9895/CA/La-Caada-Flintridge/housing-market"
   },
   "la-habra": {
    "name": "La Habra",
@@ -690,8 +797,8 @@
     "90631"
    ],
    "farm": true,
-   "median_price": "$815K",
-   "days_on_market": "38",
+   "median_price": "$825K",
+   "days_on_market": "41",
    "residents": "62K",
    "schools": [
     "La Habra High School",
@@ -709,7 +816,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": "/real-estate-agent-la-habra"
-   }
+   },
+   "median_sale_price": 825075,
+   "median_days_on_market": 41,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/9975/CA/La-Habra/housing-market"
   },
   "la-mirada": {
    "name": "La Mirada",
@@ -718,8 +830,8 @@
     "90638"
    ],
    "farm": true,
-   "median_price": "$830K",
-   "days_on_market": "42",
+   "median_price": "$922K",
+   "days_on_market": "40",
    "residents": "49K",
    "schools": [
     "La Mirada High School",
@@ -737,7 +849,12 @@
     "first_time_buyer": "/first-time-buyer-la-mirada",
     "sell_over_asking": "/sell-over-asking-la-mirada",
     "agent": "/real-estate-agent-la-mirada"
-   }
+   },
+   "median_sale_price": 921859,
+   "median_days_on_market": 40,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/10208/CA/La-Mirada/housing-market"
   },
   "la-puente": {
    "name": "La Puente",
@@ -747,8 +864,8 @@
     "91746"
    ],
    "farm": false,
-   "median_price": "$695K",
-   "days_on_market": "45",
+   "median_price": "$787K",
+   "days_on_market": "57",
    "residents": "39K",
    "schools": [
     "Bassett High School",
@@ -766,7 +883,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 786953,
+   "median_days_on_market": 57,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/10290/CA/La-Puente/housing-market"
   },
   "lake-forest": {
    "name": "Lake Forest",
@@ -776,8 +898,8 @@
     "92679"
    ],
    "farm": false,
-   "median_price": "$1.20M",
-   "days_on_market": "36",
+   "median_price": "$1.23M",
+   "days_on_market": "63",
    "residents": "85K",
    "schools": [
     "El Toro High School",
@@ -795,7 +917,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1229145,
+   "median_days_on_market": 63,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/10039/CA/Lake-Forest/housing-market"
   },
   "lakewood": {
    "name": "Lakewood",
@@ -806,8 +933,8 @@
     "90715"
    ],
    "farm": true,
-   "median_price": "$880K",
-   "days_on_market": "32",
+   "median_price": "$883K",
+   "days_on_market": "35",
    "residents": "81K",
    "schools": [
     "Lakewood High School",
@@ -825,7 +952,12 @@
     "first_time_buyer": "/first-time-buyer-lakewood",
     "sell_over_asking": "/sell-over-asking-lakewood",
     "agent": "/real-estate-agent-lakewood"
-   }
+   },
+   "median_sale_price": 882886,
+   "median_days_on_market": 35,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/10167/CA/Lakewood/housing-market"
   },
   "long-beach": {
    "name": "Long Beach",
@@ -835,8 +967,8 @@
     "90815"
    ],
    "farm": true,
-   "median_price": "$833K",
-   "days_on_market": "42",
+   "median_price": "$889K",
+   "days_on_market": "51",
    "residents": "450K",
    "schools": [
     "Long Beach Polytechnic High School",
@@ -855,7 +987,12 @@
     "first_time_buyer": "/first-time-buyer-long-beach",
     "sell_over_asking": "/sell-over-asking-long-beach",
     "agent": "/real-estate-agent-long-beach"
-   }
+   },
+   "median_sale_price": 889381,
+   "median_days_on_market": 51,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/10940/CA/Long-Beach/housing-market"
   },
   "manhattan-beach": {
    "name": "Manhattan Beach",
@@ -864,8 +1001,8 @@
     "90266"
    ],
    "farm": false,
-   "median_price": "$3.4M",
-   "days_on_market": "32",
+   "median_price": "$3.78M",
+   "days_on_market": "29",
    "residents": "35K",
    "schools": [
     "Mira Costa High School",
@@ -883,7 +1020,12 @@
     "first_time_buyer": "/first-time-buyer-manhattan-beach",
     "sell_over_asking": "/sell-over-asking-manhattan-beach",
     "agent": null
-   }
+   },
+   "median_sale_price": 3784867,
+   "median_days_on_market": 29,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/11576/CA/Manhattan-Beach/housing-market"
   },
   "mission-viejo": {
    "name": "Mission Viejo",
@@ -894,8 +1036,8 @@
     "92694"
    ],
    "farm": false,
-   "median_price": "$1.35M",
-   "days_on_market": "38",
+   "median_price": "$1.21M",
+   "days_on_market": "43",
    "residents": "93K",
    "schools": [
     "Mission Viejo High School",
@@ -913,7 +1055,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1207660,
+   "median_days_on_market": 43,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/12331/CA/Mission-Viejo/housing-market"
   },
   "montebello": {
    "name": "Montebello",
@@ -922,8 +1069,8 @@
     "90640"
    ],
    "farm": true,
-   "median_price": "$840K",
-   "days_on_market": "40",
+   "median_price": "$852K",
+   "days_on_market": "58",
    "residents": "62K",
    "schools": [
     "Montebello High School",
@@ -941,7 +1088,12 @@
     "first_time_buyer": "/first-time-buyer-montebello",
     "sell_over_asking": "/sell-over-asking-montebello",
     "agent": "/real-estate-agent-montebello"
-   }
+   },
+   "median_sale_price": 851907,
+   "median_days_on_market": 58,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/12502/CA/Montebello/housing-market"
   },
   "newport-beach": {
    "name": "Newport Beach",
@@ -954,8 +1106,8 @@
     "92663"
    ],
    "farm": false,
-   "median_price": "$3.2M",
-   "days_on_market": "41",
+   "median_price": "$3.9M",
+   "days_on_market": "63",
    "residents": "85K",
    "schools": [
     "Corona del Mar High School",
@@ -973,7 +1125,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 3897289,
+   "median_days_on_market": 63,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/13193/CA/Newport-Beach/housing-market"
   },
   "norwalk": {
    "name": "Norwalk",
@@ -983,8 +1140,8 @@
     "90651"
    ],
    "farm": true,
-   "median_price": "$695K",
-   "days_on_market": "48",
+   "median_price": "$784K",
+   "days_on_market": "37",
    "residents": "102K",
    "schools": [
     "Norwalk High School",
@@ -1002,7 +1159,12 @@
     "first_time_buyer": "/first-time-buyer-norwalk",
     "sell_over_asking": "/sell-over-asking-norwalk",
     "agent": "/real-estate-agent-norwalk"
-   }
+   },
+   "median_sale_price": 784454,
+   "median_days_on_market": 37,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/13533/CA/Norwalk/housing-market"
   },
   "orange": {
    "name": "Orange",
@@ -1015,8 +1177,8 @@
     "92869"
    ],
    "farm": false,
-   "median_price": "$1.05M",
-   "days_on_market": "33",
+   "median_price": "$1.07M",
+   "days_on_market": "38",
    "residents": "139K",
    "schools": [
     "Villa Park High School",
@@ -1034,7 +1196,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1069256,
+   "median_days_on_market": 38,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/13969/CA/Orange/housing-market"
   },
   "pasadena": {
    "name": "Pasadena",
@@ -1046,8 +1213,8 @@
     "91182"
    ],
    "farm": false,
-   "median_price": "$1.35M",
-   "days_on_market": "32",
+   "median_price": "$1.2M",
+   "days_on_market": "47",
    "residents": "138K",
    "schools": [
     "Pasadena High School",
@@ -1065,7 +1232,12 @@
     "first_time_buyer": "/first-time-buyer-pasadena",
     "sell_over_asking": "/sell-over-asking-pasadena",
     "agent": null
-   }
+   },
+   "median_sale_price": 1201664,
+   "median_days_on_market": 47,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/14498/CA/Pasadena/housing-market"
   },
   "pico-rivera": {
    "name": "Pico Rivera",
@@ -1075,8 +1247,8 @@
     "90661"
    ],
    "farm": true,
-   "median_price": "$740K",
-   "days_on_market": "47",
+   "median_price": "$739K",
+   "days_on_market": "45",
    "residents": "57K",
    "schools": [
     "El Rancho High School",
@@ -1095,7 +1267,12 @@
     "first_time_buyer": "/first-time-buyer-pico-rivera",
     "sell_over_asking": "/sell-over-asking-pico-rivera",
     "agent": "/real-estate-agent-pico-rivera"
-   }
+   },
+   "median_sale_price": 738993,
+   "median_days_on_market": 45,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/14737/CA/Pico-Rivera/housing-market"
   },
   "redondo-beach": {
    "name": "Redondo Beach",
@@ -1105,8 +1282,8 @@
     "90278"
    ],
    "farm": false,
-   "median_price": "$1.65M",
-   "days_on_market": "33",
+   "median_price": "$1.5M",
+   "days_on_market": "44",
    "residents": "70K",
    "schools": [
     "Redondo Union High School",
@@ -1124,7 +1301,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1498458,
+   "median_days_on_market": 44,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/15507/CA/Redondo-Beach/housing-market"
   },
   "rowland-heights": {
    "name": "Rowland Heights",
@@ -1133,8 +1315,8 @@
     "91748"
    ],
    "farm": false,
-   "median_price": "$890K",
-   "days_on_market": "40",
+   "median_price": "$973K",
+   "days_on_market": "60",
    "residents": "47K",
    "schools": [
     "Rowland High School",
@@ -1152,7 +1334,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 973073,
+   "median_days_on_market": 60,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/25415/CA/Rowland-Heights/housing-market"
   },
   "santa-ana": {
    "name": "Santa Ana",
@@ -1166,8 +1353,8 @@
     "92707"
    ],
    "farm": false,
-   "median_price": "$815K",
-   "days_on_market": "40",
+   "median_price": "$829K",
+   "days_on_market": "53",
    "residents": "310K",
    "schools": [
     "Santa Ana High School",
@@ -1185,7 +1372,12 @@
     "first_time_buyer": "/first-time-buyer-santa-ana",
     "sell_over_asking": "/sell-over-asking-santa-ana",
     "agent": null
-   }
+   },
+   "median_sale_price": 829423,
+   "median_days_on_market": 53,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/17650/CA/Santa-Ana/housing-market"
   },
   "santa-monica": {
    "name": "Santa Monica",
@@ -1218,7 +1410,11 @@
     "sell_over_asking": null,
     "agent": null
    },
-   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)"
+   "median_sale_price": 1869699,
+   "median_days_on_market": 53,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/17882/CA/Santa-Monica/housing-market"
   },
   "sherman-oaks": {
    "name": "Sherman Oaks",
@@ -1230,8 +1426,8 @@
     "91423"
    ],
    "farm": false,
-   "median_price": "$1.85M",
-   "days_on_market": "36",
+   "median_price": "$1.4M",
+   "days_on_market": "59",
    "residents": "55K",
    "schools": [
     "Notre Dame High School (private)",
@@ -1249,7 +1445,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1401829,
+   "median_days_on_market": 59,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/neighborhood/2440/CA/Los-Angeles/Sherman-Oaks/housing-market"
   },
   "torrance": {
    "name": "Torrance",
@@ -1262,8 +1463,8 @@
     "90505"
    ],
    "farm": false,
-   "median_price": "$1.10M",
-   "days_on_market": "32",
+   "median_price": "$1.2M",
+   "days_on_market": "36",
    "residents": "147K",
    "schools": [
     "West High School",
@@ -1281,7 +1482,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1199166,
+   "median_days_on_market": 36,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/20094/CA/Torrance/housing-market"
   },
   "tustin": {
    "name": "Tustin",
@@ -1291,8 +1497,8 @@
     "92782"
    ],
    "farm": false,
-   "median_price": "$1.10M",
-   "days_on_market": "31",
+   "median_price": "$1.14M",
+   "days_on_market": "59",
    "residents": "80K",
    "schools": [
     "Beckman High School",
@@ -1310,7 +1516,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1139208,
+   "median_days_on_market": 59,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/20258/CA/Tustin/housing-market"
   },
   "west-covina": {
    "name": "West Covina",
@@ -1322,7 +1533,7 @@
     "91793"
    ],
    "farm": false,
-   "median_price": "$845K",
+   "median_price": "$883K",
    "days_on_market": "38",
    "residents": "106K",
    "schools": [
@@ -1341,7 +1552,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 883386,
+   "median_days_on_market": 38,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/20753/CA/West-Covina/housing-market"
   },
   "westminster": {
    "name": "Westminster",
@@ -1351,8 +1567,8 @@
     "92684"
    ],
    "farm": false,
-   "median_price": "$915K",
-   "days_on_market": "34",
+   "median_price": "$1.19M",
+   "days_on_market": "37",
    "residents": "91K",
    "schools": [
     "Westminster High School",
@@ -1370,7 +1586,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1194169,
+   "median_days_on_market": 37,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/20793/CA/Westminster/housing-market"
   },
   "whittier": {
    "name": "Whittier",
@@ -1380,8 +1601,8 @@
     "90606"
    ],
    "farm": true,
-   "median_price": "$847K",
-   "days_on_market": "46",
+   "median_price": "$894K",
+   "days_on_market": "44",
    "residents": "85K",
    "schools": [
     "La Serna High School",
@@ -1400,7 +1621,12 @@
     "first_time_buyer": "/first-time-buyer-whittier",
     "sell_over_asking": "/sell-over-asking-whittier",
     "agent": "/real-estate-agent-whittier"
-   }
+   },
+   "median_sale_price": 894378,
+   "median_days_on_market": 44,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/20869/CA/Whittier/housing-market"
   },
   "yorba-linda": {
    "name": "Yorba Linda",
@@ -1410,8 +1636,8 @@
     "92887"
    ],
    "farm": false,
-   "median_price": "$1.40M",
-   "days_on_market": "40",
+   "median_price": "$1.6M",
+   "days_on_market": "42",
    "residents": "68K",
    "schools": [
     "Yorba Linda High School",
@@ -1429,7 +1655,12 @@
     "first_time_buyer": null,
     "sell_over_asking": null,
     "agent": null
-   }
+   },
+   "median_sale_price": 1597889,
+   "median_days_on_market": 42,
+   "median_source": "Redfin median sale price and median days on market, three months ending October 2026 (fetched 2026-11-13)",
+   "median_as_of": "2026-10-31",
+   "median_source_url": "https://www.redfin.com/city/21006/CA/Yorba-Linda/housing-market"
   }
  }
 }

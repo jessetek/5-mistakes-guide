@@ -11,7 +11,7 @@
   var LIB = 'https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js';
   var CSS = 'https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css';
   var STYLE = 'https://tiles.openfreemap.org/styles/positron';
-  var DATA = '/data/service-area.json?v=10';
+  var DATA = '/data/service-area.json?v=11';
 
   // The look: warm paper land, soft blue water, quiet roads.
   var LAND = '#F7F3EC', WATER = '#BFE1F3', PARK = '#D9EBCF', WOOD = '#E3EDD6', ROAD = '#FFFFFF',
