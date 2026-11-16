@@ -72,7 +72,7 @@ All set in Vercel → Project → Settings → Environment Variables. Production
 | Images (jpg/png/webp/svg) | 1 year immutable | `public, max-age=31536000, immutable` |
 | CSS | 30 days | `public, max-age=2592000` (cache-bust via `?v=N`) |
 | HTML | Default Vercel | Revalidates per ETag |
-| `/api/rates` | 12h fresh + 7d SWR | Edge cached + daily cron warm |
+| `/api/rates` | 12h fresh + 7d SWR | Edge cached + weekly Thursday 22:00 UTC cron warm |
 | `/sitemap*.xml`, `/robots.txt` | 1 day | `public, max-age=86400` |
 | Service worker runtime | Stale-while-revalidate | Browser-side |
 

@@ -4,9 +4,11 @@
 // Vercel env var required: FRED_API_KEY
 // Set it in: Vercel dashboard → Project → Settings → Environment Variables
 //
-// Cron: /vercel.json fires this endpoint daily at 16:00 UTC (8am PT, 11am ET)
-// — well after FRED's Thursday ~10am ET publish — to keep the edge cache hot
-// even on days with zero organic traffic.
+// Cron: vercel.json fires this endpoint weekly on Thursday at 22:00 UTC.
+// 22:00 UTC is 2:00 PM Pacific Standard Time (UTC-8). Vercel cron is UTC and
+// does not follow daylight saving time, so during PDT (UTC-7) this runs at
+// 3:00 PM Pacific, one hour later. Both times are after Freddie Mac's
+// Thursday morning PMMS publish, so the warm still sees the new rate.
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -15,14 +17,15 @@ export default async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
   // Edge cache: 12 hours fresh, 7 days stale-while-revalidate.
-  // - 12h fresh: cron fires daily at 16:00 UTC, so the cache is always fresh
-  //   for at least the next 12 hours after a cron run
-  // - 7d SWR: if FRED is unreachable, we keep serving the last good value
-  //   for up to a week while a background revalidation tries to recover
+  // Fresh lifetime is 12 hours, shorter than the weekly gap, but the entry
+  // stays servable for 12h + 7d (7.5 days), so it does not drop off before
+  // the next Thursday run. A cache miss still runs this handler, which
+  // fetches FRED live (or returns the static fallback below), so the site
+  // is not left without a rate.
   res.setHeader('Cache-Control', 'public, s-maxage=43200, stale-while-revalidate=604800');
 
   // Cron requests come from Vercel with this header — log them so we can
-  // verify in Vercel logs that the daily warm-up actually ran
+  // verify in Vercel logs that the weekly warm-up actually ran
   const isCron = req.headers['user-agent']?.includes('vercel-cron') === true ||
                  req.headers['x-vercel-cron'] != null;
   if (isCron) console.log('[rates.js] cron warm-up firing');
