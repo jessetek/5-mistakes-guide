@@ -47,7 +47,7 @@
   "crons": [
     {
       "path": "/api/rates",
-      "schedule": "0 16 * * *"
+      "schedule": "0 22 * * 4"
     }
   ],
   "headers": [
