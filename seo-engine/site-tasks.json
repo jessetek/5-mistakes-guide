@@ -29,7 +29,9 @@
    "id": "sitemap-lastmod",
    "title": "Backfill sitemap lastmod",
    "detail": "Only 13 of 135 sitemap URLs have lastmod. Set lastmod from `git log -1 --format=%cs -- public/<file>` for every URL.",
-   "status": "open"
+   "status": "done",
+   "done": "2026-11-18",
+   "note": "Backfilled lastmod from git log for 230 of 231 sitemap URLs (feed.xml has none, correct)."
   },
   {
    "id": "agent-page-whittier",

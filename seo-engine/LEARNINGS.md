@@ -11,6 +11,11 @@ and delete it here, so this file stays short.
 - 10 of 11 farm cities had no "Real Estate Agent in <City>" page. Those are the money queries, so site tasks build them one per week.
 
 ## Log
+### 2026-11-18 (automated)
+- Article: best-neighborhoods-in-downey (topic 3). 1,145 body words, 5 sources; linked from the Downey guide and living-in-downey-ca.
+- Site task sitemap-lastmod done: 230 URLs now carry lastmod from git history.
+- Hard: city sites (downeyca.org) return 403 to fetch, so park facts came from search snippets; per-ZIP prices are not sourced, so I used the bedroom/type prices from the Downey guide instead.
+- Found: living-in-downey-ca still says $926K and 45 days, which contradicts cities.json ($874K, 38). Fix that draft next run, then refresh-oldest.
 ### 2026-11-12 (sitewide improvements, by hand, Jesse approved the list)
 - All 10 farm-city agent pages are live, linked from their city guides and a new Service Areas directory; their bilingual redirects were repointed.
 - Bilingual and dashes are gone sitewide (copy and schema). QC should stay green on any page you touch; if an old page fails, fix it as part of the run.
