@@ -117,7 +117,7 @@ Commit LEARNINGS.md with the same push (or a second push right after).
 - One article per run. Never publish more than one new article in a run.
 - Never invent numbers, people, quotes or reviews. If the honest version is weaker, publish the honest version.
 - No em or en dashes. No "bilingual". No address. QC enforces this, so do not bypass it.
-- Do not try to reach Telegram or email. The report below is the output.
+- Do not send messages or email. The report below is the output.
 
 ## Report (under 15 lines)
 - Article: title, URL, primary keyword, words, why this topic (one line)

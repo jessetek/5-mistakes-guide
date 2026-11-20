@@ -199,7 +199,7 @@ To test it now without waiting:
   1. Open Cowork's Scheduled sidebar
   2. Find "jessetek-weekly-gsc-harvest"
   3. Click "Run now"
-  4. Watch your Telegram
+  4. Check the run output
 
 If it fails with "auth expired" 6 months from now, just re-run this script.
 

@@ -23,7 +23,7 @@ import { homedir } from 'node:os';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Resolve the env file: same fallback chain as scripts/send-telegram-text.sh
+// Resolve the env file: same fallback chain as the other automation scripts
 // and scripts/get-gsc-rank.mjs. /Jessetek/.env is canonical; the legacy
 // /Jtek/instagram-stories/.env.local is honored last for users who
 // haven't migrated yet. Override with JTEK_ENV=/some/path if you keep creds

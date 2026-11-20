@@ -60,7 +60,7 @@ if (!queryArg) {
   out({ query: null, rank: null, page: null, source: 'gsc', error: 'usage: get-gsc-rank.mjs "<query>"' });
 }
 
-// --- Resolve env file: same fallback chain as send-telegram-text.sh ------
+// --- Resolve env file: same fallback chain as the other automation scripts ------
 function findEnvFile() {
   const candidates = [
     process.env.JTEK_ENV,

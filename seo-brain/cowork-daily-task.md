@@ -21,7 +21,7 @@ links + reviews that mention Downey neighborhoods.
 ## Use if connected; otherwise do the fallback
 - **Google Search Console** (jessetek.net) → pull 28-day queries. ELSE read the latest committed `landing-page/automation/.state/gsc-harvest-*.json`.
 - **Jtek / GoHighLevel** (location `4IKcbmtpx3ZLuYU0uJzw`; read `JTEK_API_KEY` from your Cowork secrets, base `https://services.leadconnectorhq.com`, header `Version: 2021-07-28`) → read new Google reviews, draft replies, draft GBP posts, check the review-request workflow. ELSE draft everything for Jesse to paste manually.
-- **Telegram** (read `TELEGRAM_BOT_TOKEN` + chat id from Cowork secrets) → send the daily summary. ELSE skip sending; the repo log is still the record.
+- **Email** (Resend connector, from Jtek Command Center <alerts@updates.jtek.pro> to jesse@jtek.pro) → send the daily summary. ELSE skip sending; the repo log is still the record.
 
 ## Do this each run, in order
 1. **MEASURE.** Pull/refresh reach: GSC impressions, clicks, avg position, **distinct-query count** (+ GBP
@@ -51,8 +51,8 @@ links + reviews that mention Downey neighborhoods.
    reply echoing their neighborhood/transaction; stage it for Jesse to approve + send within 24h. Never identical
    replies. 1–3★ or suspect-fake → flag for Jesse personally.
 6. **LOG + DELIVER.** Append today's run to `seo-brain/runs/<date>.md` (measured / shipped / drafted / learned),
-   update the ledger, and commit. Send Jesse a tight Telegram summary (≤10 lines): the reach trend, what shipped,
-   and **today's ONE off-page action with the ready-to-use content pasted in**. (If Telegram isn't wired, the repo log is the delivery.)
+   update the ledger, and commit. Email Jesse a tight summary (≤10 lines): the reach trend, what shipped,
+   and **today's ONE off-page action with the ready-to-use content pasted in**. (If email isn't available, the repo log is the delivery.)
 
 ## Hard rules (unattended-safe — breaking one is worse than doing nothing)
 - Never invent facts, reviews, ratings, stats, or anecdotes. Use only the verified facts above; if you lack one,

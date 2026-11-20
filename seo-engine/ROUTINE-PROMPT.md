@@ -20,7 +20,7 @@ HARD RULES:
   enforces this (`python3 seo-engine/tools/engine.py qc <files>`), so never skip or weaken a gate.
 - Never invent numbers, people, quotes, reviews or closings. City numbers come from seo-engine/data/cities.json.
   Everything else needs a source you fetched this run.
-- Do not try Telegram or email. Do not curl jessetek.net.
+- Do not send messages or email. Do not curl jessetek.net.
 - If the push is rejected, `git pull --rebase --autostash origin main`, re-run QC and push once more. Report
   the commit SHA. If it still fails, report the exact error and do NOT claim anything shipped.
 

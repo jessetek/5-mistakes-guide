@@ -1,5 +1,5 @@
 You are running the weekly rank watcher for jessetek.net. Goal: track Jesse's
-Google ranking on 10 SoCal realtor queries and ping him via Telegram only when
+Google ranking on 10 SoCal realtor queries and email him only when
 something interesting moves.
 
 Project root: __PROJECT_ROOT__
@@ -61,7 +61,7 @@ STEPS
    last 26 entries. Pretty-print (2-space indent) when writing back.
 
 4. If at least one query is new_entry / dropped_out / movement (and we have a
-   prior baseline), compose a 6-12 line Telegram message. Format:
+   prior baseline), compose a 6-12 line message. Format:
 
      Rank watch · week of <Mon DD>
 
@@ -73,21 +73,12 @@ STEPS
 
      <N> others held.
 
-   Send via the local Telegram script:
-
-     printf %s "<message>" | "__PROJECT_ROOT__/automation/scripts/send-telegram-text.sh"
-
-   The Telegram script gracefully no-ops if creds aren't configured yet — it
-   exits 0 and writes the would-be message to stderr. That is fine; do not
-   treat that as a failure.
+   Send it: email jesse@jtek.pro with the Resend connector (from Jtek Command Center <alerts@updates.jtek.pro>), subject "[Rank watch] week of <Mon DD>".
 
 5. If ALL queries held (or this is the bootstrap run with empty prior state),
-   stay silent. No Telegram message.
+   stay silent. No email.
 
-6. If the Telegram script exits non-zero (HTTP error from Telegram API), fall
-   back to iMessage:
-     osascript -e 'tell application "Messages" to send "<one-line summary>" to buddy "+15626885214"'
-   Do this only on actual Telegram failure, not on graceful no-op (exit 0).
+6. If the email send fails, say so in the RESULT line.
 
 CONSTRAINTS
 - Do not fabricate ranks. If get-gsc-rank.mjs returns an error or zero
@@ -98,7 +89,7 @@ CONSTRAINTS
 - Do not commit anything. The state file is gitignored (see automation/.gitignore).
 
 End your reply with exactly one line, in this priority order:
-  RESULT: ALERTED <N> queries  (sent a Telegram alert about N moving queries)
+  RESULT: ALERTED <N> queries  (sent an email alert about N moving queries)
   RESULT: SILENT <N> queries scanned, all held
   RESULT: BOOTSTRAP <N> queries scanned, baseline laid (no prior state)
   RESULT: NO_CREDS — GSC creds missing, recorded all rank=null

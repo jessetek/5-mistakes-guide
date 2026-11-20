@@ -51,6 +51,5 @@ is pending, IDLE and exit — idle runs should be near-free.
 - Print ONE final line exactly: `RESULT: <SHIPPED ... | DRAFTED ... | RESEARCHED ... | MEASURED | IDLE | REVERTED ...>`
 
 ## 5. Notify only when notable
-If you actually deployed something, send a one-line summary:
-  bash __PROJECT_ROOT__/automation/scripts/send-telegram-text.sh "SEO brain: <what shipped + commit>"
+If you actually deployed something, email jesse@jtek.pro with the Resend connector (from Jtek Command Center <alerts@updates.jtek.pro>), one line: "SEO brain: <what shipped + commit>".
 Stay silent on IDLE / research-only runs.

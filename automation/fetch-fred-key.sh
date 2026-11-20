@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-time: pull FRED_API_KEY from your Vercel project's production env vars
-# and copy it into the Telegram .env.local that the Cowork scheduled tasks read.
+# and copy it into the .env.local that the Cowork scheduled tasks read.
 #
 # Why it exists: FRED_API_KEY only lives in the Vercel dashboard. The Cowork
 # daily-rate-movement task runs in the cloud and needs the same key. Vercel CLI

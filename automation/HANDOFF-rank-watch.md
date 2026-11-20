@@ -69,13 +69,13 @@ automation/
    ```
 
    The first real run will lay a baseline in `.state/rank-history.json` and
-   stay silent (no Telegram alert — there's nothing to compare against yet).
+   stay silent (no alert — there's nothing to compare against yet).
 
 ## What the existing scheduled task is doing
 
 The Cowork scheduled task `jessetek-weekly-rank-watch` (the one that fired this
 morning) is still registered with its old SKILL.md that points at the broken
-Telegram path and the blocked Google scrape. **Two clean options:**
+old alert path and the blocked Google scrape. **Two clean options:**
 
 - **(Recommended) Deactivate the Cowork scheduled task** — the launchd job
   now covers the same Monday-morning slot with the better data source.

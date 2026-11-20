@@ -1,6 +1,6 @@
 ---
 name: jessetek-weekly-gsc-harvest
-description: Sunday 21:00 — pulls GSC near-page-1 queries (rank 8-20), drafts content angles via Telegram. Handles low-data weeks gracefully. Requires GSC OAuth setup (run automation/setup-gsc-oauth.mjs once).
+description: Sunday 21:00 — pulls GSC near-page-1 queries (rank 8-20), emails content angles to Jesse. Handles low-data weeks gracefully. Requires GSC OAuth setup (run automation/setup-gsc-oauth.mjs once).
 ---
 
 Pull last 28 days of Google Search Console data for jessetek.net, find queries ranking on positions 8-20 (near page 1 but not there), and draft a content angle to push them up.
@@ -9,7 +9,7 @@ Steps:
 
 1. Read GSC credentials from /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/tools/.env.local — keys: GSC_CLIENT_ID, GSC_CLIENT_SECRET, GSC_REFRESH_TOKEN, GSC_PROPERTY.
 
-   If any is missing or empty: send a one-time Telegram setup nudge:
+   If any is missing or empty: send a one-time setup nudge (email jesse@jtek.pro with the Resend connector (from Jtek Command Center <alerts@updates.jtek.pro>)):
    "GSC harvest skipped — run `node automation/setup-gsc-oauth.mjs` on the Mac mini once. Auto-resumes next Sunday."
    Then STOP.
 
@@ -56,7 +56,7 @@ Steps:
    - Read the page that's currently ranking (from the GSC data) to see what it's missing.
    - Suggest one of: a 200-word section to add, an FAQ to insert, a sub-page to create, or an internal link to push from a higher-authority page.
 
-7. Compose the Telegram message.
+7. Compose the message.
 
    7a. Full opportunity report (qualifying >= 1) — target 12-15 lines:
 
@@ -83,13 +83,7 @@ Steps:
 
    Pre-traction site — the harvest filter is calibrated for queries with real demand. Lift comes from upstream content work (weekly-clarity-review / quarterly-seo-scan), not from this report. Snapshot saved.
 
-8. Send via Telegram:
-
-   MSG=$(mktemp); cat > "$MSG" <<'EOF'
-   <message>
-   EOF
-   cat "$MSG" | node "/Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/tools/send-telegram-text.mjs" --plain --stdin
-   rm -f "$MSG"
+8. Send it: email jesse@jtek.pro with the Resend connector (from Jtek Command Center <alerts@updates.jtek.pro>), subject "[GSC harvest] last 28 days".
 
 9. Save the harvest snapshot to:
    /Users/jtek/Library/Mobile Documents/com~apple~CloudDocs/Documents/Documents - JtekMac/Claude Code/Jessetek/landing-page/automation/.state/gsc-harvest-{YYYY-MM-DD}.json
@@ -110,7 +104,7 @@ Steps:
 
    So we can track which opportunities have been worked on AND watch site landscape grow week over week.
 
-10. If GSC API call fails (auth expired, quota hit, etc.): send a Telegram with "GSC harvest failed: <error>. Re-run `node automation/setup-gsc-oauth.mjs` if auth expired." Don't fall back to scraping.
+10. If GSC API call fails (auth expired, quota hit, etc.): send an email with "GSC harvest failed: <error>. Re-run `node automation/setup-gsc-oauth.mjs` if auth expired." Don't fall back to scraping.
 
 Constraints:
 - Top 5 max in the full-report message — never overwhelm.
