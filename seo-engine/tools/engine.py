@@ -270,6 +270,12 @@ def qc(paths):
             fails.append(f'{name}: needs exactly one <h1> (found {s.count("<h1")})')
         if '/css/kb.css' not in s:
             fails.append(f'{name}: missing kb.css')
+        else:
+            # every page must load the same kb.css?v= as the home page (stale numbers drift in from old templates)
+            want = re.search(r'kb\.css\?v=(\d+)', (PUB / 'home.html').read_text())
+            have = re.search(r'kb\.css\?v=(\d+)', s)
+            if want and (not have or have.group(1) != want.group(1)):
+                fails.append(f'{name}: kb.css?v={have.group(1) if have else "none"}, site uses v={want.group(1)}')
         if not re.search(r'<body[^>]*--th:#', s):
             fails.append(f'{name}: body has no --th page color')
         if 'noindex' in s and '/insights/' in name:
