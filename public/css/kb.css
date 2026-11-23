@@ -1061,3 +1061,20 @@ html.nav-hidden .hub-jump{top:0}
 .city-photos-credit,.city-photos-credit a{color:var(--kb-ink2)!important;font-size:12px!important}
 @media(max-width:560px){.nbhd-eat-cat{font-size:12px!important}}
 @media(max-width:760px){.svc-chip{font-size:12px!important}}
+/* QC 2026-11-20 part 2 (Jesse approved): sell-over-asking, agent pages, rates, reviews, rent vs buy */
+/* 1. safety net: until js/header.js marks the page (html.rv-on), every fade-in block is simply shown, so the booking calendar can never stay invisible */
+html:not(.rv-on) .reveal,html:not(.rv-on) .reveal-s{opacity:1!important;transform:none!important}
+/* 2. nothing bounces past its spot: card hovers, the rates calculator card, the phone text bubbles */
+.bc{transition-timing-function:cubic-bezier(.22,1,.36,1),ease!important}
+.reveal-s{transition-timing-function:ease,cubic-bezier(.22,1,.36,1)!important}
+.rates-phone-bubble{animation-timing-function:cubic-bezier(.22,1,.36,1)!important}
+/* 3. readable gray (#4a4a52) for light gray text */
+.nbhd-stats>p,.rv-date,.clients-marquee-label,.rates-form-tcpa summary,.rv2-lab-price span,.rv2-lab-scale span,.rv2-lab-note,.rb-section-label,.rb-range span,.rb-fineprint{color:var(--kb-ink2)!important}
+/* 4. nothing under 12px */
+.trust-label,.rates-form-tcpa summary,.rates-form-tcpa div,.rates-form-tcpa a,.rates-how-chip,.rv2-lab-scale span,.rv2-count-label,.rv2-count .rv2-cell i,.rcTfBtn,.rates-chart-axis span,.rv2-tip span,.rv2-tick,.rv2-tick b,.rb-section-label,.rb-range span,.rb-result-tag,.rb-compare-label{font-size:12px!important}
+.rv2-lab-note,.rb-compare-sub{font-size:12.5px!important}
+/* 5. the LIVE badge on rent vs buy: was pale green on pale green at 9.5px */
+.calc-live-badge{font-size:11px!important;color:#14632c!important;background:rgba(52,199,89,.16)!important;opacity:1!important}
+.calc-live-badge::before{background:#1f8a46!important}
+/* 6. footer "Built with": it was faded to 75% on top of the footer gray (4.4:1), now the same gray as the rest of the footer line */
+html body .f-jtek{opacity:1!important}

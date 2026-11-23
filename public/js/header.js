@@ -2,6 +2,28 @@
    Always shown at the top of the page, while the mobile menu or a dropdown is open, and when it has keyboard focus.
    The nav is position:fixed, so hiding it moves nothing else on the page. Uses the CSS `translate` property so it
    stacks with each page's own nav transform, and keeps each page's own transitions. */
+/* Scroll fade-in for .reveal / .reveal-s (QC 2026-11-20). 47 pages used these classes with no script to show them,
+   so their booking calendar and headings stayed invisible. This adds .on as each one scrolls into view; pages with
+   their own observer just get the same class twice. html.rv-on tells kb.css the script is running: without it,
+   kb.css shows every .reveal, so a failed script never hides the calendar again. */
+(function () {
+  'use strict';
+  var els = document.querySelectorAll('.reveal,.reveal-s');
+  var root = document.documentElement;
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) { for (var j = 0; j < els.length; j++) els[j].classList.add('on'); return; }
+  var vh = window.innerHeight || root.clientHeight;
+  for (var i = 0; i < els.length; i++) {            // already on screen: show now, in the same frame, so nothing blinks
+    var r = els[i].getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) els[i].classList.add('on');
+  }
+  root.classList.add('rv-on');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  for (var k = 0; k < els.length; k++) if (!els[k].classList.contains('on')) io.observe(els[k]);
+})();
+
 (function () {
   'use strict';
   var nav = document.getElementById('nav');
