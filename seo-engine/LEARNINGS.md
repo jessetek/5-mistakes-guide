@@ -11,6 +11,11 @@ and delete it here, so this file stays short.
 - 10 of 11 farm cities had no "Real Estate Agent in <City>" page. Those are the money queries, so site tasks build them one per week.
 
 ## Log
+### 2026-11-25 (automated)
+- Article: cost-of-owning-a-home-in-downey (topic 4, costs). About 1,550 body words, 6 sources; linked from the Downey guide and living-in-downey-ca.
+- Site task refresh-oldest: living-in-downey-ca now matches cities.json ($874K, 38 days); dropped the 1.25% total rate claim because no fetched county page states it.
+- Hard: LA County pages give the 1% levy and 2% cap but no citywide Downey rate; per-ZIP rates only on third-party sites, so I left them out.
+- Next: the old faq in other drafts may repeat the 1.25% claim (grep it). Then selling-a-house-in-downey-timeline.
 ### 2026-11-18 (automated)
 - Article: best-neighborhoods-in-downey (topic 3). 1,145 body words, 5 sources; linked from the Downey guide and living-in-downey-ca.
 - Site task sitemap-lastmod done: 230 URLs now carry lastmod from git history.

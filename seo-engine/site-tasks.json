@@ -127,7 +127,8 @@
    "id": "refresh-oldest",
    "title": "Refresh the oldest article",
    "detail": "Every run after the list above is done: refresh the article with the oldest dateModified. Update facts with sources, add a section or FAQ that answers a real question, bump dateModified, run touch.",
-   "status": "repeat"
+   "status": "repeat",
+   "note": "2026-11-25: refreshed living-in-downey-ca (median $874K/38 days to match cities.json, removed unverified 1.25% claim, linked new cost article)."
   }
  ]
 }

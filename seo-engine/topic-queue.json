@@ -40,9 +40,10 @@
    "keyword": "downey property tax",
    "intent": "costs",
    "city": "downey",
-   "status": "queued",
+   "status": "published",
    "why": "",
-   "priority": 4
+   "priority": 4,
+   "published": "2026-11-25"
   },
   {
    "slug": "selling-a-house-in-downey-timeline",
